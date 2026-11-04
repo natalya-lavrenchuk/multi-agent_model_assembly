@@ -1,0 +1,50 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.023045155,
+  "prompt_tokens": 1581,
+  "prompt_time": 0.154291068,
+  "completion_tokens": 2402,
+  "completion_time": 6.006140105,
+  "total_tokens": 3983,
+  "total_time": 6.160431173,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2251
+  }
+ },
+ "user": "Equations:\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nK_{IG}   [NOT COMPUTED]\n  [430] (table_row, p.15) Parameter: $ K_{{IG}} $ | Description: Glucose inhibition constant | Unit: g L $ ^{-1} $ | Min: 0 | Max: 30 | Optimal: 18.0 | 90% CI: 12.0\n\nF   [COMPUTED by eq 19]\n  [254] (sentence, p.8) F, fructose;\n  [344] (sentence, p.11) F, fructose;\n  [374] (sentence, p.12) (F) experiment #7.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{IG}",
+    "description": "Glucose inhibition constant",
+    "description_basis": "stated",
+    "snippet_id": 430,
+    "quote": "Glucose inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "18.0 g L^{-1}",
+    "class_reason": "Parameter constant of the inhibition term",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "F",
+    "description": "Fructose concentration",
+    "description_basis": "stated",
+    "snippet_id": 254,
+    "quote": "F, fructose",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1652,
+  "completion_tokens": 969,
+  "total_tokens": 2621,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1649,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 748,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Aggregation-breakage PBM\n\nEquations:\n(7) D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{4})}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{3})}      <- \"as the ratio of the fourth and third moment of the distribution:\"\n(9) C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime }      <- \"e PBM was solved with both techniques for $ \\alpha=0.0065 $ and A=201.5. The simulation results in Figure 2 are represented as cumulative oversize numbers (CON)\"\n\nSymbols:\n\nx_{i}   [NOT COMPUTED]\n  [76] (sentence, p.3) where $x_i$ represents the diameter of size class $i$ ($\\mu$m) and $\\Delta F_N(x)_i$ the number fraction in size class $i$.\n  [8] (sentence, p.1) Model fits on volume-based fitting variables fit the middle part of both the vol% and number distribution better, but under predict (30x) the smaller size classes.\n  [9] (sentence, p.1) Model fits on number-based fitting variables fit the small size classes better, though still under predicting them (2x).\n\nCON   [COMPUTED by eq 9]\n  [93] (sentence, p.3) The simulation results in Figure 2 are represented as cumulative oversize numbers (CON)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "x_{i}",
+    "description": "diameter of size class i",
+    "description_basis": "stated",
+    "snippet_id": 76,
+    "quote": "x_i represents the diameter of size class i",
+    "unit": "μm",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is the diameter coordinate assigned to size class i, a size-grid quantity used by the model rather than a fitted law constant.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "CON",
+    "description": "cumulative oversize numbers",
+    "description_basis": "stated",
+    "snippet_id": 93,
+    "quote": "cumulative oversize numbers (CON)",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

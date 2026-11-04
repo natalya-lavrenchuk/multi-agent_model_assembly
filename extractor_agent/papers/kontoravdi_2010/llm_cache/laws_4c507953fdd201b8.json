@@ -1,0 +1,176 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.024552619,
+  "prompt_tokens": 1916,
+  "prompt_time": 0.10715927,
+  "completion_tokens": 1556,
+  "completion_time": 4.038644065,
+  "total_tokens": 3472,
+  "total_time": 4.145803335,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 472
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The mass balances on glucose and glutamine around the bioreactor are:\n(9) Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}    [code: algebraic, computes Q_{glc}, code proposes constitutive]\n(10) \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]    [code: ODE, computes [GLN], code proposes balance]\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}    [code: algebraic, computes Q_{gln}, code proposes constitutive]\n(12) m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}    [code: algebraic, computes m_{gln}, code proposes constitutive]\n    The mass balances for lactate and ammonia are\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]    [code: ODE, computes [LAC], code proposes balance]\n(14) Q_{l a c}=Y_{l a c,g l c}Q_{g l c}    [code: algebraic, computes Q_{lac}, code proposes constitutive]\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]    [code: ODE, computes [AMM], code proposes balance]\n(16) Q_{a m m}=Y_{a m m,g l n}Q_{g l n}    [code: algebraic, computes Q_{amm}, code proposes constitutive]\n    The heavy- and light-chain mRNA balances are\n\nSymbols:\n  Q_{glc}: specific glucose consumption rate per cell mass [mmol g^{-1} h^{-1}] (computed)\n  \\mu: Specific viable cell growth rate [h^-1] (computed)\n  Y_{x,glc}: yield of cells on glucose [cell/mmol] (parameter)\n  m_{glc}: maintenance coefficient of glucose [mmol/cell·h^{-1}] (parameter)\n  [GLN]: glutamine concentration in the reactor [mmol L^{-1}] (computed)\n  Q_{gln}: specific glutamine consumption rate per cell mass [mmol g^{-1} h^{-1}] (computed)\n  V: Reactor liquid volume [L] (computed)\n  X_{\\nu}: Viable cell concentration (viable cell density) [cells L^-1] (computed)\n  K_{dgln}: constant for glutamine degradation [h^{-1}] (parameter)\n  F_{in}: Inlet volumetric flow rate into the bioreactor [L h^-1] (variable)\n  [GLN]_{in}: glutamine concentration in the inlet feed [mmol L^{-1}] (variable)\n  F_{out}: Outlet volumetric flow rate from the bioreactor [L h^-1] (variable)\n  Y_{x,gln}: yield of cells on glutamine [cell/mmol] (parameter)\n  m_{gln}: maintenance coefficient of glutamine (Michaelis‑Menten form) [mmol/cell·h^{-1}] (computed)\n  \\alpha_{1}: constant of glutamine maintenance coefficient [mM L/cell/h] (parameter)\n  \\alpha_{2}: constant of glutamine maintenance coefficient [mM] (parameter)\n  [LAC]: Extracellular lactate concentration [mM] (computed)\n  Q_{lac}: specific lactate production rate derived from glucose consumption (computed)\n  Y_{lac,glc}: yield of lactate on glucose (mmol lactate per mmol glucose) [mmol/mmol] (parameter)\n  [AMM]: Extracellular ammonia concentration [mM] (computed)\n  Q_{amm}: specific ammonia production rate derived from glutamine consumption (computed)\n  Y_{amm,gln}: yield of ammonia on glutamine (mmol ammonia per mmol glutamine) [mmol/mmol] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 9, 10, 11, 12, 13, 14, 15, 16",
+ "answer": {
+  "laws": [
+   {
+    "eq": "9",
+    "description": "specific glucose consumption rate equals growth-associated term plus maintenance term",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "relates specific consumption to growth and maintenance",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "10",
+    "description": "glutamine mass balance in the bioreactor",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "balance",
+    "law_type_reason": "accounts for accumulation, consumption, degradation and flows",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced_quantity",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "feed_concentration",
+      "symbol": "[GLN]_{in}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11",
+    "description": "specific glutamine consumption rate equals growth-associated term plus maintenance term",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "relates specific consumption to growth and maintenance",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "maintenance coefficient of glutamine follows Michaelis‑Menten dependence on glutamine concentration",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "provides a kinetic expression for maintenance",
+    "assumptions": [
+     {
+      "text": "maintenance follows Michaelis‑Menten form",
+      "quote": null,
+      "stated_as_assumption": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "saturation_constant",
+      "symbol": "α_{2}"
+     },
+     {
+      "role": "maximum_rate",
+      "symbol": "α_{1}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "lactate mass balance in the bioreactor",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "balance",
+    "law_type_reason": "describes accumulation, production and outflow of lactate",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced_quantity",
+      "symbol": "[LAC]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "14",
+    "description": "specific lactate production rate is proportional to glucose consumption via a yield coefficient",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "defines lactate production from glucose consumption",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate_rate",
+      "symbol": "Q_{glc}"
+     },
+     {
+      "role": "product_rate",
+      "symbol": "Q_{lac}"
+     },
+     {
+      "role": "yield_coefficient",
+      "symbol": "Y_{lac,glc}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "15",
+    "description": "ammonia mass balance in the bioreactor",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "balance",
+    "law_type_reason": "accounts for accumulation, production from glutamine degradation and outflow",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced_quantity",
+      "symbol": "[AMM]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "16",
+    "description": "specific ammonia production rate is proportional to glutamine consumption via a yield coefficient",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "defines ammonia production from glutamine consumption",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate_rate",
+      "symbol": "Q_{gln}"
+     },
+     {
+      "role": "product_rate",
+      "symbol": "Q_{amm}"
+     },
+     {
+      "role": "yield_coefficient",
+      "symbol": "Y_{amm,gln}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

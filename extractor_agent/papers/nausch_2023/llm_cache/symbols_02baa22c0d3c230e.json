@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.233249613,
+  "prompt_tokens": 2071,
+  "prompt_time": 0.132726401,
+  "completion_tokens": 4909,
+  "completion_time": 10.25708584,
+  "total_tokens": 6980,
+  "total_time": 10.389812241,
+  "completion_tokens_details": {
+   "reasoning_tokens": 4464
+  }
+ },
+ "user": "Equations:\n(7) V\\frac{d\\boldsymbol{A}}{d t}+\\boldsymbol{A}\\frac{d\\boldsymbol{V}}{d t}=\\boldsymbol{F}_{t}\\boldsymbol{A}_{f}-\\mu_{A}\\left(\\frac{\\boldsymbol{A}}{\\boldsymbol{A}+\\boldsymbol{K}_{A}}\\frac{\\boldsymbol{K}_{I A}}{\\boldsymbol{A}+\\boldsymbol{K}_{I A}}\\right)\\boldsymbol{X}_{a}\\boldsymbol{V}      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nA   [COMPUTED by eq 7]\n  [68] (sentence, p.2) A mechanistic, kinetic modeling approach is preferred for PCCs, where all metabolic effects are lumped into unstructured kinetic functions for simplification (Resat et al., 2009), especially for model-based DoE where the number of experiments is small and henc\n  [79] (sentence, p.3) A similar workflow has been applied in chemical engineering (Höller et al., 2019;\n  [115] (sentence, p.3) A 5-L bioreactor was used in the initial experiments (#1-3) for model setup, whereas 2-L reactors were used for validation experiments (#4-9).\n\nA_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{A}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n  [206] (table_row, p.6) Parameter: $ \\mu_A $ | Description: Ammonium consumption rate | Unit: $ h^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 4.863 \\times 10^{-3} $ | 90% CI: $ 6.34 \\times 10^{-4} $\n  [432] (table_row, p.15) Parameter: $ \\mu_{{A}} $ | Description: Ammonium consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 6.9 \\times 10^{-3} $ | 90% CI: $ 1.9 \\times 10^{-3} $\n\nK_{A}   [NOT COMPUTED]\n  [201] (table_row, p.6) Parameter: $ K_A $ | Description: Ammonium saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.796 | 90% CI: 0.040\n  [422] (table_row, p.14) Parameter: $ K_A $ | Description: Ammonium saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.221 | 90% CI: 0.22\n\nK_{IA}   [NOT COMPUTED]\n  [202] (table_row, p.6) Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.797 | 90% CI: 0.024\n  [423] (table_row, p.14) Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.221 | 90% CI: 0.065",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "A",
+    "description": "Concentration of nutrients (sucrose, ammonium, nitrate, phosphate) in the reactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A_{f}",
+    "description": "Feed medium concentration of ammonium",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "feed concentration set by the operator",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{A}",
+    "description": "Ammonium consumption rate",
+    "description_basis": "stated",
+    "snippet_id": 206,
+    "quote": "Ammonium consumption rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "4.863 × 10^{-3} h^{-1}",
+    "class_reason": "fitted constant representing ammonium consumption rate",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{A}",
+    "description": "Ammonium saturation constant",
+    "description_basis": "stated",
+    "snippet_id": 201,
+    "quote": "Ammonium saturation constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.796 g L^{-1}",
+    "class_reason": "fitted constant representing ammonium saturation constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IA}",
+    "description": "Ammonium inhibition constant",
+    "description_basis": "stated",
+    "snippet_id": 202,
+    "quote": "Ammonium inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.797 g L^{-1}",
+    "class_reason": "fitted constant representing ammonium inhibition constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.053845604,
+  "prompt_tokens": 1636,
+  "prompt_time": 0.443871349,
+  "completion_tokens": 7351,
+  "completion_time": 18.617324376,
+  "total_tokens": 8987,
+  "total_time": 19.061195725,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6910
+  }
+ },
+ "user": "Equations:\n(7) \\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}      <- \"The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.\"\n(10) \\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}      <- \"he protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,\"\n(11) J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}      <- \"d $ f' $ is the fraction of the proteins that contribute to the growth of the deposit. $ J_{blocked} $ is the filtrate flux through each region of the membrane:\"\n(12) \\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}      <- \"le to contribute to the growth of the deposit. The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,\"\n\nSymbols:\n\nC_{b}   [NOT COMPUTED]\n  [58] (sentence, p.2) where  $ Q_{open} $ is the volumetric flow rate through the open pores,  $ C_{b} $ is the bulk protein concentration, and  $ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane su\n  [61] (sentence, p.2) The product $f \\cdot C_{b}$ is equal to the concentration (mass/volume) of protein aggregates present in the solution that are too large to pass through the membrane pores.\n  [89] (sentence, p.3) At long times ( $ t \\gg \\frac{\\mu R_m}{\\alpha \\Delta P C_b} $), the volumetric flow rate is dominated by the second term and is thus proportional to the ratio of the membrane resistance to the total resistance.\n\nm_{p}   [COMPUTED by eq 10]\n  [66] (sentence, p.2) where  $ m_{p} $ is the mass of the protein deposit per unit area, and  $ f' $ is the fraction of the proteins that contribute to the growth of the deposit.\n\nf^{\\prime}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nJ_{blocked}   [COMPUTED by eq 11]\n  [67] (sentence, p.2) $ J_{blocked} $ is the filtrate flux through each region of the membrane:\n  [74] (sentence, p.3) The resistance provided by the protein deposit over a given region of the membrane can be evaluated by integrating Eq. [12] using Eq. [11] to evaluate  $ J_{blocked} $ to give\n\nR^{\\prime}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "C_{b}",
+    "description": "bulk protein concentration",
+    "description_basis": "stated",
+    "snippet_id": 58,
+    "quote": "C_{b} is the bulk protein concentration",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "C_b is a process condition representing the bulk protein concentration, measured or set for each run",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "m_{p}",
+    "description": "mass of the protein deposit per unit area",
+    "description_basis": "stated",
+    "snippet_id": 66,
+    "quote": "m_{p} is the mass of the protein deposit per unit area",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "f^{\\prime}",
+    "description": "fraction of the proteins that contribute to the growth of the deposit",
+    "description_basis": "stated",
+    "snippet_id": 66,
+    "quote": "f' is the fraction of the proteins that contribute to the growth of the deposit",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "f' is a constant fraction representing the proportion of proteins that contribute to deposit growth, treated as a model parameter",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "J_{blocked}",
+    "description": "filtrate flux through each region of the membrane",
+    "description_basis": "stated",
+    "snippet_id": 67,
+    "quote": "J_{blocked} is the filtrate flux through each region of the membrane",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R^{\\prime}",
+    "description": "proportionality constant relating deposit mass per unit area to hydraulic resistance",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "R' is a constant linking deposit mass per unit area to hydraulic resistance, treated as a model parameter",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

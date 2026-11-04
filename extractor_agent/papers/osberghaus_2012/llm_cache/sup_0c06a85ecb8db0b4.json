@@ -1,0 +1,91 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4698,
+  "completion_tokens": 4127,
+  "total_tokens": 8825,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4695,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3777,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Determination of parameters for the steric mass action model—A comparison between two approaches\n\nAbstract: The application of mechanistic modeling for the optimization of chromatographic steps increased recently due to time efficiency of algorithms and rising calculation power. In the modeling of ion exchange chromatography steps, the sorption processes occurring on adsorbent particle surfaces can be simulated with the steric mass action (SMA) model introduced by Brooks and Cramer (1992) [14]. In this paper, two approaches for the determination of SMA parameters will be carried out and discussed concerning their specific experimental effort, quality of results, method differences, reasons for uncertainties and consequences for SMA parameter determination: Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in Brooks and Cramer (1992) [14] and Shukla et al. (1998) [16]. Approach II: application of an inverse method for parameter estimation, resulting in SMA parameters that induce a best fit of chromatographic data to a mechanistic mode\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [NEEDED: an ODE (the model, or background from earlier work?)] p.2  ... dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:\n    \\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1\n(2) [CONFLICT: computes \\Lambda, like eq 11] p.2  ... dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:\n    \\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}\n(3) [NEEDED: computes \\overline{q_1}, used by the model] p.2  ... dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:\n    \\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}\n(4) [NOT USED BY OTHERS: computes k_{i,eq}; the model output (keep) or not part of the model (leave out)] p.3  ...$ ( \\partial q_i / \\partial t = 0)  $, the equation for the SMA-isotherm can be derived from the above equations to be:\n    k_{i,e q}=\\left(\\frac{q_{i}}{c_{i}}\\right)\\left(\\frac{c_{1}}{\\Lambda-\\sum_{i=2}^{n}(\\nu_{i}+\\sigma_{i})q_{i}}\\right)^{\\nu_{i}}\\quad i>1\n(5) [NOT USED BY OTHERS: computes V_{R}; the model output (keep) or not part of the model (leave out)] p.3  ...SMA model based on gradiental chromatographic experiments was performed based on an equation of Parente and Wetlaufer [22] modified by [16]:\n    V_{R}=\\left(\\left(c_{a,s}^{\\nu+1}+\\frac{V_{d}k_{e q}\\varepsilon_{c}\\Lambda^{\\nu}(\\nu+1)(c_{e,s}-c_{a,s})}{V_{G}}\\right)^{1/(\\nu+1)}-c_{a,s}\\right)\n(6) [NEEDED: computes \\sigma, used by the model] p.3  ...mined parameters  $ \\nu $ and  $ k_{eq} $ and additional frontal chromatographic experiments was carried out based on Eq. (6) given by [14]:\n    \\sigma=\\frac{\\beta}{c_{p r o t}\\vartheta}\\left(\\Lambda-c_{s a l t}\\left(\\frac{\\vartheta}{\\beta k_{e q}}\\right)^{1/\\nu}\\right)-\\nu\n(p3-1) [NEEDED: computes \\vartheta, used by the model] p.3  ...with\n    \\vartheta=\\left(\\frac{V_{B}}{V_{0}}-1\\right)\n(7) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...column level, the time- and position-dependent change of concentration for the ith component,  $ \\partial c_i/\\partial t $, is described by:\n    \\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]\n(8) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...usly, the time-dependent change of concentration on particle level for the ith component,  $ \\partial c_{p,i}/\\partial t $, is described by:\n    \\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}\n(9) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...ers $\\theta_{est}=\\{\\nu, k_{eq},\\sigma\\}\\)). Then the inverse problem can be stated as an minimization of a least squares residual given by:\n    res(\\theta_{est})=\\sum_{t=t_{0}}^{t_{end}}(\\hat{c}(t_{j},\\theta_{fix};\\theta_{est})-c(t_{j}))^{2}\n(10) [NEEDED: computes D_{ax}, used by the model] p.4  ...d the particle porosity  $ \\varepsilon_p $ to be  $ 0.85 \\pm 0.038 $. The axial dispersion coefficient was calculated according to Eq. (10):\n    D_{ax}=\\frac{\\sigma^{2}_{mom}}{\\mu^{2}_{mom}}\\frac{L_{C}u_{int}}{2}\n(11) [CONFLICT: computes \\Lambda, like eq 2] p.4  ...mg/ml in ethanol) were added to the eluate and the mixture was titrated with 0.01 M NaOH. The ionic capacity of the column was calculated by\n    \\Lambda=\\frac{c_{\\mathrm{NaOH}}V_{\\mathrm{NaOH}}}{V_{C}(1-\\varepsilon_{t})}\n(12) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...was applied with an absolute standard deviation on the data [in mM] in seven levels [a=0, 2, 4, 8, 16, 32, 50] using the following equation:\n    \\mathrm{d a t a}=\\mathrm{d a t a}+a\\times10^{-7}\\cdot r a n d n\n(13) [UPDATE of time (applied in printed order on top of the law that computes it): not used by the model laws] p.5  ...hift in the simulation in seven levels [b=0, 2, 4, 8, 16, 32, 50, standard deviation of time shift in seconds] using the following equation:\n    time=time+b\\cdot randn\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.2) In the understanding of [14], in the SMA model every component interacting with the particle surface owns four characterizing parameters (three in case of a rapid equilibrium assumption):\n- (p.2) -  $ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)\n- (p.2) $ k_{ads} $ and  $ k_{des} $ (ad- and desorption coefficient): the ratio of the ad- and desorption coefficients is lumped to a single parameter  $ k_{eq} $ when a rapid equilibrium is assumed (compare with the following \n- (p.2) Based on these initial considerations, the time dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:\n- (p.2) Eq. (2)).\n- (p.2) $\\overline{q_i}$, the concentration of bound salt ions available for exchange with the protein, is given by the total salt ion concentration $q_1$ less the shielded ions determined by the protein specific steric factors \n- (p.2) If the assumption of a rapid equilibrium is valid\n- (p.3) $ ( \\partial q_i / \\partial t = 0)  $, the equation for the SMA-isotherm can be derived from the above equations to be:\n- (p.3) The determination of the parameters  $ \\nu $ and  $ k_{eq} $ for the SMA model based on gradiental chromatographic experiments was performed based on an equation of Parente and Wetlaufer [22] modified by [16]:\n- (p.3) The determination of the parameter  $ \\sigma $ based on the previously determined parameters  $ \\nu $ and  $ k_{eq} $ and additional frontal chromatographic experiments was carried out based on Eq. (6) given by [14]:\n- (p.3) Eq. (5) provides a correlation between gradient volume and elution volume, where  $ \\nu $ and  $ k_{eq} $ appear implicitly.\n- (p.3) Eq. (6), derived based on [14], poses an explicit expression for the steric factor  $ \\sigma $ based on the previously estimated parameters  $ \\nu $ and  $ k_{eq} $.\n- (p.3) The necessary information for the solution of these equations can be divided into ‘experiment-enclosed information’ – information from the gradient and breakthrough experiments and ‘external information’ – supplementary \n- (p.3) A mechanistic model for chromatography consists of equations describing convective and dispersive transport, mass transfer resistances and equations describing sorption kinetics, for example the SMA model in IEC.\n- (p.3) Here, a short overview with respect to the employed model equations, a transport-dispersive model, is given, details on the equations and the implementation of their solution can for example be found in [23,24,5].\n- (p.3) The second term of Eq. (8) describes ad- and desorption processes on particle level, i.e. the interaction between mobile and bound phase.\n- (p.3) Thus, the expression  $ \\partial q_i/\\partial t $ is defined in Eq. (1) respectively, when a rapid equilibrium is assumed, in Eq. (4).\n- (p.3) For the solution of the whole differential-algebraic equation system, Danckwert's boundary conditions were employed [25].\n- (p.3) This model was solved in MatLab on a Dual Core Processor with 2.81 GHz in approximately 10 s with a density of 200 knots over the whole column length.\n- (p.3) That is a reasonable time span since the model has to be solved hundreds of times for the inverse method (approach II).\n- (p.3) Let now $\\theta_{fix}$ be the set of all model input parameters that are fixed on a constant value and $\\theta_{est}$ the set of model input parameters that can be manipulated by the algorithm solving the inverse problem\n- (p.3) The minimization of Eq. (9) was in all cases performed with the Matlab procedure lsqnonlin.\n- (p.4) All further data analysis as well as the solution of model equations and all applications connected to the model was performed with MatLab (The Mathworks, Natick, ME, USA).\n- (p.4) Breakthrough experiments are necessary for the determination of the protein-specific steric factor  $ \\sigma_i $ (compare Eq. (6)).\n- (p.4) The axial dispersion coefficient was calculated according to Eq. (10):\n- (p.5) In short, 10,000 chromatograms were simulated based on the model equations given in Section 2.3.1 and then certain effects were attached to every single chromatogram, here, a normally distributed absolute noise or a norm\n- (p.5) The influence of noise on chromatographic data was applied with an absolute standard deviation on the data [in mM] in seven levels [a=0, 2, 4, 8, 16, 32, 50] using the following equation:\n- (p.5) The influence of shift-noise in time was applied as a normally distributed time-shift in the simulation in seven levels [b=0, 2, 4, 8, 16, 32, 50, standard deviation of time shift in seconds] using the following equation\n- (p.5) In Fig. 2 the correlation between retention time and gradient volume, given by Eq. (5), is exemplarily illustrated for cytochrome c.\n- (p.5) The least squares fit of Eq. (5) to the data is displayed by the dotted line (pH 5), respectively the continuous line (pH 7), each fit having a coefficient of determination  $ R^2 $ of 0.99.\n- (p.5) Based on Eqs. (5) and (6), on the five chromatograms at 5 cv, 10 cv, 30 cv, 60 cv and 120 cv and the breakthrough curve for every single protein, SMA parameters were determined for pH 5 and pH 7.\n- (p.6) The correlation between elution gradient volume  $ V_G $ and retention time  $ V_R $ of a protein is described by Eq. (5).\n- (p.6) Eq. (9)) provided the deviances in the optimization results that are given next to the estimated parameters in Table 2.\n- (p.6) Thus, the parameters v and  $ k_{eq} $ are more determined, when estimated based on gradient elution data and a breakthrough, than the steric factor - a fact, that was qualitatively shown earlier, for example in [17].\n- (p.7) The predictions for approach I are based on interpolation [IP], the predictions in approach II are based on the solution of a system of differential equations [ODE].",
+ "answer": {
+  "models": [
+   {
+    "name": "Kinetic SMA",
+    "equations": [
+     "1",
+     "2",
+     "3",
+     "7",
+     "8"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": false
+   },
+   {
+    "name": "Rapid-equilibrium SMA",
+    "equations": [
+     "2",
+     "3",
+     "4",
+     "7",
+     "8"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Rapid equilibrium is assumed.",
+      "quote": "If the assumption of a rapid equilibrium is valid"
+     }
+    ],
+    "complete_model": false
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "5",
+    "reason": "Parameter-estimation correlation between gradient volume and elution volume, not part of the mechanistic process model."
+   },
+   {
+    "eq": "6",
+    "reason": "Calculates the steric parameter from experimental data for parameter determination, not a process-model equation."
+   },
+   {
+    "eq": "p3-1",
+    "reason": "Defines an auxiliary quantity for the parameter-determination equation 6."
+   },
+   {
+    "eq": "9",
+    "reason": "Least-squares objective function for parameter estimation."
+   },
+   {
+    "eq": "10",
+    "reason": "Calculates a model parameter from experimental moments; it is a parameter-setting procedure, not a process-model law."
+   },
+   {
+    "eq": "11",
+    "reason": "Experimental titration calculation of Λ; the model definition is given by eq 2."
+   },
+   {
+    "eq": "12",
+    "reason": "Adds synthetic measurement noise to data; not part of the process model."
+   },
+   {
+    "eq": "13",
+    "reason": "Adds synthetic time-shift noise to data; not part of the process model."
+   }
+  ],
+  "free_laws": []
+ }
+}

@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.05388895,
+  "prompt_tokens": 2330,
+  "prompt_time": 0.126726249,
+  "completion_tokens": 1419,
+  "completion_time": 2.994276669,
+  "total_tokens": 3749,
+  "total_time": 3.121002918,
+  "completion_tokens_details": {
+   "reasoning_tokens": 70
+  }
+ },
+ "user": "Equations:\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}\n(12) m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]\n(14) Q_{l a c}=Y_{l a c,g l c}Q_{g l c}\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]\n(16) Q_{a m m}=Y_{a m m,g l n}Q_{g l n}\n(17) \\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}\n(19) \\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}\n\nSymbols:\n\nY_{x,gln}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [189] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{x,gln} $ (cell/mmol) | Batch operation value: $ 5.6 \\times 10^{8} $ | Fed-batch operation value: $ 8 \\times 10^{8} $\n  [67] (line, p.2) Y $ _{x,gln} $ yield of cells on glutamine (cell/mmol)\n\nm_{gln}   [COMPUTED by eq 12]\n  (no snippet mentions this symbol)\n\n\\alpha_{1}   [NOT COMPUTED]\n  [69] (line, p.2) $ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)\n  [190] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_1 $ (mM L/cell-h) | Batch operation value: $ 3.4 \\times 10^{-13} $ | Fed-batch operation value: $ 3.4 \\times 10^{-13} $\n\n\\alpha_{2}   [NOT COMPUTED]\n  [69] (line, p.2) $ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)\n  [191] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_2 $ (mM) | Batch operation value: 4 | Fed-batch operation value: 4\n\nQ_{lac}   [COMPUTED by eq 14]\n  (no snippet mentions this symbol)\n\nY_{lac,glc}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [187] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{lac,glc} $ (mmol/mmol) | Batch operation value: 1.4 | Fed-batch operation value: 2.0\n  [216] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ Y_{lac,glc} $ | Final value: 2.0 | Confidence intervals: $ 1.768 \\times 10^{-1} $ | Confidence intervals: $ 2.109 \\times 10^{-1} $ | Confidence intervals: $ 2.777 \\times 10^{-1} $\n\nQ_{amm}   [COMPUTED by eq 16]\n  (no snippet mentions this symbol)\n\nY_{amm,gln}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [186] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{amm,gln} $ (mmol/mmol) | Batch operation value: $ 4.3 \\times 10^{-1} $ | Fed-batch operation value: $ 4.5 \\times 10^{-1} $\n  [217] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ Y_{amm,gln} $ | Final value: $ 4.5 \\times 10^{-1} $ | Confidence intervals: $ 6.564 \\times 10^{-2} $ | Confidence intervals: $ 7.832 \\times 10^{-2} $ | Confidence intervals: $ 1.031 \\time\n\nm_{H}   [COMPUTED by eq 17]\n  (no snippet mentions this symbol)\n\nN_{H}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [180] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_H $ (gene/cell) | Batch operation value: $ 1.4 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $\n  [220] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ N_{H} $ | Final value: 101 | Confidence intervals: 5.067 | Confidence intervals: 6.045 | Confidence intervals: 7.959",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "Y_{x,gln}",
+    "description": "yield of cells on glutamine",
+    "description_basis": "stated",
+    "snippet_id": 67,
+    "quote": "Y_{x,gln} yield of cells on glutamine (cell/mmol)",
+    "unit": "cell/mmol",
+    "unit_basis": "stated",
+    "value": "5.6 × 10^{8} (batch) ; 8 × 10^{8} (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "explicitly identified as a yield parameter in the paper"
+   },
+   {
+    "symbol": "m_{gln}",
+    "description": "glutamine maintenance rate term",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 12)"
+   },
+   {
+    "symbol": "\\alpha_{1}",
+    "description": "constant of glutamine maintenance coefficient (mM L cell⁻¹ h⁻¹)",
+    "description_basis": "stated",
+    "snippet_id": 69,
+    "quote": "\\alpha_{1}, \\alpha_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "unit": "mM L/cell‑h",
+    "unit_basis": "stated",
+    "value": "3.4 × 10^{-13} (both batch and fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed as a model parameter in the parameter table"
+   },
+   {
+    "symbol": "\\alpha_{2}",
+    "description": "constant of glutamine maintenance coefficient (mM)",
+    "description_basis": "stated",
+    "snippet_id": 69,
+    "quote": "\\alpha_{1}, \\alpha_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "4 (both batch and fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed as a model parameter in the parameter table"
+   },
+   {
+    "symbol": "Q_{lac}",
+    "description": "lactate production rate (mmol L⁻¹ h⁻¹)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 14)"
+   },
+   {
+    "symbol": "Y_{lac,glc}",
+    "description": "yield of lactate on glucose",
+    "description_basis": "stated",
+    "snippet_id": 142,
+    "quote": "the yield of lactate on glucose ( Y_{lac,glc} )",
+    "unit": "mmol/mmol",
+    "unit_basis": "stated",
+    "value": "1.4 (batch) ; 2.0 (fed‑batch) ; final estimated value 2.0",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "explicitly identified as a yield parameter in the paper"
+   },
+   {
+    "symbol": "Q_{amm}",
+    "description": "ammonia production rate (mmol L⁻¹ h⁻¹)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 16)"
+   },
+   {
+    "symbol": "Y_{amm,gln}",
+    "description": "yield of ammonia on glutamine",
+    "description_basis": "stated",
+    "snippet_id": 142,
+    "quote": "the yield of ammonia on glutamine ( Y_{amm,gln} )",
+    "unit": "mmol/mmol",
+    "unit_basis": "stated",
+    "value": "0.43 (batch) ; 0.45 (fed‑batch) ; final estimated value 0.45",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "explicitly identified as a yield parameter in the paper"
+   },
+   {
+    "symbol": "m_{H}",
+    "description": "mass of H‑related component (e.g., gene product) per cell",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 17)"
+   },
+   {
+    "symbol": "N_{H}",
+    "description": "gene copy number per cell (gene/cell)",
+    "description_basis": "stated",
+    "snippet_id": 180,
+    "quote": "Parameter: N_H (gene/cell)",
+    "unit": "gene/cell",
+    "unit_basis": "stated",
+    "value": "1.4 × 10^{2} (batch) ; 1.0 × 10^{2} (fed‑batch) ; final estimated value 101",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed as a model parameter in the parameter table"
+   }
+  ]
+ }
+}

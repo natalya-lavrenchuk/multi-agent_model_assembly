@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.64692874,
+  "prompt_tokens": 1748,
+  "prompt_time": 0.092843252,
+  "completion_tokens": 1196,
+  "completion_time": 2.5094485029999998,
+  "total_tokens": 2944,
+  "total_time": 2.602291755,
+  "completion_tokens_details": {
+   "reasoning_tokens": 96
+  }
+ },
+ "user": "Equations:\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)\n(6) f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1\n(8) \\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]\n(17) \\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}\n(18) \\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}\n\nSymbols:\n\n[GLC]   [COMPUTED by eq 8]\n  (no snippet mentions this symbol)\n\nK_{glc}   [NOT COMPUTED]\n  [173] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{glc} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-1} $ | Fed-batch operation value: $ 7.5 \\times 10^{-1} $\n  [55] (line, p.2) K $ _{glc} $ Monod constant for glucose (mM)\n\nK_{gln}   [NOT COMPUTED]\n  [174] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{gln} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-2} $ | Fed-batch operation value: $ 7.5 \\times 10^{-2} $\n  [56] (line, p.2) K $ _{gln} $ Monod constant for glutamine (mM)\n\nK   [NOT COMPUTED]\n  [49] (line, p.2) K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)\n  [167] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K (h^{-1}) $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $\n\nI_{lac}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n[LAC]   [COMPUTED by eq 13]\n  (no snippet mentions this symbol)\n\nI_{amm}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n[AMM]   [COMPUTED by eq 15]\n  (no snippet mentions this symbol)\n\n\\mu_{d,max}   [NOT COMPUTED]\n  [74] (line, p.2) $ \\mu_{d,max} $ maximum specific growth rate (h $ ^{-1} $)\n  [197] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{d,max} (h^{-1}) $ | Batch operation value: $ 6 \\times 10^{-2} $ | Fed-batch operation value: $ 6 \\times 10^{-2} $\n\nK_{d,amm}   [NOT COMPUTED]\n  [169] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,amm} $ (mM) | Batch operation value: 1.76 | Fed-batch operation value: 1.76\n  [51] (line, p.2) K $ _{d,amm} $ ammonia constant for cell death (mM)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "[GLC]",
+    "description": "glucose concentration in the reactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "K_{glc}",
+    "description": "Monod constant for glucose",
+    "description_basis": "stated",
+    "snippet_id": 55,
+    "quote": "Monod constant for glucose (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "7.5 × 10^{-1} mM",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing a saturation constant"
+   },
+   {
+    "symbol": "K_{gln}",
+    "description": "Monod constant for glutamine",
+    "description_basis": "stated",
+    "snippet_id": 56,
+    "quote": "Monod constant for glutamine (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "7.5 × 10^{-2} mM",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing a saturation constant"
+   },
+   {
+    "symbol": "K",
+    "description": "heavy- and light-chain mRNA decay rate",
+    "description_basis": "stated",
+    "snippet_id": 49,
+    "quote": "heavy- and light-chain mRNA decay rate (h^{-1})",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "10^{-1} h^{-1}",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing a decay constant"
+   },
+   {
+    "symbol": "I_{lac}",
+    "description": "inhibition term for lactate in the death rate expression",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "parameter",
+    "class_basis": "inferred",
+    "class_reason": "parameter used in inhibition function"
+   },
+   {
+    "symbol": "[LAC]",
+    "description": "lactate concentration in the reactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "I_{amm}",
+    "description": "inhibition term for ammonia in the death rate expression",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "parameter",
+    "class_basis": "inferred",
+    "class_reason": "parameter used in inhibition function"
+   },
+   {
+    "symbol": "[AMM]",
+    "description": "ammonia concentration in the reactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "\\mu_{d,max}",
+    "description": "maximum specific death rate",
+    "description_basis": "stated",
+    "snippet_id": 74,
+    "quote": "maximum specific growth rate (h^{-1})",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "6 × 10^{-2} h^{-1}",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing a maximal rate"
+   },
+   {
+    "symbol": "K_{d,amm}",
+    "description": "ammonia constant for cell death",
+    "description_basis": "stated",
+    "snippet_id": 51,
+    "quote": "ammonia constant for cell death (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "1.76 mM",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing an inhibition constant"
+   }
+  ]
+ }
+}

@@ -1,0 +1,159 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2427,
+  "completion_tokens": 3628,
+  "total_tokens": 6055,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2424,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2753,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2.1. SMA model for sorption processes in IEC; 2.3.1. Introduction to the employed mechanistic model for chromatography\n\nText and equations in reading order:\n    Based on these initial considerations, the time dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:\n(1) \\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1    [code: PDE, computes q_{i}, code proposes balance]\n(2) \\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}    [code: algebraic, computes \\Lambda, code proposes constitutive]\n(3) \\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}    [code: algebraic, computes \\overline{q_1}, code proposes constitutive]\n    with respect to $n$ components ($n=1$ [salt] + number of protein components). $\\Lambda$, the parameter describing the ionic capacity of the adsorbent, limits the available binding places and displays the rivalry between salt ion concentration $q_1$ and the other bound components $q_i$ with their characteristic charges $\\nu_i$ (cf. Eq. (2)). $\\overline{q_i}$, the concentration of bound salt ions available for exchange with the protein, is given by the total salt ion concentration $q_1$ less the shielded ions determined by the protein specific steric factors ($\\sigma_i$) in Eq. (3). If the assum...\n    $ ( \\partial q_i / \\partial t = 0) $, the equation for the SMA-isotherm can be derived from the above equations to be:\n(4) k_{i,e q}=\\left(\\frac{q_{i}}{c_{i}}\\right)\\left(\\frac{c_{1}}{\\Lambda-\\sum_{i=2}^{n}(\\nu_{i}+\\sigma_{i})q_{i}}\\right)^{\\nu_{i}}\\quad i>1    [code: algebraic, computes k_{i,eq}, code proposes constitutive]\n    The results of SMA parameter determination following instructions in [14,16] (approach I) will be compared to the estimation of SMA parameters by fitting a mechanistic model for IEC chromatography processes to the monitored and time-resoluted concentrations of a protein component at column outlet.\n    On column level, the time- and position-dependent change of concentration for the ith component, $ \\partial c_i/\\partial t $, is described by:\n(7) \\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]    [code: PDE, computes c_{i}, code proposes balance]\n    where the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface, $ k_{eff,i} $ representing the lumped film diffusion coefficient and $ r_{p} $ the particle radius. $ u_{int} $ denotes the interstitial velocity, $ \\varepsilon_{c} $ the column porosity, $ D_{ax} $ displays the axial dispersion, more precisely, a combined effect of dispersion and diffusive processes, dispersion being eddies and all effects implied by three dimensionality.\n    Analogously, the time-dependent change of concentration on particle level for the ith component, $ \\partial c_{p,i}/\\partial t $, is described by:\n(8) \\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}    [code: PDE, computes c_{p,i}, code proposes balance]\n    with $ q_i $ denoting the concentration of particle-bound component i and $ \\varepsilon_p $ the particle porosity. The second term of Eq. (8) describes ad- and desorption processes on particle level, i.e. the interaction between mobile and bound phase. Thus, the expression $ \\partial q_i/\\partial t $ is defined in Eq. (1) respectively, when a rapid equilibrium is assumed, in Eq. (4).\n\nSymbols:\n  q_{i}: Concentration of component i on the adsorbent surface. [M] (computed)\n  k_{ads,i}: Adsorption rate constant for component i in the kinetic SMA law. (parameter)\n  c_{i}: Concentration of component i in the mobile phase on column level. [M] (computed)\n  \\overline{q_1}: Concentration of bound salt ions available for exchange with the protein. [M] (computed)\n  \\nu_{i}: Characteristic charge of component i. [-] (parameter)\n  k_{des,i}: Desorption rate constant for component i in the kinetic SMA law. (parameter)\n  c_{1}: Mobile-phase salt concentration. [M] (variable)\n  \\Lambda: Ionic capacity of the adsorbent. [M] (computed)\n  q_{1}: Total salt ion concentration on the adsorbent surface. [M] (variable)\n  \\sigma_{i}: Steric factor of component i. [-] (parameter)\n  k_{i,eq}: equilibrium coefficient of component i [-] (computed)\n  u_{int}: interstitial velocity [m s^-1] (variable)\n  D_{ax}: axial dispersion [m^2 s^-1] (parameter)\n  \\varepsilon_{c}: column porosity [-] (parameter)\n  r_{p}: particle radius [m] (parameter)\n  k_{eff,i}: effective film transfer coefficient for component i [m/s] (parameter)\n  c_{p,i}: concentration of component i in the mobile phase on particle level [M] (computed)\n  \\varepsilon_{p}: particle porosity [-] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Rapid equilibrium is assumed.\n\nLaws: 1, 2, 3, 4, 7, 8",
+ "answer": {
+  "laws": [
+   {
+    "eq": "1",
+    "description": "The kinetic SMA law computes the rate of change of component i bound on the adsorbent through adsorption and desorption.",
+    "description_basis": "stated",
+    "quote": "the time dependent change of the concentration of component i on the adsorbent surface",
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation rate of bound component i as the net result of adsorption and desorption.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "adsorbing component",
+      "symbol": "c_{i}"
+     },
+     {
+      "role": "available salt ions",
+      "symbol": "\\overline{q_1}"
+     },
+     {
+      "role": "adsorption rate constant",
+      "symbol": "k_{a d s,i}"
+     },
+     {
+      "role": "desorbing salt concentration",
+      "symbol": "c_{1}"
+     },
+     {
+      "role": "bound component",
+      "symbol": "q_{i}"
+     },
+     {
+      "role": "desorption rate constant",
+      "symbol": "k_{d e s,i}"
+     },
+     {
+      "role": "characteristic charge",
+      "symbol": "\\nu_{i}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "2",
+    "description": "The equation computes the adsorbent's ionic capacity as the salt loading plus the charge-weighted loadings of the other bound components.",
+    "description_basis": "stated",
+    "quote": "Λ, the parameter describing the ionic capacity of the adsorbent, limits the available binding places and displays the rivalry between salt ion concentration q1 and the other bound components qi with their characteristic charges νi",
+    "law_type": "definition",
+    "law_type_reason": "It defines the ionic capacity from the salt and charge-weighted bound-component concentrations.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "The equation computes the salt ions available for exchange by subtracting protein-shielded ions from the total bound salt concentration.",
+    "description_basis": "stated",
+    "quote": "the concentration of bound salt ions available for exchange with the protein, is given by the total salt ion concentration q1 less the shielded ions determined by the protein specific steric factors (σi)",
+    "law_type": "definition",
+    "law_type_reason": "It defines the available salt-ion concentration from total salt and shielded-ion concentrations.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "The equation gives the SMA equilibrium coefficient for component i in terms of its bound and mobile concentrations and the available salt-ion concentration.",
+    "description_basis": "stated",
+    "quote": "the equation for the SMA-isotherm can be derived from the above equations",
+    "law_type": "constitutive",
+    "law_type_reason": "It is an equilibrium relation that specifies the sorption behavior and could be replaced by another isotherm.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium coefficient",
+      "symbol": "k_{i,e q}"
+     },
+     {
+      "role": "bound component",
+      "symbol": "q_{i}"
+     },
+     {
+      "role": "mobile component",
+      "symbol": "c_{i}"
+     },
+     {
+      "role": "mobile salt concentration",
+      "symbol": "c_{1}"
+     },
+     {
+      "role": "ionic capacity",
+      "symbol": "\\Lambda"
+     },
+     {
+      "role": "characteristic charge",
+      "symbol": "\\nu_{i}"
+     },
+     {
+      "role": "steric factor",
+      "symbol": "\\sigma_{i}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7",
+    "description": "The column-level balance computes the change in mobile-phase concentration from axial convection and dispersion, with transfer to the particles as a sink.",
+    "description_basis": "stated",
+    "quote": "the time- and position-dependent change of concentration for the ith component",
+    "law_type": "balance",
+    "law_type_reason": "It balances column-phase accumulation against axial transport and transfer to the particle phase.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "c_{i}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "8",
+    "description": "The particle-level balance computes the change in mobile-phase particle concentration from film transfer and adsorption or desorption.",
+    "description_basis": "stated",
+    "quote": "the time-dependent change of concentration on particle level for the ith component",
+    "law_type": "balance",
+    "law_type_reason": "It balances particle-phase mobile concentration accumulation against film transfer and the bound-phase exchange term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "c_{p,i}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,52 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 1671 out (effort high, answer limit 32000)
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 710
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 716
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 112
+  statistical agent: 1402 in, 539 out (effort high, answer limit 32000)
+  statistical agent: search_again   The Monod and Contois candidates substantially underpredict substrate x2 in E2 and E3, while Contois overpredicts x2 early in E1. This points to kinet
+  hypothesis agent: 4428 in, 2463 out (effort high, answer limit 32000)
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 114
+  eq 16: cached
+  modeler agent (muloiwa_2020_free_laws eq 16): cached
+  round 2: [22] fitting (limit 300 s)...
+  round 2: [22] muloiwa_2020_free_laws eq 16: chi2 12098942
+  statistical agent: 2146 in, 324 out (effort high, answer limit 32000)
+  statistical agent: accept C17  Accept the exponential-inhibition rate law in C17. C40 has a slightly better fit score, but its KS and Ki estimates are strongly correlated and cannot
+  hypothesis agent (confirmation): 4384 in, 1172 out (effort high, answer limit 32000)
+  eq 12: cached
+  modeler agent (muloiwa_2020_free_laws eq 12): cached
+  round 3: [18] fitting (limit 300 s)...
+  round 3: [18] muloiwa_2020_free_laws eq 12: chi2 112
+  eq 13: cached
+  modeler agent (muloiwa_2020_free_laws eq 13): cached
+  round 3: [19] fitting (limit 300 s)...
+  round 3: [19] muloiwa_2020_free_laws eq 13: chi2 12194194
+  eq 17: cached
+  modeler agent (muloiwa_2020_free_laws eq 17): cached
+  round 3: [23] fitting (limit 300 s)...
+  round 3: [23] muloiwa_2020_free_laws eq 17: chi2 392
+  statistical agent (confirmation): 3340 in, 1746 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C40  (rule: indistinguishable -> C40)  Use feed glucose concentration u2 to drive residual glucose x2 through roughly 5–10 g/L, holding dilution rate u1 fixed as far as practical. Measure x
+decision: {"decision": "accept", "chosen": "C17", "feedback": "Accept the exponential-inhibition rate law in C17. C40 has a slightly better fit score, but its KS and Ki estimates are strongly correlated and cannot be separated by these data.", "reasoning": "C17 fits within the 95% chi-square limit (114.5 vs 147.7), and every parameter has t > 1 with no reported strongly correlated parameter pairs. C40 does not qualify because KS and Ki are strongly correlated (-0.958). C17 reached its fit from only 1 of 4 starts, which warrants caution, but the stated acceptance criteria are met."}
+confirmation: indistinguishable -> C40 | adequate: C40 zentou_2019_andrews eq 5 (weight 0.74), C17 muloiwa_2020_free_laws eq 11 (weight 0.26) | agent agrees with the rule: True
+experiment to separate them: Use feed glucose concentration u2 to drive residual glucose x2 through roughly 5–10 g/L, holding dilution rate u1 fixed as far as practical. Measure x2 and biomass x1 frequently across those levels, then estimate specific growth rate from the biomass trajectory with dilution accounted for. The high-glucose response should separate the models: C17 predicts a faster, exponential decline in growth than C40.
+final: {'model': 'C40', 'status': 'indistinguishable'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_aiba_seed2_confirm.json
+LLM: 6 calls (19951 in, 7915 out tokens), 19 answers from the cache

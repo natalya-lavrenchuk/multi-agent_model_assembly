@@ -1,0 +1,50 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1952,
+  "completion_tokens": 2248,
+  "total_tokens": 4200,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1949,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1829,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Simulation and optimization of nutrient uptake and biomass formation using a multi-parameter Monod-type model of tobacco BY-2 cell suspension cultures in a stirred-tank bioreactor\n\nAbstract: Results and discussion: The biomass formation was well predicted by an unstructured segregated mechanistic Monod-type model as long as the nutrient concentrations did not approach zero (we omitted phosphate, which was completely depleted). Multi-criteria optimization for sucrose and biomass formation indicated the best tradeoff (in a Paretian sense) between maximum biomass yield and minimum process time by reducing the initial sucrose concentration, whereas the inoculation biomass could be increased to maximize the biomass yield or minimize the process time, which we\n\nSentences about the process and the data:\n- Nausch H, Baldan M, Teichert K, Lutz J, Claussen C, Bortz M and Buyel JF (2023) Simulation and optimization of nutrient uptake and biomass formation using a multi-parameter Monod-type model of tobacco BY-2 cell suspension cultures in a stir\n- Tobacco (Nicotiana tabacum) cv Bright Yellow-2 (BY-2) cell suspension cultures enable the rapid production of complex protein-based biopharmaceuticals but currently achieve low volumetric productivity due to slow biomass formation.\n- The biomass yield can be improved with tailored media, which can be designed either by laborious trial-and-error experiments or systematic, rational design using mechanistic models, linking nutrient consumption and biomass formation.\n- Here we developed an iterative experiment-modeling-optimization workflow to gradually refine such a model and its predictions, based on collected data concerning BY-2 cell macronutrient consumption (sucrose, ammonium, nitrate and phosphate)\n- confirmed in calibration experiments.\n- The remaining offset between the simulation and experimental data might be resolved by including intracellular pools of sucrose, ammonium, nitrate and phosphate.\n- Overall, we demonstrated that iterative models can be used to systematically optimize conditions for bioreactor-based processes.\n- biopharmaceuticals, cultivation medium, mechanistic model, multi-criteria optimization, upstream production\n- Plant cell cultures (PCCs) can be used to produce complex protein-based biopharmaceuticals such as growth factors, cytokines or antibodies, especially proteins that are unsuitable for expression in microbial or mammalian cells (Xu and Zhang\n- Tobacco cells have short doubling times of 25–30 h compared to 50–500 h for other PCCs and can be grown to high cell densities of up to 300–600 g L $ ^{-1} $ fresh mass (FM) in large-scale stirred-tank reactors (STRs) with working volumes o\n- PCCs are typically cultivated in chemically defined media containing sucrose ( $ C_{12}H_{22}O_{11} $) as a carbon source, ammonium nitrate ( $ NH_{4}NO_{3} $) and/or potassium nitrate ( $ KNO_{3} $) as nitrogen sources, and potassium dihyd\n- For example, varying nitrogen sources in trial-and-error screening experiments led to recipes such as Murashige and Skoog (MS) medium (Murashige and Skoog, 1962), Gamborg B5 (Gamborg et al., 1968), Chu N6 (Chu et al., 1975), Schenk and Hild\n- More recently, carbon, nitrogen and phosphate sources have been optimized more systematically using a Design of Experiments (DoE) approach, confirming the potential to increase biomass formation and volumetric productivity of protein-based \n- Importantly, the experiments were conducted in shake flasks and the transferability of such conditions to STRs has yet to be demonstrated.\n- Model-based DoE methods attempt to find new sets of experiments that improve the model based on prior knowledge about the system and a small number of initial tests (Seufert et al., 2021).\n- In general, there are three modeling strategies: data-driven (black box), mechanistic (white box), and hybrid (gray box).\n- Compared to structured models, unstructured models require a limited number of equations and parameters, making them less prone to overfitting when presented with limited input data (Hawkins, 2004).\n- A mechanistic, kinetic modeling approach is preferred for PCCs, where all metabolic effects are lumped into unstructured kinetic functions for simplification (Resat et al., 2009), especially for model-based DoE where the number of experimen\n\nModel: improved unstructured model with sucrose hydrolysis\nLaws:\n(2) [balance] Active-cell dry-mass balance accounting for growth and conversion to dead cells.\n(3) [balance] Cultivation-medium volume accumulation equals the feed rate.\n(5) [balance] Sucrose concentration balance including sucrose feed and active-biomass-associated consumption.\n(6) [balance] Nitrate concentration balance including nitrate feed and active-biomass-associated consumption.\n(7) [balance] Ammonium concentration balance including ammonium feed and active-biomass-associated consumption.\n(8) [balance] Phosphate concentration balance including feed input and concentration-dependent uptake without an active-biomass factor.\n(18) [constitutive] Specific cell growth rate as a nutrient-dependent maximum rate multiplied by glucose, fructose, and nitrate saturation–inhibition factors.\n(19) [balance] Fructose mass balance in the cultivation medium, with fructose produced through sucrose hydrolysis and consumed by cells.\n(20) [balance] Glucose mass balance in the cultivation medium, with glucose produced through sucrose hydrolysis and consumed by cells.\n\nStates (computed by the ODEs):\n- V: Volume of the cultivation medium\n- X_{a}: Active (viable) cell dry mass\n- S: Sucrose concentration\n- N: nitrate concentration\n- A: ammonium concentration\n- P: Phosphate concentration.\n- F: Fructose\n- G: Glucose concentration.\n\nInputs (variables no law computes):\n- F_{t}: Feed rate at time point t\n- S_{f}: Feed-medium sucrose concentration\n- N_{f}: feed-medium nitrate concentration\n- A_{f}: feed-medium ammonium concentration\n- P_{f}: Phosphate concentration in the feed medium.\n\nModel-wide assumptions:\n- The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM).",
+ "answer": {
+  "system": {
+   "value": "Tobacco BY-2 cell suspension cultures, with biomass formation as the modeled output",
+   "quote": "Simulation and optimization of nutrient uptake and biomass formation using a multi-parameter Monod-type model of tobacco BY-2 cell suspension cultures in a stirred-tank bioreactor"
+  },
+  "unit_operation": {
+   "value": "Stirred-tank bioreactor",
+   "quote": "in a stirred-tank bioreactor"
+  },
+  "operating_mode": {
+   "value": [
+    "not stated"
+   ],
+   "quote": null,
+   "note": "The model includes feed-driven volume accumulation, but the supplied text does not distinguish batch from fed-batch operation."
+  },
+  "fitted_on": {
+   "value": "BY-2 cell macronutrient-consumption data for sucrose, ammonium, nitrate, and phosphate",
+   "quote": "based on collected data concerning BY-2 cell macronutrient consumption (sucrose, ammonium, nitrate and phosphate)"
+  },
+  "phenomena": [
+   "Nutrient-dependent Monod-type growth with glucose, fructose, and nitrate saturation–inhibition effects",
+   "Conversion of active cells to dead cells",
+   "Sucrose hydrolysis to glucose and fructose",
+   "Active-biomass-associated uptake of sucrose, nitrate, and ammonium",
+   "Concentration-dependent phosphate uptake"
+  ],
+  "description": "The model describes tobacco BY-2 cell suspension cultivation in a stirred-tank bioreactor and predicts active biomass and culture-medium nutrient concentrations. It combines nutrient-dependent Monod-type growth and active-to-dead cell conversion with nutrient uptake and sucrose hydrolysis to glucose and fructose. Feed inputs and changing culture volume are included, but the supplied text does not specify the operating mode."
+ }
+}

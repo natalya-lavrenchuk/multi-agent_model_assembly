@@ -1,0 +1,951 @@
+{
+ "summary": {
+  "printed/antlr": {
+   "correct": 7,
+   "wrong": 12,
+   "fail": 9
+  },
+  "printed/lark": {
+   "correct": 1,
+   "wrong": 5,
+   "fail": 22
+  },
+  "reader/antlr": {
+   "correct": 8,
+   "wrong": 10,
+   "fail": 10
+  },
+  "reader/lark": {
+   "correct": 0,
+   "wrong": 2,
+   "fail": 26
+  }
+ },
+ "rows": [
+  {
+   "eq": 1,
+   "source": "printed",
+   "latex": "\\frac{dV}{dt} = F_{in} - F_{out}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V, t), F_{i*n} - F_{o*(t*u)})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 1,
+   "source": "printed",
+   "latex": "\\frac{dV}{dt} = F_{in} - F_{out}",
+   "backend": "lark",
+   "parsed": "False",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 1,
+   "source": "reader",
+   "latex": "\\frac{d V}{d t}=F_{i n}-F_{o u t}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V, t), F_{i*n} - F_{o*(t*u)})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 1,
+   "source": "reader",
+   "latex": "\\frac{d V}{d t}=F_{i n}-F_{o u t}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 18"
+  },
+  {
+   "eq": 2,
+   "source": "printed",
+   "latex": "\\frac{d(VX_v)}{dt} = \\mu VX_v - \\mu_d VX_v - F_{out}X_v",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V*X_{v}, t), -F_{o*(t*u)}*X_{v} + (-X_{v}*mu_{dV} + mu*(V*X_{v})))",
+   "verdict": "wrong",
+   "detail": "missing mu_d; extra mu_Vd"
+  },
+  {
+   "eq": 2,
+   "source": "printed",
+   "latex": "\\frac{d(VX_v)}{dt} = \\mu VX_v - \\mu_d VX_v - F_{out}X_v",
+   "backend": "lark",
+   "parsed": "Tree('_ambig', [False, False])",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 2,
+   "source": "reader",
+   "latex": "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V*X_{nu}, t), -F_{o*(t*u)}*X_{nu} + (mu*(V*X_{nu}) - mu_{d}*V*X_{nu}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 2,
+   "source": "reader",
+   "latex": "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 58"
+  },
+  {
+   "eq": 3,
+   "source": "printed",
+   "latex": "\\frac{d(VX_t)}{dt} = \\mu VX_v - F_{out}X_t",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V*X_{t}, t), -F_{o*(t*u)}*X_{t} + mu*(V*X_{v}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 3,
+   "source": "printed",
+   "latex": "\\frac{d(VX_t)}{dt} = \\mu VX_v - F_{out}X_t",
+   "backend": "lark",
+   "parsed": "Tree('_ambig', [False, False])",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 3,
+   "source": "reader",
+   "latex": "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V*X_{t}, t), -F_{o*(t*u)}*X_{t} + mu*(V*X_{nu}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 3,
+   "source": "reader",
+   "latex": "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 39"
+  },
+  {
+   "eq": 4,
+   "source": "printed",
+   "latex": "\\mu = \\mu_{max} f_{lim} f_{inh}",
+   "backend": "antlr",
+   "parsed": "Eq(mu, mu_{m*(a*x)}*(f_{i*(h*n)}*f_{l*(i*m)}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 4,
+   "source": "printed",
+   "latex": "\\mu = \\mu_{max} f_{lim} f_{inh}",
+   "backend": "lark",
+   "parsed": "Eq(mu, f_{inh}*f_{lim}*mu_{max})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 4,
+   "source": "reader",
+   "latex": "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}",
+   "backend": "antlr",
+   "parsed": "Eq(mu, mu_{m*(a*x)}*(f_{i*(h*n)}*f_{l*(i*m)}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 4,
+   "source": "reader",
+   "latex": "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 5,
+   "source": "printed",
+   "latex": "f_{lim} = \\left( \\frac{[GLC]}{K_{glc} + [GLC]} \\right) \\left( \\frac{[GLC]}{K_{gln} + [GLC]} \\right)",
+   "backend": "antlr",
+   "parsed": "Eq(f_{l*(i*m)}, ((G*(C*L))/(G*(C*L) + K_{g*(c*l)}))*((G*(C*L))/(G*(C*L) + K_{g*(l*n)})))",
+   "verdict": "wrong",
+   "detail": "missing GLC; extra C, G, L"
+  },
+  {
+   "eq": 5,
+   "source": "printed",
+   "latex": "f_{lim} = \\left( \\frac{[GLC]}{K_{glc} + [GLC]} \\right) \\left( \\frac{[GLC]}{K_{gln} + [GLC]} \\right)",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 24"
+  },
+  {
+   "eq": 5,
+   "source": "reader",
+   "latex": "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)",
+   "backend": "antlr",
+   "parsed": "Eq(f_{l*(i*m)}, ((G*(C*L))/(G*(C*L) + K_{g*(c*l)}))*((G*(C*L))/(G*(C*L) + K_{g*(l*n)})))",
+   "verdict": "wrong",
+   "detail": "missing GLC; extra C, G, L"
+  },
+  {
+   "eq": 5,
+   "source": "reader",
+   "latex": "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 6,
+   "source": "printed",
+   "latex": "f_{inh} = \\left( \\frac{K_{Ilac}}{K_{Ilac} + [LAC]} \\right) \\left( \\frac{K_{Iamm}}{K_{Iamm} + [AMM]} \\right)",
+   "backend": "antlr",
+   "parsed": "Eq(f_{i*(h*n)}, (K_{I*(a*(m*m))}/(A*(M*M) + K_{I*(a*(m*m))}))*(K_{I*(l*(a*c))}/(K_{I*(l*(a*c))} + L*(A*C))))",
+   "verdict": "wrong",
+   "detail": "missing AMM, LAC; extra A, C, L, M"
+  },
+  {
+   "eq": 6,
+   "source": "printed",
+   "latex": "f_{inh} = \\left( \\frac{K_{Ilac}}{K_{Ilac} + [LAC]} \\right) \\left( \\frac{K_{Iamm}}{K_{Iamm} + [AMM]} \\right)",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 45"
+  },
+  {
+   "eq": 6,
+   "source": "reader",
+   "latex": "f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)",
+   "backend": "antlr",
+   "parsed": "Eq(f_{i*(h*n)}, ((I_{a*(m*m)}*K)/(A*(M*M) + I_{a*(m*m)}*K))*((I_{l*(a*c)}*K)/(I_{l*(a*c)}*K + L*(A*C))))",
+   "verdict": "wrong",
+   "detail": "missing AMM, K_Iacl, K_Iamm, LAC; extra A, C, I_acl, I_amm, K, L, M"
+  },
+  {
+   "eq": 6,
+   "source": "reader",
+   "latex": "f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 7,
+   "source": "printed",
+   "latex": "\\mu_d = \\frac{\\mu_{d,max}}{1 + (K_{d,amm}/[AMM])^n}, \\quad n > 1",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 7,
+   "source": "printed",
+   "latex": "\\mu_d = \\frac{\\mu_{d,max}}{1 + (K_{d,amm}/[AMM])^n}, \\quad n > 1",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 18"
+  },
+  {
+   "eq": 7,
+   "source": "reader",
+   "latex": "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 7,
+   "source": "reader",
+   "latex": "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 18"
+  },
+  {
+   "eq": 8,
+   "source": "printed",
+   "latex": "\\frac{d(V[GLC])}{dt} = -Q_{glc}VX_v + F_{in}[GLC]_{in} - F_{out}[GLC]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(V*(G*(C*L)), t), F_{i*n}*(G*(C*L)) - Q_{g*(c*l)}*V*X_{v})",
+   "verdict": "wrong",
+   "detail": "missing F_otu, GLC, GLC_in; extra C, G, L; 1 term(s) dropped on the right-hand side"
+  },
+  {
+   "eq": 8,
+   "source": "printed",
+   "latex": "\\frac{d(V[GLC])}{dt} = -Q_{glc}VX_v + F_{in}[GLC]_{in} - F_{out}[GLC]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 10"
+  },
+  {
+   "eq": 8,
+   "source": "reader",
+   "latex": "\\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]",
+   "backend": "antlr",
+   "parsed": "Eq((V*(G*(C*L)))/dt, F_{i*n}*(G*(C*L)) - Q_{g*(c*l)}*V*X_{nu})",
+   "verdict": "wrong",
+   "detail": "missing F_otu, GLC, GLC_in; extra C, G, L, dt; time derivative lost; 1 term(s) dropped on the right-hand side"
+  },
+  {
+   "eq": 8,
+   "source": "reader",
+   "latex": "\\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 9,
+   "source": "printed",
+   "latex": "Q_{glc} = \\frac{\\mu}{Y_{x,glc}} + m_{glc}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 9,
+   "source": "printed",
+   "latex": "Q_{glc} = \\frac{\\mu}{Y_{x,glc}} + m_{glc}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 23"
+  },
+  {
+   "eq": 9,
+   "source": "reader",
+   "latex": "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 9,
+   "source": "reader",
+   "latex": "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 10,
+   "source": "printed",
+   "latex": "\\frac{d([GLN])}{dt} = -Q_{gln} V X_v - K_{dgln} V[GLN] + F_{in}[GLN]_{in} - F_{out}[GLN]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(G*(L*N), t), F_{i*n}*(G*(L*N)) + (-K_{dg*(l*n)}*V*(G*(L*N)) - Q_{g*(l*n)}*V*X_{v}))",
+   "verdict": "wrong",
+   "detail": "missing F_otu, GLN, GLN_in; extra G, L, N; 1 term(s) dropped on the right-hand side"
+  },
+  {
+   "eq": 10,
+   "source": "printed",
+   "latex": "\\frac{d([GLN])}{dt} = -Q_{gln} V X_v - K_{dgln} V[GLN] + F_{in}[GLN]_{in} - F_{out}[GLN]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 10,
+   "source": "reader",
+   "latex": "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(G*(L*N), t), F_{i*n}*(G*(L*N)) + (-K_{dg*(l*n)}*V*(G*(L*N)) - Q_{g*(l*n)}*V*X_{nu}))",
+   "verdict": "wrong",
+   "detail": "missing F_otu, GLN, GLN_in; extra G, L, N; 1 term(s) dropped on the right-hand side"
+  },
+  {
+   "eq": 10,
+   "source": "reader",
+   "latex": "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 11,
+   "source": "printed",
+   "latex": "Q_{gln} = \\frac{\\mu}{Y_{x,gln}} + m_{gln}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 11,
+   "source": "printed",
+   "latex": "Q_{gln} = \\frac{\\mu}{Y_{x,gln}} + m_{gln}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 23"
+  },
+  {
+   "eq": 11,
+   "source": "reader",
+   "latex": "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 11,
+   "source": "reader",
+   "latex": "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 12,
+   "source": "printed",
+   "latex": "m_{gln} = \\frac{\\alpha_1[GLN]}{\\alpha_2 + [GLN]}",
+   "backend": "antlr",
+   "parsed": "Eq(m_{g*(l*n)}, (alpha_{1}*(G*(L*N)))/(G*(L*N) + alpha_{2}))",
+   "verdict": "wrong",
+   "detail": "missing GLN; extra G, L, N"
+  },
+  {
+   "eq": 12,
+   "source": "printed",
+   "latex": "m_{gln} = \\frac{\\alpha_1[GLN]}{\\alpha_2 + [GLN]}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 25"
+  },
+  {
+   "eq": 12,
+   "source": "reader",
+   "latex": "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}",
+   "backend": "antlr",
+   "parsed": "Eq(m_{g*(l*n)}, (alpha_{1}*(G*(L*N)))/(G*(L*N) + alpha_{2}))",
+   "verdict": "wrong",
+   "detail": "missing GLN; extra G, L, N"
+  },
+  {
+   "eq": 12,
+   "source": "reader",
+   "latex": "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 13,
+   "source": "printed",
+   "latex": "\\frac{d([LAC])}{dt} = Q_{lac} VX_v - F_{out}[LAC]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(L*(A*C), t), -F_{o*(t*u)}*L*(A*C) + Q_{l*(a*c)}*(V*X_{v}))",
+   "verdict": "wrong",
+   "detail": "missing LAC; extra A, C, L"
+  },
+  {
+   "eq": 13,
+   "source": "printed",
+   "latex": "\\frac{d([LAC])}{dt} = Q_{lac} VX_v - F_{out}[LAC]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 13,
+   "source": "reader",
+   "latex": "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(L*(A*C), t), -F_{o*(t*u)}*L*(A*C) + Q_{l*(a*c)}*(V*X_{nu}))",
+   "verdict": "wrong",
+   "detail": "missing LAC; extra A, C, L"
+  },
+  {
+   "eq": 13,
+   "source": "reader",
+   "latex": "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 14,
+   "source": "printed",
+   "latex": "Q_{lac} = Y_{lac,glc} Q_{glc}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 14,
+   "source": "printed",
+   "latex": "Q_{lac} = Y_{lac,glc} Q_{glc}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 12"
+  },
+  {
+   "eq": 14,
+   "source": "reader",
+   "latex": "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 14,
+   "source": "reader",
+   "latex": "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 15,
+   "source": "printed",
+   "latex": "\\frac{d([AMM])}{dt} = Q_{amm} VX_v + K_{dgln} V[GLN] - F_{out}[AMM]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(A*(M*M), t), -F_{o*(t*u)}*A*(M*M) + (K_{dg*(l*n)}*(V*(G*(L*N))) + Q_{a*(m*m)}*(V*X_{v})))",
+   "verdict": "wrong",
+   "detail": "missing AMM, GLN; extra A, G, L, M, N"
+  },
+  {
+   "eq": 15,
+   "source": "printed",
+   "latex": "\\frac{d([AMM])}{dt} = Q_{amm} VX_v + K_{dgln} V[GLN] - F_{out}[AMM]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 15,
+   "source": "reader",
+   "latex": "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(A*(M*M), t), -F_{o*(t*u)}*A*(M*M) + (K_{dg*(l*n)}*(V*(G*(L*N))) + Q_{a*(m*m)}*(V*X_{nu})))",
+   "verdict": "wrong",
+   "detail": "missing AMM, GLN; extra A, G, L, M, N"
+  },
+  {
+   "eq": 15,
+   "source": "reader",
+   "latex": "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 16,
+   "source": "printed",
+   "latex": "Q_{amm} = Y_{amm, gln} Q_{gln}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 16,
+   "source": "printed",
+   "latex": "Q_{amm} = Y_{amm, gln} Q_{gln}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 12"
+  },
+  {
+   "eq": 16,
+   "source": "reader",
+   "latex": "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected something else here"
+  },
+  {
+   "eq": 16,
+   "source": "reader",
+   "latex": "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  },
+  {
+   "eq": 17,
+   "source": "printed",
+   "latex": "\\frac{dm_H}{dt} = N_H S_H - Km_H",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 17,
+   "source": "printed",
+   "latex": "\\frac{dm_H}{dt} = N_H S_H - Km_H",
+   "backend": "lark",
+   "parsed": "False",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 17,
+   "source": "reader",
+   "latex": "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 17,
+   "source": "reader",
+   "latex": "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}",
+   "backend": "lark",
+   "parsed": "False",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 18,
+   "source": "printed",
+   "latex": "\\frac{dm_L}{dt} = N_L S_L - Km_L",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 18,
+   "source": "printed",
+   "latex": "\\frac{dm_L}{dt} = N_L S_L - Km_L",
+   "backend": "lark",
+   "parsed": "False",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 18,
+   "source": "reader",
+   "latex": "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 18,
+   "source": "reader",
+   "latex": "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}",
+   "backend": "lark",
+   "parsed": "False",
+   "verdict": "wrong",
+   "detail": "not an equation"
+  },
+  {
+   "eq": 19,
+   "source": "printed",
+   "latex": "\\frac{d[H]}{dt} = T_H m_H - R_H",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(H, t), -R_{H} + T_{H}*m_{H})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 19,
+   "source": "printed",
+   "latex": "\\frac{d[H]}{dt} = T_H m_H - R_H",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 19,
+   "source": "reader",
+   "latex": "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(H, t), -R_{H} + T_{H}*m_{H})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 19,
+   "source": "reader",
+   "latex": "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 20,
+   "source": "printed",
+   "latex": "\\frac{d[L]}{dt} = T_L m_L - R_L",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(L, t), -R_{L} + T_{L}*m_{L})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 20,
+   "source": "printed",
+   "latex": "\\frac{d[L]}{dt} = T_L m_L - R_L",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 20,
+   "source": "reader",
+   "latex": "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(L, t), -R_{L} + T_{L}*m_{L})",
+   "verdict": "correct"
+  },
+  {
+   "eq": 20,
+   "source": "reader",
+   "latex": "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 21,
+   "source": "printed",
+   "latex": "R_H = \\frac{2}{3} K_A[H]^2",
+   "backend": "antlr",
+   "parsed": "Eq(R_{H}, (2/3)*(H**2*K_{A}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 21,
+   "source": "printed",
+   "latex": "R_H = \\frac{2}{3} K_A[H]^2",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 22"
+  },
+  {
+   "eq": 21,
+   "source": "reader",
+   "latex": "R_{H}=\\frac{2}{3}K_{A}[H]^{2}",
+   "backend": "antlr",
+   "parsed": "Eq(R_{H}, (2/3)*(H**2*K_{A}))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 21,
+   "source": "reader",
+   "latex": "R_{H}=\\frac{2}{3}K_{A}[H]^{2}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 23"
+  },
+  {
+   "eq": 22,
+   "source": "printed",
+   "latex": "R_L = 2K_A[H_2][L] + K_A[H_2L][L]",
+   "backend": "antlr",
+   "parsed": "Eq(R_{L}, 2*(K_{A}*(H_{2}*L)) + K_{A}*(L*(H_{2}*L)))",
+   "verdict": "wrong",
+   "detail": "missing H_2L"
+  },
+  {
+   "eq": 22,
+   "source": "printed",
+   "latex": "R_L = 2K_A[H_2][L] + K_A[H_2L][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 11"
+  },
+  {
+   "eq": 22,
+   "source": "reader",
+   "latex": "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]",
+   "backend": "antlr",
+   "parsed": "Eq(R_{L}, 2*(K_{A}*(H_{2}*L)) + K_{A}*(L*(H_{2}*L)))",
+   "verdict": "wrong",
+   "detail": "missing H_2L"
+  },
+  {
+   "eq": 22,
+   "source": "reader",
+   "latex": "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 13"
+  },
+  {
+   "eq": 23,
+   "source": "printed",
+   "latex": "\\frac{d[H_2]}{dt} = \\frac{1}{3}K_A[H]^2 - 2K_A[H_2][L]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(H_{2}, t), (H**2*K_{A})/3 - 2*K_{A}*(H_{2}*L))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 23,
+   "source": "printed",
+   "latex": "\\frac{d[H_2]}{dt} = \\frac{1}{3}K_A[H]^2 - 2K_A[H_2][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 23,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(H_{2}, t), (H**2*K_{A})/3 - 2*K_{A}*(H_{2}*L))",
+   "verdict": "correct"
+  },
+  {
+   "eq": 23,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 24,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L]}{dt} = 2K_A[H_2][L] - K_A[H_2L][L]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(H_{2}*L, t), 2*(K_{A}*(H_{2}*L)) - K_{A}*L*(H_{2}*L))",
+   "verdict": "wrong",
+   "detail": "missing H_2L"
+  },
+  {
+   "eq": 24,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L]}{dt} = 2K_A[H_2][L] - K_A[H_2L][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 24,
+   "source": "reader",
+   "latex": "\\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 24,
+   "source": "reader",
+   "latex": "\\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 25,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L_2]_{ER}}{dt} = K_A[H_2L][L] - K_{ER}[H_2L_2]_{ER}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 25,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L_2]_{ER}}{dt} = K_A[H_2L][L] - K_{ER}[H_2L_2]_{ER}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 25,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 25,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 26,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L_2]_G}{dt} = \\varepsilon_1 K_{ER}[H_2L_2]_{ER} - K_G[H_2L_2]_G",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 26,
+   "source": "printed",
+   "latex": "\\frac{d[H_2L_2]_G}{dt} = \\varepsilon_1 K_{ER}[H_2L_2]_{ER} - K_G[H_2L_2]_G",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 26,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}",
+   "backend": "antlr",
+   "verdict": "fail",
+   "detail": "LaTeXParsingError: I expected one of these: '}'"
+  },
+  {
+   "eq": 26,
+   "source": "reader",
+   "latex": "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 8"
+  },
+  {
+   "eq": 27,
+   "source": "printed",
+   "latex": "\\frac{d([MAb])}{dt} = (\\gamma_2 - \\gamma_1 \\mu) Q_{MAb} VX_v - F_{out}[MAb]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(M*(A*b), t), -F_{o*(t*u)}*M*(A*b) + (Q_{M*(A*b)}*(V*X_{v}))*(-gamma_{1}*mu + gamma_{2}))",
+   "verdict": "wrong",
+   "detail": "missing MAb; extra A, M, b"
+  },
+  {
+   "eq": 27,
+   "source": "printed",
+   "latex": "\\frac{d([MAb])}{dt} = (\\gamma_2 - \\gamma_1 \\mu) Q_{MAb} VX_v - F_{out}[MAb]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 27,
+   "source": "reader",
+   "latex": "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]",
+   "backend": "antlr",
+   "parsed": "Eq(Derivative(b*(A*M), t), -F_{o*(t*u)}*b*(A*M) + (Q_{b*(A*M)}*(V*X_{nu}))*(-gamma_{1}*mu + gamma_{2}))",
+   "verdict": "wrong",
+   "detail": "missing MAb; extra A, M, b"
+  },
+  {
+   "eq": 27,
+   "source": "reader",
+   "latex": "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 9"
+  },
+  {
+   "eq": 28,
+   "source": "printed",
+   "latex": "Q_{MAb} = \\varepsilon_2\\lambda K_G[H_2L_2]_G",
+   "backend": "antlr",
+   "parsed": "Eq(Q_{M*(A*b)}, varepsilon_{2}*(lambda*(K_{G}*(H_{2}*L_{2}))))",
+   "verdict": "wrong",
+   "detail": "missing H_22GL; extra H_2, L_2"
+  },
+  {
+   "eq": 28,
+   "source": "printed",
+   "latex": "Q_{MAb} = \\varepsilon_2\\lambda K_G[H_2L_2]_G",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '[' in the current parser context, at line 1 col 35"
+  },
+  {
+   "eq": 28,
+   "source": "reader",
+   "latex": "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}",
+   "backend": "antlr",
+   "parsed": "Eq(Q_{M*(A*b)}, varepsilon_{2}*(lambda*(K_{G}*(H_{2}*L_{2}))))",
+   "verdict": "wrong",
+   "detail": "missing H_22GL; extra H_2, L_2"
+  },
+  {
+   "eq": 28,
+   "source": "reader",
+   "latex": "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}",
+   "backend": "lark",
+   "verdict": "fail",
+   "detail": "UnexpectedCharacters: No terminal matches '_' in the current parser context, at line 1 col 2"
+  }
+ ]
+}

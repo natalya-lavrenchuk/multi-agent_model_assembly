@@ -1,0 +1,48 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1769,
+  "completion_tokens": 1297,
+  "total_tokens": 3066,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1766,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 910,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Determination of the Kinetic Parameters for the Crystallization of Paracetamol from Water Using Metastable Zone Width Experiments\n\nAbstract: A new approach for the estimation of kinetic parameters of crystallization from data obtained during the determination of metastable zone width is presented. The method is based on a simplified dynamic model of the system, which combines the population balance and mass balance, as well as information provided by concentration and particle size distribution measurements using ATR-FTIR spectroscopy and laser backscattering to determine simultaneously the nucleation and growth parameters from the experimental data. The application of the proposed approach is illustrated for the cooling crystallization of paracetamol from water. The technique is compared to existing approaches for the determination of nucleation parameters from metastable zone width experiments and is used to corroborate the assumptions used in the classical approaches. The key conclusion is that the assumptions made in the existing approaches, which simplifies the parameters' estimation procedure, can result in substantial error in the nucleation kinetics.\n\nSentences about the process and the data:\n- A new approach for the estimation of kinetic parameters of crystallization from data obtained during the determination of metastable zone width is presented.\n- The method is based on a simplified dynamic model of the system, which combines the population balance and mass balance, as well as information provided by concentration and particle size distribution measurements using ATR-FTIR spectroscop\n- The technique is compared to existing approaches for the determination of nucleation parameters from metastable zone width experiments and is used to corroborate the assumptions used in the classical approaches.\n- The key conclusion is that the assumptions made in the existing approaches, which simplifies the parameters' estimation procedure, can result in substantial error in the nucleation kinetics.\n- Besides achieving the desired purity, the control of the crystal size distribution (CSD) of the pharmaceutical product is critical for efficient downstream operations and product effectiveness.\n- $ ^{1-3} $ For batch cooling crystallization, the final CSD is determined by the supersaturation profile.\n- $ ^{10,11} $ As a consequence, the development of a model that can adequately describe the process and the ability to accurately estimate the parameters in the model is of paramount importance.\n- The final CSD in a batch crystallizer is determined by various kinetic processes, which include primary and secondary nucleation, crystal growth, aggregation, and breakage.\n- $ ^{12-14} $ The parameters of these expressions can be obtained by applying optimization techniques to fit the model predictions with experimental data.\n- $ ^{8} $ In particular, estimating the parameters of the primary nucleation kinetics accurately has been a challenge, as it is impossible to detect the presence of nuclei, which are in the subnanometer range as soon as they are formed.\n- The primary nucleation kinetics can be estimated from measuring the metastable zone width for different cooling rates and solute concentrations.\n- $ ^{12,15-17} $ The main advantage of these approaches is the simplicity of the experimental procedure.\n- However, various assumptions are made to express the nucleation rate as a function of the measured variables (i.e., the metastable zone width and supersaturation rate) to estimate the parameters.\n- In addition, the determination of the metastable limit varies with the detection methods used, $ ^{18} $ which can also increase the uncertainties of the estimated parameters.\n- As the nuclei have to grow to a detectable size at the metastable limit, both primary nucleation and growth kinetics should be simultaneously considered in the parameter estimation procedure.\n- Besides measuring the metastable zone width, experimental information of the solution and solid phase obtained in situ during the crystallization process is required to estimate the nucleation and growth parameters within an acceptable leve\n- $ ^{19-24} $ Using such sensors, concentration measurements and particle size information can be collected during the experiments.\n- This article describes a more rigorous approach to simultaneously estimate the nucleation and growth kinetics from metastable zone experiments using a model of the crystallization process with dynamic population and mass balance equations.\n\nModel: Dynamic crystallization moment model\nLaws:\n(11.1) [balance] The zeroth crystal-size-distribution moment accumulates through primary nucleation.\n(11.2) [balance] The first crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.\n(11.3) [balance] The second crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.\n(11.4) [balance] The third crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.\n(11.5) [balance] The solution concentration decreases as crystal mass is formed.\n(12) [constitutive] The crystal growth rate follows a power law in supersaturation.\n(13) [constitutive] The primary number nucleation rate follows a power law in supersaturation.\n(21) [definition] The solubility of paracetamol in water is calculated as a function of temperature.\n\nStates (computed by the ODEs):\n- \\mu_{0}: Zeroth moment of the crystal size distribution\n- \\mu_{1}: First moment of the crystal size distribution\n- \\mu_{2}: Second moment of the crystal size distribution\n- \\mu_{3}: Third moment of the crystal size distribution\n- C: Solution concentration expressed in mass of crystal per unit mass of solvent\n\nInputs (variables no law computes):\n- \\Delta C: Concentration driving force (supersaturation) in the rate laws\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "Paracetamol crystallization from water",
+   "quote": "the cooling crystallization of paracetamol from water."
+  },
+  "unit_operation": {
+   "value": "Batch crystallizer",
+   "quote": "The final CSD in a batch crystallizer is determined by various kinetic processes, which include primary and secondary nucleation, crystal growth, aggregation, and breakage."
+  },
+  "operating_mode": {
+   "value": [
+    "batch"
+   ],
+   "quote": "For batch cooling crystallization, the final CSD is determined by the supersaturation profile.",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Metastable-zone-width experiments with concentration and particle-size-distribution measurements using ATR-FTIR spectroscopy and laser backscattering",
+   "quote": "The method is based on a simplified dynamic model of the system, which combines the population balance and mass balance, as well as information provided by concentration and particle size distribution measurements using ATR-FTIR spectroscopy and laser backscattering to determine simultaneously the nucleation and growth parameters from the experimental data."
+  },
+  "phenomena": [
+   "Primary nucleation driven by supersaturation",
+   "Crystal growth driven by supersaturation",
+   "Temperature-dependent paracetamol solubility"
+  ],
+  "description": "The model describes batch cooling crystallization of paracetamol from water and predicts solution concentration and the first four moments of the crystal size distribution. It couples crystal population-moment balances to a solute mass balance, using supersaturation power laws for primary nucleation and crystal growth and a temperature-dependent solubility relation. Kinetic parameters are estimated from metastable-zone-width experiments with in situ concentration and particle-size measurements."
+ }
+}

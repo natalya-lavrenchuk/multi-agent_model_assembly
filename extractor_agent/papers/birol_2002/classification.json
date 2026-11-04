@@ -1,0 +1,760 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": true,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "C_{L}^{*}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "C_{L}^{*} appears as the saturation concentration of dissolved oxygen in a mass transfer term (K_{la}(C_{L}^{*}-C_{L})). By convention such saturation concentrations are fixed physical constants for a given temperature and pressure, not computed by the model.",
+   "llm": {
+    "symbol": "C_{L}^{*}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "C_{L}^{*} appears as the saturation concentration of dissolved oxygen in a mass transfer term (K_{la}(C_{L}^{*}-C_{L})). By convention such saturation concentrations are fixed physical constants for a given temperature and pressure, not computed by the model."
+   }
+  },
+  "E_{d}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "$ k_g $ and  $ E_g $ are the constant and activation energy for growth, while  $ k_d $ and  $ E_d $ are the constant and activation energy for death, respectively.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly calls E_d the activation energy for cell death, a constant parameter in the Arrhenius term.",
+   "llm": {
+    "symbol": "E_{d}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 182,
+    "quote": "$ k_g $ and  $ E_g $ are the constant and activation energy for growth, while  $ k_d $ and  $ E_d $ are the constant and activation energy for death, respectively.",
+    "reason": "The paper explicitly calls E_d the activation energy for cell death, a constant parameter in the Arrhenius term."
+   }
+  },
+  "E_{g}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "$ k_g $ and  $ E_g $ are the constant and activation energy for growth, while  $ k_d $ and  $ E_d $ are the constant and activation energy for death, respectively.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly calls E_g the activation energy for growth, a constant parameter in the Arrhenius term.",
+   "llm": {
+    "symbol": "E_{g}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 182,
+    "quote": "$ k_g $ and  $ E_g $ are the constant and activation energy for growth, while  $ k_d $ and  $ E_d $ are the constant and activation energy for death, respectively.",
+    "reason": "The paper explicitly calls E_g the activation energy for growth, a constant parameter in the Arrhenius term."
+   }
+  },
+  "F": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Feed flow rate of substrate:  $ F $ (l/h)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "F is described as the feed flow rate, an operating condition that can be changed during a run; therefore it is a variable.",
+   "llm": {
+    "symbol": "F",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 124,
+    "quote": "Feed flow rate of substrate:  $ F $ (l/h)",
+    "reason": "F is described as the feed flow rate, an operating condition that can be changed during a run; therefore it is a variable."
+   }
+  },
+  "F_{a/b}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term,  $ F_{a/b} $.",
+   "page": 6,
+   "status": "accepted",
+   "reason": "F_{a/b} represents the acid/base addition flow rate, a manipulable operating quantity, thus a variable.",
+   "llm": {
+    "symbol": "F_{a/b}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 227,
+    "quote": "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term,  $ F_{a/b} $.",
+    "reason": "F_{a/b} represents the acid/base addition flow rate, a manipulable operating quantity, thus a variable."
+   }
+  },
+  "F_{c}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Cooling water flow rate:  $ F_c $ (l/h)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "F_c is the cooling water flow rate, an external control input that may vary between runs, so it is a variable.",
+   "llm": {
+    "symbol": "F_{c}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 155,
+    "quote": "Cooling water flow rate:  $ F_c $ (l/h)",
+    "reason": "F_c is the cooling water flow rate, an external control input that may vary between runs, so it is a variable."
+   }
+  },
+  "K": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Penicillin hydrolysis rate constant:  $ K $ (per h) | operation: 0.04",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table lists K as a kinetic parameter (rate constant) used in the model, not a manipulated operating variable.",
+   "llm": {
+    "symbol": "K",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 145,
+    "quote": "Penicillin hydrolysis rate constant:  $ K $ (per h) | operation: 0.04",
+    "reason": "The table lists K as a kinetic parameter (rate constant) used in the model, not a manipulated operating variable."
+   }
+  },
+  "K_{1}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant:  $ K_1 $ (mol/l) | operation: $ 10^{-10} $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Explicitly described as a constant in the parameter table, representing a saturation constant in the Monod‑type term.",
+   "llm": {
+    "symbol": "K_{1}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 130,
+    "quote": "Constant:  $ K_1 $ (mol/l) | operation: $ 10^{-10} $",
+    "reason": "Explicitly described as a constant in the parameter table, representing a saturation constant in the Monod‑type term."
+   }
+  },
+  "K_{2}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant:  $ K_2 $ (mol/l) | operation: $ 7 \\times 10^{-5} $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed as a constant in the kinetic parameters table, used as a saturation constant in the rate expression.",
+   "llm": {
+    "symbol": "K_{2}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 131,
+    "quote": "Constant:  $ K_2 $ (mol/l) | operation: $ 7 \\times 10^{-5} $",
+    "reason": "Listed as a constant in the kinetic parameters table, used as a saturation constant in the rate expression."
+   }
+  },
+  "K_{I}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears only in the denominator of an inhibition term (S^{2}/K_{I}); by convention such symbols are inhibition constants, which are fixed model parameters.",
+   "llm": {
+    "symbol": "K_{I}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears only in the denominator of an inhibition term (S^{2}/K_{I}); by convention such symbols are inhibition constants, which are fixed model parameters."
+   }
+  },
+  "K_{op}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Oxygen limitation constant:  $ K_{ox} $,  $ K_{op} $ (with limitation) | operation: $ 2 \\times 10^{-2} $,  $ 5 \\times 10^{-4} $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Provided in the table of kinetic/controller parameters as a constant governing oxygen limitation, not a manipulated variable.",
+   "llm": {
+    "symbol": "K_{op}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 140,
+    "quote": "Oxygen limitation constant:  $ K_{ox} $,  $ K_{op} $ (with limitation) | operation: $ 2 \\times 10^{-2} $,  $ 5 \\times 10^{-4} $",
+    "reason": "Provided in the table of kinetic/controller parameters as a constant governing oxygen limitation, not a manipulated variable."
+   }
+  },
+  "K_{ox}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Oxygen limitation constant:  $ K_{ox} $,  $ K_{op} $ (with limitation) | operation: $ 2 \\times 10^{-2} $,  $ 5 \\times 10^{-4} $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in the kinetic parameters table as a constant for oxygen limitation, thus a model parameter.",
+   "llm": {
+    "symbol": "K_{ox}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 140,
+    "quote": "Oxygen limitation constant:  $ K_{ox} $,  $ K_{op} $ (with limitation) | operation: $ 2 \\times 10^{-2} $,  $ 5 \\times 10^{-4} $",
+    "reason": "Listed in the kinetic parameters table as a constant for oxygen limitation, thus a model parameter."
+   }
+  },
+  "K_{p}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Inhibition constant:  $ K_p $ (g/l) | operation: 0.0002",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly lists K_p as an inhibition constant, which is a fixed kinetic parameter.",
+   "llm": {
+    "symbol": "K_{p}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 142,
+    "quote": "Inhibition constant:  $ K_p $ (g/l) | operation: 0.0002",
+    "reason": "The paper explicitly lists K_p as an inhibition constant, which is a fixed kinetic parameter."
+   }
+  },
+  "K_{x}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Contois saturation constant:  $ K_x $ (g/l) | operation: 0.15",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly identifies K_x as a Contois saturation constant, a constant kinetic parameter.",
+   "llm": {
+    "symbol": "K_{x}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 138,
+    "quote": "Contois saturation constant:  $ K_x $ (g/l) | operation: 0.15",
+    "reason": "The paper explicitly identifies K_x as a Contois saturation constant, a constant kinetic parameter."
+   }
+  },
+  "P_{w}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).",
+   "page": 6,
+   "status": "accepted",
+   "reason": "P_w is described as the agitation power input, which is an operating condition that can be set or varied during runs.",
+   "llm": {
+    "symbol": "P_{w}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 220,
+    "quote": "Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).",
+    "reason": "P_w is described as the agitation power input, which is an operating condition that can be set or varied during runs."
+   }
+  },
+  "R": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "R appears in Arrhenius terms (exp(-E/RT)) and follows the conventional use of the universal gas constant, a fixed physical constant.",
+   "llm": {
+    "symbol": "R",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "R appears in Arrhenius terms (exp(-E/RT)) and follows the conventional use of the universal gas constant, a fixed physical constant."
+   }
+  },
+  "T_{0}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+   "page": 6,
+   "status": "accepted",
+   "reason": "T_0 is defined as the freezing temperature of the medium, a constant property of the system.",
+   "llm": {
+    "symbol": "T_{0}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 233,
+    "quote": "where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+    "reason": "T_0 is defined as the freezing temperature of the medium, a constant property of the system."
+   }
+  },
+  "T_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Feed temperature of substrate:  $ T_f $ (K) | operation: 298",
+   "page": 4,
+   "status": "accepted",
+   "reason": "T_f is identified as the feed temperature, an operating condition that can vary between runs.",
+   "llm": {
+    "symbol": "T_{f}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 125,
+    "quote": "Feed temperature of substrate:  $ T_f $ (K) | operation: 298",
+    "reason": "T_f is identified as the feed temperature, an operating condition that can vary between runs."
+   }
+  },
+  "T_{v}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The paper explicitly defines T_v as a physical property of the medium (boiling temperature) that does not change during a simulation run.",
+   "llm": {
+    "symbol": "T_{v}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 233,
+    "quote": "where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+    "reason": "The paper explicitly defines T_v as a physical property of the medium (boiling temperature) that does not change during a simulation run."
+   }
+  },
+  "Y_{p/o}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Yield constant:  $ Y_{p/o} $ (g penicillin/g oxygen) | operation: 0.20",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in the table of kinetic and controller parameters as a fixed yield coefficient for the nominal operation.",
+   "llm": {
+    "symbol": "Y_{p/o}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 129,
+    "quote": "Yield constant:  $ Y_{p/o} $ (g penicillin/g oxygen) | operation: 0.20",
+    "reason": "Listed in the table of kinetic and controller parameters as a fixed yield coefficient for the nominal operation."
+   }
+  },
+  "Y_{p/s}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Yield constant:  $ Y_{p/s} $ (g penicillin/g glucose) | operation: 0.90",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Provided in the same parameter table as a constant yield coefficient.",
+   "llm": {
+    "symbol": "Y_{p/s}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 128,
+    "quote": "Yield constant:  $ Y_{p/s} $ (g penicillin/g glucose) | operation: 0.90",
+    "reason": "Provided in the same parameter table as a constant yield coefficient."
+   }
+  },
+  "Y_{x/o}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Yield constant:  $ Y_{x/o} $ (g biomass/g oxygen) | operation: 0.04",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Defined in the kinetic parameters table as a fixed yield coefficient.",
+   "llm": {
+    "symbol": "Y_{x/o}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 127,
+    "quote": "Yield constant:  $ Y_{x/o} $ (g biomass/g oxygen) | operation: 0.04",
+    "reason": "Defined in the kinetic parameters table as a fixed yield coefficient."
+   }
+  },
+  "Y_{x/s}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Yield constant:  $ Y_{x/s} $ (g biomass/g glucose) | operation: 0.45",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Appears in the parameter table as a constant yield coefficient.",
+   "llm": {
+    "symbol": "Y_{x/s}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 126,
+    "quote": "Yield constant:  $ Y_{x/s} $ (g biomass/g glucose) | operation: 0.45",
+    "reason": "Appears in the parameter table as a constant yield coefficient."
+   }
+  },
+  "[H^+]": {
+   "class": "variable",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Hydrogen ion concentration is used in an inhibition term of the specific growth rate and represents the pH of the broth, which can vary over time during a run; therefore it is a state variable rather than a fixed parameter.",
+   "llm": {
+    "symbol": "[H^+]",
+    "class": "variable",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Hydrogen ion concentration is used in an inhibition term of the specific growth rate and represents the pH of the broth, which can vary over time during a run; therefore it is a state variable rather than a fixed parameter."
+   }
+  },
+  "\\alpha": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constants in $ K_{la} $: $ \\alpha $, $ \\beta $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table lists α as a kinetic/controller parameter for nominal operation, indicating it is a fixed constant in the model.",
+   "llm": {
+    "symbol": "α",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 157,
+    "quote": "Constants in $ K_{la} $: $ \\alpha $, $ \\beta $",
+    "reason": "The table lists α as a kinetic/controller parameter for nominal operation, indicating it is a fixed constant in the model."
+   }
+  },
+  "\\alpha_{1}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant relating $ CO_2 $ to growth: $ \\alpha_1 $ (mmol $ CO_2/g $ biomass)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table explicitly identifies α₁ as a kinetic parameter, a constant used in the CO₂ balance.",
+   "llm": {
+    "symbol": "α_{1}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 134,
+    "quote": "Constant relating $ CO_2 $ to growth: $ \\alpha_1 $ (mmol $ CO_2/g $ biomass)",
+    "reason": "The table explicitly identifies α₁ as a kinetic parameter, a constant used in the CO₂ balance."
+   }
+  },
+  "\\alpha_{2}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant relating $ CO_2 $ to maintenance energy: $ \\alpha_2 $ (mmol $ CO_2/g $ biomass h)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in the parameter table as a kinetic/controller constant, thus a fixed model parameter.",
+   "llm": {
+    "symbol": "α_{2}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 135,
+    "quote": "Constant relating $ CO_2 $ to maintenance energy: $ \\alpha_2 $ (mmol $ CO_2/g $ biomass h)",
+    "reason": "Listed in the parameter table as a kinetic/controller constant, thus a fixed model parameter."
+   }
+  },
+  "\\alpha_{3}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant relating $ CO_2 $ to penicillin production $ \\alpha_3 $ (mmol $ CO_2/l $ h)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Provided in the parameter table as a constant for the CO₂ equation, so it is a model parameter.",
+   "llm": {
+    "symbol": "α_{3}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 136,
+    "quote": "Constant relating $ CO_2 $ to penicillin production $ \\alpha_3 $ (mmol $ CO_2/l $ h)",
+    "reason": "Provided in the parameter table as a constant for the CO₂ equation, so it is a model parameter."
+   }
+  },
+  "\\beta": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constants in $ K_{la} $: $ \\alpha $, $ \\beta $",
+   "page": 4,
+   "status": "accepted",
+   "reason": "β appears in the table of kinetic/controller parameters, indicating it is a fixed constant in the model.",
+   "llm": {
+    "symbol": "β",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 157,
+    "quote": "Constants in $ K_{la} $: $ \\alpha $, $ \\beta $",
+    "reason": "β appears in the table of kinetic/controller parameters, indicating it is a fixed constant in the model."
+   }
+  },
+  "\\lambda": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant in $ F_{loss} $: $ \\lambda $ (per h)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table lists λ as a kinetic parameter, a constant used in the evaporation loss term.",
+   "llm": {
+    "symbol": "λ",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 158,
+    "quote": "Constant in $ F_{loss} $: $ \\lambda $ (per h)",
+    "reason": "The table lists λ as a kinetic parameter, a constant used in the evaporation loss term."
+   }
+  },
+  "\\mu_{p}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Specific rate of penicillin production:  $ \\mu_p $ (per h) | operation: 0.005",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a kinetic parameter for nominal operation.",
+   "llm": {
+    "symbol": "μ_p",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 141,
+    "quote": "Specific rate of penicillin production:  $ \\mu_p $ (per h) | operation: 0.005",
+    "reason": "Listed in Table 2 as a kinetic parameter for nominal operation."
+   }
+  },
+  "\\mu_{x}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Maximum specific growth rate:  $ \\mu_x $ (per h) | operation: 0.092",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a kinetic parameter for nominal operation.",
+   "llm": {
+    "symbol": "μ_x",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 137,
+    "quote": "Maximum specific growth rate:  $ \\mu_x $ (per h) | operation: 0.092",
+    "reason": "Listed in Table 2 as a kinetic parameter for nominal operation."
+   }
+  },
+  "\\rho": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Density  $ \\times $ heat capacity of medium:  $ \\rho $ ( $ C_p $) (per l °C) | operation: 1/1500",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a physical property parameter.",
+   "llm": {
+    "symbol": "ρ",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 150,
+    "quote": "Density  $ \\times $ heat capacity of medium:  $ \\rho $ ( $ C_p $) (per l °C) | operation: 1/1500",
+    "reason": "Listed in Table 2 as a physical property parameter."
+   }
+  },
+  "\\rho_{c}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Density  $ \\times $ heat capacity of cooling liquid:  $ \\rho_c $ ( $ C_{pc} $) (per °C) | operation: 1/2000",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a physical property parameter for the cooling liquid.",
+   "llm": {
+    "symbol": "ρ_c",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 151,
+    "quote": "Density  $ \\times $ heat capacity of cooling liquid:  $ \\rho_c $ ( $ C_{pc} $) (per °C) | operation: 1/2000",
+    "reason": "Listed in Table 2 as a physical property parameter for the cooling liquid."
+   }
+  },
+  "a": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Heat transfer coefficient of cooling/heating liquid:  $ a $ (cal/h °C) | operation: 1000",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a heat‑transfer coefficient parameter.",
+   "llm": {
+    "symbol": "a",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 154,
+    "quote": "Heat transfer coefficient of cooling/heating liquid:  $ a $ (cal/h °C) | operation: 1000",
+    "reason": "Listed in Table 2 as a heat‑transfer coefficient parameter."
+   }
+  },
+  "b": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant:  $ b $ | operation: 0.60",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Listed in Table 2 as a constant used in the heat‑transfer term.",
+   "llm": {
+    "symbol": "b",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 156,
+    "quote": "Constant:  $ b $ | operation: 0.60",
+    "reason": "Listed in Table 2 as a constant used in the heat‑transfer term."
+   }
+  },
+  "c_{pc}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "c_{pc} is the specific heat capacity of the coolant (or similar physical property). Such heat capacities are model constants, not computed during the simulation, and are conventionally treated as parameters.",
+   "llm": {
+    "symbol": "c_{pc}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "c_{pc} is the specific heat capacity of the coolant (or similar physical property). Such heat capacities are model constants, not computed during the simulation, and are conventionally treated as parameters."
+   }
+  },
+  "c_{p}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "c_{p} denotes a specific heat capacity (likely of the process fluid). Heat capacities are fixed physical properties used in energy balances and are therefore parameters.",
+   "llm": {
+    "symbol": "c_{p}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "c_{p} denotes a specific heat capacity (likely of the process fluid). Heat capacities are fixed physical properties used in energy balances and are therefore parameters."
+   }
+  },
+  "f_{g}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Here we have assumed K_{la} to be a function of agitation power input P_{w} and flow rate of oxygen f_{g} as suggested by Bailey and Ollis (1986).",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The snippet explicitly describes f_{g} as the flow rate of oxygen, an operating condition that can be changed between runs, thus it is a variable.",
+   "llm": {
+    "symbol": "f_{g}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 220,
+    "quote": "Here we have assumed K_{la} to be a function of agitation power input P_{w} and flow rate of oxygen f_{g} as suggested by Bailey and Ollis (1986).",
+    "reason": "The snippet explicitly describes f_{g} as the flow rate of oxygen, an operating condition that can be changed between runs, thus it is a variable."
+   }
+  },
+  "k_{d}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "k_g and E_g are the constant and activation energy for growth, while k_d and E_d are the constant and activation energy for death, respectively.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The text calls k_d a constant (Arrhenius constant) for cell death, which is a fixed model parameter.",
+   "llm": {
+    "symbol": "k_{d}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 182,
+    "quote": "k_g and E_g are the constant and activation energy for growth, while k_d and E_d are the constant and activation energy for death, respectively.",
+    "reason": "The text calls k_d a constant (Arrhenius constant) for cell death, which is a fixed model parameter."
+   }
+  },
+  "k_{g}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "k_g and E_g are the constant and activation energy for growth, while k_d and E_d are the constant and activation energy for death, respectively.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "k_g is identified as a constant (Arrhenius constant) for growth, making it a model parameter.",
+   "llm": {
+    "symbol": "k_{g}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 182,
+    "quote": "k_g and E_g are the constant and activation energy for growth, while k_d and E_d are the constant and activation energy for death, respectively.",
+    "reason": "k_g is identified as a constant (Arrhenius constant) for growth, making it a model parameter."
+   }
+  },
+  "m_{o}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Maintenance coefficient on oxygen: m_o (per h) | operation: 0.467",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table lists m_o as a maintenance coefficient, a fixed kinetic parameter used in the oxygen balance, thus it is a parameter.",
+   "llm": {
+    "symbol": "m_{o}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 133,
+    "quote": "Maintenance coefficient on oxygen: m_o (per h) | operation: 0.467",
+    "reason": "The table lists m_o as a maintenance coefficient, a fixed kinetic parameter used in the oxygen balance, thus it is a parameter."
+   }
+  },
+  "m_{x}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Maintenance coefficient on substrate:  $ m_x $ (per h) | operation: 0.014",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table explicitly lists m_x as a maintenance coefficient, a constant kinetic parameter used in the model.",
+   "llm": {
+    "symbol": "m_{x}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 132,
+    "quote": "Maintenance coefficient on substrate:  $ m_x $ (per h) | operation: 0.014",
+    "reason": "The table explicitly lists m_x as a maintenance coefficient, a constant kinetic parameter used in the model."
+   }
+  },
+  "p": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Constant:  $ p $ | operation: 3",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The table identifies p as a constant value, indicating it is a fixed model parameter.",
+   "llm": {
+    "symbol": "p",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 144,
+    "quote": "Constant:  $ p $ | operation: 3",
+    "reason": "The table identifies p as a constant value, indicating it is a fixed model parameter."
+   }
+  },
+  "r_{q_1}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "where  $ r_{q_1} $ is assumed to be constant and might be treated as a yield coefficient (Nielsen & Villadsen, 1994).",
+   "page": 7,
+   "status": "accepted",
+   "reason": "The text explicitly states r_{q_1} is assumed constant, making it a parameter.",
+   "llm": {
+    "symbol": "r_{q_1}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 243,
+    "quote": "where  $ r_{q_1} $ is assumed to be constant and might be treated as a yield coefficient (Nielsen & Villadsen, 1994).",
+    "reason": "The text explicitly states r_{q_1} is assumed constant, making it a parameter."
+   }
+  },
+  "r_{q_2}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Based on this observation,  $ r_{q_2} $ is calculated and tabulated in Table 2.",
+   "page": 7,
+   "status": "accepted",
+   "reason": "r_{q_2} is given as a calculated constant listed in the parameter table, thus a model parameter.",
+   "llm": {
+    "symbol": "r_{q_2}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 247,
+    "quote": "Based on this observation,  $ r_{q_2} $ is calculated and tabulated in Table 2.",
+    "reason": "r_{q_2} is given as a calculated constant listed in the parameter table, thus a model parameter."
+   }
+  },
+  "s_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Feed substrate concentration:  $ s_f $ (g/l) | operation: 600",
+   "page": 4,
+   "status": "accepted",
+   "reason": "s_f is described as the feed substrate concentration, an operating condition that can vary between runs, so it is a variable.",
+   "llm": {
+    "symbol": "s_{f}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 123,
+    "quote": "Feed substrate concentration:  $ s_f $ (g/l) | operation: 600",
+    "reason": "s_f is described as the feed substrate concentration, an operating condition that can vary between runs, so it is a variable."
+   }
+  }
+ }
+}

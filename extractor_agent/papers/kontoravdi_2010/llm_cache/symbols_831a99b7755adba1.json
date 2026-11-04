@@ -1,0 +1,60 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.296508751,
+  "prompt_tokens": 1021,
+  "prompt_time": 0.054334248,
+  "completion_tokens": 714,
+  "completion_time": 1.5175351400000001,
+  "total_tokens": 1735,
+  "total_time": 1.571869388,
+  "completion_tokens_details": {
+   "reasoning_tokens": 385
+  }
+ },
+ "user": "Equations:\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]      <- \"Finally, the rate of MAb production is\"\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}      <- \"Finally, the rate of MAb production is\"\n\nSymbols:\n\nQ_{MAb}   [COMPUTED by eq 28]\n  (no snippet mentions this symbol)\n\n\\varepsilon_{2}   [NOT COMPUTED]\n  [73] (line, p.2) $ \\varepsilon_{2} $ Golgi apparatus glycosylation efficiency factor (dimensionless)\n  [195] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_2 $ | Batch operation value: 1 | Fed-batch operation value: 1\n\n\\lambda   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "Q_{MAb}",
+    "description": "MAb production rate per cell (specific productivity)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\varepsilon_{2}",
+    "description": "Golgi apparatus glycosylation efficiency factor",
+    "description_basis": "stated",
+    "snippet_id": 73,
+    "quote": "Golgi apparatus glycosylation efficiency factor (dimensionless)",
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": "1",
+    "class_reason": "efficiency factor parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\lambda",
+    "description": "Proportionality factor linking substrate concentration to MAb production rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "model parameter",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

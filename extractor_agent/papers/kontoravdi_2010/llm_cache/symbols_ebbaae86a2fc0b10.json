@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.023613235,
+  "prompt_tokens": 1680,
+  "prompt_time": 0.085190848,
+  "completion_tokens": 1382,
+  "completion_time": 2.90500791,
+  "total_tokens": 3062,
+  "total_time": 2.990198758,
+  "completion_tokens_details": {
+   "reasoning_tokens": 120
+  }
+ },
+ "user": "Equations:\n(21) R_{H}=\\frac{2}{3}K_{A}[H]^{2}\n(22) R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]\n(23) \\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]\n(24) \\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}\n(26) \\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}\n\nSymbols:\n\nK_{A}   [NOT COMPUTED]\n  [168] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $\n  [50] (line, p.2) K $ _{A} $ assembly rate constant (cell/molecule/h)\n\n[H_2]   [COMPUTED by eq 23]\n  (no snippet mentions this symbol)\n\n[H_2L]   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n[|H_2L]   [COMPUTED by eq 24]\n  (no snippet mentions this symbol)\n\n[H_2L_2]_{ER}   [COMPUTED by eq 25]\n  (no snippet mentions this symbol)\n\nK_{ER}   [NOT COMPUTED]\n  [171] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{ER} (h^{-1}) $ | Batch operation value: $ 6.9 \\times 10^{-1} $ | Fed-batch operation value: $ 6.9 \\times 10^{-1} $\n  [53] (line, p.2) K $ _{ER} $ rate constant for ER-to-Golgi transport (h $ ^{-1} $)\n\n[H_2L_2]_{G}   [COMPUTED by eq 26]\n  (no snippet mentions this symbol)\n\n\\varepsilon_{1}   [NOT COMPUTED]\n  [72] (line, p.2) $ \\varepsilon_{1} $ ER glycosylation efficiency factor (dimensionless)\n  [194] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_1 $ | Batch operation value: $ 9.9 \\times 10^{-1} $ | Fed-batch operation value: $ 9.95 \\times 10^{-1} $\n\nK_{G}   [NOT COMPUTED]\n  [172] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_G (h^{-1}) $ | Batch operation value: $ 1.4 \\times 10^{-1} $ | Fed-batch operation value: $ 1.4 \\times 10^{-1} $\n  [54] (line, p.2) K $ _{G} $ rate constants for Golgi-to-medium antibody transport (h $ ^{-1} $)\n\n[MAb]   [COMPUTED by eq 27]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{A}",
+    "description": "assembly rate constant for the formation of H from monomers",
+    "description_basis": "stated",
+    "snippet_id": 50,
+    "quote": "K _{A} assembly rate constant (cell/molecule/h)",
+    "unit": "cell/molecule-L",
+    "unit_basis": "stated",
+    "value": "10^{-6} (batch), 10^{-6} (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed in the parameter table as a constant rate constant"
+   },
+   {
+    "symbol": "[H_2]",
+    "description": "concentration of the dimeric intermediate H₂",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 23)"
+   },
+   {
+    "symbol": "[H_2L]",
+    "description": "concentration of the complex formed by H₂ and ligand L",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "parameter",
+    "class_basis": "inferred",
+    "class_reason": "species concentration treated as a model constant (not computed directly)"
+   },
+   {
+    "symbol": "[|H_2L]",
+    "description": "concentration of the intermediate complex |H₂L produced in reaction (24)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 24)"
+   },
+   {
+    "symbol": "[H_2L_2]_{ER}",
+    "description": "concentration of the ER‑localized H₂L₂ complex",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 25)"
+   },
+   {
+    "symbol": "K_{ER}",
+    "description": "rate constant for ER‑to‑Golgi transport",
+    "description_basis": "stated",
+    "snippet_id": 53,
+    "quote": "K _{ER} rate constant for ER-to-Golgi transport (h ^{-1})",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "6.9 \\times 10^{-1} (batch), 6.9 \\times 10^{-1} (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed as a constant kinetic parameter in the paper"
+   },
+   {
+    "symbol": "[H_2L_2]_{G}",
+    "description": "concentration of the Golgi‑localized H₂L₂ complex",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 26)"
+   },
+   {
+    "symbol": "\\varepsilon_{1}",
+    "description": "ER glycosylation efficiency factor",
+    "description_basis": "stated",
+    "snippet_id": 72,
+    "quote": "\\varepsilon_{1} ER glycosylation efficiency factor (dimensionless)",
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": "9.9 \\times 10^{-1} (batch), 9.95 \\times 10^{-1} (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "provided as a dimensionless constant in the parameter table"
+   },
+   {
+    "symbol": "K_{G}",
+    "description": "rate constant for Golgi‑to‑medium antibody transport",
+    "description_basis": "stated",
+    "snippet_id": 54,
+    "quote": "K _{G} rate constants for Golgi-to-medium antibody transport (h ^{-1})",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "1.4 \\times 10^{-1} (batch), 1.4 \\times 10^{-1} (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "listed as a constant kinetic parameter in the paper"
+   },
+   {
+    "symbol": "[MAb]",
+    "description": "concentration of monoclonal antibody in the reactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 27)"
+   }
+  ]
+ }
+}

@@ -1,0 +1,431 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "2": {
+   "form": "algebraic",
+   "computes": "T_{s_{out}}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "The feed-effluent heat-exchanger relation computes the shell-side outlet temperature from the tube-side inlet and shell-side inlet temperatures.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "The exchanger streams remain gaseous, with no condensation.",
+     "quote": "All the fluids in the heat exchanger remain in the gaseous phase and as such no condensation is considered for modelling.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Hot gas flows through the tube side and cold gas through the shell side, with a combination of counter-current and cross flow.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": true,
+     "reasoned": true
+    },
+    {
+     "text": "Temperature varies axially but is assumed not to vary radially.",
+     "quote": "The temperature of the gases changes in the axial direction of flow and does not change in its radial direction.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Axial heat conduction is neglected.",
+     "quote": "Heat of conduction in the axial direction is also negligible.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Thermal properties of the gases and exchanger wall are taken as constant.",
+     "quote": "All thermal properties of the gases and the exchanger wall are constant.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Chemical reaction and mass transfer in the exchanger are neglected.",
+     "quote": "Chemical reaction and mass transfer do not take place.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The effectiveness is held constant and independent of inlet-temperature changes.",
+     "quote": "The ε is constant, independent of change in inlet temperature",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: The exchanger streams remain gaseous, with no condensation.",
+    "assumption quote not found: Hot gas flows through the tube side and cold gas through the shell side, with a combination of counter-current and cross flow."
+   ],
+   "llm": {
+    "eq": "2",
+    "description": "The feed-effluent heat-exchanger relation computes the shell-side outlet temperature from the tube-side inlet and shell-side inlet temperatures.",
+    "description_basis": "stated",
+    "quote": "the feed-effluent heat exchanger is modelled by an ε-NTU model using the effectiveness ε",
+    "assumptions": [
+     {
+      "text": "The exchanger streams remain gaseous, with no condensation.",
+      "quote": "All the fluids in the heat exchanger remain in the gaseous phase and as such no condensation is considered for modelling.",
+      "process_condition": true
+     },
+     {
+      "text": "Hot gas flows through the tube side and cold gas through the shell side, with a combination of counter-current and cross flow.",
+      "quote": "Hot gas flows through tube side and cold gas flows through shell side of the heat exchangers. The heat exchange between tube and shell side gas takes place using a combination of counter current and cross flow.",
+      "process_condition": true
+     },
+     {
+      "text": "Temperature varies axially but is assumed not to vary radially.",
+      "quote": "The temperature of the gases changes in the axial direction of flow and does not change in its radial direction.",
+      "process_condition": false
+     },
+     {
+      "text": "Axial heat conduction is neglected.",
+      "quote": "Heat of conduction in the axial direction is also negligible.",
+      "process_condition": false
+     },
+     {
+      "text": "Thermal properties of the gases and exchanger wall are taken as constant.",
+      "quote": "All thermal properties of the gases and the exchanger wall are constant.",
+      "process_condition": false
+     },
+     {
+      "text": "Chemical reaction and mass transfer in the exchanger are neglected.",
+      "quote": "Chemical reaction and mass transfer do not take place.",
+      "process_condition": false
+     },
+     {
+      "text": "The effectiveness is held constant and independent of inlet-temperature changes.",
+      "quote": "The ε is constant, independent of change in inlet temperature",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "ODE",
+   "computes": "X_{r,b}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "The catalyst-bed material balance computes each reactant’s fractional conversion along bed volume from its stoichiometric ammonia reaction rate and inlet molar flow.",
+   "description_basis": "stated",
+   "quote": "We have considered the conversion differential equation for both reactants",
+   "assumptions": [
+    {
+     "text": "The catalyst bed is radial-flow.",
+     "quote": "We consider a radial flow catalyst bed",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Catalyst particles are 1.5 to 3 mm in size.",
+     "quote": "For fine catalyst particles of size 1.5 to 3 mm",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The rate is used without correction factors such as an effectiveness factor.",
+     "quote": "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Mass and heat transport between the flowing gas and catalyst is represented using only convective driving forces.",
+     "quote": "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The catalyst bed is radial-flow.",
+    "blocking assumption: Catalyst particles are 1.5 to 3 mm in size."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "The catalyst-bed material balance computes each reactant’s fractional conversion along bed volume from its stoichiometric ammonia reaction rate and inlet molar flow.",
+    "description_basis": "stated",
+    "quote": "We have considered the conversion differential equation for both reactants",
+    "assumptions": [
+     {
+      "text": "The catalyst bed is radial-flow.",
+      "quote": "We consider a radial flow catalyst bed",
+      "process_condition": true
+     },
+     {
+      "text": "Catalyst particles are 1.5 to 3 mm in size.",
+      "quote": "For fine catalyst particles of size 1.5 to 3 mm",
+      "process_condition": true
+     },
+     {
+      "text": "The rate is used without correction factors such as an effectiveness factor.",
+      "quote": "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor",
+      "process_condition": false
+     },
+     {
+      "text": "Mass and heat transport between the flowing gas and catalyst is represented using only convective driving forces.",
+      "quote": "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "ODE",
+   "computes": "T_{b}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "The catalyst-bed energy balance computes the reacting-mixture temperature change along bed volume from reaction heat and the heat-capacity flow.",
+   "description_basis": "stated",
+   "quote": "steady state material and energy balance for the fine catalyst particles in catalyst beds",
+   "assumptions": [
+    {
+     "text": "The catalyst bed is radial-flow.",
+     "quote": "We consider a radial flow catalyst bed",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Catalyst particles are 1.5 to 3 mm in size.",
+     "quote": "For fine catalyst particles of size 1.5 to 3 mm",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The heat balance uses no correction factor such as an effectiveness factor.",
+     "quote": "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Heat transport between the flowing gas and catalyst is represented using only convective driving forces.",
+     "quote": "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "A high-thermal-conductivity magnetite catalyst is assumed.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": true,
+     "reasoned": true
+    },
+    {
+     "text": "Heat-transfer resistance between the catalyst pellet and gas is neglected.",
+     "quote": "heat transfer resistance between pellet and gas is also neglected",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The denominator combines mass flow in kg h⁻¹ with specific heat capacity listed in kJ kmol⁻¹ K⁻¹, so the units do not form the stated energy balance.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: The catalyst bed is radial-flow.",
+    "blocking assumption: Catalyst particles are 1.5 to 3 mm in size.",
+    "assumption quote not found: A high-thermal-conductivity magnetite catalyst is assumed.",
+    "possible misprint: The denominator combines mass flow in kg h⁻¹ with specific heat capacity listed in kJ kmol⁻¹ K⁻¹, so the units do not form the stated energy balance."
+   ],
+   "llm": {
+    "eq": "4",
+    "description": "The catalyst-bed energy balance computes the reacting-mixture temperature change along bed volume from reaction heat and the heat-capacity flow.",
+    "description_basis": "stated",
+    "quote": "steady state material and energy balance for the fine catalyst particles in catalyst beds",
+    "assumptions": [
+     {
+      "text": "The catalyst bed is radial-flow.",
+      "quote": "We consider a radial flow catalyst bed",
+      "process_condition": true
+     },
+     {
+      "text": "Catalyst particles are 1.5 to 3 mm in size.",
+      "quote": "For fine catalyst particles of size 1.5 to 3 mm",
+      "process_condition": true
+     },
+     {
+      "text": "The heat balance uses no correction factor such as an effectiveness factor.",
+      "quote": "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor",
+      "process_condition": false
+     },
+     {
+      "text": "Heat transport between the flowing gas and catalyst is represented using only convective driving forces.",
+      "quote": "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst",
+      "process_condition": false
+     },
+     {
+      "text": "A high-thermal-conductivity magnetite catalyst is assumed.",
+      "quote": "as high thermal conductivity magnetite Fe3O4 catalyst is assumed",
+      "process_condition": true
+     },
+     {
+      "text": "Heat-transfer resistance between the catalyst pellet and gas is neglected.",
+      "quote": "heat transfer resistance between pellet and gas is also neglected",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The denominator combines mass flow in kg h⁻¹ with specific heat capacity listed in kJ kmol⁻¹ K⁻¹, so the units do not form the stated energy balance."
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "R_{NH_3}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "A modified Temkin rate law computes the ammonia synthesis rate from nitrogen, hydrogen and ammonia activities and the reaction constants.",
+   "description_basis": "stated",
+   "quote": "The rate of reaction is calculated by a modified form of the Temkin equation",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "a_{N_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "a_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "a_{NH_3}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{2}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "5",
+    "description": "A modified Temkin rate law computes the ammonia synthesis rate from nitrogen, hydrogen and ammonia activities and the reaction constants.",
+    "description_basis": "stated",
+    "quote": "The rate of reaction is calculated by a modified form of the Temkin equation",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "a_{N_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "a_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "a_{NH_3}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{2}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "X_{r,m_{out}}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "The mixer material balance computes reactant conversion after combining the catalyst-bed effluent and quench streams.",
+   "description_basis": "stated",
+   "quote": "for calculating the reactant conversion and temperature after quenching",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The numerator multiplies inlet flow rates by the product of all bed-out conversions; with per-bed fractional conversions, each inlet flow should instead be paired with its corresponding bed conversion.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The numerator multiplies inlet flow rates by the product of all bed-out conversions; with per-bed fractional conversions, each inlet flow should instead be paired with its corresponding bed conversion."
+   ],
+   "llm": {
+    "eq": "6",
+    "description": "The mixer material balance computes reactant conversion after combining the catalyst-bed effluent and quench streams.",
+    "description_basis": "stated",
+    "quote": "for calculating the reactant conversion and temperature after quenching",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The numerator multiplies inlet flow rates by the product of all bed-out conversions; with per-bed fractional conversions, each inlet flow should instead be paired with its corresponding bed conversion."
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": "T_{m_{out}}",
+   "condition": null,
+   "value": null,
+   "section": "2.1 Subsystems models",
+   "description": "The mixer energy balance computes the mixed-stream outlet temperature after the catalyst-bed effluent and quench streams are combined.",
+   "description_basis": "stated",
+   "quote": "for calculating the reactant conversion and temperature after quenching",
+   "assumptions": [
+    {
+     "text": "Heat of mixing is neglected because the components are assumed not to interact strongly.",
+     "quote": "The heat of mixing is neglected, as components do not interact strongly with each other.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The equation combines mass flow rates in kg h⁻¹ with specific heat capacities listed in kJ kmol⁻¹ K⁻¹, so the units do not form a consistent energy balance.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The equation combines mass flow rates in kg h⁻¹ with specific heat capacities listed in kJ kmol⁻¹ K⁻¹, so the units do not form a consistent energy balance."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "The mixer energy balance computes the mixed-stream outlet temperature after the catalyst-bed effluent and quench streams are combined.",
+    "description_basis": "stated",
+    "quote": "for calculating the reactant conversion and temperature after quenching",
+    "assumptions": [
+     {
+      "text": "Heat of mixing is neglected because the components are assumed not to interact strongly.",
+      "quote": "The heat of mixing is neglected, as components do not interact strongly with each other.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The equation combines mass flow rates in kg h⁻¹ with specific heat capacities listed in kJ kmol⁻¹ K⁻¹, so the units do not form a consistent energy balance."
+   }
+  }
+ }
+}

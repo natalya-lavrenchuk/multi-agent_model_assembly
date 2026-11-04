@@ -1,0 +1,1936 @@
+@prefix kg: <http://example.org/kg/kontoravdi_2005/> .
+@prefix kg1: <http://example.org/kg/anane_2017/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg1:sup a mkg:Sup ;
+    rdfs:label "Anane et al. (2017) E. coli overflow metabolism by acetate cycling, fed-batch model" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/sup/meta> ;
+    mkg:includes <http://example.org/kg/anane_2017/law/eq12>,
+        <http://example.org/kg/anane_2017/law/eq13>,
+        <http://example.org/kg/anane_2017/law/eq14>,
+        <http://example.org/kg/anane_2017/law/eq15>,
+        <http://example.org/kg/anane_2017/law/eq16>,
+        <http://example.org/kg/anane_2017/law/eq17>,
+        <http://example.org/kg/anane_2017/law/eq18>,
+        <http://example.org/kg/anane_2017/law/eq19>,
+        <http://example.org/kg/anane_2017/law/eq20>,
+        <http://example.org/kg/anane_2017/law/eq21>,
+        <http://example.org/kg/anane_2017/law/eq22>,
+        <http://example.org/kg/anane_2017/law/eq23>,
+        <http://example.org/kg/anane_2017/law/eq24> .
+
+kg:sup a mkg:Sup ;
+    rdfs:label "Kontoravdi et al. (2005) CHO growth and mAb model" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/sup/meta> ;
+    mkg:includes <http://example.org/kg/kontoravdi_2005/law/eq1>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10>,
+        <http://example.org/kg/kontoravdi_2005/law/eq11>,
+        <http://example.org/kg/kontoravdi_2005/law/eq12>,
+        <http://example.org/kg/kontoravdi_2005/law/eq13>,
+        <http://example.org/kg/kontoravdi_2005/law/eq14>,
+        <http://example.org/kg/kontoravdi_2005/law/eq15>,
+        <http://example.org/kg/kontoravdi_2005/law/eq16>,
+        <http://example.org/kg/kontoravdi_2005/law/eq17>,
+        <http://example.org/kg/kontoravdi_2005/law/eq18>,
+        <http://example.org/kg/kontoravdi_2005/law/eq19>,
+        <http://example.org/kg/kontoravdi_2005/law/eq2>,
+        <http://example.org/kg/kontoravdi_2005/law/eq20>,
+        <http://example.org/kg/kontoravdi_2005/law/eq21>,
+        <http://example.org/kg/kontoravdi_2005/law/eq22>,
+        <http://example.org/kg/kontoravdi_2005/law/eq23>,
+        <http://example.org/kg/kontoravdi_2005/law/eq24>,
+        <http://example.org/kg/kontoravdi_2005/law/eq25>,
+        <http://example.org/kg/kontoravdi_2005/law/eq26>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27>,
+        <http://example.org/kg/kontoravdi_2005/law/eq28>,
+        <http://example.org/kg/kontoravdi_2005/law/eq3>,
+        <http://example.org/kg/kontoravdi_2005/law/eq4>,
+        <http://example.org/kg/kontoravdi_2005/law/eq5>,
+        <http://example.org/kg/kontoravdi_2005/law/eq6>,
+        <http://example.org/kg/kontoravdi_2005/law/eq7>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8>,
+        <http://example.org/kg/kontoravdi_2005/law/eq9> .
+
+<http://example.org/kg/anane_2017/law/eq12> a mkg:Law ;
+    rdfs:label "eq 12" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq12/var/X> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq12/meta> ;
+    mkg:latex "\\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq12/var/F>,
+        <http://example.org/kg/anane_2017/law/eq12/var/V>,
+        <http://example.org/kg/anane_2017/law/eq12/var/mu> .
+
+<http://example.org/kg/anane_2017/law/eq12/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq12/var/F> a mkg:Variable ;
+    rdfs:label "F (eq 12)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "the feed F (which can be constant or a function of time)" ;
+    mkg:reason "Feed flow rate is supplied or manipulated during the run." ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" .
+
+<http://example.org/kg/anane_2017/law/eq12/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 12)" ;
+    mkg:basis "stated" ;
+    mkg:page "3" ;
+    mkg:quote "Using the biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as" ;
+    mkg:reason "V is the reactor broth volume, which changes during a run and is supplied/updated externally." ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/anane_2017/law/eq12/var/X> a mkg:Variable ;
+    rdfs:label "X (eq 12)" ;
+    mkg:symbol "X" .
+
+<http://example.org/kg/anane_2017/law/eq12/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 12)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/anane_2017/law/eq13> a mkg:Law ;
+    rdfs:label "eq 13" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq13/var/mu> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq13/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq13/par/Y_em>,
+        <http://example.org/kg/anane_2017/law/eq13/par/Y_xa>,
+        <http://example.org/kg/anane_2017/law/eq13/par/Y_xsof>,
+        <http://example.org/kg/anane_2017/law/eq13/par/q_m> ;
+    mkg:latex "\\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq13/var/q_sA>,
+        <http://example.org/kg/anane_2017/law/eq13/var/q_sof>,
+        <http://example.org/kg/anane_2017/law/eq13/var/q_sox> .
+
+<http://example.org/kg/anane_2017/law/eq13/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "\\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq13/par/Y_em> a mkg:Parameter ;
+    rdfs:label "Y_{em} (eq 13)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ Y_{{em}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.50 | Estimate: 0.5333" ;
+    mkg:reason "Y_em is listed in the parameter table with an estimate, so it is an estimable parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{em}" .
+
+<http://example.org/kg/anane_2017/law/eq13/par/Y_xa> a mkg:Parameter ;
+    rdfs:label "Y_{xa} (eq 13)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "The table explicitly lists Y_{xa} as a parameter with an estimated value, indicating it is fitted to data. [quote not found in the paper]" ;
+    mkg:status "pending" ;
+    mkg:symbol "Y_{xa}" .
+
+<http://example.org/kg/anane_2017/law/eq13/par/Y_xsof> a mkg:Parameter ;
+    rdfs:label "Y_{xsof} (eq 13)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "The table identifies Y_{xsof} as a parameter and provides an estimate, showing it is an estimable kinetic yield. [quote not found in the paper]" ;
+    mkg:status "pending" ;
+    mkg:symbol "Y_{xsof}" .
+
+<http://example.org/kg/anane_2017/law/eq13/par/q_m> a mkg:Parameter ;
+    rdfs:label "q_{m} (eq 13)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "The table presents q_{m} as a parameter with an estimate, indicating it is an estimable maintenance coefficient. [quote not found in the paper]" ;
+    mkg:status "pending" ;
+    mkg:symbol "q_{m}" .
+
+<http://example.org/kg/anane_2017/law/eq13/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 13)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/anane_2017/law/eq13/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (eq 13)" ;
+    mkg:symbol "q_{sA}" .
+
+<http://example.org/kg/anane_2017/law/eq13/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (eq 13)" ;
+    mkg:symbol "q_{sof}" .
+
+<http://example.org/kg/anane_2017/law/eq13/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (eq 13)" ;
+    mkg:symbol "q_{sox}" .
+
+<http://example.org/kg/anane_2017/law/eq14> a mkg:Law ;
+    rdfs:label "eq 14" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq14/var/S> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq14/meta> ;
+    mkg:latex "\\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq14/var/F>,
+        <http://example.org/kg/anane_2017/law/eq14/var/S_i>,
+        <http://example.org/kg/anane_2017/law/eq14/var/V>,
+        <http://example.org/kg/anane_2017/law/eq14/var/X>,
+        <http://example.org/kg/anane_2017/law/eq14/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/eq14/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/F> a mkg:Variable ;
+    rdfs:label "F (eq 14)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "the feed F (which can be constant or a function of time)" ;
+    mkg:reason "Feed flow rate is supplied or manipulated during the run." ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/S> a mkg:Variable ;
+    rdfs:label "S (eq 14)" ;
+    mkg:symbol "S" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/S_i> a mkg:Variable ;
+    rdfs:label "S_{i} (eq 14)" ;
+    mkg:basis "stated" ;
+    mkg:page "3" ;
+    mkg:quote "where  $ S_i $ represents the glucose concentration in the feed solution (300 g/L)" ;
+    mkg:reason "S_i is described as the glucose concentration in the feed, i.e., an inlet concentration supplied from outside the model." ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{i}" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 14)" ;
+    mkg:basis "stated" ;
+    mkg:page "3" ;
+    mkg:quote "Using the biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as" ;
+    mkg:reason "V is the reactor broth volume, which changes during a run and is supplied/updated externally." ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/X> a mkg:Variable ;
+    rdfs:label "X (eq 14)" ;
+    mkg:symbol "X" .
+
+<http://example.org/kg/anane_2017/law/eq14/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 14)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq15> a mkg:Law ;
+    rdfs:label "eq 15" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq15/var/q_s> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq15/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq15/par/K_ia>,
+        <http://example.org/kg/anane_2017/law/eq15/par/K_s>,
+        <http://example.org/kg/anane_2017/law/eq15/par/q_smax> ;
+    mkg:latex "q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq15/var/A>,
+        <http://example.org/kg/anane_2017/law/eq15/var/S> .
+
+<http://example.org/kg/anane_2017/law/eq15/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq15/par/K_ia> a mkg:Parameter ;
+    rdfs:label "K_{ia} (eq 15)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Estimate: 1.2399" ;
+    mkg:reason "The paper provides an estimated value, indicating it is an estimable kinetic parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ia}" .
+
+<http://example.org/kg/anane_2017/law/eq15/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (eq 15)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ K_{{s}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0370" ;
+    mkg:reason "K_{s} is listed with an estimate, showing it is a fitted (estimable) parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq15/par/q_smax> a mkg:Parameter ;
+    rdfs:label "q_{smax} (eq 15)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "q_{smax} appears as the maximum substrate uptake rate in a Monod-type expression; such saturation constants are conventionally fitted to experimental data, so it is treated as an estimable parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "q_{smax}" .
+
+<http://example.org/kg/anane_2017/law/eq15/var/A> a mkg:Variable ;
+    rdfs:label "A (eq 15)" ;
+    mkg:symbol "A" .
+
+<http://example.org/kg/anane_2017/law/eq15/var/S> a mkg:Variable ;
+    rdfs:label "S (eq 15)" ;
+    mkg:symbol "S" .
+
+<http://example.org/kg/anane_2017/law/eq15/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 15)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq16> a mkg:Law ;
+    rdfs:label "eq 16" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq16/var/q_sox> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq16/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq16/par/K_o> ;
+    mkg:latex "q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq16/var/DOT>,
+        <http://example.org/kg/anane_2017/law/eq16/var/q_s>,
+        <http://example.org/kg/anane_2017/law/eq16/var/q_sof> .
+
+<http://example.org/kg/anane_2017/law/eq16/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq16/par/K_o> a mkg:Parameter ;
+    rdfs:label "K_{o} (eq 16)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ K_{{o}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 10.0 | Estimate: 0.0001" ;
+    mkg:reason "The table lists an estimate for K_{o}, showing it is a fitted (estimable) parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{o}" .
+
+<http://example.org/kg/anane_2017/law/eq16/var/DOT> a mkg:Variable ;
+    rdfs:label "DOT (eq 16)" ;
+    mkg:symbol "DOT" .
+
+<http://example.org/kg/anane_2017/law/eq16/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 16)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq16/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (eq 16)" ;
+    mkg:symbol "q_{sof}" .
+
+<http://example.org/kg/anane_2017/law/eq16/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (eq 16)" ;
+    mkg:symbol "q_{sox}" .
+
+<http://example.org/kg/anane_2017/law/eq17> a mkg:Law ;
+    rdfs:label "eq 17" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq17/var/q_sof> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq17/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq17/par/K_ap>,
+        <http://example.org/kg/anane_2017/law/eq17/par/P_Amax> ;
+    mkg:latex "q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq17/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/eq17/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq17/par/K_ap> a mkg:Parameter ;
+    rdfs:label "K_{ap} (eq 17)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Estimate: 0.5052" ;
+    mkg:reason "The paper provides an estimated value, indicating it is an estimable kinetic parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ap}" .
+
+<http://example.org/kg/anane_2017/law/eq17/par/P_Amax> a mkg:Parameter ;
+    rdfs:label "P_{Amax} (eq 17)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "where  $ K_{0} $ is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation, P $ _{Amax} $ and  $ K_{ap} $ are the maximum acetate production and the production affinity constants." ;
+    mkg:reason "The text describes P_{Amax} as a maximum acetate production constant, a kinetic parameter that is estimated during model calibration." ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{Amax}" .
+
+<http://example.org/kg/anane_2017/law/eq17/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 17)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq17/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (eq 17)" ;
+    mkg:symbol "q_{sof}" .
+
+<http://example.org/kg/anane_2017/law/eq18> a mkg:Law ;
+    rdfs:label "eq 18" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq18/var/A> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq18/meta> ;
+    mkg:latex "\\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq18/var/F>,
+        <http://example.org/kg/anane_2017/law/eq18/var/V>,
+        <http://example.org/kg/anane_2017/law/eq18/var/X>,
+        <http://example.org/kg/anane_2017/law/eq18/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/eq18/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq18/var/A> a mkg:Variable ;
+    rdfs:label "A (eq 18)" ;
+    mkg:symbol "A" .
+
+<http://example.org/kg/anane_2017/law/eq18/var/F> a mkg:Variable ;
+    rdfs:label "F (eq 18)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "the feed F (which can be constant or a function of time)" ;
+    mkg:reason "Feed flow rate is supplied or manipulated during the run." ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" .
+
+<http://example.org/kg/anane_2017/law/eq18/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 18)" ;
+    mkg:basis "stated" ;
+    mkg:page "3" ;
+    mkg:quote "Using the biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as" ;
+    mkg:reason "V is the reactor broth volume, which changes during a run and is supplied/updated externally." ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/anane_2017/law/eq18/var/X> a mkg:Variable ;
+    rdfs:label "X (eq 18)" ;
+    mkg:symbol "X" .
+
+<http://example.org/kg/anane_2017/law/eq18/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 18)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq19> a mkg:Law ;
+    rdfs:label "eq 19" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq19/var/q_A> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq19/meta> ;
+    mkg:latex "q_{A}=p_{A}-q_{sA}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq19/var/p_A>,
+        <http://example.org/kg/anane_2017/law/eq19/var/q_sA> .
+
+<http://example.org/kg/anane_2017/law/eq19/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{A}=p_{A}-q_{sA}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq19/var/p_A> a mkg:Variable ;
+    rdfs:label "p_{A} (eq 19)" ;
+    mkg:symbol "p_{A}" .
+
+<http://example.org/kg/anane_2017/law/eq19/var/q_A> a mkg:Variable ;
+    rdfs:label "q_{A} (eq 19)" ;
+    mkg:symbol "q_{A}" .
+
+<http://example.org/kg/anane_2017/law/eq19/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (eq 19)" ;
+    mkg:symbol "q_{sA}" .
+
+<http://example.org/kg/anane_2017/law/eq20> a mkg:Law ;
+    rdfs:label "eq 20" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq20/var/p_A> ;
+    mkg:equationNumber "20" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq20/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq20/par/Y_as> ;
+    mkg:latex "p_{A}=q_{sof}Y_{as}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq20/var/q_sof> .
+
+<http://example.org/kg/anane_2017/law/eq20/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "p_{A}=q_{sof}Y_{as}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq20/par/Y_as> a mkg:Parameter ;
+    rdfs:label "Y_{as} (eq 20)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ Y_{{as}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.80 | Estimate: 0.9097" ;
+    mkg:reason "Y_as appears in a parameter table with an initial guess and an estimated value, indicating it is an estimable kinetic yield coefficient." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{as}" .
+
+<http://example.org/kg/anane_2017/law/eq20/var/p_A> a mkg:Variable ;
+    rdfs:label "p_{A} (eq 20)" ;
+    mkg:symbol "p_{A}" .
+
+<http://example.org/kg/anane_2017/law/eq20/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (eq 20)" ;
+    mkg:symbol "q_{sof}" .
+
+<http://example.org/kg/anane_2017/law/eq21> a mkg:Law ;
+    rdfs:label "eq 21" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq21/var/q_sA> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq21/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq21/par/K_is>,
+        <http://example.org/kg/anane_2017/law/eq21/par/K_sa>,
+        <http://example.org/kg/anane_2017/law/eq21/par/q_Amax> ;
+    mkg:latex "q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq21/var/A>,
+        <http://example.org/kg/anane_2017/law/eq21/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/eq21/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq21/par/K_is> a mkg:Parameter ;
+    rdfs:label "K_{is} (eq 21)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "were qAmax, Kis, and Ksa are constant parameters representing the maximum acetate uptake rate, the acetate uptake inhibition, and acetate affinity constant." ;
+    mkg:reason "The paper explicitly calls K_{is} a constant parameter and provides an estimated value, indicating it is estimated from data." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{is}" .
+
+<http://example.org/kg/anane_2017/law/eq21/par/K_sa> a mkg:Parameter ;
+    rdfs:label "K_{sa} (eq 21)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ K_{{sa}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0134" ;
+    mkg:reason "The table provides an estimated value for K_{sa}, indicating it is an estimable kinetic parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{sa}" .
+
+<http://example.org/kg/anane_2017/law/eq21/par/q_Amax> a mkg:Parameter ;
+    rdfs:label "q_{Amax} (eq 21)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "The table lists q_{Amax} as a parameter with an estimated value, meaning it is obtained by fitting. [quote not found in the paper]" ;
+    mkg:status "pending" ;
+    mkg:symbol "q_{Amax}" .
+
+<http://example.org/kg/anane_2017/law/eq21/var/A> a mkg:Variable ;
+    rdfs:label "A (eq 21)" ;
+    mkg:symbol "A" .
+
+<http://example.org/kg/anane_2017/law/eq21/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (eq 21)" ;
+    mkg:symbol "q_{s}" .
+
+<http://example.org/kg/anane_2017/law/eq21/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (eq 21)" ;
+    mkg:symbol "q_{sA}" .
+
+<http://example.org/kg/anane_2017/law/eq22> a mkg:Law ;
+    rdfs:label "eq 22" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq22/var/DOT_a> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq22/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq22/par/DOT>,
+        <http://example.org/kg/anane_2017/law/eq22/par/H>,
+        <http://example.org/kg/anane_2017/law/eq22/par/K_La> ;
+    mkg:latex "\\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq22/var/X>,
+        <http://example.org/kg/anane_2017/law/eq22/var/q_o> .
+
+<http://example.org/kg/anane_2017/law/eq22/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq22/par/DOT> a mkg:Parameter ;
+    rdfs:label "DOT^{*} (eq 22)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Saturation dissolved oxygen is a physical property set by operating conditions and not fitted; treated as a fixed parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "DOT^{*}" .
+
+<http://example.org/kg/anane_2017/law/eq22/par/H> a mkg:Parameter ;
+    rdfs:label "H (eq 22)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Henry equilibrium constant is a physical constant, not estimated from data." ;
+    mkg:status "pending" ;
+    mkg:symbol "H" .
+
+<http://example.org/kg/anane_2017/law/eq22/par/K_La> a mkg:Parameter ;
+    rdfs:label "K_{La} (eq 22)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Volumetric mass transfer coefficient is typically obtained by fitting to oxygen transfer data." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{La}" .
+
+<http://example.org/kg/anane_2017/law/eq22/var/DOT_a> a mkg:Variable ;
+    rdfs:label "DOT_{a} (eq 22)" ;
+    mkg:symbol "DOT_{a}" .
+
+<http://example.org/kg/anane_2017/law/eq22/var/X> a mkg:Variable ;
+    rdfs:label "X (eq 22)" ;
+    mkg:symbol "X" .
+
+<http://example.org/kg/anane_2017/law/eq22/var/q_o> a mkg:Variable ;
+    rdfs:label "q_{o} (eq 22)" ;
+    mkg:symbol "q_{o}" .
+
+<http://example.org/kg/anane_2017/law/eq23> a mkg:Law ;
+    rdfs:label "eq 23" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq23/var/q_o> ;
+    mkg:equationNumber "23" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq23/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq23/par/Y_oa>,
+        <http://example.org/kg/anane_2017/law/eq23/par/Y_os>,
+        <http://example.org/kg/anane_2017/law/eq23/par/q_m> ;
+    mkg:latex "q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq23/var/q_sA>,
+        <http://example.org/kg/anane_2017/law/eq23/var/q_sox> .
+
+<http://example.org/kg/anane_2017/law/eq23/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq23/par/Y_oa> a mkg:Parameter ;
+    rdfs:label "Y_{oa} (eq 23)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ Y_{{oa}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 0.5440" ;
+    mkg:reason "Y_oa appears in the parameter table with an estimated value, making it an estimable parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{oa}" .
+
+<http://example.org/kg/anane_2017/law/eq23/par/Y_os> a mkg:Parameter ;
+    rdfs:label "Y_{os} (eq 23)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter  $ ^{{a}} $: $ Y_{{os}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 1.5620" ;
+    mkg:reason "Y_os is provided in the parameter table with an estimate, indicating it is an estimable parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{os}" .
+
+<http://example.org/kg/anane_2017/law/eq23/par/q_m> a mkg:Parameter ;
+    rdfs:label "q_{m} (eq 23)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "The table presents q_{m} as a parameter with an estimate, indicating it is an estimable maintenance coefficient. [quote not found in the paper]" ;
+    mkg:status "pending" ;
+    mkg:symbol "q_{m}" .
+
+<http://example.org/kg/anane_2017/law/eq23/var/q_o> a mkg:Variable ;
+    rdfs:label "q_{o} (eq 23)" ;
+    mkg:symbol "q_{o}" .
+
+<http://example.org/kg/anane_2017/law/eq23/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (eq 23)" ;
+    mkg:symbol "q_{sA}" .
+
+<http://example.org/kg/anane_2017/law/eq23/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (eq 23)" ;
+    mkg:symbol "q_{sox}" .
+
+<http://example.org/kg/anane_2017/law/eq24> a mkg:Law ;
+    rdfs:label "eq 24" ;
+    mkg:computes <http://example.org/kg/anane_2017/law/eq24/var/DOT> ;
+    mkg:equationNumber "24" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/eq24/meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/eq24/par/K_p> ;
+    mkg:latex "\\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/eq24/var/DOT_a> .
+
+<http://example.org/kg/anane_2017/law/eq24/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/eq24/par/K_p> a mkg:Parameter ;
+    rdfs:label "K_{p} (eq 24)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "were  $ K_p = \\frac{1}{\\tau} $ is the static gain of the sensor given as the inverse of the probe response time, t." ;
+    mkg:reason "K_{p} is defined from a sensor characteristic and is treated as a constant parameter; its value is derived from equipment response time, not fitted, but because it is obtained from calibration it is considered estimable rather than universally fixed." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{p}" .
+
+<http://example.org/kg/anane_2017/law/eq24/var/DOT> a mkg:Variable ;
+    rdfs:label "DOT (eq 24)" ;
+    mkg:symbol "DOT" .
+
+<http://example.org/kg/anane_2017/law/eq24/var/DOT_a> a mkg:Variable ;
+    rdfs:label "DOT_{a} (eq 24)" ;
+    mkg:symbol "DOT_{a}" .
+
+<http://example.org/kg/anane_2017/sup/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "DAE" ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq1> a mkg:Law ;
+    rdfs:label "eq 1" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq1/var/V> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq1/meta> ;
+    mkg:latex "\\frac{d V}{d t}=F_{i n}-F_{o u t}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq1/var/F_in>,
+        <http://example.org/kg/kontoravdi_2005/law/eq1/var/F_out> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq1/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d V}{d t}=F_{i n}-F_{o u t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq1/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (eq 1)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Flow rate into the reactor is supplied from outside and can be changed during a run; such feed rates are model variables." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq1/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 1)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq1/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 1)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10> a mkg:Law ;
+    rdfs:label "eq 10" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq10/var/C_GLN> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq10/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq10/par/K_dgln> ;
+    mkg:latex "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq10/var/C_GLN_in>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10/var/F_in>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10/var/Q_gln>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq10/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (eq 10)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Constant for glutamine degradation; degradation rate constants are generally estimated during model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{dgln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (eq 10)" ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/C_GLN_in> a mkg:Variable ;
+    rdfs:label "[GLN]_{in} (eq 10)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Inlet glutamine concentration is a feed condition, treated as an external input variable rather than a fitted parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "[GLN]_{in}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (eq 10)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Flow rate into the reactor is supplied from outside and can be changed during a run; such feed rates are model variables." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 10)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (eq 10)" ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 10)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq10/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 10)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11> a mkg:Law ;
+    rdfs:label "eq 11" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq11/var/Q_gln> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq11/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq11/par/Y_x_gln> ;
+    mkg:latex "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq11/var/m_gln>,
+        <http://example.org/kg/kontoravdi_2005/law/eq11/var/mu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11/par/Y_x_gln> a mkg:Parameter ;
+    rdfs:label "Y_{x,gln} (eq 11)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Parameter: $ Y_{x,gln} $ (cell/mmol) | Batch operation value: $ 5.6 \\times 10^{8} $ | Fed-batch operation value: $ 8 \\times 10^{8} $" ;
+    mkg:reason "Although values are given, the context is a parameter table; such yields are typically estimated during model fitting." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (eq 11)" ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (eq 11)" ;
+    mkg:symbol "m_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq11/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 11)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12> a mkg:Law ;
+    rdfs:label "eq 12" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq12/var/m_gln> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq12/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq12/par/alpha_1>,
+        <http://example.org/kg/kontoravdi_2005/law/eq12/par/alpha_2> ;
+    mkg:latex "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq12/var/C_GLN> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12/par/alpha_1> a mkg:Parameter ;
+    rdfs:label "\\alpha_{1} (eq 12)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "$ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)" ;
+    mkg:reason "Explicitly described as a constant of the glutamine maintenance coefficient; values are provided in a table, indicating they are parameters to be fitted or taken from prior work. Since the paper does not state they are fixed from literature, they are treated as estimable." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{1}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12/par/alpha_2> a mkg:Parameter ;
+    rdfs:label "\\alpha_{2} (eq 12)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "$ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)" ;
+    mkg:reason "Same reasoning as α_{1}; presented as a constant of the maintenance term and listed with a numeric value, implying it is a model parameter to be estimated." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{2}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (eq 12)" ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq12/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (eq 12)" ;
+    mkg:symbol "m_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13> a mkg:Law ;
+    rdfs:label "eq 13" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq13/var/C_LAC> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq13/meta> ;
+    mkg:latex "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq13/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq13/var/Q_lac>,
+        <http://example.org/kg/kontoravdi_2005/law/eq13/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq13/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (eq 13)" ;
+    mkg:symbol "[LAC]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 13)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (eq 13)" ;
+    mkg:symbol "Q_{lac}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 13)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq13/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 13)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq14> a mkg:Law ;
+    rdfs:label "eq 14" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq14/var/Q_lac> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq14/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq14/par/Y_lac_glc> ;
+    mkg:latex "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq14/var/Q_glc> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq14/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq14/par/Y_lac_glc> a mkg:Parameter ;
+    rdfs:label "Y_{lac,glc} (eq 14)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter: $ Y_{lac,glc} $ | Final value: 2.0 | Confidence intervals: ..." ;
+    mkg:reason "The yield is listed in the parameter estimation results, showing it was fitted to data." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{lac,glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq14/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (eq 14)" ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq14/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (eq 14)" ;
+    mkg:symbol "Q_{lac}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15> a mkg:Law ;
+    rdfs:label "eq 15" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq15/var/C_AMM> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq15/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq15/par/K_dgln> ;
+    mkg:latex "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq15/var/C_GLN>,
+        <http://example.org/kg/kontoravdi_2005/law/eq15/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq15/var/Q_amm>,
+        <http://example.org/kg/kontoravdi_2005/law/eq15/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq15/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (eq 15)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Constant for glutamine degradation; degradation rate constants are generally estimated during model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{dgln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (eq 15)" ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (eq 15)" ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 15)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (eq 15)" ;
+    mkg:symbol "Q_{amm}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 15)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq15/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 15)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq16> a mkg:Law ;
+    rdfs:label "eq 16" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq16/var/Q_amm> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq16/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq16/par/Y_amm_gln> ;
+    mkg:latex "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq16/var/Q_gln> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq16/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq16/par/Y_amm_gln> a mkg:Parameter ;
+    rdfs:label "Y_{amm,gln} (eq 16)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter: $ Y_{amm,gln} $ | Final value: $ 4.5 \\times 10^{-1} $ | Confidence intervals: ..." ;
+    mkg:reason "The paper reports this yield as an estimated parameter with confidence intervals, indicating it was obtained by fitting." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{amm,gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq16/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (eq 16)" ;
+    mkg:symbol "Q_{amm}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq16/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (eq 16)" ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17> a mkg:Law ;
+    rdfs:label "eq 17" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq17/var/m_H> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq17/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq17/par/K>,
+        <http://example.org/kg/kontoravdi_2005/law/eq17/par/N_H>,
+        <http://example.org/kg/kontoravdi_2005/law/eq17/par/S_H> ;
+    mkg:latex "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17/par/K> a mkg:Parameter ;
+    rdfs:label "K (eq 17)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)" ;
+    mkg:reason "The paper explicitly defines K as a decay rate parameter and provides a numeric value in Table 1, indicating it is a model parameter to be used (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17/par/N_H> a mkg:Parameter ;
+    rdfs:label "N_{H} (eq 17)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter: $ N_{H} $ | Final value: 101" ;
+    mkg:reason "The table of parameter estimation results reports a final fitted value, indicating that N_H was estimated from data." ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17/par/S_H> a mkg:Parameter ;
+    rdfs:label "S_{H} (eq 17)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Specific transcription rates appear in the kinetic terms and are typically treated as fitted saturation/kinetic constants in mechanistic models." ;
+    mkg:status "pending" ;
+    mkg:symbol "S_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq17/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (eq 17)" ;
+    mkg:symbol "m_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18> a mkg:Law ;
+    rdfs:label "eq 18" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq18/var/m_L> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq18/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq18/par/K>,
+        <http://example.org/kg/kontoravdi_2005/law/eq18/par/N_L>,
+        <http://example.org/kg/kontoravdi_2005/law/eq18/par/S_L> ;
+    mkg:latex "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18/par/K> a mkg:Parameter ;
+    rdfs:label "K (eq 18)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)" ;
+    mkg:reason "The paper explicitly defines K as a decay rate parameter and provides a numeric value in Table 1, indicating it is a model parameter to be used (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18/par/N_L> a mkg:Parameter ;
+    rdfs:label "N_{L} (eq 18)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)" ;
+    mkg:reason "Gene copy number is a design characteristic of the cell line and is supplied as a known constant, not fitted during model calibration." ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18/par/S_L> a mkg:Parameter ;
+    rdfs:label "S_{L} (eq 18)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Specific transcription rates are model kinetic parameters that are usually estimated from experimental data." ;
+    mkg:status "pending" ;
+    mkg:symbol "S_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq18/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (eq 18)" ;
+    mkg:symbol "m_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19> a mkg:Law ;
+    rdfs:label "eq 19" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq19/var/C_H> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq19/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq19/par/T_H> ;
+    mkg:latex "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq19/var/R_H>,
+        <http://example.org/kg/kontoravdi_2005/law/eq19/var/m_H> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19/par/T_H> a mkg:Parameter ;
+    rdfs:label "T_{H} (eq 19)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Specific translation rates are kinetic parameters that are generally obtained by fitting the model to observed protein production data." ;
+    mkg:status "pending" ;
+    mkg:symbol "T_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (eq 19)" ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (eq 19)" ;
+    mkg:symbol "R_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq19/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (eq 19)" ;
+    mkg:symbol "m_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2> a mkg:Law ;
+    rdfs:label "eq 2" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq2/var/X_nu> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq2/meta> ;
+    mkg:latex "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq2/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq2/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq2/var/mu>,
+        <http://example.org/kg/kontoravdi_2005/law/eq2/var/mu_d> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 2)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 2)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 2)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 2)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq2/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (eq 2)" ;
+    mkg:symbol "\\mu_{d}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20> a mkg:Law ;
+    rdfs:label "eq 20" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq20/var/C_L> ;
+    mkg:equationNumber "20" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq20/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq20/par/T_L> ;
+    mkg:latex "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq20/var/R_L>,
+        <http://example.org/kg/kontoravdi_2005/law/eq20/var/m_L> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20/par/T_L> a mkg:Parameter ;
+    rdfs:label "T_{L} (eq 20)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Specific translation rates are model parameters that are typically estimated during model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "T_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (eq 20)" ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (eq 20)" ;
+    mkg:symbol "R_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq20/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (eq 20)" ;
+    mkg:symbol "m_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq21> a mkg:Law ;
+    rdfs:label "eq 21" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq21/var/R_H> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq21/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq21/par/K_A> ;
+    mkg:latex "R_{H}=\\frac{2}{3}K_{A}[H]^{2}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq21/var/C_H> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq21/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "R_{H}=\\frac{2}{3}K_{A}[H]^{2}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq21/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (eq 21)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "K_{A} is listed in the parameter table with a specific unit and value, indicating it is a model parameter (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq21/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (eq 21)" ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq21/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (eq 21)" ;
+    mkg:symbol "R_{H}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22> a mkg:Law ;
+    rdfs:label "eq 22" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq22/var/R_L> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq22/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq22/par/K_A> ;
+    mkg:latex "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq22/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2005/law/eq22/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2005/law/eq22/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (eq 22)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "K_{A} is listed in the parameter table with a specific unit and value, indicating it is a model parameter (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (eq 22)" ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (eq 22)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Species concentration appears in differential equations and is a state variable that changes over time, not a constant parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (eq 22)" ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq22/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (eq 22)" ;
+    mkg:symbol "R_{L}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23> a mkg:Law ;
+    rdfs:label "eq 23" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq23/var/C_H_2> ;
+    mkg:equationNumber "23" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq23/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq23/par/K_A> ;
+    mkg:latex "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq23/var/C_H>,
+        <http://example.org/kg/kontoravdi_2005/law/eq23/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (eq 23)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "K_{A} is listed in the parameter table with a specific unit and value, indicating it is a model parameter (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (eq 23)" ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (eq 23)" ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq23/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (eq 23)" ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24> a mkg:Law ;
+    rdfs:label "eq 24" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2L> ;
+    mkg:equationNumber "24" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq24/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq24/par/K_A> ;
+    mkg:latex "\\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2L_2>,
+        <http://example.org/kg/kontoravdi_2005/law/eq24/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (eq 24)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "K_{A} is listed in the parameter table with a specific unit and value, indicating it is a model parameter (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (eq 24)" ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[|H_2L] (eq 24)" ;
+    mkg:symbol "[|H_2L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/var/C_H_2L_2> a mkg:Variable ;
+    rdfs:label "[H_2L] (eq 24)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Species concentration appears in differential equations and is a state variable that changes over time, not a constant parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq24/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (eq 24)" ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25> a mkg:Law ;
+    rdfs:label "eq 25" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq25/var/C_H_2L_2_ER> ;
+    mkg:equationNumber "25" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq25/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq25/par/K_A>,
+        <http://example.org/kg/kontoravdi_2005/law/eq25/par/K_ER> ;
+    mkg:latex "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq25/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2005/law/eq25/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (eq 25)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "K_{A} is listed in the parameter table with a specific unit and value, indicating it is a model parameter (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (eq 25)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Rate constant for ER-to-Golgi transport; such kinetic constants are normally obtained by fitting to experimental data, not known a priori." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{ER}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (eq 25)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Species concentration appears in differential equations and is a state variable that changes over time, not a constant parameter." ;
+    mkg:status "pending" ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (eq 25)" ;
+    mkg:symbol "[H_2L_2]_{ER}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq25/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (eq 25)" ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26> a mkg:Law ;
+    rdfs:label "eq 26" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq26/var/C_H_2L_2_G> ;
+    mkg:equationNumber "26" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq26/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq26/par/K_ER>,
+        <http://example.org/kg/kontoravdi_2005/law/eq26/par/K_G>,
+        <http://example.org/kg/kontoravdi_2005/law/eq26/par/varepsilon_1> ;
+    mkg:latex "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq26/var/C_H_2L_2_ER> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (eq 26)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Rate constant for ER-to-Golgi transport; such kinetic constants are normally obtained by fitting to experimental data, not known a priori." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{ER}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (eq 26)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Rate constant for Golgi-to-medium antibody transport; kinetic rate constants are typically estimated from model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{G}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/par/varepsilon_1> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{1} (eq 26)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "ε_{1} ER glycosylation efficiency factor (dimensionless)" ;
+    mkg:reason "The paper lists ε_{1} with a numeric value in a parameter table, implying it is a model parameter that is set/estimated rather than a universal constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{1}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (eq 26)" ;
+    mkg:symbol "[H_2L_2]_{ER}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq26/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (eq 26)" ;
+    mkg:symbol "[H_2L_2]_{G}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27> a mkg:Law ;
+    rdfs:label "eq 27" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq27/var/C_MAb> ;
+    mkg:equationNumber "27" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq27/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq27/par/gamma_1>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27/par/gamma_2> ;
+    mkg:latex "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq27/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27/var/Q_MAb>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27/var/X_nu>,
+        <http://example.org/kg/kontoravdi_2005/law/eq27/var/mu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/par/gamma_1> a mkg:Parameter ;
+    rdfs:label "\\gamma_{1} (eq 27)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "$ \\gamma_{1} $ constant for antibody production (h)" ;
+    mkg:reason "Identified as a constant for antibody production; the paper provides a numeric value but does not claim it is a universal constant, so it is treated as an estimable parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{1}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/par/gamma_2> a mkg:Parameter ;
+    rdfs:label "\\gamma_{2} (eq 27)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "$ \\gamma_{2} $ constant for antibody production (dimensionless)" ;
+    mkg:reason "Listed as a constant for antibody production with a given value; like γ_{1}, it is a model parameter that is typically estimated from data." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{2}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/C_MAb> a mkg:Variable ;
+    rdfs:label "[MAb] (eq 27)" ;
+    mkg:symbol "[MAb]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 27)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (eq 27)" ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 27)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 27)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq27/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 27)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28> a mkg:Law ;
+    rdfs:label "eq 28" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq28/var/Q_MAb> ;
+    mkg:equationNumber "28" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq28/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq28/par/K_G>,
+        <http://example.org/kg/kontoravdi_2005/law/eq28/par/lambda>,
+        <http://example.org/kg/kontoravdi_2005/law/eq28/par/varepsilon_2> ;
+    mkg:latex "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq28/var/C_H_2L_2_G> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (eq 28)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Rate constant for Golgi-to-medium antibody transport; kinetic rate constants are typically estimated from model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{G}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/par/lambda> a mkg:Parameter ;
+    rdfs:label "\\lambda (eq 28)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Appears only in the expression Q_{MAb}=ε_{2}λK_{G}[H_{2}L_{2}]_{G}; such a symbol is typically a kinetic or yield coefficient, which is a model parameter that must be estimated rather than a fixed physical constant." ;
+    mkg:status "pending" ;
+    mkg:symbol "\\lambda" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/par/varepsilon_2> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{2} (eq 28)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "ε_{2} Golgi apparatus glycosylation efficiency factor (dimensionless)" ;
+    mkg:reason "ε_{2} is presented with a value in the parameter table, indicating it is a model parameter to be used (or fitted) rather than a fixed physical constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{2}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (eq 28)" ;
+    mkg:symbol "[H_2L_2]_{G}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq28/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (eq 28)" ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3> a mkg:Law ;
+    rdfs:label "eq 3" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq3/var/X_t> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq3/meta> ;
+    mkg:latex "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq3/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq3/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq3/var/X_nu>,
+        <http://example.org/kg/kontoravdi_2005/law/eq3/var/mu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 3)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 3)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 3)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/var/X_t> a mkg:Variable ;
+    rdfs:label "X_{t} (eq 3)" ;
+    mkg:symbol "X_{t}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 3)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4> a mkg:Law ;
+    rdfs:label "eq 4" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq4/var/mu> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq4/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq4/par/mu_max> ;
+    mkg:latex "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq4/var/f_inh>,
+        <http://example.org/kg/kontoravdi_2005/law/eq4/var/f_lim> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (eq 4)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "μ_{max} maximum specific growth rate (h ^{-1})" ;
+    mkg:reason "The symbol is described as a maximum specific growth rate and appears in the parameter estimation results table, showing it is estimated from data." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (eq 4)" ;
+    mkg:symbol "f_{inh}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (eq 4)" ;
+    mkg:symbol "f_{lim}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq4/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 4)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5> a mkg:Law ;
+    rdfs:label "eq 5" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq5/var/f_lim> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq5/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq5/par/K_glc>,
+        <http://example.org/kg/kontoravdi_2005/law/eq5/par/K_gln> ;
+    mkg:latex "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq5/var/C_GLC> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5/par/K_glc> a mkg:Parameter ;
+    rdfs:label "K_{glc} (eq 5)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Monod constant for glucose; Monod saturation constants are conventionally treated as estimable parameters." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5/par/K_gln> a mkg:Parameter ;
+    rdfs:label "K_{gln} (eq 5)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Monod constant for glutamine; like other saturation constants, it is normally fitted to experimental data." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{gln}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (eq 5)" ;
+    mkg:symbol "[GLC]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq5/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (eq 5)" ;
+    mkg:symbol "f_{lim}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6> a mkg:Law ;
+    rdfs:label "eq 6" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq6/var/f_inh> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq6/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq6/par/I_amm>,
+        <http://example.org/kg/kontoravdi_2005/law/eq6/par/I_lac>,
+        <http://example.org/kg/kontoravdi_2005/law/eq6/par/K> ;
+    mkg:latex "f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq6/var/C_AMM>,
+        <http://example.org/kg/kontoravdi_2005/law/eq6/var/C_LAC> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/par/I_amm> a mkg:Parameter ;
+    rdfs:label "I_{amm} (eq 6)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "I_{amm} appears in the denominator of a Monod‑type inhibition term; such inhibition constants are normally fitted to experimental data, so they are estimable parameters." ;
+    mkg:status "pending" ;
+    mkg:symbol "I_{amm}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/par/I_lac> a mkg:Parameter ;
+    rdfs:label "I_{lac} (eq 6)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "I_{lac} is also a saturation/inhibition constant in a Monod‑type term; by convention these constants are estimated during model calibration." ;
+    mkg:status "pending" ;
+    mkg:symbol "I_{lac}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/par/K> a mkg:Parameter ;
+    rdfs:label "K (eq 6)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)" ;
+    mkg:reason "The paper explicitly defines K as a decay rate parameter and provides a numeric value in Table 1, indicating it is a model parameter to be used (estimable)." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (eq 6)" ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (eq 6)" ;
+    mkg:symbol "[LAC]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq6/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (eq 6)" ;
+    mkg:symbol "f_{inh}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7> a mkg:Law ;
+    rdfs:label "eq 7" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq7/var/mu_d> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq7/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq7/par/K_d_amm>,
+        <http://example.org/kg/kontoravdi_2005/law/eq7/par/mu_d_max>,
+        <http://example.org/kg/kontoravdi_2005/law/eq7/par/n> ;
+    mkg:latex "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq7/var/C_AMM> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "n>1" ;
+            mkg:reasoned false ;
+            mkg:text "n>1" ] ;
+    mkg:page "7" ;
+    mkg:quote "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/par/K_d_amm> a mkg:Parameter ;
+    rdfs:label "K_{d,amm} (eq 7)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Ammonia constant for cell death; saturation/ inhibition constants are usually fitted to data rather than known a priori." ;
+    mkg:status "pending" ;
+    mkg:symbol "K_{d,amm}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/par/mu_d_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{d,max} (eq 7)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "μ_{d,max} maximum specific growth rate (h ^{-1})" ;
+    mkg:reason "The paper explicitly defines μ_{d,max} as a maximum specific growth rate and provides a numeric value in a table, indicating it is a fitted parameter rather than a known constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{d,max}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/par/n> a mkg:Parameter ;
+    rdfs:label "n (eq 7)" ;
+    mkg:basis "stated" ;
+    mkg:page "4" ;
+    mkg:quote "n | Batch operation value: 2 | Fed-batch operation value: 2" ;
+    mkg:reason "The exponent n appears in a Hill-type inhibition term and is given a numeric value in the parameter table, indicating it is a model parameter (typically estimated) rather than a known constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "n" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (eq 7)" ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq7/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (eq 7)" ;
+    mkg:symbol "\\mu_{d}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8> a mkg:Law ;
+    rdfs:label "eq 8" ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq8/meta> ;
+    mkg:latex "\\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq8/var/C_GLC>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/C_GLC_in>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/F_in>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/F_out>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/Q_glc>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/V>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/X_nu>,
+        <http://example.org/kg/kontoravdi_2005/law/eq8/var/d> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (eq 8)" ;
+    mkg:symbol "[GLC]" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/C_GLC_in> a mkg:Variable ;
+    rdfs:label "[GLC]_{in} (eq 8)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Inlet glucose concentration is a feed condition that can be set or change between runs; it is supplied to the model, not estimated." ;
+    mkg:status "pending" ;
+    mkg:symbol "[GLC]_{in}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (eq 8)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Flow rate into the reactor is supplied from outside and can be changed during a run; such feed rates are model variables." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (eq 8)" ;
+    mkg:basis "inferred" ;
+    mkg:reason "Outlet flow rate is a manipulated/controlled quantity, not a constant; therefore it is a model variable." ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (eq 8)" ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/V> a mkg:Variable ;
+    rdfs:label "V (eq 8)" ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (eq 8)" ;
+    mkg:symbol "X_{\\nu}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq8/var/d> a mkg:Variable ;
+    rdfs:label "d (eq 8)" ;
+    mkg:symbol "d" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9> a mkg:Law ;
+    rdfs:label "eq 9" ;
+    mkg:computes <http://example.org/kg/kontoravdi_2005/law/eq9/var/Q_glc> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2005/law/eq9/meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2005/law/eq9/par/Y_x_glc>,
+        <http://example.org/kg/kontoravdi_2005/law/eq9/par/m_glc> ;
+    mkg:latex "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2005/law/eq9/var/mu> .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9/par/Y_x_glc> a mkg:Parameter ;
+    rdfs:label "Y_{x,glc} (eq 9)" ;
+    mkg:basis "stated" ;
+    mkg:page "5" ;
+    mkg:quote "Parameter: $ Y_{x,glc} $ | Final value: $ 2.6 \\times 10^{8} $ | Confidence intervals: ..." ;
+    mkg:reason "The yield appears in the estimation table with confidence intervals, indicating it is an estimable parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9/par/m_glc> a mkg:Parameter ;
+    rdfs:label "m_{glc} (eq 9)" ;
+    mkg:basis "stated" ;
+    mkg:page "2" ;
+    mkg:quote "m_{glc} maintenance coefficient of glucose (mmol/cell/h)" ;
+    mkg:reason "The maintenance coefficient is a kinetic parameter specific to the system; the paper provides a numeric value, showing it is treated as an estimable model parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (eq 9)" ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2005/law/eq9/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (eq 9)" ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2005/sup/meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "DAE" ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+

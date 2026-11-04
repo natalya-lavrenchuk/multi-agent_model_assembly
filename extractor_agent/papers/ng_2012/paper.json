@@ -1,0 +1,199 @@
+{
+ "sup": "ng_2012",
+ "title": "Design of high productivity antibody capture by protein A chromatography using an integrated experimental and modeling approach",
+ "doi": "10.1016/j.jchromb.2012.05.010",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "Isothermal adsorption, radial homogeneity, and lumped coefficients for axial dispersion and mass transfer resistances.",
+   "quote": "The transport-dispersive model describes the mass transfer inside the column, assuming isothermal adsorption, radial homogeneity and lumped coefficients for axial dispersion and mass transfer resistances [16].",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "1",
+   "process_condition": true
+  },
+  {
+   "text": "The two terms in Eq. (5) are additive.",
+   "quote": "The two terms in Eq. (5) were assumed to be additive despite their different dependencies on the linear velocity.",
+   "page": 2,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  },
+  {
+   "text": "Longitudinal diffusion is negligible.",
+   "quote": "Longitudinal diffusion was assumed to be negligible.",
+   "page": 2,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  },
+  {
+   "text": "The components behave as two pseudo-components.",
+   "quote": "For the process example considered in this work of IgG capture by protein A chromatography, the components involved were assumed to behave as two pseudo-components:",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "11",
+   "process_condition": false
+  },
+  {
+   "text": "The column is initially empty of solutes in both phases.",
+   "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases.",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "7",
+   "process_condition": true
+  },
+  {
+   "text": "There is no axial concentration change at the column outlet.",
+   "quote": "At the column outlet, it is assumed that there is no axial concentration change.",
+   "page": 2,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "7",
+   "process_condition": false
+  }
+ ],
+ "model_name": "Transport-dispersive IgG capture model",
+ "excluded": [
+  {
+   "eq": "13",
+   "reason": "Optimization objective, not a process-model equation."
+  },
+  {
+   "eq": "14",
+   "reason": "Optimization constraint."
+  },
+  {
+   "eq": "15",
+   "reason": "Optimization constraint."
+  },
+  {
+   "eq": "16",
+   "reason": "Optimization constraint."
+  },
+  {
+   "eq": "17",
+   "reason": "Productivity objective definition, not a process-model equation."
+  },
+  {
+   "eq": "18",
+   "reason": "Yield performance metric."
+  },
+  {
+   "eq": "19",
+   "reason": "Purity performance metric."
+  },
+  {
+   "eq": "20",
+   "reason": "Pressure-drop relationship used as an optimization constraint."
+  },
+  {
+   "eq": "21",
+   "reason": "Experimental parameter-estimation relation for total porosity."
+  },
+  {
+   "eq": "22",
+   "reason": "Experimental parameter-estimation relation for theoretical plate number."
+  }
+ ],
+ "checks": [
+  "'Transport-dispersive IgG capture model': the quoted sentence lists eqs ['1', '2', '3', '4', '5', '6', '11', '12', '7', '8', '9', '10'], which compute the same quantity twice (2/8, 4/5, 7/9): not one model's boundary, so the LLM's own list is kept",
+  "'Transport-dispersive IgG capture model': N (used by eq 4) is computed only by eq 22, which the LLM left out (Experimental parameter-estimation relation for theoretical plate numbe): an input of this model, or should eq 22 be in?",
+  "'Transport-dispersive IgG capture model': \\varepsilon_{T} (used by eq 9) is computed only by eq 21, which the LLM left out (Experimental parameter-estimation relation for total porosity.): an input of this model, or should eq 21 be in?",
+  "'Transport-dispersive IgG capture model': eqs 2, 8 all compute q: keep one",
+  "'Transport-dispersive IgG capture model': eqs 4, 5 all compute h: keep one",
+  "'Transport-dispersive IgG capture model': eqs 7, 9 all compute C: keep one"
+ ],
+ "code_analysis": {
+  "stated": [
+   {
+    "sentence": "The model, consisting of Eqs. (1)–(6) and Eqs. (11) and (12) with initial and boundary conditions given by Eqs. (7)–(10), was discretized by orthogonal collocation",
+    "equations": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "11",
+     "12",
+     "7",
+     "8",
+     "9",
+     "10"
+    ]
+   },
+   {
+    "sentence": "In this work, the optimization problem consisting of Eqs. (13)–(20), and based on the selected transport-dispersive model described earlier, was solved in Delphi 7 using constrained optimization by linear approximation [23], which is a sequential trusted-region algorithm that maintains a regular-shaped simplex over the iterations by linear approximations of the objective function and constraints.",
+    "equations": [
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "7"
+    ]
+   },
+   {
+    "sentence": "The kinetic parameters $(k_{\\mathrm{max}}, S_1$ and $S_2$ in Eq. (6)) were estimated simultaneously from the second set of the breakthrough experiments (Table 2) by fitting the breakthrough curves at various linear velocities, $u$, to the whole model with the other parameters fitted so far using constrained optimization by linear approximation [23] to minimize the error between the experimental and simulated curves, see the example shown in Fig. 5.",
+    "equations": [
+     "6",
+     "2",
+     "5"
+    ]
+   }
+  ],
+  "tags": {
+   "1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "2": "CONFLICT: computes q, like eq 8",
+   "3": "NEEDED: computes D_{L}, used by the model",
+   "4": "NOT USED BY OTHERS: computes h; the model output (keep) or not part of the model (leave out)",
+   "5": "NOT USED BY OTHERS: computes h; the model output (keep) or not part of the model (leave out)",
+   "6": "NEEDED: computes k_{m}, used by the model",
+   "7": "CONFLICT: computes C, like eq 9",
+   "8": "CONFLICT: computes q, like eq 2",
+   "9": "CONFLICT: computes C, like eq 7",
+   "10": "NEEDED: computes L, used by the model",
+   "11": "NOT USED BY OTHERS: computes q_{IgG}^{*}; the model output (keep) or not part of the model (leave out)",
+   "12": "NOT USED BY OTHERS: computes q_{imp}^{*}; the model output (keep) or not part of the model (leave out)",
+   "13": "not an equation",
+   "14": "not an equation",
+   "15": "not an equation",
+   "16": "not an equation",
+   "17": "NOT USED BY OTHERS: computes PR; the model output (keep) or not part of the model (leave out)",
+   "18": "NOT USED BY OTHERS: computes Y; the model output (keep) or not part of the model (leave out)",
+   "19": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "20": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "21": "NEEDED: computes \\varepsilon_{T}, used by the model",
+   "22": "NEEDED: computes N, used by the model"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed)."
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.02000053,
+  "prompt_tokens": 1514,
+  "prompt_time": 0.042405392,
+  "completion_tokens": 5111,
+  "completion_time": 11.850935016,
+  "total_tokens": 6625,
+  "total_time": 11.893340408,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4677
+  }
+ },
+ "user": "Equations:\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\n\\mu_{F}   [NOT COMPUTED]\n  [434] (table_row, p.15) Parameter: $ \\mu_{{F}} $ | Description: Fructose consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 8.34 \\times 10^{-2} $ | 90% CI: $ 2.9 \\times 10^{-2} $\n\nm_{SG}   [NOT COMPUTED]\n  [352] (sentence, p.11) The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and  $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017).\n\n\\mu_{G}   [NOT COMPUTED]\n  [435] (table_row, p.15) Parameter: $ \\mu_{{G}} $ | Description: Glucose consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.273 | 90% CI: 0.26",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\mu_{F}",
+    "description": "Fructose consumption rate",
+    "description_basis": "stated",
+    "snippet_id": 434,
+    "quote": "Parameter: $ \\mu_{{F}} $ | Description: Fructose consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 8.34 \\times 10^{-2} $ | 90% CI: $ 2.9 \\times 10^{-2} $",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "8.34 \\times 10^{-2} h^{-1}",
+    "class_reason": "Parameter constant representing fructose consumption rate",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "m_{SG}",
+    "description": "Sucrose to glucose or fructose dry mass conversion parameter",
+    "description_basis": "stated",
+    "snippet_id": 352,
+    "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and  $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017).",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "0.526",
+    "class_reason": "Parameter constant for sucrose to glucose (or fructose) dry mass conversion",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{G}",
+    "description": "Glucose consumption rate",
+    "description_basis": "stated",
+    "snippet_id": 435,
+    "quote": "Parameter: $ \\mu_{{G}} $ | Description: Glucose consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.273 | 90% CI: 0.26",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "0.273 h^{-1}",
+    "class_reason": "Parameter constant representing glucose consumption rate",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

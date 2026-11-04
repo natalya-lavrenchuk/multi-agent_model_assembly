@@ -1,0 +1,163 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1911,
+  "completion_tokens": 2970,
+  "total_tokens": 4881,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1908,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2183,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2.4.1. Growth Models; 2.4.2. Substrate and Product Models\n\nText and equations in reading order:\n    In the Monod model, an emphasis has been laid to the exponential or logarithmic phase in modelling the microbial cells growth as the formation of the product is found maximum and directly proportional to the microbial cell growth. The growth rate of a batch culture under the exponential phase is generally believed to follow the first order kinetic model, i.e., the growth rate is proportional to the microbial mass in the system. Mathematically,\n(1) \\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X    [code: ODE, computes X, code proposes balance]\n    where $ \\frac{dX}{dt} $ denotes the bacterial growth rate (g.L $ ^{-1} $.h $ ^{-1} $), X (g.L $ ^{-1} $) characterises the bacterial cell concentration, and $ \\mu $ (h $ ^{-1} $) symbolises the proportional constant known as the specific growth rate.\n    The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:\n(3) \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}    [code: algebraic, computes \\mu, code proposes constitutive]\n    where $ \\mu_{max} $ is the maximum specific growth rate ( $ h^{-1} $), S is the concentration of the growth limiting substrate (g.L $ ^{-1} $), and $ K_{s} $ is the half velocity constant, i.e., the substrate concentration at half of the maximum growth rate (g.L $ ^{-1} $). Combining Equations (1) and (3) yields:\n    In the Andrews model, the growth of S. cerevisiae can be described in relation to the predicted inhibition caused by the excess of the substrate as follows:\n(5) \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}    [code: algebraic, computes \\mu, code proposes constitutive]\n    The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function, where $ \\mu_{max} $ ( $ h^{-1} $) is the maximum specific growth, $ K_s $ (g.L $ ^{-1} $) is the half velocity constant, and $ K_i $ (g.L $ ^{-1} $) is the substrate inhibition coefficient.\n    Once $ \\mu_{max} $, $ K_s $ and $ K_i $ are calculated and $ \\mu $ is determined, the mathematical model for the substrate consumption and ethanol production can be expressed as follows:\n(6) \\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}    [code: ODE, computes S, code proposes balance]\n(7) \\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}    [code: ODE, computes P, code proposes balance]\n    where $ Y_{x/s} $ and $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively.\n\nSymbols:\n  X: bacterial cell concentration [g.L^-1] (computed)\n  \\mu: specific growth rate [h^-1] (computed)\n  \\mu_{max}: maximum specific growth rate [h^-1] (parameter)\n  S: concentration of the growth limiting substrate [g.L^-1] (computed)\n  K_{S}: half-velocity constant; substrate concentration at half the maximum growth rate [g.L^-1] (parameter)\n  K_{i}: substrate inhibition constant in the Andrews model [g.L^-1] (parameter)\n  Y_{x/s}: substrate-specific yield coefficient [-] (parameter)\n  P: ethanol concentration [g.L^-1] (computed)\n  Y_{p/s}: product-specific yield coefficient [-] (parameter)\n  s: substrate concentration in the product-formation equation [g.L^-1] (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 1, 3, 5, 6, 7",
+ "answer": {
+  "laws": [
+   {
+    "eq": "1",
+    "description": "Biomass concentration increases at a rate proportional to its current concentration during exponential-phase batch growth.",
+    "description_basis": "stated",
+    "quote": "The growth rate of a batch culture under the exponential phase is generally believed to follow the first order kinetic model, i.e., the growth rate is proportional to the microbial mass in the system.",
+    "law_type": "balance",
+    "law_type_reason": "It expresses biomass accumulation as generation through growth.",
+    "assumptions": [
+     {
+      "text": "The growth law applies to a batch culture in the exponential phase.",
+      "quote": "a batch culture under the exponential phase",
+      "stated_as_assumption": false,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "\\mu"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "The Monod specific growth rate increases with the concentration of the growth-limiting substrate and approaches a maximum rate.",
+    "description_basis": "stated",
+    "quote": "The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a substrate-dependent kinetic expression for specific growth rate.",
+    "assumptions": [
+     {
+      "text": "The substrate is growth-limiting.",
+      "quote": "the concentration of a limiting substrate",
+      "stated_as_assumption": false,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m a x}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{S}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "5",
+    "description": "The Andrews growth-rate expression represents substrate inhibition at excess substrate concentrations.",
+    "description_basis": "stated",
+    "quote": "In the Andrews model, the growth of S. cerevisiae can be described in relation to the predicted inhibition caused by the excess of the substrate as follows:",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a kinetic expression relating specific growth rate to substrate concentration with an inhibition term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m a x}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{S}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{i}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6",
+    "description": "Substrate concentration decreases in proportion to biomass formation according to the substrate-specific yield.",
+    "description_basis": "stated",
+    "quote": "the mathematical model for the substrate consumption and ethanol production can be expressed as follows:",
+    "law_type": "balance",
+    "law_type_reason": "It expresses substrate accumulation as consumption linked to biomass formation by a yield coefficient.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "S"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{x/s}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7",
+    "description": "The ethanol production rate is related to the substrate concentration change through the product-specific yield.",
+    "description_basis": "stated",
+    "quote": "the mathematical model for the substrate consumption and ethanol production can be expressed as follows:",
+    "law_type": "balance",
+    "law_type_reason": "It expresses product accumulation through a yield-linked substrate conversion rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "P"
+     },
+     {
+      "role": "substrate",
+      "symbol": "s"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{p/s}"
+     }
+    ],
+    "issue": "The substrate derivative has a positive sign, so when substrate is being consumed (ds/dt < 0), the equation predicts a decreasing ethanol concentration despite describing ethanol production."
+   }
+  ]
+ }
+}

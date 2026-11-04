@@ -1,0 +1,159 @@
+{
+ "sup": "asprey_2000",
+ "title": "Statistical tools for optimal dynamic model building",
+ "doi": null,
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "models": [
+  {
+   "name": "Monod kinetics",
+   "equations": [
+    "17",
+    "16.1",
+    "16.2"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": []
+  },
+  {
+   "name": "Contois kinetics",
+   "equations": [
+    "18",
+    "16.1",
+    "16.2"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": []
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "6",
+   "reason": "Experiment-design criterion, not a process model equation."
+  },
+  {
+   "eq": "7",
+   "reason": "Alternative experiment-design criterion, not a process model equation."
+  },
+  {
+   "eq": "8",
+   "reason": "Worst-case experiment-design criterion, not a process model equation."
+  },
+  {
+   "eq": "9",
+   "reason": "Parameter covariance expression for experiment design, not a process model equation."
+  },
+  {
+   "eq": "10",
+   "reason": "Sensitivity definition used for parameter-precision analysis, not a process model equation."
+  },
+  {
+   "eq": "11",
+   "reason": "Experiment-design objective based on sensitivities, not a process model equation."
+  },
+  {
+   "eq": "12",
+   "reason": "Information matrix for experiment design, not a process model equation."
+  },
+  {
+   "eq": "13",
+   "reason": "Sensitivity matrix definition, not a process model equation."
+  },
+  {
+   "eq": "14",
+   "reason": "Experiment-design criterion, not a process model equation."
+  },
+  {
+   "eq": "15",
+   "reason": "Robust experiment-design criterion, not a process model equation."
+  },
+  {
+   "eq": "2a",
+   "reason": "Structural identifiability objective, not a process model equation."
+  },
+  {
+   "eq": "2b",
+   "reason": "Structural distinguishability test formulation, not a process model equation."
+  },
+  {
+   "eq": "3a",
+   "reason": "Model-discrimination optimization objective, not a process model equation."
+  },
+  {
+   "eq": "3b",
+   "reason": "Constraints for the model-discrimination optimization, not process model equations."
+  },
+  {
+   "eq": "1.1",
+   "reason": "General model form, not a process-specific balance or rate law."
+  },
+  {
+   "eq": "1.2",
+   "reason": "General output mapping, not part of the process model equations."
+  },
+  {
+   "eq": "4.1",
+   "reason": "Experiment-design objective, not a process model equation."
+  },
+  {
+   "eq": "4.2",
+   "reason": "Model-discrimination metric, not a process model equation."
+  },
+  {
+   "eq": "p2-1",
+   "reason": "Constraint in the structural identifiability optimization, not a process model equation."
+  },
+  {
+   "eq": "p5-1.1",
+   "reason": "Sampling-time constraint for experiment design, not a process model equation."
+  },
+  {
+   "eq": "p5-1.2",
+   "reason": "Control switching-time constraint for experiment design, not a process model equation."
+  },
+  {
+   "eq": "p5-1.3",
+   "reason": "Index range for experiment-design switching times, not a process model equation."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1.1": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "1.2": "NOT USED BY OTHERS: computes y; the model output (keep) or not part of the model (leave out)",
+   "2a": "NOT USED BY OTHERS: computes \\Phi_{I}; the model output (keep) or not part of the model (leave out)",
+   "p2-1": "not an equation",
+   "2b": "not an equation",
+   "3a": "not an equation",
+   "3b": "not an equation",
+   "4.1": "NOT USED BY OTHERS: computes \\varphi_{T}; the model output (keep) or not part of the model (leave out)",
+   "4.2": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "6": "NOT USED BY OTHERS: computes \\Phi_{T}; the model output (keep) or not part of the model (leave out)",
+   "7": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes \\Phi_{TWC}; the model output (keep) or not part of the model (leave out)",
+   "9": "not an equation",
+   "10": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11": "UPDATE of \\Phi (applied in printed order on top of the law that computes it): not used by the model laws",
+   "12": "not an equation",
+   "13": "not an equation",
+   "14": "not an equation",
+   "15": "NOT USED BY OTHERS: computes \\varphi_{R}; the model output (keep) or not part of the model (leave out)",
+   "16.1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "16.2": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "17": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "18": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "p5-1.1": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "p5-1.2": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "p5-1.3": "NOT USED BY OTHERS: computes j; the model output (keep) or not part of the model (leave out)"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model renamed Canoid -> Contois. The paper prints \"Canoid\" (a typo in the paper); eq 18 is the Contois form. Quotes keep the paper's wording.",
+  "2026-10-22: model-level assumptions set to warning (none is a condition a user checks on their process); ones that only name the model or its mechanism removed."
+ ]
+}

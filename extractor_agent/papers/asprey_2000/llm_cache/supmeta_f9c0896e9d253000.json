@@ -1,0 +1,206 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 7207,
+  "completion_tokens": 6287,
+  "total_tokens": 13494,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 7204,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3444,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Paper:\n\nStatistical tools for optimal dynamic model building\n\nS.P. Asprey $ ^{*} $, S. Macchietto\n\nCentre for Process Systems Engineering, Imperial College of Science, Technology and Medicine, Prince Consort Road, London SW 7 2BY, UK\n\n## Abstract\n\nA general, systematic procedure is presented to support the development and statistical verification of dynamic process models. Within this procedure, methods are presented to address several key aspects, such as structural identifiability and distinguishability testing, as well as optimal design of dynamic experiments for both model discrimination and improving parameter precision. A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems. The design of dynamic experiments is cast as an optimal control problem within a framework that enables the calculation of optimal sampling points, experiment duration, fixed and variable external control profiles, and initial conditions of a dynamic experiment subject to general constraints on inputs and outputs. Within this framework, methods are presented to provide experiment design robustness, accounting for parameter uncertainty. The procedure is demonstrated through a practical biotechnology example. © 2000 Elsevier Science Ltd. All rights reserved.\n\nKeywords: Optimal experiment design; Dynamic modelling; Parameter estimation\n\n## 1. Introduction\n\nDetailed mathematical models are increasingly used by engineers in academia and industry to gain competitive advantage through such applications as model-based process design, operations, and control. Thus, building and verifying high quality steady-state or dynamic, single or multiresponse mechanistic models of processing systems are key activities in process engineering.\n\nIn this work, we present a general, systematic procedure to support the development and statistical verification of dynamic process models. The procedure comprises components that address several key aspects, such as structural identifiability and distinguishability testing, and optimal design of dynamic experiments for model discrimination and improving parameter precision. Experiment design is concerned with the following question: How does one adjust the time-varying controls, initial conditions or length of experiment for the experiment to generate the maximum amount of information for the purpose of determining the correct model from a set of candidates, and in turn, for estimating the parameters with greatest precision? For this, the problem is cast as an optimal control problem. Within this framework, one can calculate optimal sampling points, experiment duration, fixed and variable external controls with input constraints, and initial conditions. To mathematically represent time-varying external controls to the process, we use the control vector parameterisation (CVP) technique, with either piecewise constant, or higher-order functions with 0th or higher-order continuity (Vassiliadis, Sargent & Pantelides, 1994). Here, we first present the overall procedure, followed by a brief discussion of current and new methods for each key component.\n\nPotential applications of these techniques in all engineering disciplines are abundant, including applications in chemical kinetics and reaction mechanism elucidation, polymer reaction engineering, physical properties estimation, and biochemical engineering. Throughout the paper, an engineering example using a typical semicontinuous bioreactor application is used to demonstrate the overall procedure and the power of the proposed techniques in their ability to reduce the quantity of experimental work required, while increasing the quality of the results.\n\n$ ^{*} $ Corresponding author. Tel.: +44-20-75946604; fax: +44-20-75946606.\n\nE-mail address: s.asprey@ic.ac.uk (S.P. Asprey)\n\n## 2. The modelling process\n\nWhen building models whose use is to explain an observed phenomenon, one uses a priori knowledge such as physical, chemical or biological 'laws' to propose (conceivably several) possible models. In each case, these laws dictate the model structure, and we may wish to know whether one or more such structures are adequate for the problem at hand. These models contain parameters that may have physical meaning, and we may wish to know if it is at all possible to determine their values, and, if so, to do so with maximum precision. In what follows, we therefore consider general deterministic models in the form of a set of (possibly mixed) differential and algebraic equations:\n\nwhere  $ \\mathbf{x}(t) $ is an  $ n_s $-dimensional vector of time dependent state variables,  $ \\mathbf{u}(t) $ is an  $ n_c $-dimensional vector of time-varying controls or inputs to the process,  $ \\mathbf{w} $ is an  $ n_t $-dimensional vector of constant controls,  $ \\boldsymbol{\\theta} $ is a  $ P $-dimensional vector of model parameters to be determined within a continuous, realisable set  $ \\Theta $, and  $ \\mathbf{y}(t) $ is an  $ M $-dimensional vector of measured response variables that are a function of the state variables,  $ \\mathbf{x}(t) $.\n\nWe first present an overall model building strategy, depicted in Fig. 1. The first step to this strategy involves specifying one or more models to describe the process at hand. In Stage I, the strategy then uses these models to perform preliminary structural identifiability and distinguishability tests before any data are collected. These tests are used to determine whether or not the parameters in the mathematical formulation of the models can be uniquely identified, and whether or not the model structures can be distinguished from one another. In Stage II, the strategy involves designing experiments for model discrimination, followed by\n\nFig. 1. The overall model-building scheme.\n\nparameter estimation and model adequacy checking to determine whether or not any of the proposed models can be rejected, with the final purpose of selecting the 'best' model from the given set. Once we are left with the 'best' model, we then go on to Stage III to design experiments for improving the precision of the parameters within that model, eventually arriving at a final, statistically-verified model formulation.\n\n## 3. Preliminary analysis\n\n## 3.1. Structural identifiability and distinguishability\n\nDuring the preliminary model analysis, we simply wish to know whether, given a candidate set of models and a proposed set of variables to be measured, we can in principle design an experiment such that the parameters of these models can be uniquely identified (identifiability), and whether the different model structures can be distinguished from one another (distinguishability). Past approaches for testing identifiability in nonlinear-in-input dynamic models find their roots in differential geometry, where, in particular, the model is approximated locally by its input-output mapping using functional expansions (Walter, 1987). Coefficients of these functional expansions are then evaluated at parameter values $\\theta$ and $\\theta^{*}$, and used to form systems of nonlinear algebraic equations, whose unique solution $\\theta=\\theta^{*}$ ensures identifiability. This approach has its advantages and disadvantages; its advantages being (i) it is a definitive test (answers the test with yes/no), and (ii) the methods are not affected by scaling problems. Disadvantages of the methods are (i) they are limited to models of special forms (e.g. nonlinear control-affine models), and (ii) they are limited to models with dimensions $(n_{s}+P)\\leq10$, very small for modelling realistic process systems. To avoid these disadvantages (in particular disadvantage (ii)), we propose a novel optimisation-based approach, defined in the following (Pantelides, 2000).\n\nDefinition: Identifiability. A model giving output trajectory  $ y(\\theta, u(t), t) $ is globally identifiable if, for any two parameter sets,  $ \\theta \\in \\Theta $ and  $ \\theta^* \\in \\Theta^* $, a time horizon of interest,  $ t \\in [0, t_f] $, for all system inputs  $ u(t) \\in U $, and the same initial conditions  $ y(t=0) $, the global maximum:\n\nsubject to:\n\nFig. 2. Structural identifiability and distinguishability illustration.\n\ngives $\\Phi_I \\leq \\epsilon_{\\Phi_I}$. Here $\\epsilon_{\\Phi_I}$ and $\\epsilon_y$ are arbitrarily small positive values and $\\mathbf{W}_0$ and $\\mathbf{W}_y$ are weighting matrices. In words, $\\Phi_I$ is the largest distance between two parameter vectors that still give (essentially) the same response trajectories. If such a distance is arbitrarily small, the model can be deemed globally identifiable. In our illustration of Fig. 2, we wish to ensure that when the same input $u(t)$ is applied to the same model, at the same initial conditions, but with different parameter vectors $\\boldsymbol{\\theta}$ and $\\boldsymbol{\\theta}^*$ (such that $\\boldsymbol{\\theta} \\neq \\boldsymbol{\\theta}^*$), the two predicted model output trajectories do not overlie.\n\nDefinition: Distinguishability. Two models giving output trajectories  $ y(\\theta, u(t), t) $ and  $ y^*(\\theta^*, u(t), t) $, respectively, are distinguishable if for any  $ \\theta \\in \\Theta $,  $ \\theta^* \\in \\Theta^* $,  $ t \\in [0, t_f] $ for all  $ u(t) \\in U $, and the same initial conditions  $ y(t=0) $, the global maximum:\n\nTest D1:\n\nsubject to:\n\ngives  $ \\Phi_D \\geq \\varepsilon_{\\Phi_D} $ for some  $ \\varepsilon_{\\Phi_D} \\geq 0 $. In words,  $ \\Phi_D $ is the largest value of the minimum distance between the responses of the two models, over the time horizon of interest. If such a value is sufficiently large, the two models may be deemed distinguishable. Again, returning to our illustration of Fig. 2, we wish to ensure that when the same input  $ u(t) $ is applied to two different models with parameter vectors  $ \\boldsymbol{\\theta} $ and  $ \\boldsymbol{\\theta}^* $, respectively, and the same initial conditions, the two predicted model output trajectories do not overlie.\n\nThis optimisation approach is not limited to any particular model form or size; however, we are now faced with solving semi-infinite or max-min dynamic optimisation problems. We must also choose a priori tolerances for each test ( $ \\varepsilon_{\\Phi} $, and  $ \\varepsilon_{\\Phi_D} $, best chosen to be commensurate with the integral of the expected variance of experimental measurements). A more complete derivation of the optimisation-based approach to testing identifiability and distinguishability, as well as solution methods will be given in a future paper.\n\n## 4. Design of dynamic experiments\n\n## 4.1. Model discrimination\n\nThe problem of model discrimination occurs when $N_{M}$ rival models have been proposed to describe a system and it is not certain which of the $N_{M}$ models is 'best'. For any experiment, it is expected that the 'best' model will provide the most accurate prediction of the observed measurements. Experimental designs optimised for model discrimination are termed $T$-optimal, and are based on maximising an overall measure of the divergence between the model predictions. Very little past work has been presented for discriminating between rival dynamic models.\n\nEspie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case, where the summation over the data points in the original formulation was replaced by an integral over a pre-specified time interval  $ [t_{0}, t_{f}] $:\n\nand embedded in an optimal control framework. Here,  $ \\hat{\\theta} $ is the vector of the best available estimates of the model parameters, and  $ \\varphi $ is the vector of experiment design variables. However, by using a continuous function (Eq. (4)), the meaning of the sampling time of the responses is lost. In our newly proposed formulation, we keep the concept of sampling time by using the Hunter–Reiner formulation as a starting point for the design of dynamic experiments, where now we use the notion of discrete sampling points,  $ t_k $,  $ k=1,\\ldots,n_{sp} $ of each of the response measurements:\n\nWe embed this criterion within a dynamic optimisation framework, described in detail in Asprey, Macchietto and Pantelides (2000). The design vector,  $ \\Phi $, now comprises the discrete sampling points as well as any time-varying and time-invariant inputs, and variable initial conditions.\n\nTo account for uncertainty in the point estimates of the parameters, and thus variance in the predictions of the models, new extensions of (6) could be formulated based on the Bayesian posterior density approach used for nonlinear steady-state process models (Stewart, Shon & Box, 1998), or by formulating either an expected value criterion:\n\nor a worst-case criterion:\n\n## 4.2. Improving parameter precision\n\nThe aim of experiment design for improved parameter precision is to decrease the size of the inference regions of each of the parameters in any given model. This is equivalent to making the elements of the parameter variance-covariance matrix'small'. Thus, we use the marginal posterior density covariance, given by (Box & Lucas, 1959):\n\nwhere $S_{r}$ is the vector of partial derivatives of the $r$th response variable in the model with respect to the parameters $\\theta$ calculated at all experimental points:\n\n$ \\tilde{\\sigma}_{1}^{rs} $ is the  $ r^{s} $th element of the inverse of the estimate of the variance-covariance matrix  $ \\tilde{\\Sigma}_{y} = \\mathrm{cov}(\\mathbf{y}_{r}, \\mathbf{y}_{s}) $.\n\nEspie and Macchietto (1989) were the first to attempt an extension of these concepts to the dynamic case for systems described by DAEs, formulating the design of experiments as an optimal control problem and suggesting a criterion based on maximising the weighted sum of the squared dynamic sensitivity coefficients:\n\nHowever, this formulation is restricted to a diagonal variance-covariance matrix of the parameters, an assumption that is almost always false. Again, the continuous function (Eq. (11)) approach does not explicitly allow one to optimise discrete sampling times of the system responses.\n\nMore recent work has been carried out by Körkel, Bauer, Bock and Schlöder (1999) on sequential experiment design for parameter precision improvement in models described by DAEs. They take a similar optimal control approach, using piecewise constant or piecewise linear functions for parameterising the time-varying controls, but instead use a metric ( $ \\Psi $)=determinant, D-optimal; maximum eigenvalue, E-optimal, etc.) of the parameter variance-covariance matrix as an objective function:\n\nFor selecting optimal sampling times of the system responses, they use binary decision variables,  $ w_{s} $, as weights to select from a set of equally spaced points along the time horizon of interest.\n\nMuch of our work to date is based on a unique criterion put forth by Zullo (1991), who defined a discrete version of the dynamic information matrix for experiment design for the improvement of parameter precision, defined by:\n\nwhere $\\phi$ is the vector of experiment design variables, as above. The matrix $Q_{r}$ is the matrix of dynamic sensitivity coefficients of the $r$th response variable in the model computed at each of the $n_{sp}$ sampling points:\n\nExtensions of this criterion to account for the uncertainty in the point estimates of the parameters are made in Asprey et al. (2000), in which the $D$-optimal criterion is embedded within a robust optimisation framework, using either an expected value approach, based upon a multivariate normal probability distribution function (pdf) describing the prior uncertainty in the parameters, $\\Theta \\sim N(\\tilde{\\Theta}, \\tilde{\\Sigma})$.\n\nor a worst-case approach over an admissible domain:\n\n## 5. A process engineering example\n\nHere, an example is presented to illustrate the application of the dynamic model building tools presented in Sections 2–4. Consider a fed-batch reactor (see Fig. 3) in which the fermentation of baker's yeast is carried out. Within this process, there are two time-varying controls  $ (u_{1}, u_{2}) $ and two measured concentrations  $ (x_{1}, x_{2}) $.\n\nWe propose two models to describe the system. Two differential equations, common to both models, describe the component balances within the reactor:\n\nThe first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:\n\nThe second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:\n\nThe experimental conditions that characterise a particular experiment are: (i) the initial biomass concentration (or inoculation),  $ x_0^0 $, with range 1–10 g l $ ^{-1} $; (ii) the dilution factor,  $ u_1 $, with range 0.05–0.20 h $ ^{-1} $; (iii) the substrate concentration in the feed,  $ u_2 $, with range 5–35 g l $ ^{-1} $. The initial substrate concentration,  $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes. Both  $ x_1 $ and  $ x_2 $ can be measured during the experiment ( $ y = [x_1, x_2]^T $).\n\nFig. 3. A fed-batch reactor.\n\n## 5.1. Identifiability of  $ M_{r}(\\theta, u, t) $\n\nGlobal structural identifiability of $M_t(\\theta, u, t)$ can be tested via Test I1 and using solution techniques for such semi-infinite programming problems (see Asprey et al., 2000). The solution, using $\\theta_i \\in [0.01, 0.98] \\forall i$, a five-element piece-wise constant CVP for the process inputs and a time horizon of interest of 40 h, was found to be $\\Phi_t = 1.166 \\times 10^{-6} \\left( < \\varepsilon_{\\Phi_t} = 1.0 \\times 10^{-5} \\right)$, $\\varepsilon_y = 4.0 \\times 10^{-3}$, not significantly different from zero and thus indicating the global identifiability of $M_t(\\theta, u, t)$.\n\n## 5.2. Distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $\n\nGlobal structural distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $ can be tested by reformulating the max-min Test D1 problem to a semi-infinite programming problem and using the techniques mentioned above. The resulting solution of the distinguishability test using the same conditions and CVP as above was found to be  $ \\Phi_{D} = 3.392 \\times 10^{-1} $, giving a maximum larger than  $ \\varepsilon_{\\Phi_{D}} = 4.0 \\times 10^{-3} $ and thus confirming the distinguishability between  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $.\n\n## 5.3. Designing a dynamic experiment for model discrimination\n\nUsing models $M_{l}(\\theta, \\boldsymbol{u}, t)$ and $M_{l}(\\theta, \\boldsymbol{u}, t)$, we begin by assuming availability of initial parameter estimates $\\theta_{t} = [0.30, 0.25, 0.56, 0.02]^{T}$ and $\\theta_{tt} = [0.30, 0.03, 0.55, 0.03]^{T}$, respectively. A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h. An a priori selection of the number of sampling points, along with the number of switching times/constant levels of the input profiles is required. We arbitrarily chose ten sampling times ($n_{sp} = 10$) and five time intervals for the control vector parameterisation ($n_{sw_i} = 5$, $i = 1, \\ldots, n_u$, where, for the bioreactor models $n_u = 2$). We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98. We impose the constraints (cf. Asprey et al., 2000):\n\nThe optimal values for the design vector maximising criterion (6) are presented diagrammatically in Figs. 4 and 5, giving an optimal divergence of  $ 1.19 \\times 10^{5} $. The model predictions from the optimal design are shown in Fig. 4. The optimal experiment lasts 40 h and vertical arrows along the abscissa show the optimal sampling points of the two response variables (both measured at the same sampling points).\n\nFig. 4. The model predictions for model discrimination.\n\nFig. 5. The optimal input profiles for model discrimination.\n\nTable 1\n\nParameter estimates for  $ M_{t}(\\theta, u, t) $ and  $ M_{t t}(\\theta, u, t) $ after one designed experiment\n\n[Table 1 Parameter estimates for $ M_{t}(\\theta, u, t) $ and $ M_{t t}(\\theta, u, t) $ after one designed experiment]\nParameter:  | Estimate: $ M_I $ | Confidence interval: $ M_{II} $ | Confidence interval: $ M_I $ | Confidence interval: $ M_{II} $\nParameter: $ \\theta_1 $ | Estimate: 0.325 | Confidence interval: 0.303 | Confidence interval: $ \\pm 0.012 $ | Confidence interval: $ \\pm 0.011 $\nParameter: $ \\theta_2 $ | Estimate: 0.267 | Confidence interval: 0.011 | Confidence interval: $ \\pm 0.075 $ | Confidence interval: $ \\pm 0.009 $\nParameter: $ \\theta_3 $ | Estimate: 0.559 | Confidence interval: 0.549 | Confidence interval: $ \\pm 0.018 $ | Confidence interval: $ \\pm 0.023 $\nParameter: $ \\theta_4 $ | Estimate: 0.055 | Confidence interval: 0.049 | Confidence interval: $ \\pm 0.006 $ | Confidence interval: $ \\pm 0.011 $\nParameter: LOF ( $ M_I $) | Estimate:  | Confidence interval: 0.58 | Confidence interval: $ \\chi^{2}_{\\text{ref}} = 26.3 $ | Confidence interval: \nParameter: LOF ( $ M_{II} $) | Estimate:  | Confidence interval: 1.96 | Confidence interval: $ \\chi^{2}_{\\text{ref}} = 26.3 $ | Confidence interval: \n\nFig. 6. The model predictions for improving parameter precision.\n\nFig. 5(a) and (b) show the optimal input profiles for the dilution factor  $ (u_{1}(t)) $ and feed substrate concentration  $ (u_{2}(t)) $, respectively.\nBy simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses, subsequent parameter estimation gives the results in Table 1. By inspection of the multiresponse  $ \\chi^{2} $ lack-of-fit analyses shown in Table 1, we can conclude that model  $ M_{1}(0, u, t) $ is better suited to describe the observed experimental data, although, statistically, both models describe the observed data very well.\n\n## 5.4. Designing a dynamic experiment for improving parameter precision\n\nWe next turn to improving the precision in the parameter estimates in  $ M_f(\\theta, u, t) $. Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed. Using the same initial values, constraints, and representation of the time-varying inputs as in the model discrimination study, the initial value of the E-criterion is  $ 6.41 \\times 10^{-6} $. Performing the dynamic optimisation, the optimal values for the design vector are presented diagrammatically in Figs. 6 and 7, giving a final value of the E-optimal criterion of 14.3 — six orders of magnitude improvement in the predicted information content. The model predictions from the optimal design are shown in Fig. 6, where vertical arrows along the abscissa show the sampling points of the two response variables.\n\nFig. 7(a) and (b) show the optimal input profiles for the dilution factor  $ (u_{1}(t)) $ and feed substrate concentration  $ (u_{2}(t)) $, respectively.\n\nBy simulating additional ‘data’ at these experimental conditions (variance as in §5.3), subsequent parameter estimation gives the results in Table 2.\n\nFig. 7. The optimal input profiles for improving parameter precision.\n\nTable 2\nParameter estimates from the sequentially designed experiment for improving parameter precision\n\n[Table 2 Parameter estimates from the sequentially designed experiment for improving parameter precision]\nParameter: $ \\theta_1 $ | Estimate: 0.311 | Confidence interval: $ \\pm 0.005 $\nParameter: $ \\theta_2 $ | Estimate: 0.254 | Confidence interval: $ \\pm 0.038 $\nParameter: $ \\theta_3 $ | Estimate: 0.523 | Confidence interval: $ \\pm 0.015 $\nParameter: $ \\theta_4 $ | Estimate: 0.046 | Confidence interval: $ \\pm 0.004 $\n\nAs can be seen from these results, the confidence intervals have been reduced on average by 23.0% by using the designed experiments.\n\n## 6. Concluding remarks\n\nIn this paper, we have presented a general, systematic procedure to support the development and statistical verification of dynamic process models. Within this procedure, methods were presented to address several key aspects, such as structural identifiability and distinguishability testing, dynamic sensitivity analysis, and optimal design of dynamic experiments for both model discrimination and improving parameter precision. Within this framework, methods for accounting for parameter uncertainty were presented to provide experiment design robustness. Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model.\n\n## References\n\nAsprey, S. P., Macchietto, S., & Pantelides, C. C. (2000). Robust optimal designs for dynamic experiments. ADCHEM 2000. Pisa, Italy.\n\nBox, G. E. P., & Lucas, H. L. (1959). Design of experiments in non-linear situations. Biometrika, 46, 77–90.\n\nEspie, D. M., & Macchietto, S. (1989). The optimal design of dynamic experiments. American Institute of Chemical Engineering Journal, 35, 223–229.\n\nHunter, W. G., & Reiner, A. M. (1965). Designs for discriminating between two rival models. Technometrics, 7, 307–323.\n\nKörkel, S., Bauer, I., Bock, H. G., & Schlüder, J. P. (1999). A sequential approach for nonlinear optimum experimental design in DAE systems. Proceedings of the International Workshop on Scientific Computation in Chemical Engineering, vol. II.\n\nPantelides, C. C. (2000). Personal communication.\n\nStewart, W. E., Shon, Y., & Box, G. E. P. (1998). Discrimination and goodness of fit of multiresponse mechanistic models. American Institute of Chemical Engineering Journal, 44, 1404–1412.\n\nVassiliadis, V. S., Sargent, R. W. H., & Pantelides, C. C. (1994). Solution of a class of multistage dynamic optimisation problems 1: problems without path constraints. Industrial & Engineering Chemistry Research, 33, 2111–2122.\n\nWalter, E. (1987). Identifiability of parametric models. Oxford: Pergamon Press.\n\nZullo, L. (1991). Computer aided design of experiments. An engineering approach. Ph.D. Thesis. University of London.\n\n=====\nModel: Monod kinetics\nLaws:\n(16.1) [ODE] Biomass concentration balance in the reactor, accounting for growth, dilution, and biomass loss.\n(16.2) [ODE] Substrate concentration balance in the reactor, accounting for consumption and dilution with the feed.\n(17) [algebraic] Monod-type specific rate law for substrate consumption.\n\nStates (computed by the ODEs):\n- x_{1}: measured concentration\n- x_{2}: substrate concentration\n\nInputs (variables no law computes):\n- u_{1}: dilution factor\n- u_{2}: substrate concentration in the feed\n\nModel-wide assumptions (already recorded):\n- none recorded",
+ "answer": {
+  "description": "The model describes baker’s yeast fermentation in a fed-batch reactor, predicting biomass and substrate concentrations over time. It combines reactor component balances with a Monod-type rate law for substrate consumption; the biomass and substrate balances account for growth, dilution, biomass loss, and substrate supplied in the feed. The process is represented by adjustable dilution and feed-substrate concentration profiles, with specified initial concentrations. The paper demonstrates model checking and experiment design using simulated response data with added measurement error, rather than reported measurements from a physical reactor. The authors use the example to test identifiability, distinguish the Monod model from a Canoid alternative, and design experiments for model discrimination and improved parameter precision.",
+  "facts": [
+   {
+    "topic": "system",
+    "text": "The model is for fermentation of baker’s yeast in a fed-batch reactor.",
+    "quote": "Consider a fed-batch reactor (see Fig. 3) in which the fermentation of baker's yeast is carried out."
+   },
+   {
+    "topic": "equipment",
+    "text": "The paper gives no reactor volume or physical scale for the example.",
+    "quote": null
+   },
+   {
+    "topic": "operation",
+    "text": "The process has two time-varying controls: dilution factor and substrate concentration in the feed.",
+    "quote": "Within this process, there are two time-varying controls  (u₁, u₂)"
+   },
+   {
+    "topic": "operation",
+    "text": "The dilution factor is allowed to range from 0.05 to 0.20 h⁻¹.",
+    "quote": "the dilution factor, u₁, with range 0.05–0.20 h⁻¹"
+   },
+   {
+    "topic": "operation",
+    "text": "The substrate concentration in the feed is allowed to range from 5 to 35 g l⁻¹.",
+    "quote": "the substrate concentration in the feed, u₂, with range 5–35 g l⁻¹."
+   },
+   {
+    "topic": "operation",
+    "text": "The initial biomass concentration can be chosen between 1 and 10 g l⁻¹.",
+    "quote": "the initial biomass concentration (or inoculation), x₀⁰, with range 1–10 g l⁻¹"
+   },
+   {
+    "topic": "operation",
+    "text": "The initial substrate concentration is fixed at 0.01 g l⁻¹ and cannot be manipulated in the experiment design.",
+    "quote": "The initial substrate concentration, x₂(0), is always 0.01 g l⁻¹ and cannot be manipulated for experiment design purposes."
+   },
+   {
+    "topic": "states",
+    "text": "The model has two concentration states, biomass concentration and substrate concentration, and both are measured responses.",
+    "quote": "Both x₁ and x₂ can be measured during the experiment (y = [x₁, x₂]ᵀ)."
+   },
+   {
+    "topic": "structure",
+    "text": "The example is a dynamic model with two differential component balances and an algebraic rate law.",
+    "quote": "Two differential equations, common to both models, describe the component balances within the reactor:"
+   },
+   {
+    "topic": "structure",
+    "text": "The model is expressed as reactor-level concentration balances, with no spatially distributed reactor description presented.",
+    "quote": "Two differential equations, common to both models, describe the component balances within the reactor:"
+   },
+   {
+    "topic": "mechanisms",
+    "text": "The biomass balance accounts for growth, dilution, and biomass loss, while the substrate balance accounts for consumption and dilution with the feed.",
+    "quote": null
+   },
+   {
+    "topic": "kinetics",
+    "text": "The model uses Monod-type kinetics for substrate consumption.",
+    "quote": "The first model assumes Monod-type kinetics for substrate consumption"
+   },
+   {
+    "topic": "comparison",
+    "text": "The paper compares the Monod model with a rival model using Canoid-type kinetics.",
+    "quote": "The second model assumes Canoid-type kinetics"
+   },
+   {
+    "topic": "parameters",
+    "text": "The model has four estimated parameters, shown as θ₁ through θ₄ in the parameter-estimation results.",
+    "quote": null
+   },
+   {
+    "topic": "parameters",
+    "text": "The paper reports parameter estimates and confidence intervals after the model-discrimination experiment, but does not specify the parameter-estimation algorithm or software.",
+    "quote": "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses, subsequent parameter estimation gives the results in Table 1."
+   },
+   {
+    "topic": "data",
+    "text": "The worked parameter-estimation example uses simulated response data with homoscedastic normal error variance 0.04 for each response, not reported physical reactor measurements.",
+    "quote": "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses"
+   },
+   {
+    "topic": "data",
+    "text": "The paper identifies the measured quantities as biomass and substrate concentrations but does not state the measurement instrument or assay.",
+    "quote": "Both x₁ and x₂ can be measured during the experiment"
+   },
+   {
+    "topic": "design",
+    "text": "The model-discrimination design uses ten sampling times and five control-vector-parameterization intervals for each of the two inputs.",
+    "quote": "We arbitrarily chose ten sampling times (nsp = 10) and five time intervals for the control vector parameterisation (nswi = 5, i = 1, ..., nu, where, for the bioreactor models nu = 2)."
+   },
+   {
+    "topic": "design",
+    "text": "The optimized model-discrimination experiment lasts 40 h, and both responses are sampled at the same selected times.",
+    "quote": "The optimal experiment lasts 40 h and vertical arrows along the abscissa show the optimal sampling points of the two response variables (both measured at the same sampling points)."
+   },
+   {
+    "topic": "design",
+    "text": "The model-discrimination experiment improves the reported divergence criterion from an initial value of 1.98 to an optimal value of 1.19 × 10⁵.",
+    "quote": "giving an optimal divergence of 1.19 × 10⁵"
+   },
+   {
+    "topic": "identifiability",
+    "text": "The paper tests structural identifiability over a 40 h horizon using a five-element piecewise-constant input parameterization and parameter values in [0.01, 0.98].",
+    "quote": "using θᵢ ∈ [0.01, 0.98] ∀i, a five-element piece-wise constant CVP for the process inputs and a time horizon of interest of 40 h"
+   },
+   {
+    "topic": "identifiability",
+    "text": "Under that test, the reported identifiability objective is 1.166 × 10⁻⁶, below the 1.0 × 10⁻⁵ tolerance, and the paper concludes the tested model is globally identifiable.",
+    "quote": "Φₜ = 1.166 × 10⁻⁶ (< εΦₜ = 1.0 × 10⁻⁵) ... thus indicating the global identifiability of Mₜ(θ, u, t)."
+   },
+   {
+    "topic": "distinguishability",
+    "text": "Under the same test conditions, the Monod and Canoid models are reported as distinguishable, with a value of 0.339 exceeding the 0.004 threshold.",
+    "quote": "ΦD = 3.392 × 10⁻¹, giving a maximum larger than εΦD = 4.0 × 10⁻³ and thus confirming the distinguishability between MI(θ, u, t) and MII(θ, u, t)."
+   },
+   {
+    "topic": "fit",
+    "text": "The paper concludes that the Monod model is better suited to the simulated data based on multiresponse chi-square lack-of-fit analysis, although both candidate models describe the data statistically well.",
+    "quote": "we can conclude that model M₁(0, u, t) is better suited to describe the observed experimental data, although, statistically, both models describe the observed data very well."
+   },
+   {
+    "topic": "fit",
+    "text": "The lack-of-fit table reports values of 0.58 for the Monod model and 1.96 for the Canoid model, against a reference chi-square value of 26.3.",
+    "quote": null
+   },
+   {
+    "topic": "precision",
+    "text": "For improving parameter precision, the paper applies an E-optimal design to the Monod model using the parameter estimates obtained after the discrimination experiment.",
+    "quote": "Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed."
+   },
+   {
+    "topic": "precision",
+    "text": "The E-optimal criterion rises from 6.41 × 10⁻⁶ to 14.3 in the designed precision-improvement experiment.",
+    "quote": "the initial value of the E-criterion is 6.41 × 10⁻⁶. ... giving a final value of the E-optimal criterion of 14.3"
+   },
+   {
+    "topic": "precision",
+    "text": "The paper reports that confidence intervals were reduced by an average of 23.0% after the sequentially designed precision-improvement experiment.",
+    "quote": "the confidence intervals have been reduced on average by 23.0% by using the designed experiments."
+   },
+   {
+    "topic": "scope",
+    "text": "The example demonstrates design over a maximum experiment duration of 40 h and within the stated ranges for inoculation, dilution, and feed substrate concentration.",
+    "quote": "A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h."
+   },
+   {
+    "topic": "methods",
+    "text": "The paper uses control vector parameterization to represent time-varying inputs, including piecewise-constant profiles in the bioreactor example.",
+    "quote": "To mathematically represent time-varying external controls to the process, we use the control vector parameterisation (CVP) technique, with either piecewise constant, or higher-order functions"
+   },
+   {
+    "topic": "methods",
+    "text": "The paper's identifiability and distinguishability tests are formulated as optimization problems, including semi-infinite and max-min problems.",
+    "quote": "A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems."
+   },
+   {
+    "topic": "precedents",
+    "text": "The dynamic model-discrimination criterion builds on the Hunter–Reiner approach, whose extension to dynamic experiments was first attempted by Espie and Macchietto (1989).",
+    "quote": "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case"
+   },
+   {
+    "topic": "precedents",
+    "text": "For dynamic parameter-precision design, the paper discusses Espie and Macchietto (1989), Körkel et al. (1999), and Zullo (1991), and states that its work to date is based largely on Zullo’s criterion.",
+    "quote": "Much of our work to date is based on a unique criterion put forth by Zullo (1991)"
+   },
+   {
+    "topic": "precedents",
+    "text": "The robust optimal-design methods for dynamic experiments are described further in Asprey et al. (2000).",
+    "quote": "Extensions of this criterion to account for the uncertainty in the point estimates of the parameters are made in Asprey et al. (2000)"
+   },
+   {
+    "topic": "purpose",
+    "text": "The Monod fermentation model serves as an example for demonstrating tools for dynamic model building and statistical verification, rather than as a standalone validated production model.",
+    "quote": "Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model."
+   },
+   {
+    "topic": "availability",
+    "text": "The paper does not state that code or reusable data for the bioreactor model are available.",
+    "quote": null
+   }
+  ]
+ }
+}

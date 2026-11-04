@@ -1,0 +1,379 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "6.1": {
+   "form": "ODE",
+   "computes": "X_{V}",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Viable-cell-density balance computes net accumulation from specific growth and cell death.",
+   "description_basis": "stated",
+   "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6.1",
+    "description": "Viable-cell-density balance computes net accumulation from specific growth and cell death.",
+    "description_basis": "stated",
+    "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6.2": {
+   "form": "ODE",
+   "computes": "[GLC]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Glucose balance computes concentration change from cell-associated glucose consumption and maintenance consumption.",
+   "description_basis": "stated",
+   "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6.2",
+    "description": "Glucose balance computes concentration change from cell-associated glucose consumption and maintenance consumption.",
+    "description_basis": "stated",
+    "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6.3": {
+   "form": "ODE",
+   "computes": "[GLN]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Glutamine balance computes concentration change from cell-associated consumption, maintenance consumption, and glutamine decomposition.",
+   "description_basis": "stated",
+   "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6.3",
+    "description": "Glutamine balance computes concentration change from cell-associated consumption, maintenance consumption, and glutamine decomposition.",
+    "description_basis": "stated",
+    "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6.4": {
+   "form": "ODE",
+   "computes": "[LAC]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Lactate balance computes production associated with glucose consumption by the cells.",
+   "description_basis": "stated",
+   "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6.4",
+    "description": "Lactate balance computes production associated with glucose consumption by the cells.",
+    "description_basis": "stated",
+    "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6.5": {
+   "form": "ODE",
+   "computes": "[AMM]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Ammonia balance computes production from glutamine consumption and decomposition, less ammonia removal.",
+   "description_basis": "stated",
+   "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6.5",
+    "description": "Ammonia balance computes production from glutamine consumption and decomposition, less ammonia removal.",
+    "description_basis": "stated",
+    "quote": "which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6.6": {
+   "form": "ODE",
+   "computes": "[B1]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "B1 titer accumulation is proportional to viable-cell density, the arrested-cell fraction, and existing B1 titer.",
+   "description_basis": "stated",
+   "quote": "the fraction of arrested viable cells was introduced into the mass balance equation for [B1].",
+   "assumptions": [
+    {
+     "text": "All viable cells are assumed to divide during exponential growth at the maximum specific growth rate.",
+     "quote": "Assuming all viable cells are dividing in exponential growth phase with the specific growth rate of μmax",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: All viable cells are assumed to divide during exponential growth at the maximum specific growth rate."
+   ],
+   "llm": {
+    "eq": "6.6",
+    "description": "B1 titer accumulation is proportional to viable-cell density, the arrested-cell fraction, and existing B1 titer.",
+    "description_basis": "stated",
+    "quote": "the fraction of arrested viable cells was introduced into the mass balance equation for [B1].",
+    "assumptions": [
+     {
+      "text": "All viable cells are assumed to divide during exponential growth at the maximum specific growth rate.",
+      "quote": "Assuming all viable cells are dividing in exponential growth phase with the specific growth rate of μmax",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "7.1": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Monod-type specific growth rate is limited by glucose and glutamine and inhibited by lactate and ammonia.",
+   "description_basis": "stated",
+   "quote": "The Monod equation is based on the availability of limiting nutrients (such as glucose and glutamine) and inhibitors (such as lactate and ammonia) in a concentration-dependent pattern.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{\\max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "[GLC]"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{glc}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "[GLN]"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{gln}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[LAC]"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "KI_{lac}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[AMM]"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "KI_{amm}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "7.1",
+    "description": "Monod-type specific growth rate is limited by glucose and glutamine and inhibited by lactate and ammonia.",
+    "description_basis": "stated",
+    "quote": "The Monod equation is based on the availability of limiting nutrients (such as glucose and glutamine) and inhibitors (such as lactate and ammonia) in a concentration-dependent pattern.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "μ_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{glc}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{gln}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "KI_{lac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "KI_{amm}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "7.2": {
+   "form": "algebraic",
+   "computes": "\\mu_{d}",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Specific cell death rate increases with lactate and ammonia concentrations toward a maximum rate.",
+   "description_basis": "stated",
+   "quote": "The kinetic model also elucidated that ammonia and lactate are the major factors in the Monod equations and hence play critical roles in cell growth and cell death.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "k_{d}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[LAC]"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "KD_{lac}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[AMM]"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "KD_{amm}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "7.2",
+    "description": "Specific cell death rate increases with lactate and ammonia concentrations toward a maximum rate.",
+    "description_basis": "stated",
+    "quote": "The kinetic model also elucidated that ammonia and lactate are the major factors in the Monod equations and hence play critical roles in cell growth and cell death.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "k_{d}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "KD_{lac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "KD_{amm}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "8": {
+   "form": "algebraic",
+   "computes": "m_{gln}",
+   "condition": null,
+   "value": null,
+   "section": "Kinetic model",
+   "description": "Glutamine maintenance coefficient computed as a saturating function of glutamine concentration.",
+   "description_basis": "stated",
+   "quote": "the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[GLN]"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "a_{1}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "a_{2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "Glutamine maintenance coefficient computed as a saturating function of glutamine concentration.",
+    "description_basis": "stated",
+    "quote": "the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "a_{1}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "a_{2}"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

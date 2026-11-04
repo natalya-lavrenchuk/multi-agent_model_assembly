@@ -1,0 +1,773 @@
+@prefix kg: <http://example.org/kg/ho_2000/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:ho_2000 a mkg:Sup ;
+    rdfs:label "ho_2000 · A Combined Pore Blockage and Cake Filtration Model for Protein Fouling during Microfiltration"@en ;
+    mkg:hasMetadata kg:ho_2000_meta ;
+    mkg:includes <http://example.org/kg/ho_2000/law/ho_2000_eq10>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq11>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq12>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq4>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq5>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq6>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq7> .
+
+kg:ho_2000_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model describes protein fouling during microfiltration of bovine serum albumin solutions through polycarbonate membranes. It predicts how filtrate flow and flux decline over time as protein aggregates first cover open membrane areas and a protein deposit then grows over the covered regions. The full model combines flow through uncovered and covered areas and accounts for differences in deposit resistance according to when each region was first covered; the authors also derive a simpler approximate solution. Experiments were run in a stirred cell at constant pressure, with BSA concentration and pressure varied, and the model was compared with measured flux and collected filtrate volume. The authors use it to explain the transition from pore blockage to cake filtration and other observed flux-decline patterns, and to investigate the mechanisms of protein fouling." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "DAE" ;
+    mkg:hasAssumption [ mkg:quote "$ R' $ is the specific protein layer resistance, which is assumed to be constant during a constant pressure filtration." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Specific protein layer resistance R' is constant during constant‑pressure filtration." ],
+        [ mkg:quote "This initial deposit is assumed to be at least partially permeable to fluid flow, i.e., there is some small finite flow through even the “blocked” pores." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The initial deposit is partially permeable, allowing finite flow through blocked pores." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "the numerical solution does tend to underestimate the resistance at long times. Better agreement at long times was attained using a slightly larger value of f′R′." ;
+            mkg:text "The full numerical model tended to underestimate total resistance at long times, and a slightly larger cake-growth resistance rate improved that agreement." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the filtrate flow rate through the fouled membrane at any given filtration time" ;
+            mkg:text "The full model is dynamic and predicts filtrate flow over the course of filtration." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The results provide important insights into the underlying mechanisms of protein fouling during microfiltration." ;
+            mkg:text "The authors intend the model to explain flux behavior over the complete filtration process and provide insight into protein-fouling mechanisms." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This is consistent with the power law relationship used previously by Porter (15) and Belter et al. (16) to describe the compressibility of different filter cakes:" ;
+            mkg:text "The paper relates its cake-compressibility description to power-law approaches used by Porter (1977) and Belter et al. (1988)." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "at t = 8 min only 6% of the total filtrate flow is through the fouled regions even though 74% of the membrane surface is covered by the protein deposit." ;
+            mkg:text "At 8 min in the 2 g/L run, 74% of the membrane area was covered but only 6% of the filtrate flow passed through fouled regions." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Although these experimental studies provide evidence for a transition in fouling mechanism from pore blockage to cake formation" ;
+            mkg:text "The observed transition between early blockage and later cake filtration is discussed in relation to Tracey and Davis (1994) and Bowen et al. (1995)." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The initial flux ranged from 3.2 × 10−4 to 4.0 × 10−4 m/s due to the inherent membrane to membrane variability." ;
+            mkg:text "The initial flux varied between 3.2 × 10⁻⁴ and 4.0 × 10⁻⁴ m/s across the membranes in the concentration-series experiments." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The rate of pore coverage or blockage" ;
+            mkg:text "The full model uses three evolving quantities: uncovered membrane area, deposit mass per area, and deposit resistance." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Kelly and Zydney (5) used a modified form of the pore blockage model to describe BSA fouling over a wide range of pressures and bulk protein concentrations." ;
+            mkg:text "The paper contrasts its combined approach with Kelly and Zydney (1995), who used a modified pore-blockage model for BSA fouling." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All BSA solutions were freshly prepared before each experiment and used within 8 h of preparation." ;
+            mkg:text "BSA solutions were prepared in phosphate-buffered saline adjusted to pH 7.4, freshly prepared before each run, and used within 8 h." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "BSA aggregates were formed by intermolecular disulfide bonds between albumin molecules." ;
+            mkg:text "The authors describe BSA aggregates as forming through intermolecular disulfide bonds between albumin molecules." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The stirred cell and solution reservoir were initially filled with PBS, with the saline flux measured until steady state was attained (usually within 30 min)." ;
+            mkg:text "The cell was first run with saline until its flux reached steady state, then rapidly emptied and refilled with BSA solution before repressurization." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit values of the parameters Rp0 and f′R′ were determined at each ΔP by minimizing the sum of the squared residuals" ;
+            mkg:text "For the pressure series, the blockage parameter was taken from the concentration-series fit while the other two quantities were fitted separately at each pressure." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "demonstrating the validity of this approach to describing the flux decline during protein microfiltration through membranes with noninterconnected pore structures." ;
+            mkg:text "The authors present the model as describing protein flux decline through membranes with noninterconnected pore structures." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model explains a maximum in the flux-decline diagnostic that earlier work had observed without a mechanical explanation." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "These results were highly reproducible, with the data from repeat experiments differing by less than 10%." ;
+            mkg:text "Repeat experiments differed by less than 10%." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the stirred cell filtration of 2 g/L BSA solutions" ;
+            mkg:text "The pressure series filtered 2 g/L BSA at transmembrane pressures spanning 5.5 to 55 kPa (0.8 to 8 psi)." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model predicts that cake growth is self-leveling because high-resistance regions have lower flux and therefore grow more slowly." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The membrane was then air dried for 12 h and reweighed to estimate the mass of the deposited protein." ;
+            mkg:text "Deposited protein mass was measured by weighing a dry membrane before and after filtration and air drying it for 12 h." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a much simpler analytical solution can be developed for the filtrate flow rate by assuming a uniform resistance of the protein layer over the fouled surface of the membrane." ;
+            mkg:text "The authors also develop an approximate analytical solution that assumes uniform resistance over the fouled membrane area." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with the standard deviations in the parameter values determined from the optimization routine." ;
+            mkg:text "The reported parameter standard deviations were obtained from the optimization routine." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Equation [6] is expressed as an integral over the blocked area to account for the spatial inhomogeneity in the resistance of the protein deposit arising from the time-dependent blockage of the membrane surface." ;
+            mkg:text "The model accounts for spatially varying deposit resistance by integrating over regions that were blocked at different times." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state that model code or experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "0.2-μm polycarbonate track-etched (PCTE) membranes" ;
+            mkg:text "The membranes were 0.2-μm polycarbonate track-etched membranes." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The total resistance continues to increase even after 100 min of filtration at the highest protein concentration, indicating that the flux never attains a steady-state value under the conditions of these experiments." ;
+            mkg:text "The total resistance continued to increase after 100 min at the highest tested protein concentration, so flux did not reach steady state under those conditions." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the governing equations can all be conveniently written in a common mathematical form as (1, 2)" ;
+            mkg:text "The paper places classical pore-blockage, pore-constriction, and cake-filtration descriptions in the common framework of Hermans and Bredée (1936) and Gonsalves (1950)." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The short-time flux-decline plot had a measured log-log slope of 2.0 ± 0.1, consistent with classical complete pore blocking." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All experiments were performed at room temperature (22 ± 2°C)." ;
+            mkg:text "The stirred-cell experiments were conducted at room temperature, reported as 22 ± 2°C." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A single membrane was used to filter a 2 g/L BSA solution for 5 h at a constant pressure of 14 kPa (2 psi)." ;
+            mkg:text "The authors assessed deposit resistance by filtering 2 g/L BSA for 5 h at 14 kPa, then measuring saline flow through the rinsed membrane at several pressures." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This increase in R' is likely due to the compressibility of the BSA deposit, with the packing density of the BSA increasing with increasing pressure." ;
+            mkg:text "The protein-deposit resistance increased with applied pressure, which the authors attribute to compression of the BSA deposit." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "For the concentration series, the three fitted quantities were obtained by minimizing squared residuals using steepest descent." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "constant pressure, ΔP = 14 kPa (2 psi), stirred cell filtration of five different BSA solutions with concentrations ranging from 0.5 to 5 g/L." ;
+            mkg:text "The concentration series comprised five BSA solutions ranging from 0.5 to 5 g/L, filtered at 14 kPa." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "At t = 32 min, the average resistance over the fouled region is only 6% smaller than the maximum resistance and this decreases to less than 3% after 100 min." ;
+            mkg:text "At 32 min the average deposit resistance over covered regions was 6% below the maximum, and after 100 min it was less than 3% below the maximum." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "R' will typically be a strong function of solution pH and ionic strength due to changes in the intermolecular interactions between proteins within the deposit (11)." ;
+            mkg:text "The authors interpret the deposit resistance as depending on solution conditions such as pH and ionic strength." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model calculations are in very good agreement with the experimental data for both the filtrate flux (J) and the filtration volume (V) over the entire time interval and over the full range of bulk protein concentrations using this single set of parameters." ;
+            mkg:text "The concentration-series model calculations agreed with both flux and filtrate-volume data over the full time interval using one parameter set." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a 25-mm-diameter stirred ultrafiltration cell (Model 8010, Amicon Corp.) connected to an acrylic solution reservoir that was air pressurized at 5.5 to 55 kPa." ;
+            mkg:text "Filtration experiments used a 25-mm-diameter stirred ultrafiltration cell connected to an air-pressurized acrylic solution reservoir." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The volumetric filtrate flow rate through the fouled membrane can thus be expressed as the sum of the flow rates through the open and blocked pores:" ;
+            mkg:text "The model adds the flow through open membrane regions to the flow through blocked regions." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Mochizuki and Zydney (13) estimated the specific surface area of a complete BSA deposit from dextran sieving measurements" ;
+            mkg:text "Mochizuki and Zydney (1993) supplied a literature estimate of BSA-deposit specific surface area used to estimate initial deposit resistance." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The aggregate fraction and aggregate size used for an independent estimate of the blockage parameter came from Ho and Zydney (1999)." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The results from the approximate analytical solution (dotted curves in Fig. 1) are only slightly below those of the full solution" ;
+            mkg:text "The approximate solution gave results only slightly below those from the full model in the concentration-series comparisons." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the constant pressure filtration of bovine serum albumin through track-etch polycarbonate membranes" ;
+            mkg:text "The model describes bovine serum albumin (BSA) protein fouling during membrane microfiltration." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model provides a smooth transition from the pore blockage to cake filtration regimes, eliminating the need to use different mathematical formulations to describe these two phenomena." ;
+            mkg:text "The combined formulation gives a smooth transition from pore blockage to cake filtration without requiring separate mathematical descriptions for the two regimes." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "initial fouling due to pore blockage and subsequent fouling due to the growth of a protein cake or deposit over these initially blocked regions." ;
+            mkg:text "The model represents early fouling as aggregate blockage and later fouling as growth of a protein cake or deposit over covered regions." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the filtrate flow rate was measured by timed collection using a digital balance (Sartorius Model 1580, Edgewood, NY)." ;
+            mkg:text "Filtrate flow rate was measured by timed collection on a digital balance, and total collected filtrate volume was reported." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "protein fouling during microfiltration occurs primarily by the deposition of large protein aggregates on the membrane surface" ;
+            mkg:text "The paper attributes much of the membrane-surface deposition to large protein aggregates." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The flux fits estimate three fouling quantities: the blockage parameter, initial deposit resistance, and the product of deposition fraction and specific layer resistance." ;
+            mkg:topic "parameters" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10> a mkg:Law ;
+    rdfs:label "ho_2000 eq 10"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq10/var/m_p> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq10_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq10/par/f_prime> ;
+    mkg:latex "\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq10/var/C_b>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq10/var/J_blocked> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10/par/f_prime> a mkg:Parameter ;
+    rdfs:label "f^{\\prime} (ho_2000 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Fraction of the proteins that contribute to the growth of the deposit" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "assuming that $ f' = 0.0003 $" ;
+    mkg:page "2" ;
+    mkg:quote "$ f' $ is the fraction of the proteins that contribute to the growth of the deposit" ;
+    mkg:reason "It is a fractional coefficient in the deposit-growth law, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "f^{\\prime}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3e-04 .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10/var/C_b> a mkg:Variable ;
+    rdfs:label "C_{b} (ho_2000 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Bulk protein concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "$ C_{b} $ is the bulk protein concentration" ;
+    mkg:reason "Bulk protein concentration is a feed condition varied between filtration runs." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{b}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10/var/J_blocked> a mkg:Variable ;
+    rdfs:label "J_{blocked} (ho_2000 eq 10)"@en ;
+    mkg:description "Filtrate flux through each region of the membrane" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "J_{blocked}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10/var/m_p> a mkg:Variable ;
+    rdfs:label "m_{p} (ho_2000 eq 10)"@en ;
+    mkg:description "Mass of the protein deposit per unit area" ;
+    mkg:dimension "[mass] / [length] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{p}" ;
+    mkg:unit "kg / m ** 2" ;
+    mkg:unitString "kg m^-2" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq10_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Protein deposit mass per unit area on a blocked region accumulates in proportion to the local filtrate flux carrying deposit-forming protein." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11> a mkg:Law ;
+    rdfs:label "ho_2000 eq 11"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq11/var/J_blocked> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq11/par/R_m>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq11/par/mu> ;
+    mkg:latex "J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq11/var/Delta_P>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq11/var/R_p> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11/par/mu> a mkg:Parameter ;
+    rdfs:label "\\mu (ho_2000 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Solution viscosity." ;
+    mkg:dimension "[mass] / [length] / [time]" ;
+    mkg:page "1" ;
+    mkg:quote "solution viscosity" ;
+    mkg:reason "Solution viscosity is a physical property of the solution." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "Pa * s" ;
+    mkg:unitString "Pa s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11/var/J_blocked> a mkg:Variable ;
+    rdfs:label "J_{blocked} (ho_2000 eq 11)"@en ;
+    mkg:description "Filtrate flux through each region of the membrane" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "J_{blocked}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Local filtrate flux through a blocked region is determined by the applied pressure and the combined membrane and deposit resistance." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq11/var/Delta_P> ;
+            mkg:slot "driving force" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq11/var/R_p> ;
+            mkg:slot "resistance" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq11/par/R_m> ;
+            mkg:slot "resistance" ] ;
+    mkg:page "2" ;
+    mkg:quote "J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12> a mkg:Law ;
+    rdfs:label "ho_2000 eq 12"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq12/var/R_p> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq12/par/R_prime>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq12/par/f_prime> ;
+    mkg:latex "\\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq12/var/C_b>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq12/var/J_blocked>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq12/var/m_p> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/par/R_prime> a mkg:Parameter ;
+    rdfs:label "R^{\\prime} (ho_2000 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific protein layer resistance" ;
+    mkg:dimension "[length] / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The best fit values of the parameters $R_{p0}$ and $f' R'$ were determined at each $\\Delta P$ by minimizing the sum of the squared residuals between the experimental data in Fig. 6 and the model calculations." ;
+    mkg:reason "It is the specific protein-layer resistance coefficient, assumed constant during constant-pressure filtration." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R^{\\prime}" ;
+    mkg:unit "m / kg" ;
+    mkg:unitString "m/kg" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/par/f_prime> a mkg:Parameter ;
+    rdfs:label "f^{\\prime} (ho_2000 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Fraction of the proteins that contribute to the growth of the deposit" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "assuming that $ f' = 0.0003 $" ;
+    mkg:page "2" ;
+    mkg:quote "$ f' $ is the fraction of the proteins that contribute to the growth of the deposit" ;
+    mkg:reason "It is a fractional coefficient in the deposit-growth law, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "f^{\\prime}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3e-04 .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/var/C_b> a mkg:Variable ;
+    rdfs:label "C_{b} (ho_2000 eq 12)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Bulk protein concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "$ C_{b} $ is the bulk protein concentration" ;
+    mkg:reason "Bulk protein concentration is a feed condition varied between filtration runs." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{b}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/var/J_blocked> a mkg:Variable ;
+    rdfs:label "J_{blocked} (ho_2000 eq 12)"@en ;
+    mkg:description "Filtrate flux through each region of the membrane" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "J_{blocked}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/var/R_p> a mkg:Variable ;
+    rdfs:label "R_{p} (ho_2000 eq 12)"@en ;
+    mkg:description "Resistance of the protein deposit over a particular region of the membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:initialQuote "$ R_{p0} $ is the initial resistance of the deposit, i.e., the resistance associated with a single protein aggregate." ;
+    mkg:initialValue "4.0 ± 0.2 × 10¹¹ m⁻¹" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "R_{p}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12/var/m_p> a mkg:Variable ;
+    rdfs:label "m_{p} (ho_2000 eq 12)"@en ;
+    mkg:description "Mass of the protein deposit per unit area" ;
+    mkg:dimension "[mass] / [length] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{p}" ;
+    mkg:unit "kg / m ** 2" ;
+    mkg:unitString "kg m^-2" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Local deposit resistance increases in proportion to the local deposit-mass accumulation rate, scaled by the specific protein-layer resistance." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "ODE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq4> a mkg:Law ;
+    rdfs:label "ho_2000 eq 4"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq4_meta> ;
+    mkg:latex "Q=Q_{\\mathrm{o p e n}}+Q_{\\mathrm{b l o c k e d}}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q_blocked>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q_open> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q> a mkg:Variable ;
+    rdfs:label "Q (ho_2000 eq 4)"@en ;
+    mkg:description "Volumetric flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the filtrate flow rate was measured by timed collection using a digital balance" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q_blocked> a mkg:Variable ;
+    rdfs:label "Q_{blocked} (ho_2000 eq 4)"@en ;
+    mkg:description "Volumetric flow rate through the blocked pores." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{blocked}" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq4/var/Q_open> a mkg:Variable ;
+    rdfs:label "Q_{open} (ho_2000 eq 4)"@en ;
+    mkg:description "Volumetric flow rate through the open pores." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{open}" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Total filtrate flow through the fouled membrane is the sum of flow through uncovered and blocked membrane regions." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "Q=Q_{\\mathrm{o p e n}}+Q_{\\mathrm{b l o c k e d}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5> a mkg:Law ;
+    rdfs:label "ho_2000 eq 5"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq5/var/Q_open> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq5/par/R_m>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq5/par/mu> ;
+    mkg:latex "Q_{\\mathrm{o p e n}}=\\frac{\\Delta P}{\\mu R_{\\mathrm{m}}}A_{\\mathrm{o p e n}}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq5/var/A_open>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq5/var/Delta_P> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5/par/mu> a mkg:Parameter ;
+    rdfs:label "\\mu (ho_2000 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Solution viscosity." ;
+    mkg:dimension "[mass] / [length] / [time]" ;
+    mkg:page "1" ;
+    mkg:quote "solution viscosity" ;
+    mkg:reason "Solution viscosity is a physical property of the solution." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "Pa * s" ;
+    mkg:unitString "Pa s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5/var/Q_open> a mkg:Variable ;
+    rdfs:label "Q_{open} (ho_2000 eq 5)"@en ;
+    mkg:description "Volumetric flow rate through the open pores." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{open}" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Flow through the uncovered membrane area is calculated from the clean-membrane resistance under the applied pressure." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq5/var/Delta_P> ;
+            mkg:slot "driving force" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq5/var/A_open> ;
+            mkg:slot "flow area" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq5/par/R_m> ;
+            mkg:slot "resistance" ] ;
+    mkg:page "2" ;
+    mkg:quote "Q_{\\mathrm{o p e n}}=\\frac{\\Delta P}{\\mu R_{\\mathrm{m}}}A_{\\mathrm{o p e n}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6> a mkg:Law ;
+    rdfs:label "ho_2000 eq 6"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/Q_blocked> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq6/par/R_m>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq6/par/mu> ;
+    mkg:latex "Q_{\\mathrm{b l o c k e d}}=\\int\\limits_{A_{\\mathrm{b l o c k e d}}}\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}d A" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/A_blocked>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/Delta_P>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/R_p> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/par/mu> a mkg:Parameter ;
+    rdfs:label "\\mu (ho_2000 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Solution viscosity." ;
+    mkg:dimension "[mass] / [length] / [time]" ;
+    mkg:page "1" ;
+    mkg:quote "solution viscosity" ;
+    mkg:reason "Solution viscosity is a physical property of the solution." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "Pa * s" ;
+    mkg:unitString "Pa s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/var/Q_blocked> a mkg:Variable ;
+    rdfs:label "Q_{blocked} (ho_2000 eq 6)"@en ;
+    mkg:description "Volumetric flow rate through the blocked pores." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{blocked}" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Flow through blocked membrane regions is integrated over the blocked area using the local membrane-plus-deposit resistance." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/A_blocked> ;
+            mkg:slot "flow area" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq6/par/R_m> ;
+            mkg:slot "resistance" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/Delta_P> ;
+            mkg:slot "driving force" ],
+        [ mkg:boundTo <http://example.org/kg/ho_2000/law/ho_2000_eq6/var/R_p> ;
+            mkg:slot "resistance" ] ;
+    mkg:page "2" ;
+    mkg:quote "Q_{\\mathrm{b l o c k e d}}=\\int\\limits_{A_{\\mathrm{b l o c k e d}}}\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}d A" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7> a mkg:Law ;
+    rdfs:label "ho_2000 eq 7"@en ;
+    mkg:computes <http://example.org/kg/ho_2000/law/ho_2000_eq7/var/A_open> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/ho_2000/law/ho_2000_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/ho_2000/law/ho_2000_eq7/par/alpha> ;
+    mkg:latex "\\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}" ;
+    mkg:uses <http://example.org/kg/ho_2000/law/ho_2000_eq7/var/C_b>,
+        <http://example.org/kg/ho_2000/law/ho_2000_eq7/var/Q_open> .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7/par/alpha> a mkg:Parameter ;
+    rdfs:label "\\alpha (ho_2000 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Pore blockage parameter equal to membrane area blocked per unit mass of protein convected to the membrane surface." ;
+    mkg:dimension "[length] ** 2 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The best fit values of the parameters $ \\alpha $, $ R_{p0} $, and $ f' $ were determined by minimizing the sum of the squared residuals between the filtrate flux data and the calculations from the complete model (Eq. [16]) using the method of steepest descent." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane surface." ;
+    mkg:reason "Pore blockage parameter is a constant of the blockage law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha" ;
+    mkg:unit "m ** 2 / kg" ;
+    mkg:unitString "m²/kg" ;
+    mkg:value 4.1e+00 ;
+    mkg:valueUncertainty "± 0.2" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7/var/A_open> a mkg:Variable ;
+    rdfs:label "A_{open} (ho_2000 eq 7)"@en ;
+    mkg:description "Area of the membrane that remains uncovered." ;
+    mkg:dimension "[length] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A_{open}" ;
+    mkg:unit "m ** 2" ;
+    mkg:unitString "m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7/var/C_b> a mkg:Variable ;
+    rdfs:label "C_{b} (ho_2000 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Bulk protein concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "$ C_{b} $ is the bulk protein concentration" ;
+    mkg:reason "Bulk protein concentration is a feed condition varied between filtration runs." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{b}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7/var/Q_open> a mkg:Variable ;
+    rdfs:label "Q_{open} (ho_2000 eq 7)"@en ;
+    mkg:description "Volumetric flow rate through the open pores." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{open}" ;
+    mkg:unit "m ** 3 / s" ;
+    mkg:unitString "m³/s" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The uncovered membrane area decreases in proportion to the convective delivery of protein aggregates through the open pores." ;
+    mkg:doi "10.1006/jcis.2000.7231" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11/par/R_m> a mkg:Parameter ;
+    rdfs:label "R_{m} (ho_2000 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Resistance of the clean membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "clean membrane resistance" ;
+    mkg:reason "Clean-membrane resistance is a resistance property of the membrane system." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R_{m}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11/var/Delta_P> a mkg:Variable ;
+    rdfs:label "\\Delta P (ho_2000 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Transmembrane pressure." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "constant pressure, $ \\Delta P = 14 $ kPa (2 psi)" ;
+    mkg:initialValue "14 kPa (2 psi)" ;
+    mkg:page "1" ;
+    mkg:quote "transmembrane pressure" ;
+    mkg:reason "Transmembrane pressure is an operating condition set for each filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta P" ;
+    mkg:unit "N / m ** 2" ;
+    mkg:unitString "N/m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq11/var/R_p> a mkg:Variable ;
+    rdfs:label "R_{p} (ho_2000 eq 11)"@en ;
+    mkg:description "Resistance of the protein deposit over a particular region of the membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:initialQuote "$ R_{p0} $ is the initial resistance of the deposit, i.e., the resistance associated with a single protein aggregate." ;
+    mkg:initialValue "4.0 ± 0.2 × 10¹¹ m⁻¹" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "R_{p}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5/par/R_m> a mkg:Parameter ;
+    rdfs:label "R_{m} (ho_2000 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Resistance of the clean membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "clean membrane resistance" ;
+    mkg:reason "Clean-membrane resistance is a resistance property of the membrane system." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R_{m}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5/var/A_open> a mkg:Variable ;
+    rdfs:label "A_{open} (ho_2000 eq 5)"@en ;
+    mkg:description "Area of the membrane that remains uncovered." ;
+    mkg:dimension "[length] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A_{open}" ;
+    mkg:unit "m ** 2" ;
+    mkg:unitString "m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq5/var/Delta_P> a mkg:Variable ;
+    rdfs:label "\\Delta P (ho_2000 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Transmembrane pressure." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "constant pressure, $ \\Delta P = 14 $ kPa (2 psi)" ;
+    mkg:initialValue "14 kPa (2 psi)" ;
+    mkg:page "1" ;
+    mkg:quote "transmembrane pressure" ;
+    mkg:reason "Transmembrane pressure is an operating condition set for each filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta P" ;
+    mkg:unit "N / m ** 2" ;
+    mkg:unitString "N/m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/par/R_m> a mkg:Parameter ;
+    rdfs:label "R_{m} (ho_2000 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Resistance of the clean membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "clean membrane resistance" ;
+    mkg:reason "Clean-membrane resistance is a resistance property of the membrane system." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R_{m}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/var/A_blocked> a mkg:Variable ;
+    rdfs:label "A_{blocked} (ho_2000 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Area of the membrane blocked by protein aggregates." ;
+    mkg:dimension "[length] ** 2" ;
+    mkg:page "3" ;
+    mkg:quote "The total area of the membrane surface that is blocked by the protein aggregates ( $ A_{blocked} $) increases with time as the aggregates continue to deposit on the membrane surface" ;
+    mkg:reason "Blocked membrane area increases as protein aggregates deposit on the membrane." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "A_{blocked}" ;
+    mkg:unit "m ** 2" ;
+    mkg:unitString "m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/var/Delta_P> a mkg:Variable ;
+    rdfs:label "\\Delta P (ho_2000 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Transmembrane pressure." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "constant pressure, $ \\Delta P = 14 $ kPa (2 psi)" ;
+    mkg:initialValue "14 kPa (2 psi)" ;
+    mkg:page "1" ;
+    mkg:quote "transmembrane pressure" ;
+    mkg:reason "Transmembrane pressure is an operating condition set for each filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta P" ;
+    mkg:unit "N / m ** 2" ;
+    mkg:unitString "N/m²" .
+
+<http://example.org/kg/ho_2000/law/ho_2000_eq6/var/R_p> a mkg:Variable ;
+    rdfs:label "R_{p} (ho_2000 eq 6)"@en ;
+    mkg:description "Resistance of the protein deposit over a particular region of the membrane." ;
+    mkg:dimension "1 / [length]" ;
+    mkg:initialQuote "$ R_{p0} $ is the initial resistance of the deposit, i.e., the resistance associated with a single protein aggregate." ;
+    mkg:initialValue "4.0 ± 0.2 × 10¹¹ m⁻¹" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "R_{p}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+

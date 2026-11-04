@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.301660326,
+  "prompt_tokens": 1782,
+  "prompt_time": 0.133720857,
+  "completion_tokens": 15660,
+  "completion_time": 33.198875198,
+  "total_tokens": 17442,
+  "total_time": 33.332596055,
+  "completion_tokens_details": {
+   "reasoning_tokens": 15164
+  }
+ },
+ "user": "Equations:\n(C-13) r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-14) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{CO}_{2}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-16) \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-}      <- \"The corresponding surface coverages are:\"\n(C-3) \\begin{aligned}\\lg(K_{P3})&=1.2777-2167/T+0.5194\\cdot\\lg(T)\\\\&\\quad-1.037\\times10^{-3}T+2.331\\times10^{-7}T^{2}\\end{aligned}      <- \"Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\"\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\nk_{3}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nK_{P3}   [COMPUTED by eq C-3]\n  (no snippet mentions this symbol)\n\nK_{CO_2}^{\\odot}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nK_{O}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nK_{CO_2}^{*}   [NOT COMPUTED]\n  [123] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_{3} catalyst (Vollbrecht, 2007): Elementary step: $ \\text{CO}_2 + \\odot \\Rightarrow \\text{CO}_2 \\odot $ | Quasi-equilibrium/velocity: $ \\theta_{CO_2}^{\\odot} = K_{CO_2} p",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "k_{3}",
+    "description": "kinetic rate constant for the reverse water-gas shift reaction",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "k_3 is a kinetic rate constant for the RWGS reaction, treated as a fitted parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K_{P3}",
+    "description": "pressure equilibrium constant for the reverse water-gas shift reaction",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{CO_2}^{\\odot}",
+    "description": "adsorption equilibrium constant for CO2 on a vacant site",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "K_{CO_2}^{\\odot} is an adsorption equilibrium constant for CO2, treated as a fitted parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K_{O}",
+    "description": "adsorption equilibrium constant for atomic oxygen",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "K_{O} is an adsorption equilibrium constant for atomic oxygen, treated as a fitted parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K_{CO_2}^{*}",
+    "description": "adsorption equilibrium constant for CO2 on a * site",
+    "description_basis": "stated",
+    "snippet_id": 123,
+    "quote": "Elementary step: $ \\\\text{CO}_2 + \\\\odot \\\\Rightarrow \\\\text{CO}_2 \\\\odot $ | Quasi-equilibrium/velocity: $ \\\\theta_{CO_2}^{\\\\odot} = K_{CO_2} p$",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "K_{CO_2}^{*} is an adsorption equilibrium constant for CO2 on a * site, taken as a fitted parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

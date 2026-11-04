@@ -1,0 +1,55 @@
+{
+ "sup": "anane_demo",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 13,
+  "variable_nodes": 44,
+  "parameter_nodes": 21,
+  "distinct_symbols": 36,
+  "computes_edges": 13,
+  "uses_edges": 31,
+  "hasParameter_edges": 21,
+  "laws_by_form": {
+   "ODE": 5,
+   "algebraic": 8
+  },
+  "laws_flagged": [],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "DOT^{*}",
+   "H",
+   "K_{La}",
+   "K_{ap}",
+   "K_{ia}",
+   "K_{is}",
+   "K_{o}",
+   "K_{p}",
+   "K_{sa}",
+   "K_{s}",
+   "P_{Amax}",
+   "Y_{as}",
+   "Y_{em}",
+   "Y_{oa}",
+   "Y_{os}",
+   "Y_{xa}",
+   "Y_{xsof}",
+   "q_{Amax}",
+   "q_{m}",
+   "q_{smax}"
+  ],
+  "for_review": [],
+  "triples": 1345
+ },
+ "flags": [
+  {
+   "symbol": "q_{A}",
+   "check": "computed, never used",
+   "laws": [
+    19
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

@@ -1,0 +1,65 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "4": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\mu=\\frac{\\mu_{max}XS}{K_{s}+S} $$",
+   "corrected_latex": null,
+   "reason": "The paper repeats this as its second Monod form and describes it as based on both substrate and biomass, but gives no alternate equation that resolves the specific-rate and biomass-factor conflict.",
+   "quote": "$\\mu = \\frac{\\mu_{max}XS}{K_s + S}$",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "5": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\mu=\\frac{\\mu_{max}S}{K_{s}} $$",
+   "corrected_latex": null,
+   "reason": "Although the text describes a sharp first-to-zero-order transition, it gives no threshold or piecewise expression from which an exact replacement can be recovered.",
+   "quote": "The model has been described as being capable of making a sharp transition from first order kinetics to zero order kinetics",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "6": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{s^{2}}{K_{i}}} $$",
+   "corrected_latex": null,
+   "reason": "The lowercase $s$ is inconsistent notation for substrate, but the flag concerns notation rather than evidence that the mathematical term should change.",
+   "quote": "S = Substrate concentration",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "7": {
+   "action": "correct",
+   "printed_latex": "$$ \\mu=\\mu_{m a x}\\bigg(1-e^{\\frac{S}{\\kappa_{T}}}\\bigg) $$",
+   "corrected_latex": "$$ \\mu=\\mu_{max}\\bigg(1-e^{-\\frac{S}{\\kappa_{T}}}\\bigg) $$",
+   "reason": "The printed positive exponent makes the rate negative for positive substrate, contrary to the paper’s description of a first-to-zero-order transition; changing it to a negative exponent gives the described saturating form.",
+   "quote": "The Teissier model differs with the Monod model, Blackman model, and Moser model when it transitions from first order kinetics to zero order kinetics",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "12": {
+   "action": "correct",
+   "printed_latex": "$$ \\mu=\\frac{\\mu_{max}}{K_{s}+S+\\frac{s^{2}}{K_{1}}+\\frac{s^{3}}{K_{2}^{2}}} $$",
+   "corrected_latex": "$$ \\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{S^{2}}{K_{1}}+\\frac{S^{3}}{K_{2}^{2}}} $$",
+   "reason": "The numerator is missing S: without it the expression does not have units of a specific growth rate. The lowercase s in the OCR text is a capital S in the PDF.",
+   "quote": "Where, $\\mu$ specific growth rate, $\\mu_{max}$ maximum specific growth rate, $K_s$ half saturation constant, $S$ substrate concentration, and $K_1$ and $K_2$ positive constants that describe substrate inhibition.",
+   "basis": "human",
+   "checks": [],
+   "status": "proposed"
+  },
+  "17": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\mu=\\frac{\\mu_{max}S\\left(1+\\frac{s}{K_{i}}\\right)}{S+K_{s}+\\left(\\frac{s^{2}}{K_{i}}\\right)} $$",
+   "corrected_latex": null,
+   "reason": "The lowercase $s$ terms are inconsistent notation for substrate, but the flag concerns notation and does not establish a different mathematical form.",
+   "quote": "S = Substrate concentration",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

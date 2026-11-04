@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.306811374,
+  "prompt_tokens": 1139,
+  "prompt_time": 0.059754175,
+  "completion_tokens": 903,
+  "completion_time": 1.914725142,
+  "total_tokens": 2042,
+  "total_time": 1.9744793170000001,
+  "completion_tokens_details": {
+   "reasoning_tokens": 320
+  }
+ },
+ "user": "Equations:\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}\n\nSymbols:\n\n\\gamma_{2}   [NOT COMPUTED]\n  [71] (line, p.2) $ \\gamma_{2} $ constant for antibody production (dimensionless)\n  [193] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\gamma_2 $ (h) | Batch operation value: 2 | Fed-batch operation value: 2\n\n\\gamma_{1}   [NOT COMPUTED]\n  [70] (line, p.2) $ \\gamma_{1} $ constant for antibody production (h)\n  [192] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\gamma_1 $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $\n\nQ_{MAb}   [COMPUTED by eq 28]\n  (no snippet mentions this symbol)\n\n\\varepsilon_{2}   [NOT COMPUTED]\n  [73] (line, p.2) $ \\varepsilon_{2} $ Golgi apparatus glycosylation efficiency factor (dimensionless)\n  [195] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_2 $ | Batch operation value: 1 | Fed-batch operation value: 1\n\n\\lambda   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "γ_{2}",
+    "description": "constant for antibody production",
+    "description_basis": "stated",
+    "snippet_id": 71,
+    "quote": "γ_{2} constant for antibody production (dimensionless)",
+    "unit": "h",
+    "unit_basis": "stated",
+    "value": "2 h",
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as a model parameter"
+   },
+   {
+    "symbol": "γ_{1}",
+    "description": "constant for antibody production",
+    "description_basis": "stated",
+    "snippet_id": 70,
+    "quote": "γ_{1} constant for antibody production (h)",
+    "unit": "h",
+    "unit_basis": "stated",
+    "value": "10^{-1} h",
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as a model parameter"
+   },
+   {
+    "symbol": "Q_{MAb}",
+    "description": "specific production rate of monoclonal antibody as defined by Eq. 28",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "ε_{2}",
+    "description": "Golgi apparatus glycosylation efficiency factor",
+    "description_basis": "stated",
+    "snippet_id": 73,
+    "quote": "ε_{2} Golgi apparatus glycosylation efficiency factor (dimensionless)",
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": "1",
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as a model parameter"
+   },
+   {
+    "symbol": "λ",
+    "description": "parameter appearing in Eq. 28 that scales the effect of K_G and substrate concentration on Q_{MAb}",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as a model parameter"
+   }
+  ]
+ }
+}

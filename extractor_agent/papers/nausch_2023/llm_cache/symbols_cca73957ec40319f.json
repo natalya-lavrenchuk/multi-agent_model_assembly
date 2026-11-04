@@ -1,0 +1,89 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.053671678,
+  "prompt_tokens": 2054,
+  "prompt_time": 0.125802634,
+  "completion_tokens": 14538,
+  "completion_time": 37.40481179,
+  "total_tokens": 16592,
+  "total_time": 37.530614424,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 13967
+  }
+ },
+ "user": "Equations:\n(6) V\\frac{dN}{dt}+N\\frac{dV}{dt}=F_{t}N_{f}-\\mu_{N}\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)X_{a}V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nN   [COMPUTED by eq 6]\n  [256] (sentence, p.8) N, nitrate;\n  [346] (sentence, p.11) N, nitrate;\n  [408] (table_row, p.13) Model: Initial | aMAE $ _{{X}} $ [g L $ ^{{-1}} $]\\n(anMAE $ _{{X}} $ [-1]): 1.069 (0.214) | aMAE $ _{{X-8}} $\\n[g L $ ^{{-1}} $]\\n(anMAE $ _{{X-8}} $ [-1]): 1.850 (0.371) | aMAE $ _{{S}} $ [mM]\\n(anMAE $ _{{S}} $ [-1]): 5.841 (0.198) | aMAE $ _{{A}} $ [mM]\\n(\n\nN_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{N}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n  [207] (table_row, p.6) Parameter: $ \\mu_N $ | Description: Nitrate consumption rate | Unit: $ h^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 3.013 \\times 10^{-2} $ | 90% CI: $ 2.49 \\times 10^{-3} $\n  [433] (table_row, p.15) Parameter: $ \\mu_{{N}} $ | Description: Nitrate consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 1.71 \\times 10^{-2} $ | 90% CI: $ 2.7 \\times 10^{-2} $\n\nK_{N}   [NOT COMPUTED]\n  [203] (table_row, p.6) Parameter: $ K_N $ | Description: Nitrate saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.133 | 90% CI: 0.057\n  [424] (table_row, p.14) Parameter: $ K_N $ | Description: Nitrate saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.835 | 90% CI: 0.25\n\nK_{IN}   [NOT COMPUTED]\n  [204] (table_row, p.6) Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.135 | 90% CI: 0.097\n  [425] (table_row, p.14) Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 1.0 | 90% CI: 0.06",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "N",
+    "description": "Nitrate concentration",
+    "description_basis": "stated",
+    "snippet_id": 256,
+    "quote": "N, nitrate",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "N_{f}",
+    "description": "Feed nitrate concentration",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "Feed medium concentration set as an operating condition",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{N}",
+    "description": "Nitrate consumption rate",
+    "description_basis": "stated",
+    "snippet_id": 207,
+    "quote": "Parameter: $ \\mu_N $ | Description: Nitrate consumption rate | Unit: $ h^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 3.013 \\times 10^{-2} $ | 90% CI: $ 2.49 \\times 10^{-3} $",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "3.013 \\times 10^{-2}",
+    "class_reason": "Fitted kinetic parameter representing nitrate consumption rate",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{N}",
+    "description": "Nitrate saturation constant",
+    "description_basis": "stated",
+    "snippet_id": 203,
+    "quote": "Parameter: $ K_N $ | Description: Nitrate saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.133 | 90% CI: 0.057",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.133",
+    "class_reason": "Fitted kinetic parameter representing nitrate saturation constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IN}",
+    "description": "Nitrate inhibition constant",
+    "description_basis": "stated",
+    "snippet_id": 204,
+    "quote": "Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.135 | 90% CI: 0.097",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.135",
+    "class_reason": "Fitted kinetic parameter representing nitrate inhibition constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

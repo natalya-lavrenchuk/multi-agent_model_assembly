@@ -1,0 +1,73 @@
+{
+ "sup": "nagy_2008",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 8,
+  "variable_nodes": 24,
+  "parameter_nodes": 10,
+  "distinct_symbols": 17,
+  "computes_edges": 8,
+  "uses_edges": 16,
+  "hasParameter_edges": 10,
+  "laws_by_form": {
+   "ODE": 5,
+   "algebraic": 3
+  },
+  "laws_flagged": [
+   "11.1",
+   "11.2",
+   "11.3",
+   "11.4",
+   "11.5"
+  ],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "\\rho_{c}",
+   "b",
+   "g",
+   "k_{b}",
+   "k_{g}",
+   "k_{v}",
+   "r_{0}"
+  ],
+  "for_review": [],
+  "triples": 866
+ },
+ "flags": [
+  {
+   "law": "11.1",
+   "check": "reading",
+   "detail": "\\dot{\\mu}_{0} on the left read as d/dt"
+  },
+  {
+   "law": "11.2",
+   "check": "reading",
+   "detail": "\\dot{\\mu}_{1} on the left read as d/dt"
+  },
+  {
+   "law": "11.3",
+   "check": "reading",
+   "detail": "\\dot{\\mu}_{2} on the left read as d/dt"
+  },
+  {
+   "law": "11.4",
+   "check": "reading",
+   "detail": "\\dot{\\mu}_{3} on the left read as d/dt"
+  },
+  {
+   "law": "11.5",
+   "check": "reading",
+   "detail": "\\dot{C} on the left read as d/dt"
+  },
+  {
+   "symbol": "C^{*}",
+   "check": "computed, never used",
+   "laws": [
+    21
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

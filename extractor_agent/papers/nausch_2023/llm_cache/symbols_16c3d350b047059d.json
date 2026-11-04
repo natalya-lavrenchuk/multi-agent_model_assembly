@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.023377387,
+  "prompt_tokens": 1863,
+  "prompt_time": 0.093643383,
+  "completion_tokens": 10059,
+  "completion_time": 21.739853196,
+  "total_tokens": 11922,
+  "total_time": 21.833496579,
+  "completion_tokens_details": {
+   "reasoning_tokens": 9650
+  }
+ },
+ "user": "Equations:\n(8) V\\frac{dP}{dt}+P\\frac{dV}{dt}=F_{t}P_{f}-\\mu_{P}P\\quad V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nP   [COMPUTED by eq 8]\n  [257] (sentence, p.8) P, phosphate;\n  [347] (sentence, p.11) P, phosphate;\n  [419] (table_row, p.14) Parameter: $ \\mu_m^P $ | Description: maximum specific growth rate phosphate | Unit: $ h^{-1} $ | Min: 0 | Max: 10 | Optimal: $ 2.1 \\times 10^{-5} $ | 90% CI: 0.37\n\nP_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{P}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n  [436] (table_row, p.15) Parameter: $ \\mu_{{P}} $ | Description: Phosphate consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 2.68 \\times 10^{-2} $ | 90% CI: $ 3.2 \\times 10^{-3} $\n\n\\mu_{m}   [NOT COMPUTED]\n  [183] (sentence, p.6) where  $ \\kappa_{r} $ is the saturation constant and  $ \\kappa_{Ir} $ the inhibition constant of corresponding nutrient r, i.e. S, A and N in [g L $ ^{-1} $], and  $ \\mu_{m} $ is the maximum specific growth rate [h $ ^{-1} $] (Prakash and Srivastava, 2006;\n  [198] (table_row, p.6) Parameter: $ \\mu_m $ | Description: Maximum specific growth rate | Unit: $ h^{-1} $ | Min: 0 | Max: 10 | Optimal: 9.47 | 90% CI: 0.06\n  [354] (sentence, p.11) It has 20 parameters to identify, including the death rate constant  $ k_d $, maximum specific growth rate  $ \\mu_m $, maximum specific growth rate for ammonium and phosphate  $ \\mu^A_m $,  $ \\mu^P_m $, saturation and inhibition constants  $ K_h $ and  $ K_{lh\n\n\\mu_{m}^{A}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "P",
+    "description": "phosphate concentration",
+    "description_basis": "stated",
+    "snippet_id": 257,
+    "quote": "P, phosphate",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "P_{f}",
+    "description": "feed medium concentration of phosphate",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "feed medium concentration of phosphate, an input condition",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{P}",
+    "description": "Phosphate consumption rate",
+    "description_basis": "stated",
+    "snippet_id": 436,
+    "quote": "Phosphate consumption rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "2.68 × 10^{-2} h^{-1",
+    "class_reason": "phosphate consumption rate constant, a fitted parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{m}",
+    "description": "Maximum specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 198,
+    "quote": "Maximum specific growth rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "9.47 h^{-1",
+    "class_reason": "maximum specific growth rate, a fitted parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{m}^{A}",
+    "description": "maximum specific growth rate for ammonium",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "maximum specific growth rate for ammonium, a fitted parameter",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

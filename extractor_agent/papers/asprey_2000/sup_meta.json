@@ -1,0 +1,453 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "asprey_2000_monod_kinetics": {
+   "name": "Monod kinetics",
+   "equations": [
+    "16.1",
+    "16.2",
+    "17"
+   ],
+   "description": "The model describes baker’s yeast fermentation in a fed-batch reactor, predicting biomass and substrate concentrations over time. It combines reactor component balances with a Monod-type rate law for substrate consumption; the biomass and substrate balances account for growth, dilution, biomass loss, and substrate supplied in the feed. The process is represented by adjustable dilution and feed-substrate concentration profiles, with specified initial concentrations. The paper demonstrates model checking and experiment design using simulated response data with added measurement error, rather than reported measurements from a physical reactor. The authors use the example to test identifiability, distinguish the Monod model from a Canoid alternative, and design experiments for model discrimination and improved parameter precision.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model is for fermentation of baker’s yeast in a fed-batch reactor.",
+     "quote": "Consider a fed-batch reactor (see Fig. 3) in which the fermentation of baker's yeast is carried out.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The paper gives no reactor volume or physical scale for the example.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The process has two time-varying controls: dilution factor and substrate concentration in the feed.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The dilution factor is allowed to range from 0.05 to 0.20 h⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The substrate concentration in the feed is allowed to range from 5 to 35 g l⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The initial biomass concentration can be chosen between 1 and 10 g l⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The initial substrate concentration is fixed at 0.01 g l⁻¹ and cannot be manipulated in the experiment design.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "states",
+     "text": "The model has two concentration states, biomass concentration and substrate concentration, and both are measured responses.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "structure",
+     "text": "The example is a dynamic model with two differential component balances and an algebraic rate law.",
+     "quote": "Two differential equations, common to both models, describe the component balances within the reactor:",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The model is expressed as reactor-level concentration balances, with no spatially distributed reactor description presented.",
+     "quote": "Two differential equations, common to both models, describe the component balances within the reactor:",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The biomass balance accounts for growth, dilution, and biomass loss, while the substrate balance accounts for consumption and dilution with the feed.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The model uses Monod-type kinetics for substrate consumption.",
+     "quote": "The first model assumes Monod-type kinetics for substrate consumption",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper compares the Monod model with a rival model using Canoid-type kinetics.",
+     "quote": "The second model assumes Canoid-type kinetics",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The model has four estimated parameters, shown as θ₁ through θ₄ in the parameter-estimation results.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "The paper reports parameter estimates and confidence intervals after the model-discrimination experiment, but does not specify the parameter-estimation algorithm or software.",
+     "quote": "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses, subsequent parameter estimation gives the results in Table 1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The worked parameter-estimation example uses simulated response data with homoscedastic normal error variance 0.04 for each response, not reported physical reactor measurements.",
+     "quote": "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The paper identifies the measured quantities as biomass and substrate concentrations but does not state the measurement instrument or assay.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "design",
+     "text": "The model-discrimination design uses ten sampling times and five control-vector-parameterization intervals for each of the two inputs.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "design",
+     "text": "The optimized model-discrimination experiment lasts 40 h, and both responses are sampled at the same selected times.",
+     "quote": "The optimal experiment lasts 40 h and vertical arrows along the abscissa show the optimal sampling points of the two response variables (both measured at the same sampling points).",
+     "basis": "stated"
+    },
+    {
+     "topic": "design",
+     "text": "The model-discrimination experiment improves the reported divergence criterion from an initial value of 1.98 to an optimal value of 1.19 × 10⁵.",
+     "quote": "giving an optimal divergence of 1.19 × 10⁵",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The paper tests structural identifiability over a 40 h horizon using a five-element piecewise-constant input parameterization and parameter values in [0.01, 0.98].",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "identifiability",
+     "text": "Under that test, the reported identifiability objective is 1.166 × 10⁻⁶, below the 1.0 × 10⁻⁵ tolerance, and the paper concludes the tested model is globally identifiable.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "distinguishability",
+     "text": "Under the same test conditions, the Monod and Canoid models are reported as distinguishable, with a value of 0.339 exceeding the 0.004 threshold.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit",
+     "text": "The paper concludes that the Monod model is better suited to the simulated data based on multiresponse chi-square lack-of-fit analysis, although both candidate models describe the data statistically well.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit",
+     "text": "The lack-of-fit table reports values of 0.58 for the Monod model and 1.96 for the Canoid model, against a reference chi-square value of 26.3.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "precision",
+     "text": "For improving parameter precision, the paper applies an E-optimal design to the Monod model using the parameter estimates obtained after the discrimination experiment.",
+     "quote": "Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "precision",
+     "text": "The E-optimal criterion rises from 6.41 × 10⁻⁶ to 14.3 in the designed precision-improvement experiment.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "precision",
+     "text": "The paper reports that confidence intervals were reduced by an average of 23.0% after the sequentially designed precision-improvement experiment.",
+     "quote": "the confidence intervals have been reduced on average by 23.0% by using the designed experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The example demonstrates design over a maximum experiment duration of 40 h and within the stated ranges for inoculation, dilution, and feed substrate concentration.",
+     "quote": "A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "methods",
+     "text": "The paper uses control vector parameterization to represent time-varying inputs, including piecewise-constant profiles in the bioreactor example.",
+     "quote": "To mathematically represent time-varying external controls to the process, we use the control vector parameterisation (CVP) technique, with either piecewise constant, or higher-order functions",
+     "basis": "stated"
+    },
+    {
+     "topic": "methods",
+     "text": "The paper's identifiability and distinguishability tests are formulated as optimization problems, including semi-infinite and max-min problems.",
+     "quote": "A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems.",
+     "basis": "stated"
+    },
+    {
+     "topic": "precedents",
+     "text": "The dynamic model-discrimination criterion builds on the Hunter–Reiner approach, whose extension to dynamic experiments was first attempted by Espie and Macchietto (1989).",
+     "quote": "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case",
+     "basis": "stated"
+    },
+    {
+     "topic": "precedents",
+     "text": "For dynamic parameter-precision design, the paper discusses Espie and Macchietto (1989), Körkel et al. (1999), and Zullo (1991), and states that its work to date is based largely on Zullo’s criterion.",
+     "quote": "Much of our work to date is based on a unique criterion put forth by Zullo (1991)",
+     "basis": "stated"
+    },
+    {
+     "topic": "precedents",
+     "text": "The robust optimal-design methods for dynamic experiments are described further in Asprey et al. (2000).",
+     "quote": "Extensions of this criterion to account for the uncertainty in the point estimates of the parameters are made in Asprey et al. (2000)",
+     "basis": "stated"
+    },
+    {
+     "topic": "purpose",
+     "text": "The Monod fermentation model serves as an example for demonstrating tools for dynamic model building and statistical verification, rather than as a standalone validated production model.",
+     "quote": "Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state that code or reusable data for the bioreactor model are available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "x_{1}",
+    "x_{2}"
+   ],
+   "inputs": [
+    "u_{1}",
+    "u_{2}"
+   ],
+   "status": "pending",
+   "review": [
+    "18 of 36 facts inferred (no quote found)"
+   ]
+  },
+  "asprey_2000_contois_kinetics": {
+   "name": "Contois kinetics",
+   "equations": [
+    "16.1",
+    "16.2",
+    "18"
+   ],
+   "description": "The model represents baker’s yeast fermentation in a fed-batch reactor, using the paper’s second, Canoid-type kinetic alternative, identified here as Contois kinetics. It predicts changes in biomass and substrate concentrations from shared reactor balances and a substrate-consumption rate that depends on the kinetic model. The process is run by varying dilution and the substrate concentration in the feed, with inoculum size also available as an experimental design choice. The paper demonstrates the model-building procedure using simulated response data rather than measurements from a fermentation experiment. The example compares this model with a Monod-kinetics alternative and uses the comparison to demonstrate structural testing and dynamic experiment design for model discrimination.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The process example models fermentation of baker’s yeast.",
+     "quote": "the fermentation of baker’s yeast is carried out",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The reactor model tracks biomass and substrate concentrations as its two measured responses.",
+     "quote": "two measured concentrations",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The fermentation is represented as a fed-batch reactor.",
+     "quote": "Consider a fed-batch reactor",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The dilution factor is an adjustable process input with a stated range of 0.05–0.20 h⁻¹.",
+     "quote": "the dilution factor, u1, with range 0.05–0.20 h−1",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The substrate concentration in the feed is adjustable from 5 to 35 g l⁻¹.",
+     "quote": "the substrate concentration in the feed, u2, with range 5–35 g l−1",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The initial biomass concentration, or inoculum, can be selected within 1–10 g l⁻¹.",
+     "quote": "the initial biomass concentration (or inoculation), x0^0, with range 1–10 g l−1",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The initial substrate concentration is fixed at 0.01 g l⁻¹ and cannot be varied as part of experiment design.",
+     "quote": "The initial substrate concentration, x2(0), is always 0.01 g l−1 and cannot be manipulated for experiment design purposes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The discrimination experiment was designed with a maximum duration of 40 h.",
+     "quote": "with a maximum experiment duration of 40 h",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The model is dynamic and its balances are formulated as differential equations.",
+     "quote": "Two differential equations, common to both models, describe the component balances within the reactor",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The Contois/Canoid alternative uses the two balances shared with the Monod model and a different algebraic kinetic relation.",
+     "quote": "The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The biomass balance accounts for growth, dilution, and biomass loss.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The paper describes the second candidate’s substrate-consumption kinetics as Canoid-type.",
+     "quote": "The second model assumes Canoid-type kinetics",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The example compares the Canoid-type kinetic alternative with a Monod-type substrate-consumption model.",
+     "quote": "The first model assumes Monod-type kinetics for substrate consumption",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The candidate models each have four parameters, as indicated by the four-component initial parameter estimates and four parameter rows in the results table.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "The discrimination design starts from available initial parameter estimates for both candidate models.",
+     "quote": "we begin by assuming availability of initial parameter estimates",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The paper applies a global structural distinguishability test to the Monod and Canoid-type models.",
+     "quote": "Global structural distinguishability of MI(θ, u, t) and MII(θ, u, t) can be tested",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The structural distinguishability test used parameter bounds of 0.01–0.98, a five-element piecewise-constant input parameterisation, and a 40 h horizon.",
+     "quote": "using the same conditions and CVP as above",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The two candidate structures were found distinguishable, with a test result of 3.392 × 10⁻¹ exceeding the stated threshold of 4.0 × 10⁻³.",
+     "quote": "ΦD = 3.392 × 10−1, giving a maximum larger than εΦD = 4.0 × 10−3 and thus confirming the distinguishability",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "The discrimination design used ten sampling times and five piecewise-constant intervals for each of the two input profiles.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "experiments",
+     "text": "Both response variables were sampled at the same selected times in the optimal discrimination experiment.",
+     "quote": "both measured at the same sampling points",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "The optimal discrimination experiment lasted 40 h.",
+     "quote": "The optimal experiment lasts 40 h",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The paper generated simulated data at the designed conditions for the subsequent parameter estimation rather than reporting measurements from a physical fermentation run.",
+     "quote": "By simulating additional 'data' at these experimental conditions",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The simulated responses used homoscedastic normal measurement errors with variance 0.04 for both measured concentrations.",
+     "quote": "with a homoscedastic normal error variance of 0.04 for both responses",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Parameter estimation was performed after the simulated discrimination experiment, but the paper does not specify the estimation algorithm or software.",
+     "quote": "subsequent parameter estimation gives the results in Table 1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "discrimination",
+     "text": "The optimized discrimination design increased the reported model-prediction divergence from an initial 1.98 to 1.19 × 10⁵.",
+     "quote": "giving an optimal divergence of 1.19 × 105",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper judged the Monod model better suited to the simulated data, although both candidate models described those data very well.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "performance",
+     "text": "The model comparison and fit conclusions are based on the paper’s simulated data and do not establish performance against independent fermentation measurements.",
+     "quote": "By simulating additional 'data' at these experimental conditions",
+     "basis": "stated"
+    },
+    {
+     "topic": "purpose",
+     "text": "The example is used to demonstrate tools for dynamic model building and statistical verification, including model discrimination.",
+     "quote": "Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "precedents",
+     "text": "The paper’s dynamic model-discrimination criterion develops the Hunter–Reiner approach, whose dynamic extension was first attempted by Espie and Macchietto (1989).",
+     "quote": "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case",
+     "basis": "stated"
+    },
+    {
+     "topic": "precedents",
+     "text": "The paper describes the discrete dynamic information-matrix criterion used in its parameter-precision methods as originating with Zullo (1991).",
+     "quote": "Much of our work to date is based on a unique criterion put forth by Zullo (1991)",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not report availability of model code or the simulated data, which limits direct reproduction of the example.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "x_{1}",
+    "x_{2}"
+   ],
+   "inputs": [
+    "u_{1}",
+    "u_{2}"
+   ],
+   "status": "pending",
+   "review": [
+    "5 of 31 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

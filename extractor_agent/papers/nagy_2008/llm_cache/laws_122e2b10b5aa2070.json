@@ -1,0 +1,164 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1973,
+  "completion_tokens": 3828,
+  "total_tokens": 5801,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1970,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2731,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2. Estimation of Nucleation Kinetics from Metastable Zone Experiments; 3. Experimental and Theoretical Assessment of the Approaches\n\nText and equations in reading order:\n    yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n(11.1) \\dot{\\mu}_{0} = B    [code: ODE, computes \\mu_{0}, code proposes balance]\n(11.2) \\dot{\\mu}_{1} = G\\mu_{0}+Br_{0}    [code: ODE, computes \\mu_{1}, code proposes balance]\n(11.3) \\dot{\\mu}_{2} = 2G\\mu_{1}+Br_{0}^{~2}    [code: ODE, computes \\mu_{2}, code proposes balance]\n(11.4) \\dot{\\mu}_{3} = 3G\\mu_{2}+Br_{0}^{~3}    [code: ODE, computes \\mu_{3}, code proposes balance]\n(11.5) \\dot{C} = -\\rho_{c}k_{v}(3G\\mu_{2}+Br_{0}^{~3})    [code: ODE, computes C, code proposes balance]\n    where C is the solution concentration expressed in mass of crystal per unit mass of solvent, and $ r_{0} $ is the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\n(12) G=k_{g}\\Delta C^{g}    [code: algebraic, computes G, code proposes constitutive]\n(13) B=k_{b}\\Delta C^{b}    [code: algebraic, computes B, code proposes constitutive]\n    where B is the same nucleation rate as in eq 1 defined on a number basis.\n    The model system studied is the cooling crystallization of paracetamol (PCM) from water. The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by, $ ^{28} $\n(21) C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066    [code: algebraic, computes ?, code proposes definition]\n    Paracetamol (4-acetamidophenol, Aldrich) and degassed, deionized water were used to prepare the solutions, and the experiments were conducted in a 500 mL jacketed round-bottom flask. The solution was agitated by a magnetic stirrer. The Lasentec FBRM was used to detect the metastable limit $ ^{28} $ and to measure the chord length distribution (CLD) of the solid phase, which was used to estimate the particle size distribution. The in situ solution concentration was measured using ATR-FTIR spectroscopy as described previously. $ ^{28} $ For comparison, the nucleation points were also detected us...\n\nSymbols:\n  \\mu_{0}: Zeroth moment of the crystal size distribution (computed)\n  B: Primary number nucleation rate (computed)\n  \\mu_{1}: First moment of the crystal size distribution (computed)\n  G: Growth rate [length time^-1] (computed)\n  r_{0}: Crystal size at nucleation [length] (parameter)\n  \\mu_{2}: Second moment of the crystal size distribution (computed)\n  \\mu_{3}: Third moment of the crystal size distribution (computed)\n  C: Solution concentration expressed in mass of crystal per unit mass of solvent [g/g water] (computed)\n  \\rho_{c}: Density of crystal [mass length^-3] (parameter)\n  k_{v}: Volumetric shape factor [-] (parameter)\n  k_{g}: Kinetic constant for growth rate (parameter)\n  \\Delta C: Concentration driving force (supersaturation) in the rate laws [g PCM/g water] (variable)\n  g: Kinetic parameter (exponent) for growth [-] (parameter)\n  k_{b}: Kinetic constant for number nucleation rate (parameter)\n  b: Kinetic parameter (exponent) for nucleation [-] (parameter)\n  C^{*}: Equilibrium concentration of the solute [g PCM/g water] (computed)\n  T: Temperature [K] (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 11.1, 11.2, 11.3, 11.4, 11.5, 12, 13, 21",
+ "answer": {
+  "laws": [
+   {
+    "eq": "11.1",
+    "description": "The zeroth crystal-size-distribution moment accumulates through primary nucleation.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It gives accumulation of the zeroth moment from nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{0}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.2",
+    "description": "The first crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It gives accumulation of the first moment from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{1}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.3",
+    "description": "The second crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It gives accumulation of the second moment from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{2}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.4",
+    "description": "The third crystal-size-distribution moment accumulates through crystal growth and nucleation at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It gives accumulation of the third moment from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{3}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.5",
+    "description": "The solution concentration decreases as crystal mass is formed.",
+    "description_basis": "stated",
+    "quote": "mass balance equation",
+    "law_type": "balance",
+    "law_type_reason": "It expresses the solution concentration change due to crystal production.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "C"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "The crystal growth rate follows a power law in supersaturation.",
+    "description_basis": "stated",
+    "quote": "described by power-law kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the kinetic relation for the growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "\\Delta C"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{g}"
+     },
+     {
+      "role": "kinetic exponent",
+      "symbol": "g"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "The primary number nucleation rate follows a power law in supersaturation.",
+    "description_basis": "stated",
+    "quote": "described by power-law kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the kinetic relation for the primary nucleation rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "\\Delta C"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{b}"
+     },
+     {
+      "role": "kinetic exponent",
+      "symbol": "b"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "21",
+    "description": "The solubility of paracetamol in water is calculated as a function of temperature.",
+    "description_basis": "stated",
+    "quote": "The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by,",
+    "law_type": "definition",
+    "law_type_reason": "It defines the equilibrium solute concentration from temperature.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  ]
+ }
+}

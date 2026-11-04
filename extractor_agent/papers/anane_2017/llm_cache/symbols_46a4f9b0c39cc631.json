@@ -1,0 +1,109 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1860,
+  "completion_tokens": 3998,
+  "total_tokens": 5858,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1857,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3361,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: anane_2017\n\nEquations:\n(22) \\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H      <- \"he assumption that the feed solution in the fed-batch phase is fully saturated with dissolved oxygen. The oxygen profile is described with the standard equation\"\n(23) q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}      <- \"ssolved oxygen in the medium, KLa the volumetric mass transfer coefficient, H the Henry equilibrium constant, and q $ _{0} $ the oxygen uptake rate described by\"\n(24) \\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)      <- \"here Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively. With the probe response, the measured DOT is modelled as:\"\n\nSymbols:\n\nDOT^{*}   [NOT COMPUTED]\n  [49] (table_row, p.2) Nomenclature: C: DOT | Carbon content of (s) substrate, (x) biomass: Dissolved oxygen tension (%). DOT $ ^{{*}} $ represents saturating value of DOT in the broth at the given operating conditions\n  [125] (sentence, p.3) In total, Nₘ = 19 data points were collected and analysed for each observable variable i.e., biomass (X), glucose (S) and acetate (A), whereas Nₘ = 11,336 data points were logged online for measured dissolved oxygen (DOT).\n  [150] (sentence, p.4) The model comprises a set of ordinary differential equations (ODEs) describing six state variables, namely biomass X and extracellular concentrations of substrate S, acetate A, dissolved oxygen DOTa and DOT, and the feed F (which can be constant or a function \n\nq_{o}   [COMPUTED by eq 23]\n  (no snippet mentions this symbol)\n\nH   [NOT COMPUTED]\n  [123] (sentence, p.3) To determine the concentration of residual glucose and acetate, hourly samples were analysed on an Agilent 1200 HPLC system, equipped with a HyperRez™ XP Carbohydrate H+ column (Fisher Scientific, Schwerte, Germany) and a refractive index detector.\n  [124] (sentence, p.3) As eluent, five mM H₂SO₄ was used at a flow rate of 0.5 mL min⁻¹.\n  [176] (sentence, p.4) with DOT $ ^{*} $ being the saturation value of dissolved oxygen in the medium, KLa the volumetric mass transfer coefficient, H the Henry equilibrium constant, and q $ _{0} $ the oxygen uptake rate described by\n\nY_{os}   [NOT COMPUTED]\n  [207] (table_row, p.5) Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators. LB–lower bound, UB–upper bounds, CI–95% confidence interval: Parameter  $ ^{{a}} $: $ Y_{{os}} $ | Units: gg $ ^{-1} $ | Initial guess (l\n  [177] (sentence, p.4) where Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively.\n\nY_{oa}   [NOT COMPUTED]\n  [204] (table_row, p.5) Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators. LB–lower bound, UB–upper bounds, CI–95% confidence interval: Parameter  $ ^{{a}} $: $ Y_{{oa}} $ | Units: gg $ ^{-1} $ | Initial guess (l\n  [177] (sentence, p.4) where Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively.\n\nK_{p}   [NOT COMPUTED]\n  [179] (sentence, p.4) were  $ K_p = \\frac{1}{\\tau} $ is the static gain of the sensor given as the inverse of the probe response time, t.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "DOT^{*}",
+    "description": "Saturating value of dissolved oxygen tension in the broth at the given operating conditions",
+    "description_basis": "stated",
+    "snippet_id": 49,
+    "quote": "DOT $ ^{{*}} $ represents saturating value of DOT in the broth at the given operating conditions",
+    "unit": "%",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the saturation value of dissolved oxygen at the given operating conditions, rather than a constant of a law.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "q_{o}",
+    "description": "Oxygen uptake rate calculated from substrate and acetate uptake terms and their oxygen yield coefficients",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "Computed by the law in equation (23).",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "H",
+    "description": "Henry equilibrium constant",
+    "description_basis": "stated",
+    "snippet_id": 176,
+    "quote": "H the Henry equilibrium constant",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a Henry equilibrium constant, a physical property used in the model.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{os}",
+    "description": "Yield coefficient for substrate to oxygen consumption",
+    "description_basis": "stated",
+    "snippet_id": 177,
+    "quote": "Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively.",
+    "unit": "g g^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a yield coefficient, a constant relating substrate uptake to oxygen consumption.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{oa}",
+    "description": "Yield coefficient for acetate to oxygen consumption",
+    "description_basis": "stated",
+    "snippet_id": 177,
+    "quote": "Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively.",
+    "unit": "g g^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a yield coefficient, a constant relating acetate uptake to oxygen consumption.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{p}",
+    "description": "Static gain of the sensor, given as the inverse of the probe response time",
+    "description_basis": "stated",
+    "snippet_id": 179,
+    "quote": "K_p = \\frac{1}{\\tau} is the static gain of the sensor given as the inverse of the probe response time, t.",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a sensor response coefficient, a constant describing the probe’s response dynamics.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

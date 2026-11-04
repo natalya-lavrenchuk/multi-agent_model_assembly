@@ -1,0 +1,40 @@
+{
+ "sup": "ho_2000",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 7,
+  "variable_nodes": 23,
+  "parameter_nodes": 10,
+  "distinct_symbols": 15,
+  "computes_edges": 7,
+  "uses_edges": 16,
+  "hasParameter_edges": 10,
+  "laws_by_form": {
+   "ODE": 3,
+   "algebraic": 4
+  },
+  "laws_flagged": [],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "R^{\\prime}",
+   "R_{m}",
+   "\\alpha",
+   "\\mu",
+   "f^{\\prime}"
+  ],
+  "for_review": [],
+  "triples": 777
+ },
+ "flags": [
+  {
+   "symbol": "Q",
+   "check": "computed, never used",
+   "laws": [
+    4
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

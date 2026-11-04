@@ -1,0 +1,124 @@
+{
+ "sups": [
+  {
+   "sup": "osberghaus_2012_kinetic_sma",
+   "summary": {
+    "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+    "source": "paddle.json (PaddleOCR-VL pipeline)",
+    "laws": 5,
+    "variable_nodes": 16,
+    "parameter_nodes": 12,
+    "distinct_symbols": 17,
+    "computes_edges": 5,
+    "uses_edges": 11,
+    "hasParameter_edges": 12,
+    "laws_by_form": {
+     "PDE": 3,
+     "algebraic": 2
+    },
+    "laws_flagged": [
+     2,
+     3
+    ],
+    "classification": "symbols.json (LLM)",
+    "parameter_symbols": [
+     "D_{ax}",
+     "\\nu_{i}",
+     "\\sigma_{i}",
+     "\\varepsilon_{c}",
+     "\\varepsilon_{p}",
+     "k_{ads,i}",
+     "k_{des,i}",
+     "k_{eff,i}",
+     "r_{p}"
+    ],
+    "for_review": [],
+    "triples": 635
+   },
+   "flags": [
+    {
+     "law": 2,
+     "check": "reading",
+     "detail": "\\sum over i=2..n: index and limits not read as symbols"
+    },
+    {
+     "law": 3,
+     "check": "reading",
+     "detail": "\\sum over i=2..n: index and limits not read as symbols"
+    },
+    {
+     "symbol": "\\Lambda",
+     "check": "computed, never used",
+     "laws": [
+      2
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    }
+   ],
+   "schema_problems": []
+  },
+  {
+   "sup": "osberghaus_2012_rapid_equilibrium_sma",
+   "summary": {
+    "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+    "source": "paddle.json (PaddleOCR-VL pipeline)",
+    "laws": 6,
+    "variable_nodes": 21,
+    "parameter_nodes": 14,
+    "distinct_symbols": 18,
+    "computes_edges": 6,
+    "uses_edges": 15,
+    "hasParameter_edges": 14,
+    "laws_by_form": {
+     "PDE": 3,
+     "algebraic": 3
+    },
+    "laws_flagged": [
+     2,
+     3,
+     4
+    ],
+    "classification": "symbols.json (LLM)",
+    "parameter_symbols": [
+     "D_{ax}",
+     "\\nu_{i}",
+     "\\sigma_{i}",
+     "\\varepsilon_{c}",
+     "\\varepsilon_{p}",
+     "k_{ads,i}",
+     "k_{des,i}",
+     "k_{eff,i}",
+     "r_{p}"
+    ],
+    "for_review": [],
+    "triples": 756
+   },
+   "flags": [
+    {
+     "law": 2,
+     "check": "reading",
+     "detail": "\\sum over i=2..n: index and limits not read as symbols"
+    },
+    {
+     "law": 3,
+     "check": "reading",
+     "detail": "\\sum over i=2..n: index and limits not read as symbols"
+    },
+    {
+     "law": 4,
+     "check": "reading",
+     "detail": "\\sum over i=2..n: index and limits not read as symbols"
+    },
+    {
+     "symbol": "k_{i,eq}",
+     "check": "computed, never used",
+     "laws": [
+      4
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    }
+   ],
+   "schema_problems": []
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.095376515,
+  "prompt_tokens": 1859,
+  "prompt_time": 0.114839981,
+  "completion_tokens": 3493,
+  "completion_time": 7.384002095,
+  "total_tokens": 5352,
+  "total_time": 7.498842076,
+  "completion_tokens_details": {
+   "reasoning_tokens": 3319
+  }
+ },
+ "user": "Equations:\n(4) r_{\\mathrm{{C O}}}=k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes}      <- \" the fast reactions, one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\"\n(7) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(C-11) r_{\\mathrm{{C O}}}=(1-\\phi)k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-13) r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-14) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{CO}_{2}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-1) \\begin{aligned}\\lg(K_{P1})&=13.8140+3784.4/T-9.2833\\cdot\\lg(T)\\\\&\\quad+3.1475\\times10^{-3}T-4.2613\\times10^{-7}T^{2}\\end{aligned}      <- \"Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\"\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\nK_{P1}   [COMPUTED by eq C-1]\n  (no snippet mentions this symbol)\n\n\\Theta^{\\odot}   [COMPUTED by eq 7, C-14]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{P1}",
+    "description": "equilibrium constant for the CO hydrogenation reaction (CO + 2 H2 ↔ CH3OH) expressed in terms of partial pressures",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\Theta^{\\odot}",
+    "description": "fraction of vacant catalytic sites (surface coverage) for the ⊙ site",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

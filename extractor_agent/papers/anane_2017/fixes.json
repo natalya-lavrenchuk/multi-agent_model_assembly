@@ -1,0 +1,54 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "16": {
+   "action": "keep as printed",
+   "printed_latex": "$$ q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}} $$",
+   "corrected_latex": null,
+   "reason": "The paper’s text calls \\(K_o\\) dimensionless, so its inconsistent g/L listing does not establish that the printed equation should be changed.",
+   "quote": "“where \\(K_{0}\\) is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "17": {
+   "action": "keep as printed",
+   "printed_latex": "$$ q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}} $$",
+   "corrected_latex": null,
+   "reason": "The paper does not establish whether the mismatch comes from the listed units of \\(K_{ap}\\) or from the printed equation, so there is no supported correction.",
+   "quote": "“\\(P_{Amax}\\) and \\(K_{ap}\\) are the maximum acetate production and the production affinity constants.”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "18": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{sA}X $$",
+   "corrected_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{A}X $$",
+   "reason": "The paper uses $q_{sA}$ for two quantities. In eq 18 and the sentence after it, $q_{sA}$ is the net acetate rate, which eq 19 names $q_{A}$ (production minus uptake). Everywhere else (eqs 13, 21, 23) $q_{sA}$ is the uptake rate only. Taken as printed, the balance would link to the uptake rate and acetate would rise whenever cells consume it.",
+   "quote": "The equilibrium qsA = 0 is reached when the acetate produced through the overflow route pA is equal to the acetate consumed qsA.",
+   "basis": "human",
+   "checks": [],
+   "status": "proposed"
+  },
+  "21": {
+   "action": "correct",
+   "printed_latex": "$$ q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}} $$",
+   "corrected_latex": "$$ q_{sA}=\\frac{q_{Amax}}{1+\\frac{S}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}} $$",
+   "reason": "The inhibition term should use glucose concentration \\(S\\), not glucose uptake rate \\(q_s\\), consistent with the paper’s description of glucose inhibition and the concentration units for \\(K_{is}\\).",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ },
+ "misreads": {
+  "18": {
+   "printed_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X} $$",
+   "corrected_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{sA}X $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 18: bold font, the OCR read q_{sA}X as q_s·A·X; checked against the PDF",
+   "basis": "human",
+   "note": "The OCR read q_sA·X as q_s·A·X (bold font)."
+  }
+ }
+}

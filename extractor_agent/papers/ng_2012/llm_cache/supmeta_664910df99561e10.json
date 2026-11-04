@@ -1,0 +1,51 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2062,
+  "completion_tokens": 1643,
+  "total_tokens": 3705,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2059,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1230,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Design of high productivity antibody capture by protein A chromatography using an integrated experimental and modeling approach\n\nAbstract: An integrated experimental and modeling approach for the design of high productivity protein A chromatography is presented to maximize productivity in bioproduct manufacture. The approach consists of four steps: (1) small-scale experimentation, (2) model parameter estimation, (3) productivity optimization and (4) model validation with process verification. The integrated use of process experimentation and modeling enables fewer experiments to be performed, and thus minimizes the time and materials required in order to gain process understanding, which is of key importance during process development. The application of the approach is demonstrated for the capture of antibody by a novel silica-based high performance protein A adsorbent named AbSolute. In the example, a series of pulse injections and breakthrough experiments were performed to develop a lumped parameter model, which was then used to find the best design that optimizes the productivity of a batch protein A chromatographic process for human IgG capture. An optimum productivity of 2.9 kg L $ ^{-1} $ day $ ^{-1} $ for a column of 5 mm diameter and 8.5 cm length was predicted, and subsequently verified experimentally, completing the whole process design approach in only 75 person-hours (or approximately 2 weeks).\n\nSentences about the process and the data:\n- An integrated experimental and modeling approach for the design of high productivity protein A chromatography is presented to maximize productivity in bioproduct manufacture.\n- (1) small-scale experimentation, (2) model parameter estimation, (3) productivity optimization and (4) model validation with process verification.\n- The integrated use of process experimentation and modeling enables fewer experiments to be performed, and thus minimizes the time and materials required in order to gain process understanding, which is of key importance during process devel\n- In the example, a series of pulse injections and breakthrough experiments were performed to develop a lumped parameter model, which was then used to find the best design that optimizes the productivity of a batch protein A chromatographic p\n- An optimum productivity of 2.9 kg L $ ^{-1} $ day $ ^{-1} $ for a column of 5 mm diameter and 8.5 cm length was predicted, and subsequently verified experimentally, completing the whole process design approach in only 75 person-hours (or ap\n- Protein A chromatography is a platform technology for the capture of antibody in the biopharmaceutical industry because of its high selectivity and ease of operation afforded [1,2].\n- However, the improved performance of these adsorbents cannot be fully exploited if the process is poorly designed, i.e. is operated at suboptimal conditions.\n- The traditional approach to achieve this end is extensive experimentation, sometimes supported by empirical modeling or parameter estimation.\n- Numerous commercially available protein A adsorbents have been studied experimentally in the literature [5–11].\n- Integrated experimental and modeling approach for optimal chromatography design.\n- In the following, we demonstrate the use of an integrated experimental and modeling approach (Fig. 1) using the example of antibody capture by AbSolute, a novel silica-based high performance protein A adsorbent (Table 1).\n- The procedure followed in this work brings together experimental protein A adsorbent characterization for model development with model-based productivity optimization.\n- (1) small-scale experimentation to characterize the protein A adsorbent, (2) parameter estimation based on the experimental data to determine key model parameters, (3) mathematical process optimization by applying the model developed and th\n- The approach developed is general and can be applied to other chromatographic processes, e.g. ion exchange chromatography and hydrophobic interaction chromatography, and will allow quicker, less expensive and more accurate process optimizat\n- Furthermore, model validation and experimental verification of the optimized process are incorporated into the approach to ensure that the model is accurate and the optimized process performance is achievable in practice.\n- Typically model validation is performed before further applications, but here model validation was performed at the optimized batch conditions to reduce the overall experimentation efforts, and thus the time and costs, required for the appr\n- The transport-dispersive model describes the mass transfer inside the column, assuming isothermal adsorption, radial homogeneity and lumped coefficients for axial dispersion and mass transfer resistances [16].\n- The column is assumed to be initially empty of solutes in both the mobile and stationary phases.\n\nModel: Transport-dispersive IgG capture model\nLaws:\n(1) [balance] Mobile-phase solute balance along the column accounting for stationary-phase exchange, axial advection, and axial dispersion.\n(2) [constitutive] Kinetic relaxation of the stationary-phase solute concentration toward its equilibrium value.\n(3) [constitutive] Empirical correlation for the apparent axial dispersion coefficient based on velocity, column length, and theoretical plate number.\n(4) [definition] Reduced plate height calculated from column length, theoretical plate number, and particle diameter.\n(5) [constitutive] Modified van Deemter correlation for reduced plate height as a linear function of velocity.\n(6) [constitutive] Empirical saturation-dependent relation for the lumped mass-transfer coefficient as retained-solute loading approaches its maximum capacity.\n(7) [definition] Initial mobile-phase solute concentration is zero throughout the column.\n(8) [definition] Initial stationary-phase solute concentration is zero throughout the column.\n(9) [balance] The inlet condition relates the axial concentration gradient to the difference between the column concentration and feed concentration during feeding.\n(10) [constitutive] The outlet boundary condition imposes zero axial concentration gradient.\n(11) [constitutive] A pH-modified Langmuir isotherm computes the equilibrium stationary-phase IgG concentration from the mobile-phase IgG concentration.\n(12) [constitutive] A linear adsorption isotherm relates mobile-phase impurity concentration to its equilibrium stationary-phase concentration.\n\nStates (computed by the ODEs):\n- C: Solute concentration in the mobile phase\n- \\varepsilon_{T}: Total porosity\n- q: Solute concentration in the stationary phase\n- u: Superficial velocity\n\nInputs (variables no law computes):\n- q^{*}: Solute concentration in the stationary phase at equilibrium\n- N: Theoretical plate number\n- q_{R}: Sum of all retained solute concentrations in the stationary phase.\n- C_{f}: Feed concentration.\n- p: pH used as a modifier in the adsorption isotherm\n- C_{IgG}: IgG concentration in the mobile phase\n- C_{imp}: impurity concentration in the mobile phase\n\nModel-wide assumptions:\n- Isothermal adsorption, radial homogeneity, and lumped coefficients for axial dispersion and mass transfer resistances.\n- The two terms in Eq. (5) are additive.\n- Longitudinal diffusion is negligible.\n- The components behave as two pseudo-components.\n- The column is initially empty of solutes in both phases.\n- There is no axial concentration change at the column outlet.",
+ "answer": {
+  "system": {
+   "value": "Human IgG capture by protein A chromatography using the silica-based AbSolute adsorbent",
+   "quote": "\"The application of the approach is demonstrated for the capture of antibody by a novel silica-based high performance protein A adsorbent named AbSolute.\"; \"human IgG capture\""
+  },
+  "unit_operation": {
+   "value": "Protein A chromatography column",
+   "quote": "\"protein A chromatography\"; \"column of 5 mm diameter and 8.5 cm length\""
+  },
+  "operating_mode": {
+   "value": [
+    "batch"
+   ],
+   "quote": "\"a batch protein A chromatographic process\"",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Pulse-injection and breakthrough experiments",
+   "quote": "In the example, a series of pulse injections and breakthrough experiments were performed to develop a lumped parameter model, which was then used to find the best design that optimizes the productivity of a batch protein A chromatographic process for human IgG capture."
+  },
+  "phenomena": [
+   "Axial advection and dispersion in the chromatography column",
+   "Kinetic mass transfer between mobile and stationary phases",
+   "pH-dependent Langmuir adsorption of IgG",
+   "Linear adsorption of impurities",
+   "Velocity-dependent axial dispersion",
+   "Saturation-dependent mass-transfer coefficient"
+  ],
+  "description": "The model describes human IgG capture on a silica-based protein A adsorbent in a chromatography column and predicts solute concentrations through the column for productivity design. It combines mobile-phase transport and stationary-phase mass transfer with pH-dependent Langmuir binding for IgG and linear adsorption for impurities. The model was developed from pulse-injection and breakthrough experiments and used to optimize a batch chromatography process."
+ }
+}

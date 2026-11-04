@@ -1,0 +1,201 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2603,
+  "completion_tokens": 6254,
+  "total_tokens": 8857,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2600,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5274,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Kinetic model\n\nText and equations in reading order:\n    ...m literature reports.²¹,⁴⁰ The mass balance for titer, [B1], was applied only after 144 h, as earlier samples are typically below the concentration range for the assay. In addition, since the highest specific antibody production rate was observed in the G1 or G0-phase of the cell cycle based on literature reports,²,⁴,²¹ the fraction of arrested viable cells was introduced into the mass balance equation for [B1]. The fraction of viable cells ( $ X_V^{(d)} $) that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term $ (1 - \\mu / \\mu_{\\text{max}}) $.\n(6.1) \\frac{d X_{V}}{d t} =(\\mu-\\mu_{d})\\cdot X_{V}    [code: ODE, computes X_{V}, code proposes balance]\n(6.2) \\frac{d[\\mathrm{GLC}]}{d t} =-\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{glc}}+m_{\\mathrm{glc}}\\right)\\cdot X_{V}    [code: ODE, computes [GLC], code proposes balance]\n(6.3) \\frac{d[\\mathrm{GLN}]}{d t} =-\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{g}\\ln}+m_{\\mathrm{g}\\ln}\\right)\\cdot X_{V}-d_{g\\ln}[\\mathrm{GLN}]    [code: ODE, computes [GLN], code proposes balance]\n(6.4) \\frac{d[\\mathrm{LAC}]}{d t} =Y_{\\mathrm{lac}/\\mathrm{glc}}\\cdot\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{glc}}+m_{\\mathrm{glc}}\\right)\\cdot X_{V}    [code: ODE, computes [LAC], code proposes balance]\n(6.5) \\frac{d[\\mathrm{AMM}]}{d t} =Y_{\\mathrm{amm}/\\mathrm{g}\\ln}\\cdot\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{g}\\ln}\\right)\\cdot X_{V}-r_{\\mathrm{amm}}\\cdot X_{V} +d_{\\mathrm{g}\\ln}[\\mathrm{GLN}]    [code: ODE, computes [AMM], code proposes balance]\n(6.6) \\frac{d[\\mathrm{B1}]}{d t} =Q_{B1}\\cdot X_{V}\\cdot\\left(1-\\frac{\\mu}{\\mu_{\\max}}\\right)\\cdot[B1]    [code: ODE, computes [B1], code proposes balance]\n    The values for $ \\mu $ and $ \\mu_d $, were calculated by Eq. 7. $ ^{1,2,41} $ As previously reported, $ ^{38} $ inhibition to cell growth became significant when ammonia and/or lactate reached concentrations of 5.1 and 58 mM, respectively (threshold values). Therefore, the ammonia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\n(7.1) \\mu=\\mu_{\\max} \\frac{[GLC]}{K_{\\mathrm{glc}}+[GLC]}\\cdot\\frac{[GLN]}{K_{\\mathrm{g}\\ln}+[GLN]}\\cdot\\frac{\\mathrm{KI}_{\\mathrm{lac}}}{KI_{\\mathrm{lac}}+[LAC]} \\cdot\\frac{\\mathrm{KI}_{\\mathrm{amm}}}{KI_{\\mathrm{amm}}+[AMM]}    [code: algebraic, computes \\mu, code proposes constitutive]\n(7.2) \\mu_{d}=k_{d} \\cdot\\frac{[LAC]}{KD_{\\mathrm{lac}}+[LAC]}\\cdot\\frac{[AMM]}{KD_{\\mathrm{amm}}+[AMM]}    [code: algebraic, computes \\mu_{d}, code proposes constitutive]\n    where\n\nSymbols:\n  X_{V}: viable cell density [10^9 cells L^{-1}] (computed)\n  \\mu: specific cell growth rate [h^{-1}] (computed)\n  \\mu_{d}: specific cell death rate [h^{-1}] (computed)\n  [GLC]: glucose concentration [mM] (computed)\n  Y_{X_V/glc}: glucose yield coefficient [10^11 cells mol^{-1}] (parameter)\n  m_{glc}: glucose maintenance coefficient [10^{-12} mmol cell^{-1} h^{-1}] (parameter)\n  [GLN]: glutamine concentration [mM] (computed)\n  Y_{X_V/gln}: glutamine yield coefficient [10^11 cells mol^{-1}] (parameter)\n  m_{gln}: glutamine maintenance coefficient [10^{-12} mmol cell^{-1} h^{-1}] (computed)\n  d_{gln}: first-order decomposition rate of glutamine [10^{-3} h^{-1}] (parameter)\n  [LAC]: lactate concentration [mM] (computed)\n  Y_{lac/glc}: lactate yield from glucose [mol mol^-1] (parameter)\n  [AMM]: ammonia concentration [mM] (computed)\n  Y_{amm/gln}: ammonia yield from glutamine [mol mol^-1] (parameter)\n  r_{amm}: ammonia removal rate [10^-12 mmol cell^-1 h^-1] (parameter)\n  [B1]: B1 protein titer (computed)\n  Q_{B1}: specific B1 production rate [10^-12 L cell^-1 h^-1] (parameter)\n  \\mu_{\\max}: maximum specific cell growth rate [h^-1] (parameter)\n  K_{glc}: half-maximum-rate concentration of glucose for cell growth rate [mM] (parameter)\n  K_{gln}: half-maximum-rate concentration of glutamine for cell growth rate [mM] (parameter)\n  KI_{lac}: half-maximum-rate concentration of lactate for cell growth rate [mM] (parameter)\n  KI_{amm}: half-maximum-rate concentration of ammonia for cell growth rate [mM] (parameter)\n  k_{d}: maximum cell death rate [h^-1] (parameter)\n  KD_{lac}: half-maximum-rate concentration of lactate for cell death rate [mM] (parameter)\n  KD_{amm}: half-maximum-rate concentration of ammonia for cell death rate [mM] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Specific growth rate is zero during the cell death phase.\n  - Glucose and glutamine maintenance terms are zero when d ≤ 6.\n  - Ammonia and lactate are considered in the growth-rate equation only above 90% of their thresholds.\n  - The B1 mass balance is applied only after 144 h.\n\nLaws: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 7.1, 7.2",
+ "answer": {
+  "laws": [
+   {
+    "eq": "6.1",
+    "description": "Viable cell density changes through cell growth and cell death.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation of viable cells as net growth minus death.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{V}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6.2",
+    "description": "Glucose concentration declines through growth-associated uptake and maintenance consumption by viable cells.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives glucose accumulation from cellular consumption terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[GLC]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6.3",
+    "description": "Glutamine concentration changes through cellular uptake, maintenance consumption, and first-order decomposition.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It accounts for glutamine accumulation and its consumption and decomposition terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[GLN]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6.4",
+    "description": "Lactate concentration increases in proportion to glucose utilization by viable cells.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives lactate accumulation from a glucose-linked production term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[LAC]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6.5",
+    "description": "Ammonia concentration changes through glutamine-associated production, ammonia removal, and glutamine decomposition.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It accounts for ammonia accumulation through production and removal terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[AMM]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6.6",
+    "description": "B1 titer accumulation is computed from viable cell density weighted by the fraction of cells not undergoing propagation.",
+    "description_basis": "stated",
+    "quote": "In addition, since the highest specific antibody production rate was observed in the G1 or G0-phase of the cell cycle based on literature reports, the fraction of arrested viable cells was introduced into the mass balance equation for [B1].",
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation of B1 titer through a viable-cell production term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[B1]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7.1",
+    "description": "Specific cell growth rate is computed with glucose and glutamine saturation terms and lactate and ammonia inhibition terms.",
+    "description_basis": "stated",
+    "quote": "Therefore, the ammonia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic expression for growth rate as a function of nutrient and inhibitor concentrations.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{\\max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{glc}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{gln}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "KI_{lac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "KI_{amm}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7.2",
+    "description": "Specific cell death rate is computed from saturating dependencies on lactate and ammonia concentrations.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic expression for cell death rate from metabolite concentrations.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "k_{d}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "KD_{lac}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "KD_{amm}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

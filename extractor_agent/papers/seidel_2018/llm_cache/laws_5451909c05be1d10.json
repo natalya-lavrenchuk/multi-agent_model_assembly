@@ -1,0 +1,235 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2822,
+  "completion_tokens": 6465,
+  "total_tokens": 9287,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2819,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5270,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2.3. Extension to variable number of reduced and oxidized surface centers; Table 4\n\nText and equations in reading order:\n    where $ \\phi $ represents the total amount of reduced centers and $ 1 - \\phi $ the total amount of oxidized centers. Following Ovesen et al. (1997), $ \\phi $ can be calculated from the equilibrium relations as follows\n(22) \\phi=\\frac{1}{2}\\left(1-\\frac{\\gamma^{*}}{\\gamma_{0}}\\right)    [code: algebraic, computes \\phi, code proposes definition]\n    with\n(23) \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}    [code: algebraic, computes ?, code proposes constitutive]\n    The ratio in $ \\frac{\\gamma}{\\gamma_{0}} $ is the relative free energy contact surface of Cu and Zn (see Fig. 1) (Ovesen et al., 1997; Vesborg et al., 2009). It can be related to the catalyst morphology using the Wulff construction framework (Clausen et al., 1994; Wulff, 1901). The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n(24) K_{1}=\\frac{k_{1}^{+}}{k_{1}^{-}}=\\exp\\left(\\frac{-\\Delta G_{1}}{RT}\\right)    [code: algebraic, computes K_{1}, code proposes constitutive]\n(25) K_{2}=\\frac{k_{2}^{+}}{k_{2}^{-}}=\\exp\\left(\\frac{-\\Delta G_{2}}{RT}\\right)    [code: algebraic, computes K_{2}, code proposes constitutive]\n    With $\\phi$ from Eqs. (20)–(22) the kinetic equations from the previous section assuming a constant amount of reduced and oxidized centers can be reformulated for a variable number of reduced and oxidized centers by replacing $\\Theta^{\\odot}$ and $\\Theta^{*}$ in Eqs. (4)–(6), or (11)–(13), respectively, with $\\tilde{\\Theta}^{\\odot}$ and $\\tilde{\\Theta}^{*}$ from the following relations.\n    Under transient conditions, reaction equilibrium according to Eqs. (20) and (21) is not valid anymore. Experiments have shown characteristic methanol overshoots after switching between different gas compositions (Vesborg et al., 2009; Wilmer and Hinrichsen, 2002). Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation\n(28) \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(1-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(1-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*}    [code: ODE, computes \\phi, code proposes balance]\n    Additional rate constants $ k_{1}^{+}, k_{2}^{+} $ are fitted to transient data.\n    ...ts and minimize the effect of measurement errors. The highest accuracy for the analytical determination of the composition has been reached by the use of a Flame Ionization Detector (FID) for the carbon-containing components. For this reason, only carbon-containing component balances ( $ R_{CO} $, $ R_{CO_2} $ and $ R_{CH_3OH} $) were used. As pointed out above, dynamic experiments were used to fit the kinetic constants $ k_1^+ $, $ k_2^+ $ from Eq. (28). For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions $ y_i $\n(33) \\dot{y}_{i}=Z\\Bigg[\\frac{1}{\\tau}y_{i,0}-\\Bigg(\\frac{1}{\\tau}+\\frac{1}{\\mathcal{K}}\\sum_{i=1}^{N_{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg)y_{i}+\\frac{1}{\\mathcal{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg]    [code: ODE, computes y_{i}, code proposes balance]\n    For the dynamic transient behavior, it was found that the accumulation on the catalyst surface should be taken into account (Vollbrecht, 2007). In this case the specific amount of surface centers $ q_{sat} $ has to be considered that extends the reaction terms to:\n\nSymbols:\n  \\phi: Fraction of reduced centers on the catalyst surface. [-] (computed)\n  \\gamma^{*}: Contact-surface free-energy quantity in the numerator of the ratio γ*/γ0. (computed)\n  \\gamma_{0}: Reference contact-surface free-energy quantity in the ratio γ*/γ0. (computed)\n  K_{1}: Equilibrium constant for reaction 1. [-] (computed)\n  K_{2}: Equilibrium constant for reaction 2. [-] (computed)\n  p_{H_2}: Partial pressure of hydrogen. (variable)\n  p_{CO}: Partial pressure of CO. (variable)\n  p_{H_2O}: Partial pressure of water used in the model equations. [bar] (variable)\n  p_{CO_2}: Partial pressure of carbon dioxide used in the model equations. [bar] (variable)\n  k_{1}: Kinetic rate constant for CO hydrogenation. (parameter)\n  \\Delta G_{1}: Gibbs free-energy change associated with equilibrium constant K₁. [J mol^-1] (parameter)\n  R: Gas constant. [J mol^-1 K^-1] (parameter)\n  T: Temperature. [K] (variable)\n  k_{2}: Rate constant in the CO₂ reaction-rate expression. (parameter)\n  \\Delta G_{2}: Gibbs free-energy change associated with equilibrium constant K₂. [J mol^-1] (parameter)\n  y_{H_2}: Gas-phase fraction of hydrogen. [-] (variable)\n  y_{H_2O}: Gas-phase fraction of water. [-] (variable)\n  y_{CO}: Gas-phase fraction of carbon monoxide. [-] (variable)\n  y_{CO_2}: Gas-phase fraction of carbon dioxide. [-] (variable)\n  y_{i}: Mole fraction of component i. [-] (computed)\n  Z: Compressibility factor. [-] (parameter)\n  \\tau: Hold-up time. [s] (variable)\n  y_{i,0}: Mole fraction of component i at input. [-] (variable)\n  K: Factor normalizing the reaction-rate contribution in the mole-fraction balance. (parameter)\n  \\nu_{ij}: Stoichiometric coefficient of component i in reaction j. [-] (parameter)\n  r_{j}: Rate of reaction j. (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Catalyst deactivation neglected; only reactions (1)-(3) considered.\n  - Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.\n  - Oxidized centers (⊙) are active for CO hydrogenation.\n  - Reduced centers (∗) are active for CO₂ hydrogenation.\n  - Total numbers of oxidized, reduced and hydrogen centers are constant.\n  - Fast steps are at quasi‑equilibrium.\n  - Quasi‑equilibrium assumption for fast adsorption/desorption steps.\n  - Lumped kinetics for reactions (1)-(3).\n  - Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28).\n\nLaws: 22, 23, 24, 25, 28, 33",
+ "answer": {
+  "laws": [
+   {
+    "eq": "22",
+    "description": "The equilibrium relations determine the fraction of reduced surface centers.",
+    "description_basis": "stated",
+    "quote": "Following Ovesen et al. (1997), $ \\phi $ can be calculated from the equilibrium relations as follows",
+    "law_type": "definition",
+    "law_type_reason": "It defines the reduced-center fraction from the relative free-energy quantity.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "23",
+    "description": "The relative free-energy contact-surface ratio for Cu and Zn is related to the reaction equilibrium constants and gas partial pressures.",
+    "description_basis": "stated",
+    "quote": "The ratio in $ \\frac{\\gamma}{\\gamma_{0}} $ is the relative free energy contact surface of Cu and Zn",
+    "law_type": "constitutive",
+    "law_type_reason": "It gives an equilibrium relation connecting the contact-surface energy ratio to gas partial pressures and equilibrium constants.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "relative contact-surface free energy",
+      "symbol": "\\gamma^{*}"
+     },
+     {
+      "role": "reference contact-surface free energy",
+      "symbol": "\\gamma_{0}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{\\mathrm{H}_{2}}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{\\mathrm{C O}}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{\\mathrm{H}_{2}\\mathrm{O}}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{\\mathrm{C O}_{2}}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "24",
+    "description": "The Gibbs free-energy change and temperature determine the equilibrium constant for reaction 1.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a thermodynamic relation that a rival model could replace for calculating the equilibrium constant.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "free-energy change",
+      "symbol": "\\Delta G_{1}"
+     },
+     {
+      "role": "gas constant",
+      "symbol": "R"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "25",
+    "description": "The Gibbs free-energy change and temperature determine the equilibrium constant for reaction 2.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a thermodynamic relation that a rival model could replace for calculating the equilibrium constant.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{2}"
+     },
+     {
+      "role": "free-energy change",
+      "symbol": "\\Delta G_{2}"
+     },
+     {
+      "role": "gas constant",
+      "symbol": "R"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "28",
+    "description": "The transient kinetics give the rate of change of the fraction of reduced surface centers through hydrogen- and carbon-monoxide-driven redox steps.",
+    "description_basis": "stated",
+    "quote": "under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation",
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation of reduced centers from the net rates of their reduction and oxidation.",
+    "assumptions": [
+     {
+      "text": "The process is under transient conditions, where the reaction equilibrium relations are not valid.",
+      "quote": "Under transient conditions, reaction equilibrium according to Eqs. (20) and (21) is not valid anymore.",
+      "stated_as_assumption": false,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\phi"
+     },
+     {
+      "role": "substrate",
+      "symbol": "y_{\\mathrm{H}_{2}}"
+     },
+     {
+      "role": "product",
+      "symbol": "y_{\\mathrm{H}_{2}\\mathrm{O}}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "y_{\\mathrm{CO}}"
+     },
+     {
+      "role": "product",
+      "symbol": "y_{\\mathrm{CO}_{2}}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\phi"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{1}^{+}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{2}^{+}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{2}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "33",
+    "description": "The dynamic reactor balance computes each gas-component mole fraction from feed, outlet dilution, and reaction contributions.",
+    "description_basis": "stated",
+    "quote": "the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions $ y_i $",
+    "law_type": "balance",
+    "law_type_reason": "It expresses the accumulation of each component mole fraction as feed, dilution, and reaction contributions.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "y_{i}"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "y_{i,0}"
+     },
+     {
+      "role": "reaction rate",
+      "symbol": "r_{j}"
+     },
+     {
+      "role": "stoichiometric coefficient",
+      "symbol": "\\nu_{ij}"
+     },
+     {
+      "role": "hold-up time",
+      "symbol": "\\tau"
+     },
+     {
+      "role": "normalization factor",
+      "symbol": "\\mathcal{K}"
+     },
+     {
+      "role": "compressibility factor",
+      "symbol": "Z"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

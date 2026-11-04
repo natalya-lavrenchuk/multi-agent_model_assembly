@@ -1,0 +1,373 @@
+You read snippets from a scientific paper and decide which snippet DEFINES each symbol of a mechanistic process model.
+
+For every symbol you are given numbered snippets. Choose among THOSE snippets only.
+
+Rules:
+1. A snippet defines a symbol if it says what the quantity is: a nomenclature line, a "where X is ..." clause, a table row naming the parameter, or a sentence that describes the quantity an equation computes ("The specific growth rate is determined by ..." before "mu = ..."). A snippet that only uses or mentions the symbol does not define it.
+   For a symbol that an equation COMPUTES, the sentence just before that equation (marked "text before the equation") counts as its definition when it says what the equation describes. Example: "The mass balances on glucose and glutamine around the bioreactor are:" before d([GLN])/dt = ... defines [GLN]: pick it, meaning "glutamine (mass balance variable)".
+   The same letter can mean different things in different parts of a paper (V can be a volume in the model and a covariance matrix in the statistics section). Pick the snippet that fits how the symbol is used in the equation shown.
+2. If no snippet defines the symbol, answer candidate null, meaning null, unit_string null. This is a correct and expected answer. Do NOT use your own knowledge of the model to fill the gap.
+3. meaning: the snippet's own words, shortened. Do not add information that is not in it.
+4. unit_string: copy the unit characters exactly as they appear in the chosen snippet. Null if that snippet prints no unit. Never infer a unit.
+5. role, one of exactly these values:
+   constant: a fixed number characterising the system or a physical law: kinetic constant, yield, affinity constant, rate constant, physical constant
+   operating_input: a quantity the experimenter sets or supplies: feed or outlet flow rate, inlet or feed concentration, temperature setpoint
+   state_or_computed: a quantity that changes during the run: a concentration, a volume, a cell density, a rate or factor computed from other quantities
+   unclear: the snippets do not let you decide
+   The line "computed by eq N" tells you the model computes this symbol.
+6. Answer every symbol in the list, once, using the symbol name exactly as given.
+
+Return JSON only.
+
+Symbols and their candidate snippets:
+
+SYMBOL C_AMM  (computed by eq 15; used in eq 6, 7)
+  equation 15: \frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}],
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL C_GLN  (computed by eq 10; used in eq 12, 15)
+  equation 10: \frac{d([G L N])}{d t}=-Q_{g l n}V X_{\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N],
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL C_H  (computed by eq 19; used in eq 21, 23)
+  equation 19: \frac{d[H]}{d t}=T_{H}m_{H}-R_{H},
+  [285] (p.7, text before the equation) The intraER heavy- and light-chain and assembly intermediates balances are
+
+SYMBOL C_H_2  (computed by eq 23; used in eq 22, 24)
+  equation 23: \frac{d[H_{2}]}{d t}=\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L],
+  [286] (p.7, text before the equation) where
+
+SYMBOL C_H_2L  (computed by eq 24; used in eq 22, 25)
+  equation 24: \frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L].
+  [287] (p.7, text before the equation) and
+
+SYMBOL C_H_2L_2_ER  (computed by eq 25; used in eq 26)
+  equation 25: \frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}.
+  [288] (p.7, text before the equation) The intraER MAb balance is
+
+SYMBOL C_H_2L_2_G  (computed by eq 26; used in eq 28)
+  equation 26: \frac{d[H_{2}L_{2}]_{G}}{d t}=\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}.
+  [289] (p.7, text before the equation) Similarly, for the Golgi apparatus:
+
+SYMBOL C_L  (computed by eq 20; used in eq 22, 23, 24, 25)
+  equation 20: \frac{d[L]}{d t}=T_{L}m_{L}-R_{L},
+  [285] (p.7, text before the equation) The intraER heavy- and light-chain and assembly intermediates balances are
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL C_LAC  (computed by eq 13; used in eq 6)
+  equation 13: \frac{d([L A C])}{d t}=Q_{l a c}V X_{\nu}-F_{o u t}[L A C],
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL C_MAb  (computed by eq 27)
+  equation 27: \frac{d([{M A}b])}{d t}=(\gamma_{2}-\gamma_{1}\mu)Q_{{M A}b}V X_{\nu}-F_{{o u t}}[{M A}b],
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL f_inh  (computed by eq 6; used in eq 4)
+  equation 6: f_{i n h}=\left(\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\right)\left(\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\right).
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL f_lim  (computed by eq 5; used in eq 4)
+  equation 5: f_{l i m}=\left(\frac{[G L C]}{K_{g l c}+[G L C]}\right)\left(\frac{[G L C]}{K_{g l n}+[G L C]}\right),
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL m_gln  (computed by eq 12; used in eq 11)
+  equation 12: m_{g l n}=\frac{\alpha_{1}[G L N]}{\alpha_{2}+[G L N]}.
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL m_H  (computed by eq 17; used in eq 19)
+  equation 17: \frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H},
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+SYMBOL m_L  (computed by eq 18; used in eq 20)
+  equation 18: \frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}.
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+SYMBOL mu  (computed by eq 4; used in eq 2, 3, 9, 11, 27)
+  equation 4: \mu=\mu_{m a x}f_{l i m}f_{i n h},
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL mu_d  (computed by eq 7; used in eq 2)
+  equation 7: \mu_{d}=\frac{\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\quad n>1.
+  [281] (p.7, text before the equation) Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by
+
+SYMBOL Q_amm  (computed by eq 16; used in eq 15)
+  equation 16: Q_{a m m}=Y_{a m m,g l n}Q_{g l n}.
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL Q_glc  (computed by eq 9; used in eq 8, 14)
+  equation 9: Q_{g l c}=\frac{\mu}{Y_{x,g l c}}+m_{g l c},
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL Q_gln  (computed by eq 11; used in eq 10, 16)
+  equation 11: Q_{g l n}=\frac{\mu}{Y_{x,g l n}}+m_{g l n},
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL Q_lac  (computed by eq 14; used in eq 13)
+  equation 14: Q_{l a c}=Y_{l a c,g l c}Q_{g l c},
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL Q_MAb  (computed by eq 28; used in eq 27)
+  equation 28: Q_{M A b}=\varepsilon_{2}\lambda K_{G}[H_{2}L_{2}]_{G}.
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL R_H  (computed by eq 21; used in eq 19)
+  equation 21: R_{H}=\frac{2}{3}K_{A}[H]^{2},
+  [56] (p.2, line) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)
+  [286] (p.7, text before the equation) where
+
+SYMBOL R_L  (computed by eq 22; used in eq 20)
+  equation 22: R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L],
+  [56] (p.2, line) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)
+  [286] (p.7, text before the equation) where
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL V  (computed by eq 1; used in eq 2, 3, 8, 10, 13, 15, 27)
+  equation 1: \frac{d V}{d t}=F_{i n}-F_{o u t},
+  [148] (p.4, sentence) This is done by minimising the volume of the confidence ellipsoid, i.e., minimising the determinant of the variance-covariance matrix, V, of the parameters to be estimated.
+  [279] (p.7, text before the equation) The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are
+
+SYMBOL X_t  (computed by eq 3)
+  equation 3: \frac{d(V X_{t})}{d t}=\mu V X_{\nu}-F_{o u t}X_{t}.
+  [279] (p.7, text before the equation) The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are
+
+SYMBOL X_v  (computed by eq 2; used in eq 3, 8, 10, 13, 15, 27)
+  equation 2: \frac{d(V X_{\nu})}{d t}=\mu V X_{\nu}-\mu_{d}V X_{\nu}-F_{o u t}X_{\nu},
+  [279] (p.7, text before the equation) The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are
+
+SYMBOL alpha_1  (not computed by any equation; used in eq 12)
+  equation 12: m_{g l n}=\frac{\alpha_{1}[G L N]}{\alpha_{2}+[G L N]}.
+  [64] (p.2, line) $ \alpha_{1} $,  $ \alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)
+  [181] (p.4, table row) Parameter: $ \alpha_1 $ (mM L/cell-h) | Batch operation value: $ 3.4 \times 10^{-13} $ | Fed-batch operation value: $ 3.4 \times 10^{-13} $
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL alpha_2  (not computed by any equation; used in eq 12)
+  equation 12: m_{g l n}=\frac{\alpha_{1}[G L N]}{\alpha_{2}+[G L N]}.
+  [64] (p.2, line) $ \alpha_{1} $,  $ \alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)
+  [182] (p.4, table row) Parameter: $ \alpha_2 $ (mM) | Batch operation value: 4 | Fed-batch operation value: 4
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL C_GLC  (not computed by any equation; used in eq 5, 8)
+  equation 5: f_{l i m}=\left(\frac{[G L C]}{K_{g l c}+[G L C]}\right)\left(\frac{[G L C]}{K_{g l n}+[G L C]}\right),
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL C_GLC_in  (not computed by any equation; used in eq 8)
+  equation 8: \frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C],
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL C_GLN_in  (not computed by any equation; used in eq 10)
+  equation 10: \frac{d([G L N])}{d t}=-Q_{g l n}V X_{\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N],
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL d  (not computed by any equation; used in eq 8)
+  equation 8: \frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C],
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL epsilon_1  (not computed by any equation; used in eq 26)
+  equation 26: \frac{d[H_{2}L_{2}]_{G}}{d t}=\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}.
+  [67] (p.2, line) $ \varepsilon_{1} $ ER glycosylation efficiency factor (dimensionless)
+  [185] (p.4, table row) Parameter: $ \varepsilon_1 $ | Batch operation value: $ 9.9 \times 10^{-1} $ | Fed-batch operation value: $ 9.95 \times 10^{-1} $
+  [289] (p.7, text before the equation) Similarly, for the Golgi apparatus:
+
+SYMBOL epsilon_2  (not computed by any equation; used in eq 28)
+  equation 28: Q_{M A b}=\varepsilon_{2}\lambda K_{G}[H_{2}L_{2}]_{G}.
+  [68] (p.2, line) $ \varepsilon_{2} $ Golgi apparatus glycosylation efficiency factor (dimensionless)
+  [186] (p.4, table row) Parameter: $ \varepsilon_2 $ | Batch operation value: 1 | Fed-batch operation value: 1
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL F_in  (not computed by any equation; used in eq 1, 8, 10)
+  equation 1: \frac{d V}{d t}=F_{i n}-F_{o u t},
+  [279] (p.7, text before the equation) The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are
+
+SYMBOL F_out  (not computed by any equation; used in eq 1, 2, 3, 8, 10, 13, 15, 27)
+  equation 1: \frac{d V}{d t}=F_{i n}-F_{o u t},
+  [279] (p.7, text before the equation) The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are
+
+SYMBOL gamma_1  (not computed by any equation; used in eq 27)
+  equation 27: \frac{d([{M A}b])}{d t}=(\gamma_{2}-\gamma_{1}\mu)Q_{{M A}b}V X_{\nu}-F_{{o u t}}[{M A}b],
+  [65] (p.2, line) $ \gamma_{1} $ constant for antibody production (h)
+  [183] (p.4, table row) Parameter: $ \gamma_1 $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL gamma_2  (not computed by any equation; used in eq 27)
+  equation 27: \frac{d([{M A}b])}{d t}=(\gamma_{2}-\gamma_{1}\mu)Q_{{M A}b}V X_{\nu}-F_{{o u t}}[{M A}b],
+  [66] (p.2, line) $ \gamma_{2} $ constant for antibody production (dimensionless)
+  [184] (p.4, table row) Parameter: $ \gamma_2 $ (h) | Batch operation value: 2 | Fed-batch operation value: 2
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL I_amm  (not computed by any equation; used in eq 6)
+  equation 6: f_{i n h}=\left(\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\right)\left(\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\right).
+  [52] (p.2, line) K $ _{lamm} $ Monod constant for ammonia (mM)
+  [166] (p.4, table row) Parameter: $ KI_{amm} $ (mM) | Batch operation value: 28.48 | Fed-batch operation value: 28.48
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL I_lac  (not computed by any equation; used in eq 6)
+  equation 6: f_{i n h}=\left(\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\right)\left(\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\right).
+  [53] (p.2, line) K $ _{llac} $ Monod constant for lactate (mM)
+  [167] (p.4, table row) Parameter: $ KI_{lac} $ (mM) | Batch operation value: 171.76 | Fed-batch operation value: 171.76
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL K  (not computed by any equation; used in eq 6, 17, 18)
+  equation 6: f_{i n h}=\left(\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\right)\left(\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\right).
+  [44] (p.2, line) K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)
+  [158] (p.4, table row) Parameter: $ K (h^{-1}) $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL K_A  (not computed by any equation; used in eq 21, 22, 23, 24, 25)
+  equation 21: R_{H}=\frac{2}{3}K_{A}[H]^{2},
+  [45] (p.2, line) K $ _{A} $ assembly rate constant (cell/molecule/h)
+  [159] (p.4, table row) Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $
+  [286] (p.7, text before the equation) where
+
+SYMBOL K_d_amm  (not computed by any equation; used in eq 7)
+  equation 7: \mu_{d}=\frac{\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\quad n>1.
+  [46] (p.2, line) K $ _{d,amm} $ ammonia constant for cell death (mM)
+  [160] (p.4, table row) Parameter: $ K_{d,amm} $ (mM) | Batch operation value: 1.76 | Fed-batch operation value: 1.76
+  [281] (p.7, text before the equation) Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by
+
+SYMBOL K_dgln  (not computed by any equation; used in eq 10, 15)
+  equation 10: \frac{d([G L N])}{d t}=-Q_{g l n}V X_{\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N],
+  [47] (p.2, line) K $ _{d,gln} $ constant for glutamine degradation (h $ ^{-1} $)
+  [161] (p.4, table row) Parameter: $ K_{d,gln} (h^{-1}) $ | Batch operation value: $ 9.6 \times 10^{-3} $ | Fed-batch operation value: $ 9.6 \times 10^{-3} $
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL K_ER  (not computed by any equation; used in eq 25, 26)
+  equation 25: \frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}.
+  [48] (p.2, line) K $ _{ER} $ rate constant for ER-to-Golgi transport (h $ ^{-1} $)
+  [162] (p.4, table row) Parameter: $ K_{ER} (h^{-1}) $ | Batch operation value: $ 6.9 \times 10^{-1} $ | Fed-batch operation value: $ 6.9 \times 10^{-1} $
+  [288] (p.7, text before the equation) The intraER MAb balance is
+
+SYMBOL K_G  (not computed by any equation; used in eq 26, 28)
+  equation 26: \frac{d[H_{2}L_{2}]_{G}}{d t}=\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}.
+  [49] (p.2, line) K $ _{G} $ rate constants for Golgi-to-medium antibody transport (h $ ^{-1} $)
+  [163] (p.4, table row) Parameter: $ K_G (h^{-1}) $ | Batch operation value: $ 1.4 \times 10^{-1} $ | Fed-batch operation value: $ 1.4 \times 10^{-1} $
+  [289] (p.7, text before the equation) Similarly, for the Golgi apparatus:
+
+SYMBOL K_glc  (not computed by any equation; used in eq 5)
+  equation 5: f_{l i m}=\left(\frac{[G L C]}{K_{g l c}+[G L C]}\right)\left(\frac{[G L C]}{K_{g l n}+[G L C]}\right),
+  [50] (p.2, line) K $ _{glc} $ Monod constant for glucose (mM)
+  [164] (p.4, table row) Parameter: $ K_{glc} $ (mM) | Batch operation value: $ 7.5 \times 10^{-1} $ | Fed-batch operation value: $ 7.5 \times 10^{-1} $
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL K_gln  (not computed by any equation; used in eq 5)
+  equation 5: f_{l i m}=\left(\frac{[G L C]}{K_{g l c}+[G L C]}\right)\left(\frac{[G L C]}{K_{g l n}+[G L C]}\right),
+  [51] (p.2, line) K $ _{gln} $ Monod constant for glutamine (mM)
+  [165] (p.4, table row) Parameter: $ K_{gln} $ (mM) | Batch operation value: $ 7.5 \times 10^{-2} $ | Fed-batch operation value: $ 7.5 \times 10^{-2} $
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL lam  (not computed by any equation; used in eq 28)
+  equation 28: Q_{M A b}=\varepsilon_{2}\lambda K_{G}[H_{2}L_{2}]_{G}.
+  [290] (p.7, text before the equation) Finally, the rate of MAb production is
+
+SYMBOL m_glc  (not computed by any equation; used in eq 9)
+  equation 9: Q_{g l c}=\frac{\mu}{Y_{x,g l c}}+m_{g l c},
+  [54] (p.2, line) m $ _{glc} $ maintenance coefficient of glucose (mmol/cell/h)
+  [169] (p.4, table row) Parameter: $ m_{glc} $ (mmol/cell-h) | Batch operation value: $ 4.9 \times 10^{-14} $ | Fed-batch operation value: $ 4.9 \times 10^{-14} $
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL mu_d_max  (not computed by any equation; used in eq 7)
+  equation 7: \mu_{d}=\frac{\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\quad n>1.
+  [69] (p.2, line) $ \mu_{d,max} $ maximum specific growth rate (h $ ^{-1} $)
+  [188] (p.4, table row) Parameter: $ \mu_{d,max} (h^{-1}) $ | Batch operation value: $ 6 \times 10^{-2} $ | Fed-batch operation value: $ 6 \times 10^{-2} $
+  [281] (p.7, text before the equation) Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by
+
+SYMBOL mu_max  (not computed by any equation; used in eq 4)
+  equation 4: \mu=\mu_{m a x}f_{l i m}f_{i n h},
+  [70] (p.2, line) $ \mu_{max} $ maximum specific growth rate (h $ ^{-1} $)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [187] (p.4, table row) Parameter: $ \mu_{max} (h^{-1}) $ | Batch operation value: $ 5.8 \times 10^{-2} $ | Fed-batch operation value: $ 5.8 \times 10^{-2} $
+  [210] (p.5, table row) $ \mu_{max} $ | $ 5.4 \times 10^{-2} $ | $ 8.306 \times 10^{-4} $ | $ 9.909 \times 10^{-4} $ | $ 1.305 \times 10^{-3} $
+  [280] (p.7, text before the equation) The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:
+
+SYMBOL n  (not computed by any equation; used in eq 7)
+  equation 7: \mu_{d}=\frac{\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\quad n>1.
+  [170] (p.4, table row) Parameter: n | Batch operation value: 2 | Fed-batch operation value: 2
+  [281] (p.7, text before the equation) Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by
+
+SYMBOL N_H  (not computed by any equation; used in eq 17)
+  equation 17: \frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H},
+  [55] (p.2, line) N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [171] (p.4, table row) Parameter: $ N_H $ (gene/cell) | Batch operation value: $ 1.4 \times 10^{2} $ | Fed-batch operation value: $ 1.0 \times 10^{2} $
+  [211] (p.5, table row) $ N_{H} $ | 101 | 5.067 | 6.045 | 7.959
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+SYMBOL N_L  (not computed by any equation; used in eq 18)
+  equation 18: \frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}.
+  [55] (p.2, line) N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)
+  [172] (p.4, table row) Parameter: $ N_L $ (gene/cell) | Batch operation value: $ 1.2 \times 10^{2} $ | Fed-batch operation value: $ 1.0 \times 10^{2} $
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+================================================================================
+Symbols and their candidate snippets:
+
+SYMBOL S_H  (not computed by any equation; used in eq 17)
+  equation 17: \frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H},
+  [57] (p.2, line) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)
+  [173] (p.4, table row) Parameter: $ S_H $ (mRNA/gene-h) | Batch operation value: $ 3 \times 10^{3} $ | Fed-batch operation value: $ 3 \times 10^{3} $
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+SYMBOL S_L  (not computed by any equation; used in eq 18)
+  equation 18: \frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}.
+  [57] (p.2, line) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)
+  [174] (p.4, table row) Parameter: $ S_L $ (mRNA/gene-h) | Batch operation value: $ 4.5 \times 10^{3} $ | Fed-batch operation value: $ 4.5 \times 10^{3} $
+  [284] (p.7, text before the equation) The heavy- and light-chain mRNA balances are
+
+SYMBOL T_H  (not computed by any equation; used in eq 19)
+  equation 19: \frac{d[H]}{d t}=T_{H}m_{H}-R_{H},
+  [58] (p.2, line) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)
+  [175] (p.4, table row) Parameter: $ T_H $ (chain/mRNA-h) | Batch operation value: 17 | Fed-batch operation value: 17
+  [285] (p.7, text before the equation) The intraER heavy- and light-chain and assembly intermediates balances are
+
+SYMBOL T_L  (not computed by any equation; used in eq 20)
+  equation 20: \frac{d[L]}{d t}=T_{L}m_{L}-R_{L},
+  [58] (p.2, line) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)
+  [176] (p.4, table row) Parameter: $ T_L $ (chain/mRNA-h) | Batch operation value: 11.5 | Fed-batch operation value: 11.5
+  [285] (p.7, text before the equation) The intraER heavy- and light-chain and assembly intermediates balances are
+
+SYMBOL Y_amm_gln  (not computed by any equation; used in eq 16)
+  equation 16: Q_{a m m}=Y_{a m m,g l n}Q_{g l n}.
+  [59] (p.2, line) Y $ _{amm,gln} $ yield of ammonia from glutamine (mmol/mmol)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [177] (p.4, table row) Parameter: $ Y_{amm,gln} $ (mmol/mmol) | Batch operation value: $ 4.3 \times 10^{-1} $ | Fed-batch operation value: $ 4.5 \times 10^{-1} $
+  [208] (p.5, table row) $ Y_{amm,gln} $ | $ 4.5 \times 10^{-1} $ | $ 6.564 \times 10^{-2} $ | $ 7.832 \times 10^{-2} $ | $ 1.031 \times 10^{-1} $
+  [219] (p.5, sentence) The confidence intervals of the estimated parameters are satisfactory, with the 95% confidence intervals falling within  $ \pm10\% $ of the final value for all parameters except  $ Y_{amm,gln} $ ( $ \pm17\% $).
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL Y_lac_glc  (not computed by any equation; used in eq 14)
+  equation 14: Q_{l a c}=Y_{l a c,g l c}Q_{g l c},
+  [60] (p.2, line) Y $ _{lac,glc} $ yield of lactate from glucose (mmol/mmol)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [178] (p.4, table row) Parameter: $ Y_{lac,glc} $ (mmol/mmol) | Batch operation value: 1.4 | Fed-batch operation value: 2.0
+  [207] (p.5, table row) $ Y_{lac,glc} $ | 2.0 | $ 1.768 \times 10^{-1} $ | $ 2.109 \times 10^{-1} $ | $ 2.777 \times 10^{-1} $
+  [283] (p.7, text before the equation) The mass balances for lactate and ammonia are
+
+SYMBOL Y_x_glc  (not computed by any equation; used in eq 9)
+  equation 9: Q_{g l c}=\frac{\mu}{Y_{x,g l c}}+m_{g l c},
+  [61] (p.2, line) Y $ _{x,glc} $ yield of cells on glucose (cell/mmol)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [179] (p.4, table row) Parameter: $ Y_{x,glc} $ (cell/mmol) | Batch operation value: $ 1.1 \times 10^{8} $ | Fed-batch operation value: $ 2.6 \times 10^{8} $
+  [205] (p.5, table row) $ Y_{x,glc} $ | $ 2.6 \times 10^{8} $ | $ 2.224 \times 10^{7} $ | $ 2.654 \times 10^{7} $ | $ 3.494 \times 10^{7} $
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:
+
+SYMBOL Y_x_gln  (not computed by any equation; used in eq 11)
+  equation 11: Q_{g l n}=\frac{\mu}{Y_{x,g l n}}+m_{g l n},
+  [62] (p.2, line) Y $ _{x,gln} $ yield of cells on glutamine (cell/mmol)
+  [135] (p.3, sentence) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K_{lysis} $), the maximum specific cell growth rate ( $ \mu_{max} $), and the gene copy number of MAb heavy chains ( $ N_{H} $).
+  [180] (p.4, table row) Parameter: $ Y_{x,gln} $ (cell/mmol) | Batch operation value: $ 5.6 \times 10^{8} $ | Fed-batch operation value: $ 8 \times 10^{8} $
+  [282] (p.7, text before the equation) The mass balances on glucose and glutamine around the bioreactor are:

@@ -1,0 +1,2113 @@
+{
+ "paper": "asprey_2000",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "blocks": [
+  {
+   "page": 0,
+   "order": 0,
+   "label": "header_image",
+   "content": "",
+   "bbox": [
+    89.0,
+    70.0,
+    211.0,
+    203.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 1,
+   "label": "header",
+   "content": "Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    361.0,
+    184.0,
+    802.0,
+    206.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 2,
+   "label": "header",
+   "content": "Computers & Chemical Engineering",
+   "bbox": [
+    973.0,
+    87.0,
+    1114.0,
+    192.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 3,
+   "label": "header",
+   "content": "www.elsevier.com/locate/compchemeng",
+   "bbox": [
+    850.0,
+    205.0,
+    1135.0,
+    226.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 4,
+   "label": "doc_title",
+   "content": "Statistical tools for optimal dynamic model building",
+   "bbox": [
+    203.0,
+    310.0,
+    1020.0,
+    351.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 5,
+   "label": "text",
+   "content": "S.P. Asprey $ ^{*} $, S. Macchietto",
+   "bbox": [
+    433.0,
+    373.0,
+    788.0,
+    404.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 6,
+   "label": "text",
+   "content": "Centre for Process Systems Engineering, Imperial College of Science, Technology and Medicine, Prince Consort Road, London SW 7 2BY, UK",
+   "bbox": [
+    175.0,
+    419.0,
+    1048.0,
+    462.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 7,
+   "label": "paragraph_title",
+   "content": "Abstract",
+   "bbox": [
+    88.0,
+    536.0,
+    163.0,
+    558.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 8,
+   "label": "abstract",
+   "content": "A general, systematic procedure is presented to support the development and statistical verification of dynamic process models. Within this procedure, methods are presented to address several key aspects, such as structural identifiability and distinguishability testing, as well as optimal design of dynamic experiments for both model discrimination and improving parameter precision. A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems. The design of dynamic experiments is cast as an optimal control problem within a framework that enables the calculation of optimal sampling points, experiment duration, fixed and variable external control profiles, and initial conditions of a dynamic experiment subject to general constraints on inputs and outputs. Within this framework, methods are presented to provide experiment design robustness, accounting for parameter uncertainty. The procedure is demonstrated through a practical biotechnology example. © 2000 Elsevier Science Ltd. All rights reserved.",
+   "bbox": [
+    87.0,
+    581.0,
+    1138.0,
+    791.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 9,
+   "label": "text",
+   "content": "Keywords: Optimal experiment design; Dynamic modelling; Parameter estimation",
+   "bbox": [
+    86.0,
+    810.0,
+    684.0,
+    834.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 10,
+   "label": "paragraph_title",
+   "content": "1. Introduction",
+   "bbox": [
+    87.0,
+    881.0,
+    225.0,
+    906.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 11,
+   "label": "text",
+   "content": "Detailed mathematical models are increasingly used by engineers in academia and industry to gain competitive advantage through such applications as model-based process design, operations, and control. Thus, building and verifying high quality steady-state or dynamic, single or multiresponse mechanistic models of processing systems are key activities in process engineering.",
+   "bbox": [
+    85.0,
+    930.0,
+    592.0,
+    1134.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 12,
+   "label": "text",
+   "content": "In this work, we present a general, systematic procedure to support the development and statistical verification of dynamic process models. The procedure comprises components that address several key aspects, such as structural identifiability and distinguishability testing, and optimal design of dynamic experiments for model discrimination and improving parameter precision. Experiment design is concerned with the following question: How does one adjust the time-varying controls, initial conditions or length of experiment for the experiment to generate the maximum amount of information for the purpose of determining the correct model from a set of candidates, and in turn, for estimating the parameters with greatest precision? For this, the problem is cast as an optimal control problem. Within this framework, one can calculate optimal sampling points, experiment duration, fixed and variable external controls with input constraints, and initial conditions. To mathematically represent time-varying external controls to the process, we use the control vector parameterisation (CVP) technique, with either piecewise constant, or higher-order functions with 0th or higher-order continuity (Vassiliadis, Sargent & Pantelides, 1994). Here, we first present the overall procedure, followed by a brief discussion of current and new methods for each key component.",
+   "bbox": [
+    84.0,
+    1134.0,
+    593.0,
+    1412.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 13,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    628.0,
+    878.0,
+    1138.0,
+    1255.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 14,
+   "label": "text",
+   "content": "Potential applications of these techniques in all engineering disciplines are abundant, including applications in chemical kinetics and reaction mechanism elucidation, polymer reaction engineering, physical properties estimation, and biochemical engineering. Throughout the paper, an engineering example using a typical semicontinuous bioreactor application is used to demonstrate the overall procedure and the power of the proposed techniques in their ability to reduce the quantity of experimental work required, while increasing the quality of the results.",
+   "bbox": [
+    629.0,
+    1255.0,
+    1138.0,
+    1529.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 15,
+   "label": "footnote",
+   "content": " $ ^{*} $ Corresponding author. Tel.: +44-20-75946604; fax: +44-20-75946606.",
+   "bbox": [
+    87.0,
+    1464.0,
+    592.0,
+    1506.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 16,
+   "label": "footnote",
+   "content": "E-mail address: s.asprey@ic.ac.uk (S.P. Asprey)",
+   "bbox": [
+    105.0,
+    1506.0,
+    459.0,
+    1528.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 17,
+   "label": "footer",
+   "content": "0098-1354/00/$ - see front matter © 2000 Elsevier Science Ltd. All rights reserved.\nPII: S0098-1354(00)00328-8",
+   "bbox": [
+    85.0,
+    1549.0,
+    695.0,
+    1593.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 0,
+   "label": "number",
+   "content": "1262",
+   "bbox": [
+    81.0,
+    66.0,
+    120.0,
+    86.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 1,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    284.0,
+    62.0,
+    929.0,
+    86.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 2,
+   "label": "paragraph_title",
+   "content": "2. The modelling process",
+   "bbox": [
+    77.0,
+    113.0,
+    308.0,
+    140.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 3,
+   "label": "text",
+   "content": "When building models whose use is to explain an observed phenomenon, one uses a priori knowledge such as physical, chemical or biological 'laws' to propose (conceivably several) possible models. In each case, these laws dictate the model structure, and we may wish to know whether one or more such structures are adequate for the problem at hand. These models contain parameters that may have physical meaning, and we may wish to know if it is at all possible to determine their values, and, if so, to do so with maximum precision. In what follows, we therefore consider general deterministic models in the form of a set of (possibly mixed) differential and algebraic equations:",
+   "bbox": [
+    76.0,
+    163.0,
+    589.0,
+    495.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 4,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}&\\mathbf{f}(\\dot{\\mathbf{x}}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\boldsymbol{\\theta},t)=0\\\\&\\mathbf{y}(t)=\\mathbf{g}(\\mathbf{x}(t))\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    78.0,
+    509.0,
+    334.0,
+    582.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 5,
+   "label": "formula_number",
+   "content": "(1)",
+   "bbox": [
+    557.0,
+    555.0,
+    585.0,
+    580.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 6,
+   "label": "text",
+   "content": "where  $ \\mathbf{x}(t) $ is an  $ n_s $-dimensional vector of time dependent state variables,  $ \\mathbf{u}(t) $ is an  $ n_c $-dimensional vector of time-varying controls or inputs to the process,  $ \\mathbf{w} $ is an  $ n_t $-dimensional vector of constant controls,  $ \\boldsymbol{\\theta} $ is a  $ P $-dimensional vector of model parameters to be determined within a continuous, realisable set  $ \\Theta $, and  $ \\mathbf{y}(t) $ is an  $ M $-dimensional vector of measured response variables that are a function of the state variables,  $ \\mathbf{x}(t) $.",
+   "bbox": [
+    78.0,
+    599.0,
+    589.0,
+    800.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 7,
+   "label": "text",
+   "content": "We first present an overall model building strategy, depicted in Fig. 1. The first step to this strategy involves specifying one or more models to describe the process at hand. In Stage I, the strategy then uses these models to perform preliminary structural identifiability and distinguishability tests before any data are collected. These tests are used to determine whether or not the parameters in the mathematical formulation of the models can be uniquely identified, and whether or not the model structures can be distinguished from one another. In Stage II, the strategy involves designing experiments for model discrimination, followed by",
+   "bbox": [
+    80.0,
+    801.0,
+    589.0,
+    1102.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 8,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    97.0,
+    1126.0,
+    575.0,
+    1466.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 9,
+   "label": "figure_title",
+   "content": "Fig. 1. The overall model-building scheme.",
+   "bbox": [
+    174.0,
+    1489.0,
+    497.0,
+    1513.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 10,
+   "label": "text",
+   "content": "parameter estimation and model adequacy checking to determine whether or not any of the proposed models can be rejected, with the final purpose of selecting the 'best' model from the given set. Once we are left with the 'best' model, we then go on to Stage III to design experiments for improving the precision of the parameters within that model, eventually arriving at a final, statistically-verified model formulation.",
+   "bbox": [
+    624.0,
+    110.0,
+    1133.0,
+    316.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "3. Preliminary analysis",
+   "bbox": [
+    626.0,
+    373.0,
+    840.0,
+    400.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 12,
+   "label": "paragraph_title",
+   "content": "3.1. Structural identifiability and distinguishability",
+   "bbox": [
+    628.0,
+    433.0,
+    1080.0,
+    461.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 13,
+   "label": "text",
+   "content": "During the preliminary model analysis, we simply wish to know whether, given a candidate set of models and a proposed set of variables to be measured, we can in principle design an experiment such that the parameters of these models can be uniquely identified (identifiability), and whether the different model structures can be distinguished from one another (distinguishability). Past approaches for testing identifiability in nonlinear-in-input dynamic models find their roots in differential geometry, where, in particular, the model is approximated locally by its input-output mapping using functional expansions (Walter, 1987). Coefficients of these functional expansions are then evaluated at parameter values $\\theta$ and $\\theta^{*}$, and used to form systems of nonlinear algebraic equations, whose unique solution $\\theta=\\theta^{*}$ ensures identifiability. This approach has its advantages and disadvantages; its advantages being (i) it is a definitive test (answers the test with yes/no), and (ii) the methods are not affected by scaling problems. Disadvantages of the methods are (i) they are limited to models of special forms (e.g. nonlinear control-affine models), and (ii) they are limited to models with dimensions $(n_{s}+P)\\leq10$, very small for modelling realistic process systems. To avoid these disadvantages (in particular disadvantage (ii)), we propose a novel optimisation-based approach, defined in the following (Pantelides, 2000).",
+   "bbox": [
+    624.0,
+    484.0,
+    1137.0,
+    1166.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 14,
+   "label": "text",
+   "content": "Definition: Identifiability. A model giving output trajectory  $ y(\\theta, u(t), t) $ is globally identifiable if, for any two parameter sets,  $ \\theta \\in \\Theta $ and  $ \\theta^* \\in \\Theta^* $, a time horizon of interest,  $ t \\in [0, t_f] $, for all system inputs  $ u(t) \\in U $, and the same initial conditions  $ y(t=0) $, the global maximum:",
+   "bbox": [
+    626.0,
+    1185.0,
+    1137.0,
+    1312.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 15,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{\\Phi}_{I}=\\operatorname*{m a x}_{\\substack{\\mathbf{\\theta}\\in\\mathbf{\\Theta},\\mathbf{\\theta}^{*}\\in\\mathbf{\\Theta}^{*}}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*})^{T}\\mathbf{W}_{\\mathbf{\\theta}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*}) $$ ",
+   "bbox": [
+    724.0,
+    1330.0,
+    1047.0,
+    1369.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 16,
+   "label": "formula_number",
+   "content": "(2a)",
+   "bbox": [
+    1095.0,
+    1333.0,
+    1133.0,
+    1358.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 17,
+   "label": "text",
+   "content": "subject to:",
+   "bbox": [
+    630.0,
+    1379.0,
+    732.0,
+    1404.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 18,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}&\\int_{0}^{T}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))^{T}\\mathbf{W}_{y}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))\\\\&\\times\\ dt<\\varepsilon_{y}\\forall\\mathbf{u}(t)\\in\\mathbf{U}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    630.0,
+    1419.0,
+    1115.0,
+    1513.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 0,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    282.0,
+    65.0,
+    925.0,
+    90.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 1,
+   "label": "number",
+   "content": "1263",
+   "bbox": [
+    1089.0,
+    65.0,
+    1126.0,
+    84.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 2,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    104.0,
+    117.0,
+    563.0,
+    402.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 3,
+   "label": "figure_title",
+   "content": "Fig. 2. Structural identifiability and distinguishability illustration.",
+   "bbox": [
+    79.0,
+    421.0,
+    560.0,
+    447.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 4,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}{}&{{}f(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=(}\\\\ {}&{{}\\quad\\mathrm{(t h e~m o d e l~e q u a t i o n s)}}\\\\ {}&{{}\\vdots}\\\\ {}&{{}\\theta_{i}^{L}\\leq\\theta_{i}\\leq\\theta_{i}^{U}\\quad i=1,\\ldots,P}\\\\ {}&{{}\\theta_{i}^{*L}\\leq\\theta_{i}^{*}\\leq\\theta_{i}^{*U}\\quad i=1,\\ldots,P}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    78.0,
+    485.0,
+    366.0,
+    663.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 5,
+   "label": "formula_number",
+   "content": "(2b)",
+   "bbox": [
+    544.0,
+    631.0,
+    582.0,
+    656.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 6,
+   "label": "text",
+   "content": "gives $\\Phi_I \\leq \\epsilon_{\\Phi_I}$. Here $\\epsilon_{\\Phi_I}$ and $\\epsilon_y$ are arbitrarily small positive values and $\\mathbf{W}_0$ and $\\mathbf{W}_y$ are weighting matrices. In words, $\\Phi_I$ is the largest distance between two parameter vectors that still give (essentially) the same response trajectories. If such a distance is arbitrarily small, the model can be deemed globally identifiable. In our illustration of Fig. 2, we wish to ensure that when the same input $u(t)$ is applied to the same model, at the same initial conditions, but with different parameter vectors $\\boldsymbol{\\theta}$ and $\\boldsymbol{\\theta}^*$ (such that $\\boldsymbol{\\theta} \\neq \\boldsymbol{\\theta}^*$), the two predicted model output trajectories do not overlie.",
+   "bbox": [
+    79.0,
+    669.0,
+    588.0,
+    947.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 7,
+   "label": "text",
+   "content": "Definition: Distinguishability. Two models giving output trajectories  $ y(\\theta, u(t), t) $ and  $ y^*(\\theta^*, u(t), t) $, respectively, are distinguishable if for any  $ \\theta \\in \\Theta $,  $ \\theta^* \\in \\Theta^* $,  $ t \\in [0, t_f] $ for all  $ u(t) \\in U $, and the same initial conditions  $ y(t=0) $, the global maximum:",
+   "bbox": [
+    82.0,
+    969.0,
+    590.0,
+    1096.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 8,
+   "label": "text",
+   "content": "Test D1:",
+   "bbox": [
+    85.0,
+    1109.0,
+    173.0,
+    1133.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 9,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}{\\Phi_{D}=}&{{}\\operatorname*{m a x}_{\\mathbf{u}(t)\\in\\mathbf{U}}\\operatorname*{m i n}_{\\substack{\\theta\\in\\Theta,\\theta^{*}\\in\\Theta^{*}}}\\int_{0}^{T}(\\mathbf{y}_{(1)}(t)-\\mathbf{y}_{(2)}(t))^{T}}\\\\ {}&{{}\\times\\mathbf{W}(\\mathbf{y}_{(1)}(t)-\\mathbf{y}_{(2)}(t))\\operatorname{d}t}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    109.0,
+    1141.0,
+    482.0,
+    1233.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 10,
+   "label": "formula_number",
+   "content": "(3a)",
+   "bbox": [
+    549.0,
+    1206.0,
+    587.0,
+    1229.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 11,
+   "label": "text",
+   "content": "subject to:",
+   "bbox": [
+    85.0,
+    1246.0,
+    187.0,
+    1270.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 12,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}{}&{{}f_{(1)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=0}\\\\ {}&{{}f_{(2)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta}^{*},t)=0}\\\\ {}&{{}\\vdots}\\\\ {}&{{}\\theta_{i}^{L}\\leq\\theta_{i}\\leq\\theta_{i}^{U}\\quad i=1,\\ldots,P}\\\\ {}&{{}\\theta_{i}^{*L}\\leq\\theta_{i}^{*}\\leq\\theta_{i}^{*U}\\quad i=1,\\ldots,P}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    83.0,
+    1278.0,
+    409.0,
+    1455.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 13,
+   "label": "formula_number",
+   "content": "(3b)",
+   "bbox": [
+    550.0,
+    1426.0,
+    589.0,
+    1449.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 14,
+   "label": "text",
+   "content": "gives  $ \\Phi_D \\geq \\varepsilon_{\\Phi_D} $ for some  $ \\varepsilon_{\\Phi_D} \\geq 0 $. In words,  $ \\Phi_D $ is the largest value of the minimum distance between the responses of the two models, over the time horizon of interest. If such a value is sufficiently large, the two models may be deemed distinguishable. Again, returning to our illustration of Fig. 2, we wish to ensure that when the same input  $ u(t) $ is applied to two different models with parameter vectors  $ \\boldsymbol{\\theta} $ and  $ \\boldsymbol{\\theta}^* $, respectively, and the same initial conditions, the two predicted model output trajectories do not overlie.",
+   "bbox": [
+    85.0,
+    1461.0,
+    592.0,
+    1515.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 15,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    621.0,
+    112.0,
+    1129.0,
+    313.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 16,
+   "label": "text",
+   "content": "This optimisation approach is not limited to any particular model form or size; however, we are now faced with solving semi-infinite or max-min dynamic optimisation problems. We must also choose a priori tolerances for each test ( $ \\varepsilon_{\\Phi} $, and  $ \\varepsilon_{\\Phi_D} $, best chosen to be commensurate with the integral of the expected variance of experimental measurements). A more complete derivation of the optimisation-based approach to testing identifiability and distinguishability, as well as solution methods will be given in a future paper.",
+   "bbox": [
+    622.0,
+    314.0,
+    1131.0,
+    567.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 17,
+   "label": "paragraph_title",
+   "content": "4. Design of dynamic experiments",
+   "bbox": [
+    625.0,
+    610.0,
+    935.0,
+    636.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 18,
+   "label": "paragraph_title",
+   "content": "4.1. Model discrimination",
+   "bbox": [
+    627.0,
+    656.0,
+    861.0,
+    680.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 19,
+   "label": "text",
+   "content": "The problem of model discrimination occurs when $N_{M}$ rival models have been proposed to describe a system and it is not certain which of the $N_{M}$ models is 'best'. For any experiment, it is expected that the 'best' model will provide the most accurate prediction of the observed measurements. Experimental designs optimised for model discrimination are termed $T$-optimal, and are based on maximising an overall measure of the divergence between the model predictions. Very little past work has been presented for discriminating between rival dynamic models.",
+   "bbox": [
+    626.0,
+    703.0,
+    1133.0,
+    980.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 20,
+   "label": "text",
+   "content": "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case, where the summation over the data points in the original formulation was replaced by an integral over a pre-specified time interval  $ [t_{0}, t_{f}] $:",
+   "bbox": [
+    626.0,
+    979.0,
+    1134.0,
+    1106.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 21,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}\\boldsymbol{\\varphi}_{T}=&\\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{l=1}^{N_{m}}\\sum_{r=l+1}^{N_{m}}T_{l,r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)\\mathrm{d}t\\\\T_{l,l}(&\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)=(\\hat{\\boldsymbol{y}}_{l}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},t)-\\hat{\\mathbf{y}}_{r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}}^{\\prime},t))^{T}\\\\&\\times\\mathbf{W}(\\hat{\\mathbf{y}}_{l}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},t)-\\hat{\\mathbf{y}}_{r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}}^{\\prime},t))\\end{aligned} $$ ",
+   "bbox": [
+    629.0,
+    1111.0,
+    1041.0,
+    1233.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 22,
+   "label": "formula_number",
+   "content": "(4)",
+   "bbox": [
+    1105.0,
+    1123.0,
+    1132.0,
+    1147.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 23,
+   "label": "formula_number",
+   "content": "(5)",
+   "bbox": [
+    1105.0,
+    1204.0,
+    1132.0,
+    1228.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 24,
+   "label": "text",
+   "content": "and embedded in an optimal control framework. Here,  $ \\hat{\\theta} $ is the vector of the best available estimates of the model parameters, and  $ \\varphi $ is the vector of experiment design variables. However, by using a continuous function (Eq. (4)), the meaning of the sampling time of the responses is lost. In our newly proposed formulation, we keep the concept of sampling time by using the Hunter–Reiner formulation as a starting point for the design of dynamic experiments, where now we use the notion of discrete sampling points,  $ t_k $,  $ k=1,\\ldots,n_{sp} $ of each of the response measurements:",
+   "bbox": [
+    629.0,
+    1236.0,
+    1137.0,
+    1512.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 0,
+   "label": "number",
+   "content": "1264",
+   "bbox": [
+    90.0,
+    63.0,
+    128.0,
+    83.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 1,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    293.0,
+    64.0,
+    937.0,
+    88.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 2,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{\\Phi}_{T}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{\\substack{r=l+1}}^{N_{M}}T_{l,l}(\\varphi,\\widehat{\\mathbf{\\theta}},\\widehat{\\mathbf{\\theta}}^{\\prime},t_{k}) $$ ",
+   "bbox": [
+    85.0,
+    111.0,
+    483.0,
+    169.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 3,
+   "label": "formula_number",
+   "content": "(6)",
+   "bbox": [
+    564.0,
+    128.0,
+    590.0,
+    153.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 4,
+   "label": "text",
+   "content": "We embed this criterion within a dynamic optimisation framework, described in detail in Asprey, Macchietto and Pantelides (2000). The design vector,  $ \\Phi $, now comprises the discrete sampling points as well as any time-varying and time-invariant inputs, and variable initial conditions.",
+   "bbox": [
+    84.0,
+    177.0,
+    594.0,
+    328.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 5,
+   "label": "text",
+   "content": "To account for uncertainty in the point estimates of the parameters, and thus variance in the predictions of the models, new extensions of (6) could be formulated based on the Bayesian posterior density approach used for nonlinear steady-state process models (Stewart, Shon & Box, 1998), or by formulating either an expected value criterion:",
+   "bbox": [
+    83.0,
+    328.0,
+    593.0,
+    506.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 6,
+   "label": "display_formula",
+   "content": " $$ =\\arg\\max_{\\boldsymbol{\\varphi}\\in\\Phi}\\underset{\\boldsymbol{\\theta}\\in\\Theta,\\boldsymbol{\\theta}^{\\prime}\\in\\Theta^{\\prime}}{E}\\left\\{\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{l^{\\prime}=l+1}^{N_{M}}T_{l,l^{\\prime}}(\\varphi,\\widehat{\\boldsymbol{\\theta}},\\widehat{\\boldsymbol{\\theta}^{\\prime}},t_{k})\\right\\} $$ ",
+   "bbox": [
+    85.0,
+    548.0,
+    547.0,
+    612.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 7,
+   "label": "formula_number",
+   "content": "(7)",
+   "bbox": [
+    561.0,
+    609.0,
+    588.0,
+    633.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 8,
+   "label": "text",
+   "content": "or a worst-case criterion:",
+   "bbox": [
+    83.0,
+    645.0,
+    321.0,
+    669.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 9,
+   "label": "display_formula",
+   "content": " $$ \\Phi_{T W C}=\\arg\\max_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}\\atop{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}}\\min_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}}\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{l^{\\prime}=l+1}^{N_{M}}T_{l,l^{\\prime}}(\\varphi,\\widehat{\\mathbf{\\theta}},\\widehat{\\mathbf{\\theta}}^{\\prime},t_{k}) $$ ",
+   "bbox": [
+    82.0,
+    682.0,
+    576.0,
+    738.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 10,
+   "label": "formula_number",
+   "content": "(8)",
+   "bbox": [
+    561.0,
+    737.0,
+    587.0,
+    761.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "4.2. Improving parameter precision",
+   "bbox": [
+    84.0,
+    786.0,
+    402.0,
+    813.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 12,
+   "label": "text",
+   "content": "The aim of experiment design for improved parameter precision is to decrease the size of the inference regions of each of the parameters in any given model. This is equivalent to making the elements of the parameter variance-covariance matrix'small'. Thus, we use the marginal posterior density covariance, given by (Box & Lucas, 1959):",
+   "bbox": [
+    80.0,
+    835.0,
+    590.0,
+    1014.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 13,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{V}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\cong\\left[\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\widetilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{S}_{r}^{T}\\mathbf{S}_{s}\\right]^{-1} $$ ",
+   "bbox": [
+    81.0,
+    1018.0,
+    366.0,
+    1079.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 14,
+   "label": "formula_number",
+   "content": "(9)",
+   "bbox": [
+    559.0,
+    1040.0,
+    585.0,
+    1064.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 15,
+   "label": "text",
+   "content": "where $S_{r}$ is the vector of partial derivatives of the $r$th response variable in the model with respect to the parameters $\\theta$ calculated at all experimental points:",
+   "bbox": [
+    78.0,
+    1087.0,
+    588.0,
+    1167.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 16,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{S}_{r}=\\frac{\\partial\\mathbf{y}_{r}(\\boldsymbol{\\varphi},\\boldsymbol{\\theta},t)}{\\partial\\boldsymbol{\\theta}}\\Bigg|_{\\boldsymbol{\\theta}=\\hat{\\boldsymbol{\\theta}}} $$ ",
+   "bbox": [
+    79.0,
+    1172.0,
+    271.0,
+    1232.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 17,
+   "label": "formula_number",
+   "content": "(10)",
+   "bbox": [
+    546.0,
+    1193.0,
+    584.0,
+    1217.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 18,
+   "label": "text",
+   "content": " $ \\tilde{\\sigma}_{1}^{rs} $ is the  $ r^{s} $th element of the inverse of the estimate of the variance-covariance matrix  $ \\tilde{\\Sigma}_{y} = \\mathrm{cov}(\\mathbf{y}_{r}, \\mathbf{y}_{s}) $.",
+   "bbox": [
+    79.0,
+    1238.0,
+    587.0,
+    1294.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 19,
+   "label": "text",
+   "content": "Espie and Macchietto (1989) were the first to attempt an extension of these concepts to the dynamic case for systems described by DAEs, formulating the design of experiments as an optimal control problem and suggesting a criterion based on maximising the weighted sum of the squared dynamic sensitivity coefficients:",
+   "bbox": [
+    77.0,
+    1290.0,
+    587.0,
+    1442.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 20,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{\\Phi}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{j=1}^{P}\\sum_{i=1}^{M}\\mathbf{w}_{i j}(\\mathbf{S}_{i j})^{2}\\mathrm{d}t $$ ",
+   "bbox": [
+    77.0,
+    1447.0,
+    392.0,
+    1505.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 21,
+   "label": "formula_number",
+   "content": "(11)",
+   "bbox": [
+    544.0,
+    1466.0,
+    582.0,
+    1492.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 22,
+   "label": "text",
+   "content": "However, this formulation is restricted to a diagonal variance-covariance matrix of the parameters, an assumption that is almost always false. Again, the continuous function (Eq. (11)) approach does not explicitly allow one to optimise discrete sampling times of the system responses.",
+   "bbox": [
+    631.0,
+    113.0,
+    1140.0,
+    267.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 23,
+   "label": "text",
+   "content": "More recent work has been carried out by Körkel, Bauer, Bock and Schlöder (1999) on sequential experiment design for parameter precision improvement in models described by DAEs. They take a similar optimal control approach, using piecewise constant or piecewise linear functions for parameterising the time-varying controls, but instead use a metric ( $ \\Psi $)=determinant, D-optimal; maximum eigenvalue, E-optimal, etc.) of the parameter variance-covariance matrix as an objective function:",
+   "bbox": [
+    630.0,
+    267.0,
+    1140.0,
+    520.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 24,
+   "label": "display_formula",
+   "content": " $$ \\operatorname*{m i n}_{\\Phi,\\mathbf{w}}\\uppsi[\\mathbf{V}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi},\\mathbf{w}_{s})]. $$ ",
+   "bbox": [
+    632.0,
+    525.0,
+    805.0,
+    561.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 25,
+   "label": "text",
+   "content": "For selecting optimal sampling times of the system responses, they use binary decision variables,  $ w_{s} $, as weights to select from a set of equally spaced points along the time horizon of interest.",
+   "bbox": [
+    630.0,
+    562.0,
+    1137.0,
+    664.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 26,
+   "label": "text",
+   "content": "Much of our work to date is based on a unique criterion put forth by Zullo (1991), who defined a discrete version of the dynamic information matrix for experiment design for the improvement of parameter precision, defined by:",
+   "bbox": [
+    629.0,
+    664.0,
+    1139.0,
+    791.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 27,
+   "label": "display_formula",
+   "content": " $$ \\mathbf{M}_{I}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\equiv\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\tilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{Q}_{r}^{T}\\mathbf{Q}_{s} $$ ",
+   "bbox": [
+    629.0,
+    795.0,
+    887.0,
+    853.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 28,
+   "label": "formula_number",
+   "content": "(12)",
+   "bbox": [
+    1096.0,
+    815.0,
+    1134.0,
+    840.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 29,
+   "label": "text",
+   "content": "where $\\phi$ is the vector of experiment design variables, as above. The matrix $Q_{r}$ is the matrix of dynamic sensitivity coefficients of the $r$th response variable in the model computed at each of the $n_{sp}$ sampling points:",
+   "bbox": [
+    628.0,
+    858.0,
+    1136.0,
+    963.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 30,
+   "label": "display_formula",
+   "content": "\\[\\mathbf{Q}_{r}=\\left[\\begin{matrix}{S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ \\end{matrix}\\right]\\Leftarrow\\begin{matrix}{\\quad\\quad\\quad",
+   "bbox": [
+    628.0,
+    973.0,
+    1132.0,
+    1094.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 31,
+   "label": "formula_number",
+   "content": "(13)",
+   "bbox": [
+    1094.0,
+    1098.0,
+    1132.0,
+    1123.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 32,
+   "label": "text",
+   "content": "Extensions of this criterion to account for the uncertainty in the point estimates of the parameters are made in Asprey et al. (2000), in which the $D$-optimal criterion is embedded within a robust optimisation framework, using either an expected value approach, based upon a multivariate normal probability distribution function (pdf) describing the prior uncertainty in the parameters, $\\Theta \\sim N(\\tilde{\\Theta}, \\tilde{\\Sigma})$.",
+   "bbox": [
+    624.0,
+    1127.0,
+    1135.0,
+    1328.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 33,
+   "label": "formula_number",
+   "content": "(14)",
+   "bbox": [
+    1092.0,
+    1340.0,
+    1130.0,
+    1365.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 34,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}{}&{{}\\mathbf{\\Phi}_{{E V}}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\mathop{E}_{\\mathbf{\\Phi}\\in\\Phi}\\left\\{\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|\\right\\}}\\\\ {}&{{}\\quad\\mathrm{w h e r e:}}\\\\ {}&{{}\\quad\\mathop{{E}}_{\\mathbf{\\theta}\\in\\mathbf{\\Theta}}\\left\\{\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|\\right\\}=(2\\pi)^{-P/2}|\\mathbf{\\widetilde{\\Sigma}}|^{-1/2}\\int_{\\mathbf{\\Theta}}\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|}\\\\ {}&{{}\\quad|\\operatorname{e x p}\\mathopen{}\\mathclose\\bgroup\\left(-\\frac{1}{2}(\\mathbf{\\theta}-\\mathbf{\\widetilde{\\theta}})^{T}\\mathbf{\\widetilde{\\Sigma}}^{-1}(\\mathbf{\\theta}-\\mathbf{\\widetilde{\\theta}})\\mathbf{\\Phi}\\aftergroup\\egroup\\right)d\\mathbf{\\theta}}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    622.0,
+    1335.0,
+    1040.0,
+    1516.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 0,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    292.0,
+    62.0,
+    934.0,
+    84.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 1,
+   "label": "number",
+   "content": "1265",
+   "bbox": [
+    1098.0,
+    65.0,
+    1136.0,
+    83.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 2,
+   "label": "text",
+   "content": "or a worst-case approach over an admissible domain:",
+   "bbox": [
+    86.0,
+    111.0,
+    590.0,
+    135.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 3,
+   "label": "display_formula",
+   "content": " $$ \\boldsymbol{\\varphi}_{R}=\\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\min_{\\boldsymbol{\\theta}\\in\\boldsymbol{\\Theta}}\\left\\{\\left|\\mathbf{M}_{I}(\\boldsymbol{\\theta},\\boldsymbol{\\varphi})\\right|\\right\\} $$ ",
+   "bbox": [
+    86.0,
+    146.0,
+    357.0,
+    187.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 4,
+   "label": "formula_number",
+   "content": "(15)",
+   "bbox": [
+    551.0,
+    149.0,
+    588.0,
+    174.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 5,
+   "label": "paragraph_title",
+   "content": "5. A process engineering example",
+   "bbox": [
+    85.0,
+    224.0,
+    390.0,
+    251.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 6,
+   "label": "text",
+   "content": "Here, an example is presented to illustrate the application of the dynamic model building tools presented in Sections 2–4. Consider a fed-batch reactor (see Fig. 3) in which the fermentation of baker's yeast is carried out. Within this process, there are two time-varying controls  $ (u_{1}, u_{2}) $ and two measured concentrations  $ (x_{1}, x_{2}) $.",
+   "bbox": [
+    83.0,
+    274.0,
+    591.0,
+    451.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 7,
+   "label": "text",
+   "content": "We propose two models to describe the system. Two differential equations, common to both models, describe the component balances within the reactor:",
+   "bbox": [
+    83.0,
+    451.0,
+    591.0,
+    528.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 8,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t}&=(r-u_{1}-\\theta_{4})x_{1}\\\\\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t}&=-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})\\end{aligned} $$ ",
+   "bbox": [
+    84.0,
+    537.0,
+    318.0,
+    655.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 9,
+   "label": "formula_number",
+   "content": "(16)",
+   "bbox": [
+    551.0,
+    615.0,
+    588.0,
+    639.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 10,
+   "label": "text",
+   "content": "The first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:",
+   "bbox": [
+    85.0,
+    664.0,
+    590.0,
+    717.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 11,
+   "label": "display_formula",
+   "content": " $$ M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}} $$ ",
+   "bbox": [
+    86.0,
+    726.0,
+    313.0,
+    780.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 12,
+   "label": "formula_number",
+   "content": "(17)",
+   "bbox": [
+    551.0,
+    740.0,
+    587.0,
+    764.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 13,
+   "label": "text",
+   "content": "The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:",
+   "bbox": [
+    84.0,
+    789.0,
+    590.0,
+    842.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 14,
+   "label": "display_formula",
+   "content": " $$ M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}} $$ ",
+   "bbox": [
+    87.0,
+    852.0,
+    338.0,
+    907.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 15,
+   "label": "formula_number",
+   "content": "(18)",
+   "bbox": [
+    551.0,
+    865.0,
+    588.0,
+    891.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 16,
+   "label": "text",
+   "content": "The experimental conditions that characterise a particular experiment are: (i) the initial biomass concentration (or inoculation),  $ x_0^0 $, with range 1–10 g l $ ^{-1} $; (ii) the dilution factor,  $ u_1 $, with range 0.05–0.20 h $ ^{-1} $; (iii) the substrate concentration in the feed,  $ u_2 $, with range 5–35 g l $ ^{-1} $. The initial substrate concentration,  $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes. Both  $ x_1 $ and  $ x_2 $ can be measured during the experiment ( $ y = [x_1, x_2]^T $).",
+   "bbox": [
+    84.0,
+    916.0,
+    593.0,
+    1144.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 17,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    113.0,
+    1234.0,
+    571.0,
+    1462.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 18,
+   "label": "figure_title",
+   "content": "Fig. 3. A fed-batch reactor.",
+   "bbox": [
+    233.0,
+    1488.0,
+    445.0,
+    1510.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 19,
+   "label": "paragraph_title",
+   "content": "5.1. Identifiability of  $ M_{r}(\\theta, u, t) $",
+   "bbox": [
+    633.0,
+    111.0,
+    923.0,
+    137.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 20,
+   "label": "text",
+   "content": "Global structural identifiability of $M_t(\\theta, u, t)$ can be tested via Test I1 and using solution techniques for such semi-infinite programming problems (see Asprey et al., 2000). The solution, using $\\theta_i \\in [0.01, 0.98] \\forall i$, a five-element piece-wise constant CVP for the process inputs and a time horizon of interest of 40 h, was found to be $\\Phi_t = 1.166 \\times 10^{-6} \\left( < \\varepsilon_{\\Phi_t} = 1.0 \\times 10^{-5} \\right)$, $\\varepsilon_y = 4.0 \\times 10^{-3}$, not significantly different from zero and thus indicating the global identifiability of $M_t(\\theta, u, t)$.",
+   "bbox": [
+    630.0,
+    161.0,
+    1135.0,
+    389.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 21,
+   "label": "paragraph_title",
+   "content": "5.2. Distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $",
+   "bbox": [
+    633.0,
+    407.0,
+    1100.0,
+    434.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 22,
+   "label": "text",
+   "content": "Global structural distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $ can be tested by reformulating the max-min Test D1 problem to a semi-infinite programming problem and using the techniques mentioned above. The resulting solution of the distinguishability test using the same conditions and CVP as above was found to be  $ \\Phi_{D} = 3.392 \\times 10^{-1} $, giving a maximum larger than  $ \\varepsilon_{\\Phi_{D}} = 4.0 \\times 10^{-3} $ and thus confirming the distinguishability between  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $.",
+   "bbox": [
+    630.0,
+    458.0,
+    1138.0,
+    687.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 23,
+   "label": "paragraph_title",
+   "content": "5.3. Designing a dynamic experiment for model discrimination",
+   "bbox": [
+    631.0,
+    704.0,
+    1063.0,
+    755.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 24,
+   "label": "text",
+   "content": "Using models $M_{l}(\\theta, \\boldsymbol{u}, t)$ and $M_{l}(\\theta, \\boldsymbol{u}, t)$, we begin by assuming availability of initial parameter estimates $\\theta_{t} = [0.30, 0.25, 0.56, 0.02]^{T}$ and $\\theta_{tt} = [0.30, 0.03, 0.55, 0.03]^{T}$, respectively. A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h. An a priori selection of the number of sampling points, along with the number of switching times/constant levels of the input profiles is required. We arbitrarily chose ten sampling times ($n_{sp} = 10$) and five time intervals for the control vector parameterisation ($n_{sw_i} = 5$, $i = 1, \\ldots, n_u$, where, for the bioreactor models $n_u = 2$). We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98. We impose the constraints (cf. Asprey et al., 2000):",
+   "bbox": [
+    629.0,
+    780.0,
+    1139.0,
+    1207.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 25,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}1.0&\\leq t_{sp_{i}}-t_{sp_{i-1}}\\leq20.0\\quad i~=~1,\\ldots,n_{sp}\\\\5.0&\\leq t_{sw_{i,j}}-t_{sw_{i,j-1}}\\leq20.0\\quad i=1,\\ldots,n_{u};\\\\&j=1,\\ldots,n_{sw,i}\\end{aligned} $$ ",
+   "bbox": [
+    630.0,
+    1211.0,
+    1018.0,
+    1304.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 26,
+   "label": "text",
+   "content": "The optimal values for the design vector maximising criterion (6) are presented diagrammatically in Figs. 4 and 5, giving an optimal divergence of  $ 1.19 \\times 10^{5} $. The model predictions from the optimal design are shown in Fig. 4. The optimal experiment lasts 40 h and vertical arrows along the abscissa show the optimal sampling points of the two response variables (both measured at the same sampling points).",
+   "bbox": [
+    629.0,
+    1312.0,
+    1138.0,
+    1512.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 0,
+   "label": "number",
+   "content": "1266",
+   "bbox": [
+    87.0,
+    63.0,
+    126.0,
+    83.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 1,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    289.0,
+    60.0,
+    934.0,
+    84.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 2,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    108.0,
+    114.0,
+    571.0,
+    396.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 3,
+   "label": "figure_title",
+   "content": "Fig. 4. The model predictions for model discrimination.",
+   "bbox": [
+    129.0,
+    417.0,
+    547.0,
+    442.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 4,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    103.0,
+    467.0,
+    341.0,
+    670.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 5,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    343.0,
+    466.0,
+    579.0,
+    668.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 6,
+   "label": "figure_title",
+   "content": "Fig. 5. The optimal input profiles for model discrimination.",
+   "bbox": [
+    86.0,
+    690.0,
+    530.0,
+    714.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 7,
+   "label": "figure_title",
+   "content": "Table 1\n\nParameter estimates for  $ M_{t}(\\theta, u, t) $ and  $ M_{t t}(\\theta, u, t) $ after one designed experiment",
+   "bbox": [
+    85.0,
+    744.0,
+    591.0,
+    803.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 8,
+   "label": "table",
+   "content": "<table><tr><td>Parameter</td><td>Estimate</td><td colspan=\"3\">Confidence interval</td></tr><tr><td></td><td>$ M_I $</td><td>$ M_{II} $</td><td>$ M_I $</td><td>$ M_{II} $</td></tr><tr><td>$ \\theta_1 $</td><td>0.325</td><td>0.303</td><td>$ \\pm 0.012 $</td><td>$ \\pm 0.011 $</td></tr><tr><td>$ \\theta_2 $</td><td>0.267</td><td>0.011</td><td>$ \\pm 0.075 $</td><td>$ \\pm 0.009 $</td></tr><tr><td>$ \\theta_3 $</td><td>0.559</td><td>0.549</td><td>$ \\pm 0.018 $</td><td>$ \\pm 0.023 $</td></tr><tr><td>$ \\theta_4 $</td><td>0.055</td><td>0.049</td><td>$ \\pm 0.006 $</td><td>$ \\pm 0.011 $</td></tr><tr><td>LOF ( $ M_I $)</td><td></td><td>0.58</td><td>$ \\chi^{2}_{\\text{ref}} = 26.3 $</td><td></td></tr><tr><td>LOF ( $ M_{II} $)</td><td></td><td>1.96</td><td>$ \\chi^{2}_{\\text{ref}} = 26.3 $</td><td></td></tr></table>",
+   "bbox": [
+    87.0,
+    807.0,
+    581.0,
+    1022.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 9,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    127.0,
+    1066.0,
+    558.0,
+    1352.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 10,
+   "label": "figure_title",
+   "content": "Fig. 6. The model predictions for improving parameter precision.",
+   "bbox": [
+    87.0,
+    1373.0,
+    573.0,
+    1397.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 11,
+   "label": "text",
+   "content": "Fig. 5(a) and (b) show the optimal input profiles for the dilution factor  $ (u_{1}(t)) $ and feed substrate concentration  $ (u_{2}(t)) $, respectively.\nBy simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses, subsequent parameter estimation gives the results in Table 1. By inspection of the multiresponse  $ \\chi^{2} $ lack-of-fit analyses shown in Table 1, we can conclude that model  $ M_{1}(0, u, t) $ is better suited to describe the observed experimental data, although, statistically, both models describe the observed data very well.",
+   "bbox": [
+    84.0,
+    1437.0,
+    594.0,
+    1514.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 12,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    629.0,
+    107.0,
+    1139.0,
+    338.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 13,
+   "label": "paragraph_title",
+   "content": "5.4. Designing a dynamic experiment for improving parameter precision",
+   "bbox": [
+    631.0,
+    361.0,
+    1097.0,
+    414.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 14,
+   "label": "text",
+   "content": "We next turn to improving the precision in the parameter estimates in  $ M_f(\\theta, u, t) $. Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed. Using the same initial values, constraints, and representation of the time-varying inputs as in the model discrimination study, the initial value of the E-criterion is  $ 6.41 \\times 10^{-6} $. Performing the dynamic optimisation, the optimal values for the design vector are presented diagrammatically in Figs. 6 and 7, giving a final value of the E-optimal criterion of 14.3 — six orders of magnitude improvement in the predicted information content. The model predictions from the optimal design are shown in Fig. 6, where vertical arrows along the abscissa show the sampling points of the two response variables.",
+   "bbox": [
+    630.0,
+    437.0,
+    1141.0,
+    839.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 15,
+   "label": "text",
+   "content": "Fig. 7(a) and (b) show the optimal input profiles for the dilution factor  $ (u_{1}(t)) $ and feed substrate concentration  $ (u_{2}(t)) $, respectively.",
+   "bbox": [
+    632.0,
+    840.0,
+    1139.0,
+    916.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 16,
+   "label": "text",
+   "content": "By simulating additional ‘data’ at these experimental conditions (variance as in §5.3), subsequent parameter estimation gives the results in Table 2.",
+   "bbox": [
+    632.0,
+    916.0,
+    1141.0,
+    992.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 17,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    648.0,
+    1015.0,
+    888.0,
+    1219.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 18,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    895.0,
+    1016.0,
+    1130.0,
+    1219.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 19,
+   "label": "figure_title",
+   "content": "Fig. 7. The optimal input profiles for improving parameter precision.",
+   "bbox": [
+    635.0,
+    1239.0,
+    1138.0,
+    1263.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 20,
+   "label": "figure_title",
+   "content": "Table 2\nParameter estimates from the sequentially designed experiment for improving parameter precision",
+   "bbox": [
+    635.0,
+    1290.0,
+    1140.0,
+    1350.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 21,
+   "label": "table",
+   "content": "<table><tr><td>Parameter</td><td>Estimate</td><td>Confidence interval</td></tr><tr><td>$ \\theta_1 $</td><td>0.311</td><td>$ \\pm 0.005 $</td></tr><tr><td>$ \\theta_2 $</td><td>0.254</td><td>$ \\pm 0.038 $</td></tr><tr><td>$ \\theta_3 $</td><td>0.523</td><td>$ \\pm 0.015 $</td></tr><tr><td>$ \\theta_4 $</td><td>0.046</td><td>$ \\pm 0.004 $</td></tr></table>",
+   "bbox": [
+    634.0,
+    1355.0,
+    1140.0,
+    1498.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 0,
+   "label": "header",
+   "content": "S.P. Asprey, S. Macchietto / Computers and Chemical Engineering 24 (2000) 1261–1267",
+   "bbox": [
+    292.0,
+    63.0,
+    933.0,
+    84.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 1,
+   "label": "number",
+   "content": "1267",
+   "bbox": [
+    1098.0,
+    64.0,
+    1135.0,
+    82.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 2,
+   "label": "text",
+   "content": "As can be seen from these results, the confidence intervals have been reduced on average by 23.0% by using the designed experiments.",
+   "bbox": [
+    85.0,
+    110.0,
+    592.0,
+    188.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 3,
+   "label": "paragraph_title",
+   "content": "6. Concluding remarks",
+   "bbox": [
+    87.0,
+    268.0,
+    294.0,
+    293.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 4,
+   "label": "text",
+   "content": "In this paper, we have presented a general, systematic procedure to support the development and statistical verification of dynamic process models. Within this procedure, methods were presented to address several key aspects, such as structural identifiability and distinguishability testing, dynamic sensitivity analysis, and optimal design of dynamic experiments for both model discrimination and improving parameter precision. Within this framework, methods for accounting for parameter uncertainty were presented to provide experiment design robustness. Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model.",
+   "bbox": [
+    85.0,
+    318.0,
+    593.0,
+    695.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 5,
+   "label": "paragraph_title",
+   "content": "References",
+   "bbox": [
+    633.0,
+    111.0,
+    734.0,
+    134.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 6,
+   "label": "reference_content",
+   "content": "Asprey, S. P., Macchietto, S., & Pantelides, C. C. (2000). Robust optimal designs for dynamic experiments. ADCHEM 2000. Pisa, Italy.",
+   "bbox": [
+    634.0,
+    159.0,
+    1134.0,
+    219.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 7,
+   "label": "reference_content",
+   "content": "Box, G. E. P., & Lucas, H. L. (1959). Design of experiments in non-linear situations. Biometrika, 46, 77–90.",
+   "bbox": [
+    634.0,
+    221.0,
+    1133.0,
+    261.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 8,
+   "label": "reference_content",
+   "content": "Espie, D. M., & Macchietto, S. (1989). The optimal design of dynamic experiments. American Institute of Chemical Engineering Journal, 35, 223–229.",
+   "bbox": [
+    635.0,
+    263.0,
+    1135.0,
+    321.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 9,
+   "label": "reference_content",
+   "content": "Hunter, W. G., & Reiner, A. M. (1965). Designs for discriminating between two rival models. Technometrics, 7, 307–323.",
+   "bbox": [
+    634.0,
+    324.0,
+    1134.0,
+    364.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 10,
+   "label": "reference_content",
+   "content": "Körkel, S., Bauer, I., Bock, H. G., & Schlüder, J. P. (1999). A sequential approach for nonlinear optimum experimental design in DAE systems. Proceedings of the International Workshop on Scientific Computation in Chemical Engineering, vol. II.",
+   "bbox": [
+    636.0,
+    366.0,
+    1134.0,
+    447.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 11,
+   "label": "reference_content",
+   "content": "Pantelides, C. C. (2000). Personal communication.",
+   "bbox": [
+    634.0,
+    446.0,
+    1000.0,
+    467.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 12,
+   "label": "reference_content",
+   "content": "Stewart, W. E., Shon, Y., & Box, G. E. P. (1998). Discrimination and goodness of fit of multiresponse mechanistic models. American Institute of Chemical Engineering Journal, 44, 1404–1412.",
+   "bbox": [
+    634.0,
+    468.0,
+    1134.0,
+    528.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 13,
+   "label": "reference_content",
+   "content": "Vassiliadis, V. S., Sargent, R. W. H., & Pantelides, C. C. (1994). Solution of a class of multistage dynamic optimisation problems 1: problems without path constraints. Industrial & Engineering Chemistry Research, 33, 2111–2122.",
+   "bbox": [
+    635.0,
+    530.0,
+    1134.0,
+    609.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 14,
+   "label": "reference_content",
+   "content": "Walter, E. (1987). Identifiability of parametric models. Oxford: Pergamon Press.",
+   "bbox": [
+    635.0,
+    611.0,
+    1134.0,
+    650.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 6,
+   "order": 15,
+   "label": "reference_content",
+   "content": "Zullo, L. (1991). Computer aided design of experiments. An engineering approach. Ph.D. Thesis. University of London.",
+   "bbox": [
+    634.0,
+    653.0,
+    1134.0,
+    693.0
+   ],
+   "source": "main"
+  }
+ ]
+}

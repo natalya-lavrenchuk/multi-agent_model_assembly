@@ -1,0 +1,149 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "PDE",
+   "computes": "q_{i}",
+   "condition": "i>1",
+   "value": null,
+   "section": "2.1. SMA model for sorption processes in IEC",
+   "description": "The SMA surface-binding rate for each protein component balances adsorption from the mobile phase with desorption back to it.",
+   "description_basis": "stated",
+   "quote": "the time dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "1",
+    "description": "The SMA surface-binding rate for each protein component balances adsorption from the mobile phase with desorption back to it.",
+    "description_basis": "stated",
+    "quote": "the time dependent change of the concentration of component $i$ on the adsorbent surface ($\\partial q_{i}/\\partial t$) in the SMA model is given by:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "2": {
+   "form": "algebraic",
+   "computes": "\\Lambda",
+   "condition": null,
+   "value": null,
+   "section": "2.1. SMA model for sorption processes in IEC",
+   "description": "The adsorbent ionic-capacity relation equates bound salt and charge-weighted bound protein to the total ionic capacity.",
+   "description_basis": "stated",
+   "quote": "$\\Lambda$, the parameter describing the ionic capacity of the adsorbent, limits the available binding places and displays the rivalry between salt ion concentration $q_1$ and the other bound components $q_i$ with their characteristic charges $\\nu_i$",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "2",
+    "description": "The adsorbent ionic-capacity relation equates bound salt and charge-weighted bound protein to the total ionic capacity.",
+    "description_basis": "stated",
+    "quote": "$\\Lambda$, the parameter describing the ionic capacity of the adsorbent, limits the available binding places and displays the rivalry between salt ion concentration $q_1$ and the other bound components $q_i$ with their characteristic charges $\\nu_i$",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "algebraic",
+   "computes": "\\overline{q_1}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. SMA model for sorption processes in IEC",
+   "description": "The concentration of bound salt available for protein exchange is total bound salt minus the salt shielded by bound proteins.",
+   "description_basis": "stated",
+   "quote": "the concentration of bound salt ions available for exchange with the protein, is given by the total salt ion concentration $q_1$ less the shielded ions determined by the protein specific steric factors ($\\sigma_i$) in Eq. (3).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "3",
+    "description": "The concentration of bound salt available for protein exchange is total bound salt minus the salt shielded by bound proteins.",
+    "description_basis": "stated",
+    "quote": "the concentration of bound salt ions available for exchange with the protein, is given by the total salt ion concentration $q_1$ less the shielded ions determined by the protein specific steric factors ($\\sigma_i$) in Eq. (3).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "algebraic",
+   "computes": "k_{i,eq}",
+   "condition": "i>1",
+   "value": null,
+   "section": "2.1. SMA model for sorption processes in IEC",
+   "description": "The rapid-equilibrium SMA isotherm computes a component’s equilibrium coefficient from its bound and mobile concentrations, salt concentration, and remaining binding capacity.",
+   "description_basis": "stated",
+   "quote": "the equation for the SMA-isotherm can be derived from the above equations to be:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "The rapid-equilibrium SMA isotherm computes a component’s equilibrium coefficient from its bound and mobile concentrations, salt concentration, and remaining binding capacity.",
+    "description_basis": "stated",
+    "quote": "the equation for the SMA-isotherm can be derived from the above equations to be:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "PDE",
+   "computes": "c_{i}",
+   "condition": null,
+   "value": null,
+   "section": "2.3.1. Introduction to the employed mechanistic model for chromatography",
+   "description": "The column-scale concentration balance combines axial convection and dispersion with film transfer between the column fluid and the particles.",
+   "description_basis": "stated",
+   "quote": "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "7",
+    "description": "The column-scale concentration balance combines axial convection and dispersion with film transfer between the column fluid and the particles.",
+    "description_basis": "stated",
+    "quote": "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "8": {
+   "form": "PDE",
+   "computes": "c_{p,i}",
+   "condition": null,
+   "value": null,
+   "section": "2.3.1. Introduction to the employed mechanistic model for chromatography",
+   "description": "The particle-scale mobile-phase concentration balance combines film transfer from the column fluid with exchange between the mobile and bound phases.",
+   "description_basis": "stated",
+   "quote": "The second term of Eq. (8) describes ad- and desorption processes on particle level, i.e. the interaction between mobile and bound phase.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "The particle-scale mobile-phase concentration balance combines film transfer from the column fluid with exchange between the mobile and bound phases.",
+    "description_basis": "stated",
+    "quote": "The second term of Eq. (8) describes ad- and desorption processes on particle level, i.e. the interaction between mobile and bound phase.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

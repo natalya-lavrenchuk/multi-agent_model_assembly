@@ -1,0 +1,414 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "2": {
+   "form": "ODE",
+   "computes": "X_{a}",
+   "condition": null,
+   "value": null,
+   "section": "The model for the standard cultivation conditions in STRs suggests that sucrose levels can be reduced without affecting biomass formation and volumetric biomass yield",
+   "description": "Active dry biomass changes through growth and death in the cultivation medium.",
+   "description_basis": "stated",
+   "quote": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM)",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "2",
+    "description": "Active dry biomass changes through growth and death in the cultivation medium.",
+    "description_basis": "stated",
+    "quote": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM)",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "ODE",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "FIGURE 2",
+   "description": "The cultivation-medium volume changes at the instantaneous feed rate.",
+   "description_basis": "stated",
+   "quote": "Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_t$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "3",
+    "description": "The cultivation-medium volume changes at the instantaneous feed rate.",
+    "description_basis": "stated",
+    "quote": "Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_t$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "ODE",
+   "computes": "S",
+   "condition": null,
+   "value": null,
+   "section": "FIGURE 2",
+   "description": "Sucrose concentration is balanced against feed input, volume change, and uptake by active biomass.",
+   "description_basis": "stated",
+   "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "5",
+    "description": "Sucrose concentration is balanced against feed input, volume change, and uptake by active biomass.",
+    "description_basis": "stated",
+    "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6": {
+   "form": "ODE",
+   "computes": "N",
+   "condition": null,
+   "value": null,
+   "section": "FIGURE 2",
+   "description": "Nitrate concentration is balanced against feed input, volume change, and uptake by active biomass.",
+   "description_basis": "stated",
+   "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6",
+    "description": "Nitrate concentration is balanced against feed input, volume change, and uptake by active biomass.",
+    "description_basis": "stated",
+    "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "ODE",
+   "computes": "A",
+   "condition": null,
+   "value": null,
+   "section": "FIGURE 2",
+   "description": "Ammonium concentration is balanced against feed input, volume change, and uptake by active biomass.",
+   "description_basis": "stated",
+   "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+   "assumptions": [],
+   "roles": [],
+   "issue": "Equation 7 boldfaces scalar quantities such as A, V, F_t, A_f, K_A, and X_a, although the symbol list defines them as scalar variables.",
+   "status": "pending",
+   "review": [
+    "possible misprint: Equation 7 boldfaces scalar quantities such as A, V, F_t, A_f, K_A, and X_a, although the symbol list defines them as scalar variables."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "Ammonium concentration is balanced against feed input, volume change, and uptake by active biomass.",
+    "description_basis": "stated",
+    "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+    "assumptions": [],
+    "roles": [],
+    "issue": "Equation 7 boldfaces scalar quantities such as A, V, F_t, A_f, K_A, and X_a, although the symbol list defines them as scalar variables."
+   }
+  },
+  "8": {
+   "form": "ODE",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "FIGURE 2",
+   "description": "Phosphate concentration is balanced against feed input, volume change, and phosphate removal.",
+   "description_basis": "stated",
+   "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+   "assumptions": [
+    {
+     "text": "Phosphate uptake is modeled without dependence on active biomass.",
+     "quote": "the influence of the active DM ($X_a$) on the phosphate uptake in (Eq. 8) was neglected",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "Phosphate concentration is balanced against feed input, volume change, and phosphate removal.",
+    "description_basis": "stated",
+    "quote": "The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.",
+    "assumptions": [
+     {
+      "text": "Phosphate uptake is modeled without dependence on active biomass.",
+      "quote": "the influence of the active DM ($X_a$) on the phosphate uptake in (Eq. 8) was neglected",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "18": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "An improved model including glucose and fructose enables the prediction of cell growth at low sucrose concentrations",
+   "description": "The specific growth rate combines glucose, fructose, and nitrate dependence with additive ammonium- and phosphate-dependent contributions to the maximum growth rate.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "The minimum ammonium and phosphate concentrations for growth, represented by δ_A and δ_P, were treated as known and set to 10% of their starting concentrations.",
+     "quote": "They were assumed known in the context of this study to limit the model complexity and avoid overfitting and their values were set to 10% of the starting concentrations.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "G"
+    },
+    {
+     "role": "substrate",
+     "symbol": "F"
+    },
+    {
+     "role": "substrate",
+     "symbol": "N"
+    },
+    {
+     "role": "substrate",
+     "symbol": "A"
+    },
+    {
+     "role": "substrate",
+     "symbol": "P"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{G}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{IG}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{F}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{IF}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{N}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{IN}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{m}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{m}^{A}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{m}^{P}"
+    },
+    {
+     "role": "growth threshold",
+     "symbol": "\\delta_{A}"
+    },
+    {
+     "role": "growth threshold",
+     "symbol": "\\delta_{P}"
+    }
+   ],
+   "issue": "As listed, the terms A/(A+δ_A) and G/(G+K_G) and G/(G+K_{IG}) pair A in g L⁻¹ with δ_A in mM and G in mM with K_G and K_{IG} in g L⁻¹, making the sums dimensionally inconsistent.",
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "possible misprint: As listed, the terms A/(A+δ_A) and G/(G+K_G) and G/(G+K_{IG}) pair A in g L⁻¹ with δ_A in mM and G in mM with K_G and K_{IG} in g L⁻¹, making the sums dimensionally inconsistent."
+   ],
+   "llm": {
+    "eq": "18",
+    "description": "The specific growth rate combines glucose, fructose, and nitrate dependence with additive ammonium- and phosphate-dependent contributions to the maximum growth rate.",
+    "description_basis": "stated",
+    "quote": "the specific growth term depended on glucose and fructose but not on sucrose. Moreover, the influence of ammonium and phosphate were included in the maximum specific growth as additive terms",
+    "assumptions": [
+     {
+      "text": "The minimum ammonium and phosphate concentrations for growth, represented by δ_A and δ_P, were treated as known and set to 10% of their starting concentrations.",
+      "quote": "They were assumed known in the context of this study to limit the model complexity and avoid overfitting and their values were set to 10% of the starting concentrations.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "G"
+     },
+     {
+      "role": "substrate",
+      "symbol": "F"
+     },
+     {
+      "role": "substrate",
+      "symbol": "N"
+     },
+     {
+      "role": "substrate",
+      "symbol": "A"
+     },
+     {
+      "role": "substrate",
+      "symbol": "P"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{G}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IG}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{F}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IF}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{N}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IN}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}^{A}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}^{P}"
+     },
+     {
+      "role": "growth threshold",
+      "symbol": "\\delta_{A}"
+     },
+     {
+      "role": "growth threshold",
+      "symbol": "\\delta_{P}"
+     }
+    ],
+    "issue": "As listed, the terms A/(A+δ_A) and G/(G+K_G) and G/(G+K_{IG}) pair A in g L⁻¹ with δ_A in mM and G in mM with K_G and K_{IG} in g L⁻¹, making the sums dimensionally inconsistent."
+   }
+  },
+  "19": {
+   "form": "ODE",
+   "computes": "F",
+   "condition": null,
+   "value": null,
+   "section": "An improved model including glucose and fructose enables the prediction of cell growth at low sucrose concentrations",
+   "description": "The fructose balance adds fructose produced by sucrose hydrolysis and subtracts fructose consumed by active cells, accounting for changes in cultivation volume.",
+   "description_basis": "stated",
+   "quote": "accommodating the hydrolysis of sucrose into fructose and glucose",
+   "assumptions": [
+    {
+     "text": "The sucrose-to-fructose conversion parameter was fixed at 0.526.",
+     "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "19",
+    "description": "The fructose balance adds fructose produced by sucrose hydrolysis and subtracts fructose consumed by active cells, accounting for changes in cultivation volume.",
+    "description_basis": "stated",
+    "quote": "accommodating the hydrolysis of sucrose into fructose and glucose",
+    "assumptions": [
+     {
+      "text": "The sucrose-to-fructose conversion parameter was fixed at 0.526.",
+      "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "20": {
+   "form": "ODE",
+   "computes": "G",
+   "condition": null,
+   "value": null,
+   "section": "An improved model including glucose and fructose enables the prediction of cell growth at low sucrose concentrations",
+   "description": "The glucose balance adds glucose produced by sucrose hydrolysis and subtracts glucose consumed by active cells, accounting for changes in cultivation volume.",
+   "description_basis": "stated",
+   "quote": "accommodating the hydrolysis of sucrose into fructose and glucose",
+   "assumptions": [
+    {
+     "text": "The sucrose-to-glucose conversion parameter was fixed at 0.526.",
+     "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "G is listed in mM while K_G and K_{IG} are in g L⁻¹, and the balance equates a left-hand side in mM·L per time with source and consumption terms in mass per time because m_{SG} is dimensionless and X_a is in g L⁻¹.",
+   "status": "pending",
+   "review": [
+    "possible misprint: G is listed in mM while K_G and K_{IG} are in g L⁻¹, and the balance equates a left-hand side in mM·L per time with source and consumption terms in mass per time because m_{SG} is dimensionless and X_a is in g L⁻¹."
+   ],
+   "llm": {
+    "eq": "20",
+    "description": "The glucose balance adds glucose produced by sucrose hydrolysis and subtracts glucose consumed by active cells, accounting for changes in cultivation volume.",
+    "description_basis": "stated",
+    "quote": "accommodating the hydrolysis of sucrose into fructose and glucose",
+    "assumptions": [
+     {
+      "text": "The sucrose-to-glucose conversion parameter was fixed at 0.526.",
+      "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "G is listed in mM while K_G and K_{IG} are in g L⁻¹, and the balance equates a left-hand side in mM·L per time with source and consumption terms in mass per time because m_{SG} is dimensionless and X_a is in g L⁻¹."
+   }
+  }
+ }
+}

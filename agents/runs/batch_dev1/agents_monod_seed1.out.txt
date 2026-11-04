@@ -1,0 +1,41 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 938 out (effort high, answer limit 32000)
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 108
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 411
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 108
+  statistical agent: 1311 in, 164 out (effort high, answer limit 32000)
+  statistical agent: accept C9  No further search needed.
+  hypothesis agent (confirmation): 4318 in, 1518 out (effort high, answer limit 32000)
+  eq 8: cached
+  modeler agent (muloiwa_2020_free_laws eq 8): cached
+  round 2: [29] fitting (limit 300 s)...
+  round 2: [29] muloiwa_2020_free_laws eq 8: chi2 108
+  eq 7: cached
+  modeler agent (muloiwa_2020_free_laws eq 7): cached
+  round 2: [28] fitting (limit 300 s)...
+  round 2: [28] muloiwa_2020_free_laws eq 7: chi2 333
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 108
+  statistical agent (confirmation): 2317 in, 1724 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C9  (rule: indistinguishable -> C9)  Vary the substrate-feed input u2 in controlled stages to produce a broad, preferably logarithmic range of measured glucose concentrations, especially 
+decision: {"decision": "accept", "chosen": "C9", "feedback": "No further search needed.", "reasoning": "C9 fits within the noise (chi2 108.1 < 148.8), and all four parameters are precisely estimated (each t-value exceeds 1). It also has the highest Akaike weight (0.731). C40 fits similarly but has lower weight and Ki is unidentifiable at infinity; C8 shows clear lack of fit."}
+confirmation: indistinguishable -> C9 | adequate: C9 asprey_2000_monod_kinetics eq 17 (weight 0.69), C29 muloiwa_2020_free_laws eq 8 (weight 0.31) | agent agrees with the rule: True
+experiment to separate them: Vary the substrate-feed input u2 in controlled stages to produce a broad, preferably logarithmic range of measured glucose concentrations, especially well below the estimated Ks of about 0.26 g/L and extending above it (for example, roughly 0.01–several g/L if feasible). Keep dilution controlled, measure x2 and x1 densely, and estimate specific biomass growth from the biomass trajectory corrected for dilution. The low-glucose range is most informative because the candidates differ in the substrate power (1 versus n≈0.977); spanning a wide range helps reveal that small difference.
+final: {'model': 'C9', 'status': 'indistinguishable'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_monod_seed1_confirm.json
+LLM: 4 calls (12197 in, 4344 out tokens), 15 answers from the cache

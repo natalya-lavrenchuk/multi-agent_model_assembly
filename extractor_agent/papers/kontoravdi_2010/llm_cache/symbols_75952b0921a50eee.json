@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.055075977,
+  "prompt_tokens": 1792,
+  "prompt_time": 0.118906096,
+  "completion_tokens": 1530,
+  "completion_time": 3.226489937,
+  "total_tokens": 3322,
+  "total_time": 3.345396033,
+  "completion_tokens_details": {
+   "reasoning_tokens": 285
+  }
+ },
+ "user": "Equations:\n(17) \\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}\n(18) \\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}\n(19) \\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}\n(20) \\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}\n(21) R_{H}=\\frac{2}{3}K_{A}[H]^{2}\n(22) R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]\n(23) \\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]\n(24) \\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}\n\nSymbols:\n\nS_{H}   [NOT COMPUTED]\n  [182] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_H $ (mRNA/gene-h) | Batch operation value: $ 3 \\times 10^{3} $ | Fed-batch operation value: $ 3 \\times 10^{3} $\n  [62] (line, p.2) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)\n\nm_{L}   [COMPUTED by eq 18]\n  (no snippet mentions this symbol)\n\nN_{L}   [NOT COMPUTED]\n  [181] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_L $ (gene/cell) | Batch operation value: $ 1.2 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $\n  [60] (line, p.2) N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)\n\nS_{L}   [NOT COMPUTED]\n  [183] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_L $ (mRNA/gene-h) | Batch operation value: $ 4.5 \\times 10^{3} $ | Fed-batch operation value: $ 4.5 \\times 10^{3} $\n  [62] (line, p.2) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)\n\n[H]   [COMPUTED by eq 19]\n  (no snippet mentions this symbol)\n\nT_{H}   [NOT COMPUTED]\n  [184] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_H $ (chain/mRNA-h) | Batch operation value: 17 | Fed-batch operation value: 17\n  [63] (line, p.2) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)\n\nR_{H}   [COMPUTED by eq 21]\n  [61] (line, p.2) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)\n\n[L]   [COMPUTED by eq 20]\n  (no snippet mentions this symbol)\n\nT_{L}   [NOT COMPUTED]\n  [185] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_L $ (chain/mRNA-h) | Batch operation value: 11.5 | Fed-batch operation value: 11.5\n  [63] (line, p.2) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)\n\nR_{L}   [COMPUTED by eq 22]\n  [61] (line, p.2) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "S_{H}",
+    "description": "heavy-chain gene specific transcription rate",
+    "description_basis": "stated",
+    "snippet_id": 62,
+    "quote": "S _{H} , S _{L} heavy- and light-chain gene specific transcription rates (mRNA/gene/h)",
+    "unit": "mRNA/gene·h",
+    "unit_basis": "stated",
+    "value": "3 × 10^3",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing transcription rate per gene"
+   },
+   {
+    "symbol": "m_{L}",
+    "description": "light-chain mRNA amount per cell",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "N_{L}",
+    "description": "light-chain gene copy number",
+    "description_basis": "stated",
+    "snippet_id": 60,
+    "quote": "N _{H} , N _{L} heavy- and light-chain gene copy number (gene/cell)",
+    "unit": "gene/cell",
+    "unit_basis": "stated",
+    "value": "1.0 × 10^2 (fed‑batch)",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing number of gene copies per cell"
+   },
+   {
+    "symbol": "S_{L}",
+    "description": "light-chain gene specific transcription rate",
+    "description_basis": "stated",
+    "snippet_id": 62,
+    "quote": "S _{H} , S _{L} heavy- and light-chain gene specific transcription rates (mRNA/gene/h)",
+    "unit": "mRNA/gene·h",
+    "unit_basis": "stated",
+    "value": "4.5 × 10^3",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing transcription rate per gene"
+   },
+   {
+    "symbol": "[H]",
+    "description": "concentration of heavy‑chain monomer",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "chain/cell·h",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "T_{H}",
+    "description": "heavy‑chain specific translation rate",
+    "description_basis": "stated",
+    "snippet_id": 63,
+    "quote": "T _{H} , T _{L} heavy- and light-chain specific translation rates (chain/mRNA/h)",
+    "unit": "chain/mRNA·h",
+    "unit_basis": "stated",
+    "value": "17",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing translation rate per mRNA"
+   },
+   {
+    "symbol": "R_{H}",
+    "description": "rate of heavy‑chain consumption in assembly",
+    "description_basis": "stated",
+    "snippet_id": 61,
+    "quote": "R _{H} , R _{L} rates of heavy- and light-chain consumption in assembly (chain/cell/h)",
+    "unit": "chain/cell·h",
+    "unit_basis": "stated",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "[L]",
+    "description": "concentration of light‑chain monomer",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "chain/cell·h",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "T_{L}",
+    "description": "light‑chain specific translation rate",
+    "description_basis": "stated",
+    "snippet_id": 63,
+    "quote": "T _{H} , T _{L} heavy- and light-chain specific translation rates (chain/mRNA/h)",
+    "unit": "chain/mRNA·h",
+    "unit_basis": "stated",
+    "value": "11.5",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing translation rate per mRNA"
+   },
+   {
+    "symbol": "R_{L}",
+    "description": "rate of light‑chain consumption in assembly",
+    "description_basis": "stated",
+    "snippet_id": 61,
+    "quote": "R _{H} , R _{L} rates of heavy- and light-chain consumption in assembly (chain/cell/h)",
+    "unit": "chain/cell·h",
+    "unit_basis": "stated",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   }
+  ]
+ }
+}

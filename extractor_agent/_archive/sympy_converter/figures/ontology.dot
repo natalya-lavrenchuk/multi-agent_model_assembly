@@ -1,0 +1,15 @@
+digraph G { rankdir=LR; nodesep=0.5; ranksep=1.1; node [fontname="Helvetica" fontsize=12]; edge [fontname="Helvetica" fontsize=11 color="#555555"];
+    Sup [shape=plain label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="6"><tr><td bgcolor="#3b3b6d"><font color="white"><b>Sup</b></font></td></tr><tr><td align="left" balign="left">one published model<br/><i>e.g. Kontoravdi 2005</i></td></tr></table>>];
+    Law [shape=plain label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="6"><tr><td bgcolor="#2f6db5"><font color="white"><b>Law</b></font></td></tr><tr><td align="left" balign="left">one printed equation<br/>formula (SymPy string)<br/>equationNumber</td></tr></table>>];
+    Variable [shape=plain label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="6"><tr><td bgcolor="#2e8b57"><font color="white"><b>Variable</b></font></td></tr><tr><td align="left" balign="left">symbol, formulaName<br/>unit*, dimensions*<br/>description*</td></tr></table>>];
+    Parameter [shape=plain label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="6"><tr><td bgcolor="#d9822b"><font color="white"><b>Parameter</b></font></td></tr><tr><td align="left" balign="left">symbol, formulaName<br/>value*, unit*<br/>fixed (constants)</td></tr></table>>];
+    Metadata [shape=plain label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="6"><tr><td bgcolor="#8a8a8a"><font color="white"><b>Metadata</b></font></td></tr><tr><td align="left" balign="left">source: DOI, page, quote<br/>form (ODE / algebraic; DAE on Sup)<br/>conditions / assumptions<br/>status<br/>roles*, law type*, index*</td></tr></table>>];
+    Sup -> Law [label="includes"];
+    Sup -> Metadata [label="hasMetadata"];
+    Law -> Variable [label="computes (exactly 1)" color="#2f6db5" penwidth=2];
+    Law -> Variable [label="uses"];
+    Law -> Parameter [label="hasParameter"];
+    Law -> Metadata [label="hasMetadata"];
+    Law -> Law [label="sameAs (proposed)" style=dashed];
+    note [shape=note fontname="Helvetica" fontsize=10 color="#999999" label="5 classes, no others\l* = field defined, not yet filled by the extractor\lone Variable node per symbol per Sup, shared by all its laws\l"];
+    }

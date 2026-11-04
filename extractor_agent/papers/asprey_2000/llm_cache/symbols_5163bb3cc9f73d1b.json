@@ -1,0 +1,91 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2000,
+  "completion_tokens": 3885,
+  "total_tokens": 5885,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1997,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Monod kinetics | Canoid kinetics\n\nEquations:\n(17) M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}}      <- \"The first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:\"\n(18) M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}}      <- \"The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:\"\n\nSymbols:\n\n\\theta_{1}   [NOT COMPUTED]\n  [160] (table_row, p.6) Table 1 Parameter estimates for $ M_{t}(\\theta, u, t) $ and $ M_{t t}(\\theta, u, t) $ after one designed experiment: Parameter: $ \\theta_1 $ | Estimate: 0.325 | Confidence interval: 0.303 | Confidence interval: $ \\pm 0.012 $ | Confidence interval: $ \\pm 0.011 \n  [183] (table_row, p.6) Table 2 Parameter estimates from the sequentially designed experiment for improving parameter precision: Parameter: $ \\theta_1 $ | Estimate: 0.311 | Confidence interval: $ \\pm 0.005 $\n\n\\theta_{2}   [NOT COMPUTED]\n  [161] (table_row, p.6) Table 1 Parameter estimates for $ M_{t}(\\theta, u, t) $ and $ M_{t t}(\\theta, u, t) $ after one designed experiment: Parameter: $ \\theta_2 $ | Estimate: 0.267 | Confidence interval: 0.011 | Confidence interval: $ \\pm 0.075 $ | Confidence interval: $ \\pm 0.009 \n  [184] (table_row, p.6) Table 2 Parameter estimates from the sequentially designed experiment for improving parameter precision: Parameter: $ \\theta_2 $ | Estimate: 0.254 | Confidence interval: $ \\pm 0.038 $\n\nM_{II}   [COMPUTED by eq 18]\n  [139] (sentence, p.5) Distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $\n  [140] (sentence, p.5) Global structural distinguishability of  $ M_{I}(\\theta, u, t) $ and  $ M_{II}(\\theta, u, t) $ can be tested by reformulating the max-min Test D1 problem to a semi-infinite programming problem and using the techniques mentioned above.\n  [141] (sentence, p.5) The resulting solution of the distinguishability test using the same conditions and CVP as above was found to be  $ \\Phi_{D} = 3.392 \\times 10^{-1} $, giving a maximum larger than  $ \\varepsilon_{\\Phi_{D}} = 4.0 \\times 10^{-3} $ and thus confirming the disting\n  [165] (table_row, p.6) Table 1 Parameter estimates for $ M_{t}(\\theta, u, t) $ and $ M_{t t}(\\theta, u, t) $ after one designed experiment: Parameter: LOF ( $ M_{II} $) | Estimate:  | Confidence interval: 1.96 | Confidence interval: $ \\chi^{2}_{\\text{ref}} = 26.3 $ | Confidence inte",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\theta_{1}",
+    "description": "Kinetic rate parameter in the numerator of the substrate-consumption rate law.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [
+     {
+      "model": "Monod kinetics",
+      "value": "0.325"
+     },
+     {
+      "model": "Canoid kinetics",
+      "value": "0.303"
+     }
+    ],
+    "class_reason": "It is a fitted constant of the kinetic rate law.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\theta_{2}",
+    "description": "Kinetic denominator parameter; it is the Monod saturation parameter and multiplies biomass in the Canoid denominator.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [
+     {
+      "model": "Monod kinetics",
+      "value": "0.267"
+     },
+     {
+      "model": "Canoid kinetics",
+      "value": "0.011"
+     }
+    ],
+    "class_reason": "It is a fitted saturation or kinetic denominator constant in the rate law.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "M_{II}",
+    "description": "Model with Canoid-type kinetics.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

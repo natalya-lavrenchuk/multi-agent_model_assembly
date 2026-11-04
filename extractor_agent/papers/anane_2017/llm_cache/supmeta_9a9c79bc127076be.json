@@ -1,0 +1,52 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2005,
+  "completion_tokens": 1870,
+  "total_tokens": 3875,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2002,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1386,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Anane et al. (2017) E. coli overflow metabolism by acetate cycling, fed-batch model\n\nAbstract: A new set of mathematical equations describing overflow metabolism and acetate accumulation in E. coli cultivation is presented. The model is a significant improvement of already existing models in the literature, with modifications based on the more recent concept of acetate cycling in E. coli, as revealed by proteomic studies of overflow routes. This concept opens up new questions regarding the speed of response of the acetate production and its consumption mechanisms in E. coli. The model is formulated as a set of continuous differentiable equations, which significantly improves model tractability and facilitates the computation of dynamic sensitivities in all relevant stages of fermentation (batch, fed-batch, starvation). The model is fitted to data from a simple 2L fed-batch cultivation of E. coli W3110 M, where twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%. The framework presented gives valuable insight into the acetate dilemma in industrial fermentation processes, and serves as a tool for the development, optimization and control of E. coli fermentation processes.\n\nSentences about the process and the data:\n- A new set of mathematical equations describing overflow metabolism and acetate accumulation in E. coli cultivation is presented.\n- The model is formulated as a set of continuous differentiable equations, which significantly improves model tractability and facilitates the computation of dynamic sensitivities in all relevant stages of fermentation (batch, fed-batch, star\n- The model is fitted to data from a simple 2L fed-batch cultivation of E. coli W3110 M, where twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%.\n- One of the most embattled physiological phenomena in industrial scale E. coli cultivation is overflow metabolism and the associated excretion of acetate into the broth.\n- In all these models, the acetate profile is presented in two distinct phases: an initial batch (overflow) phase during which acetate is produced, followed by a substrate limited phase during which acetate is consumed.\n- Although these models suffice in describing acetate profiles during E. coli cultivation, a major limitation is the discontinuous nature of the functions (e.g., if  $ q_{0} < q_{0\\max} $, then  $ q_A = 0 $ [8]), which makes further mathemati\n- Furthermore, new evidence suggests that acetate conversion is indeed a continuous process.\n- Peebo et al. [9] and Valgepea et al. [10] used advanced proteomic analysis [9,11] and systems biology approaches [10] to show that intracellular production and re-assimilation of acetate (acetate cycling) is a continuous process in E. coli \n- The large set of metabolic routes are approximated by lumped kinetic parameters, the values of which are estimated from measurable extracellular species in typical cultivation set-ups.\n- Nevertheless, Valgepea et al. [10], Peebo et al. [9], and Martinez-Gomez et al. [16] showed that E. coli uses a continuous acetate cycling system for acetate conversion (Fig. 1B).\n- Under typical cultivation conditions and at low glucose uptake rates, acetate production is in equilibrium with its re-assimilation ( $ p_{A} = q_{sA} $), hence there is neither net accumulation nor release of acetate into the extracellular\n- This cycling system can be represented by a set of continuous equations that describe overflow as an off-set of the equilibrium between  $ p_{A} $ and  $ q_{sA} $.\n- In the current paper, the concept of acetate cycling is used to derive a set of tractable and continuously differentiable equations at macro-kinetic scale to describe acetate production in E. coli.\n- This new set of equations allow a cheap computation of both first and second order sensitivity functions, which are needed in gradient-based methods for optimal experimental design [17,18] and process optimization [19].\n- Finally, the model is validated with data from fed-batch cultivation of E. coli W3110M to show its applicability in real processes.\n- Strain and cultivation conditions\n- The data for model calibration was obtained from a fed-batch culture of non-recombinant  $ E.\\ coli $ W3110M.\n- The cultivation was conducted at a temperature of  $ 37^{\\circ} $C and at pH of 7.0 in a 3.7L BioEngineering $ ^{\\circledR} $ bench top bioreactor fitted with a polarographic dissolved oxygen probe.\n\nModel: anane_2017\nLaws:\n(12) [balance] Biomass concentration changes through sterile-feed dilution and cellular growth in the fed-batch reactor.\n(13) [constitutive] Specific growth rate is computed from oxidative substrate use, overflow-route use, and acetate uptake, with maintenance subtracted and yield coefficients applied.\n(14) [balance] Glucose concentration changes through feed dilution and cellular substrate uptake.\n(15) [constitutive] Specific glucose uptake follows Monod-type kinetics with non-competitive inhibition by acetate.\n(16) [constitutive] Oxidative substrate uptake is the uptake remaining after overflow allocation, scaled by dissolved oxygen availability.\n(17) [constitutive] Overflow-route substrate uptake increases with substrate uptake according to a saturating acetate-production relation.\n(18) [balance] Acetate concentration is balanced with feed dilution and a biomass-dependent cellular reaction term.\n(19) [definition] Net specific acetate rate is defined as acetate production minus acetate uptake.\n(20) [definition] The acetate production rate through the overflow route is calculated from substrate uptake through that route and the acetate yield.\n(21) [constitutive] The specific acetate uptake rate depends on acetate availability and is inhibited by glucose.\n(22) [balance] The dissolved oxygen balance accounts for oxygen transfer from the medium and oxygen uptake by the cells.\n(23) [definition] The specific oxygen uptake rate is calculated from substrate oxidation and acetate uptake, weighted by their oxygen-consumption yields.\n(24) [constitutive] The measured dissolved oxygen approaches the actual dissolved oxygen according to the probe response.\n\nStates (computed by the ODEs):\n- X: Cell dry weight concentration of cells\n- S: Glucose substrate concentration.\n- A: Acetate concentration.\n- DOT_{a}: Actual dissolved oxygen, expressed as a percentage of saturation.\n- DOT: Dissolved oxygen tension.\n\nInputs (variables no law computes):\n- F: Feed rate\n- V: Volume\n- S_{i}: Glucose concentration in the feed solution.\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "E. coli W3110M cultivation with glucose overflow metabolism and acetate cycling",
+   "quote": "A new set of mathematical equations describing overflow metabolism and acetate accumulation in E. coli cultivation is presented."
+  },
+  "unit_operation": {
+   "value": "Bench-top bioreactor (3.7 L)",
+   "quote": "The cultivation was conducted at a temperature of  $ 37^{\\circ} $C and at pH of 7.0 in a 3.7L BioEngineering $ ^{\\circledR} $ bench top bioreactor fitted with a polarographic dissolved oxygen probe."
+  },
+  "operating_mode": {
+   "value": [
+    "batch",
+    "fed-batch"
+   ],
+   "quote": "The model is formulated as a set of continuous differentiable equations, which significantly improves model tractability and facilitates the computation of dynamic sensitivities in all relevant stages of fermentation (batch, fed-batch, starvation).",
+   "note": "The model also covers starvation as a fermentation stage."
+  },
+  "fitted_on": {
+   "value": "2 L fed-batch cultivation of E. coli W3110M",
+   "quote": "The model is fitted to data from a simple 2L fed-batch cultivation of E. coli W3110 M, where twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%."
+  },
+  "phenomena": [
+   "Monod-type glucose uptake with acetate inhibition",
+   "Oxygen-dependent oxidative substrate uptake",
+   "Saturating overflow acetate production",
+   "Continuous acetate cycling and glucose-inhibited acetate uptake",
+   "Oxygen transfer and cellular oxygen consumption",
+   "Dissolved-oxygen probe response dynamics"
+  ],
+  "description": "This model describes glucose metabolism and acetate cycling in E. coli W3110M cultivation, predicting biomass, glucose, acetate, and dissolved oxygen over time. It represents glucose uptake through oxidative and overflow routes, with acetate production and re-assimilation, and couples these mechanisms to fed-batch balances, oxygen transfer, and probe response."
+ }
+}

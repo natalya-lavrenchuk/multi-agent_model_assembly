@@ -1,0 +1,52 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2101,
+  "completion_tokens": 2109,
+  "total_tokens": 4210,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2098,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1684,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Dynamic Modeling of Microalgae Growth and Lipid Production under Transient Light and Nitrogen Conditions\n\nAbstract: ABSTRACT: We developed a new dynamic model to characterize how light and nitrogen regulate the cellular processes of photosynthetic microalgae leading to transient changes in the production of neutral lipids, carbohydrates, and biomass. Our model recapitulated the versatile neutral lipid synthesis pathways via (i) carbon reuse from carbohydrate metabolism under nitrogen sufficiency and (ii) fixed carbon redirection under nitrogen depletion. We also characterized the effects of light adaptation, light inhibition hysteresis, and nitrogen limitation on photosynthetic carbon fixation. The formulated model was calibrated and validated with experimental data of Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR) under various light (low/moderate/\n\nSentences about the process and the data:\n- The formulated model was calibrated and validated with experimental data of Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR) under various light (low/moderate/\n- Our model predictions agreed well with experimental observations and suggested potential model improvement by incorporating a lipid degradation mechanism.\n- To make microalgae-derived biofuel commercially competitive with fossil fuel, recent research has suggested different strategies such as producing high-profit coproducts from microalgae proteins and nutritional components,$^{1}$ integrating\n- Therefore, the design, control, and optimization of the cultivation process continue to be a fundamental challenge in advancing microalgae-based biofuel technologies.\n- However, the obtained metabolic carbon fluxes are constrained to a specific condition due to the steady-state and balanced-growth assumption for solving the stoichiometric reactions.\n- $ ^{5} $ To predict dynamic carbon fluxes during culture condition transitions such as light-dark cycles $ ^{6} $ or switching between nitrogen repletion and depletion, $ ^{7} $ metabolic models require multiple pseudosteady-state time inte\n- However, the model was still subject to the steady-state and balanced-growth assumption and required two sets of reactions to separately determine the stoichiometric yields for nutrient-available and nutrient-depleted conditions.\n- Consequently, the transient culture behaviors under varying light and nitrogen conditions were not predicted accurately.\n- $ ^{14} $ Without comprehensively accounting for the light variation effect on photosynthesis rate, prior photosynthesis models may not be applicable to wide-ranging light conditions and outdoor cultivation systems.\n- Our model could characterize and forecast transient culture behaviors including the production of neutral lipids, carbohydrates, and functional biomass under a wide range of light and nitrogen conditions.\n- The proposed modeling framework facilitates rational study of the microalgae dynamic cellular processes in response to environmental variations and provides useful insights on cultivation process control for achieving optimal biomass growth\n- We established our model (Figure 1) based on the major cellular processes of most green algae species to describe the culture behaviors of Dunaliella viridis cultivated under different light and nitrogen conditions.\n- The experiments were performed in a bench-scale 3.2 L flat-panel photobioreactor (Figure S1 of the Supporting Information, SI) with a light sensor mounted inside and the pH and temperature controlled at 7.6 and 25 °C, respectively.\n- We used data from 11 experiments (Table S1) including four light conditions (categorized into low/moderate/high levels) and ten initial nitrate concentrations (categorized into high/low levels).\n- The experiments were fully discussed by Lai et al.¹⁵ Our model contains six state variables, and Table 1 summarizes the entire set of ordinary differential equations (ODEs) for the model formulation (see Nomenclature for detailed parameter \n- Light Estimation.\n- The light condition in our experiment was controlled by adjusting the light source position (i.e., the distance d in Figure S1).\n- and background absorbing material.¹⁶ Equation 7 is formulated to express the local light intensity  $ I_l $ along the optical path  $ l $ inside the reactor.\n\nModel: Dynamic microalgae growth and lipid production model\nLaws:\n(9) [constitutive] Light absorbance per unit length is computed from chlorophyll carbon and the remaining biomass carbon using their optical cross sections.\n(10) [constitutive] The reactor-average instantaneous light intensity is obtained by spatially averaging the attenuated light profile along the optical path.\n(11) [constitutive] The reference average light intensity is calculated by averaging the unattenuated source-light profile along the optical path.\n(12) [constitutive] Photosynthesis per unit functional biomass follows a Steele-type light response with light limitation and inhibition, scaled by the ratio of total to functional biomass.\n(13) [constitutive] The light saturation intensity is set by maximum fixation capacity relative to chlorophyll-associated conversion of light energy into fixed carbon.\n(14) [constitutive] The effective carbon yield on light energy decreases exponentially with reference average irradiance.\n(15) [constitutive] The fraction of carbon redirected from carbohydrate toward neutral-lipid accumulation is highest at low nitrate and decreases as nitrate increases.\n(16) [constitutive] The Chl-a degradation rate increases with reference light intensity and nitrogen starvation through error-function responses.\n(17) [constitutive] The nitrate uptake rate per unit functional biomass scales with extracellular nitrate normalized by its initial value and is regulated by the current quota relative to its minimum and maximum quotas.\n(18) [definition] The total nitrogen quota is calculated as cellular nitrogen concentration divided by total biomass carbon concentration.\n(1) [balance] The functional biomass balance adds photosynthetic carbon allocated to functional biomass and subtracts functional biomass degradation.\n(2) [balance] The carbohydrate balance adds the photosynthetic allocation to carbohydrates and subtracts respiration, nitrogen-associated losses, and carbon redirected to neutral lipids.\n(3) [balance] The neutral-lipid balance accumulates lipids produced through nitrogen-associated synthesis and redirection of carbohydrate carbon.\n(4) [balance] The Chl-a balance adds light-dependent synthesis associated with nitrogen uptake and subtracts Chl-a degradation.\n(5) [balance] The reactor nitrate balance decreases nitrate concentration according to uptake by functional biomass.\n(6) [balance] The cellular nitrogen balance increases intracellular nitrogen through nitrate uptake by functional biomass.\n\nStates (computed by the ODEs):\n- X_{cd}: Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C\n- X_{carb}: Concentration of carbohydrates as C\n- X_{nl}: Concentration of neutral lipids as C\n- X_{chl}: Concentration of Chl-a as C\n- S_{NO3}: Concentration of nitrate as N in the reactor\n- X_{N}: Concentration of cellular nitrogen as N\n\nInputs (variables no law computes):\n- X_{C}: Total carbon concentration of the biomass\n- S_{NO3_0}: Reference (initial) extracellular nitrate concentration in the uptake-rate expression\n\nModel-wide assumptions:\n- Optical cross‑section parameters a and b are taken as constant regardless of cultivation conditions.\n- The composition of functional biomass is fixed to CH1.8O0.5N0.2.\n- Nitrate uptake is assumed to equal the nitrate removed from the medium.",
+ "answer": {
+  "system": {
+   "value": "Dunaliella viridis microalgae producing functional biomass, carbohydrates, and neutral lipids",
+   "quote": "\"Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR)\"; \"production of neutral lipids, carbohydrates, and biomass\""
+  },
+  "unit_operation": {
+   "value": "3.2 L flat-panel photobioreactor",
+   "quote": "bench-scale 3.2 L flat-panel photobioreactor"
+  },
+  "operating_mode": {
+   "value": [
+    "not stated"
+   ],
+   "quote": null,
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Data from 11 experiments with four light conditions and ten initial nitrate concentrations",
+   "quote": "We used data from 11 experiments (Table S1) including four light conditions (categorized into low/moderate/high levels) and ten initial nitrate concentrations (categorized into high/low levels)."
+  },
+  "phenomena": [
+   "Biomass-dependent light attenuation and reactor-average irradiance",
+   "Steele-type photosynthesis with light limitation, adaptation, and inhibition hysteresis",
+   "Light-dependent photosynthetic carbon yield",
+   "Nitrogen-dependent carbon allocation to neutral lipids, including carbohydrate-to-lipid redirection",
+   "Quota-regulated nitrate uptake and cellular nitrogen accumulation",
+   "Light- and nitrogen-dependent chlorophyll synthesis and degradation",
+   "Functional biomass degradation and carbohydrate respiration"
+  ],
+  "description": "The model predicts transient changes in functional biomass, carbohydrates, neutral lipids, chlorophyll, extracellular nitrate, and cellular nitrogen in Dunaliella viridis under varying light and nitrogen conditions. It couples light attenuation and light-regulated photosynthesis with nitrogen-dependent carbon allocation and quota-regulated nitrate uptake, using dynamic balances for the cellular components and reactor nitrate."
+ }
+}

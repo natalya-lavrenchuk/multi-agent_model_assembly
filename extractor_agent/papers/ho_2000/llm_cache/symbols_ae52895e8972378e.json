@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.22411847,
+  "prompt_tokens": 2587,
+  "prompt_time": 0.125222729,
+  "completion_tokens": 1569,
+  "completion_time": 3.326543972,
+  "total_tokens": 4156,
+  "total_time": 3.451766701,
+  "completion_tokens_details": {
+   "reasoning_tokens": 210
+  }
+ },
+ "user": "Equations:\n(4) Q=Q_{\\mathrm{o p e n}}+Q_{\\mathrm{b l o c k e d}}      <- \"The volumetric filtrate flow rate through the fouled membrane can thus be expressed as the sum of the flow rates through the open and blocked pores:\"\n(5) Q_{\\mathrm{o p e n}}=\\frac{\\Delta P}{\\mu R_{\\mathrm{m}}}A_{\\mathrm{o p e n}}      <- \"$ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as\"\n(6) Q_{\\mathrm{b l o c k e d}}=\\int\\limits_{A_{\\mathrm{b l o c k e d}}}\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}d A      <- \"where $ A_{open} $ is the area of the membrane which remains uncovered at any given time. The volumetric flow rate through the blocked pores is written as\"\n(7) \\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}      <- \"The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.\"\n(8) \\alpha=\\frac{f A_{\\mathrm{a g g}}}{M_{\\mathrm{a g g}}}      <- \" to the membrane surface. Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter $ \\alpha $ can be expressed as\"\n(11) J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}      <- \"d $ f' $ is the fraction of the proteins that contribute to the growth of the deposit. $ J_{blocked} $ is the filtrate flux through each region of the membrane:\"\n(12) \\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}      <- \"le to contribute to the growth of the deposit. The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,\"\n\nSymbols:\n\nQ   [COMPUTED by eq 4]\n  [92] (sentence, p.3) Note that the value of Q given by Eq. [17] will always be slightly less than that given by the full numerical solution since the actual resistance of the protein layer will vary from the maximum value given by Eq. [18] to a value of  $ R_{p0} $ over that regio\n  [324] (table_row, p.11) $ A_{agg} $: Q | Membrane area blocked by a single aggregate,  $ m^{2} $: Volumetric flow rate,  $ m^{3}/s $\n\nQ_{open}   [COMPUTED by eq 5]\n  [58] (sentence, p.2) where  $ Q_{open} $ is the volumetric flow rate through the open pores,  $ C_{b} $ is the bulk protein concentration, and  $ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane su\n  [49] (sentence, p.2) $ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as\n  [64] (sentence, p.2) $ Q_{open} $ decreases exponentially with time at a rate which is proportional to the bulk protein concentration.\n\nQ_{blocked}   [COMPUTED by eq 6]\n  (no snippet mentions this symbol)\n\n\\Delta P   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n\\mu   [NOT COMPUTED]\n  [27] (sentence, p.1) where $\\mu$ is the solution viscosity and $\\Delta P$ is the transmembrane pressure.\n  [89] (sentence, p.3) At long times ( $ t \\gg \\frac{\\mu R_m}{\\alpha \\Delta P C_b} $), the volumetric flow rate is dominated by the second term and is thus proportional to the ratio of the membrane resistance to the total resistance.\n  [141] (sentence, p.5) The average diameter of the protein aggregates was also determined by both light scattering and scanning electron microscopy as $0.36 \\pm 0.1$ $\\mu$m, yielding $A_{agg} = 1.1 \\pm 0.6 \\times 10^{-13}$ m$^2$ and $M_{agg} = 3.0 \\pm 2.1 \\times 10^{-17}$ kg using a\n\nR_{m}   [NOT COMPUTED]\n  [49] (sentence, p.2) $ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as\n  [89] (sentence, p.3) At long times ( $ t \\gg \\frac{\\mu R_m}{\\alpha \\Delta P C_b} $), the volumetric flow rate is dominated by the second term and is thus proportional to the ratio of the membrane resistance to the total resistance.\n  [241] (sentence, p.8) The total resistance ( $ R_{m} + R_{p} $) was calculated using Eq. [3].\n\nA_{open}   [COMPUTED by eq 7]\n  [50] (sentence, p.2) where  $ A_{open} $ is the area of the membrane which remains uncovered at any given time.\n  [62] (sentence, p.2) Substitution of Eq. [5] into Eq. [7] gives a first-order ordinary differential equation for $A_{open}$ with solution\n  [63] (sentence, p.2) The volumetric flow rate through the open pores is given directly by Eq. [5] with  $ A_{open} $ evaluated from Eq. [9].\n\nA_{blocked}   [NOT COMPUTED]\n  [76] (sentence, p.3) The total area of the membrane surface that is blocked by the protein aggregates ( $ A_{blocked} $) increases with time as the aggregates continue to deposit on the membrane surface,\n  [314] (table_row, p.11) $ A_{agg} $: $ A_{blocked} $ | Membrane area blocked by a single aggregate,  $ m^{2} $: Area of membrane blocked by protein deposit,  $ m^{2} $\n\nR_{p}   [COMPUTED by eq 12]\n  [52] (sentence, p.2) where  $ R_{p} $ is the resistance of the protein deposit over a particular region of the membrane.\n  [55] (sentence, p.2) Those regions that have been blocked more recently will have a smaller value of  $ R_{p} $ and thus a greater local filtrate flux.\n  [81] (sentence, p.3) with  $ R_{p} $ given as a function of  $ t $ and  $ t_{p} $ by Eq. [13].\n\n\\alpha   [COMPUTED by eq 8]\n  [58] (sentence, p.2) where  $ Q_{open} $ is the volumetric flow rate through the open pores,  $ C_{b} $ is the bulk protein concentration, and  $ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane su\n  [229] (sentence, p.8) The solid curves in the top and bottom panels of Fig. 6 represent the model calculations from the approximate solution using the value of $\\alpha$ determined from the data in Fig. 1 ($\\alpha = 4.1 \\pm 0.2$ m$^2$ kg$^{-1}$).\n  [59] (sentence, p.2) Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter  $ \\alpha $ can be expressed as",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "Q",
+    "description": "volumetric filtrate flow rate through the fouled membrane",
+    "description_basis": "stated",
+    "snippet_id": 92,
+    "quote": "Note that the value of Q given by Eq. [17] will always be slightly less than that given by the full numerical solution since the actual resistance of the protein layer will vary from the maximum value given by Eq. [18] to a value of  $ R_{p0} $ over that regio",
+    "unit": "m^3 s^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Q_{open}",
+    "description": "volumetric flow rate through the open pores",
+    "description_basis": "stated",
+    "snippet_id": 49,
+    "quote": "$ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as",
+    "unit": "m^3 s^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Q_{blocked}",
+    "description": "volumetric flow rate through the blocked pores",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "m^3 s^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\Delta P",
+    "description": "transmembrane pressure driving filtration",
+    "description_basis": "stated",
+    "snippet_id": 27,
+    "quote": "where $\\mu$ is the solution viscosity and $\\Delta P$ is the transmembrane pressure.",
+    "unit": "Pa",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "operating condition, not computed",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu",
+    "description": "solution viscosity",
+    "description_basis": "stated",
+    "snippet_id": 27,
+    "quote": "where $\\mu$ is the solution viscosity and $\\Delta P$ is the transmembrane pressure.",
+    "unit": "Pa s",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "material property, not computed",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R_{m}",
+    "description": "clean membrane hydraulic resistance",
+    "description_basis": "stated",
+    "snippet_id": 49,
+    "quote": "$ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as",
+    "unit": "m^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "material property, not computed",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A_{open}",
+    "description": "area of membrane that remains uncovered at any given time",
+    "description_basis": "stated",
+    "snippet_id": 50,
+    "quote": "where $ A_{open} $ is the area of the membrane which remains uncovered at any given time.",
+    "unit": "m^2",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A_{blocked}",
+    "description": "area of membrane surface blocked by protein aggregates",
+    "description_basis": "stated",
+    "snippet_id": 76,
+    "quote": "The total area of the membrane surface that is blocked by the protein aggregates ( $ A_{blocked} $) increases with time as the aggregates continue to deposit on the membrane surface,",
+    "unit": "m^2",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "state variable describing fouling progression, not computed directly",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R_{p}",
+    "description": "hydraulic resistance of the protein deposit over a particular region of the membrane",
+    "description_basis": "stated",
+    "snippet_id": 52,
+    "quote": "where $ R_{p} $ is the resistance of the protein deposit over a particular region of the membrane.",
+    "unit": "m^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha",
+    "description": "pore blockage parameter equal to membrane area blocked per unit mass of protein convected to the membrane surface",
+    "description_basis": "stated",
+    "snippet_id": 58,
+    "quote": "where $ Q_{open} $ is the volumetric flow rate through the open pores, $ C_{b} $ is the bulk protein concentration, and $ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane su",
+    "unit": "m^2 kg^-1",
+    "unit_basis": "stated",
+    "value": "4.1 ± 0.2 m^2 kg^-1",
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

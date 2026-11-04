@@ -1,0 +1,135 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.214394636,
+  "prompt_tokens": 1795,
+  "prompt_time": 0.096902446,
+  "completion_tokens": 1039,
+  "completion_time": 2.182753305,
+  "total_tokens": 2834,
+  "total_time": 2.279655751,
+  "completion_tokens_details": {
+   "reasoning_tokens": 182
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The heavy- and light-chain mRNA balances are\n(17) \\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}    [code: ODE, computes m_{H}, code proposes balance]\n(18) \\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}    [code: ODE, computes m_{L}, code proposes balance]\n    The intraER heavy- and light-chain and assembly intermediates balances are\n(19) \\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}    [code: ODE, computes [H], code proposes balance]\n(20) \\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}    [code: ODE, computes [L], code proposes balance]\n    where\n(21) R_{H}=\\frac{2}{3}K_{A}[H]^{2}    [code: algebraic, computes R_{H}, code proposes constitutive]\n(22) R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]    [code: algebraic, computes R_{L}, code proposes constitutive]\n(23) \\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]    [code: ODE, computes [H_2], code proposes balance]\n    and\n(24) \\frac{d[H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]    [code: ODE, computes [H_2L], code proposes balance]\n    The intraER MAb balance is\n\nSymbols:\n  m_{H}: heavy‑chain mRNA amount per cell (computed)\n  N_{H}: number of heavy‑chain genes per cell [gene/cell] (parameter)\n  S_{H}: heavy‑chain gene‑specific transcription rate [mRNA/gene/h] (parameter)\n  K: heavy‑ and light‑chain mRNA decay rate [h^{-1}] (parameter)\n  m_{L}: light-chain mRNA amount per cell [mRNA/cell] (computed)\n  N_{L}: heavy- and light-chain gene copy number (gene/cell) [gene/cell] (parameter)\n  S_{L}: heavy- and light-chain gene specific transcription rates (mRNA/gene/h) [mRNA/gene/h] (parameter)\n  [H]: intra‑ER heavy‑chain concentration [chain/cell] (computed)\n  T_{H}: heavy- and light-chain specific translation rates (chain/mRNA/h) [chain/mRNA/h] (parameter)\n  R_{H}: rates of heavy- and light-chain consumption in assembly (chain/cell/h) [chain/cell/h] (computed)\n  [L]: intra‑ER light‑chain concentration [chain/cell] (computed)\n  T_{L}: heavy- and light-chain specific translation rates (chain/mRNA/h) [chain/mRNA/h] (parameter)\n  R_{L}: rates of heavy- and light-chain consumption in assembly (chain/cell/h) [chain/cell/h] (computed)\n  K_{A}: assembly rate constant (cell/molecule/h) [cell/molecule/h] (parameter)\n  [H_2]: concentration of heavy-chain dimers in the endoplasmic reticulum (computed)\n  [H_2L]: concentration of heavy-chain dimer–light-chain monomer intermediate in the ER (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 17, 18, 19, 20, 21, 22, 23, 24",
+ "answer": {
+  "laws": [
+   {
+    "eq": "17",
+    "description": "balance of heavy-chain mRNA amount per cell",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = production - decay",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "18",
+    "description": "balance of light-chain mRNA amount per cell",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = production - decay",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "19",
+    "description": "balance of intra‑ER heavy‑chain concentration",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = translation - consumption in assembly",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "20",
+    "description": "balance of intra‑ER light‑chain concentration",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = translation - consumption in assembly",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "21",
+    "description": "rate of heavy‑chain consumption in assembly",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "Algebraic expression defines R_H from [H] and K_A",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H]"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{A}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "22",
+    "description": "rate of light‑chain consumption in assembly",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "Algebraic expression defines R_L from [H2], [L], [H2L] and K_A",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H_{2}]"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[L]"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[H_{2}L]"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{A}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "23",
+    "description": "balance of intra‑ER heavy‑chain dimer concentration",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = formation from heavy‑chains minus consumption with light‑chains",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "24",
+    "description": "balance of intra‑ER heavy‑chain dimer–light‑chain intermediate concentration",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "ODE represents accumulation = formation from dimer and light‑chain minus consumption",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,1102 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "ODE",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Culture-volume balance accounting for inlet and outlet flow.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "1",
+    "description": "Culture-volume balance accounting for inlet and outlet flow.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "2": {
+   "form": "ODE",
+   "computes": "X_{\\nu}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Viable-cell population balance accounting for growth, death, and outlet flow.",
+   "description_basis": "stated",
+   "quote": "The mass balances on the viable and total cell populations",
+   "assumptions": [
+    {
+     "text": "The culture is assumed to be perfectly mixed.",
+     "quote": "perfect mixing",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Dilution effects are assumed negligible.",
+     "quote": "negligible dilution effect",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The culture is assumed to be perfectly mixed.",
+    "blocking assumption: Dilution effects are assumed negligible."
+   ],
+   "llm": {
+    "eq": "2",
+    "description": "Viable-cell population balance accounting for growth, death, and outlet flow.",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations",
+    "assumptions": [
+     {
+      "text": "The culture is assumed to be perfectly mixed.",
+      "quote": "perfect mixing",
+      "process_condition": true
+     },
+     {
+      "text": "Dilution effects are assumed negligible.",
+      "quote": "negligible dilution effect",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "ODE",
+   "computes": "X_{t}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Total-cell population balance accounting for growth and outlet flow.",
+   "description_basis": "stated",
+   "quote": "The mass balances on the viable and total cell populations",
+   "assumptions": [
+    {
+     "text": "The culture is assumed to be perfectly mixed.",
+     "quote": "perfect mixing",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Dilution effects are assumed negligible.",
+     "quote": "negligible dilution effect",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The culture is assumed to be perfectly mixed.",
+    "blocking assumption: Dilution effects are assumed negligible."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "Total-cell population balance accounting for growth and outlet flow.",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations",
+    "assumptions": [
+     {
+      "text": "The culture is assumed to be perfectly mixed.",
+      "quote": "perfect mixing",
+      "process_condition": true
+     },
+     {
+      "text": "Dilution effects are assumed negligible.",
+      "quote": "negligible dilution effect",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific cell growth rate computed from the maximum growth rate multiplied by nutrient limitation and metabolite inhibition factors.",
+   "description_basis": "stated",
+   "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "Specific cell growth rate computed from the maximum growth rate multiplied by nutrient limitation and metabolite inhibition factors.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "f_{lim}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Nutrient-limitation factor for cell growth computed as a product of two saturation terms, both printed with extracellular glucose.",
+   "description_basis": "stated",
+   "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[GLC]"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{glc}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{gln}"
+    }
+   ],
+   "issue": "The second saturation term uses [GLC] in both numerator and denominator even though K_{gln} is the glutamine Monod constant and the text says growth depends on glucose and glutamine; it should use the glutamine concentration.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The second saturation term uses [GLC] in both numerator and denominator even though K_{gln} is the glutamine Monod constant and the text says growth depends on glucose and glutamine; it should use the glutamine concentration."
+   ],
+   "llm": {
+    "eq": "5",
+    "description": "Nutrient-limitation factor for cell growth computed as a product of two saturation terms, both printed with extracellular glucose.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{glc}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{gln}"
+     }
+    ],
+    "issue": "The second saturation term uses [GLC] in both numerator and denominator even though K_{gln} is the glutamine Monod constant and the text says growth depends on glucose and glutamine; it should use the glutamine concentration."
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "f_{inh}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Growth-inhibition factor computed from extracellular lactate and ammonia concentrations.",
+   "description_basis": "stated",
+   "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "inhibitor",
+     "symbol": "[LAC]"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{Ilac}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[AMM]"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{Iamm}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6",
+    "description": "Growth-inhibition factor computed from extracellular lactate and ammonia concentrations.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Ilac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Iamm}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": "\\mu_{d}",
+   "condition": "n>1",
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific cell-death rate that increases with extracellular ammonia concentration toward its maximum rate.",
+   "description_basis": "stated",
+   "quote": "the rate of cell death is determined by",
+   "assumptions": [
+    {
+     "text": "Cell death depends only on the extracellular ammonia concentration.",
+     "quote": "cell death only depends on the concentration of ammonia in the extracellular medium",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{d,max}"
+    },
+    {
+     "role": "death driver",
+     "symbol": "[AMM]"
+    },
+    {
+     "role": "death threshold",
+     "symbol": "K_{d,amm}"
+    }
+   ],
+   "issue": "The definition of \\mu_{d,max} calls it the maximum specific growth rate, but Eq. 7 and the surrounding text use it as the maximum specific cell-death rate.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The definition of \\mu_{d,max} calls it the maximum specific growth rate, but Eq. 7 and the surrounding text use it as the maximum specific cell-death rate."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "Specific cell-death rate that increases with extracellular ammonia concentration toward its maximum rate.",
+    "description_basis": "stated",
+    "quote": "the rate of cell death is determined by",
+    "assumptions": [
+     {
+      "text": "Cell death depends only on the extracellular ammonia concentration.",
+      "quote": "cell death only depends on the concentration of ammonia in the extracellular medium",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{d,max}"
+     },
+     {
+      "role": "death driver",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "death threshold",
+      "symbol": "K_{d,amm}"
+     }
+    ],
+    "issue": "The definition of \\mu_{d,max} calls it the maximum specific growth rate, but Eq. 7 and the surrounding text use it as the maximum specific cell-death rate."
+   }
+  },
+  "8": {
+   "form": "ODE",
+   "computes": "[GLC]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Glucose balance around the bioreactor accounting for cellular uptake and glucose entering and leaving with the flow.",
+   "description_basis": "stated",
+   "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "Glucose balance around the bioreactor accounting for cellular uptake and glucose entering and leaving with the flow.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "9": {
+   "form": "algebraic",
+   "computes": "Q_{glc}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific glucose uptake is calculated as the growth-associated glucose demand plus the glucose maintenance demand.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "yield",
+     "symbol": "Y_{x,glc}"
+    },
+    {
+     "role": "maintenance coefficient",
+     "symbol": "m_{glc}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "9",
+    "description": "Specific glucose uptake is calculated as the growth-associated glucose demand plus the glucose maintenance demand.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "yield",
+      "symbol": "Y_{x,glc}"
+     },
+     {
+      "role": "maintenance coefficient",
+      "symbol": "m_{glc}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "ODE",
+   "computes": "[GLN]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The glutamine balance in the culture medium accounts for cellular uptake, glutamine degradation, feed input, and outlet removal.",
+   "description_basis": "stated",
+   "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+   "assumptions": [
+    {
+     "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+     "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The right-hand terms have units of amount per time, whereas d([GLN])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[GLN].",
+   "status": "pending",
+   "review": [
+    "blocking assumption: Feed volume was kept small relative to culture volume to avoid dilution effects.",
+    "possible misprint: The right-hand terms have units of amount per time, whereas d([GLN])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[GLN]."
+   ],
+   "llm": {
+    "eq": "10",
+    "description": "The glutamine balance in the culture medium accounts for cellular uptake, glutamine degradation, feed input, and outlet removal.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "assumptions": [
+     {
+      "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+      "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": "The right-hand terms have units of amount per time, whereas d([GLN])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[GLN]."
+   }
+  },
+  "11": {
+   "form": "algebraic",
+   "computes": "Q_{gln}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific glutamine uptake is calculated as the growth-associated glutamine demand plus the glutamine maintenance demand.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "yield",
+     "symbol": "Y_{x,gln}"
+    },
+    {
+     "role": "maintenance coefficient",
+     "symbol": "m_{gln}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "11",
+    "description": "Specific glutamine uptake is calculated as the growth-associated glutamine demand plus the glutamine maintenance demand.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "yield",
+      "symbol": "Y_{x,gln}"
+     },
+     {
+      "role": "maintenance coefficient",
+      "symbol": "m_{gln}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "algebraic",
+   "computes": "m_{gln}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The glutamine maintenance coefficient increases with glutamine concentration and approaches a finite maximum.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[GLN]"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\alpha_{1}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "\\alpha_{2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "The glutamine maintenance coefficient increases with glutamine concentration and approaches a finite maximum.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "α_{1}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "α_{2}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "13": {
+   "form": "ODE",
+   "computes": "[LAC]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The extracellular lactate balance accounts for cellular production and removal through the outlet.",
+   "description_basis": "stated",
+   "quote": "The mass balances for lactate and ammonia are",
+   "assumptions": [
+    {
+     "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+     "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The right-hand terms have units of amount per time, whereas d([LAC])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[LAC].",
+   "status": "pending",
+   "review": [
+    "blocking assumption: Feed volume was kept small relative to culture volume to avoid dilution effects.",
+    "possible misprint: The right-hand terms have units of amount per time, whereas d([LAC])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[LAC]."
+   ],
+   "llm": {
+    "eq": "13",
+    "description": "The extracellular lactate balance accounts for cellular production and removal through the outlet.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "assumptions": [
+     {
+      "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+      "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": "The right-hand terms have units of amount per time, whereas d([LAC])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[LAC]."
+   }
+  },
+  "14": {
+   "form": "algebraic",
+   "computes": "Q_{lac}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific lactate production is calculated from glucose uptake using the lactate-on-glucose yield.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "product",
+     "symbol": "Q_{lac}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "Q_{glc}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{lac,glc}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "14",
+    "description": "Specific lactate production is calculated from glucose uptake using the lactate-on-glucose yield.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "Q_{lac}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "Q_{glc}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{lac,glc}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "15": {
+   "form": "ODE",
+   "computes": "[AMM]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The extracellular ammonia balance accounts for cellular production, glutamine degradation, and removal through the outlet.",
+   "description_basis": "stated",
+   "quote": "The mass balances for lactate and ammonia are",
+   "assumptions": [
+    {
+     "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+     "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The right-hand terms have units of amount per time, whereas d([AMM])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[AMM].",
+   "status": "pending",
+   "review": [
+    "blocking assumption: Feed volume was kept small relative to culture volume to avoid dilution effects.",
+    "possible misprint: The right-hand terms have units of amount per time, whereas d([AMM])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[AMM]."
+   ],
+   "llm": {
+    "eq": "15",
+    "description": "The extracellular ammonia balance accounts for cellular production, glutamine degradation, and removal through the outlet.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "assumptions": [
+     {
+      "text": "Feed volume was kept small relative to culture volume to avoid dilution effects.",
+      "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": "The right-hand terms have units of amount per time, whereas d([AMM])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[AMM]."
+   }
+  },
+  "16": {
+   "form": "algebraic",
+   "computes": "Q_{amm}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "Specific ammonia production is calculated from glutamine uptake using the ammonia-on-glutamine yield.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "product",
+     "symbol": "Q_{amm}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "Q_{gln}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{amm,gln}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16",
+    "description": "Specific ammonia production is calculated from glutamine uptake using the ammonia-on-glutamine yield.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "Q_{amm}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "Q_{gln}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{amm,gln}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "ODE",
+   "computes": "m_{H}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The heavy-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay.",
+   "description_basis": "stated",
+   "quote": "The heavy- and light-chain mRNA balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "17",
+    "description": "The heavy-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay.",
+    "description_basis": "stated",
+    "quote": "The heavy- and light-chain mRNA balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "18": {
+   "form": "ODE",
+   "computes": "m_{L}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The light-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay.",
+   "description_basis": "stated",
+   "quote": "The heavy- and light-chain mRNA balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "18",
+    "description": "The light-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay.",
+    "description_basis": "stated",
+    "quote": "The heavy- and light-chain mRNA balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "19": {
+   "form": "ODE",
+   "computes": "[H]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The intracellular heavy-chain balance in the ER computes accumulation from translation minus consumption in assembly.",
+   "description_basis": "stated",
+   "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "19",
+    "description": "The intracellular heavy-chain balance in the ER computes accumulation from translation minus consumption in assembly.",
+    "description_basis": "stated",
+    "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "20": {
+   "form": "ODE",
+   "computes": "[L]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The intracellular light-chain balance in the ER computes accumulation from translation minus consumption in assembly.",
+   "description_basis": "stated",
+   "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "20",
+    "description": "The intracellular light-chain balance in the ER computes accumulation from translation minus consumption in assembly.",
+    "description_basis": "stated",
+    "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "21": {
+   "form": "algebraic",
+   "computes": "R_{H}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The algebraic law computes the rate of heavy-chain consumption during assembly.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[H]"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "K_{A}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "21",
+    "description": "The algebraic law computes the rate of heavy-chain consumption during assembly.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H]"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{A}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "22": {
+   "form": "algebraic",
+   "computes": "R_{L}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The algebraic law computes the rate of light-chain consumption during assembly of the ER intermediates.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[H_2]"
+    },
+    {
+     "role": "substrate",
+     "symbol": "[L]"
+    },
+    {
+     "role": "substrate",
+     "symbol": "[H_2L]"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "K_{A}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "22",
+    "description": "The algebraic law computes the rate of light-chain consumption during assembly of the ER intermediates.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H_{2}]"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[L]"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[H_{2}L]"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{A}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "23": {
+   "form": "ODE",
+   "computes": "[H_2]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The ER heavy-chain dimer intermediate balance computes its accumulation from dimer formation minus consumption in association with light chains.",
+   "description_basis": "stated",
+   "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "23",
+    "description": "The ER heavy-chain dimer intermediate balance computes its accumulation from dimer formation minus consumption in association with light chains.",
+    "description_basis": "stated",
+    "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "24": {
+   "form": "ODE",
+   "computes": "[H_2L]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The ER heavy-chain dimer–light-chain intermediate balance computes its accumulation from formation minus consumption in association with another light chain.",
+   "description_basis": "stated",
+   "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "24",
+    "description": "The ER heavy-chain dimer–light-chain intermediate balance computes its accumulation from formation minus consumption in association with another light chain.",
+    "description_basis": "stated",
+    "quote": "The intraER heavy- and light-chain and assembly intermediates balances are",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "25": {
+   "form": "ODE",
+   "computes": "[H_2L_2]_{ER}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The intracellular ER antibody balance computes accumulation of assembled H2L2 from assembly of H2L and L, offset by transport out of the ER.",
+   "description_basis": "stated",
+   "quote": "The intraER MAb balance is",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "25",
+    "description": "The intracellular ER antibody balance computes accumulation of assembled H2L2 from assembly of H2L and L, offset by transport out of the ER.",
+    "description_basis": "stated",
+    "quote": "The intraER MAb balance is",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "26": {
+   "form": "ODE",
+   "computes": "[H_2L_2]_{G}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The Golgi antibody balance computes accumulation of assembled antibody arriving from the ER, offset by transport to the medium.",
+   "description_basis": "stated",
+   "quote": "Similarly, for the Golgi apparatus:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "26",
+    "description": "The Golgi antibody balance computes accumulation of assembled antibody arriving from the ER, offset by transport to the medium.",
+    "description_basis": "stated",
+    "quote": "Similarly, for the Golgi apparatus:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "27": {
+   "form": "ODE",
+   "computes": "[MAb]",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The extracellular MAb balance computes production by viable cells, adjusted for growth, and loss through outlet flow.",
+   "description_basis": "stated",
+   "quote": "Finally, the rate of MAb production is",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The production and outlet terms are missing division by V: with [MAb] defined as a concentration, Q_MAb V X_ν and F_out[MAb] have amount-per-time units rather than concentration-per-time units.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The production and outlet terms are missing division by V: with [MAb] defined as a concentration, Q_MAb V X_ν and F_out[MAb] have amount-per-time units rather than concentration-per-time units."
+   ],
+   "llm": {
+    "eq": "27",
+    "description": "The extracellular MAb balance computes production by viable cells, adjusted for growth, and loss through outlet flow.",
+    "description_basis": "stated",
+    "quote": "Finally, the rate of MAb production is",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The production and outlet terms are missing division by V: with [MAb] defined as a concentration, Q_MAb V X_ν and F_out[MAb] have amount-per-time units rather than concentration-per-time units."
+   }
+  },
+  "28": {
+   "form": "algebraic",
+   "computes": "Q_{MAb}",
+   "condition": null,
+   "value": null,
+   "section": "Appendix A. List of model equations (Kontoravdi et al., 2005)",
+   "description": "The algebraic secretion-rate law calculates MAb production from Golgi antibody abundance, scaled by Golgi glycosylation efficiency and transport factors.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "transported species",
+     "symbol": "[H_2L_2]_{G}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "K_{G}"
+    },
+    {
+     "role": "efficiency factor",
+     "symbol": "\\varepsilon_{2}"
+    },
+    {
+     "role": "scaling factor",
+     "symbol": "\\lambda"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "28",
+    "description": "The algebraic secretion-rate law calculates MAb production from Golgi antibody abundance, scaled by Golgi glycosylation efficiency and transport factors.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "transported species",
+      "symbol": "[H_2L_2]_{G}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{G}"
+     },
+     {
+      "role": "efficiency factor",
+      "symbol": "\\varepsilon_{2}"
+     },
+     {
+      "role": "scaling factor",
+      "symbol": "\\lambda"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

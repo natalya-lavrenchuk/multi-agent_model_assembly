@@ -1,0 +1,31 @@
+@prefix mkg: <http://example.org/mkg#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mkg:doc_x_10_1016_j_sajce_2020_07_006_monod_model a mkg:Document ; mkg:doi "10.1016/j.sajce.2020.07.006#monod-model" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1 a mkg:RateLaw ;
+    mkg:sympyExpr "Eq(mu, mu_max*S/(K_s+S))" ;
+    mkg:latexSource "\\mu=\\frac{\\mu_{m a x}S}{K_{s}+S}\\quad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad(3)" ;
+    mkg:kindStated false ;
+    mkg:hasName "Monod model" ;
+    mkg:nameSource "prose" ;
+    mkg:computes "mu" ;
+    mkg:uses "\u03bc" ;
+    mkg:uses "\u03bcmax" ;
+    mkg:uses "Ks" ;
+    mkg:uses "S" ;
+    mkg:derivedDimension [ mkg:ofSymbol "mu" ; mkg:exponent "dim_mu_max" ] ;
+    mkg:derivedDimension [ mkg:ofSymbol "S" ; mkg:exponent "1" ] ;
+    mkg:derivedDimension [ mkg:ofSymbol "mu_max" ; mkg:exponent "dim_mu_max" ] ;
+    mkg:derivedDimension [ mkg:ofSymbol "K_s" ; mkg:exponent "1" ] ;
+    mkg:hasStatus mkg:accepted .
+
+mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1_prov a mkg:ExtractionRecord ;
+    mkg:fromDocument mkg:doc_x_10_1016_j_sajce_2020_07_006_monod_model ;
+    mkg:fromBlock "/page/2/Equation/11" ;
+    mkg:producedBy "openai/gpt-oss-120b/strict/p2.v1" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1_namespan a mkg:SourceSpan ;
+    mkg:fromDocument mkg:doc_x_10_1016_j_sajce_2020_07_006_monod_model ;
+    mkg:verbatimText "The Monod model was first introduced by Jacques Monod in 1942 to describe the relationship between specific growth rate and substrate utilization rate in a bioreactor (Monod, 1949 )." ;
+    mkg:supports mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1 .

@@ -1,0 +1,318 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "p5-5": {
+   "form": "algebraic",
+   "computes": "k_{1}^{*}",
+   "condition": null,
+   "value": null,
+   "section": "REACTION MECHANISM AND DERIVATION OF THE KINETIC EQUATIONS",
+   "description": "Temperature correlation for the thermodynamically determined equilibrium constant k₁*.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": "The equation prints lowercase k₁*, whereas the surrounding text identifies this equilibrium constant as uppercase K₁*, suggesting a case misprint.",
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "possible misprint: The equation prints lowercase k₁*, whereas the surrounding text identifies this equilibrium constant as uppercase K₁*, suggesting a case misprint."
+   ],
+   "llm": {
+    "eq": "p5-5",
+    "description": "Temperature correlation for the thermodynamically determined equilibrium constant k₁*.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants K₁* and K₃* are thermodynamically determined. The values were taken from Graaf et al. (1986):",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The equation prints lowercase k₁*, whereas the surrounding text identifies this equilibrium constant as uppercase K₁*, suggesting a case misprint."
+   }
+  },
+  "p5-6": {
+   "form": "algebraic",
+   "computes": "K_{3}^{*}",
+   "condition": null,
+   "value": null,
+   "section": "REACTION MECHANISM AND DERIVATION OF THE KINETIC EQUATIONS",
+   "description": "Reciprocal temperature correlation for the water-gas-shift equilibrium constant K₃*.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "p5-6",
+    "description": "Reciprocal temperature correlation for the water-gas-shift equilibrium constant K₃*.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants K₁* and K₃* are thermodynamically determined. The values were taken from Graaf et al. (1986):",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "p5-8": {
+   "form": "algebraic",
+   "computes": "\\kappa",
+   "condition": null,
+   "value": null,
+   "section": "PARAMETER ESTIMATION",
+   "description": "Reparameterized temperature dependence of the fitted kinetic parameter groups.",
+   "description_basis": "stated",
+   "quote": "Since a reparametrisation was applied in the estimation, the numbers pertain to the formula",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "p5-8",
+    "description": "Reparameterized temperature dependence of the fitted kinetic parameter groups.",
+    "description_basis": "stated",
+    "quote": "Since a reparametrisation was applied in the estimation, the numbers pertain to the formula",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3.1": {
+   "form": "algebraic",
+   "computes": "r_{MeOH}",
+   "condition": null,
+   "value": null,
+   "section": "PARAMETER ESTIMATION",
+   "description": "Computes the net methanol synthesis rate from the reactant and product partial pressures and the kinetic parameter groups.",
+   "description_basis": "stated",
+   "quote": "for the rate of methanol synthesis and the reverse water gas shift reaction",
+   "assumptions": [
+    {
+     "text": "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions.",
+     "quote": "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{5a}^{\\prime}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{H_2}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{H_2O}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "assumption quote not found: Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible."
+   ],
+   "llm": {
+    "eq": "3.1",
+    "description": "Computes the net methanol synthesis rate from the reactant and product partial pressures and the kinetic parameter groups.",
+    "description_basis": "stated",
+    "quote": "for the rate of methanol synthesis and the reverse water gas shift reaction",
+    "assumptions": [
+     {
+      "text": "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions.",
+      "quote": "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31).",
+      "process_condition": false
+     },
+     {
+      "text": "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible.",
+      "quote": "The use of fugacities, rather than partial pressures, was considered, applying the Soave–Redlich–Kwong equation of state (36). The compressibility factors were never outside the 0.99 to 1.01 range and found to give negligible changes in the results.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{5a}^{\\prime}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{H_2}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{H_2O}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "3.2": {
+   "form": "algebraic",
+   "computes": "r_{RWGS}",
+   "condition": null,
+   "value": null,
+   "section": "PARAMETER ESTIMATION",
+   "description": "Computes the net reverse water-gas-shift rate from the reactant and product partial pressures and the kinetic parameter groups.",
+   "description_basis": "stated",
+   "quote": "for the rate of methanol synthesis and the reverse water gas shift reaction",
+   "assumptions": [
+    {
+     "text": "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions.",
+     "quote": "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{1}^{\\prime}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{H_2}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{H_2O}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "assumption quote not found: Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible."
+   ],
+   "llm": {
+    "eq": "3.2",
+    "description": "Computes the net reverse water-gas-shift rate from the reactant and product partial pressures and the kinetic parameter groups.",
+    "description_basis": "stated",
+    "quote": "for the rate of methanol synthesis and the reverse water gas shift reaction",
+    "assumptions": [
+     {
+      "text": "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions.",
+      "quote": "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31).",
+      "process_condition": false
+     },
+     {
+      "text": "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible.",
+      "quote": "The use of fugacities, rather than partial pressures, was considered, applying the Soave–Redlich–Kwong equation of state (36). The compressibility factors were never outside the 0.99 to 1.01 range and found to give negligible changes in the results.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{1}^{\\prime}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{H_2}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{H_2O}"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

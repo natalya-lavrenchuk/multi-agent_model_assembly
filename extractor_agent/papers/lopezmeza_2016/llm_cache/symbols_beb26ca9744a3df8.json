@@ -1,0 +1,94 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2330,
+  "completion_tokens": 3590,
+  "total_tokens": 5920,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2327,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3072,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Monod growth with Luedeking-Piret mAb formation (CHO, 33 and 37 C)\n\nEquations:\n(5) \\mathbf{d}[\\boldsymbol{P}]/\\mathbf{d}\\mathbf{t}=\\mathbf{r}_{\\mathbf{p}}=\\alpha\\mathbf{r}_{\\mathbf{x}}+\\boldsymbol{\\beta}[\\boldsymbol{X}];\\quad\\mathbf{r}_{\\mathbf{x}}=\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}      <- \"l production rate ( $ r_x $) at each time. A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production (Eq. 5).\"\n\nSymbols:\n\nr_{p}   [NOT COMPUTED]\n  [141] (sentence, p.4) Here, [P] is the mAb concentration at a given point, t is time,  $ r_p $ is the rate of accumulation of product in time within the reaction vessel, [X] is the cell concentration at that given time,  $ r_x $ is the rate of cell growth, and  $ \\alpha $ and  $ \\b\n  [11] (sentence, p.1) $ r_p = d[mAb]/dt $).\n\n\\alpha   [NOT COMPUTED]\n  [141] (sentence, p.4) Here, [P] is the mAb concentration at a given point, t is time,  $ r_p $ is the rate of accumulation of product in time within the reaction vessel, [X] is the cell concentration at that given time,  $ r_x $ is the rate of cell growth, and  $ \\alpha $ and  $ \\b\n  [144] (sentence, p.5) Here  $ P_{n} $ is the antibody concentration at the present time step,  $ P_{n-1} $ is the antibody concentration at the previous time step of the integration,  $ \\alpha $ and  $ \\beta $ are the Luedeking–Piret constants, and  $ \\Delta t $ is the time step of\n  [331] (sentence, p.11) These  $ \\alpha $ and  $ \\beta $ values can be used to accurately reproduce data obtained in experiments where the initial substrate concentration ranges from 2.4 to 4.5 g/L (undiluted medium).\n  [290] (table_row, p.9) Table 2 Kinetic parameters determined from batch experiments for naive (n-CHO) and recombi...: Parameter: $ \\alpha $ ( $ \\mu $g/cell) | n-CHO cells (@ 33 °C): 0 | n-CHO cells (@ 37 °C): 0 | r-CHO cells (@ 33 °C): $ 7.65 \\times 10^{-7} $ | r-CHO cells (@ 37 °C): $ 7.65 \\times 10^{-7} $\n\n\\beta   [NOT COMPUTED]\n  [141] (sentence, p.4) Here, [P] is the mAb concentration at a given point, t is time,  $ r_p $ is the rate of accumulation of product in time within the reaction vessel, [X] is the cell concentration at that given time,  $ r_x $ is the rate of cell growth, and  $ \\alpha $ and  $ \\b\n  [144] (sentence, p.5) Here  $ P_{n} $ is the antibody concentration at the present time step,  $ P_{n-1} $ is the antibody concentration at the previous time step of the integration,  $ \\alpha $ and  $ \\beta $ are the Luedeking–Piret constants, and  $ \\Delta t $ is the time step of\n  [331] (sentence, p.11) These  $ \\alpha $ and  $ \\beta $ values can be used to accurately reproduce data obtained in experiments where the initial substrate concentration ranges from 2.4 to 4.5 g/L (undiluted medium).\n  [291] (table_row, p.9) Table 2 Kinetic parameters determined from batch experiments for naive (n-CHO) and recombi...: Parameter: $ \\beta $ ( $ \\mu $g/cell/h) | n-CHO cells (@ 33 °C): 0 | n-CHO cells (@ 37 °C): 0 | r-CHO cells (@ 33 °C): $ 7.65 \\times 10^{-8} $ | r-CHO cells (@ 37 °C): $ 1.38-3.38 \\times 10^{-8c} $",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "r_{p}",
+    "description": "Rate of accumulation of product in time within the reaction vessel",
+    "description_basis": "stated",
+    "snippet_id": 141,
+    "quote": "$ r_p $ is the rate of accumulation of product in time within the reaction vessel",
+    "unit": "concentration/time",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a process quantity that changes: the product accumulation rate in the reaction vessel.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha",
+    "description": "Luedeking–Piret constant",
+    "description_basis": "stated",
+    "snippet_id": 144,
+    "quote": "$ \\alpha $ and $ \\beta $ are the Luedeking–Piret constants",
+    "unit": "µg/cell",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "r-CHO cells, 33 °C",
+      "value": "7.65 × 10^-7 µg/cell"
+     },
+     {
+      "case": "r-CHO cells, 37 °C",
+      "value": "7.65 × 10^-7 µg/cell"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "It is a Luedeking–Piret law constant, a kinetic coefficient reported for the cell system.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\beta",
+    "description": "Luedeking–Piret constant",
+    "description_basis": "stated",
+    "snippet_id": 144,
+    "quote": "$ \\alpha $ and $ \\beta $ are the Luedeking–Piret constants",
+    "unit": "µg/cell/h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "r-CHO cells, 33 °C",
+      "value": "7.65 × 10^-8 µg/cell/h"
+     },
+     {
+      "case": "r-CHO cells, 37 °C",
+      "value": "1.38–3.38 × 10^-8 µg/cell/h"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "It is a Luedeking–Piret law constant, a kinetic coefficient reported for the cell system.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

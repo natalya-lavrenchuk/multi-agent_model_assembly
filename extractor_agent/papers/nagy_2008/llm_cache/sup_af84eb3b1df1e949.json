@@ -1,0 +1,145 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 6567,
+  "completion_tokens": 3149,
+  "total_tokens": 9716,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6564,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2251,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Determination of the Kinetic Parameters for the Crystallization of Paracetamol from Water Using Metastable Zone Width Experiments\n\nAbstract: A new approach for the estimation of kinetic parameters of crystallization from data obtained during the determination of metastable zone width is presented. The method is based on a simplified dynamic model of the system, which combines the population balance and mass balance, as well as information provided by concentration and particle size distribution measurements using ATR-FTIR spectroscopy and laser backscattering to determine simultaneously the nucleation and growth parameters from the experimental data. The application of the proposed approach is illustrated for the cooling crystallization of paracetamol from water. The technique is compared to existing approaches for the determination of nucleation parameters from metastable zone width experiments and is used to corroborate the assumptions used in the classical approaches. The key conclusion is that the assumptions made in the existing approaches, which simplifies the parameters' estimation procedure, can result in substantia\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [CONFLICT: computes B, like eq 6, 9, 13] p.2  ...cleation rate is given as a function of maximum supersaturation ( $ \\Delta C_{\\text{max}} = C_{\\text{max}} - C^* $) at the metastable limit,\n    B=k_{b}\\Delta C_{\\mathrm{m a x}}^{b}\n(2) [CONFLICT: computes B_{m}, like eq 4] p.2  ...{b} $ and b are the kinetic parameters, whereas the primary mass nucleation rate ( $ B_{m} $) used in Nyvlts's approach can be expressed as,\n    B_{\\mathrm{m}}=k_{b}k_{\\mathrm{v}}\\rho_{\\mathrm{c}}L_{\\mathrm{d}}^{3}\\Delta C_{\\mathrm{m a x}}^{b}=k_{b}^{\\prime}\\Delta C_{\\mathrm{m a x}}^{b}\n(3) [NEEDED: an ODE (the model, or background from earlier work?)] p.2  ...is the mass density of the crystal. The maximum supersaturation can be expressed in terms of the maximum undercooling ( $ \\Delta T_{max} $),\n    \\Delta C_{\\max}=\\left(\\frac{d C^{*}}{d T}\\right)\\Delta T_{\\max}\n(4) [CONFLICT: computes B_{m}, like eq 2] p.2  ...s the equilibrium concentration of the solute. On the basis of the assumption that the nucleation rate is equal to the supersaturation rate,\n    B_{\\mathrm{m}}=\\frac{dC^{*}}{dT}\\beta\n(5) [CONFLICT: computes \\beta, like eq 22, A6] p.2  ...ing rate. Combining eqs 2 and 4, the linear dependence of the maximum undercooling on the cooling rate is obtained for constant $dC^{*}/dT$.\n    \\ln(\\beta)=(b-1)\\ln\\Bigl(\\frac{d C^{*}}{d T}\\Bigr)+\\ln(k_{b}^{\\prime})+b\\ln(\\Delta T_{\\mathrm{m a x}})\n(6) [CONFLICT: computes B, like eq 1, 9, 13] p.2  ...rs due to the presence of foreign particles at a lower supersaturation. Mersmann $ ^{13} $ expresses the rate of heterogeneous nucleation as\n    B=0.965\\varphi_{\\mathrm{het}}D_{\\mathrm{AB}}(N_{\\mathrm{A}}C_{\\mathrm{c}})^{5/3}(C^{*}/C_{\\mathrm{c}})^{7/3}S^{7/3}\\sqrt{f\\ln(C_{\\mathrm{c}}/C^{*})} \\times \\exp\\left(-1.19f\\frac{\\left(\\ln\\left(C_{\\mathrm{c}}/C^{*}\\right)\\right)^{3}}{\\left(\\\n(7) [NEEDED: an ODE (the model, or background from earlier work?)] p.2  ...m undercooling ( $ \\Delta T_{\\text{max}} $) or maximum supersaturation ( $ \\Delta C_{\\text{max}} $), and constant cooling rate ( $ \\beta $),\n    t_{ind}=\\frac{\\Delta T_{max}}{\\beta}=\\left(\\frac{dC^{*}}{dT}\\right)^{-1}\\frac{\\Delta C_{max}}{\\beta}\n(8) [NEEDED: computes N, used by the model] p.2  ...ation rate. Using the power-law relation in eq 1, the number of crystals formed spontaneously from t = 0 to  $ t_{ind} $ can be expressed as\n    N=\\frac{\\Delta C_{max}}{(b+1)k_{v}C_{c}L_{d}^{3}}\n(9) [CONFLICT: computes B, like eq 1, 6, 13] p.2  ...The primary nucleation rate during  $ t \\leq t_{ind} $ is then approximated by\n    B=\\frac{N}{t_{ind}}\n(10) [NOT USED BY OTHERS: computes \\mu_{j}; the model output (keep) or not part of the model (leave out)] p.2  ...he average and total properties of the solid phase. $ ^{31} $ The jth moment, when only one characteristic size is considered, is defined by\n    \\mu_{j}=\\int_{0}^{\\infty}L^{j}_{f_{n}}(L,t)dL\n(11.1) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n    \\dot{\\mu}_{0} = B\n(11.2) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n    \\dot{\\mu}_{1} = G\\mu_{0}+Br_{0}\n(11.3) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n    \\dot{\\mu}_{2} = 2G\\mu_{1}+Br_{0}^{~2}\n(11.4) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n    \\dot{\\mu}_{3} = 3G\\mu_{2}+Br_{0}^{~3}\n(11.5) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n    \\dot{C} = -\\rho_{c}k_{v}(3G\\mu_{2}+Br_{0}^{~3})\n(12) [NEEDED: computes G, used by the model] p.3  ... the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\n    G=k_{g}\\Delta C^{g}\n(13) [CONFLICT: computes B, like eq 1, 6, 9] p.3  ... the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\n    B=k_{b}\\Delta C^{b}\n(14) [not an equation] p.3  ...eing the number of experiments) and  $ K_l $ the number of discrete time points in experiment l, and the estimation problem is formulated as\n    \\min_{\\theta}\\left\\{J_{\\mathrm{est}}=\\sum_{l=1}^{N_{\\mathrm{ex}}}\\sum_{k=0}^{K_{l}}\\sum_{i=1}^{N_{\\mathrm{y}}}\\left\\{(y_{i}(t_{k,l};\\theta)-y_{i}^{\\exp}(t_{k,l}))^{2}\\right\\}\\right\n(15) [not an equation] p.3  ...subject to model equations (11) and\n    \\theta_{\\min}\\leq\\theta\\leq\\theta_{\\max}\n(16) [UPDATE of M_{\\theta} (applied in printed order on top of the law that computes it): NEEDED: updates M_{\\theta}, used by the model] p.3  ... identified model, the confidence intervals of the estimated parameters were calculated. The measurement matrix is given by the block matrix\n    M_{\\theta}=\\left[\\begin{matrix}{M_{\\theta}^{~0}}\\\\ {M_{\\theta}^{~1}}\\\\ {\\vdots}\\\\ {M_{\\theta}^{~k_{N_{e x}}}}\\\\ \\end{matrix}\\right]\n(17) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ...with  $ k_{N_{\\mathrm{ex}}} = \\sum_{l=1}^{N_{\\mathrm{ex}}} K_l $ number of  $ (N_y \\times N_\\theta) $ sensitivity matrixes,\n    M_{\\theta}^{k_{l}}=\\frac{d y^{k_{l}}}{d\\theta}\n(18) [NOT USED BY OTHERS: computes P; the model output (keep) or not part of the model (leave out)] p.3  ...with  $ k_{l}=0,..., K_{l} $. The precision matrix  $ (P) $, covariance matrix  $ (V) $ are given by\n    P=\\left(M_{\\theta}^{T}M_{\\theta}\\right)^{-1}\n(19) [NOT USED BY OTHERS: computes V; the model output (keep) or not part of the model (leave out)] p.3  ...with  $ k_{l}=0,..., K_{l} $. The precision matrix  $ (P) $, covariance matrix  $ (V) $ are given by\n    V=s_{R}^{\\quad2}P\n(20) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...thrm{ex}}}+1) - N_{\\theta} - 1 $ being the number of degrees of freedom. The confidence intervals are calculated using the t-test, $ ^{32} $\n    \\theta=\\hat{\\theta}\\pm t_{\\alpha/2,N_{\\mathrm{d f}}}\\sqrt{d i a g(V)}\n(21) [NEEDED: computes C^{*}, used by the model] p.3  ...acetamol (PCM) from water. The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by, $ ^{28} $\n    C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066\n(22) [CONFLICT: computes \\beta, like eq 5, A6] p.6  ...In this case, a similar expression to (5) can be derived (see Appendix),\n    \\ln(\\beta)=(m-1)\\ln\\bigl(\\frac{d C^{*}}{d T}\\bigr)+\\ln(K)+m\\ln(\\Delta T_{\\mathrm{m a x}})\n(23) [NEEDED: computes b, used by the model] p.6  ...pe and intercept are inherently different. From the resulting expression for $m$ (see Appendix), the nucleation order can then be written as\n    b=4m-3g-4\n(24) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.7  ...leq t \\leq t_{ind} $, it can be easily shown that the number of nuclei obtained by Method 2 ( $ N_2 $) and Method 3 ( $ N_3 $) is related by\n    \\frac{N_{2}}{N_{3}}=\\frac{\\int_{0}^{t_{ind}}k_{b}\\Delta C_{\\max}^{b}dt}{\\int_{0}^{t_{ind}}k_{b}\\Delta C^{b}dt}\\simeq b+1\n(A1) [NEEDED: an ODE (the model, or background from earlier work?)] p.7  ...The supersaturation in the period  $ 0 \\leq t \\leq t_{\\text{ind}} $ is expressed by a relation similar to eq 7\n    \\Delta C=\\frac{dC^{*}}{dT}\\beta t\n(A2) [NEEDED: an ODE (the model, or background from earlier work?)] p.7  ...ind}} $ grow in the remaining time interval  $ (t_{\\text{ind}} - t) $ to a detectable size  $ L_d $ with growth kinetics described by eq 12,\n    \\begin{aligned}L_{\\mathrm{d}}=&\\int_{t}^{t_{\\mathrm{ind}}}k_{g}\\Delta C^{g}=\\int_{t}^{t_{\\mathrm{ind}}}k_{g}\\Big(\\frac{dC^{*}}{dT}\\beta t\\Big)^{g}=\\\\&\\frac{k_{g}}{g+1}\\Big(\\frac{dC^{*}}{dT}\\beta\\Big)^{g}(t_{\\mathrm{ind}}^{g+1}-t^{g+1})\\end{\n(A3) [CONFLICT: computes m_{c}, like eq A4] p.7  ...Using nucleation kinetics given by eq 13, the overall mass of the crystals formed at  $ t_{ind} $ is\n    m_{c}=\\int_{0}^{t_{\\mathrm{i n d}}}L_{\\mathrm{d}}^{3}k_{\\mathrm{v}}\\rho_{c}\\frac{d N}{d t}d t=\\int_{0}^{t_{\\mathrm{i n d}}}L_{\\mathrm{d}}^{3}k_{\\mathrm{v}}\\rho_{c}k_{b}\\Delta C^{b}d t\n(A4) [CONFLICT: computes m_{c}, like eq A3] p.7  ...Substituting eqs 7, A1, and A2 into A3, the evaluation of the integral results in\n    m_{c}=\\frac{k_{\\mathrm{v}}\\rho_{c}k_{b}k_{g}^{3}}{\\left(g+1\\right)^{3}}q\\left(\\frac{dC^{*}}{dT}\\beta\\right)^{3g+b}\\left(\\frac{\\Delta T_{\\max}}{\\beta}\\right)^{3g+b+4}\n(A5) [NEEDED: computes K, used by the model] p.7  ...Defining\n    K=\\left(\\frac{k_{v}\\rho_{c}k_{b}k_{g}^{~3}}{m_{c}(g+1)^{3}}q\\right)^{1/4}\n(A6) [CONFLICT: computes \\beta, like eq 5, 22] p.7  ...and $m = (3g + b + 4)/4$, eq A4 can be written as follows\n    \\ln(\\beta)=(m-1)\\ln\\Bigl(\\frac{d C^{*}}{d T}\\Bigr)+\\ln(K)+m\\ln(\\Delta T_{\\mathrm{m a x}})\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The technique is compared to existing approaches for the determination of nucleation parameters from metastable zone width experiments and is used to corroborate the assumptions used in the classical approaches.\n- (p.1) The key conclusion is that the assumptions made in the existing approaches, which simplifies the parameters' estimation procedure, can result in substantial error in the nucleation kinetics.\n- (p.1) $ ^{10,11} $ As a consequence, the development of a model that can adequately describe the process and the ability to accurately estimate the parameters in the model is of paramount importance.\n- (p.1) Because a complete theoretical model for crystallization kinetics does not exist, primary nucleation and growth rates are usually expressed as empirical (or semiempirical) power-law equations with supersaturation as the \n- (p.1) However, various assumptions are made to express the nucleation rate as a function of the measured variables (i.e., the metastable zone width and supersaturation rate) to estimate the parameters.\n- (p.1) Such assumptions could lead to inaccurate model parameters.\n- (p.1) This article describes a more rigorous approach to simultaneously estimate the nucleation and growth kinetics from metastable zone experiments using a model of the crystallization process with dynamic population and mass\n- (p.1) The identified model is then used to assess the existing approaches for identifying nucleation kinetics from metastable zone width experiments.\n- (p.2) It is assumed that the nucleation rate at the beginning of nucleation is equal to the supersaturation rate for a limited period of time during which the growth of the just formed crystals is neglected.\n- (p.2) On the basis of the assumption that the nucleation rate is equal to the supersaturation rate,\n- (p.2) Combining eqs 2 and 4, the linear dependence of the maximum undercooling on the cooling rate is obtained for constant $dC^{*}/dT$.\n- (p.2) Equation 6 is also valid for homogeneous nucleation when  $ \\varphi_{\\mathrm{het}} = 1 $ and f = 1.\n- (p.2) It is further assumed that the supersaturation increases proportionally with the supersaturation rate during  $ t \\leq t_{ind} $, and the mass nucleation rate equals the supersaturation rate.\n- (p.2) Using the power-law relation in eq 1, the number of crystals formed spontaneously from t = 0 to  $ t_{ind} $ can be expressed as\n- (p.2) By combining eqs 6–9 at maximum supersaturation where  $ C^* = C_{\\text{met}}^* $ ( $ C^*_{\\text{met}} $ is the equilibrium concentration at the metastable limit), it is possible to estimate  $ \\varphi_{\\text{het}} $, b \n- (p.2) The aforementioned two approaches use several assumptions, which can significantly affect the accuracy of the kinetic parameters obtained.\n- (p.2) The following approach avoids these assumptions by applying a simplified but generic dynamic model for the crystallization process to estimate the kinetic parameters.\n- (p.2) The crystallization process is described by the population balance equation (PBE).\n- (p.3) yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n- (p.3) where B is the same nucleation rate as in eq 1 defined on a number basis.\n- (p.3) For unseeded systems, the initial condition for eq 11 is given by  $ \\mu_i(0) = 0 $ ( $ i = 0, 1, 2, 3 $), and  $ C(0) = C_i $.\n- (p.3) The estimation of the model parameters requires the solution of a nonconvex, nonlinear programming problem, which was solved using a sequential approach.\n- (p.3) subject to model equations (11) and\n- (p.3) where the residual variance (assuming that it is equal to the measurement variance) is given by  $ s_{\\mathrm{R}}^{2} = J_{\\mathrm{est}}/N_{\\mathrm{df}} $, with  $ N_{\\mathrm{df}} = N_{y}(k_{N_{\\mathrm{ex}}}+1) - N_{\\the\n- (p.3) The first batch consists of five sets of experimental data (S1–S5) obtained at slow cooling rates in the range 3.22–4.03 °C/h using different initial paracetamol concentrations.\n- (p.4) The obtained model is able to estimate reasonably well the metastable zone width and average crystal size at the induction time for most of the experiments (Tables 3 and 4).\n- (p.5) Method 1 is based on the assumption that the onset of nucleation happens when the event is detected at the induction time  $ (t_{ind}) $ with nuclei forming at their detectable size  $ (L_d) $.\n- (p.5) Equation 5 is derived on the basis of this assumption.\n- (p.5) However, it is more correct to assume that nuclei are formed at their critical size  $ r_0 \\to 0 $ during the period  $ 0 \\leq t \\leq t_{ind} $, and then they grow in the remaining time interval  $ (t_{ind} - t) $ to a d\n- (p.6) Fitting the simulated data in Figure 4 to eq 22 gives  $ b \\simeq 4.6 $ and  $ k_{b} \\simeq 38 $, which are closer to the input values of the\n- (p.6) However, the exact values of the input parameters are not recovered because a constant value of  $ dC*/dT $ is assumed in the derivation of (22).\n- (p.7) In Method 2, eq 8 is derived using the nucleation rate expression based on maximum supersaturation for the entire interval  $ 0 \\leq t \\leq t_{ind} $, which overestimates the number of nuclei generated during this period\n- (p.7) Assuming a constant  $ dC^{*}/dT $ for  $ 0 \\leq t \\leq t_{ind} $, it can be easily shown that the number of nuclei obtained by Method 2 ( $ N_2 $) and Method 3 ( $ N_3 $) is related by\n- (p.7) The ratios are smaller than the suggested value  $ (b + 1 = 7.23) $ because of the error introduced by assuming constant  $ dC^{*}/dT $.\n- (p.7) This is further substantiated by Figure 7, which shows the variation of the supersaturation with time based on the solubility curve and the assumption of a constant  $ dC^{*}/dT $.",
+ "answer": {
+  "models": [
+   {
+    "name": "Dynamic crystallization moment model",
+    "equations": [
+     "10",
+     "11.1",
+     "11.2",
+     "11.3",
+     "11.4",
+     "11.5",
+     "12",
+     "13",
+     "21"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "1",
+    "reason": "Classical maximum-supersaturation form of the nucleation law; the dynamic model uses eq 13."
+   },
+   {
+    "eq": "2",
+    "reason": "Mass-basis nucleation rate used in the classical metastable-zone-width approach, not the dynamic model."
+   },
+   {
+    "eq": "3",
+    "reason": "Maximum-supersaturation relation used in the classical approach, not the dynamic model."
+   },
+   {
+    "eq": "4",
+    "reason": "Classical assumption-based expression for the mass nucleation rate, not the dynamic model."
+   },
+   {
+    "eq": "5",
+    "reason": "Parameter-estimation relation for cooling rate, not a process-model equation."
+   },
+   {
+    "eq": "6",
+    "reason": "Alternative heterogeneous nucleation expression discussed for the classical approach, not the dynamic model."
+   },
+   {
+    "eq": "7",
+    "reason": "Induction-time relation used in the classical metastable-zone-width approach, not the dynamic model."
+   },
+   {
+    "eq": "8",
+    "reason": "Nuclei-count expression for the classical method, not the dynamic model."
+   },
+   {
+    "eq": "9",
+    "reason": "Average nucleation-rate approximation for the classical method, not the dynamic model."
+   },
+   {
+    "eq": "14",
+    "reason": "Parameter-estimation objective function."
+   },
+   {
+    "eq": "15",
+    "reason": "Parameter-estimation bounds."
+   },
+   {
+    "eq": "16",
+    "reason": "Measurement matrix for parameter-confidence analysis, not a process-model equation."
+   },
+   {
+    "eq": "17",
+    "reason": "Sensitivity matrix for parameter estimation, not a process-model equation."
+   },
+   {
+    "eq": "18",
+    "reason": "Precision matrix for parameter-confidence analysis."
+   },
+   {
+    "eq": "19",
+    "reason": "Covariance matrix for parameter-confidence analysis."
+   },
+   {
+    "eq": "20",
+    "reason": "Confidence interval for estimated parameters."
+   },
+   {
+    "eq": "22",
+    "reason": "Analytical cooling-rate relation used to estimate nucleation parameters, not the dynamic model."
+   },
+   {
+    "eq": "23",
+    "reason": "Parameter-estimation relation for nucleation order, not a process-model equation."
+   },
+   {
+    "eq": "24",
+    "reason": "Analysis comparing nuclei counts from two methods."
+   },
+   {
+    "eq": "A1",
+    "reason": "Supersaturation relation used in the analytical metastable-zone-width derivation, not the dynamic model."
+   },
+   {
+    "eq": "A2",
+    "reason": "Integrated growth expression used in the analytical method, not the dynamic model."
+   },
+   {
+    "eq": "A3",
+    "reason": "Analytical crystal-mass calculation for the metastable-zone-width method."
+   },
+   {
+    "eq": "A4",
+    "reason": "Closed-form result for the analytical crystal-mass calculation; not a process-model equation."
+   },
+   {
+    "eq": "A5",
+    "reason": "Definition used to rewrite the analytical cooling-rate relation."
+   },
+   {
+    "eq": "A6",
+    "reason": "Analytical cooling-rate relation used for parameter estimation, not the dynamic model."
+   }
+  ],
+  "free_laws": []
+ }
+}

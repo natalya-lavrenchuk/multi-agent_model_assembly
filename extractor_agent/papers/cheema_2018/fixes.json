@@ -1,0 +1,44 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "4": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\frac{\\mathrm{d}T_{b}}{\\mathrm{d}V_{b}}=\\frac{(-\\Delta H_{b})R_{\\mathrm{N H}_{3},b}}{\\dot{m}_{b_{\\mathrm{i n}}}c_{\\mathrm{p}_{b}}} $$",
+   "corrected_latex": null,
+   "reason": "Kept as printed because the mismatch can be explained by the paper listing a molar heat-capacity unit where the equation uses mass flow; the paper provides no alternative equation supporting a correction.",
+   "quote": "“C_p is the specific heat of reacting mixture” and “\\dot{m} is the total mass flow rate of the reacting mixture.”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "6": {
+   "action": "correct",
+   "printed_latex": "$$ X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)+\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{out}}}+\\dot{n}_{\\mathrm{r},q_{\\mathrm{in}}}\\right)} $$",
+   "corrected_latex": "$$ X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)+\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{out}}}+\\dot{n}_{\\mathrm{r},q_{\\mathrm{in}}}\\right)} $$",
+   "reason": "The printed product of bed-out conversions should be the corresponding bed’s fractional conversion paired with each bed inlet flow, as the paper defines X as reactant conversion.",
+   "quote": "“X is fractional conversion of reactant”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "7": {
+   "action": "keep as printed",
+   "printed_latex": "$$ T_{m_{out}}=\\frac{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}+\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}} $$",
+   "corrected_latex": null,
+   "reason": "Kept as printed because the apparent unit mismatch can arise from the paper listing a molar heat-capacity unit while the equation uses mass flow, and no alternative mixer equation is given to support a correction.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ },
+ "misreads": {
+  "7": {
+   "printed_latex": "$$ T_{m_{out}}=\\underset{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}}{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}}+\\underset{\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\dot{m}_{q_{in}}}}{\\overline{C_{p_{m_{out}}}}} $$",
+   "corrected_latex": "$$ T_{m_{out}}=\\frac{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}+\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 7: rewritten by hand from the PDF. The paper typesets T_mout = inside the numerator (a typesetting error); read as T_mout = (m_b C_pb T_b + m_q C_pq T_q) / ((m_b + m_q) C_p,mout). OCR had \\underset",
+   "basis": "human",
+   "note": "The OCR could not read the fraction (the paper typesets it unusually); rewritten from the PDF."
+  }
+ }
+}

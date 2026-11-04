@@ -1,0 +1,257 @@
+{
+ "sup": "bolton_2006",
+ "title": "Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids",
+ "doi": "10.1016/j.memsci.2004.12.053",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "models": [
+  {
+   "name": "Cake-complete blocking",
+   "equations": [
+    "15",
+    "16",
+    "28"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": [
+    {
+     "text": "Deposited aggregates are permeable.",
+     "quote": "The deposited aggregates were assumed to be permeable.",
+     "page": 2,
+     "severity": "warning",
+     "reasoned": false,
+     "process_condition": false
+    }
+   ]
+  },
+  {
+   "name": "Cake-intermediate blocking",
+   "equations": [
+    "17",
+    "30"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": [
+    {
+     "text": "Deposited aggregates are permeable.",
+     "quote": "The deposited aggregates were assumed to be permeable.",
+     "page": 2,
+     "severity": "warning",
+     "reasoned": false,
+     "process_condition": false
+    }
+   ]
+  },
+  {
+   "name": "Cake-standard blocking",
+   "equations": [
+    "21",
+    "22",
+    "29"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": [
+    {
+     "text": "Deposited aggregates are permeable.",
+     "quote": "The deposited aggregates were assumed to be permeable.",
+     "page": 2,
+     "severity": "warning",
+     "reasoned": false,
+     "process_condition": false
+    }
+   ]
+  },
+  {
+   "name": "Complete-standard blocking",
+   "equations": [
+    "18",
+    "31"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": []
+  },
+  {
+   "name": "Intermediate-standard blocking",
+   "equations": [
+    "19",
+    "32"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": true,
+   "model_assumptions": []
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "3",
+   "reason": "Restates the standard-blocking resistance law in eq 2 as a function of time."
+  },
+  {
+   "eq": "4",
+   "reason": "Integrated single-mechanism volume solution; the standard-blocking resistance law is represented by eq 2."
+  },
+  {
+   "eq": "7",
+   "reason": "Single-mechanism complete-blocking volume solution, not one of the combined models."
+  },
+  {
+   "eq": "8",
+   "reason": "Single-mechanism intermediate-blocking volume solution, not one of the combined models."
+  },
+  {
+   "eq": "9",
+   "reason": "Restates the complete-blocking area law in eq 5 for constant-flow operation."
+  },
+  {
+   "eq": "10",
+   "reason": "Restates the intermediate-blocking area law in eq 6 for constant-flow operation."
+  },
+  {
+   "eq": "13",
+   "reason": "Integrated single-mechanism cake-filtration volume solution, not one of the combined models."
+  },
+  {
+   "eq": "23",
+   "reason": "Analytical solution of the relationship in eq 22; it restates the cake-standard model."
+  },
+  {
+   "eq": "25",
+   "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+  },
+  {
+   "eq": "26",
+   "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+  },
+  {
+   "eq": "27",
+   "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+  },
+  {
+   "eq": "1",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "2",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "5",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "6",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "11",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "12",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "14",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "20",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  },
+  {
+   "eq": "24",
+   "reason": "Building block of the combined closed-form models; the Sups use the closed forms the paper fits (one route per model)."
+  }
+ ],
+ "checks": [
+  "'Cake-complete blocking': t (used by eq 28) is computed only by eq 22, which the LLM left out (Integrated time-versus-volume expression derived from the cake-standar): an input of this model, or should eq 22 be in?",
+  "'Cake-complete blocking': R is used, but the equation computing it (eq 2, 3) is not in the model",
+  "'Cake-intermediate blocking': t (used by eq 30) is computed only by eq 22, which the LLM left out (Integrated time-versus-volume expression derived from the cake-standar): an input of this model, or should eq 22 be in?",
+  "'Cake-intermediate blocking': R is used, but the equation computing it (eq 2, 3) is not in the model",
+  "'Cake-standard blocking': t (used by eq 29) is computed only by eq 22, which the LLM left out (Integrated time-versus-volume expression derived from the cake-standar): an input of this model, or should eq 22 be in?",
+  "'Cake-standard blocking': V is used, but the equation computing it (eq 4, 7, 8, 13, 16, 17, 18, 19) is not in the model",
+  "'Complete-standard blocking': the paper's sentence lists eqs ['5', '6', '2'], but that leaves V without the equation computing it, which the LLM's list has: the LLM's list is kept",
+  "'Complete-standard blocking': boundary quote is not one of the paper's sentences: The available membrane area declines with permeate volume in the complete model ",
+  "'Complete-standard blocking': t (used by eq 31) is computed only by eq 22, which the LLM left out (Integrated time-versus-volume expression derived from the cake-standar): an input of this model, or should eq 22 be in?",
+  "'Complete-standard blocking': R_{0} is used, but the equation computing it (eq 11, 12, 27) is not in the model",
+  "'Intermediate-standard blocking': the paper's sentence lists eqs ['5', '6', '2'], but that leaves V without the equation computing it, which the LLM's list has: the LLM's list is kept",
+  "'Intermediate-standard blocking': boundary quote is not one of the paper's sentences: The available membrane area declines with permeate volume in the complete model ",
+  "'Intermediate-standard blocking': t (used by eq 32) is computed only by eq 22, which the LLM left out (Integrated time-versus-volume expression derived from the cake-standar): an input of this model, or should eq 22 be in?",
+  "'Intermediate-standard blocking': R_{0} is used, but the equation computing it (eq 11, 12, 27) is not in the model"
+ ],
+ "code_analysis": {
+  "stated": [
+   {
+    "sentence": "The available membrane area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $",
+    "equations": [
+     "5",
+     "6",
+     "2"
+    ]
+   },
+   {
+    "sentence": "In practice Eqs. (17)–(19) do not span a wide range of flux decline rates and are not as useful as the combined cake-complete model.",
+    "equations": [
+     "17",
+     "18",
+     "19"
+    ]
+   },
+   {
+    "sentence": "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23).",
+    "equations": [
+     "18",
+     "19",
+     "23"
+    ]
+   }
+  ],
+  "tags": {
+   "1": "NEEDED: a model law",
+   "2": "CONFLICT: computes R, like eq 3",
+   "3": "CONFLICT: computes R, like eq 2",
+   "4": "CONFLICT: computes V, like eq 7, 8, 13, 16, 17, 18, 19",
+   "5": "NEEDED: a model law",
+   "6": "NEEDED: a model law",
+   "7": "CONFLICT: computes V, like eq 4, 8, 13, 16, 17, 18, 19",
+   "8": "CONFLICT: computes V, like eq 4, 7, 13, 16, 17, 18, 19",
+   "9": "NEEDED: a model law",
+   "10": "NEEDED: a model law",
+   "11": "CONFLICT: computes R_{0}, like eq 12, 27",
+   "12": "CONFLICT: computes R_{0}, like eq 11, 27",
+   "13": "CONFLICT: computes V, like eq 4, 7, 8, 16, 17, 18, 19",
+   "14": "NEEDED: a model law",
+   "15": "NEEDED: a model law",
+   "16": "CONFLICT: computes V, like eq 4, 7, 8, 13, 17, 18, 19",
+   "17": "CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 18, 19",
+   "18": "CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 17, 19",
+   "19": "CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 17, 18",
+   "20": "NEEDED: a model law",
+   "21": "NEEDED: a model law",
+   "22": "NEEDED: a model law",
+   "23": "NEEDED: a model law",
+   "24": "NEEDED: a model law",
+   "25": "NEEDED: a model law",
+   "26": "NEEDED: a model law",
+   "27": "CONFLICT: computes R_{0}, like eq 11, 12",
+   "28": "NEEDED: a model law",
+   "29": "NEEDED: a model law",
+   "30": "NEEDED: a model law",
+   "31": "NEEDED: a model law",
+   "32": "NEEDED: a model law"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions set to warning (none is a condition a user checks on their process); ones that only name the model or its mechanism removed.",
+  "2026-10-27: each Sup keeps only its closed-form results (constant pressure and constant flow); building blocks (eqs 1, 2, 5, 6, 11, 12, 14, 20, 24) excluded so no variable is computed twice. Cake-standard gets eq 22 (t as a function of V), its only closed form in time."
+ ]
+}

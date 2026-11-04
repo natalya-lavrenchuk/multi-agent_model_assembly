@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.264867514,
+  "prompt_tokens": 2851,
+  "prompt_time": 0.250473066,
+  "completion_tokens": 15665,
+  "completion_time": 32.976722662,
+  "total_tokens": 18516,
+  "total_time": 33.227195728,
+  "completion_tokens_details": {
+   "reasoning_tokens": 14897
+  }
+ },
+ "user": "Equations:\n(33) \\dot{y}_{i}=Z\\Bigg[\\frac{1}{\\tau}y_{i,0}-\\Bigg(\\frac{1}{\\tau}+\\frac{1}{\\mathcal{K}}\\sum_{i=1}^{N_{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg)y_{i}+\\frac{1}{\\mathcal{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg]      <- \"^+ $ from Eq. (28). For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions $ y_i $\"\n(C-12) r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-13) r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-2) \\begin{aligned}\\lg(K_{P2})&=15.0921+1581.7/T-8.7639\\cdot\\lg(T)\\\\&\\quad+2.1105\\times10^{-3}T-1.9303\\times10^{-7}T^{2}\\end{aligned}      <- \"Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\"\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\ny_{i}   [COMPUTED by eq 33]\n  [63] (table_row, p.2) *: $ \\Theta^k $ | reduced surface centers: surface coverage of species k | $ K_i $: $ y_i $ | equilibrium constant: mole fraction of component i\n  [198] (sentence, p.5) At steady state, the experimental reaction rates  $ R_{i,exp} $ can be calculated from the measured in- and output mole fractions  $ y_{i,0} $ and  $ y_i $ according to\n  [228] (sentence, p.5) For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions  $ y_i $\n\nZ   [NOT COMPUTED]\n  [64] (table_row, p.2) *: A, B | reduced surface centers: linearized Arrhenius parameter | $ K_i $: Z | equilibrium constant: compressibility factor\n\n\\tau   [NOT COMPUTED]\n  [60] (table_row, p.2) *: $ \\tau $ | reduced surface centers: hold-up time in s | $ K_i $: $ T_n $ | equilibrium constant: standard temperature in K\n\ny_{i,0}   [NOT COMPUTED]\n  [61] (table_row, p.2) *: $ \\bar{\\Theta}^k $ | reduced surface centers: surface coverage of species with variable  $ \\phi $ | $ K_i $: $ y_{i,0} $ | equilibrium constant: mole fraction of component i at input\n  [198] (sentence, p.5) At steady state, the experimental reaction rates  $ R_{i,exp} $ can be calculated from the measured in- and output mole fractions  $ y_{i,0} $ and  $ y_i $ according to\n\nK   [NOT COMPUTED]\n  [138] (sentence, p.3) with reference temperature  $ T_{ref} = 523.15\\ K $ and equilibrium constants according to Vollbrecht (2007).\n  [56] (table_row, p.2) *: $ v_{ij} $ | reduced surface centers: stoichiometric coefficient of component i in reaction j | $ K_i $: R | equilibrium constant: gas constant in J mol $ ^{-1} $ K $ ^{-1} $\n  [59] (table_row, p.2) *: $ \\phi $ | reduced surface centers: fraction of reduced centers on the catalyst surface | $ K_i $: T | equilibrium constant: temperature in K\n\n\\nu_{ij}   [NOT COMPUTED]\n  [56] (table_row, p.2) *: $ v_{ij} $ | reduced surface centers: stoichiometric coefficient of component i in reaction j | $ K_i $: R | equilibrium constant: gas constant in J mol $ ^{-1} $ K $ ^{-1} $\n\nr_{j}   [NOT COMPUTED]\n  [201] (sentence, p.5) with  $ r_j $ from Eqs. (4)–(6) for the detailed kinetics and Eqs. (11)–(13) for the simplified kinetics and stoichiometric coefficients from Table 4.\n\nr_{CO_2}   [COMPUTED by eq C-12, C-5]\n  [209] (table_row, p.5) Table 4: Species: CO | $ r_{{CO}} $: -1 | $ r_{{CO_2}} $: 0 | $ r_{{RWGS}} $: 1\n  [210] (table_row, p.5) Table 4: Species: $ CO_{{2}} $ | $ r_{{CO}} $: 0 | $ r_{{CO_2}} $: -1 | $ r_{{RWGS}} $: -1\n  [211] (table_row, p.5) Table 4: Species: $ H_{{2}} $ | $ r_{{CO}} $: -2 | $ r_{{CO_2}} $: -3 | $ r_{{RWGS}} $: -1\n\nK_{P2}   [COMPUTED by eq C-2]\n  (no snippet mentions this symbol)\n\nr_{RWGS}   [COMPUTED by eq C-13, C-6]\n  [209] (table_row, p.5) Table 4: Species: CO | $ r_{{CO}} $: -1 | $ r_{{CO_2}} $: 0 | $ r_{{RWGS}} $: 1\n  [210] (table_row, p.5) Table 4: Species: $ CO_{{2}} $ | $ r_{{CO}} $: 0 | $ r_{{CO_2}} $: -1 | $ r_{{RWGS}} $: -1\n  [211] (table_row, p.5) Table 4: Species: $ H_{{2}} $ | $ r_{{CO}} $: -2 | $ r_{{CO_2}} $: -3 | $ r_{{RWGS}} $: -1",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "y_{i}",
+    "description": "mole fraction of component i",
+    "description_basis": "stated",
+    "snippet_id": 63,
+    "quote": "equilibrium constant: mole fraction of component i",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Z",
+    "description": "compressibility factor",
+    "description_basis": "stated",
+    "snippet_id": 64,
+    "quote": "equilibrium constant: compressibility factor",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "Z is a constant representing the compressibility factor, treated as a fixed parameter in the model.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\tau",
+    "description": "hold-up time",
+    "description_basis": "stated",
+    "snippet_id": 60,
+    "quote": "reduced surface centers: hold-up time in s",
+    "unit": "s",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "τ is a fixed reactor hold-up time used in the model, not varied during simulation.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{i,0}",
+    "description": "mole fraction of component i at input",
+    "description_basis": "stated",
+    "snippet_id": 61,
+    "quote": "equilibrium constant: mole fraction of component i at input",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "y_{i,0} is the inlet mole fraction, a process condition set by the operator.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K",
+    "description": "equilibrium constant",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "K is an equilibrium constant used in the model, treated as a fixed parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\nu_{ij}",
+    "description": "stoichiometric coefficient of component i in reaction j",
+    "description_basis": "stated",
+    "snippet_id": 56,
+    "quote": "stoichiometric coefficient of component i in reaction j",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "Stoichiometric coefficient is a fixed property of the reaction network, not computed during simulation.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "r_{j}",
+    "description": "reaction rate of reaction j",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "r_j is the reaction rate, which varies with state and is computed from kinetic expressions, not a fixed parameter.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "r_{CO_2}",
+    "description": "reaction rate of CO2",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{P2}",
+    "description": "equilibrium constant for reaction P2",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "r_{RWGS}",
+    "description": "reaction rate of reverse water-gas shift (RWGS)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

@@ -1,0 +1,306 @@
+{
+ "sup": "seidel_2018",
+ "title": "Kinetic modeling of methanol synthesis from renewable resources",
+ "doi": "10.1016/j.ces.2017.09.043",
+ "status": "proposed",
+ "proposed_by": "gpt-6-luna",
+ "models": [
+  {
+   "name": "Detailed dynamic-morphology kinetics",
+   "equations": [
+    "4",
+    "7",
+    "8",
+    "9",
+    "10",
+    "17",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "33",
+    "34",
+    "35",
+    "36",
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-5",
+    "C-6",
+    "C-31",
+    "C-32"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": [
+    {
+     "text": "Catalyst deactivation is neglected, and there are no side reactions beyond the three stated reactions.",
+     "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "The kinetics are based on the stated Langmuir–Hinshelwood mechanism.",
+     "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "The fast reactions are treated using the quasi-equilibrium assumption.",
+     "quote": "Using the quasi equilibrium assumption (QEA) for the fast reactions",
+     "page": 3,
+     "severity": "blocking",
+     "reasoned": false,
+     "eq": "4"
+    },
+    {
+     "text": "The sum of oxidized and reduced surface centers is constant.",
+     "quote": "the sum of all oxidized and reduced surface centers is constant",
+     "page": 4,
+     "severity": "blocking",
+     "reasoned": false,
+     "eq": "17"
+    }
+   ]
+  },
+  {
+   "name": "Simplified dynamic-morphology kinetics",
+   "equations": [
+    "10",
+    "17",
+    "24",
+    "25",
+    "28",
+    "33",
+    "34",
+    "35",
+    "36",
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-11",
+    "C-12",
+    "C-13",
+    "C-14",
+    "C-15",
+    "C-16",
+    "C-31",
+    "C-32"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": [
+    {
+     "text": "Catalyst deactivation is neglected, and there are no side reactions beyond the three stated reactions.",
+     "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "The kinetics use the stated lumped-reaction formulation.",
+     "quote": "The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.",
+     "page": 3,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "The sum of oxidized and reduced surface centers is constant.",
+     "quote": "the sum of all oxidized and reduced surface centers is constant",
+     "page": 4,
+     "severity": "blocking",
+     "reasoned": false,
+     "eq": "17"
+    }
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "1",
+   "reason": "Reaction-scheme statement, not a governing model equation."
+  },
+  {
+   "eq": "2",
+   "reason": "Reaction-scheme statement, not a governing model equation."
+  },
+  {
+   "eq": "3",
+   "reason": "Reaction-scheme statement, not a governing model equation."
+  },
+  {
+   "eq": "5",
+   "reason": "Superseded by corrected eq C-5."
+  },
+  {
+   "eq": "6",
+   "reason": "Superseded by corrected eq C-6."
+  },
+  {
+   "eq": "11",
+   "reason": "Superseded by corrected eq C-11."
+  },
+  {
+   "eq": "12",
+   "reason": "Superseded by corrected eq C-12."
+  },
+  {
+   "eq": "13",
+   "reason": "Superseded by corrected eq C-13."
+  },
+  {
+   "eq": "14",
+   "reason": "Superseded by corrected eq C-14."
+  },
+  {
+   "eq": "15",
+   "reason": "Superseded by corrected eq C-15."
+  },
+  {
+   "eq": "16",
+   "reason": "Superseded by corrected eq C-16."
+  },
+  {
+   "eq": "18",
+   "reason": "Reaction-scheme statement, not a governing model equation."
+  },
+  {
+   "eq": "19",
+   "reason": "Reaction-scheme statement, not a governing model equation."
+  },
+  {
+   "eq": "20",
+   "reason": "Alternative steady-state expression for K1; retain the thermodynamic expression in eq 24."
+  },
+  {
+   "eq": "21",
+   "reason": "Alternative steady-state expression for K2; retain the thermodynamic expression in eq 25."
+  },
+  {
+   "eq": "22",
+   "reason": "Steady-state expression for phi replaced under transient conditions by eq 28."
+  },
+  {
+   "eq": "23",
+   "reason": "Supports the steady-state phi expression in eq 22, which is replaced by eq 28 for the transient model."
+  },
+  {
+   "eq": "29",
+   "reason": "Calculates experimental reaction rates from measurements; not a model equation."
+  },
+  {
+   "eq": "30",
+   "reason": "Parameter-estimation objective function."
+  },
+  {
+   "eq": "31",
+   "reason": "Superseded by corrected eq C-31."
+  },
+  {
+   "eq": "32",
+   "reason": "Superseded by corrected eq C-32."
+  },
+  {
+   "eq": "37",
+   "reason": "Parameter-estimation objective function."
+  }
+ ],
+ "checks": [
+  "'Detailed dynamic-morphology kinetics': the quoted sentence lists eqs ['4', '5', '6', '7', '8', '9', '11', '12', '13', '14', '15', '16'], which compute the same quantity twice (4/11, 5/12, 6/13): not one model's boundary, so the LLM's own list is kept",
+  "'Simplified dynamic-morphology kinetics': the quoted sentence lists eqs ['4', '5', '6', '7', '8', '9', '11', '12', '13', '14', '15', '16'], which compute the same quantity twice (4/11, 5/12, 6/13): not one model's boundary, so the LLM's own list is kept"
+ ],
+ "code_analysis": {
+  "stated": [
+   {
+    "sentence": "Eqs. (34) and (35) can be used to extend the dynamic equation of the CSTR (Eq. (33)) and leads to this system of ordinary differential equations:",
+    "equations": [
+     "34",
+     "35",
+     "33"
+    ]
+   },
+   {
+    "sentence": "List of estimated parameters for the detailed Eqs. (4)–(9) and simplified model Eqs. (11)–(16) using global optimization.",
+    "equations": [
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16"
+    ]
+   },
+   {
+    "sentence": "The parameter estimation was also done for the simplified kinetic model Eqs. (11)–(13).",
+    "equations": [
+     "11",
+     "12",
+     "13"
+    ]
+   }
+  ],
+  "tags": {
+   "1": "not an equation",
+   "2": "not an equation",
+   "3": "not an equation",
+   "4": "NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)",
+   "5": "SUPERSEDED: the corrigendum corrects it as C-5; use C-5",
+   "6": "SUPERSEDED: the corrigendum corrects it as C-6; use C-6",
+   "7": "NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)",
+   "9": "NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)",
+   "10": "NOT USED BY OTHERS: computes k_{i}; the model output (keep) or not part of the model (leave out)",
+   "11": "SUPERSEDED: the corrigendum corrects it as C-11; use C-11",
+   "12": "SUPERSEDED: the corrigendum corrects it as C-12; use C-12",
+   "13": "SUPERSEDED: the corrigendum corrects it as C-13; use C-13",
+   "14": "SUPERSEDED: the corrigendum corrects it as C-14; use C-14",
+   "15": "SUPERSEDED: the corrigendum corrects it as C-15; use C-15",
+   "16": "SUPERSEDED: the corrigendum corrects it as C-16; use C-16",
+   "17": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "18": "not an equation",
+   "19": "not an equation",
+   "20": "CONFLICT: computes K_{1}, like eq 24",
+   "21": "CONFLICT: computes K_{2}, like eq 25",
+   "22": "CONFLICT: computes \\phi, like eq 28",
+   "23": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "24": "CONFLICT: computes K_{1}, like eq 20",
+   "25": "CONFLICT: computes K_{2}, like eq 21",
+   "26": "NOT USED BY OTHERS: computes \\tilde{\\Theta}^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "27": "NOT USED BY OTHERS: computes \\tilde{\\Theta}^{*}; the model output (keep) or not part of the model (leave out)",
+   "28": "CONFLICT: computes \\phi, like eq 22",
+   "29": "NOT USED BY OTHERS: computes R_{i,exp}; the model output (keep) or not part of the model (leave out)",
+   "30": "not an equation",
+   "31": "SUPERSEDED: the corrigendum corrects it as C-31; use C-31",
+   "32": "SUPERSEDED: the corrigendum corrects it as C-32; use C-32",
+   "33": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "34": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "35": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "36": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "37": "not an equation",
+   "C-11": "NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)",
+   "C-12": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "C-13": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "C-14": "NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "C-15": "NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)",
+   "C-16": "NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)",
+   "C-1": "NOT USED BY OTHERS: computes K_{P1}; the model output (keep) or not part of the model (leave out)",
+   "C-2": "NOT USED BY OTHERS: computes K_{P2}; the model output (keep) or not part of the model (leave out)",
+   "C-3": "NOT USED BY OTHERS: computes K_{P3}; the model output (keep) or not part of the model (leave out)",
+   "C-5": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "C-6": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "C-31": "NOT USED BY OTHERS: computes \\Delta G_{1}; the model output (keep) or not part of the model (leave out)",
+   "C-32": "NOT USED BY OTHERS: computes \\Delta G_{2}; the model output (keep) or not part of the model (leave out)"
+  }
+ }
+}

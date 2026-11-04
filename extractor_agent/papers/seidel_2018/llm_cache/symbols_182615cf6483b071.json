@@ -1,0 +1,214 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3086,
+  "completion_tokens": 3095,
+  "total_tokens": 6181,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3083,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2015,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Detailed kinetic model | Simplified kinetic model, steady-state φ | Simplified kinetic model, dynamic φ\n\nEquations:\n(23) \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}      <- \"ters and $ 1 - \\phi $ the total amount of oxidized centers. Following Ovesen et al. (1997), $ \\phi $ can be calculated from the equilibrium relations as follows\"\n(24) K_{1}=\\frac{k_{1}^{+}}{k_{1}^{-}}=\\exp\\left(\\frac{-\\Delta G_{1}}{RT}\\right)      <- \"en et al., 1994; Wulff, 1901). The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\"\n(25) K_{2}=\\frac{k_{2}^{+}}{k_{2}^{-}}=\\exp\\left(\\frac{-\\Delta G_{2}}{RT}\\right)      <- \"en et al., 1994; Wulff, 1901). The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\"\n(28) \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(1-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(1-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*}      <- \"ons (Vesborg et al., 2009; Wilmer and Hinrichsen, 2002). Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation\"\n(C-12) r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\nK_{1}   [COMPUTED by eq 24]\n  [174] (sentence, p.4) The equilibrium constants  $ K_{1} $ and  $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n\nK_{2}   [COMPUTED by eq 25]\n  [174] (sentence, p.4) The equilibrium constants  $ K_{1} $ and  $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n\n\\Delta G_{1}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nR   [NOT COMPUTED]\n  [20] (sentence, p.1) A B S T R A C T\n  [56] (table_row, p.2) Nomenclature: *: $ v_{ij} $ | reduced surface centers: stoichiometric coefficient of component i in reaction j | $ K_i $: R | equilibrium constant: gas constant in J mol $ ^{-1} $ K $ ^{-1} $\n\nk_{2}   [NOT COMPUTED]\n  [183] (sentence, p.4) Additional rate constants  $ k_{1}^{+}, k_{2}^{+} $ are fitted to transient data.\n  [196] (sentence, p.5) The dynamic experiments were used to estimate the kinetic parameters  $ k_1^+ $ and  $ k_2^+ $ in Eq. (28).\n  [227] (sentence, p.5) As pointed out above, dynamic experiments were used to fit the kinetic constants  $ k_1^+ $,  $ k_2^+ $ from Eq. (28).\n  [328] (table_row, p.8) Estimated parameter for catalyst ODE (Eq. (33)) using the dynamic experimental data of (Vo...: Unknown parameter: $ k_{2}^{+} $ | Estimated value: $ 3.94 \\times 10^{-4} $ | Units: $ s^{-1} $\n\n\\Delta G_{2}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\ny_{H_2}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a\n\ny_{H_2O}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\ny_{CO}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a\n\ny_{CO_2}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{1}",
+    "description": "Equilibrium constant for reaction 1.",
+    "description_basis": "stated",
+    "snippet_id": 174,
+    "quote": "The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21))",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{2}",
+    "description": "Equilibrium constant for reaction 2.",
+    "description_basis": "stated",
+    "snippet_id": 174,
+    "quote": "The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21))",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\Delta G_{1}",
+    "description": "Gibbs free-energy change associated with equilibrium constant K₁.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "J mol^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A thermodynamic free-energy property used to define an equilibrium constant.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "R",
+    "description": "Gas constant.",
+    "description_basis": "stated",
+    "snippet_id": 56,
+    "quote": "gas constant in J mol $ ^{-1} $ K $ ^{-1} $",
+    "unit": "J mol^-1 K^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "The universal gas constant is a physical constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "k_{2}",
+    "description": "Rate constant in the CO₂ reaction-rate expression.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A rate constant multiplying the CO₂ reaction-rate expression, so it is a constant of the kinetic law.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\Delta G_{2}",
+    "description": "Gibbs free-energy change associated with equilibrium constant K₂.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "J mol^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A thermodynamic free-energy property used to define an equilibrium constant.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{H_2}",
+    "description": "Gas-phase fraction of hydrogen.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "CO feed",
+      "value": "72.2%"
+     },
+     {
+      "case": "CO₂ feed",
+      "value": "71.5%"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A gas-feed composition set for each experimental run.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{H_2O}",
+    "description": "Gas-phase fraction of water.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A gas-phase composition used as a run condition rather than a fitted kinetic constant.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{CO}",
+    "description": "Gas-phase fraction of carbon monoxide.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "CO feed",
+      "value": "12.6%"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A gas-feed composition set for each experimental run.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{CO_2}",
+    "description": "Gas-phase fraction of carbon dioxide.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "CO₂ feed",
+      "value": "11.9%"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A gas-feed composition set for each experimental run.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "sup": "lopezmeza_2016",
+ "title": "Using simple models to describe the kinetics of growth, glucose consumption, and monoclonal antibody formation in naive and infliximab producer CHO cells",
+ "doi": "10.1007/s10616-015-9889-2",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "excluded": [
+  {
+   "eq": "2",
+   "reason": "Integrated form of eq 1; the differential growth equation is kept."
+  },
+  {
+   "eq": "6",
+   "reason": "Numerical integration of eq 5; the differential product-formation equation is kept."
+  },
+  {
+   "eq": "p9-1",
+   "reason": "Restates eq 3."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "CONFLICT: computes [X], like eq 2",
+   "2": "CONFLICT: computes [X], like eq 1",
+   "3": "CONFLICT: computes \\mu, like eq p9-1",
+   "4": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "5": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6": "NOT USED BY OTHERS: computes P_{n}; the model output (keep) or not part of the model (leave out)",
+   "p9-1": "CONFLICT: computes \\mu, like eq 3"
+  }
+ },
+ "equations": [
+  "1",
+  "3",
+  "4",
+  "5"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [],
+ "model_name": "Monod growth with Luedeking-Piret mAb formation (CHO, 33 and 37 C)",
+ "review_notes": [
+  "4 proposed models (n-CHO/r-CHO x 33/37 C) had identical equations: merged into one; values per condition go with the symbols"
+ ]
+}

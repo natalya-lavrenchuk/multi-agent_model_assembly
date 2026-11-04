@@ -1,0 +1,316 @@
+{
+ "paper": "asprey_2000",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "formulas": [
+  {
+   "eq": 1,
+   "page": 1,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}&\\mathbf{f}(\\dot{\\mathbf{x}}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\boldsymbol{\\theta},t)=0\\\\&\\mathbf{y}(t)=\\mathbf{g}(\\mathbf{x}(t))\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    78.0,
+    509.0,
+    334.0,
+    582.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": "2a",
+   "page": 1,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{\\Phi}_{I}=\\operatorname*{m a x}_{\\substack{\\mathbf{\\theta}\\in\\mathbf{\\Theta},\\mathbf{\\theta}^{*}\\in\\mathbf{\\Theta}^{*}}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*})^{T}\\mathbf{W}_{\\mathbf{\\theta}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*}) $$ ",
+   "bbox": [
+    724.0,
+    1330.0,
+    1047.0,
+    1369.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": null,
+   "page": 1,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}&\\int_{0}^{T}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))^{T}\\mathbf{W}_{y}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))\\\\&\\times\\ dt<\\varepsilon_{y}\\forall\\mathbf{u}(t)\\in\\mathbf{U}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    630.0,
+    1419.0,
+    1115.0,
+    1513.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": "2b",
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}{}&{{}f(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=(}\\\\ {}&{{}\\quad\\mathrm{(t h e~m o d e l~e q u a t i o n s)}}\\\\ {}&{{}\\vdots}\\\\ {}&{{}\\theta_{i}^{L}\\leq\\theta_{i}\\leq\\theta_{i}^{U}\\quad i=1,\\ldots,P}\\\\ {}&{{}\\theta_{i}^{*L}\\leq\\theta_{i}^{*}\\leq\\theta_{i}^{*U}\\quad i=1,\\ldots,P}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    78.0,
+    485.0,
+    366.0,
+    663.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": "3a",
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}{\\Phi_{D}=}&{{}\\operatorname*{m a x}_{\\mathbf{u}(t)\\in\\mathbf{U}}\\operatorname*{m i n}_{\\substack{\\theta\\in\\Theta,\\theta^{*}\\in\\Theta^{*}}}\\int_{0}^{T}(\\mathbf{y}_{(1)}(t)-\\mathbf{y}_{(2)}(t))^{T}}\\\\ {}&{{}\\times\\mathbf{W}(\\mathbf{y}_{(1)}(t)-\\mathbf{y}_{(2)}(t))\\operatorname{d}t}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    109.0,
+    1141.0,
+    482.0,
+    1233.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": "3b",
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}{}&{{}f_{(1)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=0}\\\\ {}&{{}f_{(2)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta}^{*},t)=0}\\\\ {}&{{}\\vdots}\\\\ {}&{{}\\theta_{i}^{L}\\leq\\theta_{i}\\leq\\theta_{i}^{U}\\quad i=1,\\ldots,P}\\\\ {}&{{}\\theta_{i}^{*L}\\leq\\theta_{i}^{*}\\leq\\theta_{i}^{*U}\\quad i=1,\\ldots,P}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    83.0,
+    1278.0,
+    409.0,
+    1455.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 4,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\boldsymbol{\\varphi}_{T}=&\\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{l=1}^{N_{m}}\\sum_{r=l+1}^{N_{m}}T_{l,r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)\\mathrm{d}t\\\\T_{l,l}(&\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)=(\\hat{\\boldsymbol{y}}_{l}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},t)-\\hat{\\mathbf{y}}_{r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}}^{\\prime},t))^{T}\\\\&\\times\\mathbf{W}(\\hat{\\mathbf{y}}_{l}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},t)-\\hat{\\mathbf{y}}_{r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}}^{\\prime},t))\\end{aligned} $$ ",
+   "bbox": [
+    629.0,
+    1111.0,
+    1041.0,
+    1233.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 6,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{\\Phi}_{T}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{\\substack{r=l+1}}^{N_{M}}T_{l,l}(\\varphi,\\widehat{\\mathbf{\\theta}},\\widehat{\\mathbf{\\theta}}^{\\prime},t_{k}) $$ ",
+   "bbox": [
+    85.0,
+    111.0,
+    483.0,
+    169.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 7,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ =\\arg\\max_{\\boldsymbol{\\varphi}\\in\\Phi}\\underset{\\boldsymbol{\\theta}\\in\\Theta,\\boldsymbol{\\theta}^{\\prime}\\in\\Theta^{\\prime}}{E}\\left\\{\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{l^{\\prime}=l+1}^{N_{M}}T_{l,l^{\\prime}}(\\varphi,\\widehat{\\boldsymbol{\\theta}},\\widehat{\\boldsymbol{\\theta}^{\\prime}},t_{k})\\right\\} $$ ",
+   "bbox": [
+    85.0,
+    548.0,
+    547.0,
+    612.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 8,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\Phi_{T W C}=\\arg\\max_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}\\atop{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}}\\min_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}}\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{l^{\\prime}=l+1}^{N_{M}}T_{l,l^{\\prime}}(\\varphi,\\widehat{\\mathbf{\\theta}},\\widehat{\\mathbf{\\theta}}^{\\prime},t_{k}) $$ ",
+   "bbox": [
+    82.0,
+    682.0,
+    576.0,
+    738.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 9,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{V}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\cong\\left[\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\widetilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{S}_{r}^{T}\\mathbf{S}_{s}\\right]^{-1} $$ ",
+   "bbox": [
+    81.0,
+    1018.0,
+    366.0,
+    1079.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 10,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{S}_{r}=\\frac{\\partial\\mathbf{y}_{r}(\\boldsymbol{\\varphi},\\boldsymbol{\\theta},t)}{\\partial\\boldsymbol{\\theta}}\\Bigg|_{\\boldsymbol{\\theta}=\\hat{\\boldsymbol{\\theta}}} $$ ",
+   "bbox": [
+    79.0,
+    1172.0,
+    271.0,
+    1232.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 11,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{\\Phi}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{j=1}^{P}\\sum_{i=1}^{M}\\mathbf{w}_{i j}(\\mathbf{S}_{i j})^{2}\\mathrm{d}t $$ ",
+   "bbox": [
+    77.0,
+    1447.0,
+    392.0,
+    1505.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": null,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\operatorname*{m i n}_{\\Phi,\\mathbf{w}}\\uppsi[\\mathbf{V}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi},\\mathbf{w}_{s})]. $$ ",
+   "bbox": [
+    632.0,
+    525.0,
+    805.0,
+    561.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 12,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathbf{M}_{I}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\equiv\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\tilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{Q}_{r}^{T}\\mathbf{Q}_{s} $$ ",
+   "bbox": [
+    629.0,
+    795.0,
+    887.0,
+    853.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 13,
+   "page": 3,
+   "label": "display_formula",
+   "latex": "\\[\\mathbf{Q}_{r}=\\left[\\begin{matrix}{S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ \\end{matrix}\\right]\\Leftarrow\\begin{matrix}{\\quad\\quad\\quad",
+   "bbox": [
+    628.0,
+    973.0,
+    1132.0,
+    1094.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 14,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}{}&{{}\\mathbf{\\Phi}_{{E V}}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\mathop{E}_{\\mathbf{\\Phi}\\in\\Phi}\\left\\{\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|\\right\\}}\\\\ {}&{{}\\quad\\mathrm{w h e r e:}}\\\\ {}&{{}\\quad\\mathop{{E}}_{\\mathbf{\\theta}\\in\\mathbf{\\Theta}}\\left\\{\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|\\right\\}=(2\\pi)^{-P/2}|\\mathbf{\\widetilde{\\Sigma}}|^{-1/2}\\int_{\\mathbf{\\Theta}}\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|}\\\\ {}&{{}\\quad|\\operatorname{e x p}\\mathopen{}\\mathclose\\bgroup\\left(-\\frac{1}{2}(\\mathbf{\\theta}-\\mathbf{\\widetilde{\\theta}})^{T}\\mathbf{\\widetilde{\\Sigma}}^{-1}(\\mathbf{\\theta}-\\mathbf{\\widetilde{\\theta}})\\mathbf{\\Phi}\\aftergroup\\egroup\\right)d\\mathbf{\\theta}}\\\\ \\end{aligned} $$ ",
+   "bbox": [
+    622.0,
+    1335.0,
+    1040.0,
+    1516.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 15,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\boldsymbol{\\varphi}_{R}=\\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\min_{\\boldsymbol{\\theta}\\in\\boldsymbol{\\Theta}}\\left\\{\\left|\\mathbf{M}_{I}(\\boldsymbol{\\theta},\\boldsymbol{\\varphi})\\right|\\right\\} $$ ",
+   "bbox": [
+    86.0,
+    146.0,
+    357.0,
+    187.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 16,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t}&=(r-u_{1}-\\theta_{4})x_{1}\\\\\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t}&=-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})\\end{aligned} $$ ",
+   "bbox": [
+    84.0,
+    537.0,
+    318.0,
+    655.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 17,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}} $$ ",
+   "bbox": [
+    86.0,
+    726.0,
+    313.0,
+    780.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": 18,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}} $$ ",
+   "bbox": [
+    87.0,
+    852.0,
+    338.0,
+    907.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  },
+  {
+   "eq": null,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}1.0&\\leq t_{sp_{i}}-t_{sp_{i-1}}\\leq20.0\\quad i~=~1,\\ldots,n_{sp}\\\\5.0&\\leq t_{sw_{i,j}}-t_{sw_{i,j-1}}\\leq20.0\\quad i=1,\\ldots,n_{u};\\\\&j=1,\\ldots,n_{sw,i}\\end{aligned} $$ ",
+   "bbox": [
+    630.0,
+    1211.0,
+    1018.0,
+    1304.0
+   ],
+   "route": "pipeline",
+   "source": "main"
+  }
+ ],
+ "numbered_by": "extractor/numbering.py"
+}

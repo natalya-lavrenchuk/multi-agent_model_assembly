@@ -1,0 +1,165 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3726,
+  "completion_tokens": 5036,
+  "total_tokens": 8762,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3723,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3866,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Dynamic microalgae growth and lipid production model\n\nEquations:\n(12) P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(13) I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}}      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(14) Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}})      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(15) q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3}))      <- \"cess was assumed to be covered by the Droop model. We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols. $ ^{32} $\"\n(16) m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})      <- \"t the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies. $ ^{29,35} $\"\n(17) \\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}}      <- \"nitrate uptake rate $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate. $ ^{12,13,27} $\"\n(1) \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd}   -m \\cdot X_{cd}   Q_n      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(2) \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb}   -m_{cN} \\cdot \\nu_N \\cdot X_{cd}   -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   I_{avg}   I_{avg\\_R}   q_{nl}   \\nu_N      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(3) \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(4) \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl}   m_{chl}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(5) \\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(6) \\frac{dX_N}{dt} = \\nu_N \\cdot X_{cd}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n\nSymbols:\n\nX_{cd}   [COMPUTED by eq 1]\n  [316] (line, p.8) X_{cd} mol X_{cd}-C m^{-3} Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C\n  [66] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Functional biomass  $ X_{cd} $ | Rate Equation: $ \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd} $\\n $ -m \\cdot X_{cd} $\\nSee P defined in Eqn (1\n  [67] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Carbohydrate  $ X_{carb} $ | Rate Equation: $ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n \n\nP_{m}   [NOT COMPUTED]\n  [162] (table_row, p.5) Table 2. Parameter Posterior Chain Statistics: parameter: $ P_{{m}} $ | mean: 4.3054 | SD: 0.7197 | optimal values: 4.2599 | optimal values: 3.2084\n  [199] (sentence, p.5) (1) Parameters related to the photosynthesis ( $ P_{m}, Y_{E}, k_{ye} $), carbon partitioning ( $ q_{n} $), nitrate uptake ( $ v_{nm} $), and functional biomass degradation (m):\n\nI_{sat}   [COMPUTED by eq 13]\n  (no snippet mentions this symbol)\n\nY_{E}^{c}   [COMPUTED by eq 14]\n  (no snippet mentions this symbol)\n\nY_{E}   [NOT COMPUTED]\n  [342] (line, p.8) $Y_{E}^{e} \\quad \\mathrm{mol} \\quad \\mathrm{C} \\quad (\\mathrm{mol} \\quad \\mathrm{photons})^{-1}$ Carbon yield on light energy\n  [163] (table_row, p.5) Table 2. Parameter Posterior Chain Statistics: parameter: $ Y_{{E}} $ | mean: 0.2784 | SD: 0.0876 | optimal values: 0.3075 | optimal values: 0.1713\n  [199] (sentence, p.5) (1) Parameters related to the photosynthesis ( $ P_{m}, Y_{E}, k_{ye} $), carbon partitioning ( $ q_{n} $), nitrate uptake ( $ v_{nm} $), and functional biomass degradation (m):\n\nk_{ye}   [NOT COMPUTED]\n  [164] (table_row, p.5) Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{ye}} $ | mean: 0.0290 | SD: 0.0015 | optimal values: 0.0296 | optimal values: 0.0306\n  [199] (sentence, p.5) (1) Parameters related to the photosynthesis ( $ P_{m}, Y_{E}, k_{ye} $), carbon partitioning ( $ q_{n} $), nitrate uptake ( $ v_{nm} $), and functional biomass degradation (m):\n\nq_{nl}   [COMPUTED by eq 15]\n  [339] (line, p.8) $q_{nl}$ unitless Rate portion of carbon redirection from carbohydrate to lipid accumulation\n  [67] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Carbohydrate  $ X_{carb} $ | Rate Equation: $ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n \n  [68] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Neutral lipid  $ X_{nl} $ | Rate Equation: $ \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $\\n $ +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P\n\n\\phi   [NOT COMPUTED]\n  [170] (table_row, p.5) Table 2. Parameter Posterior Chain Statistics: parameter: $ \\phi $ | mean: 0.0684 | SD: 0.0199 | optimal values: 0.0584 | optimal values: 0.0748\n\nk_{N}   [NOT COMPUTED]\n  [177] (table_row, p.5) Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{N}} $ | mean: 3.3370 | SD: 0.8794 | optimal values: 2.7503 | optimal values: 2.7775\n  [274] (sentence, p.7) Future models could modify the Chl-a degradation rate (eq 16) as  $ m_{chl} = m \\times \\max\\{(1-\\mathrm{erf}(k_N \\times S_{\\mathrm{NO}_3})) $,  $ \\mathrm{erf}(k_I \\times I_{\\mathrm{avg\\_R}})\\} $ so that Chl-a would degrade at the maximum rate if either the hig\n\nS_{NO3}   [COMPUTED by eq 5]\n  [320] (line, p.8) S_{NO3} mol N m^{-3} Concentration of nitrate as N in the reactor\n  [70] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Extracellular nitrogen  $ S_{NO3} $ | Rate Equation: $ \\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd} $ | Carbon Flow: $ \\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd} $ | Equation Nu\n  [125] (sentence, p.4) As a result, the nitrate uptake rate  $ v_{N} $ in eq 17 is linearly related to the extracellular nitrate concentration  $ S_{NO3} $ and is divided by the initial concentration  $ S_{NO3} $ to offset the effect of initial nitrate level.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "X_{cd}",
+    "description": "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C",
+    "description_basis": "stated",
+    "snippet_id": 316,
+    "quote": "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C",
+    "unit": "mol X_{cd}-C m^{-3}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "P_{m}",
+    "description": "Maximum carbon-fixation rate in the photosynthesis term",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": "4.3054 (mean; p.5, Table 2) ; 4.2599 (optimal value; p.5, Table 2) ; 3.2084 (optimal value; p.5, Table 2)",
+    "value_set": "unclear",
+    "class_reason": "A maximum photosynthesis rate constant, estimated as a model parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "I_{sat}",
+    "description": "Light saturation intensity in the carbon-fixation response",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{E}^{c}",
+    "description": "Carbon yield on light energy adjusted for average irradiance",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mol C (mol photons)^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{E}",
+    "description": "Carbon yield on light energy",
+    "description_basis": "stated",
+    "snippet_id": 342,
+    "quote": "Carbon yield on light energy",
+    "unit": "mol C (mol photons)^{-1}",
+    "unit_basis": "stated",
+    "value": "0.2784 (mean; p.5, Table 2) ; 0.3075 (optimal value; p.5, Table 2) ; 0.1713 (optimal value; p.5, Table 2)",
+    "value_set": "unclear",
+    "class_reason": "A carbon yield coefficient for light energy, estimated as a model parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "k_{ye}",
+    "description": "Coefficient controlling the irradiance-dependent decrease in carbon yield",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": "0.0290 (mean; p.5, Table 2) ; 0.0296 (optimal value; p.5, Table 2) ; 0.0306 (optimal value; p.5, Table 2)",
+    "value_set": "unclear",
+    "class_reason": "An irradiance-response coefficient in the carbon-yield law, estimated as a model parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "q_{nl}",
+    "description": "Rate portion of carbon redirection from carbohydrate to lipid accumulation",
+    "description_basis": "stated",
+    "snippet_id": 339,
+    "quote": "Rate portion of carbon redirection from carbohydrate to lipid accumulation",
+    "unit": "unitless",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\phi",
+    "description": "Maximum fraction of carbon redirected from carbohydrate to lipid accumulation",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "0.0684 (mean; p.5, Table 2) ; 0.0584 (optimal value; p.5, Table 2) ; 0.0748 (optimal value; p.5, Table 2)",
+    "value_set": "unclear",
+    "class_reason": "A dimensionless maximum fraction in the carbon-redirection law, estimated as a model parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "k_{N}",
+    "description": "Coefficient controlling the nitrate dependence in the error-function response",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "m^{3} (mol N)^{-1}",
+    "unit_basis": "inferred",
+    "value": "3.3370 (mean; p.5, Table 2) ; 2.7503 (optimal value; p.5, Table 2) ; 2.7775 (optimal value; p.5, Table 2)",
+    "value_set": "unclear",
+    "class_reason": "A nitrate-response coefficient in the error-function law, estimated as a model parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S_{NO3}",
+    "description": "Concentration of nitrate as N in the reactor",
+    "description_basis": "stated",
+    "snippet_id": 320,
+    "quote": "Concentration of nitrate as N in the reactor",
+    "unit": "mol N m^{-3}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

@@ -1,0 +1,239 @@
+@prefix mkg:  <http://example.org/mkg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+mkg: a owl:Ontology ;
+    rdfs:label "Mechanistic Modelling Knowledge Graph" ;
+    owl:versionInfo "2026-09-28" ;
+    rdfs:comment """Schema for laws, quantities and scope conditions extracted from literature.
+
+GRAPH LAYOUT (storage convention, not classes):
+  - One PAPER GRAPH per document, named by the Document IRI. Holds everything the
+    extractor found in that paper, with the paper's own symbols and classes.
+  - One SHARED GRAPH. Holds merged nodes only. Model construction reads only the
+    accepted subgraph of the shared graph.
+  - The Assembler links each paper-graph node to the shared node it matched with
+    mkg:mergedInto, one paper at a time. The merge is gated per paper: the status
+    of the merge is mkg:hasStatus on that paper's Document node.
+  - Never merged into the shared graph: BalanceLaw instances and untyped Law
+    instances (definitions, data-analysis formulas). They stay in the paper graph.""" .
+
+################################################################
+# 1. QUANTITY  --  anything with a unit
+################################################################
+
+mkg:Quantity a owl:Class ;
+    rdfs:comment "A physical quantity. Has a unit, unless its dimension depends on a fitted parameter (see mkg:hasUnit). May appear in a formula, in a scope condition, or both." .
+
+mkg:StateQuantity    a owl:Class ; rdfs:subClassOf mkg:Quantity ;
+    rdfs:comment "Obtained by integrating a balance. e.g. biomass concentration." .
+mkg:RateQuantity     a owl:Class ; rdfs:subClassOf mkg:Quantity ;
+    rdfs:comment "Computed by a constitutive law. e.g. specific growth rate mu." .
+mkg:Parameter        a owl:Class ; rdfs:subClassOf mkg:Quantity ;
+    rdfs:comment "Estimated from data. This is what Layer 3 is allowed to fit." .
+mkg:Constant         a owl:Class ; rdfs:subClassOf mkg:Quantity ;
+    rdfs:comment "Known, never estimated. e.g. gas constant." .
+mkg:ControlQuantity  a owl:Class ; rdfs:subClassOf mkg:Quantity ;
+    rdfs:comment "Set by the operator. e.g. feed flow rate." .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mkg:StateQuantity mkg:RateQuantity mkg:Parameter mkg:Constant mkg:ControlQuantity ) .
+
+mkg:hasSymbol   a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:string ;
+    rdfs:comment "In a paper graph: the symbol as that paper prints it. In the shared graph: the canonical symbol that shared formulas use. Identity is the node's IRI, not its symbol: a symbol only needs to be unique among the quantities one law uses." .
+mkg:hasUnit     a owl:ObjectProperty   ; rdfs:domain mkg:Quantity ; rdfs:range mkg:Unit ;
+    rdfs:comment "Omitted when the dimension depends on a fitted parameter (e.g. Moser Ks, concentration^n). The dimension check then reports PARTIAL, and the Assembler's dimension veto cannot fire for that quantity." .
+mkg:hasIndexSet a owl:ObjectProperty   ; rdfs:domain mkg:Quantity ; rdfs:range mkg:IndexSet .
+mkg:hasDescription a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:string ;
+    rdfs:comment "What the paper says the quantity is, in the paper's words. Read by the Assembler when judging what a quantity represents." .
+mkg:classStated a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:boolean ;
+    rdfs:comment "True only if the paper says how the value is obtained. False means the class is the model's judgement. Read by the human reviewer." .
+mkg:unitNotGiven a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:boolean ;
+    rdfs:comment "The paper printed no unit. Stated explicitly because RDF is open-world: a missing mkg:hasUnit alone cannot distinguish 'not given' from 'not yet extracted'." .
+mkg:lowerBound  a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:double .
+mkg:upperBound  a owl:DatatypeProperty ; rdfs:domain mkg:Quantity ; rdfs:range xsd:double .
+
+################################################################
+# 2. UNIT  --  with dimension exponents, so SymPy can check things
+################################################################
+
+mkg:Unit a owl:Class ;
+    rdfs:comment "Dimensions are SI base dimensions only. They cannot distinguish mass of cells from mass of substrate: a yield-like ratio is dimensionless here. Known limitation." .
+
+mkg:unitString  a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:string .
+mkg:dimM        a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:integer .
+mkg:dimL        a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:integer .
+mkg:dimT        a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:integer .
+mkg:dimN        a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:integer .
+mkg:dimTheta    a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:integer .
+
+# affine conversion to SI: value_SI = value * factor + offset
+mkg:toSIFactor  a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:double .
+mkg:toSIOffset  a owl:DatatypeProperty ; rdfs:domain mkg:Unit ; rdfs:range xsd:double .
+
+mkg:UNPARSEABLE a mkg:Unit ;
+    rdfs:comment "Placeholder for a printed unit string the parser could not read. Always accompanied by failedGate unit_parse." .
+
+################################################################
+# 3. DESCRIPTOR  --  anything WITHOUT a unit
+################################################################
+
+mkg:Descriptor a owl:Class ;
+    rdfs:comment "A qualitative or categorical property of the process. No unit, never in a formula." .
+
+mkg:valueType    a owl:DatatypeProperty ; rdfs:domain mkg:Descriptor ; rdfs:range xsd:string ;
+    rdfs:comment "boolean | enum | integer. Two descriptors with incompatible value types can never merge." .
+mkg:allowedValue a owl:DatatypeProperty ; rdfs:domain mkg:Descriptor ; rdfs:range xsd:string ;
+    rdfs:comment "Closed vocabulary. Repeated once per permitted value. Empty for boolean." .
+
+################################################################
+# 4. PHENOMENON and INDEX SET
+################################################################
+
+mkg:Phenomenon a owl:Class ;
+    rdfs:comment "What a law explains. Flat vocabulary, no hierarchy. Retrieval filters candidate laws by phenomenon FIRST." .
+
+mkg:IndexSet a owl:Class ;
+    rdfs:comment "A set a quantity is indexed over. e.g. species, streams, reactions." .
+mkg:membersFrom a owl:DatatypeProperty ; rdfs:domain mkg:IndexSet ; rdfs:range xsd:string ;
+    rdfs:comment "context | graph. 'context' means members come from the case, not the graph." .
+
+################################################################
+# 5. LAW
+################################################################
+
+mkg:Law a owl:Class ;
+    rdfs:comment "An equation. A Law with no subclass is a definition or data-analysis formula (e.g. mu from two biomass readings): kept in its paper graph, never merged." .
+
+mkg:ConstitutiveLaw a owl:Class ; rdfs:subClassOf mkg:Law ;
+    rdfs:comment "Algebraic relation plugged into a balance: rate laws, isotherms, yields, transport correlations. The only kind that can have rivals. Pass 2 kinds RateLaw and ClosureRelation map here." .
+mkg:BalanceLaw      a owl:Class ; rdfs:subClassOf mkg:Law ;
+    rdfs:comment "A balance printed in a paper. Paper graphs only, never merged: balances for model construction are generated by the Constructor. Kept to validate a generated balance against a published one." .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( mkg:ConstitutiveLaw mkg:BalanceLaw ) .
+
+mkg:hasFormula   a owl:DatatypeProperty ; rdfs:domain mkg:Law ; rdfs:range xsd:string ;
+    rdfs:comment """The whole equation as a SymPy string, Eq(lhs, rhs). Parse with every bare name forced to a Symbol (S, E, I, N are SymPy built-ins otherwise).
+PAPER GRAPH: each symbol is the formula name of a quantity the law computes or uses (ASCII, Greek spelled out: 'μmax' -> mumax). Plain symbols as printed, no indexing.
+SHARED GRAPH: canonical symbols written by the Assembler, where an indexed quantity is a sympy.IndexedBase (C[S]) whose bracketed role symbol is resolved through mkg:hasRoleSlot.""" .
+mkg:computes     a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Quantity ;
+    rdfs:comment "The left-hand side. RIVAL RULE: two accepted ConstitutiveLaws in the shared graph that compute the same quantity and explain the same phenomenon are rivals." .
+mkg:usesQuantity a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Quantity .
+mkg:explains     a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Phenomenon .
+
+################################################################
+# 6. ROLE  --  which species plays which part
+################################################################
+
+mkg:Role a owl:Class ;
+    rdfs:comment "A semantic slot a law needs filled. e.g. limiting substrate, biomass." .
+mkg:overIndexSet a owl:ObjectProperty ; rdfs:domain mkg:Role ; rdfs:range mkg:IndexSet ;
+    rdfs:comment "Two roles over different index sets can never merge." .
+mkg:roleCue      a owl:DatatypeProperty ; rdfs:domain mkg:Role ; rdfs:range xsd:string ;
+    rdfs:comment "Text cue used by the interpreter when inferring the role from a process description." .
+
+mkg:hasRoleSlot a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:RoleBinding ;
+    rdfs:comment "A role the law needs filled. The law cannot be built for a process that cannot fill every one of its role slots; this is computed at query time, not stored." .
+mkg:RoleBinding a owl:Class ;
+    rdfs:comment "The claim that, in one law, the index symbol inside C[...] stands for one role. e.g. in Monod, C[S] is the limiting substrate's concentration. A named node, because the claim is a model judgement: it carries its own evidence and status and can be rejected on its own." .
+mkg:bindsSymbol a owl:DatatypeProperty ; rdfs:domain mkg:RoleBinding ; rdfs:range xsd:string .
+mkg:bindsRole   a owl:ObjectProperty   ; rdfs:domain mkg:RoleBinding ; rdfs:range mkg:Role .
+
+################################################################
+# 7. SCOPE CONDITION  --  the load-bearing class
+################################################################
+
+mkg:ScopeCondition a owl:Class ;
+    rdfs:comment """ONE atomic condition on a law's applicability: one descriptor, one operator, one value. Never fused. Extracted from a paper (SourceSpan) or reasoned (InferenceRecord, always human-reviewed).
+Evaluated against a process description: a law is ADMISSIBLE if every blocking condition passes, EXCLUDED if any blocking condition fails, UNDETERMINED if a blocking condition cannot be evaluated. A failed warning never excludes; it attaches a note.""" .
+
+mkg:constrains   a owl:ObjectProperty   ; rdfs:domain mkg:ScopeCondition ; rdfs:range mkg:Law .
+mkg:onDescriptor a owl:ObjectProperty   ; rdfs:domain mkg:ScopeCondition ; rdfs:range mkg:Descriptor .
+mkg:operator     a owl:DatatypeProperty ; rdfs:domain mkg:ScopeCondition ; rdfs:range xsd:string ;
+    rdfs:comment "= | != | < | <= | > | >=" .
+mkg:conditionValue a owl:DatatypeProperty ; rdfs:domain mkg:ScopeCondition ; rdfs:range xsd:string .
+
+mkg:severity a owl:ObjectProperty ; rdfs:domain mkg:ScopeCondition ; rdfs:range mkg:Severity ;
+    rdfs:comment """SEVERITY RULE: blocking ONLY when the paper states the condition as an explicit assumption of the model ('The Monod model assumes that...'). Everything else, including reported limitations and poor fits, is a warning. Rationale: a wrongly blocked law is never tested and cannot be found; a wrongly kept law is tested by Layer 3 and loses on data.""" .
+mkg:Severity a owl:Class ;
+    rdfs:comment "What a failed scope condition does: blocking excludes the law, warning attaches a note. Two fixed values." .
+mkg:blocking a mkg:Severity .
+mkg:warning  a mkg:Severity .
+
+################################################################
+# 8. INVARIANT  --  what must be true of a solution
+################################################################
+
+mkg:Invariant a owl:Class ;
+    rdfs:comment "A condition any solution of a model built from the law must satisfy, e.g. mu = 0 at S = 0. Checked at the verification layer named by mkg:checkStage." .
+mkg:invariantExpression a owl:DatatypeProperty ; rdfs:domain mkg:Invariant ; rdfs:range xsd:string .
+mkg:checkStage a owl:DatatypeProperty ; rdfs:domain mkg:Invariant ; rdfs:range xsd:integer ;
+    rdfs:comment "1 = symbolic, 2 = numerical, 3 = statistical." .
+
+mkg:derivedFrom a owl:ObjectProperty ;
+    rdfs:domain mkg:Invariant ;
+    rdfs:range mkg:Law ;
+    rdfs:comment "Present if code computed this invariant from the law's formula. A derived node needs no Justification and can be regenerated. An Invariant without it was extracted from prose and needs a Justification." .
+
+################################################################
+# 9. MERGE  --  paper graph to shared graph
+################################################################
+
+mkg:mergedInto a owl:ObjectProperty ;
+    rdfs:comment """Links a paper-graph node to the shared-graph node it was merged into. Both ends have the same class.
+Written only by the Assembler. The LLM proposes the match on meaning; code vetoes it:
+  Quantity   -> derived dimensions must agree (skipped if either has no unit)
+  Law        -> formulas must be structurally equivalent in SymPy after symbol mapping
+  Descriptor -> value types must be compatible
+  Role       -> must range over the same index set
+  Phenomenon -> no code check; LLM plus human gate only.
+A paper-graph node with no mergedInto after an accepted merge was promoted as a new shared node.""" .
+
+################################################################
+# 10. PROVENANCE and VALIDATION
+################################################################
+
+mkg:Justification a owl:Class ;
+    rdfs:comment "The evidence behind a claim. Every extracted node carries one; nothing reaches a model without it." .
+mkg:SourceSpan      a owl:Class ; rdfs:subClassOf mkg:Justification ;
+    rdfs:comment "A located piece of a paper: either a sentence (mkg:verbatimText) or an equation block (mkg:latexSource)." .
+mkg:InferenceRecord a owl:Class ; rdfs:subClassOf mkg:Justification ;
+    rdfs:comment "The model reasoned this. No sentence supports it. Always human-reviewed. Permitted for scope conditions and role bindings only, never for formulas or symbols." .
+
+mkg:Document a owl:Class ;
+    rdfs:comment "One paper. Its IRI names its paper graph. mkg:hasStatus on a Document is the status of that paper's merge into the shared graph." .
+mkg:doi a owl:DatatypeProperty ; rdfs:domain mkg:Document ; rdfs:range xsd:string .
+
+mkg:fromDocument a owl:ObjectProperty   ; rdfs:domain mkg:SourceSpan ; rdfs:range mkg:Document .
+mkg:verbatimText a owl:DatatypeProperty ; rdfs:domain mkg:SourceSpan ; rdfs:range xsd:string .
+mkg:locator      a owl:DatatypeProperty ; rdfs:domain mkg:SourceSpan ; rdfs:range xsd:string ;
+    rdfs:comment "Where in the paper. For a sentence: section and position. For an equation: the layout block id." .
+mkg:latexSource  a owl:DatatypeProperty ; rdfs:domain mkg:SourceSpan ; rdfs:range xsd:string ;
+    rdfs:comment "An equation span: the LaTeX read off the page image. Checked by the glyph gate against the PDF's own characters, where a sentence span is checked by the quote gate." .
+mkg:rationale    a owl:DatatypeProperty ; rdfs:domain mkg:InferenceRecord ; rdfs:range xsd:string .
+mkg:groundedIn   a owl:ObjectProperty   ; rdfs:domain mkg:InferenceRecord ;
+    rdfs:comment "What the inference was made from: any node in the graph. Nothing here means auto-flag." .
+mkg:producedBy   a owl:DatatypeProperty ; rdfs:domain mkg:Justification ; rdfs:range xsd:string ;
+    rdfs:comment "Model id + version + DECODING MODE. Records which tier served the call." .
+
+mkg:hasJustification a owl:ObjectProperty ;
+    rdfs:domain [ owl:unionOf ( mkg:Quantity mkg:Law mkg:Role mkg:RoleBinding mkg:Descriptor mkg:Phenomenon mkg:ScopeCondition mkg:Invariant ) ] ;
+    rdfs:range mkg:Justification ;
+    rdfs:comment "Every extracted node carries one. Derived nodes carry mkg:derivedFrom instead." .
+
+mkg:Status a owl:Class ;
+    rdfs:comment "Review state of a claim: pending, accepted, flagged, rejected. Model construction reads only accepted." .
+mkg:pending  a mkg:Status .
+mkg:accepted a mkg:Status .
+mkg:flagged  a mkg:Status .
+mkg:rejected a mkg:Status .
+
+mkg:hasStatus  a owl:ObjectProperty ;
+    rdfs:domain [ owl:unionOf ( mkg:Quantity mkg:Law mkg:Role mkg:RoleBinding mkg:Descriptor mkg:Phenomenon mkg:ScopeCondition mkg:Invariant mkg:Document ) ] ;
+    rdfs:range mkg:Status ;
+    rdfs:comment "On an extracted node: whether it passed its gates. On a Document: status of that paper's merge. Model construction reads ONLY the accepted subgraph of the shared graph." .
+mkg:failedGate a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "unit_parse | span_support | symbolic | referential | vignette | cross_paper | merge_veto" .

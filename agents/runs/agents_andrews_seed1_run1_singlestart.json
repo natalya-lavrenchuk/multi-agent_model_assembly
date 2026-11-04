@@ -1,0 +1,647 @@
+{
+ "tag": "agents_andrews_seed1",
+ "seed": 1,
+ "max_rounds": 3,
+ "round": 2,
+ "feedback": "Accept C17 (Muloiwa 2020 free-laws eq. 11).",
+ "candidates": [
+  {
+   "round": 1,
+   "rate_id": 9,
+   "law": "asprey_2000_monod_kinetics eq 17",
+   "iri": "http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17",
+   "reason": "Standard Monod saturation in glucose; a simple baseline for yeast growth using only measured substrate x2.",
+   "built": true,
+   "problems": [],
+   "rate_law": "theta1*x2/(theta2 + x2)",
+   "mapping": {
+    "r": "r",
+    "x2": "x2"
+   },
+   "fit": {
+    "sup": "asprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17",
+    "ok": true,
+    "n": 126,
+    "p": 4,
+    "method": "scipy",
+    "note": "parmest failed (ValueError); SciPy least-squares result used",
+    "theta": {
+     "theta1": 0.33259734855081124,
+     "theta2": 0.08096157686516872,
+     "theta3": 0.5391899428929544,
+     "theta4": 0.07301506273387788
+    },
+    "ci95": {
+     "theta1": [
+      0.3249444746615808,
+      0.3402502224400417
+     ],
+     "theta2": [
+      0.07471582885915821,
+      0.08720732487117923
+     ],
+     "theta3": [
+      0.5251540644715031,
+      0.5532258213144057
+     ],
+     "theta4": [
+      0.06712984528393032,
+      0.07890028018382544
+     ]
+    },
+    "t_values": {
+     "theta1": 43.46045072281397,
+     "theta2": 12.962671050329988,
+     "theta3": 38.41511921825283,
+     "theta4": 12.40651910568376
+    },
+    "correlated_pairs": [],
+    "chi2": 1110.0647030311284,
+    "chi2_limit": 148.77926230440488,
+    "fits_within_noise": false,
+    "aic": 1118.0647030311284,
+    "residuals": {
+     "E1:x1": {
+      "chi2": 60.564394849175464,
+      "n": 21,
+      "mean_z": 1.5720739734696034,
+      "worst_t": 15.0,
+      "worst_z": 2.4134080542348397
+     },
+     "E1:x2": {
+      "chi2": 102.97986624139617,
+      "n": 21,
+      "mean_z": -1.0530646899524048,
+      "worst_t": 4.0,
+      "worst_z": -4.877053899923037
+     },
+     "E2:x1": {
+      "chi2": 75.29698708104263,
+      "n": 21,
+      "mean_z": 1.618503872606722,
+      "worst_t": 14.0,
+      "worst_z": 3.111253227762267
+     },
+     "E2:x2": {
+      "chi2": 153.2213211858713,
+      "n": 21,
+      "mean_z": 2.331717874313815,
+      "worst_t": 7.0,
+      "worst_z": 4.545984752762738
+     },
+     "E3:x1": {
+      "chi2": 215.371737295868,
+      "n": 21,
+      "mean_z": 0.25866302200753066,
+      "worst_t": 20.0,
+      "worst_z": -10.762705033212645
+     },
+     "E3:x2": {
+      "chi2": 502.6303963777747,
+      "n": 21,
+      "mean_z": 3.0235662771212564,
+      "worst_t": 20.0,
+      "worst_z": 12.852697908669413
+     }
+    },
+    "akaike_weight": 2.069797052133665e-217
+   }
+  },
+  {
+   "round": 1,
+   "rate_id": 8,
+   "law": "asprey_2000_contois_kinetics eq 18",
+   "iri": "http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18",
+   "reason": "Contois kinetics add biomass dependence, allowing apparent substrate availability per biomass to affect growth.",
+   "built": true,
+   "problems": [],
+   "rate_law": "theta1*x2/(theta2*x1 + x2)",
+   "mapping": {
+    "r": "r",
+    "x1": "x1",
+    "x2": "x2"
+   },
+   "fit": {
+    "sup": "asprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18",
+    "ok": true,
+    "n": 126,
+    "p": 4,
+    "method": "scipy",
+    "note": "parmest failed (ValueError); SciPy least-squares result used",
+    "theta": {
+     "theta1": 0.35102713740173097,
+     "theta2": 0.01382655820615499,
+     "theta3": 0.593363132013182,
+     "theta4": 0.08891550368711461
+    },
+    "ci95": {
+     "theta1": [
+      0.3497480185726483,
+      0.35230625623081363
+     ],
+     "theta2": [
+      0.012803668505101253,
+      0.014849447907208727
+     ],
+     "theta3": [
+      0.5873587469464989,
+      0.5993675170798651
+     ],
+     "theta4": [
+      0.08610913450185642,
+      0.0917218728723728
+     ]
+    },
+    "t_values": {
+     "theta1": 274.42887198640847,
+     "theta2": 13.517154578750251,
+     "theta3": 98.82163209445271,
+     "theta4": 31.68346636436373
+    },
+    "correlated_pairs": [],
+    "chi2": 1308.5802037334938,
+    "chi2_limit": 148.77926230440488,
+    "fits_within_noise": false,
+    "aic": 1316.5802037334938,
+    "residuals": {
+     "E1:x1": {
+      "chi2": 27.405306532907986,
+      "n": 21,
+      "mean_z": 1.0006675294138427,
+      "worst_t": 4.0,
+      "worst_z": 1.7859444059078884
+     },
+     "E1:x2": {
+      "chi2": 160.78712904024383,
+      "n": 21,
+      "mean_z": -1.6674377262125895,
+      "worst_t": 4.0,
+      "worst_z": -6.3355049030670125
+     },
+     "E2:x1": {
+      "chi2": 58.93347784275147,
+      "n": 21,
+      "mean_z": 1.2239255316098554,
+      "worst_t": 14.0,
+      "worst_z": 2.972050684389019
+     },
+     "E2:x2": {
+      "chi2": 324.6328998451858,
+      "n": 21,
+      "mean_z": 3.671659318941824,
+      "worst_t": 4.0,
+      "worst_z": 6.69201265730773
+     },
+     "E3:x1": {
+      "chi2": 249.2722831195274,
+      "n": 21,
+      "mean_z": 0.18908984849953994,
+      "worst_t": 20.0,
+      "worst_z": -11.52085573750514
+     },
+     "E3:x2": {
+      "chi2": 487.5491073528774,
+      "n": 21,
+      "mean_z": 3.2782742962224294,
+      "worst_t": 20.0,
+      "worst_z": 12.283398801678238
+     }
+    },
+    "akaike_weight": 1.6174635422708255e-260
+   }
+  },
+  {
+   "round": 1,
+   "rate_id": 40,
+   "law": "zentou_2019_andrews eq 5",
+   "iri": "http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5",
+   "reason": "Andrews kinetics represent glucose substrate inhibition at high concentrations, providing a distinct alternative to simple saturation.",
+   "built": true,
+   "problems": [],
+   "rate_law": "mumax*x2/(KS + x2 + x2**2/Ki)",
+   "mapping": {
+    "S_": "x2",
+    "mu": "r"
+   },
+   "fit": {
+    "sup": "asprey_2000_monod_kinetics + zentou_2019_andrews eq 5",
+    "ok": true,
+    "n": 126,
+    "p": 5,
+    "method": "scipy",
+    "note": "parmest failed (RuntimeError); SciPy least-squares result used",
+    "theta": {
+     "KS": 0.08089169033874102,
+     "Ki": 3.4259333162025365e+61,
+     "mumax": 0.3332134524049588,
+     "theta3": 0.5403799466604687,
+     "theta4": 0.07350959395455821
+    },
+    "ci95": {
+     "KS": [
+      0.0746057868584565,
+      0.08717759381902555
+     ],
+     "Ki": [
+      3.4259333162025365e+61,
+      3.4259333162025365e+61
+     ],
+     "mumax": [
+      0.3251850587472797,
+      0.3412418460626379
+     ],
+     "theta3": [
+      0.5258706626861652,
+      0.5548892306347722
+     ],
+     "theta4": [
+      0.06743530124464393,
+      0.07958388666447248
+     ]
+    },
+    "t_values": {
+     "KS": 12.868745215775954,
+     "Ki": Infinity,
+     "mumax": 41.50437392743486,
+     "theta3": 37.24373632892581,
+     "theta4": 12.101753646902482
+    },
+    "correlated_pairs": [],
+    "chi2": 1110.104031459938,
+    "chi2_limit": 147.67352976381804,
+    "fits_within_noise": false,
+    "aic": 1120.104031459938,
+    "residuals": {
+     "E1:x1": {
+      "chi2": 60.07578408043918,
+      "n": 21,
+      "mean_z": 1.5652620846468783,
+      "worst_t": 15.0,
+      "worst_z": 2.4058753719636288
+     },
+     "E1:x2": {
+      "chi2": 102.4512192070912,
+      "n": 21,
+      "mean_z": -1.0414138471860073,
+      "worst_t": 4.0,
+      "worst_z": -4.880244964556443
+     },
+     "E2:x1": {
+      "chi2": 75.60480653480866,
+      "n": 21,
+      "mean_z": 1.6214043442332173,
+      "worst_t": 14.0,
+      "worst_z": 3.120426842246475
+     },
+     "E2:x2": {
+      "chi2": 152.92693796517892,
+      "n": 21,
+      "mean_z": 2.3283374731199262,
+      "worst_t": 7.0,
+      "worst_z": 4.5482750039367
+     },
+     "E3:x1": {
+      "chi2": 216.48862172672335,
+      "n": 21,
+      "mean_z": 0.2668430494035019,
+      "worst_t": 20.0,
+      "worst_z": -10.776473834874631
+     },
+     "E3:x2": {
+      "chi2": 502.5566619456966,
+      "n": 21,
+      "mean_z": 3.006303551029261,
+      "worst_t": 20.0,
+      "worst_z": 12.849526551371728
+     }
+    },
+    "akaike_weight": 7.46609002646805e-218
+   }
+  },
+  {
+   "round": 2,
+   "rate_id": 17,
+   "law": "muloiwa_2020_free_laws eq 11",
+   "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq11",
+   "reason": "Tests smooth glucose substrate inhibition, which could help explain glucose remaining above predictions, though it may worsen the biomass underprediction.",
+   "built": true,
+   "problems": [],
+   "rate_law": "mumax*x2*exp(-x2/KI)/(Ks + x2)",
+   "mapping": {
+    "S_": "x2",
+    "mu": "r"
+   },
+   "fit": {
+    "sup": "asprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 11",
+    "ok": true,
+    "n": 126,
+    "p": 5,
+    "method": "scipy",
+    "note": "parmest failed (ValueError); SciPy least-squares result used",
+    "theta": {
+     "KI": 5.4531993625786495,
+     "Ks": 0.2504587199948049,
+     "mumax": 0.4702453778926195,
+     "theta3": 0.5649116090703313,
+     "theta4": 0.05803033447167184
+    },
+    "ci95": {
+     "KI": [
+      4.885936626600301,
+      6.020462098556998
+     ],
+     "Ks": [
+      0.22415880879307773,
+      0.27675863119653205
+     ],
+     "mumax": [
+      0.45029417169722064,
+      0.49019658408801836
+     ],
+     "theta3": [
+      0.5448646073737549,
+      0.5849586107669078
+     ],
+     "theta4": [
+      0.05058983957503149,
+      0.0654708293683122
+     ]
+    },
+    "t_values": {
+     "KI": 9.61318101245202,
+     "Ks": 9.523177400627757,
+     "mumax": 23.56977183670566,
+     "theta3": 28.179356575143366,
+     "theta4": 7.7992573448138005
+    },
+    "correlated_pairs": [],
+    "chi2": 110.1976737917592,
+    "chi2_limit": 147.67352976381804,
+    "fits_within_noise": true,
+    "aic": 120.1976737917592,
+    "residuals": {
+     "E1:x1": {
+      "chi2": 6.840325503481807,
+      "n": 21,
+      "mean_z": 0.02676218269341327,
+      "worst_t": 3.0,
+      "worst_z": -1.4133385799699343
+     },
+     "E1:x2": {
+      "chi2": 30.33211312932804,
+      "n": 21,
+      "mean_z": -0.11503028034799352,
+      "worst_t": 3.0,
+      "worst_z": -2.9097807994360068
+     },
+     "E2:x1": {
+      "chi2": 9.397267472716885,
+      "n": 21,
+      "mean_z": -0.05545341769636346,
+      "worst_t": 16.0,
+      "worst_z": -1.190457461803851
+     },
+     "E2:x2": {
+      "chi2": 20.775311697939276,
+      "n": 21,
+      "mean_z": 0.22134070182696314,
+      "worst_t": 4.0,
+      "worst_z": 2.288926541625901
+     },
+     "E3:x1": {
+      "chi2": 18.35752825704135,
+      "n": 21,
+      "mean_z": 0.11951715185031443,
+      "worst_t": 11.0,
+      "worst_z": -2.4387896046180177
+     },
+     "E3:x2": {
+      "chi2": 24.49512773125184,
+      "n": 21,
+      "mean_z": 0.23631385032177477,
+      "worst_t": 19.0,
+      "worst_z": 2.4489091401259726
+     }
+    },
+    "akaike_weight": 1.0
+   }
+  },
+  {
+   "round": 2,
+   "rate_id": 25,
+   "law": "muloiwa_2020_free_laws eq 4",
+   "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq4",
+   "reason": "Tests positive biomass dependence in the specific rate, which could help with the late biomass underprediction; it may increase glucose consumption and worsen the glucose mismatch.",
+   "built": false,
+   "problems": [
+    "no unit for Ks makes the equation balance"
+   ]
+  }
+ ],
+ "steps": [
+  {
+   "agent": "hypothesis",
+   "round": 1,
+   "answer": {
+    "candidates": [
+     {
+      "id": 9,
+      "reason": "Standard Monod saturation in glucose; a simple baseline for yeast growth using only measured substrate x2."
+     },
+     {
+      "id": 8,
+      "reason": "Contois kinetics add biomass dependence, allowing apparent substrate availability per biomass to affect growth."
+     },
+     {
+      "id": 40,
+      "reason": "Andrews kinetics represent glucose substrate inhibition at high concentrations, providing a distinct alternative to simple saturation."
+     }
+    ],
+    "note": "No prior candidates or statistical feedback are available, so these cover baseline saturation, biomass dependence, and substrate inhibition."
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 1,
+   "law": "http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17",
+   "attempt": 1,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "r",
+      "model_symbol": "r"
+     },
+     {
+      "law_symbol": "x2",
+      "model_symbol": "x2"
+     }
+    ],
+    "note": ""
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 1,
+   "law": "http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18",
+   "attempt": 1,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "r",
+      "model_symbol": "r"
+     },
+     {
+      "law_symbol": "x1",
+      "model_symbol": "x1"
+     },
+     {
+      "law_symbol": "x2",
+      "model_symbol": "x2"
+     }
+    ],
+    "note": ""
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 1,
+   "law": "http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5",
+   "attempt": 1,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "S_",
+      "model_symbol": "x2"
+     },
+     {
+      "law_symbol": "mu",
+      "model_symbol": "r"
+     }
+    ],
+    "note": ""
+   }
+  },
+  {
+   "agent": "statistician",
+   "round": 1,
+   "answer": {
+    "decision": "search_again",
+    "chosen": "",
+    "feedback": "All three candidates show severe lack of fit. Revisit the process model, not just the growth-rate law: in E3 late (worst at 20 h), the models underpredict both glucose and biomass; in E2 they also underpredict glucose (worst at 4–7 h). Consider a mechanism or balance that permits more biomass while leaving more glucose, such as a higher or variable biomass yield (lower glucose uptake per biomass formed), and check the feed/dilution and substrate-balance assumptions. Test whether it also explains the earlier E2 glucose discrepancy.",
+    "reasoning": "None qualifies because each chi-square is far above its 95% limit. C9 and C40 have nearly identical lack-of-fit patterns; C40 also has an uninformative Ki estimate, while C8 fits worse. The data therefore call for another search rather than acceptance."
+   }
+  },
+  {
+   "agent": "hypothesis",
+   "round": 2,
+   "answer": {
+    "candidates": [
+     {
+      "id": 17,
+      "reason": "Tests smooth glucose substrate inhibition, which could help explain glucose remaining above predictions, though it may worsen the biomass underprediction."
+     },
+     {
+      "id": 25,
+      "reason": "Tests positive biomass dependence in the specific rate, which could help with the late biomass underprediction; it may increase glucose consumption and worsen the glucose mismatch."
+     }
+    ],
+    "note": "Neither rate law can independently raise biomass while leaving more glucose under the fixed-yield substrate balance. Since r drives both growth and glucose uptake, check theta3 (yield), feed/dilution inputs, and the substrate balance before expecting a kinetic law alone to resolve both discrepancies."
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 2,
+   "law": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq11",
+   "attempt": 1,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "S_",
+      "model_symbol": "x2"
+     },
+     {
+      "law_symbol": "mu",
+      "model_symbol": "r"
+     }
+    ],
+    "note": "S_ is substrate concentration, matching x2. mu is the specific growth rate, matching r; the law gives it in 1/s while the model uses 1/h, so convert the time units when using the law."
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 2,
+   "law": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq4",
+   "attempt": 1,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "S_",
+      "model_symbol": "x2"
+     },
+     {
+      "law_symbol": "X",
+      "model_symbol": "x1"
+     },
+     {
+      "law_symbol": "mu",
+      "model_symbol": "r"
+     }
+    ],
+    "note": "Mapped X to x1 as the non-substrate concentration associated with the biomass balance. The rate units differ (1/s versus 1/h), so a unit conversion may be needed."
+   }
+  },
+  {
+   "agent": "modeler",
+   "round": 2,
+   "law": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq4",
+   "attempt": 2,
+   "answer": {
+    "mapping": [
+     {
+      "law_symbol": "S_",
+      "model_symbol": "x2"
+     },
+     {
+      "law_symbol": "X",
+      "model_symbol": "x1"
+     },
+     {
+      "law_symbol": "mu",
+      "model_symbol": "r"
+     }
+    ],
+    "note": "x1 is mapped to biomass concentration based on the biomass and substrate balance context. The law’s μ is in 1/s while r is in 1/h, so convert units when applying the law. Ks is a new parameter and needs concentration units matching S_ (e.g. g/L) for the equation to balance."
+   }
+  },
+  {
+   "agent": "statistician",
+   "round": 2,
+   "answer": {
+    "decision": "accept",
+    "chosen": "C17",
+    "feedback": "Accept C17 (Muloiwa 2020 free-laws eq. 11).",
+    "reasoning": "C17 fits within the noise (chi2 110.2, below the 95% limit of 147.7), and all five parameters are estimated precisely (each t-value is well above 1). It also has Akaike weight 1.000 among the candidates. The other fitted candidates show substantial lack of fit."
+   }
+  }
+ ],
+ "decision": {
+  "decision": "accept",
+  "chosen": "C17",
+  "feedback": "Accept C17 (Muloiwa 2020 free-laws eq. 11).",
+  "reasoning": "C17 fits within the noise (chi2 110.2, below the 95% limit of 147.7), and all five parameters are estimated precisely (each t-value is well above 1). It also has Akaike weight 1.000 among the candidates. The other fitted candidates show substantial lack of fit."
+ },
+ "last_decision": {
+  "decision": "accept",
+  "chosen": "C17",
+  "feedback": "Accept C17 (Muloiwa 2020 free-laws eq. 11).",
+  "reasoning": "C17 fits within the noise (chi2 110.2, below the 95% limit of 147.7), and all five parameters are estimated precisely (each t-value is well above 1). It also has Akaike weight 1.000 among the candidates. The other fitted candidates show substantial lack of fit."
+ },
+ "seconds": 471.7,
+ "llm": {
+  "calls": 6,
+  "cached": 12,
+  "prompt_tokens": 8703,
+  "completion_tokens": 4294,
+  "dry_run_tokens_estimate": 0
+ }
+}

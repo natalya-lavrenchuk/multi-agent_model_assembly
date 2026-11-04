@@ -1,0 +1,258 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3100,
+  "completion_tokens": 5766,
+  "total_tokens": 8866,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3097,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4466,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Monod model; Blackman model; Haldane model; Teissier model; The moser model; Contois models; Logarithmic model\n\nText and equations in reading order:\n    The Monod model was first introduced by Jacques Monod in 1942 to describe the relationship between specific growth rate and substrate utilization rate in a bioreactor (Monod, 1949). The model can be defined in two forms: based on substrate concentration only, and based on both substrate and biomass concentration. The two forms of the model are defined by Eqs. (3) and 4.\n(3) \\mu=\\frac{\\mu_{max}S}{K_{s}+S}    [code: algebraic, computes \\mu, code proposes constitutive]\n(4) \\mu=\\frac{\\mu_{max}XS}{K_{s}+S}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu_{max} $ maximum bacteria growth rate, S substrate concentration, $ K_{s} $ half saturation constant, $ \\mu $ specific bacteria growth rate, and X biomass concentration. The maximum bacteria growth rate and half saturation constant are constants. The Monod model assumes that there is only one growth limiting substrate in the bioreactor (Monod, 1942). The Monod model has 5 limitations as described by Kong (2017). The 1st limitation is observed at high substrate concentration. At high substrate concentration, the maximum specific growth rate is independent of the substrate concentrat...\n    The Blackman model was introduced by Blackman in 1905 (Blackman, 1905). The model is similar to the Monod model in terms of its assumptions. At low substrate concentration, growth is dependent on substrate and at high substrate concentration, growth is independent of substrate concentration. At high substrate concentration, some nutrients are limiting (Kong, 2017). The model has been described as being capable of making a sharp transition from first order kinetics to zero order kinetics (Mrwebi, 2004). Blackman model is defined by equation 5.\n(5) \\mu=\\frac{\\mu_{max}S}{K_{s}}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu_{max} $ maximum specific growth rate, S substrate concentration, and $ K_{s} $ half saturation constant. Just like the Monod model, the Blackman model is unable to capture the lag and death phase, and in turn it over estimates the specific growth rate (Kong, 2017). The Blackman model is not a popular method for modelling growth rate in microbial processes, and when utilized it performed poorly. Mahanta et al., (2014) reported results on the comparison between Blackman, Monod, Powell, and Moser models. In the study the Blackman model was the only model that did not fit the experime...\n    ...{i} $ that deals with specific growth rate inhibition at low and high substrate concentration. $ K_{i} $ is the inhibition constant which is equal to the highest substrate concentration at which the specific growth rate is equal to one half maximum growth rate in the absence of an inhibition. Kong (2017) reported that at high substrate concentration, specific growth rate of an organism may be hindered by the presence of toxic substrate. With the inclusion of the inhibition constant, the model is capable of handling both toxic and non-toxic substrate. The Haldane model is defined by equation 6.\n(6) \\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{s^{2}}{K_{i}}}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half saturation constant, $ S $ substrate concentration, and $ K_i $ inhibition constant. The advantage of the Haldane model is that it is capable of describing all growth phases: lag, exponential, stationary, and death phase (Dutta et al., 2015). Due to its ability to describe growth rate at low and high substrate concentration, the Haldane model was the popular model used by many researchers (Shukor (2014); Dutta et al., (2015) Dey and Mukherjee, 2010).\n    ...erred to as Tessier. The Teissier model is also known as the Exponential model that describes the specific growth rate as a function of continuous substrate concentration. The model is similar to the Monod model, and Blackman model. Experimental data fitted on the Teissier model was observed to lie in between the Monod model, and Blackman model (Kong, 2017). Just like the Monod model, Blackman model, and Moser model, the Teissier model is not capable of describing cell growth inhibition. Hence it is not capable of describing the lag and death phase. The Teissier model is defined by equation 7.\n(7) \\mu=\\mu_{m a x}\\bigg(1-e^{\\frac{S}{\\kappa_{T}}}\\bigg)    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_T $ proportional constant, S substrate concentration. The Teissier model differs with the Monod model, Blackman model, and Moser model when it transitions from first order kinetics to zero order kinetics (Kong (2017); Dey and Mukherjee (2010), and Dutta et al., (2015)). Literature has shown that the Teissier model is capable of describing specific growth rate in different substrate concentrations.\n    ...el is an unstructured model based on substrate concentration only introduced in 1958 by Herman Moser (Moser, 1958). The model is an extension of the Monod model. The Moser model introduced a parameter constant (n) on the Monod model. The parameter (n) is an adjustable parameter that provides flexibility in fitting experimental data and dynamic behaviour in the bioreactor (Mahanta et al., 2014). The Moser model is considered to be a better model than the Monod model because the parameter (n) can be adjusted to fit the experimental data (Kong, 2017). The Moser model can be defined by equation 8.\n(8) \\mu=\\frac{\\mu_{max}S^{n}}{K_{s}+S^{n}}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, S substrate concentration, $ K_{s} $ half saturation constant, and n adjustable parameter. Just like the Blackman model, and Contois model, the Moser model has not been widely used to describe specific growth rate. The Moser model does not consider substrate inhibition, hence it cannot deal with toxic substrate. On the contrary, Krishnan et al., (2017) reported that the parameter (n) of the Moser model is used to describe substrate inhibition. Unlike the Monod model, and Contois model, the Moser model is capable of...\n(9) \\mu=\\frac{\\mu_{max}S}{K_{s}X+S}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ S $ substrate concentration, $ X $ biomass concentration, $ K_s $ half saturation constant. The Contois model takes a different approach when compared to the Monod model, Blackman model, and the Moser model. In the Contois model, the assumption is that biomass concentration is inversely proportional to specific growth rate. Just like the Monod model, Blackman model, and Teissier model, the Contois model cannot describe the lag and death phase. Hence it does not capture substrate inhibition. The Contois model has...\n    ...et al., (1982). The model describes specific growth rate as a function of logarithm of substrate concentration. The Logarithmic model is the worse model when compared with models discussed above because it is not capable of describing the lag, stationary, and death phase. The model has a reputation of over estimating cell growth, and if the substrate concentration is low, it can produce negative growth rate (Kong, 2017). This is a set back because growth cannot be classified as negative, and hence the Logarithmic model is not well represented in literature. The model is defined by equation 10.\n(10) \\mu=a+b~l n\\left(s\\right)    [code: algebraic, computes \\mu, code proposes constitutive]\n    The Logarithmic model is defined by Eq. (10). Where, a and b are constants, and s substrate concentration. The non-existence of literature reported for this model makes it difficult to make judgement on the performance of the model.\n\nSymbols:\n  \\mu: Specific bacteria growth rate [time^-1] (computed)\n  \\mu_{max}: Maximum specific growth rate [time^-1] (parameter)\n  S: Substrate concentration (variable)\n  K_{s}: Half saturation constant (parameter)\n  X: Biomass concentration (variable)\n  s: Substrate concentration used in the growth-law expressions (variable)\n  K_{i}: Inhibition constant (parameter)\n  \\kappa_{T}: Substrate-scale constant in the Teissier growth expression (parameter)\n  n: Exponent in the growth-law expressions [-] (parameter)\n  a: Intercept in the logarithmic growth law [time^-1] (parameter)\n  b: Coefficient multiplying ln(s) in the logarithmic growth law. (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 3, 4, 5, 6, 7, 8, 9, 10",
+ "answer": {
+  "laws": [
+   {
+    "eq": "3",
+    "description": "Specific bacteria growth rate as a saturating function of substrate concentration.",
+    "description_basis": "stated",
+    "quote": "based on substrate concentration only",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the growth-rate response to substrate concentration rather than a conservation balance.",
+    "assumptions": [
+     {
+      "text": "There is only one growth-limiting substrate in the bioreactor.",
+      "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor.",
+      "stated_as_assumption": true,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "Specific growth rate computed from substrate and biomass concentrations using the printed Monod-form expression.",
+    "description_basis": "stated",
+    "quote": "based on both substrate and biomass concentration",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a growth-rate response rather than a conservation balance.",
+    "assumptions": [
+     {
+      "text": "There is only one growth-limiting substrate in the bioreactor.",
+      "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor.",
+      "stated_as_assumption": true,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": "The factor X in the numerator adds biomass-concentration units to the otherwise dimensionless Monod fraction, so the result does not have the stated units of specific growth rate."
+   },
+   {
+    "eq": "5",
+    "description": "Specific growth rate proportional to substrate concentration in the printed expression, while the text describes substrate-independent growth at high substrate concentration.",
+    "description_basis": "stated",
+    "quote": "At low substrate concentration, growth is dependent on substrate and at high substrate concentration, growth is independent of substrate concentration.",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic relationship between substrate concentration and specific growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": "The printed expression continues to increase linearly with S at high concentrations, contrary to the text's statement that growth becomes independent of substrate concentration."
+   },
+   {
+    "eq": "6",
+    "description": "Specific growth rate as a function of substrate concentration with an inhibition term for toxic-substrate effects.",
+    "description_basis": "stated",
+    "quote": "With the inclusion of the inhibition constant, the model is capable of handling both toxic and non-toxic substrate.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a substrate-dependent growth-rate law with an inhibition term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "substrate",
+      "symbol": "s"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_i"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7",
+    "description": "Specific growth rate given by an exponential relation to substrate concentration.",
+    "description_basis": "stated",
+    "quote": "describes the specific growth rate as a function of continuous substrate concentration",
+    "law_type": "constitutive",
+    "law_type_reason": "It defines a kinetic response of specific growth rate to substrate concentration.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "substrate-scale constant",
+      "symbol": "\\kappa_{T}"
+     }
+    ],
+    "issue": "The exponent is printed with a positive sign, making the bracket negative for positive S and thus predicting negative specific growth rate, contrary to the described growth-rate relation."
+   },
+   {
+    "eq": "8",
+    "description": "Specific growth rate as a substrate-dependent Monod extension with an adjustable exponent.",
+    "description_basis": "stated",
+    "quote": "The parameter (n) is an adjustable parameter that provides flexibility in fitting experimental data and dynamic behaviour in the bioreactor",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic relationship between substrate concentration and specific growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "9",
+    "description": "Specific growth rate as a function of substrate and biomass concentrations in the Contois model.",
+    "description_basis": "stated",
+    "quote": "In the Contois model, the assumption is that biomass concentration is inversely proportional to specific growth rate.",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a growth-rate relationship rather than a conservation balance.",
+    "assumptions": [
+     {
+      "text": "Biomass concentration is inversely proportional to specific growth rate.",
+      "quote": "In the Contois model, the assumption is that biomass concentration is inversely proportional to specific growth rate.",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "10",
+    "description": "Specific growth rate as a function of the logarithm of substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The model describes specific growth rate as a function of logarithm of substrate concentration.",
+    "law_type": "constitutive",
+    "law_type_reason": "It defines a kinetic relationship between substrate concentration and specific growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "intercept",
+      "symbol": "a"
+     },
+     {
+      "role": "logarithmic coefficient",
+      "symbol": "b"
+     },
+     {
+      "role": "substrate",
+      "symbol": "s"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

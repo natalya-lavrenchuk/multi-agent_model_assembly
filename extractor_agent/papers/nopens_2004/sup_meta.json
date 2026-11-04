@@ -1,0 +1,282 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "nopens_2004": {
+   "name": "Aggregation-breakage PBM",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "9"
+   ],
+   "description": "The Aggregation-breakage PBM models how activated sludge flocs change in size during flocculation. It predicts the floc size distribution over time, representing aggregation between flocs and breakage of larger flocs. The model is a one-dimensional population balance that is discretized into size classes and solved using the moving pivot method. It was calibrated using online laser-diffraction measurements from flocculation experiments at two mixing intensities, with several distribution measures tried as fitting targets. The authors recommend fitting the number distribution for applications involving gravitational solid-liquid separation, while concluding that the model needs more flexibility to describe the measurements adequately.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model represents flocculation of activated sludge, the particle-aggregation process involved in the liquid-solid separation stage of wastewater treatment.",
+     "quote": "The second step deals with the separation of the purified water and the sludge flocs.",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The experimental sludge flocs were sonicated into single cells of about 1 μm and microcolonies of about 10 μm before being allowed to reflocculate.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "equipment",
+     "text": "Floc size distributions were measured online with a Malvern Mastersizer E using laser light diffraction and a flow-through cell.",
+     "quote": "circulated through a Malvern Mastersizer E (Malvern, UK) in order to obtain on-line quantitative information about floc structure and floc size distribution (FSD)",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The flow-through cell flow rate was set to 3 ml/s to reduce shear effects and pump-pulsation influences and approximate isokinetic sampling.",
+     "quote": "A flow rate to the flow-through cell of 3ml/s was selected to minimise shear effects and pump pulsation influences (to approximate isokinetic sampling)",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The laser-diffraction measurements require dilution below 0.2 g/L and assume that the particles are spherical.",
+     "quote": "Drawbacks are: (1) the assumption of sphericity of particles and (2) the required dilution (< 0.2g/l).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The data came from reflocculation experiments run at average velocity gradients of 19.4 and 37.0 s⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The model is used for relatively short flocculation experiments, with a maximum duration of 4 h.",
+     "quote": "Since the model will be used to describe rather short flocculation experiments (max. 4h)",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The model is dynamic and segregates biomass into a one-dimensional distribution of floc sizes rather than representing it as a single lumped sludge concentration.",
+     "quote": "Models describing the time evolution of these property distributions are known as Population Balance Models (PBM).",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The size distribution is expressed in numbers of flocs per unit volume, with floc size represented as volume.",
+     "quote": "x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers)",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "Discretization converts the population balance into a finite set of ordinary differential equations, one for each size class.",
+     "quote": "transforming the integro-differential equation into a set of i ordinary differential equations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The paper does not report the number of size classes used, so the total number of distribution states cannot be determined from its description.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "Two aggregation and breakage parameters were estimated: the collision efficiency and the breakage-rate coefficient.",
+     "quote": "estimating the aggregation and breakage parameters of sludge flocs",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Aggregation is represented with a Smoluchowski population-balance model combining collision frequency and collision efficiency.",
+     "quote": "Aggregation models are often based on the Smoluchowski model",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The collision-frequency description was taken from Spicer & Pratsinis 1996 and relates collisions to floc properties and mixing conditions.",
+     "quote": "The description of β(x-x',x) used in this study was taken from Spicer & Pratsinis (1996)",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Collision efficiency is treated as a constant between zero and one.",
+     "quote": "α was chosen to be a constant between 0 and 1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Breakage is represented by a size-dependent breakage rate from Spicer & Pratsinis 1996, with a breakage-rate coefficient estimated during calibration.",
+     "quote": "S(x) was taken from Spicer & Pratsinis (1996)",
+     "basis": "stated"
+    },
+    {
+     "topic": "numerics",
+     "text": "The authors recommend the moving pivot discretization, which they implemented alongside the fixed pivot method in WEST.",
+     "quote": "Both techniques were implemented in the modelling and simulation software platform WEST (Hemmis NV, Belgium).",
+     "basis": "stated"
+    },
+    {
+     "topic": "numerics",
+     "text": "In a comparison on the same data, the fixed pivot method predicted a lower zeroth moment and more flocs in larger size classes than the moving pivot method.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "numerics",
+     "text": "The fixed pivot method led to an aggregation-parameter estimate about 50% lower than the moving pivot method, which the authors regarded as erroneous.",
+     "quote": "the aggregation parameter α must be decreased (by 50%), leading to erroneous estimates.",
+     "basis": "stated"
+    },
+    {
+     "topic": "numerics",
+     "text": "The moving pivot recommendation follows Kumar & Ramkrishna 1996, whose comparison with an analytical solution found better predictions than the fixed pivot method, including on a coarse grid.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "The initial condition for the population balance is the measured initial number distribution.",
+     "quote": "The measured initial number distribution is used as initial condition for eq. 1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The two calibration datasets were obtained from Biggs & Lant 2000, who studied the effect of mixing intensity on flocculation kinetics.",
+     "quote": "The experimental data used in this study were obtained from Biggs & Lant (2000) who studied the influence of mixing intensity on flocculation kinetics.",
+     "basis": "stated"
+    },
+    {
+     "topic": "transformation",
+     "text": "To transfer the measurements to a model grid, the authors interpolated the cumulative volume distribution at the pivots of the new grid and then calculated the volume fractions.",
+     "quote": "A cumulative vol% distribution is calculated from the raw distribution and then interpolated at the pivots of the new grid resulting in a cumulative distribution in the new grid.",
+     "basis": "stated"
+    },
+    {
+     "topic": "transformation",
+     "text": "The authors converted volume fractions to number concentrations using an estimate of total floc volume and assuming spherical flocs.",
+     "quote": "To convert V_i into N_i, the total floc volume fraction V_f/V_T is needed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "transformation",
+     "text": "For the volume-to-number conversion calculations, the paper used a biomass concentration of 3 g/L and density values of 1, 1.04, and 1.7 g/cm³.",
+     "quote": "The new approach was used for the conversion of raw vol% distributions into number distributions (X=3g.L −1, ρ_l=1g.cm−3, ρ_l=1.04g.cm−3, ρ_s=1.7g.cm−3).",
+     "basis": "stated"
+    },
+    {
+     "topic": "transformation",
+     "text": "The new grid-transformation method preserved the mass mean diameter D[4,3] of the original distribution.",
+     "quote": "the cumulative vol% distribution matches the raw one and the D[4,3] is preserved",
+     "basis": "stated"
+    },
+    {
+     "topic": "transformation",
+     "text": "The authors found that the earlier log-normal-distribution transformation used by Biggs & Lant 2000 introduced large errors in the resulting number distributions.",
+     "quote": "fitting the log-normal distribution as intermediate step introduced large errors in the number distributions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "Calibration compared four fitting targets: volume-percent distribution, D[4,3], number distribution, and weighted number distribution.",
+     "quote": "The PBM was fitted to 4 different fitting variables: (1) vol% distribution, (2) D[4,3], (3) number distribution and (4) weighted number distribution.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "Parameter estimation used weighted least squares in WEST.",
+     "quote": "Optimisations were conducted using a weighted least squares (WLS) method",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "For weighted-number fitting, measurement variances and weights were calculated using a multinomial counting-error assumption.",
+     "quote": "Based on this assumption, every single measurement of N_i can be assumed to be multinomial distributed",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The paper reports point estimates but does not provide confidence intervals or other measures of parameter uncertainty.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "performance",
+     "text": "Fits to volume-based targets described the middle of the volume distribution, roughly 35–350 μm, better than the distribution tails.",
+     "quote": "the middle size classes ranging from roughly 35-350 μm.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "Volume-percent fitting underpredicted the small-size number classes by factors of about 10–15, while D[4,3] fitting underpredicted them by about 15–30.",
+     "quote": "Under predictions by a factor 10-15 occur in the classes with sizes up to 10 μm.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "Fitting the number distribution reduced small-tail underprediction to about 1.5–2.5, although the predicted volume distribution was poor.",
+     "quote": "Under predictions of the lower end tail now range between 1.5-2.5",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "Weighted-number fitting gave small-tail underpredictions of about 2–3.3.",
+     "quote": "Under predictions of the lower end size classes range between 2-3.3.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The authors concluded that the model lacks flexibility to describe the measured distributions adequately.",
+     "quote": "Both fits show that the model lacks flexibility and that the structure needs to be improved.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The reported comparisons use the two calibration datasets; the paper does not report an independent validation dataset.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "application",
+     "text": "The authors recommend fitting the number distribution for gravitational solid-liquid separation because small flocs are problematic in wastewater treatment.",
+     "quote": "For the application at hand, gravitational solid-liquid separation, it is advised to calibrate the model by means of the number distribution since the smaller size flocs are problematic in wastewater treatment.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The model draws on the Smoluchowski framework described by Ramkrishna 2000 and uses aggregation and breakage descriptions from Spicer & Pratsinis 1996.",
+     "quote": "The description of β(x-x',x) used in this study was taken from Spicer & Pratsinis (1996)",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The paper compares its discretization approach with Kumar & Ramkrishna 1996 and notes that Biggs & Lant 2000 used the Hounslow et al. 1988 discretization.",
+     "quote": "Biggs & Lant (2000) used the discretisation technique of Hounslow et al. (1988)",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The calibration methodology extends earlier activated-sludge flocculation PBM work by Nopens et al. 2002 and Biggs & Lant 2000.",
+     "quote": "Recently, a laser diffraction technique was used to provide the experimental data to which a population balance model (PBM) was fitted by estimating the aggregation and breakage parameters of sludge flocs (Biggs & Lant, 2000; Nopens et al., 2002).",
+     "basis": "stated"
+    }
+   ],
+   "states": [
+    "n",
+    "x",
+    "\\dot{X}"
+   ],
+   "inputs": [
+    "x^{\\prime}",
+    "d",
+    "\\varepsilon",
+    "\\Delta F_{N}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 41 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

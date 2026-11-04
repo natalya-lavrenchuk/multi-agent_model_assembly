@@ -1,0 +1,151 @@
+{
+ "sup": "birol_2002",
+ "title": "A modular simulation package for fed-batch fermentation: penicillin production",
+ "doi": null,
+ "status": "proposed",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "1",
+  "3",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18"
+ ],
+ "equations_quote": "The extended model we have developed consists of differential Eqs. (1), (3), (9)–(18) that are solved simultaneously.",
+ "boundary_basis": "stated",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "Contois kinetics describe the dependence of specific growth rate on carbon and oxygen substrates.",
+   "quote": "The dependence of specific growth rate on carbon and oxygen substrates was assumed to follow Contois kinetics (Bajpai & Reuss) to consider the biomass inhibition.",
+   "page": 3,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "1"
+  },
+  {
+   "text": "Substrate utilization is attributed to biomass growth and product formation, with constant yields and maintenance requirements.",
+   "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+   "page": 6,
+   "severity": "blocking",
+   "reasoned": false
+  },
+  {
+   "text": "The overall oxygen mass transfer coefficient depends on agitation power input and oxygen flow rate.",
+   "quote": "Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).",
+   "page": 6,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "13"
+  },
+  {
+   "text": "The freezing and boiling temperatures used for the evaporation-rate expression are those of water; the exponent is taken as 5.",
+   "quote": "We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this.",
+   "page": 6,
+   "severity": "blocking",
+   "reasoned": false
+  },
+  {
+   "text": "The coefficient for the growth-associated heat term is constant.",
+   "quote": "where  $ r_{q_1} $ is assumed to be constant and might be treated as a yield coefficient (Nielsen & Villadsen, 1994).",
+   "page": 7,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "17"
+  },
+  {
+   "text": "The heat exchanger is a cooling coil for a laboratory-scale fermentor.",
+   "quote": "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations.",
+   "page": 7,
+   "severity": "blocking",
+   "reasoned": false
+  },
+  {
+   "text": "CO₂ evolution is attributed to growth, penicillin biosynthesis, and maintenance.",
+   "quote": "In this work,  $ CO_{2} $ evolution is assumed to be due to growth, penicillin biosynthesis and maintenance requirements as suggested by Montague, Morris, Wright, Aynsley and Ward (1986).",
+   "page": 7,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "18"
+  }
+ ],
+ "model_name": "Extended penicillin fermentation model",
+ "excluded": [
+  {
+   "eq": "2",
+   "reason": "Earlier growth-rate form superseded by the extended growth-rate expression in eq 3."
+  },
+  {
+   "eq": "4",
+   "reason": "Approximate pH-effect expression; approximates eq 3."
+  },
+  {
+   "eq": "5",
+   "reason": "The paper's explicit list of model equations excludes this acid-concentration equation; pH is treated as an input."
+  },
+  {
+   "eq": "6",
+   "reason": "Defines B for the excluded acid-concentration equation and is not in the paper's explicit list of model equations."
+  },
+  {
+   "eq": "7",
+   "reason": "Temperature-dependence expression is incorporated into the extended growth-rate expression in eq 3."
+  },
+  {
+   "eq": "8",
+   "reason": "PID controller equation, not part of the process model."
+  }
+ ],
+ "checks": [
+  "'Extended penicillin fermentation model': eq 5 computes [H^+], used by eq 3, but is not in the paper's list",
+  "'Extended penicillin fermentation model': [H^+] is used, but the equation computing it (eq 5) is not in the model"
+ ],
+ "code_analysis": {
+  "stated": [
+   {
+    "sentence": "The extended model we have developed consists of differential Eqs. (1), (3), (9)–(18) that are solved simultaneously.",
+    "equations": [
+     "1",
+     "3",
+     "9",
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18"
+    ]
+   }
+  ],
+  "tags": {
+   "1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "2": "CONFLICT: computes \\mu, like eq 3",
+   "3": "CONFLICT: computes \\mu, like eq 2",
+   "4": "not an equation",
+   "5": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6": "NEEDED: computes B, used by the model",
+   "7": "not an equation",
+   "8": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "9": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "10": "NEEDED: computes \\mu_{pp}, used by the model",
+   "11": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "12": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "13": "NEEDED: computes K_{la}, used by the model",
+   "14": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "15": "NEEDED: computes F_{loss}, used by the model",
+   "16": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "17": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "18": "NEEDED: an ODE (the model, or background from earlier work?)"
+  }
+ }
+}

@@ -1,0 +1,519 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "11.1": {
+   "form": "ODE",
+   "computes": "\\mu_{0}",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The zeroth-moment balance tracks the accumulation of crystal number through primary nucleation.",
+   "description_basis": "stated",
+   "quote": "first four moment equations",
+   "assumptions": [
+    {
+     "text": "The moment model considers only one characteristic crystal size.",
+     "quote": "when only one characteristic size is considered",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model is applied to an unseeded system with zero initial moments.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to an unseeded system with zero initial moments."
+   ],
+   "llm": {
+    "eq": "11.1",
+    "description": "The zeroth-moment balance tracks the accumulation of crystal number through primary nucleation.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "assumptions": [
+     {
+      "text": "The moment model considers only one characteristic crystal size.",
+      "quote": "when only one characteristic size is considered",
+      "process_condition": false
+     },
+     {
+      "text": "The model is applied to an unseeded system with zero initial moments.",
+      "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+      "process_condition": true
+     },
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11.2": {
+   "form": "ODE",
+   "computes": "\\mu_{1}",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The first crystal-size moment changes through growth of existing crystals and the nucleation source at size r0.",
+   "description_basis": "stated",
+   "quote": "first four moment equations",
+   "assumptions": [
+    {
+     "text": "The moment model considers only one characteristic crystal size.",
+     "quote": "when only one characteristic size is considered",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model is applied to an unseeded system with zero initial moments.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The size of newly formed nuclei is treated as negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to an unseeded system with zero initial moments.",
+    "assumption quote not found: The size of newly formed nuclei is treated as negligible."
+   ],
+   "llm": {
+    "eq": "11.2",
+    "description": "The first crystal-size moment changes through growth of existing crystals and the nucleation source at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "assumptions": [
+     {
+      "text": "The moment model considers only one characteristic crystal size.",
+      "quote": "when only one characteristic size is considered",
+      "process_condition": false
+     },
+     {
+      "text": "The model is applied to an unseeded system with zero initial moments.",
+      "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+      "process_condition": true
+     },
+     {
+      "text": "The size of newly formed nuclei is treated as negligible.",
+      "quote": "The size of the nuclei is considered negligible (r_0 ≃ 0).",
+      "process_condition": false
+     },
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11.3": {
+   "form": "ODE",
+   "computes": "\\mu_{2}",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The second crystal-size moment changes through growth of the first moment and the nucleation source at size r0.",
+   "description_basis": "stated",
+   "quote": "first four moment equations",
+   "assumptions": [
+    {
+     "text": "The moment model considers only one characteristic crystal size.",
+     "quote": "when only one characteristic size is considered",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model is applied to an unseeded system with zero initial moments.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The size of newly formed nuclei is treated as negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to an unseeded system with zero initial moments.",
+    "assumption quote not found: The size of newly formed nuclei is treated as negligible."
+   ],
+   "llm": {
+    "eq": "11.3",
+    "description": "The second crystal-size moment changes through growth of the first moment and the nucleation source at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "assumptions": [
+     {
+      "text": "The moment model considers only one characteristic crystal size.",
+      "quote": "when only one characteristic size is considered",
+      "process_condition": false
+     },
+     {
+      "text": "The model is applied to an unseeded system with zero initial moments.",
+      "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+      "process_condition": true
+     },
+     {
+      "text": "The size of newly formed nuclei is treated as negligible.",
+      "quote": "The size of the nuclei is considered negligible (r_0 ≃ 0).",
+      "process_condition": false
+     },
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11.4": {
+   "form": "ODE",
+   "computes": "\\mu_{3}",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The third crystal-size moment changes through growth of the second moment and the nucleation source at size r0.",
+   "description_basis": "stated",
+   "quote": "first four moment equations",
+   "assumptions": [
+    {
+     "text": "The moment model considers only one characteristic crystal size.",
+     "quote": "when only one characteristic size is considered",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model is applied to an unseeded system with zero initial moments.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The size of newly formed nuclei is treated as negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to an unseeded system with zero initial moments.",
+    "assumption quote not found: The size of newly formed nuclei is treated as negligible."
+   ],
+   "llm": {
+    "eq": "11.4",
+    "description": "The third crystal-size moment changes through growth of the second moment and the nucleation source at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "assumptions": [
+     {
+      "text": "The moment model considers only one characteristic crystal size.",
+      "quote": "when only one characteristic size is considered",
+      "process_condition": false
+     },
+     {
+      "text": "The model is applied to an unseeded system with zero initial moments.",
+      "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+      "process_condition": true
+     },
+     {
+      "text": "The size of newly formed nuclei is treated as negligible.",
+      "quote": "The size of the nuclei is considered negligible (r_0 ≃ 0).",
+      "process_condition": false
+     },
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11.5": {
+   "form": "ODE",
+   "computes": "C",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The solution concentration decreases as crystal volume is generated by growth and nucleation.",
+   "description_basis": "stated",
+   "quote": "mass balance equation",
+   "assumptions": [
+    {
+     "text": "The moment model considers only one characteristic crystal size.",
+     "quote": "when only one characteristic size is considered",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model is applied to an unseeded system with zero initial moments.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The size of newly formed nuclei is treated as negligible.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to an unseeded system with zero initial moments.",
+    "assumption quote not found: The size of newly formed nuclei is treated as negligible."
+   ],
+   "llm": {
+    "eq": "11.5",
+    "description": "The solution concentration decreases as crystal volume is generated by growth and nucleation.",
+    "description_basis": "stated",
+    "quote": "mass balance equation",
+    "assumptions": [
+     {
+      "text": "The moment model considers only one characteristic crystal size.",
+      "quote": "when only one characteristic size is considered",
+      "process_condition": false
+     },
+     {
+      "text": "The model is applied to an unseeded system with zero initial moments.",
+      "quote": "For unseeded systems, the initial condition for eq 11 is given by",
+      "process_condition": true
+     },
+     {
+      "text": "The size of newly formed nuclei is treated as negligible.",
+      "quote": "The size of the nuclei is considered negligible (r_0 ≃ 0).",
+      "process_condition": false
+     },
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "algebraic",
+   "computes": "G",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The crystal growth rate is given as a power-law function of supersaturation.",
+   "description_basis": "stated",
+   "quote": "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "\\Delta C"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{g}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "The crystal growth rate is given as a power-law function of supersaturation.",
+    "description_basis": "stated",
+    "quote": "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "\\Delta C"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_g"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "13": {
+   "form": "algebraic",
+   "computes": "B",
+   "condition": null,
+   "value": null,
+   "section": "2. Estimation of Nucleation Kinetics from Metastable Zone Experiments",
+   "description": "The primary number nucleation rate is given as a power-law function of supersaturation.",
+   "description_basis": "stated",
+   "quote": "B is the same nucleation rate as in eq 1 defined on a number basis",
+   "assumptions": [
+    {
+     "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "\\Delta C"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{b}"
+    }
+   ],
+   "issue": "The listed units for k_b (number volume^-1 time^-1) do not match the units for B (number kg solvent^-1 time^-1), while \\Delta C^b is dimensionless.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The listed units for k_b (number volume^-1 time^-1) do not match the units for B (number kg solvent^-1 time^-1), while \\Delta C^b is dimensionless."
+   ],
+   "llm": {
+    "eq": "13",
+    "description": "The primary number nucleation rate is given as a power-law function of supersaturation.",
+    "description_basis": "stated",
+    "quote": "B is the same nucleation rate as in eq 1 defined on a number basis",
+    "assumptions": [
+     {
+      "text": "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time.",
+      "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "\\Delta C"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_b"
+     }
+    ],
+    "issue": "The listed units for k_b (number volume^-1 time^-1) do not match the units for B (number kg solvent^-1 time^-1), while \\Delta C^b is dimensionless."
+   }
+  },
+  "21": {
+   "form": "algebraic",
+   "computes": "C^{*}",
+   "condition": null,
+   "value": null,
+   "section": "3. Experimental and Theoretical Assessment of the Approaches",
+   "description": "The equilibrium concentration of paracetamol in water is calculated from temperature using a quadratic solubility correlation.",
+   "description_basis": "stated",
+   "quote": "The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "equilibrium concentration",
+     "symbol": "C^{*}"
+    },
+    {
+     "role": "temperature",
+     "symbol": "T"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "21",
+    "description": "The equilibrium concentration of paracetamol in water is calculated from temperature using a quadratic solubility correlation.",
+    "description_basis": "stated",
+    "quote": "The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium concentration",
+      "symbol": "C^{*}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

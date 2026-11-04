@@ -1,0 +1,491 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "zentou_2019_monod": {
+   "name": "Monod",
+   "equations": [
+    "1",
+    "3",
+    "6",
+    "7"
+   ],
+   "description": "The model represents batch alcoholic fermentation of molasses by Saccharomyces cerevisiae and predicts biomass, sugar substrate, and ethanol concentrations over time. It is a compact dynamic concentration model in which substrate-dependent Monod growth is linked to substrate consumption and ethanol production through yield coefficients. Fermentation was run in a stirred, 1-L-capacity bioreactor with 250 mL of medium, initially micro-aerated and then operated anaerobically. The authors estimated the Monod growth parameters from batch data at low initial sugar concentrations and compared simulated predictions with separate experiments at initial concentrations of 75, 150, and 225 g/L. The model fit best at low substrate concentration and became less accurate at high concentration, where it does not represent substrate inhibition. The authors present it as a practical model for predicting and supporting the optimization and control of molasses fermentation under a suitable, specific range of conditions.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes batch alcoholic fermentation of molasses for bioethanol production by Saccharomyces cerevisiae.",
+     "quote": "predicting the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The yeast was active dry Saccharomyces cerevisiae from Saf-Levure.",
+     "quote": "Three loops of active dry Saccharomyces cerevisiae yeast from Saf-Levure (Lesaffre, Marcq, France)",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "Fructose and sucrose concentrations were converted to glucose-equivalent concentrations for the calculations.",
+     "quote": "In order to simplify the calculations, the concentration of other sugars (Fructose and sucrose) was converted into the equivalent concentration of glucose.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Fermentation was carried out in a 1-L-capacity batch bioreactor containing 250 mL of culture medium.",
+     "quote": "Anaerobic fermentation was carried out in a batch bioreactor with a 1-L volume containing 250 mL of culture media",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The initial sugar range used for Monod parameter estimation was 5–25 g/L glucose-equivalent.",
+     "quote": "different initial sugar concentrations (equivalent 5–25 g.L−1 glucose for the Monod model",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The Monod experiments used initial substrate concentrations of 5, 10, 15, 20, and 25 g/L.",
+     "quote": "Initial Substrate Concentration (g.L−1): 5",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Fresh baker’s yeast was added at 1 g/L.",
+     "quote": "Yeast was added to the prepared fermentation medium with a concentration of 1 g.L−1 (calculated as fresh baker's yeast).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The fermentation was held at pH 4.5 and 30 °C with stirring at 250 rpm.",
+     "quote": "the pH value was adjusted at pH = 4.5 by the automatic addition of 0.1 M NaOH and the stirring speed was maintained at 250 rpm. The fermentation temperature was kept at 30 °C using a water jacket.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The batch was micro-aerated at 1 vvm for 2 h and then kept anaerobic for the remainder of fermentation.",
+     "quote": "The fermentation was carried out under micro-aeration conditions (1 vvm) for 2 h and turned later to anaerobic during the rest time of fermentation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The inoculum was prepared by incubating yeast in diluted molasses medium with ammonium sulphate and ammonium phosphate for 6 h at 35 °C and 250 rpm under aerobic conditions.",
+     "quote": "The fermentation medium was incubated at 35 °C besides shaking with 250 rpm for 6 h under aerobic conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The chemicals and materials used were autoclaved at 121 °C for 20 min.",
+     "quote": "All the used chemicals and materials were sterilized in an autoclave at 121 °C for 20 min before the experiment.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The formulation is a dynamic, spatially lumped concentration model and can be considered unstructured because it tracks bulk biomass rather than intracellular components.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "states",
+     "text": "The model predicts three state concentrations: biomass, growth-limiting substrate, and ethanol.",
+     "quote": "The current study aims at developing and validating the Monod and Andrews mathematical models for predicting the dynamics of biomass, substrate, and ethanol",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "As specified by the model formulation, it has three dynamic balances, one algebraic growth-rate relation, and four parameters: two growth-kinetic parameters and two yield coefficients.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The biomass-growth formulation focuses on the exponential or logarithmic growth phase.",
+     "quote": "In the Monod model, an emphasis has been laid to the exponential or logarithmic phase in modelling the microbial cells growth",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The Monod law represents growth as substrate-limited, with the specific growth rate approaching a maximum as substrate concentration increases.",
+     "quote": "The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The Monod model does not include inhibition of cell growth by high substrate concentrations.",
+     "quote": "the classical Monod equation does not consider the inhibitory effect of a high substrate on cell growth.",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Substrate consumption and ethanol formation are linked to biomass growth through substrate- and product-specific yield coefficients.",
+     "quote": "where Yx/s and Yp/s are the substrate- and product-specific yield coefficients, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The Monod growth parameters were obtained from specific growth rate data using Lineweaver–Burk plots.",
+     "quote": "The μ values were used to evaluate μmax and Ks by Lineweaver–Burk plots derived from Equation (3).",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The paper states that viable-cell concentrations in carriers and broth were used to determine the specific growth rate, although the described batch setup does not otherwise specify carriers.",
+     "quote": "The viable cell concentrations both in the carriers and the broth were determined and used for μ determination using Equation (2).",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The paper does not report uncertainty intervals for the Monod growth-parameter estimates.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "yields",
+     "text": "The paper says the Monod yield coefficients did not change significantly across the 5–25 g/L range, but its prose and table give inconsistent average values.",
+     "quote": "No significant change in both yield coefficients was noted in this range",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Fermentation samples were collected at 13 times from 0 to 72 h.",
+     "quote": "A sample of 5 mL was taken at a predetermined time (0, 2, 4, 6, 8, 10, 12, 18, 24, 30, 36, 48, and 72 h)",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Each fermentation sample was 5 mL.",
+     "quote": "A sample of 5 mL was taken",
+     "basis": "stated"
+    },
+    {
+     "topic": "analytics",
+     "text": "Biomass growth was measured by absorbance at 620 nm and calibrated against cell dry weight.",
+     "quote": "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer",
+     "basis": "stated"
+    },
+    {
+     "topic": "analytics",
+     "text": "Glucose, fructose, sucrose, and ethanol were measured by HPLC using a Bio-Rad Aminex HPX 87H column and the cited NREL methods.",
+     "quote": "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The validation experiments used initial substrate concentrations of 75, 150, and 225 g/L, which differed from the Monod parameter-estimation range.",
+     "quote": "The values of substrate concentration used for the validation of the models are different from the concentrations which were used for the modelling",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The simulations used MATLAB R2014a and the paper describes solving the models with a fourth-order Runge–Kutta method, ODE 45.",
+     "quote": "The models were solved and simulated by using the fourth-order Runge–Kutta method ODE 45 with the MATLAB R2014a software (Version 8.3).",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "At 75 g/L initial substrate, the paper reports R² values of 0.99956 for biomass, 0.99954 for substrate, and 0.99859 for product.",
+     "quote": "the highest R squared was observed at S0 = 75 g.L−1 with an R squared equal to 0.99956, 0.99954, and 0.99859 for the biomass, substrate, and product concentrations, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "At 225 g/L initial substrate, the paper reports R² values of 0.92462 for biomass, 0.921547 for substrate, and 0.916246 for product for the Monod model.",
+     "quote": "R2 biomass = 0.99956, R2 substrate = 0.99954, and R2 product = 0.99859 to R2 biomass = 0.92462, R2 substrate = 0.921547, and R2 product = 0.916246 for an increase in the initial substrate concentration from 75 to 225 g.L−1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper gives conflicting locations for the Monod model’s best low-concentration fit: its abstract reports 75 g/L, while the Results discussion says 50 g/L despite listing validation runs at 75, 150, and 225 g/L.",
+     "quote": "The Monod model showed a good agreement with the experimental data at a low concentration where the maximum R2 values for the biomass, substrate, and ethanol concentrations were achieved at S0 = 50 g.L−1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The paper cautions that R² does not establish whether predictions or parameter estimates are biased and says residual plots should also be assessed.",
+     "quote": "a key limitation of R2 is that this statistic cannot determine whether the parameter estimates and predictions are biased, which is why the residual plots must be assessed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper concludes that the Monod model is more suitable at low initial substrate concentration, whereas its accuracy decreases at high concentration because it omits substrate inhibition.",
+     "quote": "The low accuracy of the Monod model in a high substrate concentration is due to the fact that the classical Monod equation does not consider the inhibitory effect of a high substrate on cell growth.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper identifies Monod (1950) as the widely accepted basic fermentation-growth model on which its Monod formulation is based.",
+     "quote": "the model presented by Monod (1950) seems to enjoy the widest acceptance model",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper says its Monod kinetic estimates were close to those reported by Rorke and Gueguim Kana (2017) and Srimachai et al. (2015) for other feedstocks.",
+     "quote": "which were too close to the values reported in previous studies [17,18] using sweet sorghum leaves and oil palm jus.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper contrasts its Monod estimates with Raposo et al. (2009), reporting a lower maximum specific growth rate and a higher half-velocity constant than that study.",
+     "quote": "μmax was 0.179 h−1, which is half of the value reported by Raposo et al. [23] for molasses fermentation, whereas Ks was almost double as compared to the same study",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose the model as a technical tool for predicting, simulating, and controlling alcoholic fermentation to support the bioethanol industry.",
+     "quote": "A mathematical model which predicts, simulates, and controls the alcoholic fermentation development would be a valuable technical tool to promote the bioethanol industry",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state that its model code or experimental dataset is publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "X",
+    "S",
+    "P"
+   ],
+   "inputs": [
+    "s"
+   ],
+   "status": "pending",
+   "review": [
+    "4 of 38 facts inferred (no quote found)"
+   ]
+  },
+  "zentou_2019_andrews": {
+   "name": "Andrews",
+   "equations": [
+    "1",
+    "5",
+    "6",
+    "7"
+   ],
+   "description": "The Andrews model describes batch alcoholic fermentation of molasses by Saccharomyces cerevisiae and predicts changes in biomass, sugar substrate, and ethanol concentration. It combines a substrate-inhibition growth law with batch balances that link substrate consumption and ethanol production to cell growth through yield coefficients. Fermentation experiments used a stirred 1-L bioreactor with a 250-mL working volume, initially micro-aerated and then run anaerobically. The Andrews parameters were estimated from growth data at high substrate concentrations, and the model was simulated with MATLAB and compared against separate batch experiments at three initial substrate concentrations. The model agreed best with the high-concentration validation data and less well with the low-concentration data; the authors present it as useful for describing fermentation within a suitable operating range, rather than as a universal model.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model represents alcoholic fermentation of molasses by Saccharomyces cerevisiae for bioethanol production.",
+     "quote": "predicting the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae",
+     "basis": "stated"
+    },
+    {
+     "topic": "medium",
+     "text": "Fructose and sucrose concentrations were converted to glucose-equivalent concentrations for the calculations.",
+     "quote": "the concentration of other sugars (Fructose and sucrose) was converted into the equivalent concentration of glucose.",
+     "basis": "stated"
+    },
+    {
+     "topic": "medium",
+     "text": "The inoculum medium contained diluted molasses at 50 g L⁻¹ glucose, ammonium sulphate at 0.7 g L⁻¹, and ammonium phosphate at 0.4 g L⁻¹.",
+     "quote": "200 mL of culture media containing diluted molasses (50 g.L−1 glucose), ammonium sulphate (0.7 g.L−1), and ammonium phosphate (0.4 g.L−1)",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Fermentation was performed in a 1-L batch bioreactor with a 250-mL culture volume.",
+     "quote": "a batch bioreactor with a 1-L volume containing 250 mL of culture media",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The fermentation pH was maintained at 4.5 by automatic addition of 0.1 M NaOH, and the temperature and stirring speed were 30 °C and 250 rpm.",
+     "quote": "the pH value was adjusted at pH = 4.5 by the automatic addition of 0.1 M NaOH and the stirring speed was maintained at 250 rpm. The fermentation temperature was kept at 30 °C",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The culture was micro-aerated at 1 vvm for 2 h and then kept anaerobic for the remainder of fermentation.",
+     "quote": "The fermentation was carried out under micro-aeration conditions (1 vvm) for 2 h and turned later to anaerobic during the rest time of fermentation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The methods section gives an Andrews-model fermentation substrate range equivalent to 50–200 g L⁻¹ glucose.",
+     "quote": "equivalent of 50–200 g.L−1 glucose for the Andrews model",
+     "basis": "stated"
+    },
+    {
+     "topic": "inoculum",
+     "text": "The bioreactor was inoculated with yeast at 1 g L⁻¹, calculated as fresh baker’s yeast.",
+     "quote": "Yeast was added to the prepared fermentation medium with a concentration of 1 g.L−1 (calculated as fresh baker's yeast).",
+     "basis": "stated"
+    },
+    {
+     "topic": "inoculum",
+     "text": "The active dry yeast preculture was incubated aerobically for 6 h at 35 °C and 250 rpm.",
+     "quote": "The fermentation medium was incubated at 35 °C besides shaking with 250 rpm for 6 h under aerobic conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Samples of 5 mL were taken at 13 time points from 0 to 72 h to measure sugars, ethanol, and biomass.",
+     "quote": "A sample of 5 mL was taken at a predetermined time (0, 2, 4, 6, 8, 10, 12, 18, 24, 30, 36, 48, and 72 h) in order to determine the concentration of sugars, ethanol, and biomass.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Yeast growth was measured spectrophotometrically at 620 nm and calibrated against cell dry weight.",
+     "quote": "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Glucose, fructose, sucrose, and ethanol concentrations were measured by HPLC using a Bio-Rad Aminex HPX 87H column.",
+     "quote": "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The model is a time-dependent batch model with three concentration states: biomass, substrate, and ethanol.",
+     "quote": "the dynamics of biomass, substrate, and ethanol for the batch fermentation",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The paper describes growth, substrate consumption, and ethanol production using differential equations, with an algebraic Andrews growth-rate law.",
+     "quote": "the mathematical model for the substrate consumption and ethanol production can be expressed as follows",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The Andrews growth law represents inhibition of S. cerevisiae growth by excess substrate.",
+     "quote": "the predicted inhibition caused by the excess of the substrate",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Substrate consumption and ethanol production are linked to cell growth through substrate- and product-specific yield coefficients.",
+     "quote": "where Yx/s and Yp/s are the substrate- and product-specific yield coefficients, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameterization",
+     "text": "The Andrews kinetic parameters were estimated from batch growth data at initial substrate concentrations of 100, 200, and 300 g L⁻¹.",
+     "quote": "estimated for a set of batch fermentation at different substrate concentrations (100, 200, and 300 g.L−1)",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameterization",
+     "text": "The reported Andrews parameter estimates were a maximum specific growth rate of 0.5086 h⁻¹, a half-velocity constant of 47.53789 g L⁻¹, and a substrate inhibition coefficient of 181.01639 g L⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameterization",
+     "text": "The Andrews growth-law fit had an adjusted R² of 0.99071 and a reduced chi-squared value of 7.90971 × 10⁻⁶.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameterization",
+     "text": "The paper reports fitting the Andrews parameters with Origin software, identified as version 2018a in Methods and 2018b in Results.",
+     "quote": "using Origin 2018a software based on the SubstrateInhib function",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameterization",
+     "text": "The average Andrews-model substrate and product yield coefficients were reported as 0.286 and 0.431, respectively.",
+     "quote": "the average values of Yx/s and Yp/s were 0.286 and 0.431 respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "simulation",
+     "text": "The models were simulated in MATLAB R2014a using a fourth-order Runge–Kutta method with the ODE 45 solver.",
+     "quote": "The models were solved and simulated by using the fourth-order Runge–Kutta method ODE 45 with the MATLAB R2014a software",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The validation experiments used initial substrate concentrations of 75, 150, and 225 g L⁻¹, distinct from the concentrations used for parameter estimation.",
+     "quote": "The values of substrate concentration used for the validation of the models are different from the concentrations which were used for the modelling",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "At 225 g L⁻¹ initial substrate, the Andrews model had R² values of 0.99795 for biomass, 0.99903 for substrate, and 0.99962 for ethanol.",
+     "quote": "with R2 equal to 0.99795, 0.99903, and 0.99962 for the biomass, substrate, and product concentrations, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "At 75 g L⁻¹ initial substrate, the Andrews model had R² values of 0.8743932 for biomass, 0.891686 for substrate, and 0.90020 for ethanol.",
+     "quote": "with R2 equal to 0.8743932, 0.891686, and 0.90020 for the biomass, substrate, and product concentrations, respectively at S0 = 75 g.L−1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The authors attribute the Andrews model’s stronger performance at high substrate concentration to its representation of substrate inhibition.",
+     "quote": "The Andrews model has successfully presented the experimental dataset at a high concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The authors report that the Andrews model is less accurate than Monod at low initial substrate concentration.",
+     "quote": "the Andrews model was less accurate at a low initial substrate concentration compared to the Monod model",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper cautions that R² alone cannot reveal bias in parameter estimates or predictions and says residual plots should also be assessed.",
+     "quote": "this statistic cannot determine whether the parameter estimates and predictions are biased, which is why the residual plots must be assessed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper’s validation discussion names 75, 150, and 225 g L⁻¹ as the tested concentrations but also says the Monod model’s maximum R² values occurred at 50 g L⁻¹.",
+     "quote": "different initial substrate concentrations (75, 150, and 225 g.L−1)",
+     "basis": "stated"
+    },
+    {
+     "topic": "applicability",
+     "text": "The authors conclude that no universal model describes different fermentation cultures and that a model’s suitability depends on its operating range.",
+     "quote": "the suitability of a model can only be determined for a specific range.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper compares the Andrews-model results with earlier Andrews applications to soft-drink mixtures, sucrose, sugar-cane juice, and glucose, citing Comelli et al. (2016), Guidini et al. (2014), Oliveira et al. (2016), and Kostov et al. (2012).",
+     "quote": "Table 1 reviews some recent articles highlighting the modelling of alcoholic fermentation using different feedstocks based on the Monod model and Andrews model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper compares its molasses growth parameters with Raposo et al. (2009), reporting its maximum growth rate as about half that study’s value and its half-velocity constant as almost twice the value.",
+     "quote": "μmax was 0.179 h−1, which is half of the value reported by Raposo et al. [23] for molasses fermentation, whereas Ks was almost double as compared to the same study",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper identifies Monod (1950) as the source of the widely accepted Monod model used as the comparator.",
+     "quote": "the model presented by Monod (1950) seems to enjoy the widest acceptance model",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose fermentation models as tools for process optimization and control to support industrial bioethanol production.",
+     "quote": "mathematical modelling may be regarded as a tool to optimise the fermentation process in order to meet the industry needs",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper identifies the software used for fitting and simulation but does not state that model code or experimental data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "X",
+    "S",
+    "P"
+   ],
+   "inputs": [
+    "s"
+   ],
+   "status": "pending",
+   "review": [
+    "3 of 35 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

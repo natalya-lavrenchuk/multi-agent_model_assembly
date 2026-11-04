@@ -1,0 +1,216 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3731,
+  "completion_tokens": 5231,
+  "total_tokens": 8962,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3728,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4097,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Aggregation-breakage PBM\n\nEquations:\n(1) \\frac{\\partial n(x,t)}{\\partial t}+\\frac{\\partial}{\\partial x}\\left(\\dot{X}(x,t)n(x,t)\\right)=h(x,t)_{agg}+h(x,t)_{break}      <- \" distributions are known as Population Balance Models (PBM). The general format of a one-dimensional PBM (i.e. with one property) looks like (Ramkrishna, 2000):\"\n(2) \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned}      <- \"Aggregation models are often based on the Smoluchowski model (Ramkrishna, 2000):\"\n(3) \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left(x^{\\prime/3}+(x-x^{\\prime})^{\\prime/3}\\right)^{3}      <- \"t-range forces like van der Waals and hydrodynamic interactions. The description of $\\beta(x-x',x$) used in this study was taken from Spicer & Pratsinis (1996):\"\n(5) \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned}      <- \"ulent energy dissipation rate ( $ m^2.s^{-3} $). $ \\alpha $ was chosen to be a constant between 0 and 1. Breakage models typically look like (Ramkrishna, 2000):\"\n(6) S(x)=Ax^{a}      <- \"S(x) is the breakage rate of particles of size x (s $ ^{-1} $) and $ \\Gamma $ the breakage distribution function. S(x) was taken from Spicer & Pratsinis (1996):\"\n(9) C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime }      <- \"e PBM was solved with both techniques for $ \\alpha=0.0065 $ and A=201.5. The simulation results in Figure 2 are represented as cumulative oversize numbers (CON)\"\n\nSymbols:\n\nn   [COMPUTED by eq 1]\n  [59] (sentence, p.2) As can be observed from eq. 2 and 5, the birth and death terms are typically integral functions of  $ n(x,t) $, making eq. 1 a so-called integro-differential equation.\n  [38] (sentence, p.2) where for this application x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers),  $ \\dot{X}(x,t) $ the growth rate (s⁻¹) and h(x,t)gg/break the net aggregation/breakage rates (cm⁻³.s⁻¹).\n\nx   [COMPUTED by eq 1]\n  [38] (sentence, p.2) where for this application x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers),  $ \\dot{X}(x,t) $ the growth rate (s⁻¹) and h(x,t)gg/break the net aggregation/breakage rates (cm⁻³.s⁻¹).\n  [47] (sentence, p.2) where $\\alpha$ (-) is the collision efficiency and $\\beta(x-x',x)$ (cm$^3$.s$^{-1}$) the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).\n  [76] (sentence, p.3) where $x_i$ represents the diameter of size class $i$ ($\\mu$m) and $\\Delta F_N(x)_i$ the number fraction in size class $i$.\n\n\\dot{X}   [COMPUTED by eq 1]\n  (no snippet mentions this symbol)\n\nh   [COMPUTED by eq 2, 5]\n  [38] (sentence, p.2) where for this application x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers),  $ \\dot{X}(x,t) $ the growth rate (s⁻¹) and h(x,t)gg/break the net aggregation/breakage rates (cm⁻³.s⁻¹).\n  [40] (sentence, p.2) Since the model will be used to describe rather short flocculation experiments (max. 4h), it can be assumed that no significant growth occurs ( $ \\dot{X}(x,t)=0 $). h(x,t)gg/break account for discontinuous aggregation and breakage processes (Figure 1).\n\na   [COMPUTED by eq 2]\n  [0] (sentence, p.1) Ingmar Nopens $ ^{a} $, Thilo Koegst $ ^{a} $, Koenraad Mahieu $ ^{a} $ and Peter A.\n  [1] (sentence, p.1) Vanrolleghem $ ^{a} $\n  [2] (sentence, p.1) $ ^{a} $BIOMATH, Ghent University, Coupure Links 653, B-9000 Gent, Belgium (*E-mail:\n  [160] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: $ \\overline{G} $: 19.4 | Fitting Variable: Vol% | $ \\alpha $: 0.0121 | A: 166 | J( $ \\theta $): 1336\n  [161] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: D[4,3] | 0.0136 | 195 | 2712\n  [162] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: N_i | 0.0073 | 12 | 1.60e19\n\ng   [COMPUTED by eq 2]\n  [154] (sentence, p.5) The new approach was used for the conversion of raw vol% distributions into number distributions (X=3g.L $ ^{-1} $,  $ \\rho_l=1g.cm^{-3} $,  $ \\rho_l=1.04g.cm^{-3} $,  $ \\rho_s=1.7g.cm^{-3} $).\n  [34] (sentence, p.2) model segregates the biomass into individual sludge flocs implying all floc properties (e.g. size) to be segregated too.\n  [79] (sentence, p.3) (1) the assumption of sphericity of particles and (2) the required dilution (< 0.2g/l).\n\nbreak   [COMPUTED by eq 5]\n  [38] (sentence, p.2) where for this application x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers),  $ \\dot{X}(x,t) $ the growth rate (s⁻¹) and h(x,t)gg/break the net aggregation/breakage rates (cm⁻³.s⁻¹).\n  [40] (sentence, p.2) Since the model will be used to describe rather short flocculation experiments (max. 4h), it can be assumed that no significant growth occurs ( $ \\dot{X}(x,t)=0 $). h(x,t)gg/break account for discontinuous aggregation and breakage processes (Figure 1).\n\n\\alpha   [NOT COMPUTED]\n  [47] (sentence, p.2) where $\\alpha$ (-) is the collision efficiency and $\\beta(x-x',x)$ (cm$^3$.s$^{-1}$) the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).\n  [48] (sentence, p.2) This model describes both the transport of flocs towards one another ($\\beta$) and the probability that these collisions lead to aggregation ($\\alpha$) accounting for short-range forces like van der Waals and hydrodynamic interactions.\n  [52] (sentence, p.2) $ \\alpha $ was chosen to be a constant between 0 and 1.\n  [107] (table_row, p.3) Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-...: technique: fixed | $ \\alpha $: 0.00648 | A: 201.5\n  [108] (table_row, p.3) Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-...: technique: moving | $ \\alpha $: 0.01364 | A: 195\n  [160] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: $ \\overline{G} $: 19.4 | Fitting Variable: Vol% | $ \\alpha $: 0.0121 | A: 166 | J( $ \\theta $): 1336\n\n\\beta   [COMPUTED by eq 3]\n  [47] (sentence, p.2) where $\\alpha$ (-) is the collision efficiency and $\\beta(x-x',x)$ (cm$^3$.s$^{-1}$) the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).\n  [48] (sentence, p.2) This model describes both the transport of flocs towards one another ($\\beta$) and the probability that these collisions lead to aggregation ($\\alpha$) accounting for short-range forces like van der Waals and hydrodynamic interactions.\n  [49] (sentence, p.2) The description of $\\beta(x-x',x$) used in this study was taken from Spicer & Pratsinis (1996):\n\nx^{\\prime}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "n",
+    "description": "Floc size distribution function",
+    "description_basis": "stated",
+    "snippet_id": 38,
+    "quote": "the floc size distribution function (#.cm⁻³) (expressed in numbers)",
+    "unit": "#.cm⁻³",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "x",
+    "description": "Floc size, expressed as volume",
+    "description_basis": "stated",
+    "snippet_id": 38,
+    "quote": "the floc size (expressed as volume)",
+    "unit": "cm³",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\dot{X}",
+    "description": "Growth rate",
+    "description_basis": "stated",
+    "snippet_id": 38,
+    "quote": "the growth rate (s⁻¹)",
+    "unit": "s⁻¹",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "h",
+    "description": "Net aggregation/breakage rates",
+    "description_basis": "stated",
+    "snippet_id": 38,
+    "quote": "the net aggregation/breakage rates (cm⁻³.s⁻¹).",
+    "unit": "cm⁻³.s⁻¹",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "a",
+    "description": "Exponent in the breakage-rate size law",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "g",
+    "description": "Mean velocity gradient in the aggregation kernel",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "s⁻¹",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "break",
+    "description": "Breakage contribution to the net population-balance rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cm⁻³.s⁻¹",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha",
+    "description": "Collision efficiency",
+    "description_basis": "stated",
+    "snippet_id": 47,
+    "quote": "the collision efficiency",
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "fixed pivot, same dataset",
+      "value": "0.00648 - (p.3, Table 1)"
+     },
+     {
+      "case": "moving pivot, same dataset",
+      "value": "0.01364 - (p.3, Table 1)"
+     },
+     {
+      "case": "fitting variable Vol%",
+      "value": "0.0121 - (p.5, Table 2)"
+     },
+     {
+      "case": "fitting variable D[4,3]",
+      "value": "0.0136 - (p.5, Table 2)"
+     },
+     {
+      "case": "fitting variable N_i",
+      "value": "0.0073 - (p.5, Table 2)"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A selected or estimated constant describing collision efficiency in the aggregation law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\beta",
+    "description": "Collision frequency for particles of volume x and x-x′",
+    "description_basis": "stated",
+    "snippet_id": 47,
+    "quote": "the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).",
+    "unit": "cm³.s⁻¹",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "x^{\\prime}",
+    "description": "Integration variable representing floc volume",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cm³",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "An integration variable representing particle size (volume) in the population-balance equations.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

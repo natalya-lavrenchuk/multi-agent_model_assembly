@@ -1,0 +1,247 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 5582,
+  "completion_tokens": 5518,
+  "total_tokens": 11100,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 5579,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4244,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Monod | Andrews\n\nEquations:\n(1) \\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X      <- \" phase is generally believed to follow the first order kinetic model, i.e., the growth rate is proportional to the microbial mass in the system. Mathematically,\"\n(3) \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}      <- \"The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:\"\n(5) \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}      <- \"In the Andrews model, the growth of S. cerevisiae can be described in relation to the predicted inhibition caused by the excess of the substrate as follows:\"\n(6) \\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}      <- \"$ and $ K_i $ are calculated and $ \\mu $ is determined, the mathematical model for the substrate consumption and ethanol production can be expressed as follows:\"\n(7) \\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}      <- \"$ and $ K_i $ are calculated and $ \\mu $ is determined, the mathematical model for the substrate consumption and ethanol production can be expressed as follows:\"\n\nSymbols:\n\nX   [COMPUTED by eq 1]\n  [174] (sentence, p.9) (X)\n  [179] (sentence, p.9) (X)  $ R^2 $ for the biomass concentration, (S)  $ R^2 $ for the substrate concentration, and (P)  $ R^2 $ for the ethanol concentration.\n  [88] (sentence, p.3) where  $ \\frac{dX}{dt} $ denotes the bacterial growth rate (g.L $ ^{-1} $.h $ ^{-1} $), X (g.L $ ^{-1} $) characterises the bacterial cell concentration, and  $ \\mu $ (h $ ^{-1} $) symbolises the proportional constant known as the specific growth rate.\n\n\\mu   [COMPUTED by eq 3, 5]\n  [88] (sentence, p.3) where  $ \\frac{dX}{dt} $ denotes the bacterial growth rate (g.L $ ^{-1} $.h $ ^{-1} $), X (g.L $ ^{-1} $) characterises the bacterial cell concentration, and  $ \\mu $ (h $ ^{-1} $) symbolises the proportional constant known as the specific growth rate.\n  [110] (sentence, p.4) Figure 1 represents the variation of specific growth coefficient $\\mu$ as a function of substrate concentration.\n  [123] (sentence, p.6) Figure 3 represents the variations of the specific growth rate  $ \\mu $ as a function of the initial substrate concentration  $ S $ (50–300 g.L $ ^{-1} $).\n  [132] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Reduced Chi Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ 7.90971 \\times 10^{-6} $\n  [133] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Adjusted R-Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.99071\n  [134] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ \\mu_{\\max} (h^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.5086 \\pm 0.04\n\n\\mu_{max}   [NOT COMPUTED]\n  [91] (sentence, p.4) where  $ \\mu_{max} $ is the maximum specific growth rate ( $ h^{-1} $), S is the concentration of the growth limiting substrate (g.L $ ^{-1} $), and  $ K_{s} $ is the half velocity constant, i.e., the substrate concentration at half of the maximum growth rate \n  [96] (sentence, p.4) The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $,  $ K_s $, and  $ K_i $) using Origin 2018a software based on the SubstrateInhib function, where  $ \\mu_{max} $ ( $ h^{-1} $) is the maximum specific growth,  $ K_\n  [13] (sentence, p.1) The results of modelling showed that  $ \\mu_{max} = 0.179 $ 1/h and  $ K_s = 11.37 $ g.L $ ^{-1} $ for the Monod model, whereas  $ \\mu_{max} = 0.508 $ 1/h,  $ K_s = 47.53 $ g.L $ ^{-1} $ and  $ K_i = 181.01 $ g.L $ ^{-1} $ for the Andrews model, which are too \n  [47] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Sorghum leaves | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.176 | $ K_s $ (g.L $ ^{-1} $): 10.11 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [17]\n  [48] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Oil palm frond juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.150 | $ K_s $ (g.L $ ^{-1} $): 10.21 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [18]\n  [49] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Sweet sorghum juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.313 | $ K_s $ (g.L $ ^{-1} $): 47.51 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [19]\n\nS   [COMPUTED by eq 6]\n  [123] (sentence, p.6) Figure 3 represents the variations of the specific growth rate  $ \\mu $ as a function of the initial substrate concentration  $ S $ (50–300 g.L $ ^{-1} $).\n  [132] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Reduced Chi Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ 7.90971 \\times 10^{-6} $\n  [133] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Adjusted R-Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.99071\n  [134] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ \\mu_{\\max} (h^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.5086 \\pm 0.04\n  [135] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_s (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 47.53789 \\pm 9.27\n  [136] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_i (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 181.01639 \\pm 29.14\n\nK_{S}   [NOT COMPUTED]\n  [132] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Reduced Chi Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ 7.90971 \\times 10^{-6} $\n  [133] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Adjusted R-Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.99071\n  [134] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ \\mu_{\\max} (h^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.5086 \\pm 0.04\n  [135] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_s (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 47.53789 \\pm 9.27\n  [136] (table_row, p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model: $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_i (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 181.01639 \\pm 29.14\n\nK_{i}   [NOT COMPUTED]\n  [96] (sentence, p.4) The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $,  $ K_s $, and  $ K_i $) using Origin 2018a software based on the SubstrateInhib function, where  $ \\mu_{max} $ ( $ h^{-1} $) is the maximum specific growth,  $ K_\n  [13] (sentence, p.1) The results of modelling showed that  $ \\mu_{max} = 0.179 $ 1/h and  $ K_s = 11.37 $ g.L $ ^{-1} $ for the Monod model, whereas  $ \\mu_{max} = 0.508 $ 1/h,  $ K_s = 47.53 $ g.L $ ^{-1} $ and  $ K_i = 181.01 $ g.L $ ^{-1} $ for the Andrews model, which are too \n  [47] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Sorghum leaves | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.176 | $ K_s $ (g.L $ ^{-1} $): 10.11 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [17]\n  [48] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Oil palm frond juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.150 | $ K_s $ (g.L $ ^{-1} $): 10.21 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [18]\n  [49] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Sweet sorghum juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.313 | $ K_s $ (g.L $ ^{-1} $): 47.51 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [19]\n  [50] (table_row, p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstock...: Substrate: Banana peels | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 1.500 | $ K_s $ (g.L $ ^{-1} $): 25.00 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [20]\n\nY_{x/s}   [NOT COMPUTED]\n  [100] (sentence, p.4) where  $ Y_{x/s} $ and  $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively.\n  [141] (sentence, p.7) Table 3 represents the values of  $ Y_{x/s} $ and  $ Y_{p/s} $ respectively in the range between 5 and 25 g.L $ ^{-1} $.\n  [143] (sentence, p.7) The same was noted for the Andrews model where the average values of  $ Y_{x/s} $ and  $ Y_{p/s} $ were 0.286 and 0.431 respectively.\n  [146] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 5 | Y $ _{x/s} $: 0.267 | Y $ _{p/s} $: 0.384\n  [147] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 10 | Y $ _{x/s} $: 0.282 | Y $ _{p/s} $: 0.397\n  [148] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 15 | Y $ _{x/s} $: 0.290 | Y $ _{p/s} $: 0.446\n\nP   [COMPUTED by eq 7]\n  [176] (sentence, p.9) (P)\n  [179] (sentence, p.9) (X)  $ R^2 $ for the biomass concentration, (S)  $ R^2 $ for the substrate concentration, and (P)  $ R^2 $ for the ethanol concentration.\n\nY_{p/s}   [NOT COMPUTED]\n  [100] (sentence, p.4) where  $ Y_{x/s} $ and  $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively.\n  [141] (sentence, p.7) Table 3 represents the values of  $ Y_{x/s} $ and  $ Y_{p/s} $ respectively in the range between 5 and 25 g.L $ ^{-1} $.\n  [143] (sentence, p.7) The same was noted for the Andrews model where the average values of  $ Y_{x/s} $ and  $ Y_{p/s} $ were 0.286 and 0.431 respectively.\n  [146] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 5 | Y $ _{x/s} $: 0.267 | Y $ _{p/s} $: 0.384\n  [147] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 10 | Y $ _{x/s} $: 0.282 | Y $ _{p/s} $: 0.397\n  [148] (table_row, p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrat...: Initial Substrate Concentration (g.L $ ^{-1} $): 15 | Y $ _{x/s} $: 0.290 | Y $ _{p/s} $: 0.446\n\ns   [NOT COMPUTED]\n  [71] (sentence, p.3) Yeast was added to the prepared fermentation medium with a concentration of 1 g.L $ ^{-1} $ (calculated as fresh baker's yeast).\n  [90] (sentence, p.4) The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "X",
+    "description": "bacterial cell concentration",
+    "description_basis": "stated",
+    "snippet_id": 88,
+    "quote": "characterises the bacterial cell concentration",
+    "unit": "g.L^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu",
+    "description": "specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 88,
+    "quote": "symbolises the proportional constant known as the specific growth rate",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{max}",
+    "description": "maximum specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 91,
+    "quote": "maximum specific growth rate",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [
+     {
+      "model": "Monod",
+      "value": "0.179 1/h"
+     },
+     {
+      "model": "Andrews",
+      "value": "0.5086 ± 0.04 h^-1"
+     }
+    ],
+    "class_reason": "A fitted maximum specific growth rate, which is a constant of the growth-rate law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S",
+    "description": "concentration of the growth limiting substrate",
+    "description_basis": "stated",
+    "snippet_id": 91,
+    "quote": "S is the concentration of the growth limiting substrate",
+    "unit": "g.L^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{S}",
+    "description": "half-velocity constant; substrate concentration at half the maximum growth rate",
+    "description_basis": "stated",
+    "snippet_id": 91,
+    "quote": "K_{s} is the half velocity constant, i.e., the substrate concentration at half of the maximum growth rate",
+    "unit": "g.L^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [
+     {
+      "model": "Monod",
+      "value": "11.37 g.L^-1"
+     },
+     {
+      "model": "Andrews",
+      "value": "47.53789 ± 9.27 g.L^-1"
+     }
+    ],
+    "class_reason": "A fitted half-velocity constant of the growth-rate law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{i}",
+    "description": "substrate inhibition constant in the Andrews model",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "g.L^-1",
+    "unit_basis": "stated",
+    "value": "181.01639 ± 29.14 g.L^-1",
+    "value_number": 181.01639,
+    "value_set": "this model",
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A fitted substrate inhibition constant in the Andrews growth-rate law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{x/s}",
+    "description": "substrate-specific yield coefficient",
+    "description_basis": "stated",
+    "snippet_id": 100,
+    "quote": "Y_{x/s} and Y_{p/s} are the substrate- and product-specific yield coefficients, respectively",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "initial substrate concentration 5 g.L^-1",
+      "value": "0.267"
+     },
+     {
+      "case": "initial substrate concentration 10 g.L^-1",
+      "value": "0.282"
+     },
+     {
+      "case": "initial substrate concentration 15 g.L^-1",
+      "value": "0.290"
+     },
+     {
+      "case": "Andrews model average",
+      "value": "0.286"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A reported substrate-specific yield coefficient, which is a model yield parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "P",
+    "description": "ethanol concentration",
+    "description_basis": "stated",
+    "snippet_id": 179,
+    "quote": "for the ethanol concentration",
+    "unit": "g.L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{p/s}",
+    "description": "product-specific yield coefficient",
+    "description_basis": "stated",
+    "snippet_id": 100,
+    "quote": "Y_{x/s} and Y_{p/s} are the substrate- and product-specific yield coefficients, respectively",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "initial substrate concentration 5 g.L^-1",
+      "value": "0.384"
+     },
+     {
+      "case": "initial substrate concentration 10 g.L^-1",
+      "value": "0.397"
+     },
+     {
+      "case": "initial substrate concentration 15 g.L^-1",
+      "value": "0.446"
+     },
+     {
+      "case": "Andrews model average",
+      "value": "0.431"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A reported product-specific yield coefficient, which is a model yield parameter.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "s",
+    "description": "substrate concentration in the product-formation equation",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "g.L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A substrate concentration used as a changing process quantity in the model.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

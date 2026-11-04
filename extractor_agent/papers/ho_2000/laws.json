@@ -1,0 +1,259 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "4": {
+   "form": "algebraic",
+   "computes": "Q",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Total filtrate flow through the fouled membrane is the sum of flow through uncovered and blocked membrane regions.",
+   "description_basis": "stated",
+   "quote": "expressed as the sum of the flow rates through the open and blocked pores:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "Total filtrate flow through the fouled membrane is the sum of flow through uncovered and blocked membrane regions.",
+    "description_basis": "stated",
+    "quote": "expressed as the sum of the flow rates through the open and blocked pores:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "Q_{open}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Flow through the uncovered membrane area is calculated from the clean-membrane resistance under the applied pressure.",
+   "description_basis": "stated",
+   "quote": "is easily evaluated in terms of the clean membrane resistance ( R_m) as",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "driving force",
+     "symbol": "\\Delta P"
+    },
+    {
+     "role": "resistance",
+     "symbol": "R_{m}"
+    },
+    {
+     "role": "flow area",
+     "symbol": "A_{open}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "5",
+    "description": "Flow through the uncovered membrane area is calculated from the clean-membrane resistance under the applied pressure.",
+    "description_basis": "stated",
+    "quote": "is easily evaluated in terms of the clean membrane resistance ( R_m) as",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "driving force",
+      "symbol": "\\Delta P"
+     },
+     {
+      "role": "resistance",
+      "symbol": "R_{m}"
+     },
+     {
+      "role": "flow area",
+      "symbol": "A_{open}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "Q_{blocked}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Flow through blocked membrane regions is integrated over the blocked area using the local membrane-plus-deposit resistance.",
+   "description_basis": "stated",
+   "quote": "The volumetric flow rate through the blocked pores is written as",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "driving force",
+     "symbol": "\\Delta P"
+    },
+    {
+     "role": "resistance",
+     "symbol": "R_{m}"
+    },
+    {
+     "role": "resistance",
+     "symbol": "R_{p}"
+    },
+    {
+     "role": "flow area",
+     "symbol": "A_{blocked}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6",
+    "description": "Flow through blocked membrane regions is integrated over the blocked area using the local membrane-plus-deposit resistance.",
+    "description_basis": "stated",
+    "quote": "The volumetric flow rate through the blocked pores is written as",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "driving force",
+      "symbol": "\\Delta P"
+     },
+     {
+      "role": "resistance",
+      "symbol": "R_{m}"
+     },
+     {
+      "role": "resistance",
+      "symbol": "R_{p}"
+     },
+     {
+      "role": "flow area",
+      "symbol": "A_{blocked}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "ODE",
+   "computes": "A_{open}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "The uncovered membrane area decreases in proportion to the convective delivery of protein aggregates through the open pores.",
+   "description_basis": "stated",
+   "quote": "The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "7",
+    "description": "The uncovered membrane area decreases in proportion to the convective delivery of protein aggregates through the open pores.",
+    "description_basis": "stated",
+    "quote": "The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "ODE",
+   "computes": "m_{p}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Protein deposit mass per unit area on a blocked region accumulates in proportion to the local filtrate flux carrying deposit-forming protein.",
+   "description_basis": "stated",
+   "quote": "The growth of the protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "10",
+    "description": "Protein deposit mass per unit area on a blocked region accumulates in proportion to the local filtrate flux carrying deposit-forming protein.",
+    "description_basis": "stated",
+    "quote": "The growth of the protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11": {
+   "form": "algebraic",
+   "computes": "J_{blocked}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Local filtrate flux through a blocked region is determined by the applied pressure and the combined membrane and deposit resistance.",
+   "description_basis": "stated",
+   "quote": "J_{blocked} is the filtrate flux through each region of the membrane:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "driving force",
+     "symbol": "\\Delta P"
+    },
+    {
+     "role": "resistance",
+     "symbol": "R_{m}"
+    },
+    {
+     "role": "resistance",
+     "symbol": "R_{p}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "11",
+    "description": "Local filtrate flux through a blocked region is determined by the applied pressure and the combined membrane and deposit resistance.",
+    "description_basis": "stated",
+    "quote": "J_{blocked} is the filtrate flux through each region of the membrane:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "driving force",
+      "symbol": "\\Delta P"
+     },
+     {
+      "role": "resistance",
+      "symbol": "R_{m}"
+     },
+     {
+      "role": "resistance",
+      "symbol": "R_{p}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "ODE",
+   "computes": "R_{p}",
+   "condition": null,
+   "value": null,
+   "section": "MODEL DEVELOPMENT",
+   "description": "Local deposit resistance increases in proportion to the local deposit-mass accumulation rate, scaled by the specific protein-layer resistance.",
+   "description_basis": "stated",
+   "quote": "The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "Local deposit resistance increases in proportion to the local deposit-mass accumulation rate, scaled by the specific protein-layer resistance.",
+    "description_basis": "stated",
+    "quote": "The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

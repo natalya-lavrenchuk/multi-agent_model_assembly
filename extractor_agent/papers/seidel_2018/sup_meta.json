@@ -1,0 +1,824 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "seidel_2018_detailed_kinetic_model": {
+   "name": "Detailed kinetic model",
+   "equations": [
+    "4",
+    "7",
+    "8",
+    "9",
+    "10",
+    "C-1",
+    "C-2",
+    "C-3",
+    "C-5",
+    "C-6"
+   ],
+   "description": "The detailed kinetic model describes methanol synthesis from hydrogen, carbon monoxide, and carbon dioxide over a commercial copper/zinc oxide/alumina catalyst. It predicts the rates of CO hydrogenation, CO₂ hydrogenation, and the reverse water-gas shift reaction from gas partial pressures and temperature. It uses a Langmuir–Hinshelwood framework built from elementary surface steps, with fast steps treated as quasi-equilibrated. The detailed kinetic formulation is steady-state and algebraic, rather than a dynamic model with evolving states. Its parameters were fitted to 140 steady-state experiments in a differential Micro-Berty reactor and its predictions were compared with those measurements; dynamic switching experiments in the paper were used for a separate model extension. The authors present the kinetics as a basis for modelling methanol reactors handling changing feed compositions, including for chemical energy storage.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes methanol synthesis from hydrogen, CO, and CO₂.",
+     "quote": "methanol synthesis from  $ H_2 $, CO, and  $ CO_2 $",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactions",
+     "text": "The represented reaction network includes CO hydrogenation, CO₂ hydrogenation, and the water-gas shift reaction.",
+     "quote": "The reaction network comprises three main reactions, i.e. hydrogenation of CO and CO₂ as well as the water-gas shift reaction",
+     "basis": "stated"
+    },
+    {
+     "topic": "catalyst",
+     "text": "The experiments used BASF S3-86, a commercial Cu/ZnO/Al₂O₃ synthesis catalyst.",
+     "quote": "A commercial synthesis catalyst (BASF S3-86) was used in a crushed form to overcome mass transfer limitations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The experimental setup was a modified differential CSTR of the Micro-Berty Reactor type.",
+     "quote": "The experimental setup is based on a modified, differential CSTR of a Micro-Berty Reactor type described Berty (1999).",
+     "basis": "stated"
+    },
+    {
+     "topic": "catalyst",
+     "text": "The catalyst was crushed to reduce mass-transfer limitations in the experiments.",
+     "quote": "A commercial synthesis catalyst (BASF S3-86) was used in a crushed form to overcome mass transfer limitations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "The paper frames its kinetic treatment for industrial methanol synthesis at 50–100 bar and 473.15–573.15 K.",
+     "quote": "with pressure between 50–100 bar and temperatures between 473.15 and 573.15 K",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "The steady-state experiments used for parameter estimation covered 30–60 bar and 503.15–533.15 K.",
+     "quote": "The temperature was varied in the range from 503.15 to 533.15 K and the pressure in the range from 30 to 60 bar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The steady-state experiments varied the CO-to-CO₂ feed ratio from pure CO to pure CO₂.",
+     "quote": "the ratio of CO to  $ CO_2 $ was varied over the full range from pure CO to pure  $ CO_2 $.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The detailed formulation is a steady-state algebraic kinetic model with no ODE-computed states.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "model",
+     "text": "The detailed kinetic model has 16 reparameterized beta parameters reported in its parameter table.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "model",
+     "text": "The model uses partial pressures of CO, hydrogen, methanol, CO₂, and water, together with temperature, as its gas and thermal inputs.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The detailed kinetics is based on elementary surface reaction steps, with fast steps treated as quasi-equilibrated.",
+     "quote": "The other steps are assumed to be much faster such that equilibrium can be assumed for them.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The kinetic framework is Langmuir–Hinshelwood.",
+     "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The detailed model includes a CO-hydrogenation pathway, unlike the vanden Bussche and Froment model discussed in the paper.",
+     "quote": "Since CO-hydrogenation is neglected in this model, experiments 80–140 with pure CO feed can not be reproduced.",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The model uses partial pressures rather than fugacities for the reaction kinetics.",
+     "quote": "Here partial pressures are used instead of fugacities",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The reaction-rate temperature dependence is reparameterized using an Arrhenius expression referenced to 523.15 K.",
+     "quote": "with reference temperature  $ T_{ref} = 523.15\\ K $",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The temperature dependence of adsorption equilibrium constants is neglected as weaker than that of the reaction-rate constants.",
+     "quote": "The temperature dependency of the adsorption equilibrium constants is much weaker compared to the reaction rate constants and is therefore neglected",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "Three detailed-model parameters, β₇, β₁₂, and β₁₃, were found not to be structurally identifiable by the Profile-Likelihood method.",
+     "quote": "Application to the detailed model reveals that parameters  $ \\beta_{7}, \\beta_{12} $ and  $ \\beta_{13} $ are not structural identifiable.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "Five fitted beta parameters in the detailed model were reported as zero.",
+     "quote": "It is further observed that some of the  $ \\beta $ parameters are zero, namely  $ \\beta_{8}, \\beta_{10}, \\beta_{14} - \\beta_{16} $.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The authors report that the detailed-model optimization was terminated after 24 hours because convergence was very slow.",
+     "quote": "This results in very slow convergence of the optimization, which was terminated after 24 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The parameters were estimated using deterministic global optimization with BARON in GAMS because local methods did not give satisfactory results.",
+     "quote": "Since local optimization methods do not give satisfying results due to multiple local minima, deterministic global optimization with BARON. Tawarmalani and Sahinidis (2005) in GAMS (GAMS, 2013) is applied.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "For parameter estimation, the steady-state experiments were divided into pure-CO, mixed CO/CO₂, and pure-CO₂ feed subsets.",
+     "quote": "For the estimation of the remaining parameters the steady state experiments were divided into three subsets:",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The pure-CO experiments were used to estimate the CO-hydrogenation rate, the mixed-feed experiments for CO₂ hydrogenation, and the pure-CO₂ experiments for the remaining reverse water-gas shift parameter.",
+     "quote": "only CO-Feed (experiment 80–140), which can be used to estimate  $ r_{CO} $",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "The steady-state parameter fit used 140 experiments reported in Vollbrecht (2007).",
+     "quote": "For the parameter estimation, 140 stationary experiments reported in Vollbrecht (2007) were used.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Feed and product gas compositions were measured using gas chromatography.",
+     "quote": "The chemical analysis of feed gases and product gases was performed by a gas chromatographic setup.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Carbon-containing component balances were used in parameter identification because their compositions were measured most accurately with a flame ionization detector.",
+     "quote": "The highest accuracy for the analytical determination of the composition has been reached by the use of a Flame Ionization Detector (FID) for the carbon-containing components.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The analytical results were balanced before parameter estimation to reduce the effect of measurement uncertainty.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "The paper says that supplementary material contains the stationary experimental conditions and results.",
+     "quote": "all stationary experimental conditions and results are summarized in the supplementary material of the paper.",
+     "basis": "stated"
+    },
+    {
+     "topic": "dynamics",
+     "text": "The dynamic experiments switched between CO and CO₂ feeds at 523.15 K, 50 bar, and a space velocity of 240 mlᴺ/min.",
+     "quote": "with constant temperature  $ T = 523.15 $ K, pressure  $ p = 50 $ bar and constant space velocity  $ \\dot{V} = 240 $ ml $ ^N $/min",
+     "basis": "stated"
+    },
+    {
+     "topic": "dynamics",
+     "text": "The paper used the dynamic switching data to fit additional catalyst-morphology rate constants, rather than to fit the detailed fixed-center kinetic parameters.",
+     "quote": "The dynamic experiments were used to estimate the kinetic parameters  $ k_1^+ $ and  $ k_2^+ $ in Eq. (28). All other parameters  $ \\beta_i $ were fitted to the steady state data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The detailed model's simulated mole fractions were reported to fit the steady-state experiments well.",
+     "quote": "In all cases, the theoretical results nicely fit the experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The simplified kinetic model fitted the stationary experimental results almost as well as the detailed model.",
+     "quote": "It is concluded that the simple model fits the experimental results almost equally well compared to the detailed model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The vanden Bussche and Froment comparison model could not reproduce the pure-CO experiments and showed larger deviations on other experiments.",
+     "quote": "Further, larger deviations are also observed in the other experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors note that refitting the vanden Bussche and Froment kinetics to their experimental data might reduce its deviations, but they did not do so.",
+     "quote": "These could certainly be reduced by refitting the kinetics to the present experimental data, which however, was beyond the scope of the present study.",
+     "basis": "stated"
+    },
+    {
+     "topic": "provenance",
+     "text": "The detailed model was taken as a starting point from Vollbrecht (2007).",
+     "quote": "As a starting point the kinetic model suggested by Vollbrecht (2007) is considered.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper describes Graaf et al. (1986, 1988) as an established model that assumes CO hydrogenation to be the dominant methanol-synthesis path.",
+     "quote": "A very popular and widely known kinetic model was proposed by Graaf et al. (1986, 1988) in the 1980s assuming hydrogenation of CO as dominant path to synthesize methanol.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The detailed model was compared with the same steady-state experimental set used for parameter estimation; the paper does not report an independent validation dataset.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose the kinetic model for methanol production under changing feed conditions, including chemical energy storage applications.",
+     "quote": "They are therefore suitable for methanol production under changing feed conditions employed for example in novel applications for chemical energy storage.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The paper identifies the software used for estimation but does not state that model code is publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "correction",
+     "text": "The 2020 corrigendum states that the model equations used in the original calculations were correct, despite typographical errors in some printed equations.",
+     "quote": "The correct model equations used for all calculations presented in Seidel et al., (2018), are:",
+     "basis": "stated"
+    },
+    {
+     "topic": "provenance",
+     "text": "The corrigendum says the equilibrium constants were proposed by Kuznetov and taken from Vollbrecht (2007), and supplies expressions attributed to Skrzypek et al. (1994).",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "p_{CO}",
+    "p_{H_2}",
+    "p_{CH_3OH}",
+    "p_{CO_2}",
+    "p_{H_2O}",
+    "T"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 41 facts inferred (no quote found)"
+   ]
+  },
+  "seidel_2018_simplified_kinetic_model_steady_state": {
+   "name": "Simplified kinetic model, steady-state φ",
+   "equations": [
+    "10",
+    "22",
+    "23",
+    "24",
+    "25",
+    "C-11",
+    "C-12",
+    "C-13",
+    "C-14",
+    "C-15",
+    "C-16",
+    "C-1",
+    "C-2",
+    "C-3"
+   ],
+   "description": "The simplified steady-state-φ model describes methanol synthesis from hydrogen and CO and/or CO₂ over a Cu/ZnO/Al₂O₃ catalyst, predicting reaction rates and gas composition. It uses lumped Langmuir–Hinshelwood kinetics and distinguishes oxidized and reduced catalyst surface centers, with their relative amounts calculated from an equilibrium morphology relation. The authors fitted its kinetic parameters to 140 steady-state experiments in a differential Micro-Berty reactor, spanning feeds from pure CO to pure CO₂. Dynamic feed-switching experiments were also used to assess the quasi-static surface-center calculation, although the model variant with dynamic surface-center changes described those transients better. The authors propose the models for methanol production under changing feed compositions, including chemical energy storage using renewable resources.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes methanol synthesis from H₂, CO, and/or CO₂ over a Cu/ZnO/Al₂O₃ catalyst.",
+     "quote": "new detailed kinetic model for the methanol synthesis from H2, CO2 and/or CO using a Cu/ZnO/Al2O3 catalyst is proposed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactions",
+     "text": "The reaction network includes CO hydrogenation, CO₂ hydrogenation, and the reverse water-gas shift reaction.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "reactor",
+     "text": "The steady-state data came from a modified differential CSTR of the Micro-Berty reactor type.",
+     "quote": "The experimental setup is based on a modified, differential CSTR of a Micro-Berty Reactor type",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The commercial BASF S3-86 catalyst was crushed to reduce mass-transfer limitations.",
+     "quote": "A commercial synthesis catalyst (BASF S3-86) was used in a crushed form to overcome mass transfer limitations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "The paper describes the intended kinetics as covering 50–100 bar and 473.15–573.15 K.",
+     "quote": "In the remainder, this paper focuses on methanol synthesis from H2, CO, and CO2 over industrial Cu/ZnO/Al2O3 catalysts with pressure between 50–100 bar and temperatures between 473.15 and 573.15 K",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "The 140 steady-state experiments used temperatures of 503.15–533.15 K and pressures of 30–60 bar.",
+     "quote": "The temperature was varied in the range from 503.15 to 533.15 K and the pressure in the range from 30 to 60 bar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "The steady-state feed ratio covered the full range from pure CO to pure CO₂.",
+     "quote": "the ratio of CO to CO2 was varied over the full range from pure CO to pure CO2.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The simplified model uses lumped reaction kinetics rather than a sequence of elementary reaction steps.",
+     "quote": "The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model uses Langmuir–Hinshelwood kinetics with adsorption, surface reaction, and desorption represented in its rate and coverage expressions.",
+     "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "This steady-state-φ variant has no differential states; its catalyst surface-center fraction is calculated algebraically from the equilibrium morphology relation.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The model assigns CO hydrogenation to oxidized surface centers and CO₂ hydrogenation to reduced surface centers.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "A separate type of surface center is included for hydrogen activation.",
+     "quote": "as active surface centers for heterolytic decomposition of hydrogen.",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The model lets the relative amounts of oxidized and reduced centers vary with gas composition instead of holding each amount fixed.",
+     "quote": "The assumption that the total number of oxidized and reduced surface centers is constant is relaxed and replaced by the more general assumption that the sum of all oxidized and reduced surface centers is constant",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The authors relate reducing conditions to a flatter, more active-for-CO-hydrogenation catalyst surface and oxidizing conditions to a more spherical, more active-for-CO₂-hydrogenation surface.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "morphology",
+     "text": "The corrigendum specifies that the steady-state model limits the reduced surface-center fraction to 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The corrected RWGS rate uses a reduced-to-oxidized center ratio as its prefactor, rather than the product of the two fractions.",
+     "quote": "the prefactor of the reverse water–gas shift reaction (RWGS), Eq. (13), which is φ(1−φ)−1 and not φ(1−φ).",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The corrigendum reports that three parameters in the general rate and coverage expressions were fitted to zero under the conditions of the original study.",
+     "quote": "Through fitting to experimental data using global optimization it was found that parameters β8, β12 and β14 in these general expressions are zero for the conditions considered in Seidel et al., (2018).",
+     "basis": "stated"
+    },
+    {
+     "topic": "outputs",
+     "text": "The model calculates rates for CO hydrogenation, CO₂ hydrogenation, and reverse water-gas shift, and the paper compares predicted and measured gas mole fractions.",
+     "quote": "The results for the detailed kinetics are shown in Fig. 3 in terms of mole fractions of the different components.",
+     "basis": "stated"
+    },
+    {
+     "topic": "size",
+     "text": "The simplified kinetic expressions have 14 unknown parameters: six for reaction-rate constants and eight for adsorption constants.",
+     "quote": "This reduces the problem to a total number of 14 unknown parameters, which are 6 unknown parameters for the reaction rate constants according to Eq. (10) and another 8 unknown adsorption constants.",
+     "basis": "stated"
+    },
+    {
+     "topic": "size",
+     "text": "The two Gibbs free-energy parameters used for the surface-center equilibrium were fitted separately from the remaining kinetic parameters.",
+     "quote": "In a first separate step, ΔG1 and ΔG2 are fitted to the experimental data using Eqs. (20)–(23)",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The reaction-rate temperature dependence uses a reparameterized Arrhenius expression referenced to 523.15 K.",
+     "quote": "with reference temperature Tref = 523.15 K",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The temperature dependence of the adsorption equilibrium constants was neglected because it was considered weaker than that of the rate constants.",
+     "quote": "The temperature dependency of the adsorption equilibrium constants is much weaker compared to the reaction rate constants and is therefore neglected",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The steady-state parameter fit used 140 experiments reported in Vollbrecht (2007).",
+     "quote": "For the parameter estimation, 140 stationary experiments reported in Vollbrecht (2007) were used.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "For the steady-state experiments, the authors estimated CO hydrogenation from CO-only feeds, CO₂ hydrogenation from mixed feeds, and the remaining RWGS parameter from CO₂-only feeds.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurement",
+     "text": "Feed and product compositions were measured by gas chromatography.",
+     "quote": "The chemical analysis of feed gases and product gases was performed by a gas chromatographic setup.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The parameter identification used carbon-containing component balances because the flame ionization detector provided the highest accuracy for those analyses.",
+     "quote": "The highest accuracy for the analytical determination of the composition has been reached by the use of a Flame Ionization Detector (FID) for the carbon-containing components. For this reason, only carbon-containing component balances (RCO, RCO2 and RCH3OH) were used.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The analytical results were balanced before parameter estimation to reduce the influence of measurement uncertainty.",
+     "quote": "Order to reduce the influence of measurement uncertainties, a balancing of the analytical results was performed prior to the parameter estimation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The authors used deterministic global optimization with BARON in GAMS because local methods gave unsatisfactory results in the presence of multiple local minima.",
+     "quote": "Since local optimization methods do not give satisfying results due to multiple local minima, deterministic global optimization with BARON. Tawarmalani and Sahinidis (2005) in GAMS (GAMS, 2013) is applied.",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "Profile-likelihood analysis found two parameters in the simplified model with flat optima, while the other optimization runs converged to global optimality within the stated time and tolerances.",
+     "quote": "Only parameters β9 and β10 show flat optima. Nevertheless, all optimization runs converged within the given time and tolerances to global optimality.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The simplified model fitted the steady-state experimental results almost as well as the detailed model.",
+     "quote": "It is concluded that the simple model fits the experimental results almost equally well compared to the detailed model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper assesses the stationary fit against the same experiments used for parameter estimation and does not report an independent validation dataset.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "comparison",
+     "text": "The detailed kinetics on which the study builds are attributed to Vollbrecht (2007).",
+     "quote": "As a starting point the kinetic model suggested by Vollbrecht (2007) is considered.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors note that the Graaf et al. (1986, 1988) model treats CO hydrogenation as the dominant methanol-synthesis route.",
+     "quote": "A very popular and widely known kinetic model was proposed by Graaf et al. (1986, 1988) in the 1980s assuming hydrogenation of CO as dominant path to synthesize methanol.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The Bussche and Froment (1996) model could not reproduce the pure-CO experiments because it neglects CO hydrogenation, and it showed larger deviations on other experiments.",
+     "quote": "Since CO-hydrogenation is neglected in this model, experiments 80–140 with pure CO feed can not be reproduced. Further, larger deviations are also observed in the other experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "transients",
+     "text": "The dynamic feed-switching experiment used CO and CO₂ feeds at 523.15 K, 50 bar, and a space velocity of 240 mlᴺ/min.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "transients",
+     "text": "The dynamic experiment held a pure-CO feed for 140 minutes, then switched feeds at 70-minute intervals.",
+     "quote": "In the first 140 min in Fig. 6 steady state is established with a pure CO feed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "transients",
+     "text": "The quasi-static surface-center calculation did not reproduce the catalyst lag in the switching experiment, whereas the dynamic-φ version did.",
+     "quote": "the simplified model with dynamic φ from Eq. (28) is able to reproduce the experiments quite well, whereas the simplified model with a quasistatic φ from Eq. (28) neglects the lag of the catalyst and is therefore not suitable to describe the transient behavior.",
+     "basis": "stated"
+    },
+    {
+     "topic": "application",
+     "text": "The authors propose the kinetic models for methanol production under changing feed compositions, including chemical energy storage with fluctuating renewable resources.",
+     "quote": "They are therefore suitable for methanol production under changing feed conditions employed for example in novel applications for chemical energy storage.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The paper states that supplementary material containing stationary experimental conditions and results is available online.",
+     "quote": "For the interested reader, all stationary experimental conditions and results are summarized in the supplementary material of the paper.",
+     "basis": "stated"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "T",
+    "p_{H_2}",
+    "p_{CO}",
+    "p_{H_2O}",
+    "p_{CO_2}",
+    "p_{CH_3OH}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 39 facts inferred (no quote found)"
+   ]
+  },
+  "seidel_2018_simplified_kinetic_model_dynamic": {
+   "name": "Simplified kinetic model, dynamic φ",
+   "equations": [
+    "10",
+    "24",
+    "25",
+    "28",
+    "33",
+    "C-11",
+    "C-12",
+    "C-13",
+    "C-14",
+    "C-15",
+    "C-16",
+    "C-1",
+    "C-2",
+    "C-3"
+   ],
+   "description": "This model describes methanol synthesis from hydrogen, carbon monoxide and carbon dioxide over a commercial copper/zinc oxide/alumina catalyst in a differential CSTR. It predicts gas composition and methanol production while tracking changes in the fraction of reduced catalyst surface centers, which affect the activity of the different reactions. The simplified model combines lumped Langmuir–Hinshelwood rate expressions and algebraic surface coverages with dynamic balances for the catalyst and reactor. It was fitted and tested against 140 steady-state experiments and feed-switching experiments reported by Vollbrecht (2007), using global optimization. The dynamic version reproduced the transient experiments better than a version with quasi-static catalyst states, and the simplified model fitted steady-state data almost as well as the detailed model while improving identifiability. The authors propose it for dynamic simulation and future design and control of methanol reactors for chemical energy storage under changing feed conditions; a 2020 corrigendum clarified the equations used.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model represents methanol synthesis from hydrogen, carbon monoxide and carbon dioxide over a Cu/ZnO/Al₂O₃ catalyst.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "catalyst",
+     "text": "The experiments used the commercial BASF S3-86 synthesis catalyst in crushed form.",
+     "quote": "A commercial synthesis catalyst (BASF S3-86) was used in a crushed form to overcome mass transfer limitations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactions",
+     "text": "The reaction network includes CO hydrogenation, CO₂ hydrogenation and the reverse water-gas shift reaction.",
+     "quote": "The reaction network comprises three main reactions, i.e. hydrogenation of CO and CO₂ as well as the water-gas shift reaction",
+     "basis": "stated"
+    },
+    {
+     "topic": "sites",
+     "text": "The model distinguishes oxidized centers associated with CO hydrogenation, reduced centers associated with CO₂ hydrogenation, and centers for hydrogen activation.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The simplified kinetic model uses lumped reaction kinetics rather than representing the individual elementary steps.",
+     "quote": "The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The simplified rate formulation has 14 unknown parameters: six associated with reaction-rate constants and eight adsorption constants.",
+     "quote": "This reduces the problem to a total number of 14 unknown parameters, which are 6 unknown parameters for the reaction rate constants according to Eq. (10) and another 8 unknown adsorption constants.",
+     "basis": "stated"
+    },
+    {
+     "topic": "dynamics",
+     "text": "The dynamic model evolves both the reduced-center fraction and the reactor gas composition.",
+     "quote": "the dynamic change in the surface coverage for each species can be calculated by:",
+     "basis": "stated"
+    },
+    {
+     "topic": "dynamics",
+     "text": "The dynamic reactor model includes accumulation on the catalyst surface as well as gas-phase reactor balances.",
+     "quote": "For the dynamic transient behavior, it was found that the accumulation on the catalyst surface should be taken into account",
+     "basis": "stated"
+    },
+    {
+     "topic": "dynamics",
+     "text": "The dynamic catalyst formulation is intended to capture the lag in catalyst state after a feed-composition change.",
+     "quote": "the simplified model with a quasistatic φ from Eq. (28) neglects the lag of the catalyst and is therefore not suitable to describe the transient behavior.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The steady-state and dynamic experiments were conducted in a modified differential CSTR of the Micro-Berty Reactor type.",
+     "quote": "The experimental setup is based on a modified, differential CSTR of a Micro-Berty Reactor type described Berty (1999).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The 140 steady-state experiments covered temperatures from 503.15 to 533.15 K and pressures from 30 to 60 bar.",
+     "quote": "The temperature was varied in the range from 503.15 to 533.15 K and the pressure in the range from 30 to 60 bar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The steady-state experiments varied the CO-to-CO₂ feed ratio from pure CO to pure CO₂.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "Parameter estimation used 140 stationary experiments reported in Vollbrecht (2007).",
+     "quote": "For the parameter estimation, 140 stationary experiments reported in Vollbrecht (2007) were used.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Feed and product gas compositions were measured using gas chromatography.",
+     "quote": "The chemical analysis of feed gases and product gases was performed by a gas chromatographic setup.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The parameter estimation used carbon-containing component balances for CO, CO₂ and methanol, with carbon composition measured using an FID.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "feeding",
+     "text": "The dynamic experiment switched between a CO feed containing 12.6% CO, 72.2% H₂ and 16.0% N₂, and a CO₂ feed containing 11.9% CO₂, 71.5% H₂ and 16.6% N₂.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The dynamic feed-switching experiment was run at 523.15 K, 50 bar and a space velocity of 240 mlᴺ/min.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "feeding",
+     "text": "The dynamic test began with 140 minutes at steady state on CO feed and then switched feeds at intervals of 70 minutes.",
+     "quote": "In the first 140 min in Fig. 6 steady state is established with a pure CO feed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The two catalyst-conversion rate constants were estimated from the dynamic experiments, while the other kinetic parameters were fitted to steady-state data.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "estimation",
+     "text": "The authors used deterministic global optimization with BARON in GAMS because local optimization encountered multiple local minima.",
+     "quote": "Since local optimization methods do not give satisfying results due to multiple local minima, deterministic global optimization with BARON.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The dynamic parameter-estimation problem was solved in MATLAB using the TOMLAB toolbox.",
+     "quote": "This dynamic optimization problem was solved in MATLAB (MATLAB, 2014) using the TOMLAB toolbox (Holmstroem, 1997).",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The model uses a reparameterized Arrhenius expression with a reference temperature of 523.15 K.",
+     "quote": "with reference temperature Tref = 523.15 K",
+     "basis": "stated"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The detailed model had three structurally unidentifiable parameters according to the Profile-Likelihood analysis.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "identifiability",
+     "text": "The simplified model improved structural identifiability, although two parameters still had flat optima.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit",
+     "text": "The simplified model fitted the steady-state experimental results almost as well as the detailed model.",
+     "quote": "It is concluded that the simple model fits the experimental results almost equally well compared to the detailed model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The dynamic model with evolving catalyst state reproduced the feed-switching experiments quite well.",
+     "quote": "the simplified model with dynamic φ from Eq. (28) is able to reproduce the experiments quite well",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The dynamic experiments showed methanol-production overshoots and relaxation after changes between CO and CO₂ feeds.",
+     "quote": "Experiments have shown characteristic methanol overshoots after switching between different gas compositions",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The Bussche and Froment (1996) model could not reproduce the pure-CO-feed experiments because it neglects CO hydrogenation.",
+     "quote": "Since CO-hydrogenation is neglected in this model, experiments 80–140 with pure CO feed can not be reproduced.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper identifies Graaf et al. (1986, 1988) as established models that assume a single active-center type and treat CO hydrogenation as the dominant methanol pathway.",
+     "quote": "A very popular and widely known kinetic model was proposed by Graaf et al. (1986, 1988) in the 1980s assuming hydrogenation of CO as dominant path to synthesize methanol.",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The model makes the relative amounts of oxidized and reduced surface centers depend on gas composition and catalyst morphology.",
+     "quote": "The model is extended with a dynamic morphology model taking a variable amount of different active centers for each reaction into account.",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The 2020 corrigendum clarifies that the RWGS rate is weighted by the reduced-to-oxidized site ratio because the reaction requires nearby centers of both types.",
+     "quote": "the probability for this reaction to take place is not proportional to the product of the total amount of reduced and oxidized surface centers φ(1−φ).",
+     "basis": "stated"
+    },
+    {
+     "topic": "morphology",
+     "text": "The corrected catalyst-state formulation limits the reduced-center fraction to a maximum of 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+     "basis": "stated"
+    },
+    {
+     "topic": "corrigendum",
+     "text": "The corrigendum states that the corrected equations are the ones used for all calculations in the original paper.",
+     "quote": "The correct model equations used for all calculations presented in Seidel et al., (2018), are:",
+     "basis": "stated"
+    },
+    {
+     "topic": "corrigendum",
+     "text": "For the conditions studied in the original paper, the fitted simplified-model parameters β₈, β₁₂ and β₁₄ were zero.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors intend the model for methanol production under changing feed conditions relevant to chemical energy storage.",
+     "quote": "They are therefore suitable for methanol production under changing feed conditions employed for example in novel applications for chemical energy storage.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors present the model as a basis for future model-based design and control of methanol reactors under strongly varying conditions.",
+     "quote": "It therefore builds a suitable basis for future work on model based design and control of methanol reactors for chemical energy storage under strongly varying conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The corrigendum distinguishes this model's focus on dynamic simulation from Slotboom et al. (2020), which focused on steady states.",
+     "quote": "our simplified kinetic model in Seidel et al., (2018) aims at dynamic simulation whereas in Slotboom et al., (2020) focus is on steady states.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "Supplementary material with stationary experimental conditions and results is available online, but the paper does not state that model code is available.",
+     "quote": "For the interested reader, all stationary experimental conditions and results are summarized in the supplementary material of the paper.",
+     "basis": "stated"
+    }
+   ],
+   "states": [
+    "\\phi",
+    "y_{i}"
+   ],
+   "inputs": [
+    "T",
+    "y_{H_2}",
+    "y_{H_2O}",
+    "y_{CO}",
+    "y_{CO_2}",
+    "\\tau",
+    "y_{i,0}",
+    "r_{j}",
+    "p_{CO}",
+    "p_{H_2}",
+    "p_{CH_3OH}",
+    "p_{CO_2}",
+    "p_{H_2O}"
+   ],
+   "status": "pending",
+   "review": [
+    "10 of 38 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

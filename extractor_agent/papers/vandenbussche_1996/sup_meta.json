@@ -1,0 +1,331 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "vandenbussche_1996": {
+   "name": "Cu/ZnO/Al₂O₃ methanol synthesis and RWGS model",
+   "equations": [
+    "p5-5",
+    "p5-6",
+    "p5-8",
+    "3.1",
+    "3.2"
+   ],
+   "description": "The model describes methanol synthesis and the reverse water-gas-shift reaction over a commercial Cu/ZnO/Al₂O₃ catalyst. It predicts the rates of both reactions and, when coupled to reactor material balances, gas conversions and concentration profiles. The kinetic equations are derived from a surface reaction scheme, with the two reactions coupled through a shared surface oxygen intermediate. The authors estimated parameters from integral bench-reactor experiments and used the fitted model to examine changes in temperature, pressure, and feed composition, including conditions outside the experimental range. They present it as a physically grounded model for predicting catalyst behavior, and make the full experimental data set available from the corresponding author.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model covers methanol synthesis and the reverse water-gas-shift reaction during syngas conversion over a copper-containing catalyst.",
+     "quote": "a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst.",
+     "basis": "stated"
+    },
+    {
+     "topic": "catalyst",
+     "text": "The experiments used commercial ICI 51-2 Cu/ZnO/Al₂O₃ catalyst.",
+     "quote": "The experiments involved a commercial ICI 51-2 Cu/ZnO/Al₂O₃ catalyst",
+     "basis": "stated"
+    },
+    {
+     "topic": "catalyst",
+     "text": "The authors assign both overall reactions to the copper phase and describe ZnO as a structural promoter under the industrial conditions considered.",
+     "quote": "Both reactions proceed on the copper phase of the catalyst (16). The role of ZnO is limited to structural promotion, at least under the typical industrial conditions applied in the current paper (21).",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Kinetic data were collected in a tubular stainless-steel bench reactor with a 15.8 mm internal diameter and a 150 mm length.",
+     "quote": "The stainless steel reactor was of the tubular type, with an internal diameter of 15.8 mm and a length of 150 mm",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The reactor had three independently controlled heating zones, and eight axial thermocouples continuously registered the temperature profile.",
+     "quote": "The reactor was divided into three heating zones, each with its own PID temperature controller (Shinho MCS), facilitating isothermal operation. The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor. The TC are linked to a PC, enabling a continuous and on line registration of the temperature profile.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The feed included CO, CO₂, H₂, and argon as an internal standard, delivered through mass-flow controllers.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The parameter-estimation experiments covered 180–280°C and 15–51 bar.",
+     "quote": "The temperature was varied between 180 and 280°C, and the pressure from 15 to 51 bar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The experimental CO-to-CO₂ pressure ratio ranged from 0 to 4.1.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The use of pure CO₂ in the feed limited the maximum operating pressure because CO₂ condenses at 54 bar at ambient temperature.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "Catalyst particles were diluted with inert material and most catalyst beds were about 5 cm high.",
+     "quote": "It was diluted with an inert, for the sake of isothermicity, and positioned in the reactor between a top and a bottom inert bed. The height of the bed in most cases amounted to about 5 cm.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The kinetic model is steady-state and mechanistic, and the authors describe it as based on a detailed reaction network.",
+     "quote": "A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "For reactor calculations, the authors used a pseudohomogeneous, one-dimensional model.",
+     "quote": "In the current context, a pseudohomogeneous one-dimensional model was applied (13).",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The reactor calculations under steady-state conditions use two independent material-balance responses, for example those for CO and CO₂.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The proposed surface sequence includes carbonate, bicarbonate, formate, formaldehyde, methoxy, and methanol species, as well as oxygen, hydroxyl, and water species.",
+     "quote": "These carbonates are quickly hydrogenated, first to bicarbonate structures and subsequently to Cu formate, formaldehyde, methoxy species, and finally methanol.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The model assigns formate hydrogenation as the rate-determining step for methanol synthesis.",
+     "quote": "In this sequence, shown in the left-hand side of Fig. 2, the rate determining step is the hydrogenation of the formate",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The model assigns dissociative adsorption of CO₂ as the rate-determining step for the reverse water-gas-shift sequence.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "A common surface oxygen intermediate couples the rates of methanol synthesis and the water-gas-shift reaction.",
+     "quote": "the current model effectively couples the rate of both overall reactions through the common surface oxygen intermediate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The concentrations of several adsorbed species, including bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl, are omitted as negligible under reaction conditions.",
+     "quote": "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The model has separate kinetic expressions for methanol synthesis and the reverse water-gas-shift reaction.",
+     "quote": "the following expressions are obtained for the rate of methanol synthesis and the reverse water gas shift reaction",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The derived rate expressions use a shared factor that depends on partial pressures and parameter groups.",
+     "quote": "β represents a function of partial pressures and parameter groups",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The equilibrium constants for methanol synthesis and the water-gas-shift reaction were taken from Graaf et al. (1986).",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The authors considered fugacities using the Soave–Redlich–Kwong equation of state, but found that nonideality made negligible changes to the results.",
+     "quote": "The use of fugacities, rather than partial pressures, was considered, applying the Soave–Redlich–Kwong equation of state (36). The compressibility factors were never outside the 0.99 to 1.01 range and found to give negligible changes in the results.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The measured temperature profile was used in the parameter-estimation reactor calculations, so the energy equation was not integrated, and pressure drop was negligible.",
+     "quote": "In view of the fact that the (isothermal) temperature profile was determined experimentally, integration of the energy equation was not necessary, while the pressure drop was also negligible.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The reactor material balances were integrated with fourth- and fifth-order Runge–Kutta methods.",
+     "quote": "The integration of the two equations, containing the proposed kinetic expressions, was performed applying fourth-and fifth-order Runge-Kutta methods.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "Because the gas chromatograph was not sensitive enough for differential measurements, the experiments were run as integral reactors and conversions were used as responses.",
+     "quote": "Due to the limited sensitivity of the GC katharometer, the reactor was operated in an integral fashion (13), yielding the conversions of the different reactants as experimental responses.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The authors thoroughly checked for internal and external diffusional limitations.",
+     "quote": "The absence of diffusional limitations, internal as well as external, was thoroughly verified using methods described by Froment and Bischoff (13).",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The study used 276 experiments, each providing two responses.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "The responses used in the model evaluation were fractional conversions of CO and CO₂.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "A gas chromatograph measured effluent composition, while a mass spectrometer scanned gas-phase species over time to detect possible reactor disturbances.",
+     "quote": "a gas chromatograph (GC, Packard 438S) determined its composition, while a mass spectrometer (Balzers 420), scanning the concentration of the different gas phase species in time, revealed possible disturbances in the intended steady-state reactor operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The authors estimated 14 parameters, consisting of frequency and exponential factors for parameter groups.",
+     "quote": "Values were determined for the frequency and exponential factors of the parameter groups so the number of parameters to be estimated amounted to 14.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Parameter estimation minimized a weighted objective function using a multiresponse Levenberg–Marquardt routine.",
+     "quote": "The actual minimization of this object function made use of a Levenberg–Marquardt routine of the multiresponse type (33).",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Response weights were inversely proportional to response variances calculated from replicate experiments.",
+     "quote": "The latter is inversely proportional to the variance of the response, derived from a set of replicate experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The carbonate- and formate-coverage parameter groups were found to lack statistical significance and their contribution was discarded from the shared factor in the rate expressions.",
+     "quote": "never yielded any statistically significant contribution.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The reported confidence intervals are approximate because the model is nonlinear in its parameters.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "The fitted parameter groups were reported to satisfy the physicochemical criteria proposed by Boudart, including the required signs of frequency and exponential factors.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "After converting the fitted factors back to the original Arrhenius or Van’t Hoff forms, the water-adsorption frequency factor had an estimated 90% rather than 95% probability of being significant.",
+     "quote": "Due to correlation between the heat of adsorption and the frequency factor, the probability of the latter fulfilling a significant role in the model is reduced to 90%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The model’s calculated and experimental conversion values showed excellent agreement across the conversion range, with random deviations from parity.",
+     "quote": "The agreement is excellent over the complete range of conversions. The deviations from the diagonal are random and do not show any trends.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The regression F value was 11,418, compared with a tabulated 99% value of 2.56.",
+     "quote": "the obtained F value of 11,418 is three orders of magnitude larger than the tabulated 99% value, which is 2.56.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The authors report no systematic errors in parity plots examined at individual temperatures and pressures.",
+     "quote": "Analysis of the parity plots for individual temperatures and pressures confirms the absence of systematic errors.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The fitted model was used to simulate Klier et al. (1982) experiments at 250°C without tuning the model to those data.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "For the Klier et al. (1982) comparison, the model qualitatively reproduced the observed methanol-conversion trend despite the experimental pressure and gas composition lying outside the estimation window.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors tested model behavior beyond the original experimental window, including a 75 bar, 250°C comparison with the Klier et al. (1982) data.",
+     "quote": "the pressure as well as the composition of the gas are well outside the experimental window used to estimate the kinetic parameters.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The adiabatic bench-reactor base-case simulation used 34.8 g of catalyst, a 0.5 mm pellet diameter, 50 bar, 493.2 K, and a mass flow of 2.8 × 10⁻⁵ kg/s.",
+     "quote": "Mass (g) | -----: 34.8",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "In the adiabatic base-case simulation, the reverse water-gas-shift reaction reached equilibrium about 3 mm into the bed and thermodynamic equilibrium concentrations were reached at about 3 cm.",
+     "quote": "At 3 mm into the bed the reverse water gas shift reaches its equilibrium value",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors used simulations to illustrate how inlet temperature, pressure, and the CO-to-CO₂ ratio affect reactor behavior.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper contrasts its treatment with Graaf et al. (1988) and Graaf et al. (1990), whose selected model set could predict different concentrations for the same intermediate because it appeared in multiple overall reactions.",
+     "quote": "This implies that the model simultaneously predicts two different concentrations of one and the same intermediate like formyl and methoxy species.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The authors describe the present model’s coupling through a common surface oxygen intermediate as a distinction from other available kinetic models.",
+     "quote": "Unlike some other kinetic models available in the literature, the current model effectively couples the rate of both overall reactions through the common surface oxygen intermediate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The mechanistic development drew on Chinchen et al. (1987a), Rozovskii (1989), and the authors’ earlier experimental work, Vanden Bussche and Froment (1994).",
+     "quote": "Based upon a detailed reaction scheme derived from literature data and own experimental work (21)",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The complete experimental data set was not printed in the paper but is available from the corresponding author.",
+     "quote": "The data set was too extensive to be incorporated in full in the text. It is available from the corresponding author.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state whether the model code is available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "T",
+    "p_{CO_2}",
+    "p_{H_2}",
+    "p_{H_2O}",
+    "p_{CH_3OH}",
+    "p_{CO}"
+   ],
+   "status": "pending",
+   "review": [
+    "14 of 50 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

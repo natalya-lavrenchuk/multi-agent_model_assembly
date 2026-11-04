@@ -1,0 +1,133 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2210,
+  "completion_tokens": 3130,
+  "total_tokens": 5340,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2207,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2630,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): An improved model including glucose and fructose enables the prediction of cell growth at low sucrose concentrations\n\nText and equations in reading order:\n    Time trajectories of measured and predicted data (continuous line) for the initial model validation representing the cultivation of BY-2 cells under optimal (experiments #4 and #5) and non-optimal (experiments #6 and #7) conditions (A–D) Iteration 2. Measurement uncertainty made of a constant and proportional component (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}    [code: algebraic, computes \\mu, code proposes constitutive]\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}    [code: ODE, computes F, code proposes balance]\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}    [code: ODE, computes G, code proposes balance]\n    The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017). This model is defined hereafter as the “improved model”. It has 20 parameters to identify, including the death rate constant $ k_d $, maximum specific growth rate $ \\mu_m $, maximum specific growth rate for ammonium and phosphate $ \\mu^A_m $, $ \\mu^P_m $, saturation and inhibition constants $ K_h $ and $ K_{lh} $, hydrolysis constant $ \\alpha $, and consumption rates $ \\mu_h $. Coefficie...\n\nSymbols:\n  \\mu: Specific growth rate [h^-1] (computed)\n  \\mu_{m}: Maximum specific growth rate. [h^{-1}] (parameter)\n  \\mu_{m}^{A}: Maximum specific growth rate for ammonium. [h^{-1}] (parameter)\n  A: ammonium concentration [g L^{-1}] (computed)\n  \\delta_{A}: Minimum ammonium concentration in the medium at which cell growth occurs. (parameter)\n  \\mu_{m}^{P}: Maximum specific growth rate for phosphate. [h^{-1}] (parameter)\n  P: Phosphate concentration. (computed)\n  \\delta_{P}: Minimum phosphate concentration in the medium at which cell growth occurs. (parameter)\n  G: Glucose concentration. (computed)\n  K_{G}: Glucose saturation constant in the growth-rate term. (parameter)\n  K_{IG}: Glucose inhibition constant [g L^-1] (parameter)\n  F: Fructose [g L^-1] (computed)\n  K_{F}: Fructose saturation constant [g L^-1] (parameter)\n  K_{IF}: Fructose inhibition constant [g L^-1] (parameter)\n  N: nitrate concentration [g L^{-1}] (computed)\n  K_{N}: Nitrate saturation constant [g L^{-1}] (parameter)\n  K_{IN}: Nitrate inhibition constant [g L^{-1}] (parameter)\n  V: Volume of the cultivation medium [L] (computed)\n  m_{SF}: Sucrose-to-fructose DM conversion parameter [-] (parameter)\n  \\alpha: Sucrose hydrolysis constant [h^-1] (parameter)\n  S: Sucrose concentration [g L^-1] (computed)\n  K_{S}: Sucrose saturation constant [g L^-1] (parameter)\n  K_{IS}: Sucrose inhibition constant [g L^-1] (parameter)\n  X_{a}: Active (viable) cell dry mass [g L^-1] (computed)\n  \\mu_{F}: Fructose consumption rate [h^-1] (parameter)\n  m_{SG}: Sucrose-to-glucose DM conversion parameter [-] (parameter)\n  \\mu_{G}: Glucose consumption rate [h^-1] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM).\n\nLaws: 18, 19, 20",
+ "answer": {
+  "laws": [
+   {
+    "eq": "18",
+    "description": "Specific cell growth rate as a nutrient-dependent maximum rate multiplied by glucose, fructose, and nitrate saturation–inhibition factors.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "This is a kinetic expression for specific growth rate as a function of nutrient concentrations.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}^{A}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "A"
+     },
+     {
+      "role": "minimum growth concentration",
+      "symbol": "\\delta_{A}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{m}^{P}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "P"
+     },
+     {
+      "role": "minimum growth concentration",
+      "symbol": "\\delta_{P}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "G"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{G}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IG}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "F"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{F}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IF}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "N"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{N}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{IN}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "19",
+    "description": "Fructose mass balance in the cultivation medium, with fructose produced through sucrose hydrolysis and consumed by cells.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It equates fructose accumulation, including the changing-volume term, to production minus cellular consumption.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "F"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "20",
+    "description": "Glucose mass balance in the cultivation medium, with glucose produced through sucrose hydrolysis and consumed by cells.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It equates glucose accumulation, including the changing-volume term, to production minus cellular consumption.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "G"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

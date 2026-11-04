@@ -1,0 +1,83 @@
+{
+ "sup": "nopens_2004",
+ "title": "PBM AND ACTIVATED SLUDGE FLOCCULATION: FROM EXPERIMENTAL DATA TO A CALIBRATED MODEL",
+ "doi": null,
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "9"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "No significant growth occurs during the short flocculation experiments.",
+   "quote": "Since the model will be used to describe rather short flocculation experiments (max. 4h), it can be assumed that no significant growth occurs ( $ \\dot{X}(x,t)=0 $).",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "process_condition": true
+  },
+  {
+   "text": "Binary breakage is assumed, so Γ equals 2.",
+   "quote": "When binary breakage is assumed, which was the case in this study, Γ equals 2.",
+   "page": 2,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  }
+ ],
+ "model_name": "Aggregation-breakage PBM",
+ "excluded": [
+  {
+   "eq": "8",
+   "reason": "Objective function for parameter fitting, not part of the process model."
+  },
+  {
+   "eq": "10",
+   "reason": "Data-conversion relation used to transform experimental volume distributions, not part of the PBM."
+  },
+  {
+   "eq": "11",
+   "reason": "Converts solids concentration to total floc volume for experimental-data processing, not part of the PBM."
+  },
+  {
+   "eq": "12",
+   "reason": "Transforms experimental volume concentration to number concentration, not part of the PBM."
+  },
+  {
+   "eq": "13",
+   "reason": "Measurement-error variance, a statistical quantity rather than a model equation."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "2": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "3": "NOT USED BY OTHERS: computes \\beta; the model output (keep) or not part of the model (leave out)",
+   "4": "NOT USED BY OTHERS: computes \\overline{G}; the model output (keep) or not part of the model (leave out)",
+   "5": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "6": "NOT USED BY OTHERS: computes S; the model output (keep) or not part of the model (leave out)",
+   "7": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes J; the model output (keep) or not part of the model (leave out)",
+   "9": "NOT USED BY OTHERS: computes CON; the model output (keep) or not part of the model (leave out)",
+   "10": "NOT USED BY OTHERS: computes C; the model output (keep) or not part of the model (leave out)",
+   "11": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "12": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "13": "NOT USED BY OTHERS: computes \\sigma; the model output (keep) or not part of the model (leave out)"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed)."
+ ]
+}

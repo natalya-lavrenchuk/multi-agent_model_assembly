@@ -1,0 +1,49 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1530,
+  "completion_tokens": 616,
+  "total_tokens": 2146,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1527,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 476,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Kinetic model\n\nText and equations in reading order:\n    ...$\\mu$, $m_{\\mathrm{glc}}$, and $m_{\\mathrm{gln}}$ in the kinetic model. The cell death phase was defined after the viable cell density declined by 10% of the peak viable cell density in a cell culture run. It was assumed that $\\mu = 0$ during the cell death phase. Since $m_{\\mathrm{glc}}$ and $m_{\\mathrm{gln}}$ are negligible during exponential growth,$^{1,2,11}$ it was assumed $m_{\\mathrm{glc}} = 0$ and $m_{\\mathrm{gln}} = 0$ when $d \\leq 6$. In addition, the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.$^{11,40}$\n(8) m_{gln}=\\frac{a_{1}[\\mathrm{GLN}]}{a_{2}+[\\mathrm{GLN}]}    [code: algebraic, computes m_{gln}, code proposes constitutive]\n    The DAEs were used for kinetic modeling of a batch hybridoma cell culture. $ ^{40} $ Since our cell cultures were performed in fed-batch mode with a daily bolus feed addition, the time period between two successive feedings ( $ t^{(d)} $, $ t^{(d+1)} $) was considered as a batch culture and Eq. 6 was applied to each time period as shown in Figure 1B. Although the model structure is similar to a neural network as described in the literature, $ ^{8} $ the DAEs replaced the hidden layer of an ordinary neural network. Unlike a hidden layer of the ordinary neural network, the DAEs explicitly descri...\n\nSymbols:\n  m_{gln}: glutamine maintenance coefficient [10^{-12} mmol cell^{-1} h^{-1}] (computed)\n  a_{1}: Constant parameter for Eq. 8 [10^-12 mmol cell^-1 h^-1] (parameter)\n  [GLN]: glutamine concentration [mM] (computed)\n  a_{2}: Constant parameter for Eq. 8 [mM] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Specific growth rate is zero during the cell death phase.\n  - Glucose and glutamine maintenance terms are zero when d ≤ 6.\n  - Ammonia and lactate are considered in the growth-rate equation only above 90% of their thresholds.\n  - The B1 mass balance is applied only after 144 h.\n\nLaws: 8",
+ "answer": {
+  "laws": [
+   {
+    "eq": "8",
+    "description": "The glutamine maintenance coefficient is computed as a function of glutamine concentration.",
+    "description_basis": "stated",
+    "quote": "the value of $m_{\\mathrm{gln}}$ is a function of glutamine",
+    "law_type": "constitutive",
+    "law_type_reason": "This is a concentration-dependent kinetic relation for the glutamine maintenance coefficient.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "a_{1}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "a_{2}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

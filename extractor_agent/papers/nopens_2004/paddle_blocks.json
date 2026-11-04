@@ -1,0 +1,1580 @@
+{
+ "paper": "nopens_2004",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "blocks": [
+  {
+   "page": 0,
+   "order": 0,
+   "label": "header",
+   "content": "Copyright © IFAC Computer Applications in Biotechnology. Nancy, France, 2004",
+   "bbox": [
+    138.0,
+    24.0,
+    609.0,
+    73.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 1,
+   "label": "header_image",
+   "content": "",
+   "bbox": [
+    900.0,
+    27.0,
+    1093.0,
+    168.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 2,
+   "label": "doc_title",
+   "content": "PBM AND ACTIVATED SLUDGE FLOCCULATION: FROM EXPERIMENTAL DATA TO A CALIBRATED MODEL",
+   "bbox": [
+    336.0,
+    291.0,
+    901.0,
+    338.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 3,
+   "label": "text",
+   "content": "Ingmar Nopens $ ^{a} $, Thilo Koegst $ ^{a} $, Koenraad Mahieu $ ^{a} $ and Peter A. Vanrolleghem $ ^{a} $",
+   "bbox": [
+    265.0,
+    381.0,
+    972.0,
+    409.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 4,
+   "label": "text",
+   "content": " $ ^{a} $BIOMATH, Ghent University, Coupure Links 653, B-9000 Gent, Belgium (*E-mail: Ingmar.Nopens@biomath.ugent.be)",
+   "bbox": [
+    315.0,
+    450.0,
+    921.0,
+    502.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 5,
+   "label": "abstract",
+   "content": "Abstract: A calibration methodology is presented for a Population Balance Model (PBM) using on-line flocculation data. The moving pivot discretisation technique is preferred to solve the PBM. A methodology for grid transformation and volume to number transformation is presented. Model fits on volume-based fitting variables fit the middle part of both the vol% and number distribution better, but under predict (30x) the smaller size classes. Model fits on number-based fitting variables fit the small size classes better, though still under predicting them (2x). For the application at hand, it is concluded that the model should be fitted to the number distribution. However, the improved methodology pointed out that the model lacks flexibility to adequately describe the data. Copyright © 2004 IFAC.",
+   "bbox": [
+    257.0,
+    589.0,
+    978.0,
+    822.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 6,
+   "label": "text",
+   "content": "Keywords: mathematical models, identification, simulation, wastewater",
+   "bbox": [
+    258.0,
+    841.0,
+    846.0,
+    867.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 7,
+   "label": "paragraph_title",
+   "content": "1. INTRODUCTION",
+   "bbox": [
+    287.0,
+    955.0,
+    461.0,
+    979.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 8,
+   "label": "text",
+   "content": "The activated sludge process can roughly be divided into 2 steps: purification of the wastewater and liquid-solid separation. During the first step the organic loading (COD) and nutrients (N and P), are to a certain extent removed from the wastewater to meet effluent standards. This process can occur in a variety of configurations combining aerobic, anoxic and anaerobic zones and has been thoroughly studied. The second step deals with the separation of the purified water and the sludge flocs. Compared to the first step, this process is much less understood and is still a frequently occurring bottleneck in the overall activated sludge process. Indeed, bad clarification results on the one hand in a loss of biomass (which contains nutrients and COD) via the overflow, which deteriorates the effluent quality. On the other hand the overall removal efficiency of the plant deteriorates since biomass that is capable of purifying the incoming wastewater is lost from the system. Due to this lack of knowledge, simple 1-dimensional models are often used to approximately describe the final clarification step when attempting to model the entire activated sludge process (purification + separation). It is generally accepted that more accurate and knowledge-based models to describe the separation step are needed to achieve better overall model predictions.",
+   "bbox": [
+    155.0,
+    1016.0,
+    590.0,
+    1549.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 9,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    632.0,
+    957.0,
+    1067.0,
+    1052.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 10,
+   "label": "text",
+   "content": "One of the main reasons of the poor understanding of the activated sludge flocculation process is the difficulty of monitoring it on-line. Recently, a laser diffraction technique was used to provide the experimental data to which a population balance model (PBM) was fitted by estimating the aggregation and breakage parameters of sludge flocs (Biggs & Lant, 2000; Nopens et al., 2002). The current paper introduces a considerably improved overall methodology to calibrate a PBM for sludge flocculation based on experimental size distribution data obtained on-line during flocculation.",
+   "bbox": [
+    631.0,
+    1073.0,
+    1067.0,
+    1353.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "2. THE POPULATION BALANCE MODEL",
+   "bbox": [
+    661.0,
+    1372.0,
+    1031.0,
+    1396.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 12,
+   "label": "text",
+   "content": "All models dealing with activated sludge use a lumped variable to describe the biomass: the sludge concentration X. However, in order to allow for description of processes including interactions between sludge flocs another way of describing the biomass is needed: a segregated model. This type of",
+   "bbox": [
+    629.0,
+    1419.0,
+    1064.0,
+    1561.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 0,
+   "order": 13,
+   "label": "number",
+   "content": "231",
+   "bbox": [
+    590.0,
+    1643.0,
+    624.0,
+    1664.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 0,
+   "label": "text",
+   "content": "model segregates the biomass into individual sludge flocs implying all floc properties (e.g. size) to be segregated too. This results in property distributions instead of a single quantity for a certain property. Models describing the time evolution of these property distributions are known as Population Balance Models (PBM). The general format of a one-dimensional PBM (i.e. with one property) looks like (Ramkrishna, 2000):",
+   "bbox": [
+    158.0,
+    117.0,
+    592.0,
+    326.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 1,
+   "label": "display_formula",
+   "content": " $$ \\frac{\\partial n(x,t)}{\\partial t}+\\frac{\\partial}{\\partial x}\\left(\\dot{X}(x,t)n(x,t)\\right)=h(x,t)_{agg}+h(x,t)_{break} $$ ",
+   "bbox": [
+    203.0,
+    327.0,
+    586.0,
+    375.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 2,
+   "label": "formula_number",
+   "content": "(1)",
+   "bbox": [
+    560.0,
+    377.0,
+    589.0,
+    399.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 3,
+   "label": "text",
+   "content": "where for this application x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers),  $ \\dot{X}(x,t) $ the growth rate (s⁻¹) and h(x,t)gg/break the net aggregation/breakage rates (cm⁻³.s⁻¹). Hence, eq. 1 describes the time evolution of the floc size distribution. Since the model will be used to describe rather short flocculation experiments (max. 4h), it can be assumed that no significant growth occurs ( $ \\dot{X}(x,t)=0 $). h(x,t)gg/break account for discontinuous aggregation and breakage processes (Figure 1). They describe the birth (+) and death (-) of flocs of a certain size x during an infinitesimal time interval  $ \\delta t $. Since both aggregation and breakage can give rise to birth and death of flocs, both terms consist of 4 processes: aggregation birth, aggregation death, breakage birth and breakage death. The measured initial number distribution is used as initial condition for eq. 1.",
+   "bbox": [
+    156.0,
+    394.0,
+    594.0,
+    846.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 4,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    179.0,
+    864.0,
+    567.0,
+    1009.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 5,
+   "label": "figure_title",
+   "content": "Figure 1. Aggregation and breakage dynamics of the discretised population balance (Biggs, 2000).",
+   "bbox": [
+    158.0,
+    1034.0,
+    590.0,
+    1084.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 6,
+   "label": "text",
+   "content": "Aggregation models are often based on the Smoluchowski model (Ramkrishna, 2000):",
+   "bbox": [
+    157.0,
+    1105.0,
+    590.0,
+    1152.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 7,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned} $$ ",
+   "bbox": [
+    183.0,
+    1158.0,
+    585.0,
+    1297.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 8,
+   "label": "formula_number",
+   "content": "(2)",
+   "bbox": [
+    560.0,
+    1303.0,
+    587.0,
+    1326.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 9,
+   "label": "text",
+   "content": "where $\\alpha$ (-) is the collision efficiency and $\\beta(x-x',x)$ (cm$^3$.s$^{-1}$) the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$). This model describes both the transport of flocs towards one another ($\\beta$) and the probability that these collisions lead to aggregation ($\\alpha$) accounting for short-range forces like van der Waals and hydrodynamic interactions. The description of $\\beta(x-x',x$) used in this study was taken from Spicer & Pratsinis (1996):",
+   "bbox": [
+    154.0,
+    1325.0,
+    591.0,
+    1541.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 10,
+   "label": "display_formula",
+   "content": " $$ \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left(x^{\\prime/3}+(x-x^{\\prime})^{\\prime/3}\\right)^{3} $$ ",
+   "bbox": [
+    681.0,
+    123.0,
+    1019.0,
+    177.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 11,
+   "label": "formula_number",
+   "content": "(3)",
+   "bbox": [
+    1039.0,
+    139.0,
+    1066.0,
+    165.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 12,
+   "label": "text",
+   "content": "in which:",
+   "bbox": [
+    637.0,
+    193.0,
+    723.0,
+    217.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 13,
+   "label": "display_formula",
+   "content": " $$ \\overline{G}=\\sqrt{\\frac{\\varepsilon}{\\nu}} $$ ",
+   "bbox": [
+    810.0,
+    183.0,
+    896.0,
+    226.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 14,
+   "label": "formula_number",
+   "content": "(4)",
+   "bbox": [
+    1036.0,
+    194.0,
+    1063.0,
+    218.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 15,
+   "label": "text",
+   "content": "where  $ \\overline{G} $ is the average velocity gradient ( $ s^{-1} $),  $ \\upsilon $ the kinematic viscosity ( $ m^2.s^{-1} $) and  $ \\overline{\\varepsilon} $ the average turbulent energy dissipation rate ( $ m^2.s^{-3} $).  $ \\alpha $ was chosen to be a constant between 0 and 1. Breakage models typically look like (Ramkrishna, 2000):",
+   "bbox": [
+    634.0,
+    232.0,
+    1068.0,
+    363.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 16,
+   "label": "display_formula",
+   "content": " $$ \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned} $$ ",
+   "bbox": [
+    674.0,
+    367.0,
+    1012.0,
+    461.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 17,
+   "label": "formula_number",
+   "content": "(5)",
+   "bbox": [
+    1038.0,
+    400.0,
+    1065.0,
+    423.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 18,
+   "label": "text",
+   "content": "where S(x) is the breakage rate of particles of size x (s $ ^{-1} $) and  $ \\Gamma $ the breakage distribution function. S(x) was taken from Spicer & Pratsinis (1996):",
+   "bbox": [
+    634.0,
+    466.0,
+    1068.0,
+    539.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 19,
+   "label": "display_formula",
+   "content": " $$ S(x)=Ax^{a} $$ ",
+   "bbox": [
+    782.0,
+    542.0,
+    879.0,
+    567.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 20,
+   "label": "formula_number",
+   "content": "(6)",
+   "bbox": [
+    1039.0,
+    544.0,
+    1066.0,
+    567.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 21,
+   "label": "text",
+   "content": "where a is a constant (=1/3) and A the breakage rate coefficient (cm⁻³s⁻¹). When binary breakage is assumed, which was the case in this study, Γ equals 2.",
+   "bbox": [
+    635.0,
+    574.0,
+    1067.0,
+    648.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 22,
+   "label": "text",
+   "content": "Eq. 1-6 describe the PBM used in this study. As can be observed from eq. 2 and 5, the birth and death terms are typically integral functions of  $ n(x,t) $, making eq. 1 a so-called integro-differential equation. This type of equation rarely has an analytical solution. Ramkrishna (2000) described a number of solution methods, one of them being discretisation of the population property. This technique divides the property range in a finite number of classes (i), transforming the integro-differential equation into a set of i ordinary differential equations. Several discretisation schemes exist, differing in terms of (1) freedom of grid choice and (2) conserved properties during the discretisation. Kumar & Ramkrishna (1996) proposed 2 general techniques: the fixed and moving pivot. The pivot is the representative diameter of a size class.",
+   "bbox": [
+    633.0,
+    668.0,
+    1070.0,
+    1064.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 23,
+   "label": "paragraph_title",
+   "content": "3. MATERIALS AND METHODS",
+   "bbox": [
+    704.0,
+    1082.0,
+    996.0,
+    1106.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 24,
+   "label": "paragraph_title",
+   "content": "3.1 Experimental set-up",
+   "bbox": [
+    636.0,
+    1129.0,
+    839.0,
+    1154.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 25,
+   "label": "text",
+   "content": "The experimental data used in this study were obtained from Biggs & Lant (2000) who studied the influence of mixing intensity on flocculation kinetics. The sludge flocs were sonicated into single cells (1μm) and microcolonies (10μm) (avoiding significant cell lysis) and then allowed to refloculate under different mixing intensities and was circulated through a Malvern Mastersizer E (Malvern, UK) in order to obtain on-line quantitative information about floc structure and floc size distribution (FSD). The measurement technique is based on laser light diffraction and has been used by others (Spicer & Pratsinis, 1996; Govoreanu et al., 2003). The FSD is presented as a vol% distribution. Other descriptive parameters can be derived from these FSDs such as the mass mean diameter (or D[4,3]) defined",
+   "bbox": [
+    630.0,
+    1175.0,
+    1068.0,
+    1550.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 1,
+   "order": 26,
+   "label": "number",
+   "content": "232",
+   "bbox": [
+    595.0,
+    1633.0,
+    631.0,
+    1653.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 0,
+   "label": "text",
+   "content": "as the ratio of the fourth and third moment of the distribution:",
+   "bbox": [
+    189.0,
+    128.0,
+    620.0,
+    175.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 1,
+   "label": "display_formula",
+   "content": " $$ D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{4})}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{3})} $$ ",
+   "bbox": [
+    247.0,
+    177.0,
+    456.0,
+    290.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 2,
+   "label": "formula_number",
+   "content": "(7)",
+   "bbox": [
+    587.0,
+    216.0,
+    617.0,
+    240.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 3,
+   "label": "text",
+   "content": "where $x_i$ represents the diameter of size class $i$ ($\\mu$m) and $\\Delta F_N(x)_i$ the number fraction in size class $i$.",
+   "bbox": [
+    187.0,
+    293.0,
+    617.0,
+    344.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 4,
+   "label": "text",
+   "content": "The main advantage of the laser diffraction method is that it can be used in an on-line way by using a flow-through cell. Drawbacks are: (1) the assumption of sphericity of particles and (2) the required dilution (< 0.2g/l). A flow rate to the flow-through cell of 3ml/s was selected to minimise shear effects and pump pulsation influences (to approximate isokinetic sampling) (Biggs & Lant, 2000).",
+   "bbox": [
+    185.0,
+    363.0,
+    617.0,
+    551.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 5,
+   "label": "paragraph_title",
+   "content": "3.2 Numerical methods",
+   "bbox": [
+    186.0,
+    590.0,
+    385.0,
+    615.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 6,
+   "label": "text",
+   "content": "In order to solve the PBM, the fixed pivot technique and the moving pivot technique were used (Kumar & Ramkrishna, 1996). Both techniques were implemented in the modelling and simulation software platform WEST (Hemmis NV, Belgium). Optimisations were conducted using a weighted least squares (WLS) method (Dochain & Vanrolleghem, 2001).",
+   "bbox": [
+    181.0,
+    637.0,
+    615.0,
+    801.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 7,
+   "label": "display_formula",
+   "content": " $$ J(\\theta)=\\sum_{j=1}^{m}\\sum_{i=1}^{N_{j}}\\frac{1}{\\sigma_{i,j}^{2}}(y_{i,j}-\\hat{y}_{i,j}(\\theta))^{2} $$ ",
+   "bbox": [
+    240.0,
+    802.0,
+    537.0,
+    869.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 8,
+   "label": "formula_number",
+   "content": "(8)",
+   "bbox": [
+    583.0,
+    826.0,
+    609.0,
+    849.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 9,
+   "label": "text",
+   "content": "where $J(\\theta)$ is the sum of squared errors (SSE), $y_{i}$ the experimental variable, $\\hat{y}_{i,j}(\\theta)$ the model prediction using parameter set $\\theta$, $m$ the number of experimental datasets, $N_{j}$ the number of experimental data points and $1/\\sigma_{i,j}^{2}$ the weight for measurement i, often taken to be the inverse of the measurement error.",
+   "bbox": [
+    178.0,
+    873.0,
+    612.0,
+    1030.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 10,
+   "label": "paragraph_title",
+   "content": "4. RESULTS",
+   "bbox": [
+    339.0,
+    1049.0,
+    454.0,
+    1073.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "4.1 Solution method",
+   "bbox": [
+    178.0,
+    1093.0,
+    354.0,
+    1119.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 12,
+   "label": "text",
+   "content": "Biggs & Lant (2000) used the discretisation technique of Hounslow et al. (1988), which is comparable to the fixed pivot technique with a geometric grid with factor 2 (e.g. 1,2,4,8,…  $ \\mu m^{3} $) and conserving numbers and mass. Kumar & Ramkrishna (1996) compared this fixed pivot technique with an analytical solution for a simple PBM and found that it suffers from overpredictions of numbers when large gradients are present in the distribution. To deal with this, they introduced the moving pivot, and showed that this technique gave a much better prediction of the analytical solution, even for a coarse grid. To confirm this improved accuracy in this study, the PBM was solved with both techniques for  $ \\alpha=0.0065 $ and A=201.5. The simulation results in Figure 2 are represented as cumulative oversize numbers (CON)",
+   "bbox": [
+    174.0,
+    1139.0,
+    608.0,
+    1539.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 13,
+   "label": "display_formula",
+   "content": " $$  C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime } $$ ",
+   "bbox": [
+    724.0,
+    135.0,
+    927.0,
+    201.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 14,
+   "label": "formula_number",
+   "content": "(9)",
+   "bbox": [
+    1066.0,
+    158.0,
+    1094.0,
+    183.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 15,
+   "label": "text",
+   "content": "in order to emphasise the predictions of the large floc size range and the $0^{\\mathrm{th}}$ moment of the distribution in one single plot. It can be seen that the fixed pivot predictions starting from the same initial distribution indeed yield a lower $0^{\\mathrm{th}}$ moment and a larger number of flocs in bigger size classes (Figure 2), meaning that the aggregation has occurred faster compared to the moving pivot. Also, the model solved with the different solution techniques was fitted to one of the experimental D[4,3] data sets of Biggs & Lant (2000). The resulting parameter values are given in Table 1. It can be observed that the estimate of parameter $\\alpha$ is much lower when the fixed pivot is used. This can be explained by the fact that the solution technique inherently speeds up the aggregation process. In order to fit the same data set, the aggregation parameter $\\alpha$ must be decreased (by 50%), leading to erroneous estimates. The difference in A is less pronounced. Corroborating the conclusions by Kumar & Ramkrishna (1996), it is therefore advisable to use the moving pivot to solve the PBM.",
+   "bbox": [
+    659.0,
+    206.0,
+    1096.0,
+    716.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 16,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    699.0,
+    740.0,
+    1056.0,
+    985.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 17,
+   "label": "figure_title",
+   "content": "Figure 2. Difference between fixed and moving pivot solutions at t=2000s.",
+   "bbox": [
+    655.0,
+    1007.0,
+    1086.0,
+    1057.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 18,
+   "label": "figure_title",
+   "content": "Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-1})",
+   "bbox": [
+    663.0,
+    1077.0,
+    1078.0,
+    1128.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 19,
+   "label": "table",
+   "content": "<table><tr><td>technique</td><td>$ \\alpha $</td><td>A</td></tr><tr><td>fixed</td><td>0.00648</td><td>201.5</td></tr><tr><td>moving</td><td>0.01364</td><td>195</td></tr></table>",
+   "bbox": [
+    660.0,
+    1146.0,
+    1085.0,
+    1223.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 20,
+   "label": "paragraph_title",
+   "content": "4.2 Data transformation",
+   "bbox": [
+    654.0,
+    1243.0,
+    859.0,
+    1268.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 21,
+   "label": "text",
+   "content": "The raw output of the Mastersizer is a 100% distribution for a given grid. From this, the number distribution, necessary for the model, and some summarising parameters can be calculated. This creates some problems: (1) recalculation of experimental data in case of differences between the Mastersizer grid and the model grid, (2) volume-to-number conversion to obtain initial distributions to feed the model (3) selection of the fitting variable. The first two problems require data transformation.",
+   "bbox": [
+    648.0,
+    1289.0,
+    1083.0,
+    1526.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 22,
+   "label": "text",
+   "content": "Biggs & Lant (2000) tackled the transformations by",
+   "bbox": [
+    647.0,
+    1542.0,
+    1081.0,
+    1572.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 2,
+   "order": 23,
+   "label": "number",
+   "content": "233",
+   "bbox": [
+    607.0,
+    1641.0,
+    641.0,
+    1662.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 0,
+   "label": "text",
+   "content": "fitting log-normal distributions to the original raw vol% distributions. The fits were claimed to be good based on high correlation coefficients (R² of 0.92), although clear deviations can be observed. This is illustrated in Figure 3 by comparing the raw cumulative vol% distribution and the one recalculated from the number distribution of Biggs and Lant (2000). An underestimation of the volume in the lower end classes can be observed. From these lognormal fits, volume fractions were interpolated over the entire floc size range. In a second step, the volume distribution was then transformed into a number distribution assuming the particles to be spherical.",
+   "bbox": [
+    156.0,
+    127.0,
+    591.0,
+    450.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 1,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    207.0,
+    476.0,
+    535.0,
+    709.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 2,
+   "label": "figure_title",
+   "content": "Figure 3. Comparison of original and recalculated cumulative volume%.",
+   "bbox": [
+    162.0,
+    734.0,
+    591.0,
+    783.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 3,
+   "label": "text",
+   "content": "Although this allows the conversion of the raw data into the desired format for model calibration, fitting the log-normal distribution as intermediate step introduced large errors in the number distributions. In fact, small deviations between the log-normal distribution and the experimental data become significantly large when number distributions are calculated. Biggs (2000) reported this as a shift in D[4,3] between the raw D[4,3] and the one calculated from the transformed number distribution (Figure 4). Such differences are unacceptable and therefore an alternative method is needed.",
+   "bbox": [
+    160.0,
+    803.0,
+    593.0,
+    1083.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 4,
+   "label": "text",
+   "content": "First, an alternative approach to deal with the difference in discretisation grid of raw data and model is proposed. A cumulative vol% distribution is calculated from the raw distribution and then interpolated at the pivots of the new grid resulting in a cumulative distribution in the new grid. From the latter, the vol% distribution is calculated. An example of this transformation is given in Figure 3. The cumulative vol% distribution matches the raw one and the D[4,3] is preserved (Figure 4).",
+   "bbox": [
+    162.0,
+    1102.0,
+    594.0,
+    1338.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 5,
+   "label": "text",
+   "content": "Second, the incompatibility between the experimental vol% distributions and the number distributions in which the model is specified needs to be solved. In order to calculate a number distribution from the volume distribution, one is confronted with the fact that experimental data is expressed as vol% ( $ V_f/V_f =  $ ratio between the floc volume in class i and the total floc volume in all classes) whereas the model is expressed in number concentrations ( $ N_i/V_T =  $ ratio between the number of particles of class i and the total sample volume). To convert  $ V_i $ into  $ N_i $, the total floc volume fraction  $ V_f/V_T $ is needed. Since the Mastersizer-given  $ V_f/V_T $ was not trusted, an alternative method is needed. Kinnear (2002) derived a ratio C between the liquid and solid mass (m/m_s) within a sludge floc, based on the heterogeneous floc model and the densities of liquid ( $ \\rho_i $), flocs ( $ \\rho_f $) and dry solids ( $ \\rho_s $):",
+   "bbox": [
+    164.0,
+    1357.0,
+    595.0,
+    1546.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 6,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    631.0,
+    123.0,
+    1066.0,
+    359.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 7,
+   "label": "display_formula",
+   "content": " $$ C=\\frac{m_{l}}{m_{s}}=\\frac{\\rho_{l}(\\rho_{s}-\\rho_{l})}{\\rho_{s}(\\rho_{f}-\\rho_{l})} $$ ",
+   "bbox": [
+    637.0,
+    362.0,
+    836.0,
+    416.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 8,
+   "label": "formula_number",
+   "content": "(10)",
+   "bbox": [
+    980.0,
+    372.0,
+    1018.0,
+    396.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 9,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    675.0,
+    424.0,
+    1028.0,
+    666.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 10,
+   "label": "figure_title",
+   "content": "Figure 4. D[4,3] based on (1) raw Mastersizer data, (2) the recalculated number distribution of Biggs (2000) and (3) the new approach.",
+   "bbox": [
+    637.0,
+    691.0,
+    1070.0,
+    764.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 11,
+   "label": "text",
+   "content": "Combining eq. 10 and the floc mass balance yields the following expression for the total floc volume:",
+   "bbox": [
+    635.0,
+    782.0,
+    1069.0,
+    832.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 12,
+   "label": "display_formula",
+   "content": " $$ \\frac{V_{f}}{V_{T}}=\\frac{(1+C)}{\\rho_{f}}X=\\frac{\\rho_{s}-\\rho_{l}}{\\rho_{s}(\\rho_{f}-\\rho_{l})}X $$ ",
+   "bbox": [
+    686.0,
+    836.0,
+    973.0,
+    893.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 13,
+   "label": "formula_number",
+   "content": "(11)",
+   "bbox": [
+    1029.0,
+    849.0,
+    1066.0,
+    873.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 14,
+   "label": "text",
+   "content": "where X is the biomass concentration (g.L $ ^{-1} $).\nAt this stage, the volume concentration and, hence, the number concentration can be calculated assuming the flocs to be spherical:",
+   "bbox": [
+    636.0,
+    897.0,
+    1070.0,
+    992.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 15,
+   "label": "display_formula",
+   "content": " $$ \\frac{N_{i}}{V_{T}}=(\\frac{6}{\\pi d_{i}^{3}})\\frac{V_{i}}{V_{f}}\\frac{V_{f}}{V_{T}} $$ ",
+   "bbox": [
+    772.0,
+    991.0,
+    954.0,
+    1051.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 16,
+   "label": "formula_number",
+   "content": "(12)",
+   "bbox": [
+    1030.0,
+    1007.0,
+    1067.0,
+    1032.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 17,
+   "label": "text",
+   "content": "where  $ d_{i} $ is the diameter of a particle in size class i.\nDistributions calculated like this are now compatible with the PBM and can be used for parameter estimation.",
+   "bbox": [
+    636.0,
+    1054.0,
+    1072.0,
+    1150.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 18,
+   "label": "paragraph_title",
+   "content": "4.3 Measurement errors",
+   "bbox": [
+    639.0,
+    1171.0,
+    843.0,
+    1195.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 19,
+   "label": "text",
+   "content": "Since every FSD is determined by using a large number of measurements, one can assume every Mastersizer measurement to be a counting of particles in each size class  $ N_{i} $. Based on this assumption, every single measurement of  $ N_{i} $ can be assumed to be multinomial distributed (Agresti, 1990). The variance of such a multinomial distribution represents the measurement error and can be calculated as follows (Agresti, 1990):",
+   "bbox": [
+    638.0,
+    1216.0,
+    1073.0,
+    1428.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 20,
+   "label": "display_formula",
+   "content": " $$ \\sigma^{2}(N_{i})=N_{i}\\left(1-\\frac{N_{i}}{N}\\right) $$ ",
+   "bbox": [
+    689.0,
+    1427.0,
+    882.0,
+    1483.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 21,
+   "label": "formula_number",
+   "content": "(13)",
+   "bbox": [
+    1032.0,
+    1441.0,
+    1069.0,
+    1466.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 22,
+   "label": "text",
+   "content": "where N is the total number of particles. This allows determination of the measurement errors for all size classes  $ N_{i} $.",
+   "bbox": [
+    639.0,
+    1486.0,
+    1074.0,
+    1559.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 3,
+   "order": 23,
+   "label": "number",
+   "content": "234",
+   "bbox": [
+    602.0,
+    1642.0,
+    637.0,
+    1662.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 0,
+   "label": "paragraph_title",
+   "content": "4.4 Parameter estimations",
+   "bbox": [
+    190.0,
+    153.0,
+    413.0,
+    176.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 1,
+   "label": "text",
+   "content": "Two datasets were obtained from Biggs & Lant (2000) for calibrating the PBM. They contain data of flocculation experiments at  $ \\overline{G} $ equal to 19.4 and 37.0 s $ ^{-1} $. The new approach was used for the conversion of raw vol% distributions into number distributions (X=3g.L $ ^{-1} $,  $ \\rho_l=1g.cm^{-3} $,  $ \\rho_l=1.04g.cm^{-3} $,  $ \\rho_s=1.7g.cm^{-3} $). The PBM was fitted to 4 different fitting variables: (1) vol% distribution, (2) D[4,3], (3) number distribution and (4) weighted number distribution. The parameter estimates of all situations are summarised in Table 2.",
+   "bbox": [
+    186.0,
+    196.0,
+    619.0,
+    463.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 2,
+   "label": "figure_title",
+   "content": "Table 2. Optimal values for a and A for different fitting variables in 2 experiments",
+   "bbox": [
+    203.0,
+    482.0,
+    602.0,
+    532.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 3,
+   "label": "table",
+   "content": "<table><tr><td>$ \\overline{G} $</td><td>Fitting Variable</td><td>$ \\alpha $</td><td>A</td><td>J( $ \\theta $)</td></tr><tr><td rowspan=\"4\">19.4</td><td>Vol%</td><td>0.0121</td><td>166</td><td>1336</td></tr><tr><td>D[4,3]</td><td>0.0136</td><td>195</td><td>2712</td></tr><tr><td>N_i</td><td>0.0073</td><td>12</td><td>1.60e19</td></tr><tr><td>Weighted Ni</td><td>0.0078</td><td>12</td><td>2.64e10</td></tr><tr><td rowspan=\"4\">37.0</td><td>Vol%</td><td>0.0083</td><td>260</td><td>1926</td></tr><tr><td>D[4,3]</td><td>0.0081</td><td>260</td><td>1958</td></tr><tr><td>N_i</td><td>0.0098</td><td>32</td><td>1.47e19</td></tr><tr><td>Weighted Ni</td><td>0.0078</td><td>18</td><td>3.76e10</td></tr></table>",
+   "bbox": [
+    185.0,
+    545.0,
+    623.0,
+    771.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 4,
+   "label": "text",
+   "content": "Results of the predictions of both the vol% and number distribution after a simulation time of 1920s are given in Figure 5 for the four optimised cases  $ (\\overline{G}=19.4s^{-1}) $. Similar results were found for  $ \\overline{G}=37.0s^{-1} $ (not shown). From the parameter estimates and the predictions of both the vol% and number distribution, it can be seen that the choice of fitting variable is critical. Both fits show that the model lacks flexibility and that the structure needs to be improved. This is not the focus of this paper, though.",
+   "bbox": [
+    183.0,
+    790.0,
+    618.0,
+    1059.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 5,
+   "label": "text",
+   "content": "Fitting on the vol% distribution yields a good fit for the vol% distribution (Figure 5, top). However, when zooming in on the tails of the distribution, it seems that the lower and higher end size classes are under predicted (Figure 6). The reason for this is the fact that the frequencies in these classes are low and will have a smaller contribution to the J(θ). Fitting on the vol% distribution focuses on the high frequency classes, which are in this case the middle size classes ranging from roughly 35-350 μm. For the application under study, these are not the most interesting classes, since flocs with these diameters will settle anyway. When looking at the vol%-fitted model prediction of the number distribution (Figure 5, bottom), similar conclusions can be drawn, however, much more pronounced. Under predictions by a factor 10-15 occur in the classes with sizes up to 10 μm. Parameter estimates are such that both aggregation and breakage rates are high (Table 2) making that all particles end up in the middle of the size range. When fitting the model to D[4,3] similar results are found (Figure 5, left). This could be expected since it is based on higher moments of the distribution. The underpredictions of the lower end classes are now even larger (15-30 times) as can be clearly observed from Figure 5 (left). Parameter estimates are somewhat higher (Table 2).",
+   "bbox": [
+    179.0,
+    1058.0,
+    616.0,
+    1553.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 6,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    661.0,
+    131.0,
+    1098.0,
+    271.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 7,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    670.0,
+    299.0,
+    1081.0,
+    861.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 8,
+   "label": "figure_title",
+   "content": "Figure 5. Comparison of model predictions at t=1920s of the vol% distribution (top) and the number distribution (bottom) after the model was fitted to different fitting variables.",
+   "bbox": [
+    659.0,
+    883.0,
+    1093.0,
+    980.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 9,
+   "label": "text",
+   "content": "Fitting on Ni, the prediction of the vol% distribution is bad (Figure 5, top). However, one can also see that the predictions of the lower size tail are better compared to fitting on vol% or D[4,3]. The prediction of the number distribution yields similar results. Under predictions of the lower end tail now range between 1.5-2.5, which is much better compared to fits on vol% or D[4,3]. The reason for this is that when fitting on numbers, the absolute number of flocs in every class will determine which classes will contribute most to the J(θ). Since a lot of flocs are present in the lower end of the distribution, these classes will be focused upon during the calibration. In order to do so, the parameter estimates are decreased, i.e. both the aggregation and breakage occur at slower rates. In the application at hand, gravitational solid-liquid separation, one is mainly interested in a good prediction of the small flocs that will not settle. In this regard, it is better to fit the current model to the number distribution instead of the vol% distribution. It should be noted that this could be different for other applications. Finally, when fitting on weighted Ni using the multinomial approach to calculate the weights, similar results as",
+   "bbox": [
+    655.0,
+    999.0,
+    1093.0,
+    1562.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 4,
+   "order": 10,
+   "label": "number",
+   "content": "235",
+   "bbox": [
+    618.0,
+    1641.0,
+    653.0,
+    1662.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 0,
+   "label": "text",
+   "content": "the fits on Ni were found. Since the calculated measurement errors are positively correlated with the absolute numbers in the size classes, they will be larger for classes containing large numbers of particles and, hence, their weights will be smaller. This results in somewhat lower predictions of both vol% and numbers in the lower and middle range. Under predictions of the lower end size classes range between 2-3.3. Only the parameter estimate for $\\alpha$ is somewhat higher due to the fact that the contribution of the lower end class prediction to $J(\\theta)$ is reduced (less certain measurements) whereas the contribution of larger classes to $J(\\theta)$ has increased.",
+   "bbox": [
+    159.0,
+    113.0,
+    596.0,
+    442.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 1,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    188.0,
+    470.0,
+    559.0,
+    725.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 2,
+   "label": "paragraph_title",
+   "content": "5. CONCLUSIONS",
+   "bbox": [
+    288.0,
+    844.0,
+    458.0,
+    866.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 3,
+   "label": "figure_title",
+   "content": "Figure 6. Zooming in on the small particle tail model predictions at 1920s after the model was fitted to different fitting variables.",
+   "bbox": [
+    159.0,
+    752.0,
+    589.0,
+    822.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 4,
+   "label": "text",
+   "content": "A methodology was presented that deals with problems arising when calibrating a PBM using on-line collected experimental flocculation data. It was shown that the fixed pivot solution method tends to over predict both the 0th moment and the number of flocs in the large size class range leading to a severe under prediction of the aggregation parameter  $ \\alpha $ (50%). It is advised to use the moving pivot solution method instead. The calculation of the vol% distribution in the model grid was accomplished by interpolating the cumulative vol% distribution at the pivots of the model grid. A new approach for volume to number conversion based on a fixed total floc volume was presented, conserving the D[4,3] of the original distribution. Finally, the PBM was fitted to 4 different fitting variables. Fitting on volume-based variables resulted in good predictions of the vol% distribution. However, both tails of the distribution are under predicted. Lower end classes of the number distribution were underestimated by a factor 10-30. Parameter estimates are such that particles end up in the middle of the size range. Fitting on numbers resulted in bad overall predictions of the vol% distribution, but the under predictions in the lower end tail were found to be smaller. Under predictions of the lower end size classes of the number distribution were in the range 1.5-3.3. Parameter estimates correspond to lower aggregation/breakage rates. For the application at hand, gravitational solid-liquid separation, it is advised to calibrate the model by means of the number distribution since the smaller size flocs are problematic in wastewater treatment. However, the results obtained with the theoretically better founded methodology have clearly pointed out that the first task at hand is model improvement.",
+   "bbox": [
+    150.0,
+    888.0,
+    589.0,
+    1541.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 5,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    636.0,
+    116.0,
+    1071.0,
+    302.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 6,
+   "label": "paragraph_title",
+   "content": "6. ACKNOWLEDGEMENT",
+   "bbox": [
+    732.0,
+    322.0,
+    974.0,
+    345.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 7,
+   "label": "text",
+   "content": "The project was financially supported by the Fund for Scientific Research – Flanders (proj. nr. G.0032.00) and the Ghent University Research Fund (BOF 01111001).",
+   "bbox": [
+    635.0,
+    368.0,
+    1067.0,
+    463.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 8,
+   "label": "paragraph_title",
+   "content": "7. REFERENCES",
+   "bbox": [
+    774.0,
+    483.0,
+    929.0,
+    507.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 9,
+   "label": "reference_content",
+   "content": "Agresti (1990). Categorical data analysis. Wiley, New York, 558p.",
+   "bbox": [
+    638.0,
+    530.0,
+    1064.0,
+    575.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 10,
+   "label": "reference_content",
+   "content": "Biggs, C. A. (2000). Activated sludge flocculation: investigating the effect of shear rate and cation concentration on flocculation dynamics. Ph.D dissertation, Department of Chemical Engineering, University of Queensland, Australia.",
+   "bbox": [
+    638.0,
+    577.0,
+    1066.0,
+    689.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 11,
+   "label": "reference_content",
+   "content": "Biggs, C.A. & Lant, P.A. (2000). Activated sludge flocculation: On-line determination of floc size and the effect of shear. Wat. Res., 34, 2542-2550.",
+   "bbox": [
+    637.0,
+    691.0,
+    1064.0,
+    759.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 12,
+   "label": "reference_content",
+   "content": "Dochain, D. & Vanrolleghem, P.A. (2001). Modeling and estimation in wastewater treatment processes. IWA Publishing, London, U.K.",
+   "bbox": [
+    637.0,
+    760.0,
+    1063.0,
+    827.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 13,
+   "label": "reference_content",
+   "content": "Govoreanu R., Seghers D., Nopens I., De Clercq B., Saveyn H., Capalozza C., Van der Meeren P., Verstraete W., Top E. & Vanrolleghem P.A. (2003). Linking floc structure and settling properties to activated sludge population dynamics in an SBR. Wat. Sci. Techn., 47(12), 9-18.",
+   "bbox": [
+    635.0,
+    829.0,
+    1062.0,
+    965.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 14,
+   "label": "reference_content",
+   "content": "Hounslow, M.J., Ryall, R.L. & Marshall, V.R. (1988). A discretized population balance for nucleation, growth and aggregation. AIChE Journal, 34(11), 1821-1832.",
+   "bbox": [
+    634.0,
+    968.0,
+    1063.0,
+    1058.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 15,
+   "label": "reference_content",
+   "content": "Kinnear, D. (2002). Biological solids sedimentation: a model incorporating fundamental settling parameters. Ph.D dissertation, Department of Civil and Environmental Engineering, University of Utah, USA.",
+   "bbox": [
+    633.0,
+    1060.0,
+    1061.0,
+    1173.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 16,
+   "label": "reference_content",
+   "content": "Kumar, S & Ramkrishna, D. (1996). On the solution of population balance equations by discretisation – II A moving pivot technique. Chem. Eng. Sci., 51(8), 1333-1342.",
+   "bbox": [
+    633.0,
+    1175.0,
+    1058.0,
+    1266.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 17,
+   "label": "reference_content",
+   "content": "Nopens, I., Biggs, C., De Clercq, B., Govoreanu, R., Wilen, B., Lant, P. & Vanrolleghem, P. (2002). Modelling the activated sludge flocculation process combining laser light diffraction particle sizing and population balance modelling (PBM). Wat. Sci. Techn., 45(6), 41-49.",
+   "bbox": [
+    632.0,
+    1268.0,
+    1057.0,
+    1405.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 18,
+   "label": "reference_content",
+   "content": "Ramkrishna, D. (2000). Population Balances: Theory and applications to particulate systems in engineering. Academic Press, London, UK, 355p.",
+   "bbox": [
+    631.0,
+    1406.0,
+    1057.0,
+    1475.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 19,
+   "label": "reference_content",
+   "content": "Spicer, P.T. & Pratsinis, S.E. (1996). Coagulation and fragmentation: universal steady state particle size distribution. AIChE Journal, 42, 1616-1620.",
+   "bbox": [
+    629.0,
+    1475.0,
+    1058.0,
+    1545.0
+   ],
+   "source": "main"
+  },
+  {
+   "page": 5,
+   "order": 20,
+   "label": "number",
+   "content": "236",
+   "bbox": [
+    586.0,
+    1630.0,
+    622.0,
+    1649.0
+   ],
+   "source": "main"
+  }
+ ]
+}

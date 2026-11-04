@@ -1,0 +1,216 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3102,
+  "completion_tokens": 8222,
+  "total_tokens": 11324,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3099,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 7030,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Aggregation-breakage PBM\n\nEquations:\n(2) \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned}      <- \"Aggregation models are often based on the Smoluchowski model (Ramkrishna, 2000):\"\n(3) \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left(x^{\\prime/3}+(x-x^{\\prime})^{\\prime/3}\\right)^{3}      <- \"t-range forces like van der Waals and hydrodynamic interactions. The description of $\\beta(x-x',x$) used in this study was taken from Spicer & Pratsinis (1996):\"\n(4) \\overline{G}=\\sqrt{\\frac{\\varepsilon}{\\nu}}      <- \"t-range forces like van der Waals and hydrodynamic interactions. The description of $\\beta(x-x',x$) used in this study was taken from Spicer & Pratsinis (1996):\"\n(5) \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned}      <- \"ulent energy dissipation rate ( $ m^2.s^{-3} $). $ \\alpha $ was chosen to be a constant between 0 and 1. Breakage models typically look like (Ramkrishna, 2000):\"\n(6) S(x)=Ax^{a}      <- \"S(x) is the breakage rate of particles of size x (s $ ^{-1} $) and $ \\Gamma $ the breakage distribution function. S(x) was taken from Spicer & Pratsinis (1996):\"\n(7) D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{4})}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{3})}      <- \"as the ratio of the fourth and third moment of the distribution:\"\n(9) C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime }      <- \"e PBM was solved with both techniques for $ \\alpha=0.0065 $ and A=201.5. The simulation results in Figure 2 are represented as cumulative oversize numbers (CON)\"\n\nSymbols:\n\nd   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n\\overline{G}   [COMPUTED by eq 4]\n  (no snippet mentions this symbol)\n\n\\varepsilon   [NOT COMPUTED]\n  [51] (sentence, p.2) where  $ \\overline{G} $ is the average velocity gradient ( $ s^{-1} $),  $ \\upsilon $ the kinematic viscosity ( $ m^2.s^{-1} $) and  $ \\overline{\\varepsilon} $ the average turbulent energy dissipation rate ( $ m^2.s^{-3} $).\n\n\\nu   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nS   [COMPUTED by eq 6]\n  [55] (sentence, p.2) S(x) was taken from Spicer & Pratsinis (1996):\n  [54] (sentence, p.2) where S(x) is the breakage rate of particles of size x (s $ ^{-1} $) and  $ \\Gamma $ the breakage distribution function.\n\n\\Gamma   [NOT COMPUTED]\n  [54] (sentence, p.2) where S(x) is the breakage rate of particles of size x (s $ ^{-1} $) and  $ \\Gamma $ the breakage distribution function.\n\nA   [NOT COMPUTED]\n  [5] (sentence, p.1) A calibration methodology is presented for a Population Balance Model (PBM) using on-line flocculation data.\n  [7] (sentence, p.1) A methodology for grid transformation and volume to number transformation is presented.\n  [80] (sentence, p.3) A flow rate to the flow-through cell of 3ml/s was selected to minimise shear effects and pump pulsation influences (to approximate isokinetic sampling) (Biggs & Lant, 2000).\n  [107] (table_row, p.3) Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-...: technique: fixed | $ \\alpha $: 0.00648 | A: 201.5\n  [108] (table_row, p.3) Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-...: technique: moving | $ \\alpha $: 0.01364 | A: 195\n  [160] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: $ \\overline{G} $: 19.4 | Fitting Variable: Vol% | $ \\alpha $: 0.0121 | A: 166 | J( $ \\theta $): 1336\n\nD   [COMPUTED by eq 7]\n  [139] (sentence, p.4) D[4,3] based on (1) raw Mastersizer data, (2) the recalculated number distribution of Biggs (2000) and (3) the new approach.\n  [74] (sentence, p.2) Other descriptive parameters can be derived from these FSDs such as the mass mean diameter (or D[4,3]) defined\n  [96] (sentence, p.3) Also, the model solved with the different solution techniques was fitted to one of the experimental D[4,3] data sets of Biggs & Lant (2000).\n  [161] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: D[4,3] | 0.0136 | 195 | 2712\n  [165] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: D[4,3] | 0.0081 | 260 | 1958\n\n[4,3]   [COMPUTED by eq 7]\n  [139] (sentence, p.4) D[4,3] based on (1) raw Mastersizer data, (2) the recalculated number distribution of Biggs (2000) and (3) the new approach.\n  [74] (sentence, p.2) Other descriptive parameters can be derived from these FSDs such as the mass mean diameter (or D[4,3]) defined\n  [96] (sentence, p.3) Also, the model solved with the different solution techniques was fitted to one of the experimental D[4,3] data sets of Biggs & Lant (2000).\n  [161] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: D[4,3] | 0.0136 | 195 | 2712\n  [165] (table_row, p.5) Table 2. Optimal values for a and A for different fitting variables in 2 experiments: D[4,3] | 0.0081 | 260 | 1958\n\n\\Delta F_{N}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "d",
+    "description": "Differential element of the particle-size coordinate in the integrals.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is the integration increment of the particle-size coordinate, not a constant of a model law.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\overline{G}",
+    "description": "Average velocity gradient.",
+    "description_basis": "stated",
+    "snippet_id": 51,
+    "quote": "the average velocity gradient ( $ s^{-1} $)",
+    "unit": "s^{-1}",
+    "unit_basis": "stated",
+    "value": "19.4 s^{-1}",
+    "value_number": 19.4,
+    "value_set": "this model",
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\varepsilon",
+    "description": "Average turbulent energy dissipation rate.",
+    "description_basis": "stated",
+    "snippet_id": 51,
+    "quote": "the average turbulent energy dissipation rate ( $ m^2.s^{-3} $)",
+    "unit": "m^2.s^{-3}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a turbulent operating-condition quantity used to characterize the process, rather than a constant of the aggregation or breakage law.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\nu",
+    "description": "Kinematic viscosity.",
+    "description_basis": "stated",
+    "snippet_id": 51,
+    "quote": "the kinematic viscosity ( $ m^2.s^{-1} $)",
+    "unit": "m^2.s^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a physical property of the fluid.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S",
+    "description": "Breakage rate of particles of size x.",
+    "description_basis": "stated",
+    "snippet_id": 54,
+    "quote": "S(x) is the breakage rate of particles of size x (s $ ^{-1} $)",
+    "unit": "s^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\Gamma",
+    "description": "Breakage distribution function.",
+    "description_basis": "stated",
+    "snippet_id": 54,
+    "quote": "the breakage distribution function",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is the distribution function in the breakage law, a model-law property rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A",
+    "description": "Coefficient in the particle breakage-rate law S(x)=Ax^a.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "fixed pivot, same dataset",
+      "value": "201.5"
+     },
+     {
+      "case": "moving pivot, same dataset",
+      "value": "195"
+     },
+     {
+      "case": "Vol% fitting variable",
+      "value": "166"
+     },
+     {
+      "case": "D[4,3] fit, case 1",
+      "value": "195"
+     },
+     {
+      "case": "D[4,3] fit, case 2",
+      "value": "260"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "It is an estimated coefficient in the breakage-rate law.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "D",
+    "description": "Mass mean diameter, D[4,3].",
+    "description_basis": "stated",
+    "snippet_id": 74,
+    "quote": "mass mean diameter (or D[4,3])",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "[4,3]",
+    "description": "Moment-order indices indicating the fourth-to-third-moment ratio used to calculate D[4,3].",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\Delta F_{N}",
+    "description": "Increment in the number-based particle-size distribution used in the moment sums.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a particle-distribution quantity used as process data in calculating the size moment.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

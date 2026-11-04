@@ -1,0 +1,325 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "birol_2002": {
+   "name": "birol_2002",
+   "equations": [
+    "1",
+    "3",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+   ],
+   "description": "The model represents penicillin production by a glucose-fed culture in a batch-to-fed-batch fermentor, using a detailed unstructured mechanistic description. It predicts biomass, penicillin, glucose, dissolved oxygen, culture volume, temperature, heat generation and carbon dioxide, while accounting for pH and operating inputs such as aeration, agitation and feed. It combines substrate- and oxygen-dependent growth, pH and temperature effects, non-growth-associated penicillin formation and hydrolysis, material and energy balances, gas transfer, and pH and temperature control. The simulated run begins in batch mode and switches to fed-batch when glucose reaches a threshold; pH and temperature are controlled while glucose feeding is open loop. The authors compare its predictions with published fermentation results and simulations, and provide the simulator as a testbed for process monitoring, fault diagnosis, modeling, optimization and control.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes penicillin production in a fermentation process using glucose as a carbon source.",
+     "quote": "Experimental findings suggest a high degree of dependence of biomass growth on both the carbon source (glucose) and oxygen as substrates (Bajpai & Reuss, 1980).",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The authors characterize the model as a detailed, unstructured mechanistic model.",
+     "quote": "A detailed unstructured model for penicillin production in a fed-batch fermentor has been developed.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The unstructured approach gathers cellular physiology into a single biomass term rather than explicitly representing cell structure.",
+     "quote": "In unstructured models, all cellular physiology information are gathered into a single biomass term so that there is no explicit structural information left about the cellular activity resulting in a rather simpler model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "states",
+     "text": "The model tracks eight dynamic states: biomass, penicillin, substrate, dissolved oxygen, culture volume, heat generation, temperature and carbon dioxide.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "equipment",
+     "text": "The heat-transfer model assumes a laboratory-scale fermentor with a cooling coil.",
+     "quote": "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The nominal initial culture volume in the parameter table is 100 L.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "Simulations start in batch mode and switch to fed-batch when glucose concentration reaches 0.3 g/L.",
+     "quote": "This has been done by assigning a threshold value to glucose concentration which was chosen as 0.3 g/l.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The simulator runs with pH and temperature under closed-loop control and glucose addition open loop.",
+     "quote": "Simulations are run under closed-loop control of pH and temperature while glucose addition is performed open-loop.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The nominal pH and temperature set points are 5.0 and 25 °C.",
+     "quote": "pH and temperature are controlled via PID controllers at 5.0 and 25 °C, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The figure caption reports simulations at initial glucose and biomass concentrations of 15 g/L and 0.1 g/L, respectively.",
+     "quote": "for an initial substrate and biomass concentrations of 15 g/l and 0.1 g/l, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "control",
+     "text": "The simulator offers on/off or PID control for pH and PID control for temperature.",
+     "quote": "Controller type selection; on/off (pH), PID (pH, temperature).",
+     "basis": "stated"
+    },
+    {
+     "topic": "control",
+     "text": "pH control adds concentrated acid or base, with separate PID controllers for the two additions.",
+     "quote": "Two PID controllers are used to manipulate the acid and base control values.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "The default simulation sampling interval is 0.02 h, and the user can change the sampling interval for collecting or plotting results.",
+     "quote": "During the simulation, the sampling time was chosen to be 0.02 h as default.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "The paper notes that industrial biomass and penicillin measurements are commonly made off-line by HPLC every 8–10 h.",
+     "quote": "In industrial scale fermentations such variables are usually measured off-line via HPLC every 8–10 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inputs",
+     "text": "The extensions include pH, temperature, aeration rate, agitation power and substrate feed flow as process inputs.",
+     "quote": "The model extends the mechanistic model of Bajpai and Reuss by adding input variables such as pH, temperature, aeration rate, agitation power, and feed flow rate of substrate",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "Biomass growth depends on glucose and oxygen and uses Contois kinetics to represent inhibition by biomass.",
+     "quote": "The dependence of specific growth rate on carbon and oxygen substrates was assumed to follow Contois kinetics (Bajpai & Reuss) to consider the biomass inhibition.",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "The growth-rate expression includes an inhibition effect of hydrogen-ion concentration.",
+     "quote": "A typical inhibition term that includes hydrogen ion concentration [H+] is introduced into the specific growth rate expression.",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "The model relates hydrogen-ion concentration to biomass formation and uses acid and base additions to represent pH control.",
+     "quote": "Under pH control, the hydrogen ion concentration is calculated by taking the dissociation of water and acid/base into account as well as the hydrogen production from biomass.",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "Temperature effects on growth and cell death are represented with Arrhenius-type kinetics, with biomass formation increasing up to 35 °C before declining.",
+     "quote": "An adjustment has been made so that an increase in temperature enhanced the biomass formation up to 35 °C.",
+     "basis": "stated"
+    },
+    {
+     "topic": "product",
+     "text": "Penicillin formation is modeled as non-growth-associated, with penicillin hydrolysis also included.",
+     "quote": "The production of penicillin is described by non-growth associated product formation kinetics. The hydrolysis of penicillin is also included in the rate expression (Bajpai & Reuss, 1980):",
+     "basis": "stated"
+    },
+    {
+     "topic": "product",
+     "text": "The product-formation rate includes substrate inhibition and oxygen availability.",
+     "quote": "Substrate inhibition kinetics for penicillin production was originally proposed by Bajpai and Reuss (1980) that successfully represented the observed behavior.",
+     "basis": "stated"
+    },
+    {
+     "topic": "product",
+     "text": "The model does not include direct effects of pH or temperature on penicillin production.",
+     "quote": "Direct effects of pH and temperature on penicillin production are not considered due to the complex nature of the phenomenon, and unavailability of the experimental data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "substrate",
+     "text": "Glucose and oxygen consumption account for growth, product formation, and microbial maintenance using constant yields and maintenance requirements.",
+     "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+     "basis": "stated"
+    },
+    {
+     "topic": "transfer",
+     "text": "Unlike the original Bajpai and Reuss model, the overall oxygen mass-transfer coefficient varies with agitation power and oxygen flow rate.",
+     "quote": "Here we have assumed K_la to be a function of agitation power input P_w and flow rate of oxygen f_g as suggested by Bailey and Ollis (1986).",
+     "basis": "stated"
+    },
+    {
+     "topic": "transfer",
+     "text": "Carbon dioxide generation is attributed to growth, penicillin biosynthesis and maintenance.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "transfer",
+     "text": "The heat-generation model includes contributions from growth and maintenance, and the energy balance represents heat transfer through a cooling coil.",
+     "quote": "During the product synthesis phase, when the rate of biomass formation becomes very small there is still significant heat generation from metabolic maintenance activities.",
+     "basis": "stated"
+    },
+    {
+     "topic": "volume",
+     "text": "The culture-volume balance accounts for feed, acid or base addition, and evaporative loss.",
+     "quote": "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term, F_a/b. We have also included the F_loss term to account for evaporative loss during fermentation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "volume",
+     "text": "The evaporation-rate relationship is heuristic rather than experimentally based.",
+     "quote": "Since we do not base our F_loss term on experimental findings, this should be treated as a heuristic since as a general tendency, the temperature increase favors evaporative loss.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The authors say they used published experimental data from Pirt and Righoletto (1967) and Metz et al. (1981) to improve the simulation.",
+     "quote": "In this study, we have used experimental data available in literature (Pirt & Righoletto, 1967; Metz, Bruijin & van Suijdam, 1981) to improve the simulation of penicillin production by extending the existing mathematical models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The model is based on Bajpai and Reuss (1980), whose model had been reported to agree well with the experimental results of Pirt and Righoletto (1967).",
+     "quote": "The mechanistic model of Bajpai and Reuss (1980), which was shown to give a good agreement with the experimental results of Pirt and Righoletto (1967), was utilized as the starting point for model development.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The authors took typical temperature-kinetic parameter values from the literature and readjusted some parameter values after adding terms that increased ODE stiffness.",
+     "quote": "The additional terms that were introduced increased the stiffness of the ordinary differential equations. For that reason, some of the parameter values are readjusted.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The paper does not report a total parameter count, a parameter-estimation method, or parameter uncertainty estimates.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors compared predictions under different conditions with Pirt and Righoletto (1967) experimental data and Bajpai and Reuss (1980) simulation results.",
+     "quote": "The predictions of the model under different conditions are compared with experimental data of Pirt and Righoletto (1967) and the simulation results of Bajpai and Reuss (1980).",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors report that simulated biomass, penicillin, glucose and oxygen profiles resembled the Bajpai and Reuss predictions, which had been validated against Pirt and Righoletto data.",
+     "quote": "The simulator mimicked the biomass, penicillin, glucose and oxygen concentrations in a similar fashion to the predictions of Bajpai and Reuss (1980) which were also validated by the experimental results of Pirt and Righoletto (1967).",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The paper reports qualitative profile agreement but gives no numerical fit statistics or prediction-error measures.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors caution that the parameters depend on strain, medium, feed composition and environmental conditions.",
+     "quote": "In fermentation processes, particularly in penicillin production, parameter values are closely related to medium composition, feed composition and the choice of the strain.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors advise sensitivity studies when users intend to make large deviations from nominal conditions.",
+     "quote": "Users are advised to conduct sensitivity studies if the intent is to use large deviations from nominal conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The cooling-coil heat-transfer model is intended for laboratory scale; industrial use would require a jacketed-fermentor model with appropriate equations.",
+     "quote": "For industrial scale fermentors, the heat transfer mechanism should be modified to a jacketed fermentor with baffles and appropriate equations must be substituted.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors cite Birol et al. (2002) as a morphologically structured model better suited to studies of strain improvement or fundamental fermentation phenomena.",
+     "quote": "A detailed fundamental model on penicillin production and its applications based on a morphologically structured model which may be more suitable for such studies, can be found elsewhere (Birol, Undey, Parulekar & Cinar, 2002).",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "Simulations tested initial glucose concentrations of 15, 25 and 30 g/L, with penicillin production increasing and then leveling off as initial glucose increased.",
+     "quote": "Penicillin production showed an increasing trend with an increase in the initial glucose concentration then levelled off.",
+     "basis": "stated"
+    },
+    {
+     "topic": "conditions",
+     "text": "Under oxygen limitation defined as oxygen saturation at or below 50%, penicillin concentration increased with the overall mass-transfer coefficient and then leveled off.",
+     "quote": "Penicillin concentration increased with increasing K_la values, then it levelled off indicating a high degree of dependence of penicillin production on oxygen (Fig. 6).",
+     "basis": "stated"
+    },
+    {
+     "topic": "monitoring",
+     "text": "For a multivariate monitoring demonstration, the authors generated a historical reference database of 50 simulated batches under normal operation with small random variations.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "monitoring",
+     "text": "In a simulated batch with a small glucose-feed reduction, the first out-of-control signals occurred at 162.5 h on Hotelling's T² and 152 h on SPE.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "faults",
+     "text": "The simulator was used to examine a pH-controller shutdown at 10 h, a 95% agitation-power decrease at 30 h, and a 30% substrate-feed decrease at 60 h.",
+     "quote": "A summary of the faults introduced at different stages of fermentation",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors present the model and simulator as a testbed for process monitoring, fault diagnosis, empirical modeling, optimization and control, including educational use.",
+     "quote": "The simulator developed may be used for both research and educational purposes",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The simulation package is made available through the authors' website.",
+     "quote": "The simulator developed for penicillin production is available at http://www.chee.iit.edu/~control/software.html",
+     "basis": "stated"
+    }
+   ],
+   "states": [
+    "X",
+    "P",
+    "S",
+    "C_{L}",
+    "V",
+    "Q_{rxn}",
+    "T",
+    "CO_{2}"
+   ],
+   "inputs": [
+    "[H^+]",
+    "F",
+    "s_{f}",
+    "f_{g}",
+    "P_{w}",
+    "F_{a/b}",
+    "T_{f}",
+    "F_{c}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 46 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

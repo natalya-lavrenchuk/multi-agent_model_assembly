@@ -1,0 +1,240 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2499,
+  "completion_tokens": 4237,
+  "total_tokens": 6736,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2496,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3072,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: kontoravdi_2005\n\nEquations:\n(18) \\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}      <- \"The heavy- and light-chain mRNA balances are\"\n(19) \\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(20) \\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(21) R_{H}=\\frac{2}{3}K_{A}[H]^{2}      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(22) R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(23) \\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(24) \\frac{d[H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}      <- \"The intraER MAb balance is\"\n\nSymbols:\n\nm_{L}   [COMPUTED by eq 18]\n  (no snippet mentions this symbol)\n\nN_{L}   [NOT COMPUTED]\n  [181] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_L $ (gene/cell) | Batch operation value: $ 1.2 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $\n  [60] (line, p.2) N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)\n\nS_{L}   [NOT COMPUTED]\n  [183] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_L $ (mRNA/gene-h) | Batch operation value: $ 4.5 \\times 10^{3} $ | Fed-batch operation value: $ 4.5 \\times 10^{3} $\n  [62] (line, p.2) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)\n\n[H]   [COMPUTED by eq 19]\n  (no snippet mentions this symbol)\n\nT_{H}   [NOT COMPUTED]\n  [184] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_H $ (chain/mRNA-h) | Batch operation value: 17 | Fed-batch operation value: 17\n  [63] (line, p.2) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)\n\nR_{H}   [COMPUTED by eq 21]\n  [61] (line, p.2) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)\n\n[L]   [COMPUTED by eq 20]\n  (no snippet mentions this symbol)\n\nT_{L}   [NOT COMPUTED]\n  [185] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_L $ (chain/mRNA-h) | Batch operation value: 11.5 | Fed-batch operation value: 11.5\n  [63] (line, p.2) T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)\n\nR_{L}   [COMPUTED by eq 22]\n  [61] (line, p.2) R $ _{H} $, R $ _{L} $ rates of heavy- and light-chain consumption in assembly (chain/cell/h)\n\nK_{A}   [NOT COMPUTED]\n  [168] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $\n  [50] (line, p.2) K $ _{A} $ assembly rate constant (cell/molecule/h)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "m_{L}",
+    "description": "Light-chain mRNA amount.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mRNA/cell",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "N_{L}",
+    "description": "Light-chain gene copy number.",
+    "description_basis": "stated",
+    "snippet_id": 60,
+    "quote": "heavy- and light-chain gene copy number",
+    "unit": "gene/cell",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "batch operation",
+      "value": "1.2 × 10^2 gene/cell"
+     },
+     {
+      "case": "fed-batch operation",
+      "value": "1.0 × 10^2 gene/cell"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "Gene copy number is a model-system property.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S_{L}",
+    "description": "Light-chain gene-specific transcription rate.",
+    "description_basis": "stated",
+    "snippet_id": 62,
+    "quote": "heavy- and light-chain gene specific transcription rates",
+    "unit": "mRNA/gene-h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "batch operation",
+      "value": "4.5 × 10^3 mRNA/gene-h"
+     },
+     {
+      "case": "fed-batch operation",
+      "value": "4.5 × 10^3 mRNA/gene-h"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A gene-specific transcription rate is a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "[H]",
+    "description": "Intra-ER heavy-chain concentration.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "molecule/cell",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "T_{H}",
+    "description": "Heavy-chain-specific translation rate.",
+    "description_basis": "stated",
+    "snippet_id": 63,
+    "quote": "heavy- and light-chain specific translation rates",
+    "unit": "chain/mRNA-h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "batch operation",
+      "value": "17 chain/mRNA-h"
+     },
+     {
+      "case": "fed-batch operation",
+      "value": "17 chain/mRNA-h"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A specific translation rate is a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R_{H}",
+    "description": "Rate of heavy-chain consumption in assembly.",
+    "description_basis": "stated",
+    "snippet_id": 61,
+    "quote": "rates of heavy- and light-chain consumption in assembly",
+    "unit": "chain/cell/h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "[L]",
+    "description": "Intra-ER light-chain concentration.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "molecule/cell",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "T_{L}",
+    "description": "Light-chain-specific translation rate.",
+    "description_basis": "stated",
+    "snippet_id": 63,
+    "quote": "heavy- and light-chain specific translation rates",
+    "unit": "chain/mRNA-h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "batch operation",
+      "value": "11.5 chain/mRNA-h"
+     },
+     {
+      "case": "fed-batch operation",
+      "value": "11.5 chain/mRNA-h"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A specific translation rate is a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R_{L}",
+    "description": "Rate of light-chain consumption in assembly.",
+    "description_basis": "stated",
+    "snippet_id": 61,
+    "quote": "rates of heavy- and light-chain consumption in assembly",
+    "unit": "chain/cell/h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{A}",
+    "description": "Assembly rate constant.",
+    "description_basis": "stated",
+    "snippet_id": 50,
+    "quote": "assembly rate constant",
+    "unit": "cell/molecule/h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "batch operation",
+      "value": "10^-6 cell/molecule/h"
+     },
+     {
+      "case": "fed-batch operation",
+      "value": "10^-6 cell/molecule/h"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "An assembly rate constant is a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

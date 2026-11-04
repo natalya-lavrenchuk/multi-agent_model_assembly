@@ -1,0 +1,47 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.298213272,
+  "prompt_tokens": 1425,
+  "prompt_time": 0.059049559,
+  "completion_tokens": 1982,
+  "completion_time": 4.145404693,
+  "total_tokens": 3407,
+  "total_time": 4.204454252,
+  "completion_tokens_details": {
+   "reasoning_tokens": 1800
+  }
+ },
+ "user": "Equations:\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nK_{F}   [NOT COMPUTED]\n  [426] (table_row, p.14) Parameter: $ K_F $ | Description: Fructose saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 30 | Optimal: 1.108 | 90% CI: 0.71\n\nK_{IF}   [NOT COMPUTED]\n  [427] (table_row, p.14) Parameter: $ K_{IF} $ | Description: Fructose inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 30 | Optimal: 1.404 | 90% CI: 0.51",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{F}",
+    "description": "Fructose saturation constant",
+    "description_basis": "stated",
+    "snippet_id": 426,
+    "quote": "Fructose saturation constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "1.108 g L^{-1}",
+    "class_reason": "parameter representing a fructose saturation constant, estimated from data",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IF}",
+    "description": "Fructose inhibition constant",
+    "description_basis": "stated",
+    "snippet_id": 427,
+    "quote": "Fructose inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "1.404 g L^{-1}",
+    "class_reason": "parameter representing a fructose inhibition constant, estimated from data",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

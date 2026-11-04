@@ -1,0 +1,53 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1916,
+  "completion_tokens": 1386,
+  "total_tokens": 3302,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1913,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 985,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Modeling Kinetics of a Large-Scale Fed-Batch CHO Cell Culture by Markov Chain Monte Carlo Method\n\nAbstract: Markov chain Monte Carlo (MCMC) method was applied to model kinetics of a fed-batch Chinese hamster ovary cell culture process in 5,000-L bioreactors. The kinetic model consists of six differential equations, which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1). The kinetic model has 18 parameters, six of which were calculated from the cell culture data, whereas the other 12 were estimated from a training data set that comprised of seven cell culture runs using a MCMC method. The model was confirmed in two validation data sets that represented a perturbation of the cell culture condition. The agreement between the predicted and measured values of both validation data sets may indicate high reliability of the model estimates. The kinetic model uniquely incorporated the ammonia removal and the exponential function of B1 protein concentration. The model indicated that ammonia and lactate play critical roles in cell growth and that low concentrations of glucose (0.17 mM) and glutamine (0.09 mM) in the cell culture medium may help reduce ammonia and lactate production. The model demonstrated that 83% of the glucose consumed was used for cell maintenance during the late phase of the cell cultures, whereas the maintenance coefficient for glutamine was negligible. Finally, the kinetic model suggests that it is critical for B1 production to sustain a high number of viable cells. The MCMC meth\n\nSentences about the process and the data:\n- Markov chain Monte Carlo (MCMC) method was applied to model kinetics of a fed-batch Chinese hamster ovary cell culture process in 5,000-L bioreactors.\n- The kinetic model has 18 parameters, six of which were calculated from the cell culture data, whereas the other 12 were estimated from a training data set that comprised of seven cell culture runs using a MCMC method.\n- The model was confirmed in two validation data sets that represented a perturbation of the cell culture condition.\n- The agreement between the predicted and measured values of both validation data sets may indicate high reliability of the model estimates.\n- The model indicated that ammonia and lactate play critical roles in cell growth and that low concentrations of glucose (0.17 mM) and glutamine (0.09 mM) in the cell culture medium may help reduce ammonia and lactate production.\n- The model demonstrated that 83% of the glucose consumed was used for cell maintenance during the late phase of the cell cultures, whereas the maintenance coefficient for glutamine was negligible.\n- The MCMC methodology may be a useful tool for modeling kinetics of a fed-batch mammalian cell culture process. © 2009 American Institute of Chemical Engineers Biotechnol.\n- Keywords: kinetic model, MCMC sampling, bayesian parameter estimation, monod equation, Chinese hamster ovary cell culture\n- A kinetic model that quantitatively elucidates the effects of limiting nutrients and repressing metabolites on cell growth and protein productivity can be used for simulation, optimization, and process control in cell cultures.\n- First, the kinetic models were developed from cell cultures at laboratory scale.\n- Second, due to its nonlinear feature, a kinetic model has not been applied to a fed-batch cell culture system that includes multiple nutrients and metabolites with adequate accuracy.\n- A modeling methodology that can be generally applicable to the fed-batch culture mode especially at manufacturing scale would be valuable for process control and productivity improvements.\n- $ ^{11} $ An unstructured model relies on concentrations of nutrients and metabolites in cultures, and neglects intracellular processes.\n- Unstructured kinetic models have also been used to predict recombinant protein productivity in mammalian cell cultures.\n- $ ^9 $ However, the highest specific antibody production rate was often observed at a low specific growth rate in many cases regardless of cell culture mode being used.\n- It was reported that the correlation between nutrient concentrations and protein productivity could be positive, $ ^{19,22-23} $ not significant, $ ^{11,24} $ or negative $ ^{25} $ in mammalian cell cultures.\n- To estimate kinetic parameters, a continuous culture has been used to achieve steady states, which simplifies the calculations.\n- $ ^{11} $ In the continuous culture, multiple steady states at various growth rates and environmental conditions can be established.\n\nModel: Fed-batch CHO kinetic model\nLaws:\n(6.1) [balance] Viable cell density changes through cell growth and cell death.\n(6.2) [balance] Glucose concentration declines through growth-associated uptake and maintenance consumption by viable cells.\n(6.3) [balance] Glutamine concentration changes through cellular uptake, maintenance consumption, and first-order decomposition.\n(6.4) [balance] Lactate concentration increases in proportion to glucose utilization by viable cells.\n(6.5) [balance] Ammonia concentration changes through glutamine-associated production, ammonia removal, and glutamine decomposition.\n(6.6) [balance] B1 titer accumulation is computed from viable cell density weighted by the fraction of cells not undergoing propagation.\n(7.1) [constitutive] Specific cell growth rate is computed with glucose and glutamine saturation terms and lactate and ammonia inhibition terms.\n(7.2) [constitutive] Specific cell death rate is computed from saturating dependencies on lactate and ammonia concentrations.\n(8) [constitutive] The glutamine maintenance coefficient is modeled as a saturating function of glutamine concentration.\n\nStates (computed by the ODEs):\n- X_{V}: viable cell density\n- [GLC]: glucose concentration\n- [GLN]: glutamine concentration\n- [LAC]: lactate concentration\n- [AMM]: ammonia concentration\n- [B1]: B1 protein titer\n\nInputs (variables no law computes):\n- none\n\nModel-wide assumptions:\n- Specific growth rate is zero during the cell death phase.\n- Glucose and glutamine maintenance terms are zero when d ≤ 6.\n- Ammonia and lactate are considered in the growth-rate equation only above 90% of their thresholds.\n- The B1 mass balance is applied only after 144 h.",
+ "answer": {
+  "system": {
+   "value": "CHO cells producing the B1 antibody fusion protein",
+   "quote": "fed-batch Chinese hamster ovary cell culture process; antibody fusion protein B1 (B1)"
+  },
+  "unit_operation": {
+   "value": "5,000-L bioreactor",
+   "quote": "in 5,000-L bioreactors"
+  },
+  "operating_mode": {
+   "value": [
+    "fed-batch"
+   ],
+   "quote": "fed-batch Chinese hamster ovary cell culture process",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "A training data set comprising seven cell culture runs",
+   "quote": "the other 12 were estimated from a training data set that comprised of seven cell culture runs using a MCMC method."
+  },
+  "phenomena": [
+   "Glucose- and glutamine-limited cell growth",
+   "Lactate and ammonia inhibition of cell growth",
+   "Lactate- and ammonia-dependent cell death",
+   "Growth-associated and maintenance glucose uptake",
+   "Glutamine uptake, concentration-dependent maintenance, and first-order decomposition",
+   "Glucose-utilization-associated lactate production",
+   "Glutamine-associated ammonia production and ammonia removal",
+   "Viable-cell-associated B1 fusion-protein production weighted by the non-propagating cell fraction"
+  ],
+  "description": "This model describes fed-batch CHO cell culture in 5,000-L bioreactors producing the B1 antibody fusion protein. It predicts viable cell density and glucose, glutamine, lactate, ammonia, and B1 concentrations with six differential equations. Cell growth and death depend on nutrients and inhibitory metabolites, while nutrient consumption, metabolite production and removal, and cell-associated B1 production describe the culture dynamics."
+ }
+}

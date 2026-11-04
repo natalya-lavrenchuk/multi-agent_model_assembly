@@ -1,0 +1,122 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 6529,
+  "completion_tokens": 4617,
+  "total_tokens": 11146,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6526,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3738,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Modeling Kinetics of a Large-Scale Fed-Batch CHO Cell Culture by Markov Chain Monte Carlo Method\n\nAbstract: Markov chain Monte Carlo (MCMC) method was applied to model kinetics of a fed-batch Chinese hamster ovary cell culture process in 5,000-L bioreactors. The kinetic model consists of six differential equations, which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1). The kinetic model has 18 parameters, six of which were calculated from the cell culture data, whereas the other 12 were estimated from a training data set that comprised of seven cell culture runs using a MCMC method. The model was confirmed in two validation data sets that represented a perturbation of the cell culture condition. The agreement between the predicted and measured values of both validation data sets may indicate high reliability of the model estimates. The kinetic model uniquely incorporated the ammonia removal and the exponential function of B1 protein concentration. The model indicated that ammonia and lactate play cri\n\nEquations (number, code tag, page, text just before, LaTeX):\n(p2-1.1) [NOT USED BY OTHERS: computes X; the model output (keep) or not part of the model (leave out)] p.2  ... 400 (NOVA Biomedical, Waltham, MA). B1 protein titers ([B1]) were measured by affinity chromatography using an internally developed method.\n    \\mathbf{X2^{(d)}}=\\begin{bmatrix}[B1]_{2}^{(d)} \\mathrm{[GLC]}_{2^{(d)}} \\mathrm{[GLN]}_{2^{(d)}} \\mathrm{[LAC]}_{2^{(d)}} \\mathrm{[AMM]}_{2^{(d)}}X_{V,2}^{(d)}\\end{bmatrix}\n(p2-1.2) [NOT USED BY OTHERS: computes d; the model output (keep) or not part of the model (leave out)] p.2  ... 400 (NOVA Biomedical, Waltham, MA). B1 protein titers ([B1]) were measured by affinity chromatography using an internally developed method.\n    d=0,1,\\ldots13 (1)\n(2) [NOT USED BY OTHERS: computes X; the model output (keep) or not part of the model (leave out)] p.3  ...\n    \\mathbf{X1^{(d)}}=\\begin{bmatrix}[B1]_{1}^{(d)}&\\mathrm{[GLC]}_{1}^{(d)}&\\mathrm{[GLN]}_{1}^{(d)}&\\mathrm{[LAC]}_{1}^{(d)}&\\mathrm{[AMM]}_{1}^{(d)}&X_{V,1}^{(d)}\\end{bmatrix}\n(3) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...\n    x1_{i}^{(d)}=\\frac{x2_{i}^{(d)}\\cdot V^{(d)}+V_{f}^{(d)}\\cdot\\mathrm{CF}_{i}}{V^{(d)}+V_{f}^{(d)}}\n(4) [NOT USED BY OTHERS: computes Y_{x2_k/x2_j}; the model output (keep) or not part of the model (leave out)] p.3  ...olute  $ \\mu_{app} $ values calculated for 0–96 h and 264–312 h, respectively, using the 95% confidence level under the one-tail hypotheses.\n    Y_{x2_{k}/x2_{j}}=\\left|\\frac{x2_{x}^{(6)}\\cdot V^{(6)}-x2_{k}^{(0)}\\cdot V^{(0)}}{\\left(x2_{j}^{(0)}\\cdot V^{(0)}-x2_{j}^{(6)}\\cdot V^{(6)}\\right)+\\sum_{d=0}^{5}V_{f}^{(d)}\\cdot\\mathrm{CF}_{j}}\\right|\n(5) [CONFLICT: computes X_{V}, like eq 6.1] p.3  ...olute  $ \\mu_{app} $ values calculated for 0–96 h and 264–312 h, respectively, using the 95% confidence level under the one-tail hypotheses.\n    \\ln(X_{V})=\\mu_{app}t\n(6.1) [CONFLICT: computes X_{V}, like eq 5] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d X_{V}}{d t} =(\\mu-\\mu_{d})\\cdot X_{V}\n(6.2) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d[\\mathrm{GLC}]}{d t} =-\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{glc}}+m_{\\mathrm{glc}}\\right)\\cdot X_{V}\n(6.3) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d[\\mathrm{GLN}]}{d t} =-\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{g}\\ln}+m_{\\mathrm{g}\\ln}\\right)\\cdot X_{V}-d_{g\\ln}[\\mathrm{GLN}]\n(6.4) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d[\\mathrm{LAC}]}{d t} =Y_{\\mathrm{lac}/\\mathrm{glc}}\\cdot\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{glc}}+m_{\\mathrm{glc}}\\right)\\cdot X_{V}\n(6.5) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d[\\mathrm{AMM}]}{d t} =Y_{\\mathrm{amm}/\\mathrm{g}\\ln}\\cdot\\left((\\mu-\\mu_{d})/Y_{X_{V}/\\mathrm{g}\\ln}\\right)\\cdot X_{V}-r_{\\mathrm{amm}}\\cdot X_{V} +d_{\\mathrm{g}\\ln}[\\mathrm{GLN}]\n(6.6) [NEEDED: an ODE (the model, or background from earlier work?)] p.3  ... that are not undergoing propagation by the next sampling time ( $ t^{(d+1)} $) was estimated by the term  $ (1 - \\mu / \\mu_{\\text{max}}) $.\n    \\frac{d[\\mathrm{B1}]}{d t} =Q_{B1}\\cdot X_{V}\\cdot\\left(1-\\frac{\\mu}{\\mu_{\\max}}\\right)\\cdot[B1]\n(7.1) [NEEDED: computes \\mu, used by the model] p.3  ...nsidered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\n    \\mu=\\mu_{\\max} \\frac{[GLC]}{K_{\\mathrm{glc}}+[GLC]}\\cdot\\frac{[GLN]}{K_{\\mathrm{g}\\ln}+[GLN]}\\cdot\\frac{\\mathrm{KI}_{\\mathrm{lac}}}{KI_{\\mathrm{lac}}+[LAC]} \\cdot\\frac{\\mathrm{KI}_{\\mathrm{amm}}}{KI_{\\mathrm{amm}}+[AMM]}\n(7.2) [NEEDED: computes \\mu_{d}, used by the model] p.3  ...nsidered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\n    \\mu_{d}=k_{d} \\cdot\\frac{[LAC]}{KD_{\\mathrm{lac}}+[LAC]}\\cdot\\frac{[AMM]}{KD_{\\mathrm{amm}}+[AMM]}\n(8) [NOT USED BY OTHERS: computes m_{gln}; the model output (keep) or not part of the model (leave out)] p.3  ... the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.$^{11,40}$\n    m_{gln}=\\frac{a_{1}[\\mathrm{GLN}]}{a_{2}+[\\mathrm{GLN}]}\n(9) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...bf{X2}^{(d+1)} $). The ODE23 function of MATLAB Version 7.5 (Mathwork, Natick, MA) was used to numerically solve Eq. 6 for each time period.\n    \\begin{aligned}\\boldsymbol{\\varTheta}=\\left[K_{\\mathrm{glc}}K_{\\mathrm{gln}}KI_{\\mathrm{amm}}KI_{\\mathrm{lac}}KD_{\\mathrm{amm}}KD_{\\mathrm{lac}}m_{\\mathrm{glc}}Q_{B1}d_{\\mathrm{gln}}\\right.\\\\ \\left.R_{\\mathrm{amm}}a_{1}a_{2}\\right]\\end{alig\n(10) [NOT USED BY OTHERS: computes P; the model output (keep) or not part of the model (leave out)] p.3  ...bf{X2}^{(d+1)} $). The ODE23 function of MATLAB Version 7.5 (Mathwork, Natick, MA) was used to numerically solve Eq. 6 for each time period.\n    \\mathbf{P}=[\\mu_{\\mathrm{m a x}}k_{d}Y_{X_{V}/\\mathrm{g l c}}Y_{X_{V}/\\mathrm{g l n}}Y_{\\mathrm{l a c}/\\mathrm{g l c}}Y_{\\mathrm{a m m}/\\mathrm{g l n}}]\n(11.1) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...from the remaining 5,000 iterations was then defined as the estimated parameter from this cell culture run.\n    A(\\boldsymbol{\\varTheta}^{proposal},\\boldsymbol{\\varTheta}^{initial}) =\\min\\Biggl(1,\\frac{f(\\mathrm{X}2\\mid\\boldsymbol{\\varTheta}^{proposal})\\Pr(\\boldsymbol{\\varTheta}^{initial}\\mid\\boldsymbol{\\varTheta}^{proposal},\\sigma_{\\boldsymbol{\\varT\n(11.2) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...from the remaining 5,000 iterations was then defined as the estimated parameter from this cell culture run.\n    Otherwise,set\\boldsymbol{\\theta}^{accepted}=\\boldsymbol{\\theta}^{initial}\n(12) [not an equation] p.4  ...where\n    \\left\\{\\begin{aligned}{f(\\mathrm{X}2\\mid\\boldsymbol{\\theta})}&{{}=\\prod_{i=1}^{6}\\prod_{d=4}^{14}\\frac{1}{\\sigma_{i}^{(d)}\\sqrt{2\\pi}}\\operatorname{e x p}\\left(-\\frac{1}{2}\\left(\\frac{\\hat{x}2_{i}^{(d)}-x2_{i}^{(d)}}{\\sigma_{i}^{(d)}}\\right\n(13) [NOT USED BY OTHERS: computes PSRF_{i}; the model output (keep) or not part of the model (leave out)] p.5  ...$ \\overline{\\theta}_i $ represent the average values of the  $ i $th parameter from the  $ k $th train and total three trains, respectively.\n    \\mathrm{PSRF}_{i}=\\frac{\\hat{V}_{i}}{W_{i}}\n(14.1) [NOT USED BY OTHERS: computes \\hat{V}_{i}; the model output (keep) or not part of the model (leave out)] p.6  ...where\n    \\hat{V}_{i} =\\frac{n-1}{n}W_{i}+\\frac{B_{i}}{n}+\\frac{B_{i}}{mn}\n(14.2) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.6  ...where\n    \\frac{B_{i}}{n} =\\sum_{k=1}^{m}(\\bar{\\theta}_{i}^{(k)}-\\bar{\\theta}_{i})^{2}/(m-1)\n(14.3) [NOT USED BY OTHERS: computes W_{i}; the model output (keep) or not part of the model (leave out)] p.6  ...where\n    W_{i} =\\frac{1}{m(n-1)}\\sum_{k=1}^{m}\\sum_{j=n+1}^{2n}(\\theta_{i}^{(kj)}-\\bar{\\theta}_{i}^{(k.)})^{2}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The kinetic model consists of six differential equations, which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).\n- (p.1) Keywords: kinetic model, MCMC sampling, bayesian parameter estimation, monod equation, Chinese hamster ovary cell culture\n- (p.1) $ ^{10} $ However, since the cell metabolism and responses to varying growth conditions are not thoroughly understood, a structured model is not applicable to most of cell lines.\n- (p.1) The Monod equation is based on the availability of limiting nutrients (such as glucose and glutamine) and inhibitors (such as lactate and ammonia) in a concentration-dependent pattern.\n- (p.2) With the assumption that metabolites independently affect specific cell growth rate, the Monod constant  $ K_{glc} $ can be calculated from the dilution rate and the residual glucose concentration in the multiple steady \n- (p.2) $ ^{36} $ With the advances in solving the nonlinear differential equations numerically, it may be feasible to estimate parameters of a kinetic model directly from a fed-batch mammalian cell culture process using the MCM\n- (p.2) This model consists of six differential algebraic equations (DAEs) describing culture dynamics for viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).\n- (p.2) The structure of the kinetic model is similar to a neural network.\n- (p.2) Thus, the measured values of six variables ( $ \\mathbf{X2}^{(d)} $) shown in Eq. 1 are defined as the concentrations before feeding (prefeed values).\n- (p.2) The postfeed values for the six variables ( $ \\mathbf{X1}^{(d)} $) were defined by Eq. 2 and calculated by Eq. 3, which adjusts the value of  $ \\mathbf{X2}^{(d)} $ based on the feed volume and the concentration in the fe\n- (p.2) In this equation,  $ x1_i $ and  $ x2_i $ ( $ i = 1, 2,..., 6 $) are post and prefeed values of the  $ i $th variable, respectively.\n- (p.3) The yields,  $ Y_{X_i/glc} $,  $ Y_{X_i/gln} $,  $ Y_{lac/glc} $, and  $ Y_{amm/gln} $, were calculated in the first 6 days post inoculation (d = 6) by Eq. 4, which was adopted from literature reports.\n- (p.3) $ ^{39,40} $ In this equation,  $ x2_i $ is the ith element of the vector X2 (Eq. 1).\n- (p.3) For each cell culture run, the values of  $ \\mu_{app} $ were calculated as the slope of  $ \\ln(X_V) $ vs. time plot (Eq. 5) for time periods of 0–96 h and 264–312 h.\n- (p.3) The kinetic model was expressed as six DAEs by Eq. 6, which were adopted from literature reports.²¹,⁴⁰ The mass balance for titer, [B1], was applied only after 144 h, as earlier samples are typically below the concentrat\n- (p.3) In addition, since the highest specific antibody production rate was observed in the G1 or G0-phase of the cell cycle based on literature reports,²,⁴,²¹ the fraction of arrested viable cells was introduced into the mass \n- (p.3) The values for  $ \\mu $ and  $ \\mu_d $, were calculated by Eq. 7.\n- (p.3) Therefore, the ammonia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\n- (p.3) It was assumed that $\\mu = 0$ during the cell death phase.\n- (p.3) Since $m_{\\mathrm{glc}}$ and $m_{\\mathrm{gln}}$ are negligible during exponential growth,$^{1,2,11}$ it was assumed $m_{\\mathrm{glc}} = 0$ and $m_{\\mathrm{gln}} = 0$ when $d \\leq 6$.\n- (p.3) In addition, the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.$^{11,40}$\n- (p.3) $ ^{40} $ Since our cell cultures were performed in fed-batch mode with a daily bolus feed addition, the time period between two successive feedings ( $ t^{(d)} $,  $ t^{(d+1)} $) was considered as a batch culture and Eq\n- (p.3) The inputs for the calculations consists of initial estimates for each parameter (proposal parameters ( $ \\theta $)), known constants ( $ P $), and the postfeeding values of the six variables at  $ t^{(d)} $ ( $ \\mathbf{\n- (p.3) The ODE23 function of MATLAB Version 7.5 (Mathwork, Natick, MA) was used to numerically solve Eq. 6 for each time period.\n- (p.4) (B) For each period ( $ t_{(d)} $,  $ t_{(d+1)} $), the simulated values at  $ t_{(d+1)} $ were calculated by Eq. 6.\n- (p.4) Using the proposal parameters, the simulated values of the six variables at 13 sampling times can be calculated by Eq. 6 as shown in Figure 1.\n- (p.4) The proposal parameters and simulated values of the six variables were then used to calculate the acceptance function and to determine adequacy of the proposal parameters using Eq. 11.\n- (p.4) As shown in Eq. 11, the acceptance criterion was based on the current proposal parameter values (the  $ n $th iteration) and the accepted parameter values from the previous iteration [e.g., the  $ (n-1) $th iteration], w\n- (p.4) In Eq. 11, the candidate distribution density  $ f(\\mathbf{X}|\\boldsymbol{\\theta}) $ can be calculated by Eq. 12, of which  $ \\hat{x}_i^{(d)} $ and  $ x_i^{(d)} $ were the simulated and measured values, respectively, for\n- (p.5) The potential scale reduction factor (PSRF $ _i $) for a model parameter ( $ \\theta_i $) was calculated for convergence assessment by Eq. 13.\n- (p.5) $ ^{44,45} $ The variables required for PSRF calculation were defined by Eq. 14.\n- (p.6) Measured Constants Used in the Kinetic Model (Eq. 6)\n- (p.6) As shown in Eqs. 11 and 12, the accuracy of parameter estimation by the MCMC method was based on the fit of the simulated and measured values of the six variables in the training data-set.\n- (p.6) The values of $Y_{X_i/g\\mathrm{lc}}$, $Y_{X_i/g\\mathrm{ln}}$, $Y_{\\mathrm{lac/glc}}$, and $Y_{\\mathrm{amm/g\\mathrm{ln}}}$ were calculated in the exponential growth phase ($d \\leq 6$) for each cell culture run using Eq. 4\n- (p.6) The kinetic model (Eq. 6) was employed for each time period between two successive feedings ( $ t^{(d)} $,  $ t^{(d+1)} $) of the fed-batch culture.",
+ "answer": {
+  "models": [
+   {
+    "name": "Fed-batch CHO kinetic model",
+    "equations": [
+     "6.1",
+     "6.2",
+     "6.3",
+     "6.4",
+     "6.5",
+     "6.6",
+     "7.1",
+     "7.2",
+     "8"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Specific growth rate is zero during the cell death phase.",
+      "quote": "It was assumed that $\\mu = 0$ during the cell death phase."
+     },
+     {
+      "text": "Glucose and glutamine maintenance terms are zero when d ≤ 6.",
+      "quote": "Since $m_{\\mathrm{glc}}$ and $m_{\\mathrm{gln}}$ are negligible during exponential growth,$^{1,2,11}$ it was assumed $m_{\\mathrm{glc}} = 0$ and $m_{\\mathrm{gln}} = 0$ when $d \\leq 6$."
+     },
+     {
+      "text": "Ammonia and lactate are considered in the growth-rate equation only above 90% of their thresholds.",
+      "quote": "Therefore, the ammonia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively."
+     },
+     {
+      "text": "The B1 mass balance is applied only after 144 h.",
+      "quote": "The mass balance for titer, [B1], was applied only after 144 h"
+     }
+    ],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "p2-1.1",
+    "reason": "Observation vector defining measured prefeed data, not a model equation."
+   },
+   {
+    "eq": "p2-1.2",
+    "reason": "Sampling-day index definition, not a model equation."
+   },
+   {
+    "eq": "2",
+    "reason": "Vector defining postfeed values, not a model equation."
+   },
+   {
+    "eq": "3",
+    "reason": "Feed-mixing calculation used to prepare postfeed values, not part of the kinetic model."
+   },
+   {
+    "eq": "4",
+    "reason": "Calculates yield constants from data for use as model inputs."
+   },
+   {
+    "eq": "5",
+    "reason": "Calculates apparent growth from measured data; it is not the model growth law."
+   },
+   {
+    "eq": "9",
+    "reason": "Lists estimated parameters for the MCMC procedure."
+   },
+   {
+    "eq": "10",
+    "reason": "Lists known constants and calculated parameters for the MCMC procedure."
+   },
+   {
+    "eq": "11.1",
+    "reason": "MCMC acceptance function, not part of the process model."
+   },
+   {
+    "eq": "11.2",
+    "reason": "MCMC parameter-acceptance step, not part of the process model."
+   },
+   {
+    "eq": "12",
+    "reason": "Likelihood used for parameter estimation, not part of the process model."
+   },
+   {
+    "eq": "13",
+    "reason": "Convergence statistic for parameter estimation."
+   },
+   {
+    "eq": "14.1",
+    "reason": "Intermediate quantity for the convergence statistic."
+   },
+   {
+    "eq": "14.2",
+    "reason": "Intermediate quantity for the convergence statistic."
+   },
+   {
+    "eq": "14.3",
+    "reason": "Intermediate quantity for the convergence statistic."
+   }
+  ],
+  "free_laws": []
+ }
+}

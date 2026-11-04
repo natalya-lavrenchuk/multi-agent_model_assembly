@@ -1,0 +1,50 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1880,
+  "completion_tokens": 1999,
+  "total_tokens": 3879,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1877,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1661,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Comparison of unstructured kinetic bacterial growth models. $ ^{\\star} $\n\nAbstract: Bacteria in biological wastewater treatment process play an important role in the removal of substrate concentration. When bacteria removes the substrate, they continuously growth until such time when the substrate concentration is depleted. This paper aims to review the performance of kinetic growth rate models that describe specific bacteria growth rate. The kinetic growth rate models reviewed were: Monod, Blackman, Haldane, Teissier, Moser, Contois, Logarithmic, Powell, Han and Levenspiel, Logistic, Luong, Webb, Yano and Koga, and Aiba-Edwards. The performance review of the models were based on coefficient of determination ( $ R^{2} $). Another statistical measure of performance was root mean square error (RMSE). All kinetic growth rate models performed well when subjected to both toxic and non-toxic substrate concentration. The most notable kinetic growth rate model was the Haldane model which was well represented in the literature.\n\nSentences about the process and the data:\n- When bacteria removes the substrate, they continuously growth until such time when the substrate concentration is depleted.\n- In the lag phase, bacteria take time to acclimatize to their new environment in the bioreactor.\n- While the acclimatizing process takes place, there is no growth of bacteria in the bioreactor.\n- During this phase, the bacteria present in the bioreactor doubles at a high rate.\n- The cell dry weight mass method has the advantage of providing direct unconditional estimates.\n- In other words, cell dry weight mass method for each culture is required at least once when using the OD method.\n- Unstructured kinetic growth models are more suitable for steady state balance while structured models are more suitable for unsteady state balance (Panikov, 2009).\n- Description $\\mu = \\text{Specific growth rate } \\mu_{max} = \\text{Maximum Specific growth rate } S = \\text{Substrate concentration } X = \\text{Biomass concentration } K_{s} = \\text{Half saturation constant } K_{i} = \\text{Inhibition constan\n- Residuals are a measure of how far from the regression line data points are (Sharifahmadian, 2015) Chai and Draxler (2014).\n- The parameter constants of all the kinetic growth models are estimated using nonlinear least of squares.\n- The Monod model was first introduced by Jacques Monod in 1942 to describe the relationship between specific growth rate and substrate utilization rate in a bioreactor (Monod, 1949).\n- The Monod model assumes that there is only one growth limiting substrate in the bioreactor (Monod, 1942).\n- Hamitouche et al., (2012) reported a poor fit on biodegradation of phenol by mixed culture in a batch reactor.\n- Ardestani and Kasebkar (2018) reported a poor fit on Aspergillus niger growth and substrate uptake in a batch submerged culture.\n- Ardestani and Shafiei (2014) reported a satisfactory fit on the cell growth of Saccharomyces cerevisiae in a batch culture.\n- Dey and Mukherjee (2010) reported a satisfactory fit on Phenol biodegradation by mixed microbial culture in a batch reactor.\n- Just like the Monod model, the Blackman model is unable to capture the lag and death phase, and in turn it over estimates the specific growth rate (Kong, 2017).\n- In the study the Blackman model was the only model that did not fit the experimental data with a reported  $ R^{2} $ of 43.3%.\n\nModel: free-floating laws (no Sup)\nLaws:\n(3) [constitutive] The Monod law computes specific growth rate as a saturating function of substrate concentration.\n(4) [constitutive] This Monod form computes specific growth rate from substrate and biomass concentrations, with the biomass concentration multiplying the substrate-dependent term.\n(5) [constitutive] The printed expression computes specific growth rate proportional to substrate concentration, scaled by the maximum rate and half-saturation constant.\n(6) [constitutive] The Haldane law computes specific growth rate with substrate-dependent growth and an inhibition contribution that reduces the rate at high substrate concentration.\n(7) [constitutive] The Teissier law computes specific growth rate from substrate concentration using a one-minus-exponential expression scaled by the maximum rate.\n(8) [constitutive] The Moser law computes specific growth rate from substrate concentration raised to an adjustable exponent, with saturation governed by the half-saturation constant.\n(9) [constitutive] The Contois law computes specific growth rate from substrate concentration relative to a denominator that also increases with biomass concentration.\n(10) [constitutive] The Logarithmic model computes specific growth rate as an intercept plus a coefficient times the logarithm of substrate concentration.\n(11) [constitutive] Aiba–Edward computes specific growth rate from Monod-type substrate saturation multiplied by an exponential substrate-inhibition term.\n(12) [constitutive] Yano and Koga computes specific growth rate with substrate inhibition at high substrate concentration.\n(13) [constitutive] Han and Levenspiel computes specific growth rate with substrate saturation and inhibition at a critical inhibitor concentration.\n(14) [constitutive] Powell modifies Monod-type growth with a maintenance parameter.\n(15) [constitutive] The Logistic law makes specific growth rate decline with biomass concentration toward zero at the maximum biomass concentration.\n(16) [constitutive] Luong computes specific growth rate from substrate saturation with complete inhibition above a critical substrate concentration.\n(17) [constitutive] Webb computes specific growth rate with a substrate-dependent factor in the numerator in addition to the substrate-inhibition denominator.\n\nStates (computed by the ODEs):\n\n\nInputs (variables no law computes):\n- S: Substrate concentration\n- X: Biomass concentration\n- s: Lowercase substrate concentration appearing in the growth-law equations\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "Bacteria consuming substrate in biological wastewater treatment",
+   "quote": "Bacteria in biological wastewater treatment process play an important role in the removal of substrate concentration."
+  },
+  "unit_operation": {
+   "value": "Bioreactor",
+   "quote": "The Monod model was first introduced by Jacques Monod in 1942 to describe the relationship between specific growth rate and substrate utilization rate in a bioreactor (Monod, 1949)."
+  },
+  "operating_mode": {
+   "value": [
+    "not stated"
+   ],
+   "quote": null,
+   "note": null
+  },
+  "fitted_on": {
+   "value": null,
+   "quote": null
+  },
+  "phenomena": [
+   "Substrate-dependent bacterial specific growth, including substrate saturation",
+   "High-substrate inhibition of specific growth",
+   "Biomass-dependent specific growth",
+   "Biomass limitation of specific growth",
+   "Maintenance-modified growth kinetics"
+  ],
+  "description": "The paper reviews unstructured kinetic laws for bacterial growth during substrate removal in biological wastewater treatment, comparing specific-growth-rate predictions under toxic and non-toxic substrate conditions using R² and RMSE. The laws represent substrate saturation and inhibition, with some also incorporating biomass dependence, biomass limitation, or maintenance effects; their parameters are estimated by nonlinear least squares. No particular operating mode or culture setup for the comparison is stated."
+ }
+}

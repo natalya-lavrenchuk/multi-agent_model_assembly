@@ -1,0 +1,1396 @@
+@prefix kg: <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/osberghaus_2012_kinetic_sma> a mkg:Sup ;
+    rdfs:label "osberghaus_2012_kinetic_sma · Determination of parameters for the steric mass action model—A comparison between two approaches (Kinetic SMA)"@en ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/osberghaus_2012_kinetic_sma_meta> ;
+    mkg:includes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8> .
+
+kg:osberghaus_2012_rapid_equilibrium_sma a mkg:Sup ;
+    rdfs:label "osberghaus_2012_rapid_equilibrium_sma · Determination of parameters for the steric mass action model—A comparison between two approaches (Rapid-equilibrium SMA)"@en ;
+    mkg:hasMetadata kg:osberghaus_2012_rapid_equilibrium_sma_meta ;
+    mkg:includes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 1"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/q_i> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/k_ads_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/k_des_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/nu_i> ;
+    mkg:latex "\\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/c_1>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/c_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/overline_q_1> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/k_ads_i> a mkg:Parameter ;
+    rdfs:label "k_{ads,i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Adsorption coefficient of component i." ;
+    mkg:page "2" ;
+    mkg:quote "$ k_{ads} $ and $ k_{des} $ (ad- and desorption coefficient)" ;
+    mkg:reason "It is an adsorption coefficient, a constant of the SMA law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{ads,i}" ;
+    mkg:unitString "mM^{-ν}" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/k_des_i> a mkg:Parameter ;
+    rdfs:label "k_{des,i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Desorption coefficient of component i." ;
+    mkg:page "2" ;
+    mkg:quote "$ k_{ads} $ and $ k_{des} $ (ad- and desorption coefficient)" ;
+    mkg:reason "It is a desorption coefficient, a constant of the SMA law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{des,i}" ;
+    mkg:unitString "s mM^{-ν}" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/par/nu_i> a mkg:Parameter ;
+    rdfs:label "\\nu_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Characteristic charge of component i: average number of binding sites of the component." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)" ;
+    mkg:reason "It is a characteristic charge, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"5.42 ± 0.09\", \"ribonuclease A, pH 7\": \"3.25 ± 0.008\", \"cytochrome c, pH 5\": \"5.3 ± 0.03\", \"cytochrome c, pH 7\": \"4.09 ± 0.009\", \"lysozyme, pH 5\": \"5.07 ± 0.004\", \"lysozyme, pH 7\": \"4.72 ± 0.01\"}" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/c_1> a mkg:Variable ;
+    rdfs:label "c_{1} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Concentration of salt component 1 in the mobile phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "It is the mobile-phase salt concentration used in the desorption term, a run concentration input." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/overline_q_1> a mkg:Variable ;
+    rdfs:label "\\overline{q_1} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of bound salt ions available for exchange with the protein." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "\\overline{q_1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The SMA surface-binding rate for each protein component balances adsorption from the mobile phase with desorption back to it." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:hasAssumption [ mkg:quote "i>1" ;
+            mkg:reasoned false ;
+            mkg:text "i>1" ] ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 2"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/Lambda> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/par/nu_i> ;
+    mkg:latex "\\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/q_1>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/par/nu_i> a mkg:Parameter ;
+    rdfs:label "\\nu_{i} (osberghaus_2012 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Characteristic charge of component i: average number of binding sites of the component." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)" ;
+    mkg:reason "It is a characteristic charge, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"5.42 ± 0.09\", \"ribonuclease A, pH 7\": \"3.25 ± 0.008\", \"cytochrome c, pH 5\": \"5.3 ± 0.03\", \"cytochrome c, pH 7\": \"4.09 ± 0.009\", \"lysozyme, pH 5\": \"5.07 ± 0.004\", \"lysozyme, pH 7\": \"4.72 ± 0.01\"}" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/Lambda> a mkg:Variable ;
+    rdfs:label "\\Lambda (osberghaus_2012 eq 2)"@en ;
+    mkg:description "Parameter describing the ionic capacity of the adsorbent." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\Lambda" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/q_1> a mkg:Variable ;
+    rdfs:label "q_{1} (osberghaus_2012 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Total salt ion concentration in the bound phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "the total salt ion concentration $q_1$" ;
+    mkg:reason "It is a bound salt-ion concentration that varies as salt and proteins occupy the available binding sites." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 2)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The adsorbent ionic-capacity relation equates bound salt and charge-weighted bound protein to the total ionic capacity." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "\\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 3"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/overline_q_1> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/par/sigma_i> ;
+    mkg:latex "\\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/q_1>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/par/sigma_i> a mkg:Parameter ;
+    rdfs:label "\\sigma_{i} (osberghaus_2012 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Steric factor of component i." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "11" ;
+    mkg:quote "steric factor of component i" ;
+    mkg:reason "It is a steric factor, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\sigma_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"28.5 ± 2.2\", \"ribonuclease A, pH 7\": \"57.6 ± 0.24\", \"cytochrome c, pH 5\": \"29.8 ± 0.15\", \"cytochrome c, pH 7\": \"53.8 ± 0.28\", \"lysozyme, pH 5\": \"31.2 ± 0.19\", \"lysozyme, pH 7\": \"38.75 ± 0.74\"}" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/overline_q_1> a mkg:Variable ;
+    rdfs:label "\\overline{q_1} (osberghaus_2012 eq 3)"@en ;
+    mkg:description "Concentration of bound salt ions available for exchange with the protein." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "\\overline{q_1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/q_1> a mkg:Variable ;
+    rdfs:label "q_{1} (osberghaus_2012 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Total salt ion concentration in the bound phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "the total salt ion concentration $q_1$" ;
+    mkg:reason "It is a bound salt-ion concentration that varies as salt and proteins occupy the available binding sites." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 3)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The concentration of bound salt available for protein exchange is total bound salt minus the salt shielded by bound proteins." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "\\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 7"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/c_i> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/D_ax>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/k_eff_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/r_p>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/varepsilon_c> ;
+    mkg:latex "\\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/c_p_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/u_int> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/D_ax> a mkg:Parameter ;
+    rdfs:label "D_{ax} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Axial dispersion coefficient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:page "11" ;
+    mkg:quote "axial dispersion" ;
+    mkg:reason "Axial dispersion is a packed-bed transport property calculated from tracer-pulse data, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "D_{ax}" ;
+    mkg:unit "m ** 2 / s" ;
+    mkg:unitString "m^2 s^-1" ;
+    mkg:value 1.574e-10 ;
+    mkg:valueUncertainty "about 1.75% relative standard deviation" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/k_eff_i> a mkg:Parameter ;
+    rdfs:label "k_{eff,i} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Effective film transfer coefficient for component i." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The lumped film diffusion coefficient $ k_{eff} $ was estimated to be $ 1.5 \\times 10^{-6} $ m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments described in the next section." ;
+    mkg:page "11" ;
+    mkg:quote "effective film transfer coefficient for component i" ;
+    mkg:reason "The effective film transfer coefficient is a fitted mass-transfer coefficient of the system, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{eff,i}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" ;
+    mkg:value 1.5e-06 .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/r_p> a mkg:Parameter ;
+    rdfs:label "r_{p} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle radius." ;
+    mkg:dimension "[length]" ;
+    mkg:page "11" ;
+    mkg:quote "particle radius" ;
+    mkg:reason "Particle radius is a particle geometry property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{p}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/par/varepsilon_c> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{c} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Column porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "3" ;
+    mkg:quote "column porosity" ;
+    mkg:reason "Column porosity is a packed-bed physical property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{c}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3.6e-01 ;
+    mkg:valueUncertainty "± 0.0009" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 7)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/c_p_i> a mkg:Variable ;
+    rdfs:label "c_{p,i} (osberghaus_2012 eq 7)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on particle level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{p,i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7/var/u_int> a mkg:Variable ;
+    rdfs:label "u_{int} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Interstitial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "3" ;
+    mkg:quote "interstitial velocity" ;
+    mkg:reason "Interstitial velocity is an operating flow quantity supplied to the transport equation, rather than a fitted material or system property." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{int}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The column-scale concentration balance combines axial convection and dispersion with film transfer between the column fluid and the particles." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 8"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/c_p_i> ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/k_eff_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/r_p>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/varepsilon_p> ;
+    mkg:latex "\\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/c_i>,
+        <http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/k_eff_i> a mkg:Parameter ;
+    rdfs:label "k_{eff,i} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Effective film transfer coefficient for component i." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The lumped film diffusion coefficient $ k_{eff} $ was estimated to be $ 1.5 \\times 10^{-6} $ m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments described in the next section." ;
+    mkg:page "11" ;
+    mkg:quote "effective film transfer coefficient for component i" ;
+    mkg:reason "The effective film transfer coefficient is a fitted mass-transfer coefficient of the system, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{eff,i}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" ;
+    mkg:value 1.5e-06 .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/r_p> a mkg:Parameter ;
+    rdfs:label "r_{p} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle radius." ;
+    mkg:dimension "[length]" ;
+    mkg:page "11" ;
+    mkg:quote "particle radius" ;
+    mkg:reason "Particle radius is a particle geometry property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{p}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/par/varepsilon_p> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{p} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "3" ;
+    mkg:quote "$ \\varepsilon_p $ the particle porosity" ;
+    mkg:reason "Particle porosity is a particle physical property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{p}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 8.5e-01 ;
+    mkg:valueUncertainty "± 0.038" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/c_p_i> a mkg:Variable ;
+    rdfs:label "c_{p,i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on particle level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{p,i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/law/osberghaus_2012_eq8_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The particle-scale mobile-phase concentration balance combines film transfer from the column fluid with exchange between the mobile and bound phases." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/osberghaus_2012_kinetic_sma/osberghaus_2012_kinetic_sma_meta> a mkg:Metadata ;
+    mkg:completeModel false ;
+    mkg:description "The model represents protein binding and transport during ion-exchange chromatography on a strong cation-exchange adsorbent. It predicts outlet chromatograms and retention times by combining column convection and axial dispersion, mass transfer between mobile and particle phases, and steric mass action (SMA) sorption. For the parameter-estimation study, the authors fitted an inverse mechanistic model using SMA parameters for ribonuclease A, cytochrome c, and lysozyme, and compared the results with parameters derived from gradient and breakthrough experiments. Experiments used a prepacked 1 ml column at pH 5 and pH 7, with salt gradients of several lengths and separate breakthrough runs. The authors recommend the inverse approach for chromatography process development because it predicts complete chromatograms and can support process optimization, troubleshooting, and error diagnosis." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE/algebraic" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The running buffer for all experiments at pH 5 was a 0.02M acetate buffer. The running buffer for all experiments at pH 7 was a 0.02M sodium phosphate buffer; the same buffers with additional 0.5 M NaCl served for elution purposes." ;
+            mkg:text "Experiments were conducted at pH 5 in 0.02 M acetate buffer and at pH 7 in 0.02 M sodium phosphate buffer, with 0.5 M NaCl added to the elution buffer." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Only for short gradients with a length of 5 cv the model response slightly deviates from the data." ;
+            mkg:text "The inverse model generally fitted the gradient-elution profiles closely, with slight deviations for the shortest, 5-column-volume gradients." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Prepacked HiTrap SP Sepharose FF 1 ml columns [0.025 m length, 0.7E–2 m ID] from GE Healthcare" ;
+            mkg:text "Column experiments used prepacked HiTrap SP Sepharose FF columns with a 1 ml bed, 0.025 m length, and 0.7 cm internal diameter." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "simultaneous least-squares fits of the mechanistic model to the five chromatograms at 5 cv, 10 cv, 30 cv, 60 cv and 120 cv" ;
+            mkg:text "For each protein and pH, the inverse fits used the five gradient chromatograms acquired at 5, 10, 30, 60, and 120 column volumes." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Structured multiple start guesses at the beginning of the optimization process" ;
+            mkg:text "The inverse estimates were assessed using structured multiple start guesses." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The observed small deviations of the model fit to the data of elution gradients with 5 cv can be attributed to kinetic effects that were neglected in order to impossible the comparison of both approaches (only isothermal SMA parameters can be determined with approach I)." ;
+            mkg:text "The authors attributed the short-gradient fit deviations to kinetic effects omitted to allow comparison with the isothermal conventional method." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For the solution of the whole differential-algebraic equation system, Danckwert's boundary conditions were employed" ;
+            mkg:text "The column and particle balances were solved with Danckwerts boundary conditions." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "10,000 chromatograms were simulated based on the model equations" ;
+            mkg:text "The Monte Carlo sensitivity study generated 10,000 chromatograms for each noise analysis." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Both approaches predicted retention volumes for 25, 80, and 106 column-volume gradients, and the corresponding experiments were performed for validation." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The absorption at 280 nm and 528 nm was measured online in all experiments." ;
+            mkg:text "Absorbance at 280 nm and 528 nm was measured online during all experiments." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This experimental setup was executed for five different gradient lengths: 5 cv, 10 cv, 30 cv, 60 cv and 120 cv." ;
+            mkg:text "Gradient lengths were 5, 10, 30, 60, and 120 column volumes." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "for estimating the SMA parameters θest={ν, keq,σ}" ;
+            mkg:text "The inverse fit estimated three protein-specific SMA parameters: characteristic charge, equilibrium coefficient, and steric factor." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This model was solved in MatLab on a Dual Core Processor with 2.81 GHz in approximately 10 s with a density of 200 knots over the whole column length." ;
+            mkg:text "The mechanistic model was solved in Matlab on a dual-core 2.81 GHz processor in about 10 seconds using 200 knots along the column." ;
+            mkg:topic "computation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface" ;
+            mkg:text "The column balance represents convection, axial dispersion, and mass transfer to the particle surface." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All experiments were at least three times repeated for a check of reproducibility and variances." ;
+            mkg:text "External packed-bed information was determined using pulse and displacement experiments, with those experiments repeated at least three times to check reproducibility and variance." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper identifies Matlab and Unicorn software for analysis and computation but does not state that code or experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "If the assumption of a rapid equilibrium is valid" ;
+            mkg:text "The SMA formulation describes adsorption and desorption, with a rapid-equilibrium form available for isothermal sorption." ;
+            mkg:topic "sorption" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The minimization of Eq. (9) was in all cases performed with the Matlab procedure lsqnonlin." ;
+            mkg:text "The inverse approach fitted parameters by minimizing a least-squares residual with Matlab's lsqnonlin procedure." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The determination of the parameter σ based on the previously determined parameters ν and keq and additional frontal chromatographic experiments" ;
+            mkg:text "The conventional approach estimated characteristic charge and equilibrium coefficient from gradient data, then used breakthrough data to estimate the steric factor." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "SMA parameters with comparable internal relations and equal predictivity could be determined based on both methods" ;
+            mkg:text "The two parameter-estimation approaches produced similar parameter order relations and comparably high predictivity, despite differences in the estimated values." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the determination of SMA parameters will be performed based on a case study for three proteins (lysozyme, ribonuclease A and cytochrome c)" ;
+            mkg:text "The model was studied for ribonuclease A, cytochrome c, and lysozyme in ion-exchange chromatography." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "No predictions outside the calibration range were examined, as the considered range with gradient lengths from 5 to 120 cv is very broad." ;
+            mkg:text "The tested prediction gradients were inside the 5–120 column-volume calibration range; predictions outside that range were not examined." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "ν (rel. std. deviation of 0.075 for peak shifts of about 50 s (0.43 ml)) is the least sensitive parameter to time-dependent shifts and σ (rel. std. deviation of almost 1.5 for peak shifts of about 50 s (0.43 ml)) the most sensitive parameter." ;
+            mkg:text "Retention-time shifts affected parameter estimates more strongly than absolute concentration noise; at shifts of about 50 s, characteristic charge had a relative standard deviation of 0.075 and steric factor nearly 1.5." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "accounts for the influence of charged modifiers and their rivalry with proteins for binding sites on the absorber surface." ;
+            mkg:text "The SMA model represents competition between charged modifiers and proteins for adsorbent binding sites." ;
+            mkg:topic "sorption" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Recently, this method was applied more often for sorption parameter determination, for example in [20,21,4]" ;
+            mkg:text "Earlier inverse methods for sorption-parameter determination are cited from Kempe et al. (1999), Titchener-Hooker et al. (2008), and Beckley et al. (2009)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "then 20 μl of the protein solution were injected. This step was followed by another wash step with 4 cv running buffer. Afterwards, a linear gradient from 0% to 100% high salt buffer was set to elute the protein." ;
+            mkg:text "Each gradient experiment injected 20 μl of protein solution at 0.2 mM after column equilibration, followed by a wash and a linear salt gradient." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the inverse method for SMA parameter determination is recommended for fast process development." ;
+            mkg:text "The authors recommend the inverse method for fast process development and propose its use for process optimization, process control, troubleshooting, and error diagnosis." ;
+            mkg:topic "use" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Absolute concentration noise had little influence on inverse SMA parameter estimates, even at the strongest tested level of 50 mM." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the steric factor σ has very similar values in both approaches, the characteristic charge ν determined by the inverse method is always higher than the value determined by approach I. Conversely, the equilibrium coefficients determined by the model-based inverse method are about ten times smaller" ;
+            mkg:text "Compared with the conventional approach, the inverse method estimated higher characteristic charges and equilibrium coefficients about ten times smaller, while steric factors were similar." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Apart from some outliers, the estimations for the steric factor and for the equilibrium coefficients show significantly higher mean relative deviations (about 0.5%) than the estimations for the characteristic charge (about 0.25%)" ;
+            mkg:text "Multiple-start estimates had mean relative deviations of about 0.25% for characteristic charge and about 0.5% for steric factor and equilibrium coefficient, apart from some outliers." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "After equilibrating the column for 10 cv with running buffer, it was isocratically loaded with a system flow rate of 2.17 × 10−4 m/s until the breakthrough was complete." ;
+            mkg:text "Breakthrough experiments loaded each protein isocratically until breakthrough was complete after a 10-column-volume equilibration." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The inverse method predicts complete chromatograms, whereas the conventional approach predicts retention times." ;
+            mkg:topic "prediction" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the steric mass action (SMA) model introduced by Brooks and Cramer [14]" ;
+            mkg:text "The SMA model was introduced by Brooks and Cramer (1992), and the conventional gradient-and-frontal parameter procedure followed Brooks and Cramer (1992) and Shukla et al. (1998)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "each fit having a coefficient of determination R2 of 0.99." ;
+            mkg:text "The conventional method's fitted retention-time versus gradient-volume relationship had an R² of 0.99 for the illustrated cytochrome c data." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "On column level, the time- and position-dependent change of concentration" ;
+            mkg:text "The chromatographic model is a time- and position-dependent transport-dispersive model with column-scale and particle-scale balances." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "on a prepacked 1 ml column with the strong cation exchange adsorbent SP Sepharose FF." ;
+            mkg:text "The experiments used SP Sepharose FF, a strong cation-exchange adsorbent." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The lumped film diffusion coefficient keff was estimated to be 1.5 × 10−6 m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments" ;
+            mkg:text "The lumped film diffusion coefficient was estimated by inverse fitting the mechanistic model to tracer peaks from pulse experiments." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state a total count of model states or equations." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "keff,i representing the lumped film diffusion coefficient" ;
+            mkg:text "The model includes a lumped film diffusion coefficient for transfer to the particle surface." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with a system flow rate of 2.17 × 10−4 m/s [0.5 ml/min]." ;
+            mkg:text "The system flow rate was 0.5 ml/min." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "most of the deviances between prediction and validation are smaller than 1 ml, even for long elution gradients with 106 cv." ;
+            mkg:text "Most predicted retention-volume deviations from validation experiments were less than 1 ml, including for long gradients." ;
+            mkg:topic "validation" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 1"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/q_i> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/k_ads_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/k_des_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/nu_i> ;
+    mkg:latex "\\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/c_1>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/c_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/overline_q_1> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/k_ads_i> a mkg:Parameter ;
+    rdfs:label "k_{ads,i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Adsorption coefficient of component i." ;
+    mkg:page "2" ;
+    mkg:quote "$ k_{ads} $ and $ k_{des} $ (ad- and desorption coefficient)" ;
+    mkg:reason "It is an adsorption coefficient, a constant of the SMA law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{ads,i}" ;
+    mkg:unitString "mM^{-ν}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/k_des_i> a mkg:Parameter ;
+    rdfs:label "k_{des,i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Desorption coefficient of component i." ;
+    mkg:page "2" ;
+    mkg:quote "$ k_{ads} $ and $ k_{des} $ (ad- and desorption coefficient)" ;
+    mkg:reason "It is a desorption coefficient, a constant of the SMA law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{des,i}" ;
+    mkg:unitString "s mM^{-ν}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/par/nu_i> a mkg:Parameter ;
+    rdfs:label "\\nu_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Characteristic charge of component i: average number of binding sites of the component." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)" ;
+    mkg:reason "It is a characteristic charge, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"5.42 ± 0.09\", \"ribonuclease A, pH 7\": \"3.25 ± 0.008\", \"cytochrome c, pH 5\": \"5.3 ± 0.03\", \"cytochrome c, pH 7\": \"4.09 ± 0.009\", \"lysozyme, pH 5\": \"5.07 ± 0.004\", \"lysozyme, pH 7\": \"4.72 ± 0.01\"}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/c_1> a mkg:Variable ;
+    rdfs:label "c_{1} (osberghaus_2012 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Concentration of salt component 1 in the mobile phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "It is the mobile-phase salt concentration used in the desorption term, a run concentration input." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/overline_q_1> a mkg:Variable ;
+    rdfs:label "\\overline{q_1} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of bound salt ions available for exchange with the protein." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "\\overline{q_1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 1)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The SMA surface-binding rate for each protein component balances adsorption from the mobile phase with desorption back to it." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:hasAssumption [ mkg:quote "i>1" ;
+            mkg:reasoned false ;
+            mkg:text "i>1" ] ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{\\partial q_{i}}{\\partial t}=k_{a d s,i}c_{i}\\overline{{q_{1}}}^{\\nu_{i}}-k_{d e s,i}c_{1}^{\\nu_{i}}q_{i}\\quad i>1" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 2"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/Lambda> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/par/nu_i> ;
+    mkg:latex "\\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/q_1>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/par/nu_i> a mkg:Parameter ;
+    rdfs:label "\\nu_{i} (osberghaus_2012 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Characteristic charge of component i: average number of binding sites of the component." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)" ;
+    mkg:reason "It is a characteristic charge, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"5.42 ± 0.09\", \"ribonuclease A, pH 7\": \"3.25 ± 0.008\", \"cytochrome c, pH 5\": \"5.3 ± 0.03\", \"cytochrome c, pH 7\": \"4.09 ± 0.009\", \"lysozyme, pH 5\": \"5.07 ± 0.004\", \"lysozyme, pH 7\": \"4.72 ± 0.01\"}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/Lambda> a mkg:Variable ;
+    rdfs:label "\\Lambda (osberghaus_2012 eq 2)"@en ;
+    mkg:description "Parameter describing the ionic capacity of the adsorbent." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\Lambda" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/q_1> a mkg:Variable ;
+    rdfs:label "q_{1} (osberghaus_2012 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Total salt ion concentration in the bound phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "the total salt ion concentration $q_1$" ;
+    mkg:reason "It is a bound salt-ion concentration that varies as salt and proteins occupy the available binding sites." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 2)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The adsorbent ionic-capacity relation equates bound salt and charge-weighted bound protein to the total ionic capacity." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "\\Lambda=q_{1}+\\sum_{i=2}^{n}\\nu_{i}q_{i}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 3"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/overline_q_1> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/par/sigma_i> ;
+    mkg:latex "\\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/q_1>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/par/sigma_i> a mkg:Parameter ;
+    rdfs:label "\\sigma_{i} (osberghaus_2012 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Steric factor of component i." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "11" ;
+    mkg:quote "steric factor of component i" ;
+    mkg:reason "It is a steric factor, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\sigma_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"28.5 ± 2.2\", \"ribonuclease A, pH 7\": \"57.6 ± 0.24\", \"cytochrome c, pH 5\": \"29.8 ± 0.15\", \"cytochrome c, pH 7\": \"53.8 ± 0.28\", \"lysozyme, pH 5\": \"31.2 ± 0.19\", \"lysozyme, pH 7\": \"38.75 ± 0.74\"}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/overline_q_1> a mkg:Variable ;
+    rdfs:label "\\overline{q_1} (osberghaus_2012 eq 3)"@en ;
+    mkg:description "Concentration of bound salt ions available for exchange with the protein." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "\\overline{q_1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/q_1> a mkg:Variable ;
+    rdfs:label "q_{1} (osberghaus_2012 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Total salt ion concentration in the bound phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "the total salt ion concentration $q_1$" ;
+    mkg:reason "It is a bound salt-ion concentration that varies as salt and proteins occupy the available binding sites." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 3)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The concentration of bound salt available for protein exchange is total bound salt minus the salt shielded by bound proteins." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "\\overline{q_{1}}=q_{1}-\\sum_{i=2}^{n}\\sigma_{i}q_{i}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 4"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/k_i_eq> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/par/nu_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/par/sigma_i> ;
+    mkg:latex "k_{i,e q}=\\left(\\frac{q_{i}}{c_{i}}\\right)\\left(\\frac{c_{1}}{\\Lambda-\\sum_{i=2}^{n}(\\nu_{i}+\\sigma_{i})q_{i}}\\right)^{\\nu_{i}}\\quad i>1" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/Lambda>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/c_1>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/c_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/par/nu_i> a mkg:Parameter ;
+    rdfs:label "\\nu_{i} (osberghaus_2012 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Characteristic charge of component i: average number of binding sites of the component." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "2" ;
+    mkg:quote "$ \\nu $ (characteristic charge): average number of binding sites of the component (under the assumption of a single charged counterion)" ;
+    mkg:reason "It is a characteristic charge, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"5.42 ± 0.09\", \"ribonuclease A, pH 7\": \"3.25 ± 0.008\", \"cytochrome c, pH 5\": \"5.3 ± 0.03\", \"cytochrome c, pH 7\": \"4.09 ± 0.009\", \"lysozyme, pH 5\": \"5.07 ± 0.004\", \"lysozyme, pH 7\": \"4.72 ± 0.01\"}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/par/sigma_i> a mkg:Parameter ;
+    rdfs:label "\\sigma_{i} (osberghaus_2012 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Steric factor of component i." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The SMA parameters that were estimated by the inverse method are given in Table 2." ;
+    mkg:page "11" ;
+    mkg:quote "steric factor of component i" ;
+    mkg:reason "It is a steric factor, a constant of the SMA law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\sigma_{i}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"ribonuclease A, pH 5\": \"28.5 ± 2.2\", \"ribonuclease A, pH 7\": \"57.6 ± 0.24\", \"cytochrome c, pH 5\": \"29.8 ± 0.15\", \"cytochrome c, pH 7\": \"53.8 ± 0.28\", \"lysozyme, pH 5\": \"31.2 ± 0.19\", \"lysozyme, pH 7\": \"38.75 ± 0.74\"}" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/Lambda> a mkg:Variable ;
+    rdfs:label "\\Lambda (osberghaus_2012 eq 4)"@en ;
+    mkg:description "Parameter describing the ionic capacity of the adsorbent." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\Lambda" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/c_1> a mkg:Variable ;
+    rdfs:label "c_{1} (osberghaus_2012 eq 4)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Concentration of salt component 1 in the mobile phase." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "It is the mobile-phase salt concentration used in the desorption term, a run concentration input." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{1}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 4)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/k_i_eq> a mkg:Variable ;
+    rdfs:label "k_{i,eq} (osberghaus_2012 eq 4)"@en ;
+    mkg:description "Equilibrium coefficient of component i." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "k_{i,eq}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 4)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The rapid-equilibrium SMA isotherm computes a component’s equilibrium coefficient from its bound and mobile concentrations, salt concentration, and remaining binding capacity." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "i>1" ;
+            mkg:reasoned false ;
+            mkg:text "i>1" ] ;
+    mkg:page "3" ;
+    mkg:quote "k_{i,e q}=\\left(\\frac{q_{i}}{c_{i}}\\right)\\left(\\frac{c_{1}}{\\Lambda-\\sum_{i=2}^{n}(\\nu_{i}+\\sigma_{i})q_{i}}\\right)^{\\nu_{i}}\\quad i>1" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 7"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/c_i> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/D_ax>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/k_eff_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/r_p>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/varepsilon_c> ;
+    mkg:latex "\\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/c_p_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/u_int> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/D_ax> a mkg:Parameter ;
+    rdfs:label "D_{ax} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Axial dispersion coefficient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:page "11" ;
+    mkg:quote "axial dispersion" ;
+    mkg:reason "Axial dispersion is a packed-bed transport property calculated from tracer-pulse data, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "D_{ax}" ;
+    mkg:unit "m ** 2 / s" ;
+    mkg:unitString "m^2 s^-1" ;
+    mkg:value 1.574e-10 ;
+    mkg:valueUncertainty "about 1.75% relative standard deviation" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/k_eff_i> a mkg:Parameter ;
+    rdfs:label "k_{eff,i} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Effective film transfer coefficient for component i." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The lumped film diffusion coefficient $ k_{eff} $ was estimated to be $ 1.5 \\times 10^{-6} $ m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments described in the next section." ;
+    mkg:page "11" ;
+    mkg:quote "effective film transfer coefficient for component i" ;
+    mkg:reason "The effective film transfer coefficient is a fitted mass-transfer coefficient of the system, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{eff,i}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" ;
+    mkg:value 1.5e-06 .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/r_p> a mkg:Parameter ;
+    rdfs:label "r_{p} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle radius." ;
+    mkg:dimension "[length]" ;
+    mkg:page "11" ;
+    mkg:quote "particle radius" ;
+    mkg:reason "Particle radius is a particle geometry property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{p}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/par/varepsilon_c> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{c} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Column porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "3" ;
+    mkg:quote "column porosity" ;
+    mkg:reason "Column porosity is a packed-bed physical property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{c}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3.6e-01 ;
+    mkg:valueUncertainty "± 0.0009" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 7)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/c_p_i> a mkg:Variable ;
+    rdfs:label "c_{p,i} (osberghaus_2012 eq 7)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on particle level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{p,i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7/var/u_int> a mkg:Variable ;
+    rdfs:label "u_{int} (osberghaus_2012 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Interstitial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "3" ;
+    mkg:quote "interstitial velocity" ;
+    mkg:reason "Interstitial velocity is an operating flow quantity supplied to the transport equation, rather than a fitted material or system property." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{int}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The column-scale concentration balance combines axial convection and dispersion with film transfer between the column fluid and the particles." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8> a mkg:Law ;
+    rdfs:label "osberghaus_2012 eq 8"@en ;
+    mkg:computes <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/c_p_i> ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8_meta> ;
+    mkg:hasParameter <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/k_eff_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/r_p>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/varepsilon_p> ;
+    mkg:latex "\\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}" ;
+    mkg:uses <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/c_i>,
+        <http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/q_i> .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/k_eff_i> a mkg:Parameter ;
+    rdfs:label "k_{eff,i} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Effective film transfer coefficient for component i." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The lumped film diffusion coefficient $ k_{eff} $ was estimated to be $ 1.5 \\times 10^{-6} $ m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments described in the next section." ;
+    mkg:page "11" ;
+    mkg:quote "effective film transfer coefficient for component i" ;
+    mkg:reason "The effective film transfer coefficient is a fitted mass-transfer coefficient of the system, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{eff,i}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" ;
+    mkg:value 1.5e-06 .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/r_p> a mkg:Parameter ;
+    rdfs:label "r_{p} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle radius." ;
+    mkg:dimension "[length]" ;
+    mkg:page "11" ;
+    mkg:quote "particle radius" ;
+    mkg:reason "Particle radius is a particle geometry property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{p}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/par/varepsilon_p> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{p} (osberghaus_2012 eq 8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Particle porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "3" ;
+    mkg:quote "$ \\varepsilon_p $ the particle porosity" ;
+    mkg:reason "Particle porosity is a particle physical property, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{p}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 8.5e-01 ;
+    mkg:valueUncertainty "± 0.038" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/c_i> a mkg:Variable ;
+    rdfs:label "c_{i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on column level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "the chromatogram monitored at column outlet at the points in time" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/c_p_i> a mkg:Variable ;
+    rdfs:label "c_{p,i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i in the mobile phase on particle level." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "c_{p,i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8/var/q_i> a mkg:Variable ;
+    rdfs:label "q_{i} (osberghaus_2012 eq 8)"@en ;
+    mkg:description "Concentration of component i on the adsorbent surface." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "q_{i}" ;
+    mkg:unit "M" ;
+    mkg:unitString "M" .
+
+<http://example.org/kg/osberghaus_2012_rapid_equilibrium_sma/law/osberghaus_2012_eq8_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The particle-scale mobile-phase concentration balance combines film transfer from the column fluid with exchange between the mobile and bound phases." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}" ;
+    mkg:status "pending" .
+
+kg:osberghaus_2012_rapid_equilibrium_sma_meta a mkg:Metadata ;
+    mkg:completeModel false ;
+    mkg:description "The rapid-equilibrium steric mass action model represents protein binding and elution during strong cation-exchange chromatography. It predicts protein retention and outlet chromatograms by combining column transport, particle mass transfer, and SMA sorption, which represents competition between salt ions and proteins for binding capacity as well as protein shielding of binding sites. The paper compares estimating SMA parameters from gradient and breakthrough experiments with estimating them by inverse fitting of a mechanistic column model. Experiments used ribonuclease A, cytochrome c, and lysozyme on a prepacked 1 ml SP Sepharose FF column at pH 5 and pH 7. The authors use the comparison and noise analysis to assess parameter reliability and prediction, and recommend inverse fitting for process development because it predicts complete chromatograms." ;
+    mkg:doi "10.1016/j.chroma.2012.02.004" ;
+    mkg:form "PDE/algebraic" ;
+    mkg:hasAssumption [ mkg:quote "If the assumption of a rapid equilibrium is valid" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Rapid equilibrium is assumed." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The approach based on an inverse method and the mechanistic model has the advantage that not only retention times but also complete elution profiles can be predicted." ;
+            mkg:text "Approach I predicts retention using an empirical correlation, whereas the inverse mechanistic approach can predict complete chromatograms." ;
+            mkg:topic "prediction" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This step was followed by another wash step with 4 cv running buffer. Afterwards, a linear gradient from 0% to 100% high salt buffer was set to elute the protein." ;
+            mkg:text "After sample loading and a further four column volumes of washing, proteins were eluted with a linear gradient from 0% to 100% high-salt buffer." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Let now θfix be the set of all model input parameters that are fixed on a constant value and θest the set of model input parameters that can be manipulated by the algorithm solving the inverse problem" ;
+            mkg:text "The inverse fit estimates the three protein-specific SMA parameters while treating other model inputs as fixed." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Prepacked HiTrap SP Sepharose FF 1 ml columns [0.025 m length, 0.7E–2 m ID] from GE Healthcare" ;
+            mkg:text "All column experiments used a prepacked 1 ml HiTrap SP Sepharose FF strong cation-exchange column measuring 0.025 m long and 0.7 cm in internal diameter." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fit of the model response to the gradient elution data is for most of the datasets at both pH-conditions highly precise" ;
+            mkg:text "The inverse method produced highly precise fits for most gradient datasets at both pH conditions." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For the solution of the whole differential-algebraic equation system, Danckwert's boundary conditions were employed" ;
+            mkg:text "The model solves a differential-algebraic equation system with Danckwerts boundary conditions." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with qi denoting the concentration of particle-bound component i" ;
+            mkg:text "The model tracks mobile-phase concentrations at column and particle levels and component concentrations bound to the particle surface." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "absolute values for SMA parameters are not only dependent on the examined protein and the pH value, but in the same way on the adsorbent and column properties like bed geometry or porosity." ;
+            mkg:text "The paper notes that SMA parameter values reported by different studies can vary with protein, pH, adsorbent, column properties, and experimental approach." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the characteristic charge ν determined by the inverse method is always higher than the value determined by approach I. Conversely, the equilibrium coefficients determined by the model-based inverse method are about ten times smaller" ;
+            mkg:text "The two estimation approaches gave similar parameter order relations, although inverse estimates of characteristic charge were consistently higher and equilibrium coefficients about ten times lower." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Apart from some outliers, the estimations for the steric factor and for the equilibrium coefficients show significantly higher mean relative deviations (about 0.5%) than the estimations for the characteristic charge (about 0.25%)" ;
+            mkg:text "Multiple-start optimization indicated mean relative deviations of about 0.25% for characteristic charge estimates and about 0.5% for equilibrium-coefficient and steric-factor estimates, apart from outliers." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "information characterizing the packed bed" ;
+            mkg:text "Packed-bed and transport inputs for the inverse model included ionic capacity, axial dispersion, interstitial velocity, porosities, film transfer, and column and particle geometry." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The running buffer for all experiments at pH 5 was a 0.02M acetate buffer. The running buffer for all experiments at pH 7 was a 0.02M sodium phosphate buffer; the same buffers with additional 0.5 M NaCl served for elution purposes." ;
+            mkg:text "The running buffer was 0.02 M acetate at pH 5 or 0.02 M sodium phosphate at pH 7, and the high-salt elution buffer contained an additional 0.5 M NaCl." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper identifies Matlab and Unicorn software used in the work but does not report a public code or data repository." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in [14,16]." ;
+            mkg:text "The first approach derived SMA parameters from gradient retention data and frontal breakthrough data using the procedure of Brooks and Cramer (1992) and Shukla et al. (1998)." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For the determination of external information in approach I and approach II (εc, εp, εt, the column, particle and total porosity, Λ, the ionic capacity of the column, Dax, the axial dispersion coefficient and V0, the breakthrough volume of a non-retarded species), pulse and displacement experiments were performed according to instructions in [11,26]. All experiments were at least three times repeated for a check of reproducibility and variances." ;
+            mkg:text "External bed parameters were characterized using pulse and displacement experiments, with each experiment repeated at least three times." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The lumped film-transfer coefficient was estimated by inverse fitting the mechanistic model to tracer peaks from pulse experiments." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Based on Eqs. (5) and (6), on the five chromatograms at 5 cv, 10 cv, 30 cv, 60 cv and 120 cv and the breakthrough curve for every single protein, SMA parameters were determined for pH 5 and pH 7." ;
+            mkg:text "Each protein and pH condition had five gradient chromatograms and a corresponding breakthrough experiment available for parameter determination." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "every component interacting with the particle surface owns four characterizing parameters (three in case of a rapid equilibrium assumption)" ;
+            mkg:text "Each protein is characterized by three SMA parameters under the rapid-equilibrium formulation: characteristic charge, equilibrium coefficient, and steric factor." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the application of absolute noise to the chromatograms had nearly no influence on the SMA parameter estimations by the inverse method." ;
+            mkg:text "Absolute concentration noise had nearly no influence on inverse-method SMA parameter estimates, even at the highest tested noise level." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "according to instructions in [14,16]" ;
+            mkg:text "The paper builds its experimental SMA-parameter procedure on Brooks and Cramer (1992) and Shukla et al. (1998), and discusses the chromatography transport model in relation to von Lieres and Andersson (2010)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The absorption at 280 nm and 528 nm was measured online in all experiments." ;
+            mkg:text "Online absorbance at 280 nm and 528 nm was measured in all experiments." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The SMA steric correction accounts for salt ions shielded from exchange by protein-bound material." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "cytochrome c (horse heart), lysozyme (chicken egg white) and ribonuclease A (bovine pancreas)" ;
+            mkg:text "The proteins were bovine-pancreas ribonuclease A, horse-heart cytochrome c, and chicken-egg-white lysozyme." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with a density of 200 knots over the whole column length" ;
+            mkg:text "The paper does not state a total number of model states or equations; its numerical solution used 200 knots along the column." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "On column level, the time- and position-dependent change of concentration" ;
+            mkg:text "The chromatography model is a spatially distributed transport-dispersive model with column- and particle-level concentration balances." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The determination of the parameter σ based on the previously determined parameters ν and keq and additional frontal chromatographic experiments was carried out" ;
+            mkg:text "Approach I obtains the steric factor from breakthrough data after determining characteristic charge and equilibrium coefficient from gradient data." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Retention-time shifts affected parameter estimates more strongly than concentration noise, with the steric factor most sensitive and characteristic charge least sensitive." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "for both approaches it could be demonstrated that they provide parameters of comparable high predictivity" ;
+            mkg:text "The authors report comparable high predictivity from both parameter-estimation approaches, despite differences in their parameter values." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The minimization of Eq. (9) was in all cases performed with the Matlab procedure lsqnonlin." ;
+            mkg:text "The inverse approach estimated SMA parameters by least-squares fitting of the mechanistic model to chromatograms, using Matlab's lsqnonlin procedure." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the inverse method for SMA parameter determination is recommended for fast process development." ;
+            mkg:text "The authors recommend inverse parameter estimation for fast process development and describe the mechanistic model as useful for optimization, process control, troubleshooting, and error diagnosis." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This experimental setup was executed for five different gradient lengths: 5 cv, 10 cv, 30 cv, 60 cv and 120 cv." ;
+            mkg:text "The gradient lengths used to estimate parameters were 5, 10, 30, 60, and 120 column volumes." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The observed small deviations of the model fit to the data of elution gradients with 5 cv can be attributed to kinetic effects that were neglected" ;
+            mkg:text "The rapid-equilibrium model showed small deviations from data for the shortest, 5-column-volume gradients, which the authors attributed to neglected kinetic effects." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "These approaches for SMA parameter determination were carried out for three proteins (ribonuclease A, cytochrome c and lysozyme) at pH 5 and pH 7." ;
+            mkg:text "The case study models ion-exchange chromatography of ribonuclease A, cytochrome c, and lysozyme at pH 5 and pH 7." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface" ;
+            mkg:text "The column balance represents convection, axial dispersion, and mass transfer from the mobile phase to the particle surface." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "accounts for the influence of charged modifiers and their rivalry with proteins for binding sites on the absorber surface." ;
+            mkg:text "The SMA model represents competition between charged modifiers and proteins for adsorbent binding sites." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "At first the column was equilibrated with the running buffer for four column volumes (cv), then 20 μl of the protein solution were injected." ;
+            mkg:text "For gradient runs, each protein was prepared at 0.2 mM and a 20 μl sample was injected after four column volumes of equilibration." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors tested retention predictions at gradient lengths of 25, 80, and 106 column volumes for every protein at both pH conditions." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "10,000 chromatograms were simulated" ;
+            mkg:text "The Monte Carlo analysis generated 10,000 chromatograms and examined concentration-noise and time-shift effects at three gradient lengths." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The tested validation gradients were within the 5-to-120-column-volume calibration range, and the paper reports no predictions outside that range." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "After equilibrating the column for 10 cv with running buffer, it was isocratically loaded with a system flow rate of 2.17 × 10−4 m/s until the breakthrough was complete." ;
+            mkg:text "Breakthrough experiments equilibrated the column for 10 column volumes and then loaded protein isocratically until breakthrough was complete." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Let c(tj) be the chromatogram monitored at column outlet at the points in time" ;
+            mkg:text "The inverse method fitted the mechanistic model to concentration time series derived from chromatograms measured at the column outlet." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the experimental results from the single component experiments are superimposed" ;
+            mkg:text "The gradient and breakthrough experiments were single-component protein experiments rather than mixture separations." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with a system flow rate of 2.17 × 10−4 m/s [0.5 ml/min]." ;
+            mkg:text "The column experiments were run at a flow rate of 0.5 ml/min." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "most of the deviances between prediction and validation are smaller than 1 ml, even for long elution gradients with 106 cv." ;
+            mkg:text "Most predicted retention volumes differed from experimental validation by less than 1 ml, including predictions for 106-column-volume gradients." ;
+            mkg:topic "validation" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+

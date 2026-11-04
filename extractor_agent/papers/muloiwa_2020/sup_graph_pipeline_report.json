@@ -1,0 +1,62 @@
+{
+ "sup": "muloiwa_2020_free_laws",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 15,
+  "variable_nodes": 34,
+  "parameter_nodes": 42,
+  "distinct_symbols": 18,
+  "computes_edges": 15,
+  "uses_edges": 19,
+  "hasParameter_edges": 42,
+  "laws_by_form": {
+   "algebraic": 15
+  },
+  "laws_flagged": [],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "K_{1}",
+   "K_{2}",
+   "K_{I}",
+   "K_{S}",
+   "K_{i}",
+   "K_{s}",
+   "S_{m}",
+   "X_{m}",
+   "\\kappa_{T}",
+   "\\mu_{max}",
+   "a",
+   "b",
+   "m",
+   "n"
+  ],
+  "for_review": [],
+  "triples": 4655
+ },
+ "flags": [
+  {
+   "symbol": "\\mu",
+   "check": "computed, never used",
+   "laws": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

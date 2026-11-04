@@ -1,0 +1,160 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2406,
+  "completion_tokens": 5082,
+  "total_tokens": 7488,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2403,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4095,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Fed-batch CHO kinetic model\n\nEquations:\n(7.1) \\mu=\\mu_{\\max} \\frac{[GLC]}{K_{\\mathrm{glc}}+[GLC]}\\cdot\\frac{[GLN]}{K_{\\mathrm{g}\\ln}+[GLN]}\\cdot\\frac{\\mathrm{KI}_{\\mathrm{lac}}}{KI_{\\mathrm{lac}}+[LAC]} \\cdot\\frac{\\mathrm{KI}_{\\mathrm{amm}}}{KI_{\\mathrm{amm}}+[AMM]}      <- \"ia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\"\n(7.2) \\mu_{d}=k_{d} \\cdot\\frac{[LAC]}{KD_{\\mathrm{lac}}+[LAC]}\\cdot\\frac{[AMM]}{KD_{\\mathrm{amm}}+[AMM]}      <- \"ia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.\"\n(8) m_{gln}=\\frac{a_{1}[\\mathrm{GLN}]}{a_{2}+[\\mathrm{GLN}]}      <- \"leq 6$. In addition, the value of $m_{\\mathrm{gln}}$ is a function of glutamine (Eq. 8) in mammalian cell cultures as described in literature reports.$^{11,40}$\"\n\nSymbols:\n\nK   [NOT COMPUTED]\n  [318] (sentence, p.10) Since the lactate and ammonia production positively correlated with the glucose and glutamine consumption rates, the use of minimum glucose and glutamine concentrations was recommended in several mammalian cell culture systems.7,50 The estimated values of  $ K\n\nI_{lac}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nI_{amm}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nk_{d}   [NOT COMPUTED]\n  [350] (line, p.11) $ k_d = \\text{maximum cell death rate, h}^{-1} $\n  [95] (sentence, p.3) The parameters  $ \\mu_{max} $ and  $ k_d $ are determined from 112 historical cell culture runs in 5,000-L bioreactors.\n  [97] (sentence, p.3) The maximum rate constants for cell growth ( $ \\mu_{max} $) and cell death ( $ k_d $), were defined as the upper limit for the absolute  $ \\mu_{app} $ values calculated for 0–96 h and 264–312 h, respectively, using the 95% confidence level under the one-tail h\n\nD_{lac}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nD_{amm}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nm_{gln}   [COMPUTED by eq 8]\n  [359] (line, p.11) m_{gln} = glutamine maintenance coefficient, 10^{-9} mmol cell^{-1} h^{-1}\n  [322] (sentence, p.11) The glutamine maintenance coefficient ( $ m_{gln} $) is not a constant.\n  [324] (sentence, p.11) The estimated average values of  $ m_{gln} $ were within the range between 1.1 and  $ 1.9 \\times 10^{-12} $ mmol cell $ ^{-1} $ h $ ^{-1} $ after 200 h based on  $ a_1 $ and  $ a_2 $.\n\na_{1}   [NOT COMPUTED]\n  [346] (line, p.11) $ a_1 = \\text{constant parameter for Eq. 8, } 10^{-9} \\text{ mmol cell}^{-1} \\text{ h}^{-1} $\n  [235] (table_row, p.7) Table 3. Model Parameters Estimated by MCMC Sampling Procedure: Parameter: $ a_{{1}} $ ( $ 10^{-12} $ mmol cell $ ^{-1} $ h $ ^{-1} $) | Range $ ^{{*}} $: 0.1 | Range $ ^{{*}} $: 15 | Initial Value $ ^{\\dagger} $: 3.8, 7.6, 11.3 | True Value: $ 3.2 \\pm 1.1 $ |\n  [262] (sentence, p.7) Among the 12 estimated parameters, three parameters ( $ KI_{lac} $,  $ a_1 $, and  $ KD_{lac} $) required the most iteration numbers for the PSRF values to approach one.\n\na_{2}   [NOT COMPUTED]\n  [347] (line, p.11) $ a_2 = \\text{constant parameter for Eq. 8, mM} $\n  [236] (table_row, p.7) Table 3. Model Parameters Estimated by MCMC Sampling Procedure: Parameter: $ a_{{2}} $ (mM) | Range $ ^{{*}} $: 0.20 | Range $ ^{{*}} $: 4.00 | Initial Value $ ^{\\dagger} $: 1.2, 2.1, 3.1 | True Value: $ 2.1 \\pm 0.2 $ | Values in Literature $ ^{\\ddagger} $: 0.\n  [323] (sentence, p.11) Instead, it is a function of glutamine with constants  $ a_1 $ ( $ 3.2 \\times 10^{-12} $ mmol cell $ ^{-1} $ h $ ^{-1} $) and  $ a_2 $ (2.1 mM) as shown in Eq. 8.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K",
+    "description": "Substrate saturation constant in the growth-rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A saturation constant in the growth-rate law, so it is a model parameter rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "I_{lac}",
+    "description": "Lactate inhibition constant in the growth-rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "An inhibition constant in the growth-rate law, so it is a model parameter rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "I_{amm}",
+    "description": "Ammonia inhibition constant in the growth-rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "An inhibition constant in the growth-rate law, so it is a model parameter rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "k_{d}",
+    "description": "Maximum cell death rate.",
+    "description_basis": "stated",
+    "snippet_id": 350,
+    "quote": "maximum cell death rate, h^{-1}",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "It is the maximum cell death rate constant, not an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "D_{lac}",
+    "description": "Lactate saturation constant in the cell-death-rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A saturation constant in the cell-death-rate law, so it is a model parameter rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "D_{amm}",
+    "description": "Ammonia saturation constant in the cell-death-rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A saturation constant in the cell-death-rate law, so it is a model parameter rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "m_{gln}",
+    "description": "Glutamine maintenance coefficient.",
+    "description_basis": "stated",
+    "snippet_id": 359,
+    "quote": "glutamine maintenance coefficient",
+    "unit": "mmol cell^-1 h^-1",
+    "unit_basis": "stated",
+    "value": "1.1–1.9 × 10^-12 mmol cell^-1 h^-1 after 200 h (p.11)",
+    "value_set": "this model",
+    "values_by_model": [],
+    "class_reason": "Computed as a function of glutamine by Eq. 8.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "a_{1}",
+    "description": "Constant parameter for Eq. 8.",
+    "description_basis": "stated",
+    "snippet_id": 346,
+    "quote": "constant parameter for Eq. 8",
+    "unit": "mmol cell^-1 h^-1",
+    "unit_basis": "stated",
+    "value": "3.2 ± 1.1 (10^-12 mmol cell^-1 h^-1; p.7, Table 3)",
+    "value_set": "this model",
+    "values_by_model": [],
+    "class_reason": "It is stated to be a constant parameter in Eq. 8, not an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "a_{2}",
+    "description": "Constant parameter for Eq. 8.",
+    "description_basis": "stated",
+    "snippet_id": 347,
+    "quote": "constant parameter for Eq. 8",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "2.1 ± 0.2 mM (p.7, Table 3)",
+    "value_set": "this model",
+    "values_by_model": [],
+    "class_reason": "It is stated to be a constant parameter in Eq. 8, not an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

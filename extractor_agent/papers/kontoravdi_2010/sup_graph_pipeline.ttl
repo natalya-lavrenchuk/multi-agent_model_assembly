@@ -1,0 +1,2419 @@
+@prefix kg: <http://example.org/kg/kontoravdi_2010/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:kontoravdi_2010 a mkg:Sup ;
+    rdfs:label "kontoravdi_2010 · Kontoravdi et al. (2010) hybridoma growth and IgG1 model"@en ;
+    mkg:hasMetadata kg:kontoravdi_2010_meta ;
+    mkg:includes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9> .
+
+kg:kontoravdi_2010_meta a mkg:Metadata ;
+    mkg:description "This model describes hybridoma cell cultures that produce IgG1 monoclonal antibody, predicting viable and total cell concentrations, nutrient and metabolite levels, and antibody concentration in the culture medium. It combines a population-level description of cell growth, death, nutrient use, and metabolite formation with intracellular steps for antibody synthesis, assembly, processing, and secretion. The model was developed from batch-culture data and then its sensitive parameters were estimated using data from an optimally designed fed-batch experiment. The cultures were run in Erlenmeyer flasks, with concentrated glucose and glutamine feed added in pulses. Its predictions were checked against a separate fed-batch experiment, with good overall agreement but some mismatch in late-culture viability predictions. The paper presents the model-development method as a way to support in-silico experimentation, control, and optimisation while limiting experimental work." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "Parameter estimation was based on the maximum likelihood formulation" ;
+            mkg:text "Parameter estimation used maximum likelihood, constant-variance measurement errors, and the SRQPD sequential quadratic programming code in gPROMS." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "D-optimal experimental design was used to maximise the information content of experimental data, specifically for the estimation of the seven parameters identified in the sensitivity analysis and one-at-a-time screening." ;
+            mkg:text "The fed-batch experiment was designed using a D-optimal criterion to maximise information for estimating the seven selected parameters." ;
+            mkg:topic "experimental design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the first fed-batch culture experiment used for model validation, the initial concentration of glucose was 25.1 mM and of glutamine 5.01 mM." ;
+            mkg:text "The designed fed-batch experiment began at 25.1 mM glucose and 5.01 mM glutamine." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The resulting model, which was developed at a minimum experimental cost, can be used for in silico experimentation, as well as model-based control and optimisation studies." ;
+            mkg:text "The authors propose using the resulting model for in-silico experimentation and model-based control and optimisation." ;
+            mkg:topic "application" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Those were found to be the yield of cells on glucose (Yx,glc), the yield of cells on glutamine (Yx,gln), the yield of lactate on glucose (Ylac,glc), the yield of ammonia on glutamine (Yamm,gln), the rate of dead cell lysis (Klysis), the maximum specific cell growth rate (μmax), and the gene copy number of MAb heavy chains (NH). These parameters were targeted for the parameter estimation process" ;
+            mkg:text "A one-at-a-time screening was used to identify parameters influencing the other measured outputs, and seven parameters were selected for estimation." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The earliest measurement time was set at 12 h and the minimum time between measurements at 6 h." ;
+            mkg:text "For the fed-batch design, the earliest sample was set at 12 h and the minimum interval between measurements was 6 h." ;
+            mkg:topic "sampling" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+            mkg:text "Cell density was measured with a hemacytometer and viability was determined by Trypan Blue dye exclusion." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The 95% confidence intervals were within ±10% of final estimates for all selected parameters except the ammonia yield, whose interval was ±17%." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by" ;
+            mkg:text "The model makes the specific cell-death rate dependent on extracellular ammonia." ;
+            mkg:topic "cell death" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In a previous study (Kontoravdi, Asprey, Pistikopoulos, & Mantalaris, 2005), a hybrid model of antibody-producing mammalian cell cultures was presented and compared to experimental data for the hybridoma 14-4-4S cell line (Tatiraju, Soroush, & Mutharasan, 1999)." ;
+            mkg:text "The model structure was presented previously by Kontoravdi et al. 2005 and compared with data for the 14-4-4S hybridoma cell line." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Temperature and CO2 air concentration were automatically controlled at 37°C and 5%, respectively." ;
+            mkg:text "Culture temperature and carbon-dioxide concentration were automatically controlled at 37°C and 5%, respectively." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a fed-batch structured/unstructured model of antibody-secreting hybridoma cultures" ;
+            mkg:text "The model is described as a hybrid structured/unstructured model of antibody-secreting hybridoma cultures." ;
+            mkg:topic "model form" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "initial concentrations of 29.1 mM for glucose and 4.9 mM for glutamine" ;
+            mkg:text "Batch cultures began at 29.1 mM glucose and 4.9 mM glutamine." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a pulse feed was introduced once a day, at an interval of 24 h." ;
+            mkg:text "The designed experiment used one feed pulse per day, whereas the independent experiment used two doses per day." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Discrepancies only occur once glutamine has reached zero concentration (after 80 h), when additional glutamine fed to the culture is metabolised more quickly than predicted." ;
+            mkg:text "In the designed fed-batch experiment, the model predicted faster use of newly supplied glutamine than the measurements showed after glutamine had reached zero." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Moreover, MAb concentration is accurately predicted throughout the duration of the culture (Fig. 2). Similar agreement was achieved for glutamine and ammonia (Fig. 3), and glucose and lactate (Fig. 4)." ;
+            mkg:text "In batch cultures, the model reproduced the viable-cell peak and antibody concentration profiles and showed similar agreement for the measured nutrients and metabolites." ;
+            mkg:topic "batch fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The mass balances for lactate and ammonia are" ;
+            mkg:text "The model represents glucose and glutamine uptake, glutamine degradation, lactate production, and ammonia production." ;
+            mkg:topic "metabolism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Overall, the model captures the profiles of all measure variables successfully." ;
+            mkg:text "For the designed fed-batch experiment, the model closely tracked glutamine and antibody concentrations and captured the overall profiles of the measured variables." ;
+            mkg:topic "fed-batch fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In order to demonstrate the model's predictive capability, its simulation results were compared with an independent set of data from a fed-batch experiment." ;
+            mkg:text "Predictive capability was evaluated against a separate fed-batch experiment with lower initial glucose and glutamine and feeding twice daily." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In summary, the model describes cell growth and antibody synthesis and production in the context of laboratory-scale cell cultures." ;
+            mkg:text "The model describes cell growth and antibody synthesis and production alongside extracellular culture variables." ;
+            mkg:topic "outputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "These are then translated into heavy and light antibody chains, which sequentially combine to form the antibody molecule (two heavy and two light chains) in the endoplasmic reticulum. This molecule then travels to the Golgi apparatus and is finally secreted into the extracellular medium." ;
+            mkg:text "The antibody mechanism represents heavy- and light-chain gene transcription and translation, sequential assembly in the endoplasmic reticulum, transport to the Golgi, and secretion into the medium." ;
+            mkg:topic "antibody" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The design was conducted in the gPROMS (PSE, 2002b) modelling environment, which has a dedicated function, namely 'experiment design for parameter precision', and uses a SRQPD sequential quadratic programming code." ;
+            mkg:text "The design was implemented in gPROMS using its experiment-design-for-parameter-precision function and an SRQPD sequential quadratic programming code." ;
+            mkg:topic "experimental design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Batch culture experiments were initially carried out, through which the validity of the model structure to the HFN7.1 hybridoma cell line was confirmed" ;
+            mkg:text "Batch-culture data provided initial estimates for parameters targeted for estimation because cell growth and product synthesis and secretion parameters were considered cell-line-specific." ;
+            mkg:topic "parameterisation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "At each sampling point, viable and total cell, nutrient, metabolite, and extracellular antibody concentrations were determined in the independent fed-batch experiment." ;
+            mkg:topic "sampling" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the second, independent experiment, the initial concentration of glucose was 18.4 mM and of glutamine 3.74 mM." ;
+            mkg:text "The independent fed-batch experiment began at 18.4 mM glucose and 3.74 mM glutamine." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Batch cultures were carried out in triplicate flasks" ;
+            mkg:text "Batch cultures were conducted in triplicate flasks, while fed-batch cultures were conducted in duplicate flasks." ;
+            mkg:topic "replicates" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the concentrations of glucose and glutamine in the feed were set at 500 and 100 mM, respectively." ;
+            mkg:text "The concentrated feed contained 500 mM glucose and 100 mM glutamine." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "inoculation cell density of 2 × 10^8 cells/L." ;
+            mkg:text "The cultures were inoculated at 2 × 10^8 cells/L." ;
+            mkg:topic "inoculation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Sobol' method of global sensitivity analysis was employed to quantitatively assess the effect of variation in model parameter values on model output, in this case MAb concentration." ;
+            mkg:text "The authors used Sobol' global sensitivity analysis to assess how parameter variation affected predicted antibody concentration." ;
+            mkg:topic "sensitivity" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Hybridoma cell line HFN7.1 producing IgG1 against fibronectin from human plasma (CRL-1606 from ATCC) was cultured" ;
+            mkg:text "The cultures used HFN7.1 hybridoma cells producing IgG1 against human-plasma fibronectin." ;
+            mkg:topic "cell line" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model equations are listed in Appendix A and consist of 28 differential and algebraic equations containing 30 parameters." ;
+            mkg:text "The model comprises 28 differential and algebraic equations and 30 parameters." ;
+            mkg:topic "model form" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Antibody concentration in the supernatant was estimated by indirect sandwich enzyme-linked immunosorbent assay (ELISA)." ;
+            mkg:text "Extracellular antibody concentration was measured by indirect sandwich ELISA, with absorbance read at 450 nm." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Hybridoma cell line HFN7.1 producing IgG1 against fibronectin from human plasma (CRL-1606 from ATCC) was cultured in high-glucose (4.5 g/L) DMEM (Gibco) supplemented with 2.5% bovine calf serum (ATCC)." ;
+            mkg:text "The basal medium was high-glucose DMEM at 4.5 g/L supplemented with 2.5% bovine calf serum." ;
+            mkg:topic "medium" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The optimal duration was determined at 168 h (7 days), during which a pulse feed was introduced once a day, at an interval of 24 h." ;
+            mkg:text "The designed experiment lasted 168 h, with a daily feed pulse at 24 h intervals." ;
+            mkg:topic "experimental design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Finally, the final extracellular concentration of monoclonal antibodies is correctly estimated by the model (Fig. 10)." ;
+            mkg:text "In the independent fed-batch experiment, the model correctly estimated the final extracellular monoclonal-antibody concentration." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Both batch and fed-batch cultures were conducted in 1L Erlenmeyer flasks with a working volume of 200 mL" ;
+            mkg:text "Batch and fed-batch cultures were run in 1 L Erlenmeyer flasks with a 200 mL working volume." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+            mkg:text "Extracellular glucose, glutamine, lactate, and ammonia were measured with a YSI Bioprofiler 200." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Over the last 40 h the model over-predicts the concentration of viable cells in the culture." ;
+            mkg:text "In the final 40 h of the designed fed-batch experiment, the model overpredicted viable-cell concentration." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects." ;
+            mkg:text "The maximum total feed volume was 8.75 mL, less than 5% of the 200 mL culture volume." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:" ;
+            mkg:text "Cell growth depends on glucose and glutamine availability and on extracellular lactate and ammonia accumulation, with growth described using Monod kinetics." ;
+            mkg:topic "growth" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 1"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/V> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1_meta> ;
+    mkg:latex "\\frac{d V}{d t}=F_{i n}-F_{o u t}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_out> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric inlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the inlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{in}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 1)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 10"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/par/K_dgln> ;
+    mkg:latex "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]" ;
+    mkg:latexCorrected "$$ \\frac{d(V[GLN])}{dt}=-Q_{gln}V X_{\\nu}-K_{dgln}V[GLN]+F_{in}[GLN]_{in}-F_{out}[GLN], $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/Q_gln>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant for glutamine degradation." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "constant for glutamine degradation" ;
+    mkg:reason "A glutamine degradation rate constant in the glutamine balance." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{dgln}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"9.6 × 10^-3 h^-1\", \"fed-batch operation\": \"9.6 × 10^-3 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 10)"@en ;
+    mkg:description "Glutamine concentration in the culture medium." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "the initial concentration of glucose was 25.1 mM and of glutamine 5.01 mM." ;
+    mkg:initialValue "5.01 mM" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[GLN]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN_in> a mkg:Variable ;
+    rdfs:label "[GLN]_{in} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Glutamine concentration in the incoming feed." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "the concentrations of glucose and glutamine in the feed were set at 500 and 100 mM, respectively." ;
+    mkg:initialValue "100 mM" ;
+    mkg:reason "An inlet feed concentration set for the culture run, so it is an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "[GLN]_{in}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric inlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the inlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{in}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 10)"@en ;
+    mkg:description "Specific glutamine uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{gln}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 10)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 10)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "The mass balances on glucose and glutamine around the bioreactor are:" ;
+    mkg:correctionReason "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[GLN]." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The glutamine balance in the culture medium accounts for cellular uptake, glutamine degradation, feed input, and outlet removal." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Feed volume was kept small relative to culture volume to avoid dilution effects." ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The right-hand terms have units of amount per time, whereas d([GLN])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[GLN]." ;
+    mkg:quote "\\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 11"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/Q_gln> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/par/Y_x_gln> ;
+    mkg:latex "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/m_gln>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:description "Specific glutamine uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{gln}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 11)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific glutamine uptake is calculated as the growth-associated glutamine demand plus the glutamine maintenance demand." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/par/Y_x_gln> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/m_gln> ;
+            mkg:slot "maintenance coefficient" ] ;
+    mkg:page "7" ;
+    mkg:quote "Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 12"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/m_gln> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_2> ;
+    mkg:latex "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/C_GLN> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (kontoravdi_2010 eq 12)"@en ;
+    mkg:description "Glutamine maintenance coefficient." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "m_{gln}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The glutamine maintenance coefficient increases with glutamine concentration and approaches a finite maximum." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_2> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/C_GLN> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_1> ;
+            mkg:slot "maximum rate" ] ;
+    mkg:page "7" ;
+    mkg:quote "m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 13"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/C_LAC> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13_meta> ;
+    mkg:latex "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]" ;
+    mkg:latexCorrected "$$ \\frac{d(V[LAC])}{dt}=Q_{lac}V X_{\\nu}-F_{out}[LAC], $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/Q_lac>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (kontoravdi_2010 eq 13)"@en ;
+    mkg:description "Extracellular lactate concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[LAC]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 13)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (kontoravdi_2010 eq 13)"@en ;
+    mkg:description "Specific lactate production rate" ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{lac}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 13)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 13)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "The mass balances for lactate and ammonia are" ;
+    mkg:correctionReason "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[LAC]." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The extracellular lactate balance accounts for cellular production and removal through the outlet." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Feed volume was kept small relative to culture volume to avoid dilution effects." ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The right-hand terms have units of amount per time, whereas d([LAC])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[LAC]." ;
+    mkg:quote "\\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 14"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_lac> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/par/Y_lac_glc> ;
+    mkg:latex "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_glc> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific lactate production is calculated from glucose uptake using the lactate-on-glucose yield." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_lac> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_glc> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/par/Y_lac_glc> ;
+            mkg:slot "yield" ] ;
+    mkg:page "7" ;
+    mkg:quote "Q_{l a c}=Y_{l a c,g l c}Q_{g l c}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 15"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_AMM> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/par/K_dgln> ;
+    mkg:latex "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]" ;
+    mkg:latexCorrected "$$ \\frac{d(V[AMM])}{dt}=Q_{amm}V X_{\\nu}+K_{dgln}V[GLN]-F_{out}[AMM], $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_GLN>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/Q_amm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (kontoravdi_2010 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant for glutamine degradation." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "constant for glutamine degradation" ;
+    mkg:reason "A glutamine degradation rate constant in the glutamine balance." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{dgln}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"9.6 × 10^-3 h^-1\", \"fed-batch operation\": \"9.6 × 10^-3 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 15)"@en ;
+    mkg:description "Extracellular ammonia concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[AMM]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 15)"@en ;
+    mkg:description "Glutamine concentration in the culture medium." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "the initial concentration of glucose was 25.1 mM and of glutamine 5.01 mM." ;
+    mkg:initialValue "5.01 mM" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[GLN]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 15)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (kontoravdi_2010 eq 15)"@en ;
+    mkg:description "Specific ammonia production rate" ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{amm}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 15)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 15)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "The mass balances for lactate and ammonia are" ;
+    mkg:correctionReason "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[AMM]." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The extracellular ammonia balance accounts for cellular production, glutamine degradation, and removal through the outlet." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Feed volume was kept small relative to culture volume to avoid dilution effects." ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The right-hand terms have units of amount per time, whereas d([AMM])/dt has units of concentration per time; the balance is missing division by V, or the left-hand side should be the derivative of V[AMM]." ;
+    mkg:quote "\\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 16"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_amm> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/par/Y_amm_gln> ;
+    mkg:latex "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_gln> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific ammonia production is calculated from glutamine uptake using the ammonia-on-glutamine yield." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/par/Y_amm_gln> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_amm> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_gln> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "7" ;
+    mkg:quote "Q_{a m m}=Y_{a m m,g l n}Q_{g l n}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 17"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/var/m_H> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/K>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/N_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/S_H> ;
+    mkg:latex "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/K> a mkg:Parameter ;
+    rdfs:label "K (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heavy- and light-chain mRNA decay rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "heavy- and light-chain mRNA decay rate" ;
+    mkg:reason "An mRNA decay rate constant." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^-1 h^-1 (p.4, Table 1)\", \"fed-batch operation\": \"10^-1 h^-1 (p.4, Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/N_H> a mkg:Parameter ;
+    rdfs:label "N_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Gene copy number of MAb heavy chains" ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "As the values for batch cultures represent initial estimates, these are estimated using the data for fed-batch operation." ;
+    mkg:page "3" ;
+    mkg:quote "gene copy number of MAb heavy chains" ;
+    mkg:reason "A gene copy number per cell, estimated as a model parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{H}" ;
+    mkg:unit "gene / cells" ;
+    mkg:unitString "gene/cell" ;
+    mkg:valueUncertainty "6.045 (95% confidence interval)" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.4 × 10^2 gene/cell (p.4, Table 1)\", \"fed-batch operation\": \"101 gene/cell (p.5, Table 2)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/S_H> a mkg:Parameter ;
+    rdfs:label "S_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heavy- and light-chain gene specific transcription rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "heavy- and light-chain gene specific transcription rates" ;
+    mkg:reason "A gene-specific transcription rate constant." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{H}" ;
+    mkg:unit "mRNA / gene / h" ;
+    mkg:unitString "mRNA/gene-h" ;
+    mkg:valuesByCase "{\"batch operation\": \"3 × 10^3 mRNA/gene-h (p.4, Table 1)\", \"fed-batch operation\": \"3 × 10^3 mRNA/gene-h (p.4, Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:description "Heavy-chain mRNA amount per cell" ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{H}" ;
+    mkg:unit "mRNA / cells" ;
+    mkg:unitString "mRNA/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The heavy-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 18"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/var/m_L> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/K>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/N_L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/S_L> ;
+    mkg:latex "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/K> a mkg:Parameter ;
+    rdfs:label "K (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heavy- and light-chain mRNA decay rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "heavy- and light-chain mRNA decay rate" ;
+    mkg:reason "An mRNA decay rate constant." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^-1 h^-1 (p.4, Table 1)\", \"fed-batch operation\": \"10^-1 h^-1 (p.4, Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/N_L> a mkg:Parameter ;
+    rdfs:label "N_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Light-chain gene copy number." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated value of 100 genes per cell for both the heavy and the light chain is therefore considered to be the most accurate estimate since these figures should be independent of culture operation mode." ;
+    mkg:page "2" ;
+    mkg:quote "N $ _{H} $, N $ _{L} $ heavy- and light-chain gene copy number (gene/cell)" ;
+    mkg:reason "The light-chain gene copy number is estimated for the cell line and is a model parameter, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{L}" ;
+    mkg:unit "gene / cells" ;
+    mkg:unitString "gene/cell" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.2 × 10^2 gene/cell\", \"fed-batch operation\": \"1.0 × 10^2 gene/cell\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/S_L> a mkg:Parameter ;
+    rdfs:label "S_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Light-chain gene-specific transcription rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)" ;
+    mkg:reason "A gene-specific transcription rate, a constant rate coefficient in the mRNA balance." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{L}" ;
+    mkg:unit "mRNA / gene / h" ;
+    mkg:unitString "mRNA/gene/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"4.5 × 10^3 mRNA/gene-h\", \"fed-batch operation\": \"4.5 × 10^3 mRNA/gene-h\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:description "Light-chain mRNA quantity." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{L}" ;
+    mkg:unit "mRNA / cells" ;
+    mkg:unitString "mRNA/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The light-chain mRNA balance computes its accumulation from gene-specific transcription minus mRNA decay." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 19"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/C_H> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/par/T_H> ;
+    mkg:latex "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/R_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/m_H> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/par/T_H> a mkg:Parameter ;
+    rdfs:label "T_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heavy-chain specific translation rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)" ;
+    mkg:reason "A specific translation rate, a constant rate coefficient in the heavy-chain balance." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{H}" ;
+    mkg:unit "chain / h / mRNA" ;
+    mkg:unitString "chain/mRNA/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"17 chain/mRNA-h\", \"fed-batch operation\": \"17 chain/mRNA-h\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 19)"@en ;
+    mkg:description "Intracellular heavy-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[H]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:description "Rate of heavy-chain consumption in assembly." ;
+    mkg:dimension "1 / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "R_{H}" ;
+    mkg:unit "chain / cells / h" ;
+    mkg:unitString "chain/cell/h" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:description "Heavy-chain mRNA amount per cell" ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{H}" ;
+    mkg:unit "mRNA / cells" ;
+    mkg:unitString "mRNA/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The intracellular heavy-chain balance in the ER computes accumulation from translation minus consumption in assembly." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Culture-volume balance accounting for inlet and outlet flow." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d V}{d t}=F_{i n}-F_{o u t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 2"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/X_nu> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2_meta> ;
+    mkg:latex "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu_d> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 2)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 2)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 2)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (kontoravdi_2010 eq 2)"@en ;
+    mkg:description "Specific cell death rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{d}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 20"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/C_L> ;
+    mkg:equationNumber "20" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/par/T_L> ;
+    mkg:latex "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/R_L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/m_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/par/T_L> a mkg:Parameter ;
+    rdfs:label "T_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Light-chain specific translation rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "T $ _{H} $, T $ _{L} $ heavy- and light-chain specific translation rates (chain/mRNA/h)" ;
+    mkg:reason "A specific translation rate, a constant rate coefficient in the light-chain balance." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{L}" ;
+    mkg:unit "chain / h / mRNA" ;
+    mkg:unitString "chain/mRNA/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"11.5 chain/mRNA-h\", \"fed-batch operation\": \"11.5 chain/mRNA-h\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 20)"@en ;
+    mkg:description "Intracellular light-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[L]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:description "Rate of light-chain consumption in assembly." ;
+    mkg:dimension "1 / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "R_{L}" ;
+    mkg:unit "chain / cells / h" ;
+    mkg:unitString "chain/cell/h" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:description "Light-chain mRNA quantity." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "m_{L}" ;
+    mkg:unit "mRNA / cells" ;
+    mkg:unitString "mRNA/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The intracellular light-chain balance in the ER computes accumulation from translation minus consumption in assembly." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[L]}{d t}=T_{L}m_{L}-R_{L}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 21"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/R_H> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/par/K_A> ;
+    mkg:latex "R_{H}=\\frac{2}{3}K_{A}[H]^{2}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/C_H> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (kontoravdi_2010 eq 21)"@en ;
+    mkg:description "Rate of heavy-chain consumption in assembly." ;
+    mkg:dimension "1 / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "R_{H}" ;
+    mkg:unit "chain / cells / h" ;
+    mkg:unitString "chain/cell/h" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The algebraic law computes the rate of heavy-chain consumption during assembly." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/C_H> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/par/K_A> ;
+            mkg:slot "rate constant" ] ;
+    mkg:page "7" ;
+    mkg:quote "R_{H}=\\frac{2}{3}K_{A}[H]^{2}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 22"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/R_L> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/par/K_A> ;
+    mkg:latex "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (kontoravdi_2010 eq 22)"@en ;
+    mkg:description "Rate of light-chain consumption in assembly." ;
+    mkg:dimension "1 / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "R_{L}" ;
+    mkg:unit "chain / cells / h" ;
+    mkg:unitString "chain/cell/h" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The algebraic law computes the rate of light-chain consumption during assembly of the ER intermediates." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/par/K_A> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2L> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_L> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "7" ;
+    mkg:quote "R_{L}=2K_{A}[H_{2}][L]+K_{A}[H_{2}L][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 23"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H_2> ;
+    mkg:equationNumber "23" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/par/K_A> ;
+    mkg:latex "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 23)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Assembly rate constant." ;
+    mkg:dimension "[cell] / [substance] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "K $ _{A} $ assembly rate constant (cell/molecule/h)" ;
+    mkg:reason "An assembly rate constant, a constant of the assembly law." ;
+    mkg:siFactor 1.672817e+20 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "cells / h / particle" ;
+    mkg:unitString "cell/molecule/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^{-6} cell/molecule-L\", \"fed-batch operation\": \"10^{-6} cell/molecule-L\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 23)"@en ;
+    mkg:description "Intracellular heavy-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[H]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 23)"@en ;
+    mkg:description "Intracellular heavy-chain dimer intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 23)"@en ;
+    mkg:description "Intracellular light-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[L]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The ER heavy-chain dimer intermediate balance computes its accumulation from dimer formation minus consumption in association with light chains." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}]}{d t}=\\frac{1}{3}K_{A}[H]^{2}-2K_{A}[H_{2}][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 24"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2L> ;
+    mkg:equationNumber "24" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/par/K_A> ;
+    mkg:latex "$$ \\frac{d[H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]. $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 24)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Assembly rate constant." ;
+    mkg:dimension "[cell] / [substance] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "K $ _{A} $ assembly rate constant (cell/molecule/h)" ;
+    mkg:reason "An assembly rate constant, a constant of the assembly law." ;
+    mkg:siFactor 1.672817e+20 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "cells / h / particle" ;
+    mkg:unitString "cell/molecule/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^{-6} cell/molecule-L\", \"fed-batch operation\": \"10^{-6} cell/molecule-L\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 24)"@en ;
+    mkg:description "Intracellular heavy-chain dimer intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 24)"@en ;
+    mkg:description "Intracellular heavy-chain dimer–light-chain assembly intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 24)"@en ;
+    mkg:description "Intracellular light-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[L]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The ER heavy-chain dimer–light-chain intermediate balance computes its accumulation from formation minus consumption in association with another light chain." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:ocrFixNote "The OCR added a stray | inside [H_2L]." ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 25"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L_2_ER> ;
+    mkg:equationNumber "25" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_A>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_ER> ;
+    mkg:latex "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 25)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Assembly rate constant." ;
+    mkg:dimension "[cell] / [substance] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "K $ _{A} $ assembly rate constant (cell/molecule/h)" ;
+    mkg:reason "An assembly rate constant, a constant of the assembly law." ;
+    mkg:siFactor 1.672817e+20 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "cells / h / particle" ;
+    mkg:unitString "cell/molecule/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^{-6} cell/molecule-L\", \"fed-batch operation\": \"10^{-6} cell/molecule-L\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (kontoravdi_2010 eq 25)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "rate constant for ER-to-Golgi transport" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "rate constant for ER-to-Golgi transport" ;
+    mkg:reason "A rate constant for ER-to-Golgi transport." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ER}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"6.9 × 10^-1 h^-1\", \"fed-batch operation\": \"6.9 × 10^-1 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 25)"@en ;
+    mkg:description "Intracellular heavy-chain dimer–light-chain assembly intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (kontoravdi_2010 eq 25)"@en ;
+    mkg:description "Assembled antibody in the endoplasmic reticulum." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L_2]_{ER}" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 25)"@en ;
+    mkg:description "Intracellular light-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[L]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The intracellular ER antibody balance computes accumulation of assembled H2L2 from assembly of H2L and L, offset by transport out of the ER." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 26"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_G> ;
+    mkg:equationNumber "26" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_ER>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_G>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/varepsilon_1> ;
+    mkg:latex "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_ER> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "rate constant for ER-to-Golgi transport" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "rate constant for ER-to-Golgi transport" ;
+    mkg:reason "A rate constant for ER-to-Golgi transport." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ER}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"6.9 × 10^-1 h^-1\", \"fed-batch operation\": \"6.9 × 10^-1 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "rate constant for Golgi-to-medium antibody transport" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "rate constants for Golgi-to-medium antibody transport" ;
+    mkg:reason "A rate constant for Golgi-to-medium antibody transport." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{G}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.4 × 10^-1 h^-1\", \"fed-batch operation\": \"1.4 × 10^-1 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/varepsilon_1> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{1} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "ER glycosylation efficiency factor" ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "2" ;
+    mkg:quote "ER glycosylation efficiency factor" ;
+    mkg:reason "An ER glycosylation efficiency factor, a constant of the antibody-production law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{1}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "dimensionless" ;
+    mkg:valuesByCase "{\"batch operation\": \"9.9 × 10^-1\", \"fed-batch operation\": \"9.95 × 10^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (kontoravdi_2010 eq 26)"@en ;
+    mkg:description "Assembled antibody in the endoplasmic reticulum." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L_2]_{ER}" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (kontoravdi_2010 eq 26)"@en ;
+    mkg:description "Assembled antibody in the Golgi apparatus." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L_2]_{G}" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The Golgi antibody balance computes accumulation of assembled antibody arriving from the ER, offset by transport to the medium." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 27"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/C_MAb> ;
+    mkg:equationNumber "27" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_2> ;
+    mkg:latex "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]" ;
+    mkg:latexCorrected "$$ \\frac{d(V[MAb])}{dt}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{MAb}V X_{\\nu}-F_{out}[MAb], $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/Q_MAb>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/X_nu>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_1> a mkg:Parameter ;
+    rdfs:label "\\gamma_{1} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "constant for antibody production" ;
+    mkg:dimension "[time]" ;
+    mkg:page "2" ;
+    mkg:quote "constant for antibody production" ;
+    mkg:reason "A constant in the antibody-production law." ;
+    mkg:siFactor 3.6e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{1}" ;
+    mkg:unit "h" ;
+    mkg:unitString "h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^-1 h\", \"fed-batch operation\": \"10^-1 h\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_2> a mkg:Parameter ;
+    rdfs:label "\\gamma_{2} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "constant for antibody production" ;
+    mkg:page "2" ;
+    mkg:quote "constant for antibody production" ;
+    mkg:reason "A constant in the antibody-production law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{2}" ;
+    mkg:unitString "dimensionless (Nomenclature; Table 1 prints h)" ;
+    mkg:valuesByCase "{\"batch operation\": \"2 h (Table 1)\", \"fed-batch operation\": \"2 h (Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/C_MAb> a mkg:Variable ;
+    rdfs:label "[MAb] (kontoravdi_2010 eq 27)"@en ;
+    mkg:description "Extracellular monoclonal antibody concentration." ;
+    mkg:measured true ;
+    mkg:measuredQuote "Antibody concentration in the supernatant was estimated by indirect sandwich enzyme-linked immunosorbent assay (ELISA)." ;
+    mkg:symbol "[MAb]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (kontoravdi_2010 eq 27)"@en ;
+    mkg:description "MAb production rate in the production-rate equation." ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 27)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 27)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 27)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionReason "The production and outlet terms are amount rates, so the balance left-hand side should differentiate the amount V[MAb]." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The extracellular MAb balance computes production by viable cells, adjusted for growth, and loss through outlet flow." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The production and outlet terms are missing division by V: with [MAb] defined as a concentration, Q_MAb V X_ν and F_out[MAb] have amount-per-time units rather than concentration-per-time units." ;
+    mkg:quote "\\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 28"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/Q_MAb> ;
+    mkg:equationNumber "28" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/K_G>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/lambda>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/varepsilon_2> ;
+    mkg:latex "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/C_H_2L_2_G> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (kontoravdi_2010 eq 28)"@en ;
+    mkg:description "MAb production rate in the production-rate equation." ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The algebraic secretion-rate law calculates MAb production from Golgi antibody abundance, scaled by Golgi glycosylation efficiency and transport factors." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/C_H_2L_2_G> ;
+            mkg:slot "transported species" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/lambda> ;
+            mkg:slot "scaling factor" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/varepsilon_2> ;
+            mkg:slot "efficiency factor" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/K_G> ;
+            mkg:slot "rate constant" ] ;
+    mkg:page "7" ;
+    mkg:quote "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Viable-cell population balance accounting for growth, death, and outlet flow." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "negligible dilution effect" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Dilution effects are assumed negligible." ],
+        [ mkg:quote "perfect mixing" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The culture is assumed to be perfectly mixed." ] ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 3"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_t> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3_meta> ;
+    mkg:latex "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_nu>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 3)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 3)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_t> a mkg:Variable ;
+    rdfs:label "X_{t} (kontoravdi_2010 eq 3)"@en ;
+    mkg:description "Total cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "These measurements were nutrient and metabolite concentrations, the viable and total cell concentrations and the extracellular MAb concentration." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{t}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 3)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Total-cell population balance accounting for growth and outlet flow." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "perfect mixing" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The culture is assumed to be perfectly mixed." ],
+        [ mkg:quote "negligible dilution effect" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Dilution effects are assumed negligible." ] ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 4"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/mu> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/par/mu_max> ;
+    mkg:latex "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_inh>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_lim> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (kontoravdi_2010 eq 4)"@en ;
+    mkg:description "Inhibition factor for specific cell growth due to inhibitory metabolites." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "f_{inh}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (kontoravdi_2010 eq 4)"@en ;
+    mkg:description "Limitation factor for specific cell growth due to nutrient concentrations." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "f_{lim}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 4)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Specific cell growth rate computed from the maximum growth rate multiplied by nutrient limitation and metabolite inhibition factors." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/par/mu_max> ;
+            mkg:slot "maximum rate" ] ;
+    mkg:page "7" ;
+    mkg:quote "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 5"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/f_lim> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_gln> ;
+    mkg:latex "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)" ;
+    mkg:latexCorrected "$$ f_{lim}=\\left(\\frac{[GLC]}{K_{glc}+[GLC]}\\right)\\left(\\frac{[GLN]}{K_{gln}+[GLN]}\\right), $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/C_GLC> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (kontoravdi_2010 eq 5)"@en ;
+    mkg:description "Limitation factor for specific cell growth due to nutrient concentrations." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "f_{lim}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:" ;
+    mkg:correctionReason "The second Monod term is for glutamine, so its concentration should be [GLN] in both numerator and denominator." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Nutrient-limitation factor for cell growth computed as a product of two saturation terms, both printed with extracellular glucose." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_gln> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_glc> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/C_GLC> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The second saturation term uses [GLC] in both numerator and denominator even though K_{gln} is the glutamine Monod constant and the text says growth depends on glucose and glutamine; it should use the glutamine concentration." ;
+    mkg:quote "f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 6"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/f_inh> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Iamm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Ilac> ;
+    mkg:latex "$$ f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right). $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_AMM>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_LAC> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (kontoravdi_2010 eq 6)"@en ;
+    mkg:description "Inhibition factor for specific cell growth due to inhibitory metabolites." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "f_{inh}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Growth-inhibition factor computed from extracellular lactate and ammonia concentrations." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Iamm> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_AMM> ;
+            mkg:slot "inhibitor" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Ilac> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_LAC> ;
+            mkg:slot "inhibitor" ] ;
+    mkg:ocrFixNote "The OCR read KI_lac and KI_amm (one constant each) as K times I_lac and K times I_amm." ;
+    mkg:page "7" ;
+    mkg:quote "f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right)" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 7"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/mu_d> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/K_d_amm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/mu_d_max>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/n> ;
+    mkg:latex "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/C_AMM> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/n> a mkg:Parameter ;
+    rdfs:label "n (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Exponent in the ammonia-dependent cell-death law." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "An exponent in the cell-death law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "n" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"Batch operation\": \"2 -\", \"Fed-batch operation\": \"2 -\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (kontoravdi_2010 eq 7)"@en ;
+    mkg:description "Specific cell death rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{d}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Specific cell-death rate that increases with extracellular ammonia concentration toward its maximum rate." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "n>1" ;
+            mkg:reasoned false ;
+            mkg:text "n>1" ],
+        [ mkg:quote "cell death only depends on the concentration of ammonia in the extracellular medium" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Cell death depends only on the extracellular ammonia concentration." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/mu_d_max> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/C_AMM> ;
+            mkg:slot "death driver" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/K_d_amm> ;
+            mkg:slot "death threshold" ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The definition of \\mu_{d,max} calls it the maximum specific growth rate, but Eq. 7 and the surrounding text use it as the maximum specific cell-death rate." ;
+    mkg:quote "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 8"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC> ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8_meta> ;
+    mkg:latex "$$ \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C], $$" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/Q_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/X_nu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (kontoravdi_2010 eq 8)"@en ;
+    mkg:description "Extracellular glucose concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[GLC]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC_in> a mkg:Variable ;
+    rdfs:label "[GLC]_{in} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Glucose concentration in the incoming feed." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "the concentrations of glucose and glutamine in the feed were set at 500 and 100 mM, respectively." ;
+    mkg:initialValue "500 mM" ;
+    mkg:reason "An inlet feed concentration set for the culture run, so it is an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "[GLC]_{in}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric inlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the inlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{in}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Volumetric outlet flow rate." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:reason "It is the outlet flow rate, an operating flow quantity for the culture." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{out}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 8)"@en ;
+    mkg:description "Specific glucose uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{glc}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 8)"@en ;
+    mkg:description "Culture volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "working volume of 200 mL" ;
+    mkg:initialValue "200 mL" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/X_nu> a mkg:Variable ;
+    rdfs:label "X_{\\nu} (kontoravdi_2010 eq 8)"@en ;
+    mkg:description "Viable cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "inoculation cell density of 2 × 10^8 cells/L" ;
+    mkg:initialValue "2 × 10^8 cells/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion." ;
+    mkg:siFactor 1e+03 ;
+    mkg:symbol "X_{\\nu}" ;
+    mkg:unit "cells / l" ;
+    mkg:unitString "cells/L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Glucose balance around the bioreactor accounting for cellular uptake and glucose entering and leaving with the flow." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:ocrFixNote "The OCR dropped the d in d(V[GLC])/dt." ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 9"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/Q_glc> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/Y_x_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/m_glc> ;
+    mkg:latex "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:description "Specific glucose uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{glc}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 9)"@en ;
+    mkg:description "Specific cell growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific glucose uptake is calculated as the growth-associated glucose demand plus the glucose maintenance demand." ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/m_glc> ;
+            mkg:slot "maintenance coefficient" ],
+        [ mkg:boundTo <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/Y_x_glc> ;
+            mkg:slot "yield" ] ;
+    mkg:page "7" ;
+    mkg:quote "Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/par/Y_x_gln> a mkg:Parameter ;
+    rdfs:label "Y_{x,gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of cells on glutamine." ;
+    mkg:dimension "[cell] / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 2 Parameter estimation results for fed-batch culture." ;
+    mkg:page "3" ;
+    mkg:quote "the yield of cells on glutamine" ;
+    mkg:reason "A cell-yield coefficient in the nutrient-dependent growth law, treated as a fitted model parameter." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,gln}" ;
+    mkg:unit "cells / mmol" ;
+    mkg:unitString "cell/mmol" ;
+    mkg:valueUncertainty "2.546 × 10^7 (95% confidence interval; fed-batch)" ;
+    mkg:valuesByCase "{\"batch operation\": \"5.6 × 10^8 cell/mmol\", \"fed-batch operation\": \"8 × 10^8 cell/mmol\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:description "Glutamine maintenance coefficient." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "m_{gln}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_1> a mkg:Parameter ;
+    rdfs:label "\\alpha_{1} (kontoravdi_2010 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant of the glutamine maintenance coefficient" ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "constants of glutamine maintenance coefficient" ;
+    mkg:reason "A constant of the glutamine maintenance coefficient." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{1}" ;
+    mkg:unit "l * mM / cells / h" ;
+    mkg:unitString "mM L/cell/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"3.4 × 10^-13 (p.4, Table 1)\", \"fed-batch operation\": \"3.4 × 10^-13 (p.4, Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_2> a mkg:Parameter ;
+    rdfs:label "\\alpha_{2} (kontoravdi_2010 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant of the glutamine maintenance coefficient" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "constants of glutamine maintenance coefficient" ;
+    mkg:reason "A constant of the glutamine maintenance coefficient." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{2}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"batch operation\": \"4 (p.4, Table 1)\", \"fed-batch operation\": \"4 (p.4, Table 1)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 12)"@en ;
+    mkg:description "Glutamine concentration in the culture medium." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "the initial concentration of glucose was 25.1 mM and of glutamine 5.01 mM." ;
+    mkg:initialValue "5.01 mM" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[GLN]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/par/Y_lac_glc> a mkg:Parameter ;
+    rdfs:label "Y_{lac,glc} (kontoravdi_2010 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of lactate on glucose" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 2 Parameter estimation results for fed-batch culture." ;
+    mkg:page "3" ;
+    mkg:quote "yield of lactate on glucose" ;
+    mkg:reason "A yield coefficient relating lactate production to glucose consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{lac,glc}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "mmol/mmol" ;
+    mkg:valueUncertainty "2.109 × 10^-1 (95% confidence interval)" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.4 mmol/mmol (p.4, Table 1)\", \"fed-batch operation\": \"2.0 mmol/mmol (p.4, Table 1; p.5, Table 2)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 14)"@en ;
+    mkg:description "Specific glucose uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{glc}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (kontoravdi_2010 eq 14)"@en ;
+    mkg:description "Specific lactate production rate" ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{lac}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/par/Y_amm_gln> a mkg:Parameter ;
+    rdfs:label "Y_{amm,gln} (kontoravdi_2010 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of ammonia on glutamine" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 2 Parameter estimation results for fed-batch culture." ;
+    mkg:page "3" ;
+    mkg:quote "yield of ammonia on glutamine" ;
+    mkg:reason "A yield coefficient relating ammonia production to glutamine consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{amm,gln}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "mmol/mmol" ;
+    mkg:valueUncertainty "7.832 × 10^-2 (95% confidence interval)" ;
+    mkg:valuesByCase "{\"batch operation\": \"4.3 × 10^-1 mmol/mmol (p.4, Table 1)\", \"fed-batch operation\": \"4.5 × 10^-1 mmol/mmol (p.4, Table 1; p.5, Table 2)\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (kontoravdi_2010 eq 16)"@en ;
+    mkg:description "Specific ammonia production rate" ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{amm}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 16)"@en ;
+    mkg:description "Specific glutamine uptake rate." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "Q_{gln}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol cell^-1 h^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Assembly rate constant." ;
+    mkg:dimension "[cell] / [substance] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "K $ _{A} $ assembly rate constant (cell/molecule/h)" ;
+    mkg:reason "An assembly rate constant, a constant of the assembly law." ;
+    mkg:siFactor 1.672817e+20 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "cells / h / particle" ;
+    mkg:unitString "cell/molecule/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^{-6} cell/molecule-L\", \"fed-batch operation\": \"10^{-6} cell/molecule-L\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 21)"@en ;
+    mkg:description "Intracellular heavy-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[H]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Assembly rate constant." ;
+    mkg:dimension "[cell] / [substance] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "K $ _{A} $ assembly rate constant (cell/molecule/h)" ;
+    mkg:reason "An assembly rate constant, a constant of the assembly law." ;
+    mkg:siFactor 1.672817e+20 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "cells / h / particle" ;
+    mkg:unitString "cell/molecule/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"10^{-6} cell/molecule-L\", \"fed-batch operation\": \"10^{-6} cell/molecule-L\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 22)"@en ;
+    mkg:description "Intracellular heavy-chain dimer intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 22)"@en ;
+    mkg:description "Intracellular heavy-chain dimer–light-chain assembly intermediate." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L]" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 22)"@en ;
+    mkg:description "Intracellular light-chain quantity in the ER." ;
+    mkg:dimension "1 / [cell]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[L]" ;
+    mkg:unit "chain / cells" ;
+    mkg:unitString "chain/cell" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "rate constant for Golgi-to-medium antibody transport" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "rate constants for Golgi-to-medium antibody transport" ;
+    mkg:reason "A rate constant for Golgi-to-medium antibody transport." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{G}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.4 × 10^-1 h^-1\", \"fed-batch operation\": \"1.4 × 10^-1 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/lambda> a mkg:Parameter ;
+    rdfs:label "\\lambda (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Factor multiplying Golgi-to-medium antibody transport in the MAb production-rate expression." ;
+    mkg:reason "It is a proportionality factor in the MAb production-rate law, not a run condition or a computed process quantity." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\lambda" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/varepsilon_2> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{2} (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Golgi apparatus glycosylation efficiency factor" ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "2" ;
+    mkg:quote "$ \\varepsilon_{2} $ Golgi apparatus glycosylation efficiency factor (dimensionless)" ;
+    mkg:reason "It is a glycosylation efficiency factor, a property of the model's antibody-production system rather than a run condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{2}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"batch operation\": \"1\", \"fed-batch operation\": \"1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (kontoravdi_2010 eq 28)"@en ;
+    mkg:description "Assembled antibody in the Golgi apparatus." ;
+    mkg:dimension "[substance] / [cell]" ;
+    mkg:siFactor 1.660539e-24 ;
+    mkg:symbol "[H_2L_2]_{G}" ;
+    mkg:unit "particle / cells" ;
+    mkg:unitString "molecule cell^-1" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (kontoravdi_2010 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The results of the designed experiments were used to estimate the values of model parameters" ;
+    mkg:page "2" ;
+    mkg:quote "maximum specific growth rate" ;
+    mkg:reason "It is a maximum specific growth-rate constant, estimated from fed-batch data." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 5.4e-02 ;
+    mkg:valueUncertainty "90% CI: 8.306 × 10^-4; 95% CI: 9.909 × 10^-4; 99% CI: 1.305 × 10^-3" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_glc> a mkg:Parameter ;
+    rdfs:label "K_{glc} (kontoravdi_2010 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod constant for glucose." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "Monod constant for glucose (mM)" ;
+    mkg:reason "A Monod constant for glucose in the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{glc}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"Batch operation\": \"7.5 × 10^-1 mM\", \"Fed-batch operation\": \"7.5 × 10^-1 mM\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_gln> a mkg:Parameter ;
+    rdfs:label "K_{gln} (kontoravdi_2010 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod constant for glutamine." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "Monod constant for glutamine (mM)" ;
+    mkg:reason "A Monod constant for glutamine in the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{gln}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"Batch operation\": \"7.5 × 10^-2 mM\", \"Fed-batch operation\": \"7.5 × 10^-2 mM\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (kontoravdi_2010 eq 5)"@en ;
+    mkg:description "Extracellular glucose concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[GLC]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Iamm> a mkg:Parameter ;
+    rdfs:label "K_{Iamm} (kontoravdi_2010 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod constant for ammonia." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "Monod constant for ammonia (mM)" ;
+    mkg:reason "An ammonia inhibition constant in the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{Iamm}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"Batch operation\": \"28.48 mM\", \"Fed-batch operation\": \"28.48 mM\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Ilac> a mkg:Parameter ;
+    rdfs:label "K_{Ilac} (kontoravdi_2010 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod constant for lactate." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "Monod constant for lactate (mM)" ;
+    mkg:reason "A lactate inhibition constant in the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{Ilac}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"Batch operation\": \"171.76 mM\", \"Fed-batch operation\": \"171.76 mM\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 6)"@en ;
+    mkg:description "Extracellular ammonia concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[AMM]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (kontoravdi_2010 eq 6)"@en ;
+    mkg:description "Extracellular lactate concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[LAC]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/K_d_amm> a mkg:Parameter ;
+    rdfs:label "K_{d,amm} (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Ammonia constant for cell death." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "ammonia constant for cell death (mM)" ;
+    mkg:reason "A constant in the ammonia-dependent cell-death law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{d,amm}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" ;
+    mkg:valuesByCase "{\"Batch operation\": \"1.76 mM\", \"Fed-batch operation\": \"1.76 mM\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/mu_d_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{d,max} (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "maximum specific growth rate (h $ ^{-1} $)" ;
+    mkg:reason "A maximum rate constant in the cell-death law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{d,max}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"Batch operation\": \"6 × 10^-2 h^-1\", \"Fed-batch operation\": \"6 × 10^-2 h^-1\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 7)"@en ;
+    mkg:description "Extracellular ammonia concentration." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[AMM]" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/Y_x_glc> a mkg:Parameter ;
+    rdfs:label "Y_{x,glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of cells on glucose." ;
+    mkg:dimension "[cell] / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 2 Parameter estimation results for fed-batch culture." ;
+    mkg:page "3" ;
+    mkg:quote "the yield of cells on glucose" ;
+    mkg:reason "A cell-yield coefficient in the nutrient-dependent growth law, treated as a fitted model parameter." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,glc}" ;
+    mkg:unit "cells / mmol" ;
+    mkg:unitString "cell/mmol" ;
+    mkg:valueUncertainty "2.654 × 10^7 (95% confidence interval; fed-batch)" ;
+    mkg:valuesByCase "{\"batch operation\": \"1.1 × 10^8 cell/mmol\", \"fed-batch operation\": \"2.6 × 10^8 cell/mmol\"}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/m_glc> a mkg:Parameter ;
+    rdfs:label "m_{glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maintenance coefficient of glucose." ;
+    mkg:dimension "[substance] / [cell] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "maintenance coefficient of glucose" ;
+    mkg:reason "A glucose maintenance coefficient, a constant in the glucose uptake-rate law." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{glc}" ;
+    mkg:unit "mmol / cells / h" ;
+    mkg:unitString "mmol/cell/h" ;
+    mkg:valuesByCase "{\"batch operation\": \"4.9 × 10^-14 mmol/cell/h\", \"fed-batch operation\": \"4.9 × 10^-14 mmol/cell/h\"}" .
+

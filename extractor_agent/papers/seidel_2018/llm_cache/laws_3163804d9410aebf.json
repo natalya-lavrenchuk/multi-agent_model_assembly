@@ -1,0 +1,133 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1811,
+  "completion_tokens": 1527,
+  "total_tokens": 3338,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1808,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1024,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): References\n\nText and equations in reading order:\n    Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n(C-3) \\begin{aligned}\\lg(K_{P3})&=1.2777-2167/T+0.5194\\cdot\\lg(T)\\\\&\\quad-1.037\\times10^{-3}T+2.331\\times10^{-7}T^{2}\\end{aligned}    [code: algebraic, computes K_{P3}, code proposes constitutive]\n    Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}    [code: algebraic, computes r_{CO_2}, code proposes constitutive]\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}    [code: algebraic, computes r_{RWGS}, code proposes constitutive]\n\nSymbols:\n  K_{P3}: Equilibrium constant for the reverse water-gas-shift reaction. [-] (computed)\n  T: Temperature. [K] (variable)\n  r_{CO_2}: Rate of the CO₂-to-methanol reaction. (computed)\n  k_{2}: Rate constant in the CO₂ reaction-rate expression. (parameter)\n  p_{CO_2}: Partial pressure of carbon dioxide used in the model equations. [bar] (variable)\n  p_{H_2}: Partial pressure of hydrogen. (variable)\n  p_{CH_3OH}: Partial pressure of methanol. (variable)\n  p_{H_2O}: Partial pressure of water used in the model equations. [bar] (variable)\n  K_{P2}: Equilibrium constant for reaction 2. [-] (computed)\n  \\Theta^{*}: Free reduced surface centers relative to the total amount of reduced surface centers. [-] (computed)\n  \\Theta^{\\otimes}: Surface coverage on ⊗ sites. [-] (computed)\n  r_{RWGS}: Rate of the reverse water-gas shift reaction. (computed)\n  k_{3}: Rate constant for the reverse water-gas-shift reaction. (parameter)\n  p_{CO}: Partial pressure of CO. (variable)\n  \\Theta^{\\odot}: Surface coverage on ⊙ sites. [-] (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Catalyst deactivation neglected; only reactions (1)-(3) considered.\n  - Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.\n  - Oxidized centers (⊙) are active for CO hydrogenation.\n  - Reduced centers (∗) are active for CO₂ hydrogenation.\n  - Total numbers of oxidized, reduced and hydrogen centers are constant.\n  - Fast steps are at quasi‑equilibrium.\n  - Quasi‑equilibrium assumption for fast adsorption/desorption steps.\n  - Lumped kinetics for reactions (1)-(3).\n  - Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28).\n\nLaws: C-3, C-5, C-6",
+ "answer": {
+  "laws": [
+   {
+    "eq": "C-3",
+    "description": "Temperature correlation for the equilibrium constant of the reverse water-gas-shift reaction.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a temperature-dependent property correlation for the equilibrium constant.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-5",
+    "description": "Rate law for the CO₂-to-methanol reaction, accounting for forward and reverse contributions and surface coverage.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a reaction-rate expression in terms of partial pressures, a rate constant, and surface coverages.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{2}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P2}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{*}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{\\otimes}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-6",
+    "description": "Rate law for the reverse water-gas-shift reaction, accounting for forward and reverse contributions and surface coverage.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a reaction-rate expression in terms of partial pressures, a rate constant, and surface coverages.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{3}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{\\odot}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{*}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

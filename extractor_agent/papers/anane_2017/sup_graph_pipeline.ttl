@@ -1,0 +1,1342 @@
+@prefix kg: <http://example.org/kg/anane_2017/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:anane_2017 a mkg:Sup ;
+    rdfs:label "anane_2017 · Anane et al. (2017) E. coli overflow metabolism by acetate cycling, fed-batch model"@en ;
+    mkg:hasMetadata kg:anane_2017_meta ;
+    mkg:includes <http://example.org/kg/anane_2017/law/anane_2017_eq12>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq14>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq15>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq16>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq17>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq18>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq19>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq20>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq21>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq22>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq23>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq24> .
+
+kg:anane_2017_meta a mkg:Metadata ;
+    mkg:description "Anane_2017 models a fed-batch culture of non-recombinant Escherichia coli W3110M and predicts biomass, glucose, acetate, and dissolved-oxygen profiles. It is a continuous, macro-kinetic model that represents glucose partitioning and acetate cycling, with oxygen transfer and the dissolved-oxygen probe response also included. The culture is run through batch and fed-batch phases, including exponential and constant feeding and glucose pulses. The authors fitted the model to data from a 2-L culture, using hourly samples for biomass, glucose, and acetate and online dissolved-oxygen measurements. They propose it for fermentation process development, optimization, control, and gradient-based simulations." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "A set of auxiliary algebraic equations describing intracellular interactions relating substrate (glucose), oxygen and acetate consumption as well as biomass formation are coupled to the ODEs to form the kinetic model." ;
+            mkg:text "The model couples differential balances with auxiliary algebraic equations for intracellular substrate, oxygen, acetate, and biomass relations." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data for model calibration was obtained from a fed-batch culture of non-recombinant E. coli W3110M." ;
+            mkg:text "The model concerns acetate overflow metabolism and acetate accumulation during cultivation of non-recombinant E. coli W3110M." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To start the batch phase, 2 L of medium was inoculated wit E. coli W3110 to OD₆₀₀ of 0.1." ;
+            mkg:text "The batch was started with 2 L of medium containing 5 g/L glucose and inoculated to an optical density at 600 nm of 0.1." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "At the calculated q0 values for the current E. coli strain, when the probe response time is greater than 8 s, it is important to include it in the dynamics of the oxygen profile." ;
+            mkg:text "The paper says probe response dynamics are important for the strain when the probe response time exceeds 8 seconds." ;
+            mkg:topic "transport" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The E. coli model in Section 3 was solved using Matlab R2015a® with the CVODE integrator from SUNDIALS TB [21]." ;
+            mkg:text "The model was solved in Matlab R2015a using the CVODE integrator from SUNDIALS." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The formulation is an advanced version of a similar representation of overflow metabolism in Saccharomyces cerevisiae, as presented by Pham and co-workers [14]." ;
+            mkg:text "The paper describes its glucose-partitioning formulation as an advanced version of the overflow-metabolism representation by Pham et al. 1998 for Saccharomyces cerevisiae." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reported calibration and validation use fed-batch data from W3110M, and the paper does not describe a separate independent validation dataset." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A= start of exponential feed fed-batch phase at m_set=0.25 h−1" ;
+            mkg:text "The Fig. 2 caption gives 0.25 h⁻¹ for the start of exponential feeding, differing from the methods section's 0.22 h⁻¹ set point." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This formulation of acetate profiles and overflow metabolism is closer to reality since E. coli does not have clear cut switching points in its metabolic routes on the onset of overflow, but rather slow or gradual switching systems from oxidative to overflow metabolism" ;
+            mkg:text "The equations represent acetate production and re-assimilation as continuous processes rather than switching between discrete metabolic phases." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A maximum specific growth rate (mmax) of 0.31 h−1 was recorded during the batch phase, in the presence of excess glucose. Growth at mmax was associated with a steady increase in extracellular acetate concentration." ;
+            mkg:text "The authors report a maximum specific growth rate of 0.31 h⁻¹ in the glucose-excess batch phase, during which extracellular acetate increased." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Thus, acetate excretion into the extracellular medium only results from an offset of the equilibrium between its production and re-assimilation" ;
+            mkg:text "The model treats acetate excretion as the result of an imbalance between its ongoing intracellular production and re-assimilation." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The methods specify an exponential-feed growth-rate set point of 0.22 h⁻¹, followed after 3 h by constant feeding at an initial specific growth rate of 0.11 h⁻¹ for 17 h." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "There was an adequate fit between the model and the experimental data." ;
+            mkg:text "The paper describes the fit between model predictions and experimental data as adequate." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors interpret the rapid modeled response to glucose pulses and lack of a diauxic delay as evidence of continuous acetate re-assimilation alongside glucose use." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The large set of metabolic routes are approximated by lumped kinetic parameters" ;
+            mkg:text "The model is formulated at macro-kinetic scale, with the many metabolic routes represented by lumped kinetic parameters." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To determine the concentration of residual glucose and acetate, hourly samples were analysed on an Agilent 1200 HPLC system, equipped with a HyperRez™ XP Carbohydrate H+ column (Fisher Scientific, Schwerte, Germany) and a refractive index detector." ;
+            mkg:text "Residual glucose and acetate were measured by hourly HPLC sampling using a refractive-index detector." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition:" ;
+            mkg:text "Glucose uptake uses Monod-type kinetics with non-competitive inhibition by extracellular acetate." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The 95% confidence intervals were estimated using σθi and a Student t-distribution." ;
+            mkg:text "Parameter uncertainty was assessed by Monte Carlo resampling, with 95% confidence intervals calculated using parameter standard deviations and a Student t-distribution." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Cultivation was carried out at 37 °C and pH 7.0 in a 3.7-L bench-top bioreactor fitted with a polarographic dissolved-oxygen probe." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Matlab code and fermentation data can be found at https://gitlab.tubit.tu-berlin.de/nicolas.cruz/E_coli_fed-batch/tree/master/Anane_2017_BEJ." ;
+            mkg:text "The paper makes the Matlab code and fermentation data available through a GitLab repository." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK)." ;
+            mkg:text "Biomass growth was monitored by measuring sample optical density at 600 nm with a UV–vis spectrophotometer, then converting optical density to cell dry weight using a conversion factor." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the overall growth of the culture results from usage of glucose through the oxidative (qsox), acetate uptake (qSA) and re-use of other products from the overflow route (qsof), which all contribute energy equivalents for cell growth" ;
+            mkg:text "Glucose use is partitioned among oxidative metabolism, overflow metabolism, acetate uptake, and maintenance, with these routes contributing to growth." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "During the constant feed phase the specific growth rate decreased to values below 0.05 h−1, when the glucose supply fell to values below 0.1 gglu gx−1 h−1" ;
+            mkg:text "During constant feeding, specific growth fell below 0.05 h⁻¹ when glucose supply fell below 0.1 g glucose per g biomass per hour." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model comprises a set of ordinary differential equations (ODEs) describing six state variables, namely biomass X and extracellular concentrations of substrate S, acetate A, dissolved oxygen DOTa and DOT, and the feed F (which can be constant or a function of time)." ;
+            mkg:text "The paper describes six state variables: biomass, glucose, acetate, actual and measured dissolved oxygen, and feed rate." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The difference between the two dissolved oxygen profiles DOTa and DOT is due to the response lag of the sensor, which is approximated by first order response kinetics for the DO-probe" ;
+            mkg:text "The model represents measured dissolved oxygen as a first-order response to actual dissolved oxygen to account for probe lag." ;
+            mkg:topic "transport" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The initial parameter values for PE were based on literature [4,5,17]. The initial values for the search in the parameter space were generated using the Minimum bias Latin hypercube design (MBLHD) [22]." ;
+            mkg:text "Initial parameter values came from literature, and initial search points were generated with a minimum-bias Latin hypercube design." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the constant, slow feeding phase, acetate consumption was greater than its production, which represented a shift in the cycling equilibrium that favoured the consumption of extracellular acetate" ;
+            mkg:text "The authors report that acetate consumption exceeded production during slow constant feeding." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "From an excess substrate (glucose) environment in the batch phase to chronic starvation conditions at the end, the acetate profile evolved according to predictable kinetics (Fig. 2)." ;
+            mkg:text "The experiment was intended to cover growth regimes from excess glucose in batch to chronic starvation at the end of cultivation." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Due to its continuous characteristics, this model is suitable for simulations that require higher order gradient calculation such as Computational Fluid Dynamics (CFD) models, as well as in complex optimization problems involving the E. coli expression system." ;
+            mkg:text "The authors propose the differentiable model for simulations requiring higher-order gradients, including computational fluid dynamics, and for complex optimization problems." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%." ;
+            mkg:text "Twelve of the 16 estimated parameters had relative standard deviations below 10%." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The medium consisted of mineral salts and trace elements, as described by Glazyrina et al. [20], with 5 g/L glucose in the batch phase." ;
+            mkg:text "The medium contained mineral salts and trace elements, and the batch phase began with 5 g/L glucose." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fed-batch phase was initiated with a 300 g/L glucose feed at the exhaustion of the batch phase glucose, signalled by a sudden rise in dissolved oxygen tension." ;
+            mkg:text "Fed-batch feeding began at batch glucose exhaustion, indicated by a sudden rise in dissolved-oxygen tension, using a 300 g/L glucose feed." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The dataset contained 19 measurements each for biomass, glucose, and acetate, and 11,336 online dissolved-oxygen readings." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To test the robustness of the acetate equations, intermittent glucose pulses were given in the constant feeding phase, and the corresponding response in all profiles were modelled." ;
+            mkg:text "Intermittent glucose pulses were added during constant feeding to test the acetate equations' response." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The parameter estimates (PE) were computed using lsqnonlin with the trust region reflective algorithm." ;
+            mkg:text "Parameters were estimated with lsqnonlin using a trust-region-reflective algorithm." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The uptake of acetate, however, is inhibited in a non-competitive way by the presence of glucose in the medium due to E. coli's higher preference for glucose over acetate" ;
+            mkg:text "Acetate uptake depends on extracellular acetate availability and is inhibited non-competitively by glucose." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The mechanistic models of Xu [4], Lin [5] and Neubauer [8] are among the most widely used macro-kinetic models for description of E. coli fermentations." ;
+            mkg:text "The model is presented as a continuous reformulation and improvement of macro-kinetic models by Xu et al. 1999, Lin et al. 2001, and Neubauer et al. 2003." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%." ;
+            mkg:text "The parameter table reports estimates for 16 model parameters." ;
+            mkg:topic "model" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12> a mkg:Law ;
+    rdfs:label "anane_2017 eq 12"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq12/var/X> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq12_meta> ;
+    mkg:latex "\\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq12/var/F>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq12/var/V>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq12/var/mu> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12/var/F> a mkg:Variable ;
+    rdfs:label "F (anane_2017 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Flow rate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "Flow rate (L/h)" ;
+    mkg:reason "It is the feed flow rate, an operating input calculated for the exponential feed and then switched to a constant feed." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L/h" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12/var/V> a mkg:Variable ;
+    rdfs:label "V (anane_2017 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Broth volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "To start the batch phase, 2 L of medium was inoculated wit E. coli W3110 to OD₆₀₀ of 0.1." ;
+    mkg:initialValue "2 L" ;
+    mkg:page "3" ;
+    mkg:quote "broth volume (V, L)" ;
+    mkg:reason "It is the broth volume, a process quantity that changes during fed-batch operation." ;
+    mkg:siFactor 1e-03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12/var/X> a mkg:Variable ;
+    rdfs:label "X (anane_2017 eq 12)"@en ;
+    mkg:description "Biomass (cell dry weight) concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (anane_2017 eq 12)"@en ;
+    mkg:description "Non-inhibited Monod-type specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Biomass balance in the fed-batch culture, including dilution by sterile feed and growth." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "Considering that inlet concentration of biomass is zero (sterile feed)" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The feed contains no biomass." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13> a mkg:Law ;
+    rdfs:label "anane_2017 eq 13"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq13/var/mu> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq13_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_em>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xa>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xsof>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/q_m> ;
+    mkg:latex "\\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sA>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sof>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sox> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/par/q_m> a mkg:Parameter ;
+    rdfs:label "q_{m} (anane_2017 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific maintenance coefficient" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Specific maintenance coefficient" ;
+    mkg:reason "It is a specific maintenance coefficient, a constant model coefficient estimated for the culture." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{m}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" ;
+    mkg:value 1.29e-02 ;
+    mkg:valueUncertainty "7.0 %; 95% CI 0.0111–0.0147" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (anane_2017 eq 13)"@en ;
+    mkg:description "Non-inhibited Monod-type specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (anane_2017 eq 13)"@en ;
+    mkg:description "Acetate consumption rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sA}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (anane_2017 eq 13)"@en ;
+    mkg:description "Substrate metabolized through the overflow route" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sof}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (anane_2017 eq 13)"@en ;
+    mkg:description "Substrate uptake rate for oxidation" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sox}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Specific growth rate from oxidative substrate use after maintenance, overflow-route products, and acetate uptake." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xsof> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xa> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_em> ;
+            mkg:slot "yield" ] ;
+    mkg:page "4" ;
+    mkg:quote "\\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14> a mkg:Law ;
+    rdfs:label "anane_2017 eq 14"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/S> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq14_meta> ;
+    mkg:latex "\\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/F>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/S_i>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/V>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/X>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq14/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/F> a mkg:Variable ;
+    rdfs:label "F (anane_2017 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Flow rate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "Flow rate (L/h)" ;
+    mkg:reason "It is the feed flow rate, an operating input calculated for the exponential feed and then switched to a constant feed." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L/h" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/S> a mkg:Variable ;
+    rdfs:label "S (anane_2017 eq 14)"@en ;
+    mkg:description "Substrate (glucose)." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "with 5 g/L glucose in the batch phase." ;
+    mkg:initialValue "5 g/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "glucose (S)" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/S_i> a mkg:Variable ;
+    rdfs:label "S_{i} (anane_2017 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Glucose concentration in the feed solution." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "S_i represents the glucose concentration in the feed solution (300 g/L)" ;
+    mkg:initialValue "300 g/L" ;
+    mkg:page "3" ;
+    mkg:quote "glucose concentration in the feed solution" ;
+    mkg:reason "It is the glucose concentration of the incoming feed, an operating feed condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{i}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/V> a mkg:Variable ;
+    rdfs:label "V (anane_2017 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Broth volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "To start the batch phase, 2 L of medium was inoculated wit E. coli W3110 to OD₆₀₀ of 0.1." ;
+    mkg:initialValue "2 L" ;
+    mkg:page "3" ;
+    mkg:quote "broth volume (V, L)" ;
+    mkg:reason "It is the broth volume, a process quantity that changes during fed-batch operation." ;
+    mkg:siFactor 1e-03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/X> a mkg:Variable ;
+    rdfs:label "X (anane_2017 eq 14)"@en ;
+    mkg:description "Biomass (cell dry weight) concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (anane_2017 eq 14)"@en ;
+    mkg:description "Max spec glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{s}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq14_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Glucose balance in the fed-batch culture, accounting for feed and cellular uptake." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15> a mkg:Law ;
+    rdfs:label "anane_2017 eq 15"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq15/var/q_s> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_ia>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_s>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/q_smax> ;
+    mkg:latex "q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq15/var/A>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq15/var/S> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (anane_2017 eq 15)"@en ;
+    mkg:description "Max spec glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{s}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Specific glucose uptake rate with substrate saturation and non-competitive inhibition by acetate." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/q_smax> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_s> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq15/var/A> ;
+            mkg:slot "inhibitor" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq15/var/S> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_ia> ;
+            mkg:slot "inhibition constant" ] ;
+    mkg:page "4" ;
+    mkg:quote "q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16> a mkg:Law ;
+    rdfs:label "anane_2017 eq 16"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_sox> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq16/par/K_o> ;
+    mkg:latex "q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq16/var/DOT>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_s>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_sof> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (anane_2017 eq 16)"@en ;
+    mkg:description "Max spec glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{s}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (anane_2017 eq 16)"@en ;
+    mkg:description "Substrate metabolized through the overflow route" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sof}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (anane_2017 eq 16)"@en ;
+    mkg:description "Substrate uptake rate for oxidation" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sox}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Oxidative glucose uptake as the non-overflow portion of uptake, scaled by dissolved oxygen availability." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "where $ K_{0} $ is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The oxygen-affinity constant is set to 0.1 to stabilize the numerical simulation." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq16/par/K_o> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq16/var/DOT> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "DOT is defined in percent while K_{o} is defined in g/L, so they cannot be added in the denominator as printed." ;
+    mkg:quote "q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17> a mkg:Law ;
+    rdfs:label "anane_2017 eq 17"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq17/var/q_sof> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq17/par/K_ap>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq17/par/P_Amax> ;
+    mkg:latex "q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq17/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (anane_2017 eq 17)"@en ;
+    mkg:description "Max spec glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{s}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (anane_2017 eq 17)"@en ;
+    mkg:description "Substrate metabolized through the overflow route" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sof}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Overflow-route substrate flux as a saturating function of the specific glucose uptake rate." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq17/par/K_ap> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq17/par/P_Amax> ;
+            mkg:slot "maximum rate" ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "q_{s} is given in g/(g·h) while K_{ap} is given in g/L, so they cannot be added in the denominator as printed." ;
+    mkg:quote "q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18> a mkg:Law ;
+    rdfs:label "anane_2017 eq 18"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq18/var/A> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq18_meta> ;
+    mkg:latex "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{sA}X $$" ;
+    mkg:latexCorrected "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{A}X $$" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq18/var/F>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq18/var/V>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq18/var/X>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq18/var/q_sA> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18/var/A> a mkg:Variable ;
+    rdfs:label "A (anane_2017 eq 18)"@en ;
+    mkg:description "Extracellular acetate concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "acetate (A)" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18/var/F> a mkg:Variable ;
+    rdfs:label "F (anane_2017 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Flow rate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "Flow rate (L/h)" ;
+    mkg:reason "It is the feed flow rate, an operating input calculated for the exponential feed and then switched to a constant feed." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "L/h" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18/var/V> a mkg:Variable ;
+    rdfs:label "V (anane_2017 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Broth volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:initialQuote "To start the batch phase, 2 L of medium was inoculated wit E. coli W3110 to OD₆₀₀ of 0.1." ;
+    mkg:initialValue "2 L" ;
+    mkg:page "3" ;
+    mkg:quote "broth volume (V, L)" ;
+    mkg:reason "It is the broth volume, a process quantity that changes during fed-batch operation." ;
+    mkg:siFactor 1e-03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "L" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18/var/X> a mkg:Variable ;
+    rdfs:label "X (anane_2017 eq 18)"@en ;
+    mkg:description "Biomass (cell dry weight) concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (anane_2017 eq 18)"@en ;
+    mkg:description "Acetate consumption rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sA}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq18_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "The equilibrium qsA = 0 is reached when the acetate produced through the overflow route pA is equal to the acetate consumed qsA." ;
+    mkg:correctionReason "The paper uses $q_{sA}$ for two quantities. In eq 18 and the sentence after it, $q_{sA}$ is the net acetate rate, which eq 19 names $q_{A}$ (production minus uptake). Everywhere else (eqs 13, 21, 23) $q_{sA}$ is the uptake rate only. Taken as printed, the balance would link to the uptake rate and acetate would rise whenever cells consume it." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Extracellular acetate balance in the fed-batch culture, with no acetate entering in the feed." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "considering no addition of acetate in the feed" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The feed contains no acetate." ] ;
+    mkg:ocrFixNote "The OCR read q_sA·X as q_s·A·X (bold font)." ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The printed q_{s} A X term does not represent the net specific acetate rate; given Eq. (19), the balance should use q_{A}X." ;
+    mkg:quote "\\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{sA}X" ;
+    mkg:reviewOutcome "paper misprint",
+        "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq19> a mkg:Law ;
+    rdfs:label "anane_2017 eq 19"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq19/var/q_A> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq19_meta> ;
+    mkg:latex "q_{A}=p_{A}-q_{sA}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq19/var/p_A>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq19/var/q_sA> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq19/var/p_A> a mkg:Variable ;
+    rdfs:label "p_{A} (anane_2017 eq 19)"@en ;
+    mkg:description "Specific acetate production rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "p_{A}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq19/var/q_A> a mkg:Variable ;
+    rdfs:label "q_{A} (anane_2017 eq 19)"@en ;
+    mkg:description "Specific acetate consumption rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{A}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq19/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (anane_2017 eq 19)"@en ;
+    mkg:description "Acetate consumption rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sA}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq19_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Net specific acetate rate, defined as acetate production minus acetate consumption." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{A}=p_{A}-q_{sA}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq20> a mkg:Law ;
+    rdfs:label "anane_2017 eq 20"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq20/var/p_A> ;
+    mkg:equationNumber "20" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq20_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq20/par/Y_as> ;
+    mkg:latex "p_{A}=q_{sof}Y_{as}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq20/var/q_sof> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq20_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Specific acetate production is calculated by converting overflow-route substrate consumption to acetate using the acetate yield." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq20/par/Y_as> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq20/var/p_A> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq20/var/q_sof> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "4" ;
+    mkg:quote "p_{A}=q_{sof}Y_{as}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21> a mkg:Law ;
+    rdfs:label "anane_2017 eq 21"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq21/var/q_sA> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq21_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_is>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_sa>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/q_Amax> ;
+    mkg:latex "q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}" ;
+    mkg:latexCorrected "$$ q_{sA}=\\frac{q_{Amax}}{1+\\frac{S}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}} $$" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq21/var/A>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq21/var/q_s> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (anane_2017 eq 21)"@en ;
+    mkg:description "Acetate consumption rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sA}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionReason "The inhibition term should use glucose concentration \\(S\\), not glucose uptake rate \\(q_s\\), consistent with the paper’s description of glucose inhibition and the concentration units for \\(K_{is}\\)." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The specific acetate consumption rate is calculated from acetate availability and glucose-dependent inhibition." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/q_Amax> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq21/var/A> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq21/var/q_s> ;
+            mkg:slot "inhibitor" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_sa> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_is> ;
+            mkg:slot "inhibition constant" ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The inhibition term uses q_s, a specific glucose-uptake rate with units g/(g·h), divided by K_is in g/L; the text and units indicate that glucose concentration S, not q_s, is intended." ;
+    mkg:quote "q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22> a mkg:Law ;
+    rdfs:label "anane_2017 eq 22"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq22/var/DOT_a> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq22_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq22/par/DOT_star>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq22/par/H>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq22/par/K_La> ;
+    mkg:latex "\\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq22/var/X>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq22/var/q_o> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/par/DOT_star> a mkg:Parameter ;
+    rdfs:label "DOT^{*} (anane_2017 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Saturating value of DOT in the broth at the given operating conditions." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "2" ;
+    mkg:quote "represents saturating value of DOT in the broth at the given operating conditions" ;
+    mkg:reason "It is the saturation value of dissolved oxygen in the broth, a saturation property of the system." ;
+    mkg:siFactor 1e-02 ;
+    mkg:status "accepted" ;
+    mkg:symbol "DOT^{*}" ;
+    mkg:unit "%" ;
+    mkg:unitString "%" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/par/H> a mkg:Parameter ;
+    rdfs:label "H (anane_2017 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Henry equilibrium constant." ;
+    mkg:dimension "[length] ** 3 / [mass]" ;
+    mkg:page "4" ;
+    mkg:quote "H the Henry equilibrium constant" ;
+    mkg:reason "It is a physical property, the Henry equilibrium constant in the oxygen balance." ;
+    mkg:siFactor 1e-02 ;
+    mkg:status "accepted" ;
+    mkg:symbol "H" ;
+    mkg:unit "l * % / g" ;
+    mkg:unitString "% L g^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/par/K_La> a mkg:Parameter ;
+    rdfs:label "K_{La} (anane_2017 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Volumetric mass transfer coefficient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "KLa the volumetric mass transfer coefficient" ;
+    mkg:reason "It is a volumetric mass-transfer coefficient in the oxygen transfer law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{La}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/var/DOT_a> a mkg:Variable ;
+    rdfs:label "DOT_{a} (anane_2017 eq 22)"@en ;
+    mkg:description "Actual dissolved oxygen." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "DOT_{a}" ;
+    mkg:unit "%" ;
+    mkg:unitString "%" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/var/X> a mkg:Variable ;
+    rdfs:label "X (anane_2017 eq 22)"@en ;
+    mkg:description "Biomass (cell dry weight) concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22/var/q_o> a mkg:Variable ;
+    rdfs:label "q_{o} (anane_2017 eq 22)"@en ;
+    mkg:description "Oxygen uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{o}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq22_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The dissolved-oxygen balance computes actual DOT from transfer toward saturation minus cellular oxygen uptake." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "with the assumption that the feed solution in the fed-batch phase is fully saturated with dissolved oxygen." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The feed solution in the fed-batch phase is fully saturated with dissolved oxygen." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23> a mkg:Law ;
+    rdfs:label "anane_2017 eq 23"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_o> ;
+    mkg:equationNumber "23" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq23_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_oa>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_os>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq23/par/q_m> ;
+    mkg:latex "q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sA>,
+        <http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sox> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/par/q_m> a mkg:Parameter ;
+    rdfs:label "q_{m} (anane_2017 eq 23)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific maintenance coefficient" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Specific maintenance coefficient" ;
+    mkg:reason "It is a specific maintenance coefficient, a constant model coefficient estimated for the culture." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{m}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" ;
+    mkg:value 1.29e-02 ;
+    mkg:valueUncertainty "7.0 %; 95% CI 0.0111–0.0147" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_o> a mkg:Variable ;
+    rdfs:label "q_{o} (anane_2017 eq 23)"@en ;
+    mkg:description "Oxygen uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{o}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Cellular oxygen uptake is calculated from substrate oxidation net of maintenance and acetate consumption, weighted by their oxygen yields." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sA> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sox> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_os> ;
+            mkg:slot "yield" ],
+        [ mkg:boundTo <http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_oa> ;
+            mkg:slot "yield" ] ;
+    mkg:page "4" ;
+    mkg:quote "q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq24> a mkg:Law ;
+    rdfs:label "anane_2017 eq 24"@en ;
+    mkg:computes <http://example.org/kg/anane_2017/law/anane_2017_eq24/var/DOT> ;
+    mkg:equationNumber "24" ;
+    mkg:hasMetadata <http://example.org/kg/anane_2017/law/anane_2017_eq24_meta> ;
+    mkg:hasParameter <http://example.org/kg/anane_2017/law/anane_2017_eq24/par/K_p> ;
+    mkg:latex "\\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)" ;
+    mkg:uses <http://example.org/kg/anane_2017/law/anane_2017_eq24/var/DOT_a> .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq24/par/K_p> a mkg:Parameter ;
+    rdfs:label "K_{p} (anane_2017 eq 24)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Static gain of the sensor, equal to the inverse of the probe response time." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "is the static gain of the sensor given as the inverse of the probe response time, t." ;
+    mkg:reason "It is the sensor's static gain, a constant in the probe-response law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{p}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq24/var/DOT> a mkg:Variable ;
+    rdfs:label "DOT (anane_2017 eq 24)"@en ;
+    mkg:description "Dissolved oxygen tension." ;
+    mkg:dimension "dimensionless" ;
+    mkg:measured true ;
+    mkg:measuredQuote "measured dissolved oxygen (DOT)" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "DOT" ;
+    mkg:unit "%" ;
+    mkg:unitString "%" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq24/var/DOT_a> a mkg:Variable ;
+    rdfs:label "DOT_{a} (anane_2017 eq 24)"@en ;
+    mkg:description "Actual dissolved oxygen." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "DOT_{a}" ;
+    mkg:unit "%" ;
+    mkg:unitString "%" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq24_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The measured DOT approaches actual DOT according to the probe's response dynamics." ;
+    mkg:doi "10.1016/j.bej.2017.05.013" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "which is approximated by first order response kinetics for the DO-probe" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The DO probe response is approximated by first-order response kinetics." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_em> a mkg:Parameter ;
+    rdfs:label "Y_{em} (anane_2017 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield coefficient for oxidative substrate use after maintenance" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:reason "It is a yield coefficient, a constant model property estimated for the culture." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{em}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 5.333e-01 ;
+    mkg:valueUncertainty "2.4 %; 95% CI 0.5085–0.5580" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xa> a mkg:Parameter ;
+    rdfs:label "Y_{xa} (anane_2017 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield coefficient for biomass formation from acetate uptake." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:reason "It is a biomass yield coefficient in the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{xa}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 5.718e-01 ;
+    mkg:valueUncertainty "9.9 %; 95% CI: 0.4604–0.6833" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq13/par/Y_xsof> a mkg:Parameter ;
+    rdfs:label "Y_{xsof} (anane_2017 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of biomass on substrate from auxiliary overflow routes, such as the mixed acid and pentose-phosphate pathways" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Yield of biomass on substrate from auxiliary overflow routes, such as the mixed acid and pentose-phosphate pathways" ;
+    mkg:reason "It is a biomass yield coefficient for auxiliary overflow routes, a constant model property estimated for the culture." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{xsof}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 2.268e-01 ;
+    mkg:valueUncertainty "12.0 %; 95% CI 0.1730–0.2807" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_ia> a mkg:Parameter ;
+    rdfs:label "K_{ia} (anane_2017 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Inhibition constant, inhibition of glucose uptake by acetate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Inhibition constant, inhibition of glucose uptake by acetate" ;
+    mkg:reason "It is the constant for acetate inhibition of glucose uptake." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ia}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" ;
+    mkg:value 1.2399e+00 ;
+    mkg:valueUncertainty "9.6 %; 95% CI: 1.0062–1.4737" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (anane_2017 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Affinity constant, substrate consumption." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Affinity constant, substrate consumption" ;
+    mkg:reason "It is the substrate-affinity constant in the glucose-uptake law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" ;
+    mkg:value 3.7e-02 ;
+    mkg:valueUncertainty "8.9 %; 95% CI: 0.0305–0.0435" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/par/q_smax> a mkg:Parameter ;
+    rdfs:label "q_{smax} (anane_2017 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:reason "It is the maximum specific substrate-uptake rate constant in the uptake law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{smax}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" ;
+    mkg:value 6.356e-01 ;
+    mkg:valueUncertainty "0.3 %; 95% CI: 0.6320–0.6392" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/var/A> a mkg:Variable ;
+    rdfs:label "A (anane_2017 eq 15)"@en ;
+    mkg:description "Extracellular acetate concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "acetate (A)" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq15/var/S> a mkg:Variable ;
+    rdfs:label "S (anane_2017 eq 15)"@en ;
+    mkg:description "Substrate (glucose)." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "with 5 g/L glucose in the batch phase." ;
+    mkg:initialValue "5 g/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "glucose (S)" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16/par/K_o> a mkg:Parameter ;
+    rdfs:label "K_{o} (anane_2017 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Affinity constant, oxygen consumption." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "2" ;
+    mkg:quote "Affinity constant, oxygen consumption" ;
+    mkg:reason "It is the oxygen-affinity constant in the oxygen-dependent substrate-oxidation law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{o}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" ;
+    mkg:value 1e-04 ;
+    mkg:valueUncertainty "0.0 %; 95% CI: 0.0001–0.0001" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq16/var/DOT> a mkg:Variable ;
+    rdfs:label "DOT (anane_2017 eq 16)"@en ;
+    mkg:description "Dissolved oxygen tension." ;
+    mkg:dimension "dimensionless" ;
+    mkg:measured true ;
+    mkg:measuredQuote "measured dissolved oxygen (DOT)" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "DOT" ;
+    mkg:unit "%" ;
+    mkg:unitString "%" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17/par/K_ap> a mkg:Parameter ;
+    rdfs:label "K_{ap} (anane_2017 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod-type saturation constant for intracellular acetate production." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "2" ;
+    mkg:quote "Monod-type saturation constant, intracellular acetate production" ;
+    mkg:reason "It is a saturation constant in the intracellular acetate production law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ap}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" ;
+    mkg:value 5.052e-01 ;
+    mkg:valueUncertainty "15.2 %; 95% CI 0.3539–0.6565" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq17/par/P_Amax> a mkg:Parameter ;
+    rdfs:label "P_{Amax} (anane_2017 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum acetate production." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "4" ;
+    mkg:quote "the maximum acetate production" ;
+    mkg:reason "It is a maximum production-rate constant in the acetate production law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{Amax}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" ;
+    mkg:value 2.268e-01 ;
+    mkg:valueUncertainty "6.5 %; 95% CI 0.1977–0.2558" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq20/par/Y_as> a mkg:Parameter ;
+    rdfs:label "Y_{as} (anane_2017 eq 20)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Gram of acetate per gram of substrate consumed through the overflow route." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "4" ;
+    mkg:quote "Yas is the gram of acetate per gram of substrate consumed through the overflow route." ;
+    mkg:reason "It is a yield coefficient for acetate produced from substrate consumed through the overflow route." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{as}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 9.097e-01 ;
+    mkg:valueUncertainty "4.5 %; 95% CI 0.8283–0.9911" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq20/var/p_A> a mkg:Variable ;
+    rdfs:label "p_{A} (anane_2017 eq 20)"@en ;
+    mkg:description "Specific acetate production rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "p_{A}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq20/var/q_sof> a mkg:Variable ;
+    rdfs:label "q_{sof} (anane_2017 eq 20)"@en ;
+    mkg:description "Substrate metabolized through the overflow route" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sof}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_is> a mkg:Parameter ;
+    rdfs:label "K_{is} (anane_2017 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Inhibition constant for inhibition of acetate uptake by glucose." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "2" ;
+    mkg:quote "Inhibition constant, inhibition of acetate uptake by glucose (g/L)" ;
+    mkg:reason "It is an inhibition constant in the acetate uptake law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{is}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" ;
+    mkg:value 2.1231e+00 ;
+    mkg:valueUncertainty "27.3 %; 95% CI 0.9788–3.2673" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/par/K_sa> a mkg:Parameter ;
+    rdfs:label "K_{sa} (anane_2017 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Affinity constant for acetate consumption." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "2" ;
+    mkg:quote "Affinity constant, acetate consumption (g/L)" ;
+    mkg:reason "It is an affinity constant in the acetate consumption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{sa}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" ;
+    mkg:value 1.34e-02 ;
+    mkg:valueUncertainty "22.0 %; 95% CI 0.0076–0.0192" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/par/q_Amax> a mkg:Parameter ;
+    rdfs:label "q_{Amax} (anane_2017 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum acetate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The estimated model parameters based on the experimental data are given in Table 1 together with the uncertainty in the estimated parameter values calculated from the Monte Carlo method." ;
+    mkg:page "4" ;
+    mkg:quote "the maximum acetate uptake rate" ;
+    mkg:reason "It is the maximum-rate constant for acetate uptake." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{Amax}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" ;
+    mkg:value 1.148e-01 ;
+    mkg:valueUncertainty "6.1 %; 95% CI 0.1009–0.1287" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/var/A> a mkg:Variable ;
+    rdfs:label "A (anane_2017 eq 21)"@en ;
+    mkg:description "Extracellular acetate concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "acetate (A)" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq21/var/q_s> a mkg:Variable ;
+    rdfs:label "q_{s} (anane_2017 eq 21)"@en ;
+    mkg:description "Max spec glucose uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{s}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g/(g.h)" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_oa> a mkg:Parameter ;
+    rdfs:label "Y_{oa} (anane_2017 eq 23)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield coefficient for acetate to oxygen consumption." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "4" ;
+    mkg:quote "Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively." ;
+    mkg:reason "It is a yield coefficient, a constant of the oxygen-consumption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{oa}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 5.44e-01 ;
+    mkg:valueUncertainty "9.5 %; 95% CI: 0.4425-0.6455" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/par/Y_os> a mkg:Parameter ;
+    rdfs:label "Y_{os} (anane_2017 eq 23)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield coefficient for substrate to oxygen consumption." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Summary of results of parameter estimation and quantification of the uncertainty associated with the parameter estimators." ;
+    mkg:page "4" ;
+    mkg:quote "Yos, Yoa are the yield coefficients for substrate and acetate to oxygen consumption respectively." ;
+    mkg:reason "It is a yield coefficient, a constant of the oxygen-consumption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{os}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "g g^-1" ;
+    mkg:value 1.562e+00 ;
+    mkg:valueUncertainty "5.4 %; 95% CI: 1.3941-1.7298" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sA> a mkg:Variable ;
+    rdfs:label "q_{sA} (anane_2017 eq 23)"@en ;
+    mkg:description "Acetate consumption rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sA}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+
+<http://example.org/kg/anane_2017/law/anane_2017_eq23/var/q_sox> a mkg:Variable ;
+    rdfs:label "q_{sox} (anane_2017 eq 23)"@en ;
+    mkg:description "Substrate uptake rate for oxidation" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "q_{sox}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "g g^-1 h^-1" .
+

@@ -1,0 +1,48 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  single agent: 5405 in, 480 out (effort high, answer limit 32000)
+  single agent: search_again No selection yet; fit candidates [8], [9], and [40].  These candidates cover distinct plausible mechanisms using only measured biomass and glucose: Contois biomass-dependent limitation, Monod sa
+  eq 18: cached
+  round 1: [8] asprey_2000_contois_kinetics eq 18: not built: the law's variable r is not mapped to anything in the model
+  eq 17: cached
+  round 1: [9] asprey_2000_monod_kinetics eq 17: not built: the law's variable r is not mapped to anything in the model
+  eq 5: cached
+  round 1: [40] zentou_2019_andrews eq 5: not built: the law's variable mu is not mapped to anything in the model
+  single agent: 5527 in, 1346 out (effort high, answer limit 32000)
+  single agent: search_again   None of the previous candidates produced a fit: each failed to build because its computed rate was not mapped to the model rate r. Correct t
+  eq 18: cached
+  round 2: [8] fitting (limit 300 s)...
+  round 2: [8] asprey_2000_contois_kinetics eq 18: chi2 710
+  eq 17: cached
+  round 2: [9] fitting (limit 300 s)...
+  round 2: [9] asprey_2000_monod_kinetics eq 17: chi2 716
+  eq 5: cached
+  round 2: [40] fitting (limit 300 s)...
+  round 2: [40] zentou_2019_andrews eq 5: chi2 112
+  single agent: 6454 in, 1807 out (effort high, answer limit 32000)
+  single agent: search_again none (additional fitting required)  Candidate C40 fits within the noise, but it does not qualify for acceptance: KS and Ki are strongly correlated (-0.958), so their effects ar
+  eq 11: cached
+  round 3: [17] fitting (limit 300 s)...
+  round 3: [17] muloiwa_2020_free_laws eq 11: chi2 114
+  eq 15: cached
+  round 3: [21] muloiwa_2020_free_laws eq 15: not built: x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394,
+  eq 16: cached
+  round 3: [22] fitting (limit 300 s)...
+  round 3: [22] muloiwa_2020_free_laws eq 16: chi2 12098942
+  single agent: 7315 in, 2801 out (effort high, answer limit 32000)
+  single agent: accept C17  C17 fits within the stated noise (chi2 114.5 < 95% limit 147.7). All five fitted parameters are estimated precisely by the reported interval
+  single agent (rivals): 7375 in, 2852 out (effort high, answer limit 32000)
+  eq 12: cached
+  round 5: [18] fitting (limit 300 s)...
+  round 5: [18] muloiwa_2020_free_laws eq 12: chi2 112
+  eq 13: cached
+  round 5: [19] fitting (limit 300 s)...
+  round 5: [19] muloiwa_2020_free_laws eq 13: chi2 12194194
+  single agent (verdict): 8263 in, 651 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C40  (rule: indistinguishable -> C40)
+final: {'model': 'C40', 'status': 'indistinguishable'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/single_aiba_seed2_confirm.json
+LLM: 6 calls (40339 in, 9937 out tokens), 14 answers from the cache

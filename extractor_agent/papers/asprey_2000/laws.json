@@ -1,0 +1,161 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "16.1": {
+   "form": "ODE",
+   "computes": "x_{1}",
+   "condition": null,
+   "value": null,
+   "section": "5. A process engineering example",
+   "description": "The biomass concentration balance in the reactor accounts for specific growth, dilution, and biomass loss.",
+   "description_basis": "stated",
+   "quote": "describe the component balances within the reactor",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16.1",
+    "description": "The biomass concentration balance in the reactor accounts for specific growth, dilution, and biomass loss.",
+    "description_basis": "stated",
+    "quote": "describe the component balances within the reactor",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "16.2": {
+   "form": "ODE",
+   "computes": "x_{2}",
+   "condition": null,
+   "value": null,
+   "section": "5. A process engineering example",
+   "description": "The substrate concentration balance in the reactor accounts for substrate consumption and exchange with the feed.",
+   "description_basis": "stated",
+   "quote": "describe the component balances within the reactor",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16.2",
+    "description": "The substrate concentration balance in the reactor accounts for substrate consumption and exchange with the feed.",
+    "description_basis": "stated",
+    "quote": "describe the component balances within the reactor",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "algebraic",
+   "computes": "r",
+   "condition": null,
+   "value": null,
+   "section": "5. A process engineering example",
+   "description": "Monod-type kinetics compute the specific substrate consumption rate from the substrate concentration.",
+   "description_basis": "stated",
+   "quote": "The first model assumes Monod-type kinetics for substrate consumption",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\theta_{1}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "x_{2}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "\\theta_{2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "17",
+    "description": "Monod-type kinetics compute the specific substrate consumption rate from the substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The first model assumes Monod-type kinetics for substrate consumption",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\theta_{1}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "x_{2}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "\\theta_{2}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "18": {
+   "form": "algebraic",
+   "computes": "r",
+   "condition": null,
+   "value": null,
+   "section": "5. A process engineering example",
+   "description": "Canoid-type kinetics compute the specific substrate consumption rate from the substrate and biomass concentrations.",
+   "description_basis": "stated",
+   "quote": "The second model assumes Canoid-type kinetics",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\theta_{1}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "x_{2}"
+    },
+    {
+     "role": "biomass",
+     "symbol": "x_{1}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "\\theta_{2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "18",
+    "description": "Canoid-type kinetics compute the specific substrate consumption rate from the substrate and biomass concentrations.",
+    "description_basis": "stated",
+    "quote": "The second model assumes Canoid-type kinetics",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\theta_{1}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "x_{2}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "x_{1}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "\\theta_{2}"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4780,
+  "completion_tokens": 762,
+  "total_tokens": 5542,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4777,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 512,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Modelling of Molasses Fermentation for Bioethanol Production: A Comparative Investigation of Monod and Andrews Models Accuracy Assessment\n\nAbstract: Abstract: Modelling has recently become a key tool to promote the bioethanol industry and to optimise the fermentation process to be easily integrated into the industrial sector. In this context, this study aims at investigating the applicability of two mathematical models (Andrews and Monod) for molasses fermentation. The kinetics parameters for Monod and Andrews were estimated from experimental data using Matlab and OriginLab software. The models were simulated and compared with another set of experimental data that was not used for parameters' estimation. The results of modelling showed that  $ \\mu_{max} = 0.179 $ 1/h and  $ K_s = 11.37 $ g.L $ ^{-1} $ for the Monod model, whereas  $ \\mu_{max} = 0.508 $ 1/h,  $ K_s = 47.53 $ g.L $ ^{-1} $ and  $ K_i = 181.01 $ g.L $ ^{-1} $ for the Andrews model, which are too close to the values reported in previous studies. The validation of both models showed that the Monod model is more suitable for batch fermentation modelling at a low concentr\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [CONFLICT: computes X, like eq 4] p.3  ...believed to follow the first order kinetic model, i.e., the growth rate is proportional to the microbial mass in the system. Mathematically,\n    \\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X\n(2) [CONFLICT: computes \\mu, like eq 3, 5, 8] p.3  ...From Equation (1), the specific growth rate  $ \\mu $ (h $ ^{-1} $) can be written as follows:\n    \\upmu~=~\\frac{\\ln(x)-\\ln(x_{0})}{t-t_{0}}\n(3) [CONFLICT: computes \\mu, like eq 2, 5, 8] p.4  ...The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:\n    \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}\n(4) [CONFLICT: computes X, like eq 1] p.4  ...city constant, i.e., the substrate concentration at half of the maximum growth rate (g.L $ ^{-1} $). Combining Equations (1) and (3) yields:\n    \\frac{d X}{d t}=\\frac{\\upmu_{m a x}S}{K_{S}+S}X\n(5) [CONFLICT: computes \\mu, like eq 2, 3, 8] p.4  ...odel, the growth of S. cerevisiae can be described in relation to the predicted inhibition caused by the excess of the substrate as follows:\n    \\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}\n(6) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...culated and  $ \\mu $ is determined, the mathematical model for the substrate consumption and ethanol production can be expressed as follows:\n    \\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}\n(7) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...culated and  $ \\mu $ is determined, the mathematical model for the substrate consumption and ethanol production can be expressed as follows:\n    \\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}\n(8) [CONFLICT: computes \\mu, like eq 2, 3, 5] p.5  ...$ \\mu_{max} $ and  $ K_{s} $ were calculated based on Equation (3), which could be simplified to Equation (8):\n    \\frac{1}{\\upmu}=\\frac{K_{S}}{\\upmu_{max}}\\frac{1}{S}+\\frac{1}{\\upmu_{max}}\n(9) [NEEDED: computes Y_{x/s}, used by the model] p.7  ...mass yield coefficient ( $ Y_{x/s} $) and the product yield coefficient ( $ Y_{p/s} $) can be calculated during the growth phase as follows:\n    Y_{x/s}\\;=\\;{\\frac{\\Delta X}{\\Delta s}}\n(10) [NEEDED: computes Y_{p/s}, used by the model] p.7  ...mass yield coefficient ( $ Y_{x/s} $) and the product yield coefficient ( $ Y_{p/s} $) can be calculated during the growth phase as follows:\n    Y_{p/s}\\;=\\;{\\frac{\\Delta P}{\\Delta s}}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The validation of both models showed that the Monod model is more suitable for batch fermentation modelling at a low concentration, where the highest R squared was observed at  $ S_0 = 75 $ g.L $ ^{-1} $ with an R square\n- (p.3) From Equation (1), the specific growth rate  $ \\mu $ (h $ ^{-1} $) can be written as follows:\n- (p.4) The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate as follows:\n- (p.4) Combining Equations (1) and (3) yields:\n- (p.4) The viable cell concentrations both in the carriers and the broth were determined and used for $\\mu$ determination using Equation (2).\n- (p.4) The $\\mu$ values were used to evaluate $\\mu_{\\mathrm{max}}$ and $K_{\\mathrm{s}}$ by Lineweaver–Burk plots derived from Equation (3).\n- (p.4) The models were solved and simulated by using the fourth-order Runge–Kutta method ODE 45 with the MATLAB R2014a software (Version 8.3).\n- (p.5) $ \\mu_{max} $ and  $ K_{s} $ were calculated based on Equation (3), which could be simplified to Equation (8):\n- (p.7) The formulation of Equations (9) and (10) are based on the parallel conversion stoichiometry equations.\n- (p.7) A common way to assess the reliability of the model is to use statistical indicators such as the coefficient of determination (R $ ^2 $).\n- (p.9) The low accuracy of the Monod model in a high substrate concentration is due to the fact that the classical Monod equation does not consider the inhibitory effect of a high substrate on cell growth.\n- (p.9) Unfortunately, there is evidence that complex equations have often been constructed in an attempt to explain a set of experimental data that exhibited so much scattering that it was impossible to discriminate between the\n- (p.10) The Monod model is the most used basic model to simulate alcoholic fermentation.\n\nTables about fitted models:\n- (p.2) Table 1. The fermentation kinetics parameters of the Monod model using different feedstocks\n    Substrate: Sorghum leaves | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.176 | $ K_s $ (g.L $ ^{-1} $): 10.11 | $ K_i $ (g.L $ ^{-1} $): — | Referen\n    Substrate: Oil palm frond juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.150 | $ K_s $ (g.L $ ^{-1} $): 10.21 | $ K_i $ (g.L $ ^{-1} $): — | R\n    Substrate: Sweet sorghum juice | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.313 | $ K_s $ (g.L $ ^{-1} $): 47.51 | $ K_i $ (g.L $ ^{-1} $): — | Re\n    Substrate: Banana peels | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 1.500 | $ K_s $ (g.L $ ^{-1} $): 25.00 | $ K_i $ (g.L $ ^{-1} $): — | Reference\n    Substrate: Glucose | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.084 | $ K_s $ (g.L $ ^{-1} $): 213.60 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [2\n    Substrate: Glucose | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.650 | $ K_s $ (g.L $ ^{-1} $): 11.39 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [22\n    Substrate: Citrus waste pulp | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.350 | $ K_s $ (g.L $ ^{-1} $): 10.69 | $ K_i $ (g.L $ ^{-1} $): — | Refe\n    Substrate: Glucose | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.133 | $ K_s $ (g.L $ ^{-1} $): 3.70 | $ K_i $ (g.L $ ^{-1} $): — | Reference: [24]\n    Substrate: Beet molasses | Model: Monod | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.355 | $ K_s $ (g.L $ ^{-1} $): 6.65 | $ K_i $ (g.L $ ^{-1} $): — | Reference\n    Substrate: Soft drinks mixture | Model: Andrews | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.606 | $ K_s $ (g.L $ ^{-1} $): 65.53 | $ K_i $ (g.L $ ^{-1} $): 0.02\n    Substrate: Sucrose | Model: Andrews | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.103 | $ K_s $ (g.L $ ^{-1} $): 30.24 | $ K_i $ (g.L $ ^{-1} $): 109.8 | Referenc\n    Substrate: Sugar cane juice | Model: Andrews | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.500 | $ K_s $ (g.L $ ^{-1} $): 0.006 | $ K_i $ (g.L $ ^{-1} $): 139.7 |\n    Substrate: Glucose | Model: Andrews | $ \\mu_{\\max} $ ( $ h^{-1} $): 0.088 | $ K_s $ (g.L $ ^{-1} $): 700 | $ K_i $ (g.L $ ^{-1} $): 3.730 | Reference:\n- (p.7) Table 2. The estimated kinetics parameters fitted to the Andrews model\n    $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Reduced Chi Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ 7.90971 \\tim\n    $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: Adjusted R-Squared | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.99071\n    $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ \\mu_{\\max} (h^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 0.5086 \\pm\n    $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_s (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 47.53789 \\pm 9.\n    $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: $ K_i (g.L^{-1}) $ | $ \\mu=\\mu_{\\max} \\times S/K_S + S + (\\frac{S^2}{k_i}) $: 181.01639 \\pm 2\n- (p.7) Table 3. The variation of the yield coefficients at different initial substrate concentrations for the Monod model\n    Initial Substrate Concentration (g.L $ ^{-1} $): 5 | Y $ _{x/s} $: 0.267 | Y $ _{p/s} $: 0.384\n    Initial Substrate Concentration (g.L $ ^{-1} $): 10 | Y $ _{x/s} $: 0.282 | Y $ _{p/s} $: 0.397\n    Initial Substrate Concentration (g.L $ ^{-1} $): 15 | Y $ _{x/s} $: 0.290 | Y $ _{p/s} $: 0.446\n    Initial Substrate Concentration (g.L $ ^{-1} $): 20 | Y $ _{x/s} $: 0.278 | Y $ _{p/s} $: 0.435\n    Initial Substrate Concentration (g.L $ ^{-1} $): 25 | Y $ _{x/s} $: 0.283 | Y $ _{p/s} $: 0.439\n    Initial Substrate Concentration (g.L $ ^{-1} $): Average | Y $ _{x/s} $: 0.280  $ \\pm $ 0.0084 | Y $ _{p/s} $: 0.420  $ \\pm $ 0.0028",
+ "answer": {
+  "models": [
+   {
+    "name": "Monod",
+    "equations": [
+     "1",
+     "3",
+     "6",
+     "7",
+     "9",
+     "10"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   },
+   {
+    "name": "Andrews",
+    "equations": [
+     "1",
+     "5",
+     "6",
+     "7",
+     "9",
+     "10"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "2",
+    "reason": "Estimates specific growth rate from measured biomass and time; it is not a model law."
+   },
+   {
+    "eq": "4",
+    "reason": "Combines eq 1 with the Monod law in eq 3 to restate the biomass-growth equation."
+   },
+   {
+    "eq": "8",
+    "reason": "Linearized form of the Monod law; restates eq 3."
+   }
+  ],
+  "free_laws": []
+ }
+}

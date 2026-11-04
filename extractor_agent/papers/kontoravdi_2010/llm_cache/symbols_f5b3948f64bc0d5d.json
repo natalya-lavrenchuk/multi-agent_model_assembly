@@ -1,0 +1,85 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1572,
+  "completion_tokens": 1671,
+  "total_tokens": 3243,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1569,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1180,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: kontoravdi_2005\n\nEquations:\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]      <- \"Finally, the rate of MAb production is\"\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}      <- \"Finally, the rate of MAb production is\"\n\nSymbols:\n\nQ_{MAb}   [COMPUTED by eq 28]\n  (no snippet mentions this symbol)\n\n\\varepsilon_{2}   [NOT COMPUTED]\n  [73] (line, p.2) $ \\varepsilon_{2} $ Golgi apparatus glycosylation efficiency factor (dimensionless)\n  [195] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_2 $ | Batch operation value: 1 | Fed-batch operation value: 1\n\n\\lambda   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "Q_{MAb}",
+    "description": "MAb production quantity used in the MAb production rate equation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\varepsilon_{2}",
+    "description": "Golgi apparatus glycosylation efficiency factor",
+    "description_basis": "stated",
+    "snippet_id": 73,
+    "quote": "Golgi apparatus glycosylation efficiency factor (dimensionless)",
+    "unit": "dimensionless",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "Batch operation",
+      "value": "1"
+     },
+     {
+      "case": "Fed-batch operation",
+      "value": "1"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "It is an efficiency factor, a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\lambda",
+    "description": "Multiplicative factor in the equation for the MAb production quantity.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a proportionality factor in the law defining the MAb production quantity.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

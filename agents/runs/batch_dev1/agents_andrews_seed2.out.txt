@@ -1,0 +1,40 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 595 out (effort high, answer limit 32000)
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 1342
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 1190
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 113
+  statistical agent: 1389 in, 260 out (effort high, answer limit 32000)
+  statistical agent: accept C40  C40 is the only candidate that fits within the noise, and all of its parameters are precisely estimated (all t-values exceed 1).
+  hypothesis agent (confirmation): 4325 in, 1680 out (effort high, answer limit 32000)
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 125
+  eq 16: cached
+  modeler agent (muloiwa_2020_free_laws eq 16): cached
+  round 2: [22] fitting (limit 300 s)...
+  round 2: [22] muloiwa_2020_free_laws eq 16: chi2 12029185
+  eq 15: cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  round 2: [21] muloiwa_2020_free_laws eq 15: not built: x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394, x1=0.00182; 30% of the points checked). The rate law does not vanish when x2 runs out (limiting behaviour)
+  statistical agent (confirmation): 2117 in, 469 out (effort high, answer limit 32000)
+  confirmation: confirmed -> C40  (rule: confirmed -> C40)  
+decision: {"decision": "accept", "chosen": "C40", "feedback": "C40 is the only candidate that fits within the noise, and all of its parameters are precisely estimated (all t-values exceed 1).", "reasoning": "C40 has chi2 113.0, below the 95% limit of 147.7, and all parameter t-values are between 6.44 and 26.24. It also has Akaike weight 1.000. Although only 2 of 4 starting points reached this fit, the reported fit meets the acceptance criteria."}
+confirmation: confirmed -> C40 | adequate: C40 zentou_2019_andrews eq 5 (weight 1.00), C17 muloiwa_2020_free_laws eq 11 (weight 0.00) | agent agrees with the rule: True
+final: {'model': 'C40', 'status': 'confirmed'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_andrews_seed2_confirm.json
+LLM: 4 calls (12082 in, 3004 out tokens), 16 answers from the cache

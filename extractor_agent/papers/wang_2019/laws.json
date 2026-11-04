@@ -1,0 +1,547 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "9": {
+   "form": "algebraic",
+   "computes": "A",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The Beer–Lambert absorbance combines chlorophyll-a and non-chlorophyll biomass contributions to light attenuation.",
+   "description_basis": "stated",
+   "quote": "The light attenuation due to Chl-a and the remaining biomass ($ X_C - X_{chl} $) is modeled by formulating the light absorbance $ A $ (eq 9) based on the Beer–Lambert Law.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "9",
+    "description": "The Beer–Lambert absorbance combines chlorophyll-a and non-chlorophyll biomass contributions to light attenuation.",
+    "description_basis": "stated",
+    "quote": "The light attenuation due to Chl-a and the remaining biomass ($ X_C - X_{chl} $) is modeled by formulating the light absorbance $ A $ (eq 9) based on the Beer–Lambert Law.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "algebraic",
+   "computes": "I_{avg}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The instantaneous light intensity is averaged across the reactor’s optical path.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "10",
+    "description": "The instantaneous light intensity is averaged across the reactor’s optical path.",
+    "description_basis": "stated",
+    "quote": "The average light intensity $ I_{\\mathrm{avg}} $ inside the reactor is calculated by averaging the local light intensities $ I_{l} $ over the optical path from l = 0 to l = z_{t}.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11": {
+   "form": "algebraic",
+   "computes": "I_{avg_R}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The background light intensity is averaged across the reactor’s optical path.",
+   "description_basis": "stated",
+   "quote": "In addition, the average background light intensity $ I_{\\mathrm{avg\\_R}} $ is expressed in eq 11.",
+   "assumptions": [
+    {
+     "text": "The average background light intensity is treated as time-invariant.",
+     "quote": "In contrast, $ I_{\\mathrm{avg\\_R}} $ does not vary in time.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The average background light intensity is treated as time-invariant."
+   ],
+   "llm": {
+    "eq": "11",
+    "description": "The background light intensity is averaged across the reactor’s optical path.",
+    "description_basis": "stated",
+    "quote": "In addition, the average background light intensity $ I_{\\mathrm{avg\\_R}} $ is expressed in eq 11.",
+    "assumptions": [
+     {
+      "text": "The average background light intensity is treated as time-invariant.",
+      "quote": "In contrast, $ I_{\\mathrm{avg\\_R}} $ does not vary in time.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The photosynthesis rate per functional biomass follows a modified Steele-type relationship with light intensity, saturation, and inhibition.",
+   "description_basis": "stated",
+   "quote": "The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation,$^{17,18}$ which expresses the typical relationship between photosynthesis rate and light intensity (i.e., $P-I$ relationship) during the stages of light limitation, saturation, and inhibition.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "roles naming symbols not in the law dropped: ['I_{\\\\mathrm{avg}}', 'I_{\\\\mathrm{sat}}', 'P_{\\\\mathrm{m}}', 'X_{\\\\mathrm{C}}', 'X_{\\\\mathrm{cd}}']"
+   ],
+   "llm": {
+    "eq": "12",
+    "description": "The photosynthesis rate per functional biomass follows a modified Steele-type relationship with light intensity, saturation, and inhibition.",
+    "description_basis": "stated",
+    "quote": "The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation,$^{17,18}$ which expresses the typical relationship between photosynthesis rate and light intensity (i.e., $P-I$ relationship) during the stages of light limitation, saturation, and inhibition.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "driving force",
+      "symbol": "I_{\\mathrm{avg}}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "I_{\\mathrm{sat}}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "P_{\\mathrm{m}}"
+     },
+     {
+      "role": "total carbon",
+      "symbol": "X_{\\mathrm{C}}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X_{\\mathrm{cd}}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "13": {
+   "form": "algebraic",
+   "computes": "I_{sat}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The light-saturation intensity is calculated as a function of chlorophyll-a content and the carbon-yield and photosynthesis parameters.",
+   "description_basis": "stated",
+   "quote": "We thus modified the saturated light intensity $ I_{\\mathrm{sat}} $ as a function of the Chl-a content (eq 13) inspired by the Poisson model.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "13",
+    "description": "The light-saturation intensity is calculated as a function of chlorophyll-a content and the carbon-yield and photosynthesis parameters.",
+    "description_basis": "stated",
+    "quote": "We thus modified the saturated light intensity $ I_{\\mathrm{sat}} $ as a function of the Chl-a content (eq 13) inspired by the Poisson model.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "14": {
+   "form": "algebraic",
+   "computes": "Y_{E}^{c}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The carbon yield on light energy is adjusted exponentially according to the average background light intensity.",
+   "description_basis": "stated",
+   "quote": "We thus modified the carbon yield on light energy $ Y_{\\mathrm{E}} $ as a function of $ I_{\\mathrm{avg}, \\mathrm{R}} $ (eq 14).",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "14",
+    "description": "The carbon yield on light energy is adjusted exponentially according to the average background light intensity.",
+    "description_basis": "stated",
+    "quote": "We thus modified the carbon yield on light energy $ Y_{\\mathrm{E}} $ as a function of $ I_{\\mathrm{avg}, \\mathrm{R}} $ (eq 14).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "15": {
+   "form": "algebraic",
+   "computes": "q_{nl}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The fraction of carbohydrate carbon redirected to lipid accumulation increases as nitrate becomes deficient.",
+   "description_basis": "stated",
+   "quote": "$ q_{nl} $ is expressed as an error function (eq 15) triggered by deficient nitrogen concentrations.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "15",
+    "description": "The fraction of carbohydrate carbon redirected to lipid accumulation increases as nitrate becomes deficient.",
+    "description_basis": "stated",
+    "quote": "$ q_{nl} $ is expressed as an error function (eq 15) triggered by deficient nitrogen concentrations.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "16": {
+   "form": "algebraic",
+   "computes": "m_{chl}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The chlorophyll-a degradation rate is calculated from nitrogen and background-light stress conditions.",
+   "description_basis": "stated",
+   "quote": "We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16",
+    "description": "The chlorophyll-a degradation rate is calculated from nitrogen and background-light stress conditions.",
+    "description_basis": "stated",
+    "quote": "We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "algebraic",
+   "computes": "\\nu_{N}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "Nitrate uptake is calculated from a quota-modulated maximum uptake rate multiplied by extracellular nitrate normalized to its initial concentration.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S_{NO3}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\nu_{nm}"
+    },
+    {
+     "role": "quota ceiling",
+     "symbol": "Q_{nm}"
+    },
+    {
+     "role": "quota state",
+     "symbol": "Q_{n}"
+    },
+    {
+     "role": "quota threshold",
+     "symbol": "q_{n}"
+    },
+    {
+     "role": "reference concentration",
+     "symbol": "S_{NO3_0}"
+    }
+   ],
+   "issue": "The factor (Q_{nm} - Q_n)/(Q_{nm} - q_n) is printed in eq 17, but the Results state that this term was excluded from the nitrate uptake equation to resolve nonidentifiability.",
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "possible misprint: The factor (Q_{nm} - Q_n)/(Q_{nm} - q_n) is printed in eq 17, but the Results state that this term was excluded from the nitrate uptake equation to resolve nonidentifiability."
+   ],
+   "llm": {
+    "eq": "17",
+    "description": "Nitrate uptake is calculated from a quota-modulated maximum uptake rate multiplied by extracellular nitrate normalized to its initial concentration.",
+    "description_basis": "stated",
+    "quote": "As a result, the nitrate uptake rate v_N in eq 17 is linearly related to the extracellular nitrate concentration S_NO3 and is divided by the initial concentration S_NO3 to offset the effect of initial nitrate level. Additionally, the maximum nitrate uptake rate v_nm is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S_{NO3}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\nu_{nm}"
+     },
+     {
+      "role": "quota ceiling",
+      "symbol": "Q_{nm}"
+     },
+     {
+      "role": "quota state",
+      "symbol": "Q_n"
+     },
+     {
+      "role": "quota threshold",
+      "symbol": "q_n"
+     },
+     {
+      "role": "reference concentration",
+      "symbol": "S_{NO3_0}"
+     }
+    ],
+    "issue": "The factor (Q_{nm} - Q_n)/(Q_{nm} - q_n) is printed in eq 17, but the Results state that this term was excluded from the nitrate uptake equation to resolve nonidentifiability."
+   }
+  },
+  "18": {
+   "form": "algebraic",
+   "computes": "Q_{n}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The nitrogen quota is calculated as cellular nitrogen divided by total fixed organic carbon.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "18",
+    "description": "The nitrogen quota is calculated as cellular nitrogen divided by total fixed organic carbon.",
+    "description_basis": "stated",
+    "quote": "However, based on prior experimental results suggesting that the storage molecule production could be enhanced with elevated carbon fixation via excess CO2 supply or mixotrophic cultivation, it seemed more reasonable to regulate the carbon distribution between the functional pool and the storage pool using the total N:C ratio (eq 18).",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "1": {
+   "form": "ODE",
+   "computes": "X_{cd}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "Functional biomass increases by the nitrogen-quota-regulated share of fixed carbon and decreases through degradation associated with respiration.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "1",
+    "description": "Functional biomass increases by the nitrogen-quota-regulated share of fixed carbon and decreases through degradation associated with respiration.",
+    "description_basis": "stated",
+    "quote": "We modeled the carbon fixation to the functional biomass (R1) in eq (1) based on the Droop model. For simplicity, we modeled the degradation of functional biomass (R2) that contributes to respiration as a first-order relationship.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "2": {
+   "form": "ODE",
+   "computes": "X_{carb}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The carbohydrate balance adds the share of fixed carbon allocated to storage and subtracts basal and growth-related respiration, carbon reused for lipid synthesis, and carbon redirected to lipids under nitrogen deficiency.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "Background light intensity used for the basal respiration adjustment is treated as time-invariant.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols.",
+     "quote": "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "assumption quote not found: Background light intensity used for the basal respiration adjustment is treated as time-invariant."
+   ],
+   "llm": {
+    "eq": "2",
+    "description": "The carbohydrate balance adds the share of fixed carbon allocated to storage and subtracts basal and growth-related respiration, carbon reused for lipid synthesis, and carbon redirected to lipids under nitrogen deficiency.",
+    "description_basis": "stated",
+    "quote": "The assimilated carbon that has not been used to produce functional biomass is first stored in carbohydrates as shown in R₃ of eq (2). The degradation of carbohydrates is categorized into three types based on the carbon flow direction: (1) the carbon loss during respiration (R₄, R₅), (2) the carbon reuse for lipid synthesis during nitrogen-available conditions (R₆), and (3) the carbon redirection to lipid synthesis under nitrogen deficiency (R₇). The carbohydrate respiration rate includes two components: a basal-level rate (R₄) and a growth-related rate (R₅). R₄ is based on the first-order relationship with the respiration rate constant m_c adjusted by I_avg_R to account for the photoinhibition of respiration.",
+    "assumptions": [
+     {
+      "text": "Background light intensity used for the basal respiration adjustment is treated as time-invariant.",
+      "quote": "In contrast, I_avg_R does not vary in time. We used I_avg_R to adjust the parameter values that only change when the algae are cultivated under different light conditions.",
+      "process_condition": false
+     },
+     {
+      "text": "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols.",
+      "quote": "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "ODE",
+   "computes": "X_{nl}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "Neutral lipids accumulate through carbon reused from carbohydrate metabolism during nitrogen-available growth and carbon redirected from carbohydrates under nitrogen deficiency.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "Carbon contributions to lipid synthesis from functional biomass components are represented within the R₇ carbon-partitioning process.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols.",
+     "quote": "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "assumption quote not found: Carbon contributions to lipid synthesis from functional biomass components are represented within the R₇ carbon-partitioning process."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "Neutral lipids accumulate through carbon reused from carbohydrate metabolism during nitrogen-available growth and carbon redirected from carbohydrates under nitrogen deficiency.",
+    "description_basis": "stated",
+    "quote": "R₆ is also coupled with the nitrate uptake rate via the coefficient β to describe that some carbon from carbohydrate metabolism could be reutilized to accumulate neutral lipids during normal algal growth. We further formulated R₇ to direct a portion q_nl of the previously fixed carbon from carbohydrates to neutral lipids when nitrogen is depleted.",
+    "assumptions": [
+     {
+      "text": "Carbon contributions to lipid synthesis from functional biomass components are represented within the R₇ carbon-partitioning process.",
+      "quote": "Some detailed carbon partitioning processes between functional biomass components and storage molecules were not specifically simulated in this work. For example, functional biomass components such as proteins and polar lipids could also contribute to lipid synthesis, and these processes were assumed to be covered by R₇ as R₇ is directly related to the carbon partitioning between the functional pool and the storage pool.",
+      "process_condition": false
+     },
+     {
+      "text": "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols.",
+      "quote": "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "ODE",
+   "computes": "X_{chl}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "The chlorophyll a balance links synthesis to nitrogen uptake with light-dependent regulation and subtracts chlorophyll degradation under stress.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "4",
+    "description": "The chlorophyll a balance links synthesis to nitrogen uptake with light-dependent regulation and subtracts chlorophyll degradation under stress.",
+    "description_basis": "stated",
+    "quote": "Following prior modeling work, we linked the Chl-a synthesis rate to the nitrogen uptake rate via the maximum Chl-a:N ratio θ. To account for the light adaptation effect, θ is regulated by I_avg via an exponential function. We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "ODE",
+   "computes": "S_{NO3}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "Extracellular nitrate decreases at the uptake rate multiplied by functional biomass.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "5",
+    "description": "Extracellular nitrate decreases at the uptake rate multiplied by functional biomass.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "6": {
+   "form": "ODE",
+   "computes": "X_{N}",
+   "condition": null,
+   "value": null,
+   "section": "METHODS",
+   "description": "Intracellular nitrogen accumulates at the nitrate uptake rate multiplied by functional biomass.",
+   "description_basis": "stated",
+   "quote": "The resulting rate of intracellular nitrogen accumulation (eq 6) was obtained by negating the sign of the nitrate uptake rate.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6",
+    "description": "Intracellular nitrogen accumulates at the nitrate uptake rate multiplied by functional biomass.",
+    "description_basis": "stated",
+    "quote": "The resulting rate of intracellular nitrogen accumulation (eq 6) was obtained by negating the sign of the nitrate uptake rate.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

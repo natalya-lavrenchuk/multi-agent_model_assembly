@@ -1,0 +1,91 @@
+{
+ "sup": "cheema_2018",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 6,
+  "variable_nodes": 23,
+  "parameter_nodes": 10,
+  "distinct_symbols": 31,
+  "computes_edges": 6,
+  "uses_edges": 17,
+  "hasParameter_edges": 10,
+  "laws_by_form": {
+   "ODE": 2,
+   "algebraic": 4
+  },
+  "laws_flagged": [
+   6
+  ],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "C_{p_{b_{out}}}",
+   "C_{p_{m_{out}}}",
+   "C_{p_{q_{in}}}",
+   "K",
+   "\\Delta H_{b}",
+   "\\alpha",
+   "\\varepsilon",
+   "c_{p_b}",
+   "k_{2}",
+   "v_{r}"
+  ],
+  "for_review": [],
+  "triples": 848
+ },
+ "flags": [
+  {
+   "law": 6,
+   "check": "reading",
+   "detail": "\\sum over b=1..m-1: index and limits not read as symbols"
+  },
+  {
+   "law": 6,
+   "check": "reading",
+   "detail": "\\prod over b=1..m-1: index and limits not read as symbols"
+  },
+  {
+   "law": 6,
+   "check": "reading",
+   "detail": "\\sum over b=1..m-1: index and limits not read as symbols"
+  },
+  {
+   "law": 6,
+   "check": "reading",
+   "detail": "\\prod over b=1..m-1: index and limits not read as symbols"
+  },
+  {
+   "symbol": "R_{NH_3}",
+   "check": "computed, never used",
+   "laws": [
+    5
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  },
+  {
+   "symbol": "T_{m_{out}}",
+   "check": "computed, never used",
+   "laws": [
+    7
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  },
+  {
+   "symbol": "T_{s_{out}}",
+   "check": "computed, never used",
+   "laws": [
+    2
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  },
+  {
+   "symbol": "X_{r,m_{out}}",
+   "check": "computed, never used",
+   "laws": [
+    6
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

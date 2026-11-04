@@ -1,0 +1,41 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 741 out (effort high, answer limit 32000)
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 261
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 115
+  eq 6: cached
+  modeler agent (muloiwa_2020_free_laws eq 6): cached
+  round 1: [27] fitting (limit 300 s)...
+  round 1: [27] muloiwa_2020_free_laws eq 6: chi2 254
+  statistical agent: 1637 in, 218 out (effort high, answer limit 32000)
+  statistical agent: accept C8  C8 is accepted. Its Contois-type rate law fits within the noise (chi2 114.8, below the 95% limit of 148.8), and all four parameters are estimated prec
+  hypothesis agent (confirmation): 4324 in, 3109 out (effort high, answer limit 32000)
+  eq 15: cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  round 2: [21] muloiwa_2020_free_laws eq 15: not built: x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394, x1=0.00182; 30% of the points checked). The rate law does not vanish when x2 runs out (limiting behaviour)
+  eq 14: cached
+  modeler agent (muloiwa_2020_free_laws eq 14): cached
+  round 2: [20] fitting (limit 300 s)...
+  round 2: [20] muloiwa_2020_free_laws eq 14: chi2 261
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 254
+  statistical agent (confirmation): 2303 in, 201 out (effort high, answer limit 32000)
+  confirmation: confirmed -> C8  (rule: confirmed -> C8)  No discriminating experiment is required for this decision; C8 is the only adequate candidate.
+decision: {"decision": "accept", "chosen": "C8", "feedback": "C8 is accepted. Its Contois-type rate law fits within the noise (chi2 114.8, below the 95% limit of 148.8), and all four parameters are estimated precisely (t-values 7.84–37.32). The theta1–theta3 and theta1–theta4 correlations are high, so an experiment designed to better separate these parameters would be useful, but this is a caveat rather than a reason to reject the model.", "reasoning": "C8 is the only candidate that fits within the 95% limit and has every parameter t-value above 1. It also has Akaike weight 1.000 among the candidates. C9 and C27 show substantial lack of fit, so neither qualifies."}
+confirmation: confirmed -> C8 | adequate: C8 asprey_2000_contois_kinetics eq 18 (weight 1.00) | agent agrees with the rule: True
+experiment to separate them: No discriminating experiment is required for this decision; C8 is the only adequate candidate.
+final: {'model': 'C8', 'status': 'confirmed', 'marginal': False}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_contois_seed2_confirm.json
+LLM: 4 calls (12515 in, 4269 out tokens), 16 answers from the cache

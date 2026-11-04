@@ -1,0 +1,125 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.304184403,
+  "prompt_tokens": 1792,
+  "prompt_time": 0.109474095,
+  "completion_tokens": 1592,
+  "completion_time": 3.364159987,
+  "total_tokens": 3384,
+  "total_time": 3.4736340820000002,
+  "completion_tokens_details": {
+   "reasoning_tokens": 684
+  }
+ },
+ "user": "Equations:\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1\n(8) \\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]\n(9) Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}\n(10) \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}\n(12) m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}\n(14) Q_{l a c}=Y_{l a c,g l c}Q_{g l c}\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]\n(16) Q_{a m m}=Y_{a m m,g l n}Q_{g l n}\n\nSymbols:\n\nn   [NOT COMPUTED]\n  [179] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: n | Batch operation value: 2 | Fed-batch operation value: 2\n\nd   [COMPUTED by eq 8]\n  (no snippet mentions this symbol)\n\nQ_{glc}   [COMPUTED by eq 9]\n  (no snippet mentions this symbol)\n\n[GLC]_{in}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nY_{x,glc}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [188] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{x,glc} $ (cell/mmol) | Batch operation value: $ 1.1 \\times 10^{8} $ | Fed-batch operation value: $ 2.6 \\times 10^{8} $\n  [214] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ Y_{x,glc} $ | Final value: $ 2.6 \\times 10^{8} $ | Confidence intervals: $ 2.224 \\times 10^{7} $ | Confidence intervals: $ 2.654 \\times 10^{7} $ | Confidence intervals: $ 3.494 \\times 10^\n\nm_{glc}   [NOT COMPUTED]\n  [178] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ m_{glc} $ (mmol/cell-h) | Batch operation value: $ 4.9 \\times 10^{-14} $ | Fed-batch operation value: $ 4.9 \\times 10^{-14} $\n  [59] (line, p.2) m $ _{glc} $ maintenance coefficient of glucose (mmol/cell/h)\n\n[GLN]   [COMPUTED by eq 10]\n  (no snippet mentions this symbol)\n\nQ_{gln}   [COMPUTED by eq 11]\n  (no snippet mentions this symbol)\n\nK_{dgln}   [NOT COMPUTED]\n  [170] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,gln} (h^{-1}) $ | Batch operation value: $ 9.6 \\times 10^{-3} $ | Fed-batch operation value: $ 9.6 \\times 10^{-3} $\n  [52] (line, p.2) K $ _{d,gln} $ constant for glutamine degradation (h $ ^{-1} $)\n\n[GLN]_{in}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "n",
+    "description": "exponent in the death rate equation",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "2",
+    "class": "parameter",
+    "class_basis": "inferred",
+    "class_reason": "used as an exponent in the death rate expression"
+   },
+   {
+    "symbol": "d",
+    "description": "time derivative operator used in the mass balance",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "represents the derivative with respect to time in the equations"
+   },
+   {
+    "symbol": "Q_{glc}",
+    "description": "specific glucose consumption rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mmol/cell·h",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law (eq 9) from growth rate and yield"
+   },
+   {
+    "symbol": "[GLC]_{in}",
+    "description": "inlet glucose concentration",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mmol·L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "feed concentration supplied to the reactor"
+   },
+   {
+    "symbol": "Y_{x,glc}",
+    "description": "yield of cells on glucose",
+    "description_basis": "stated",
+    "snippet_id": 142,
+    "quote": "yield of cells on glucose ( $ Y_{x,glc} $)",
+    "unit": "cell/mmol",
+    "unit_basis": "stated",
+    "value": "2.6 ×10^8",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter representing cell yield per glucose"
+   },
+   {
+    "symbol": "m_{glc}",
+    "description": "maintenance coefficient of glucose",
+    "description_basis": "stated",
+    "snippet_id": 59,
+    "quote": "maintenance coefficient of glucose (mmol/cell/h)",
+    "unit": "mmol/cell·h",
+    "unit_basis": "stated",
+    "value": "4.9 ×10^-14",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter describing basal glucose consumption per cell"
+   },
+   {
+    "symbol": "K_{dgln}",
+    "description": "constant for glutamine degradation",
+    "description_basis": "stated",
+    "snippet_id": 52,
+    "quote": "constant for glutamine degradation (h ^{-1})",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": "9.6 ×10^-3",
+    "class": "parameter",
+    "class_basis": "stated",
+    "class_reason": "parameter governing the first‑order degradation of glutamine"
+   },
+   {
+    "symbol": "[GLN]_{in}",
+    "description": "inlet glutamine concentration",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mmol·L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "feed concentration supplied to the reactor"
+   }
+  ]
+ }
+}

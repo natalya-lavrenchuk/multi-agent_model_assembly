@@ -1,0 +1,165 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4145,
+  "completion_tokens": 3948,
+  "total_tokens": 8093,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4142,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2941,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Dynamic microalgae growth and lipid production model\n\nEquations:\n(9) A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right)      <- \" S3). Our value of $ a $ is equivalent to $ 4.96\\ m^2\\ g^{-1}\\ Chl $-a, which is close to the value of $ 4.82\\ m^2\\ g^{-1}\\ Chl $-a estimated by Packer et al.¹²\"\n(10) I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l      <- \"ot vary in time. We used $ I_{\\mathrm{avg\\_R}} $ to adjust the parameter values that only change when the algae are cultivated under different light conditions.\"\n(11) I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l      <- \"ot vary in time. We used $ I_{\\mathrm{avg\\_R}} $ to adjust the parameter values that only change when the algae are cultivated under different light conditions.\"\n(12) P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(13) I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}}      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(14) Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}})      <- \"arbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.\"\n(16) m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})      <- \"t the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies. $ ^{29,35} $\"\n(18) Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}}      <- \", $ ^{38-40} $ it seemed more reasonable to regulate the carbon distribution between the functional pool and the storage pool using the total N:C ratio (eq 18).\"\n(1) \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd}   -m \\cdot X_{cd}   Q_n      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(2) \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb}   -m_{cN} \\cdot \\nu_N \\cdot X_{cd}   -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   I_{avg}   I_{avg\\_R}   q_{nl}   \\nu_N      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(3) \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n(4) \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl}   m_{chl}      <- \"Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\"\n\nSymbols:\n\nA   [COMPUTED by eq 9]\n  [322] (line, p.8) A $\\mathrm{m}^{-1}$ Light absorbance per unit length\n  [42] (sentence, p.2) A simple representation of the carbon distribution process may not properly capture the detailed regulatory and combinatorial effects of light and nitrogen on lipid accumulation.\n  [74] (sentence, p.3) The light attenuation due to Chl-a and the remaining biomass ( $ X_C - X_{chl} $) is modeled by formulating the light absorbance  $ A $ (eq 9) based on the Beer–Lambert Law.\n\na   [NOT COMPUTED]\n  [323] (line, p.8) $a \\quad \\mathrm{m}^{2}$ (mol $X_{\\mathrm{chl}-C} \\mathrm{C})^{-1}$ Optical cross section of Chl-a\n  [75] (sentence, p.3) We calibrated the values of  $ a $ (the optical cross section of Chl-a) and  $ b $ (the optical cross section of non-Chl-a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profil\n  [77] (sentence, p.3) We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions (calibratio\n\nX_{chl}   [COMPUTED by eq 4]\n  [319] (line, p.8) X_{chl} mol X_{chl}-C m^{-3} Concentration of Chl-a as C\n  [69] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Chlorophyll a  $ X_{chl} $ | Rate Equation: $ \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl} $\\nSee  $ m_{c\n  [74] (sentence, p.3) The light attenuation due to Chl-a and the remaining biomass ( $ X_C - X_{chl} $) is modeled by formulating the light absorbance  $ A $ (eq 9) based on the Beer–Lambert Law.\n\nb   [NOT COMPUTED]\n  [324] (line, p.8) $b \\quad \\mathrm{m}^{2}$ (mol $\\mathrm{C})^{-1}$ Optical cross section of biomass except Chl-a content\n  [75] (sentence, p.3) We calibrated the values of  $ a $ (the optical cross section of Chl-a) and  $ b $ (the optical cross section of non-Chl-a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profil\n  [77] (sentence, p.3) We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions (calibratio\n\nX_{C}   [NOT COMPUTED]\n  [74] (sentence, p.3) The light attenuation due to Chl-a and the remaining biomass ( $ X_C - X_{chl} $) is modeled by formulating the light absorbance  $ A $ (eq 9) based on the Beer–Lambert Law.\n\nI_{avg}   [COMPUTED by eq 10]\n  [67] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Carbohydrate  $ X_{carb} $ | Rate Equation: $ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n \n  [68] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Neutral lipid  $ X_{nl} $ | Rate Equation: $ \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $\\n $ +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P\n  [69] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Chlorophyll a  $ X_{chl} $ | Rate Equation: $ \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl} $\\nSee  $ m_{c\n\nz_{t}   [NOT COMPUTED]\n  [344] (line, p.8) $z_{t}$ m Thickness of the photobioreactor along the optical path\n  [79] (sentence, p.3) The average light intensity  $ I_{\\mathrm{avg}} $ (eq 10) inside the reactor is calculated by averaging the local light intensities  $ I_{l} $ over the optical path from l = 0 to l = z_{t}.\n\nd   [NOT COMPUTED]\n  [325] (line, p.8) $d \\quad \\mathrm{m}$ Distance from the light source to the front of the reactor\n  [327] (line, p.8) $m_{\\mathrm{chl}} \\quad \\mathrm{d}^{-1}$ Chl-a degradation rate\n  [328] (line, p.8) $I_{\\mathrm{avg}}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Instantaneous light intensity\n\nI_{avg_R}   [COMPUTED by eq 11]\n  [67] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Carbohydrate  $ X_{carb} $ | Rate Equation: $ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n \n  [102] (sentence, p.3) R₄ is based on the first-order relationship with the respiration rate constant  $ m_c $ adjusted by  $ I_{avg\\_R} $ to account for the photoinhibition of respiration.\n\nP   [COMPUTED by eq 12]\n  [337] (line, p.8) $P \\quad \\mathrm{mol} \\quad \\mathrm{C} \\quad (\\mathrm{mol} \\quad X_{\\mathrm{cd}}-C)^{-1} \\quad \\mathrm{d}^{-1}$ Photosynthesis rate normalized to functional biomass\n  [66] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Functional biomass  $ X_{cd} $ | Rate Equation: $ \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd} $\\n $ -m \\cdot X_{cd} $\\nSee P defined in Eqn (1\n  [67] (table_row, p.2) Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $: State Variable: Carbohydrate  $ X_{carb} $ | Rate Equation: $ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n ",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "A",
+    "description": "Light absorbance per unit length",
+    "description_basis": "stated",
+    "snippet_id": 322,
+    "quote": "Light absorbance per unit length",
+    "unit": "m^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "a",
+    "description": "Optical cross section of Chl-a",
+    "description_basis": "stated",
+    "snippet_id": 323,
+    "quote": "Optical cross section of Chl-a",
+    "unit": "m^2 mol^{-1} X_{chl-C}",
+    "unit_basis": "stated",
+    "value": "80.5 m^2 mol^{-1} X_{chl}-C",
+    "value_set": "this model",
+    "class_reason": "A calibrated optical cross section treated as independent of cultivation conditions.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "X_{chl}",
+    "description": "Concentration of Chl-a as C",
+    "description_basis": "stated",
+    "snippet_id": 319,
+    "quote": "Concentration of Chl-a as C",
+    "unit": "mol X_{chl}-C m^{-3}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "b",
+    "description": "Optical cross section of biomass except Chl-a content",
+    "description_basis": "stated",
+    "snippet_id": 324,
+    "quote": "Optical cross section of biomass except Chl-a content",
+    "unit": "m^2 (mol C)^{-1}",
+    "unit_basis": "stated",
+    "value": "1.4718 m^2 mol^{-1} C",
+    "value_set": "this model",
+    "class_reason": "A calibrated optical cross section treated as independent of cultivation conditions.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "X_{C}",
+    "description": "Total cellular carbon concentration, used to represent non-Chl-a biomass together with X_{chl}.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mol C m^{-3}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A carbon concentration used as a process quantity without being computed by the listed equations.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "I_{avg}",
+    "description": "Average light intensity inside the reactor, averaged over the optical path.",
+    "description_basis": "stated",
+    "snippet_id": 79,
+    "quote": "The average light intensity $ I_{\\mathrm{avg}} $ (eq 10) inside the reactor is calculated by averaging the local light intensities $ I_{l} $ over the optical path from l = 0 to l = z_{t}.",
+    "unit": "mol photons m^{-2} d^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "z_{t}",
+    "description": "Thickness of the photobioreactor along the optical path",
+    "description_basis": "stated",
+    "snippet_id": 344,
+    "quote": "Thickness of the photobioreactor along the optical path",
+    "unit": "m",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A fixed photobioreactor optical-path thickness, which is a property of the reactor geometry.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "d",
+    "description": "Distance from the light source to the front of the reactor",
+    "description_basis": "stated",
+    "snippet_id": 325,
+    "quote": "Distance from the light source to the front of the reactor",
+    "unit": "m",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A fixed distance in the light-source and reactor geometry.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "I_{avg_R}",
+    "description": "Reference average light intensity used to adjust parameters for different light conditions.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mol photons m^{-2} d^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "P",
+    "description": "Photosynthesis rate normalized to functional biomass",
+    "description_basis": "stated",
+    "snippet_id": 337,
+    "quote": "Photosynthesis rate normalized to functional biomass",
+    "unit": "mol C (mol X_{cd}-C)^{-1} d^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

@@ -1,0 +1,1714 @@
+@prefix kg: <http://example.org/kg/wang_2019/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:wang_2019 a mkg:Sup ;
+    rdfs:label "wang_2019 · Dynamic Modeling of Microalgae Growth and Lipid Production under Transient Light and Nitrogen Conditions"@en ;
+    mkg:hasMetadata kg:wang_2019_meta ;
+    mkg:includes <http://example.org/kg/wang_2019/law/wang_2019_eq1>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq10>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq11>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq12>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq13>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq14>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq15>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq16>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq17>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq18>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq4>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq5>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq6>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq9> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1> a mkg:Law ;
+    rdfs:label "wang_2019 eq 1"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq1/var/X_cd> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq1_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq1/par/m>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq1/par/q_n> ;
+    mkg:latex "\\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd}   -m \\cdot X_{cd}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq1/var/P>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq1/var/Q_n> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1/par/m> a mkg:Parameter ;
+    rdfs:label "m (wang_2019 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "First-order degradation rate constant for functional biomass." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted first-order functional-biomass degradation rate constant." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" ;
+    mkg:value 3.1142e+00 ;
+    mkg:valueUncertainty "SD: 0.8468" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1/par/q_n> a mkg:Parameter ;
+    rdfs:label "q_{n} (wang_2019 eq 1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Quota parameter in the nitrogen-quota-regulated partitioning of fixed carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted quota constant in the carbon-partitioning law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" ;
+    mkg:value 1.75e-02 ;
+    mkg:valueUncertainty "SD: 0.0035" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1/var/P> a mkg:Variable ;
+    rdfs:label "P (wang_2019 eq 1)"@en ;
+    mkg:description "Photosynthesis rate normalized to functional biomass" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "P" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "C X_{cd}-C" ;
+    mkg:unitString "mol C (mol X_{cd}-C)⁻¹ d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1/var/Q_n> a mkg:Variable ;
+    rdfs:label "Q_{n} (wang_2019 eq 1)"@en ;
+    mkg:description "Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 1)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10> a mkg:Law ;
+    rdfs:label "wang_2019 eq 10"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq10/var/I_avg> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq10_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq10/par/z_t> ;
+    mkg:latex "I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq10/var/A>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq10/var/d> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10/par/z_t> a mkg:Parameter ;
+    rdfs:label "z_{t} (wang_2019 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Thickness of the photobioreactor along the optical path" ;
+    mkg:dimension "[length]" ;
+    mkg:page "8" ;
+    mkg:quote "Thickness of the photobioreactor along the optical path" ;
+    mkg:reason "A fixed physical dimension of the photobioreactor." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "z_{t}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10/var/A> a mkg:Variable ;
+    rdfs:label "A (wang_2019 eq 10)"@en ;
+    mkg:description "Light absorbance per unit length" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10/var/I_avg> a mkg:Variable ;
+    rdfs:label "I_{avg} (wang_2019 eq 10)"@en ;
+    mkg:description "Instantaneous light intensity averaged over the optical path of the reactor" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10/var/d> a mkg:Variable ;
+    rdfs:label "d (wang_2019 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Distance from the light source to the front of the reactor" ;
+    mkg:dimension "[length]" ;
+    mkg:page "8" ;
+    mkg:quote "Distance from the light source to the front of the reactor" ;
+    mkg:reason "The light-source distance is adjusted to control the light condition for a run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "d" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq10_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The instantaneous light intensity is averaged across the reactor’s optical path." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq11> a mkg:Law ;
+    rdfs:label "wang_2019 eq 11"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq11/var/I_avg_R> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq11/par/z_t> ;
+    mkg:latex "I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq11/var/d> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq11/par/z_t> a mkg:Parameter ;
+    rdfs:label "z_{t} (wang_2019 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Thickness of the photobioreactor along the optical path" ;
+    mkg:dimension "[length]" ;
+    mkg:page "8" ;
+    mkg:quote "Thickness of the photobioreactor along the optical path" ;
+    mkg:reason "A fixed physical dimension of the photobioreactor." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "z_{t}" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq11/var/I_avg_R> a mkg:Variable ;
+    rdfs:label "I_{avg_R} (wang_2019 eq 11)"@en ;
+    mkg:description "Average background light intensity over the reactor optical path" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg_R}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq11/var/d> a mkg:Variable ;
+    rdfs:label "d (wang_2019 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Distance from the light source to the front of the reactor" ;
+    mkg:dimension "[length]" ;
+    mkg:page "8" ;
+    mkg:quote "Distance from the light source to the front of the reactor" ;
+    mkg:reason "The light-source distance is adjusted to control the light condition for a run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "d" ;
+    mkg:unit "m" ;
+    mkg:unitString "m" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq11_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The background light intensity is averaged across the reactor’s optical path." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "In contrast, $ I_{\\mathrm{avg\\_R}} $ does not vary in time." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The average background light intensity is treated as time-invariant." ] ;
+    mkg:page "3" ;
+    mkg:quote "I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12> a mkg:Law ;
+    rdfs:label "wang_2019 eq 12"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq12/var/P> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq12/par/P_m> ;
+    mkg:latex "P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq12/var/I_avg>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq12/var/I_sat>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq12/var/X_C>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq12/var/X_cd> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/par/P_m> a mkg:Parameter ;
+    rdfs:label "P_{m} (wang_2019 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum-rate coefficient in the photosynthesis equation" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted maximum-rate constant in the photosynthesis law." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{m}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" ;
+    mkg:value 4.3054e+00 ;
+    mkg:valueUncertainty "0.7197" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/var/I_avg> a mkg:Variable ;
+    rdfs:label "I_{avg} (wang_2019 eq 12)"@en ;
+    mkg:description "Instantaneous light intensity averaged over the optical path of the reactor" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/var/I_sat> a mkg:Variable ;
+    rdfs:label "I_{sat} (wang_2019 eq 12)"@en ;
+    mkg:description "Saturated light intensity in the photosynthesis equation" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{sat}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m^{-2} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/var/P> a mkg:Variable ;
+    rdfs:label "P (wang_2019 eq 12)"@en ;
+    mkg:description "Photosynthesis rate normalized to functional biomass" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "P" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "C X_{cd}-C" ;
+    mkg:unitString "mol C (mol X_{cd}-C)⁻¹ d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/var/X_C> a mkg:Variable ;
+    rdfs:label "X_{C} (wang_2019 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Total fixed organic carbon concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "A concentration of total fixed organic carbon that changes with the model's carbon state quantities." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "X_{C}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "C" ;
+    mkg:unitString "mol C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 12)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The photosynthesis rate per functional biomass follows a modified Steele-type relationship with light intensity, saturation, and inhibition." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13> a mkg:Law ;
+    rdfs:label "wang_2019 eq 13"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq13/var/I_sat> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq13_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq13/par/P_m>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq13/par/a> ;
+    mkg:latex "I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq13/var/X_C>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq13/var/X_chl>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq13/var/Y_E_c> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/par/P_m> a mkg:Parameter ;
+    rdfs:label "P_{m} (wang_2019 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum-rate coefficient in the photosynthesis equation" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted maximum-rate constant in the photosynthesis law." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{m}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" ;
+    mkg:value 4.3054e+00 ;
+    mkg:valueUncertainty "0.7197" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/par/a> a mkg:Parameter ;
+    rdfs:label "a (wang_2019 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Optical cross section of Chl-a" ;
+    mkg:dimension "[length] ** 2 / [substance] / [current] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions" ;
+    mkg:page "8" ;
+    mkg:quote "Optical cross section of Chl-a" ;
+    mkg:reason "A calibrated optical cross section, which is a fitted system parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a" ;
+    mkg:unit "m ** 2 / C / mol" ;
+    mkg:unitNote "X_{chl-C}" ;
+    mkg:unitString "m² (mol X_{chl-C} C)⁻¹" ;
+    mkg:value 8.05e+01 .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/var/I_sat> a mkg:Variable ;
+    rdfs:label "I_{sat} (wang_2019 eq 13)"@en ;
+    mkg:description "Saturated light intensity in the photosynthesis equation" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{sat}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m^{-2} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/var/X_C> a mkg:Variable ;
+    rdfs:label "X_{C} (wang_2019 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Total fixed organic carbon concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "A concentration of total fixed organic carbon that changes with the model's carbon state quantities." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "X_{C}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "C" ;
+    mkg:unitString "mol C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/var/X_chl> a mkg:Variable ;
+    rdfs:label "X_{chl} (wang_2019 eq 13)"@en ;
+    mkg:description "Concentration of Chl-a as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{chl}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{chl}-C" ;
+    mkg:unitString "mol X_{chl}-C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13/var/Y_E_c> a mkg:Variable ;
+    rdfs:label "Y_{E}^{c} (wang_2019 eq 13)"@en ;
+    mkg:description "Carbon yield on light energy adjusted for background light intensity" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Y_{E}^{c}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C photons" ;
+    mkg:unitString "mol C (mol photons)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq13_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The light-saturation intensity is calculated as a function of chlorophyll-a content and the carbon-yield and photosynthesis parameters." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14> a mkg:Law ;
+    rdfs:label "wang_2019 eq 14"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq14/var/Y_E_c> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq14_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq14/par/Y_E>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq14/par/k_ye> ;
+    mkg:latex "Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}})" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq14/var/I_avg_R> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14/par/Y_E> a mkg:Parameter ;
+    rdfs:label "Y_{E} (wang_2019 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Carbon yield on light energy" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:page "8" ;
+    mkg:quote "Carbon yield on light energy" ;
+    mkg:reason "A fitted carbon-yield constant in the photosynthesis law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{E}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C photons" ;
+    mkg:unitString "mol C (mol photons)^{-1}" ;
+    mkg:value 2.784e-01 ;
+    mkg:valueUncertainty "0.0876" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14/par/k_ye> a mkg:Parameter ;
+    rdfs:label "k_{ye} (wang_2019 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Coefficient controlling the effect of background light intensity on carbon yield" ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted coefficient in the background-light dependence of carbon yield." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{ye}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "m^{2} d (mol photons)^{-1}" ;
+    mkg:value 2.9e-02 ;
+    mkg:valueUncertainty "0.0015" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14/var/I_avg_R> a mkg:Variable ;
+    rdfs:label "I_{avg_R} (wang_2019 eq 14)"@en ;
+    mkg:description "Average background light intensity over the reactor optical path" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg_R}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14/var/Y_E_c> a mkg:Variable ;
+    rdfs:label "Y_{E}^{c} (wang_2019 eq 14)"@en ;
+    mkg:description "Carbon yield on light energy adjusted for background light intensity" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Y_{E}^{c}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C photons" ;
+    mkg:unitString "mol C (mol photons)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq14_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The carbon yield on light energy is adjusted exponentially according to the average background light intensity." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}})" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15> a mkg:Law ;
+    rdfs:label "wang_2019 eq 15"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq15/var/q_nl> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq15/par/k_N>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq15/par/phi> ;
+    mkg:latex "q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3}))" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq15/var/S_NO3> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15/par/k_N> a mkg:Parameter ;
+    rdfs:label "k_{N} (wang_2019 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Nitrogen-response coefficient in the error-function terms" ;
+    mkg:dimension "[length] ** 3 / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted nitrogen-response coefficient in the error-function laws." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{N}" ;
+    mkg:unit "m ** 3 / mol" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "m^{3} (mol N)^{-1}" ;
+    mkg:value 3.337e+00 ;
+    mkg:valueUncertainty "0.8794" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15/par/phi> a mkg:Parameter ;
+    rdfs:label "\\phi (wang_2019 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Scaling coefficient for the carbon portion redirected from carbohydrate to lipid accumulation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted constant scaling the carbon-redirection portion in the q_{nl} law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\phi" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 6.84e-02 ;
+    mkg:valueUncertainty "0.0199" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15/var/S_NO3> a mkg:Variable ;
+    rdfs:label "S_{NO3} (wang_2019 eq 15)"@en ;
+    mkg:description "Concentration of nitrate as N in the reactor" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S_{NO3}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15/var/q_nl> a mkg:Variable ;
+    rdfs:label "q_{nl} (wang_2019 eq 15)"@en ;
+    mkg:description "Rate portion of carbon redirection from carbohydrate to lipid accumulation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q_{nl}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "unitless" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq15_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The fraction of carbohydrate carbon redirected to lipid accumulation increases as nitrate becomes deficient." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3}))" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16> a mkg:Law ;
+    rdfs:label "wang_2019 eq 16"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq16/var/m_chl> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq16/par/k_I>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq16/par/k_N>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq16/par/m> ;
+    mkg:latex "m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq16/var/I_avg_R>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq16/var/S_NO3> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/par/k_I> a mkg:Parameter ;
+    rdfs:label "k_{I} (wang_2019 eq 16)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Coefficient scaling background light intensity in the Chl-a degradation law." ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:reason "A constant coefficient in the Chl-a degradation law, not an operating condition." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{I}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "(mol photons m^{-2} d^{-1})^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/par/k_N> a mkg:Parameter ;
+    rdfs:label "k_{N} (wang_2019 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Nitrogen-response coefficient in the error-function terms" ;
+    mkg:dimension "[length] ** 3 / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+    mkg:reason "A fitted nitrogen-response coefficient in the error-function laws." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{N}" ;
+    mkg:unit "m ** 3 / mol" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "m^{3} (mol N)^{-1}" ;
+    mkg:value 3.337e+00 ;
+    mkg:valueUncertainty "0.8794" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/par/m> a mkg:Parameter ;
+    rdfs:label "m (wang_2019 eq 16)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "First-order degradation rate constant for functional biomass." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted first-order functional-biomass degradation rate constant." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" ;
+    mkg:value 3.1142e+00 ;
+    mkg:valueUncertainty "SD: 0.8468" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/var/I_avg_R> a mkg:Variable ;
+    rdfs:label "I_{avg_R} (wang_2019 eq 16)"@en ;
+    mkg:description "Average background light intensity over the reactor optical path" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg_R}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/var/S_NO3> a mkg:Variable ;
+    rdfs:label "S_{NO3} (wang_2019 eq 16)"@en ;
+    mkg:description "Concentration of nitrate as N in the reactor" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S_{NO3}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16/var/m_chl> a mkg:Variable ;
+    rdfs:label "m_{chl} (wang_2019 eq 16)"@en ;
+    mkg:description "Chl-a degradation rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "m_{chl}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq16_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The chlorophyll-a degradation rate is calculated from nitrogen and background-light stress conditions." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17> a mkg:Law ;
+    rdfs:label "wang_2019 eq 17"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/nu_N> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/Q_nm>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/nu_nm>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/q_n> ;
+    mkg:latex "\\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}}" ;
+    mkg:latexCorrected "$$ \\nu_{\\mathrm{N}}=\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_0}}} $$" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/Q_n>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3_0> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 17)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:correctionQuote "Therefore, we excluded the term $\\frac{Q_{nm} - Q_n}{Q_{nm} - q_n}$ from the nitrate uptake equation to resolve the nonidentifiability associated with $Q_{nm}$. " ;
+    mkg:correctionReason "The quota-dependent factor should be removed from the nitrate uptake equation, as the paper says it was excluded to resolve nonidentifiability." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Nitrate uptake is calculated from a quota-modulated maximum uptake rate multiplied by extracellular nitrate normalized to its initial concentration." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/q_n> ;
+            mkg:slot "quota threshold" ],
+        [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/Q_nm> ;
+            mkg:slot "quota ceiling" ],
+        [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/Q_n> ;
+            mkg:slot "quota state" ],
+        [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/par/nu_nm> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3_0> ;
+            mkg:slot "reference concentration" ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The factor (Q_{nm} - Q_n)/(Q_{nm} - q_n) is printed in eq 17, but the Results state that this term was excluded from the nitrate uptake equation to resolve nonidentifiability." ;
+    mkg:quote "\\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq18> a mkg:Law ;
+    rdfs:label "wang_2019 eq 18"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq18/var/Q_n> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq18_meta> ;
+    mkg:latex "Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq18/var/X_C>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq18/var/X_N> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq18/var/Q_n> a mkg:Variable ;
+    rdfs:label "Q_{n} (wang_2019 eq 18)"@en ;
+    mkg:description "Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq18/var/X_C> a mkg:Variable ;
+    rdfs:label "X_{C} (wang_2019 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Total fixed organic carbon concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "A concentration of total fixed organic carbon that changes with the model's carbon state quantities." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "X_{C}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "C" ;
+    mkg:unitString "mol C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq18/var/X_N> a mkg:Variable ;
+    rdfs:label "X_{N} (wang_2019 eq 18)"@en ;
+    mkg:description "Concentration of cellular nitrogen as N" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{N}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq18_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The nitrogen quota is calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "4" ;
+    mkg:quote "Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq1_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Functional biomass increases by the nitrogen-quota-regulated share of fixed carbon and decreases through degradation associated with respiration." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd}   -m \\cdot X_{cd}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2> a mkg:Law ;
+    rdfs:label "wang_2019 eq 2"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/X_carb> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq2_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/beta>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/k_mc>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/k_nl>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/m_c>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/m_cN>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/par/q_n> ;
+    mkg:latex "\\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb}   -m_{cN} \\cdot \\nu_N \\cdot X_{cd}   -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/I_avg>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/I_avg_R>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/P>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/Q_n>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/X_cd>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/nu_N>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq2/var/q_nl> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/beta> a mkg:Parameter ;
+    rdfs:label "\\beta (wang_2019 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Coefficient regulating carbon reuse from carbohydrate metabolism for neutral lipid synthesis" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:reason "A coefficient in the carbohydrate-to-lipid carbon partitioning law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C N" ;
+    mkg:unitString "mol C (mol N)^{-1}" ;
+    mkg:value 1.317e-01 ;
+    mkg:valueUncertainty "0.0108" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/k_mc> a mkg:Parameter ;
+    rdfs:label "k_{mc} (wang_2019 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Coefficient scaling background light intensity in the exponential modulation of carbohydrate respiration" ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:reason "An exponential light-response coefficient in the carbohydrate respiration law, so it is a parameter." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{mc}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "m^{2} d (mol photons)^{-1}" ;
+    mkg:value 2.08e-02 ;
+    mkg:valueUncertainty "0.0031" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/k_nl> a mkg:Parameter ;
+    rdfs:label "k_{nl} (wang_2019 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Light-response coefficient in the exponential regulation of carbon reuse for lipid synthesis" ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:reason "An exponential light-response coefficient in the carbon partitioning law, so it is a parameter." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{nl}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "m^{2} d (mol photons)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/m_c> a mkg:Parameter ;
+    rdfs:label "m_{c} (wang_2019 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Respiration rate constant for basal-level carbohydrate respiration" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:page "3" ;
+    mkg:quote "respiration rate constant" ;
+    mkg:reason "A respiration rate constant in the carbohydrate respiration law, so it is a parameter." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{c}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" ;
+    mkg:value 2.7548e+00 ;
+    mkg:valueUncertainty "0.7898" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/m_cN> a mkg:Parameter ;
+    rdfs:label "m_{cN} (wang_2019 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Coefficient coupling nitrate uptake to carbohydrate loss" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "A coefficient multiplying nitrate uptake in the carbohydrate rate law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{cN}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C N" ;
+    mkg:unitString "mol C (mol N)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/par/q_n> a mkg:Parameter ;
+    rdfs:label "q_{n} (wang_2019 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Quota parameter in the nitrogen-quota-regulated partitioning of fixed carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted quota constant in the carbon-partitioning law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" ;
+    mkg:value 1.75e-02 ;
+    mkg:valueUncertainty "SD: 0.0035" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/I_avg> a mkg:Variable ;
+    rdfs:label "I_{avg} (wang_2019 eq 2)"@en ;
+    mkg:description "Instantaneous light intensity averaged over the optical path of the reactor" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/I_avg_R> a mkg:Variable ;
+    rdfs:label "I_{avg_R} (wang_2019 eq 2)"@en ;
+    mkg:description "Average background light intensity over the reactor optical path" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg_R}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/P> a mkg:Variable ;
+    rdfs:label "P (wang_2019 eq 2)"@en ;
+    mkg:description "Photosynthesis rate normalized to functional biomass" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "P" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "C X_{cd}-C" ;
+    mkg:unitString "mol C (mol X_{cd}-C)⁻¹ d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/Q_n> a mkg:Variable ;
+    rdfs:label "Q_{n} (wang_2019 eq 2)"@en ;
+    mkg:description "Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/X_carb> a mkg:Variable ;
+    rdfs:label "X_{carb} (wang_2019 eq 2)"@en ;
+    mkg:description "Concentration of carbohydrates as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{carb}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{carb}-C" ;
+    mkg:unitString "mol X_{carb}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 2)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 2)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2/var/q_nl> a mkg:Variable ;
+    rdfs:label "q_{nl} (wang_2019 eq 2)"@en ;
+    mkg:description "Rate portion of carbon redirection from carbohydrate to lipid accumulation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q_{nl}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "unitless" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq2_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The carbohydrate balance adds the share of fixed carbon allocated to storage and subtracts basal and growth-related respiration, carbon reused for lipid synthesis, and carbon redirected to lipids under nitrogen deficiency." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "Background light intensity used for the basal respiration adjustment is treated as time-invariant." ],
+        [ mkg:quote "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols." ] ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb}   -m_{cN} \\cdot \\nu_N \\cdot X_{cd}   -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3> a mkg:Law ;
+    rdfs:label "wang_2019 eq 3"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/X_nl> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq3/par/beta>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/par/k_nl>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/par/q_n> ;
+    mkg:latex "\\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/I_avg>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/P>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/Q_n>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/X_cd>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/nu_N>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq3/var/q_nl> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/par/beta> a mkg:Parameter ;
+    rdfs:label "\\beta (wang_2019 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Coefficient regulating carbon reuse from carbohydrate metabolism for neutral lipid synthesis" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:reason "A coefficient in the carbohydrate-to-lipid carbon partitioning law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "C N" ;
+    mkg:unitString "mol C (mol N)^{-1}" ;
+    mkg:value 1.317e-01 ;
+    mkg:valueUncertainty "0.0108" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/par/k_nl> a mkg:Parameter ;
+    rdfs:label "k_{nl} (wang_2019 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Light-response coefficient in the exponential regulation of carbon reuse for lipid synthesis" ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:reason "An exponential light-response coefficient in the carbon partitioning law, so it is a parameter." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{nl}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "m^{2} d (mol photons)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/par/q_n> a mkg:Parameter ;
+    rdfs:label "q_{n} (wang_2019 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Quota parameter in the nitrogen-quota-regulated partitioning of fixed carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted quota constant in the carbon-partitioning law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" ;
+    mkg:value 1.75e-02 ;
+    mkg:valueUncertainty "SD: 0.0035" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/I_avg> a mkg:Variable ;
+    rdfs:label "I_{avg} (wang_2019 eq 3)"@en ;
+    mkg:description "Instantaneous light intensity averaged over the optical path of the reactor" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/P> a mkg:Variable ;
+    rdfs:label "P (wang_2019 eq 3)"@en ;
+    mkg:description "Photosynthesis rate normalized to functional biomass" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "P" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "C X_{cd}-C" ;
+    mkg:unitString "mol C (mol X_{cd}-C)⁻¹ d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/Q_n> a mkg:Variable ;
+    rdfs:label "Q_{n} (wang_2019 eq 3)"@en ;
+    mkg:description "Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 3)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/X_nl> a mkg:Variable ;
+    rdfs:label "X_{nl} (wang_2019 eq 3)"@en ;
+    mkg:description "Concentration of neutral lipids as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{nl}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{nl}-C" ;
+    mkg:unitString "mol X_{nl}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 3)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3/var/q_nl> a mkg:Variable ;
+    rdfs:label "q_{nl} (wang_2019 eq 3)"@en ;
+    mkg:description "Rate portion of carbon redirection from carbohydrate to lipid accumulation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q_{nl}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "unitless" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq3_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Neutral lipids accumulate through carbon reused from carbohydrate metabolism during nitrogen-available growth and carbon redirected from carbohydrates under nitrogen deficiency." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "Carbon contributions to lipid synthesis from functional biomass components are represented within the R₇ carbon-partitioning process." ],
+        [ mkg:quote "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols." ] ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4> a mkg:Law ;
+    rdfs:label "wang_2019 eq 4"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq4/var/X_chl> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq4/par/k_chl>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq4/par/theta> ;
+    mkg:latex "\\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq4/var/I_avg>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq4/var/X_cd>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq4/var/m_chl>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq4/var/nu_N> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/par/k_chl> a mkg:Parameter ;
+    rdfs:label "k_{chl} (wang_2019 eq 4)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Light-response coefficient in the exponential regulation of Chl-a synthesis" ;
+    mkg:dimension "[length] ** 2 * [time] / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:reason "An exponential light-response coefficient in the Chl-a synthesis law, so it is a parameter." ;
+    mkg:siFactor 8.64e+04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{chl}" ;
+    mkg:unit "d * m ** 2 / mol" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "m^{2} d (mol photons)^{-1}" ;
+    mkg:value 2.48e-02 ;
+    mkg:valueUncertainty "0.0021" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/par/theta> a mkg:Parameter ;
+    rdfs:label "\\theta (wang_2019 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum Chl-a:N ratio regulating Chl-a synthesis" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis." ;
+    mkg:page "4" ;
+    mkg:quote "maximum Chl-a:N ratio" ;
+    mkg:reason "A maximum Chl-a:N ratio in the Chl-a synthesis law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "X_{chl}-C N" ;
+    mkg:unitString "mol X_{chl}-C (mol N)^{-1}" ;
+    mkg:value 2.185e-01 ;
+    mkg:valueUncertainty "0.0068" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/var/I_avg> a mkg:Variable ;
+    rdfs:label "I_{avg} (wang_2019 eq 4)"@en ;
+    mkg:description "Instantaneous light intensity averaged over the optical path of the reactor" ;
+    mkg:dimension "[substance] / [length] ** 2 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "I_{avg}" ;
+    mkg:unit "mol / d / m ** 2" ;
+    mkg:unitNote "photons" ;
+    mkg:unitString "mol photons m⁻² d⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 4)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/var/X_chl> a mkg:Variable ;
+    rdfs:label "X_{chl} (wang_2019 eq 4)"@en ;
+    mkg:description "Concentration of Chl-a as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{chl}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{chl}-C" ;
+    mkg:unitString "mol X_{chl}-C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/var/m_chl> a mkg:Variable ;
+    rdfs:label "m_{chl} (wang_2019 eq 4)"@en ;
+    mkg:description "Chl-a degradation rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "m_{chl}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitString "d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 4)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq4_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The chlorophyll a balance links synthesis to nitrogen uptake with light-dependent regulation and subtracts chlorophyll degradation under stress." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq5> a mkg:Law ;
+    rdfs:label "wang_2019 eq 5"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq5/var/S_NO3> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq5_meta> ;
+    mkg:latex "\\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq5/var/X_cd>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq5/var/nu_N> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq5/var/S_NO3> a mkg:Variable ;
+    rdfs:label "S_{NO3} (wang_2019 eq 5)"@en ;
+    mkg:description "Concentration of nitrate as N in the reactor" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S_{NO3}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq5/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 5)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq5/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 5)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq5_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Extracellular nitrate decreases at the uptake rate multiplied by functional biomass." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq6> a mkg:Law ;
+    rdfs:label "wang_2019 eq 6"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq6/var/X_N> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq6_meta> ;
+    mkg:latex "\\frac{dX_N}{dt} = \\nu_N \\cdot X_{cd}" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq6/var/X_cd>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq6/var/nu_N> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq6/var/X_N> a mkg:Variable ;
+    rdfs:label "X_{N} (wang_2019 eq 6)"@en ;
+    mkg:description "Concentration of cellular nitrogen as N" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{N}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq6/var/X_cd> a mkg:Variable ;
+    rdfs:label "X_{cd} (wang_2019 eq 6)"@en ;
+    mkg:description "Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{cd}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{cd}-C" ;
+    mkg:unitString "mol X_{cd}-C m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq6/var/nu_N> a mkg:Variable ;
+    rdfs:label "\\nu_{N} (wang_2019 eq 6)"@en ;
+    mkg:description "Nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:symbol "\\nu_{N}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Intracellular nitrogen accumulates at the nitrate uptake rate multiplied by functional biomass." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "ODE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{dX_N}{dt} = \\nu_N \\cdot X_{cd}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9> a mkg:Law ;
+    rdfs:label "wang_2019 eq 9"@en ;
+    mkg:computes <http://example.org/kg/wang_2019/law/wang_2019_eq9/var/A> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/wang_2019/law/wang_2019_eq9_meta> ;
+    mkg:hasParameter <http://example.org/kg/wang_2019/law/wang_2019_eq9/par/a>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq9/par/b> ;
+    mkg:latex "A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right)" ;
+    mkg:uses <http://example.org/kg/wang_2019/law/wang_2019_eq9/var/X_C>,
+        <http://example.org/kg/wang_2019/law/wang_2019_eq9/var/X_chl> .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9/par/a> a mkg:Parameter ;
+    rdfs:label "a (wang_2019 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Optical cross section of Chl-a" ;
+    mkg:dimension "[length] ** 2 / [substance] / [current] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions" ;
+    mkg:page "8" ;
+    mkg:quote "Optical cross section of Chl-a" ;
+    mkg:reason "A calibrated optical cross section, which is a fitted system parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a" ;
+    mkg:unit "m ** 2 / C / mol" ;
+    mkg:unitNote "X_{chl-C}" ;
+    mkg:unitString "m² (mol X_{chl-C} C)⁻¹" ;
+    mkg:value 8.05e+01 .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9/par/b> a mkg:Parameter ;
+    rdfs:label "b (wang_2019 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Optical cross section of biomass except Chl-a content" ;
+    mkg:dimension "[length] ** 2 / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions" ;
+    mkg:page "8" ;
+    mkg:quote "Optical cross section of biomass except Chl-a content" ;
+    mkg:reason "A calibrated optical cross section, which is a fitted system parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "b" ;
+    mkg:unit "m ** 2 / mol" ;
+    mkg:unitNote "C" ;
+    mkg:unitString "m² (mol C)⁻¹" ;
+    mkg:value 1.4718e+00 .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9/var/A> a mkg:Variable ;
+    rdfs:label "A (wang_2019 eq 9)"@en ;
+    mkg:description "Light absorbance per unit length" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "A" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m⁻¹" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9/var/X_C> a mkg:Variable ;
+    rdfs:label "X_{C} (wang_2019 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Total fixed organic carbon concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:reason "A concentration of total fixed organic carbon that changes with the model's carbon state quantities." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "X_{C}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "C" ;
+    mkg:unitString "mol C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9/var/X_chl> a mkg:Variable ;
+    rdfs:label "X_{chl} (wang_2019 eq 9)"@en ;
+    mkg:description "Concentration of Chl-a as C" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{chl}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "X_{chl}-C" ;
+    mkg:unitString "mol X_{chl}-C m⁻³" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq9_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The Beer–Lambert absorbance combines chlorophyll-a and non-chlorophyll biomass contributions to light attenuation." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right)" ;
+    mkg:status "pending" .
+
+kg:wang_2019_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model represents the growth of Dunaliella viridis and its production of functional biomass, carbohydrates, neutral lipids, and chlorophyll as light and nitrogen conditions change. It predicts how carbon fixation and carbon allocation shift over time, using six dynamic state equations alongside calculations of light attenuation through the reactor. Its main mechanisms include light-limited, saturated, and inhibited photosynthesis; nitrogen-quota effects on carbon allocation; and distinct routes for lipid accumulation when nitrogen is sufficient or depleted. The model was developed and tested using cultures in a bench-scale flat-panel photobioreactor across different light levels and initial nitrate concentrations. The authors calibrated its parameters with experimental measurements, assessed uncertainty and sensitivity, and tested predictions against a separate set of experiments. They use the model to interpret transient algal responses and to inform cultivation strategies for improving biomass and biofuel production." ;
+    mkg:doi "10.1021/acs.est.9b02908" ;
+    mkg:form "DAE" ;
+    mkg:hasAssumption [ mkg:quote "a and b were independent of the cultivation conditions" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Optical cross‑section parameters a and b are taken as constant regardless of cultivation conditions." ],
+        [ mkg:quote "algae cells assimilated the nitrate removed from the medium" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Nitrate uptake is assumed to equal the nitrate removed from the medium." ],
+        [ mkg:quote "functional biomass is assumed as CH_{1.8}O_{0.5}N_{0.2}" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The composition of functional biomass is fixed to CH1.8O0.5N0.2." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "the carbon partitioning strategy proposed in our model may also be applicable to other green algae species and mixed-culture systems." ;
+            mkg:text "The authors suggest that the carbon-partitioning strategy may apply to other green algae and mixed-culture systems, but these broader applications were not tested in the reported experiments." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "low light (100PPFD and 4.95N, 100PPFD and 0.62N), moderate light (400PPFD and 4.89N, 300PPFD and 0.66N), and high light (600PPFD and 4.88N, 600PPFD and 0.71N)" ;
+            mkg:text "The figure caption identifies low-light examples at 100 PPFD, moderate-light examples at 300 or 400 PPFD, and high-light examples at 600 PPFD." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "our model did not include such a neutral lipid degradation process because the lipid concentration decline was not observed in the calibration experiments." ;
+            mkg:text "The model does not include neutral-lipid degradation, which the authors suggest may explain the validation discrepancies." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols." ;
+            mkg:text "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The light condition in our experiment was controlled by adjusting the light source position (i.e., the distance d in Figure S1)." ;
+            mkg:text "The experimental light level was changed by adjusting the distance between the light source and the reactor." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We randomly selected 2000 parameter sets from the MCMC posterior samples to generate the output medians, 95% credible intervals, and 95% prediction intervals" ;
+            mkg:text "The authors used 2,000 posterior parameter sets to generate output medians and 95% credible and prediction intervals." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Our model predictions were able to capture the variations in the experimental data and account for the measurement errors." ;
+            mkg:text "The calibrated model medians agreed well with experimental observations and captured their variations while accounting for measurement errors." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "As a result, the nitrate uptake rate vN in eq 17 is linearly related to the extracellular nitrate concentration SNO3 and is divided by the initial concentration SNO3 to offset the effect of initial nitrate level." ;
+            mkg:text "Nitrate uptake is modeled as proportional to extracellular nitrate relative to its initial concentration, with a maximum uptake-rate parameter." ;
+            mkg:topic "nitrogen" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The average light intensity Iavg (eq 10) inside the reactor is calculated by averaging the local light intensities Il over the optical path" ;
+            mkg:text "The culture states are modeled as bulk concentrations, while light intensity is also estimated along the reactor optical path." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The photosynthesis rate uses a modified simplified Steele relationship to represent light limitation, saturation, and inhibition." ;
+            mkg:topic "light" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the light intensity Ip at location l = zl was continuously monitored by the light sensor during cultivation" ;
+            mkg:text "A light sensor mounted inside the reactor continuously monitored light intensity at its location during cultivation." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Supporting Information is available free of charge on the ACS Publications website at DOI: 10.1021/acs.est.9b02908." ;
+            mkg:text "The paper states that its supporting-information PDF is freely available through the ACS Publications website and contains details on light estimation, calibration, and validation." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We thus modified the saturated light intensity Isat as a function of the Chl-a content (eq 13)" ;
+            mkg:text "The model represents light adaptation by making the saturated light intensity depend on chlorophyll a content." ;
+            mkg:topic "light" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We calibrated the values of a (the optical cross section of Chl-a) and b (the optical cross section of non-Chl-a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile Ip and the calculated light profile Izr." ;
+            mkg:text "The optical cross sections were estimated by minimizing the discrepancy between measured and calculated light profiles across different light and nitrogen conditions." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+            mkg:text "Biomass, carbohydrate, neutral lipid, chlorophyll a, and nitrate concentrations were measured daily in triplicate for approximately 10 days." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "However, the model was still subject to the steady-state and balanced-growth assumption and required two sets of reactions to separately determine the stoichiometric yields for nutrient-available and nutrient-depleted conditions." ;
+            mkg:text "The paper notes that Guest et al. 2013 proposed a lumped-pathway metabolic model but says its steady-state assumptions limited its prediction of transient culture behavior." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model predicts a transition from slow carbohydrate-carbon reuse for lipid synthesis under nitrogen sufficiency to faster carbon redirection as nitrogen is depleted." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We used Iavg_R to adjust the parameter values that only change when the algae are cultivated under different light conditions." ;
+            mkg:text "The model calculates reactor-average instantaneous light for cellular processes and uses a separate background-light average for parameters that vary with cultivation light conditions." ;
+            mkg:topic "light" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation" ;
+            mkg:text "The photosynthesis formulation modifies the simplified Steele approach described by Steele in 1962." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The experiments were performed in a bench-scale 3.2 L flat-panel photobioreactor" ;
+            mkg:text "The cultures were grown in a bench-scale, 3.2 L flat-panel photobioreactor." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We used data from 11 experiments (Table S1) including four light conditions (categorized into low/moderate/high levels) and ten initial nitrate concentrations (categorized into high/low levels)." ;
+            mkg:text "The experiments covered four light conditions grouped as low, moderate, or high light and ten initial nitrate concentrations grouped as high or low." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The carbon allocation to functional biomass is based on the Droop model, cited as Droop 1970." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The experimental data was split into two subsets (Table S1): the calibration set (~65% of total data) and the validation set (~35% of total data)." ;
+            mkg:text "The authors split the experimental data into a calibration set of about 65% and a validation set of about 35%." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We modeled the carbon fixation to the functional biomass (R1) in eq (1) based on the Droop model." ;
+            mkg:text "Nitrogen quota regulates how fixed carbon is partitioned between functional biomass and storage molecules through a mechanism based on the Droop model." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the pH and temperature controlled at 7.6 and 25 °C, respectively." ;
+            mkg:text "The reactor pH and temperature were controlled at 7.6 and 25 °C, respectively." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Our model could thus be used to optimize important control process parameters such as light intensities, nitrate concentrations and time durations during the two-stage cultivation." ;
+            mkg:text "The model is intended to help optimize light intensity, nitrate concentration, and stage duration in two-stage cultivation." ;
+            mkg:topic "use" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper cites Packer et al. 2011 as estimating a chlorophyll optical cross section close to the value obtained here." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The posterior-statistics table reports 16 fitted model parameters, and the optical cross sections were calibrated separately using light-profile measurements." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "overestimated the neutral lipid production after prolonged nitrogen depletion for the 300PPFD and 0.43N condition" ;
+            mkg:text "In validation, the model overestimated neutral lipid production after prolonged nitrogen depletion at 300 PPFD and 0.43 mM nitrate." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We further formulated R₇ to direct a portion qnl of the previously fixed carbon from carbohydrates to neutral lipids when nitrogen is depleted." ;
+            mkg:text "Under nitrogen deficiency, the model redirects previously fixed carbon from carbohydrates to neutral lipids through a nitrate-triggered process." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The formulated model was calibrated and validated with experimental data of Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR) under various light (low/moderate/high) and nitrogen (sufficient/limited) conditions." ;
+            mkg:text "The model was evaluated across low, moderate, and high light and nitrogen-sufficient and nitrogen-limited conditions." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm." ;
+            mkg:text "The authors used profile likelihood for identifiability analysis, MCMC with the DRAM algorithm for parameter uncertainty, and eFAST for global sensitivity analysis." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Table 1 summarizes the entire set of ordinary differential equations (ODEs) for the model formulation" ;
+            mkg:text "The model is a dynamic kinetic model formulated as six ordinary differential equations for the six culture-state variables." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We obtained two MCMC sample chains that converged to similar steady ranges after 250 000 iterations" ;
+            mkg:text "The MCMC chains reached similar steady ranges after 250,000 iterations." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The assimilated carbon that has not been used to produce functional biomass is first stored in carbohydrates as shown in R₃ of eq (2)." ;
+            mkg:text "Carbon not allocated to functional biomass is initially stored in carbohydrates, which can also supply carbon for respiration and lipid synthesis." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "R₆ is also coupled with the nitrate uptake rate via the coefficient β to describe that some carbon from carbohydrate metabolism could be reutilized to accumulate neutral lipids during normal algal growth." ;
+            mkg:text "Under nitrogen sufficiency, the model represents a light-regulated reuse of carbohydrate carbon for neutral lipid synthesis." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "describe the culture behaviors of Dunaliella viridis cultivated under different light and nitrogen conditions." ;
+            mkg:text "The model describes Dunaliella viridis grown under varying light and nitrogen conditions." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Profile-likelihood analysis found the maximum nitrogen quota parameter nonidentifiable, so the authors removed its quota-regulation term from the nitrate-uptake equation." ;
+            mkg:topic "nitrogen" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The light attenuation due to Chl-a and the remaining biomass (XC - Xchl) is modeled by formulating the light absorbance A (eq 9) based on the Beer–Lambert Law." ;
+            mkg:text "Light attenuation is represented using an empirical background-absorption estimate and Beer–Lambert absorbance from chlorophyll and the remaining biomass." ;
+            mkg:topic "light" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "we could first enhance the photosynthetic carbon fixation before nitrogen depletion" ;
+            mkg:text "The authors propose increasing photosynthetic carbon fixation before nitrogen depletion and slowing its decline afterward as strategies to improve lipid production." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Our model contains six state variables" ;
+            mkg:text "The model tracks functional biomass, carbohydrates, neutral lipids, chlorophyll a, extracellular nitrate, and intracellular nitrogen." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The carbohydrate respiration rate includes two components: a basal-level rate (R₄) and a growth-related rate (R₅)." ;
+            mkg:text "Carbohydrate respiration includes a basal component adjusted for background light and a growth-related component coupled to nitrate uptake." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state that model code or a separate experimental-data repository is available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The synthesis of Chl-a is dependent on the assimilated nitrogen." ;
+            mkg:text "The model represents chlorophyll a synthesis as linked to nitrogen uptake and adjusted for light, and represents its degradation under stress." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "did not predict the decrease in neutral lipid concentration toward the end of the 300PPFD and 3.80N experiment." ;
+            mkg:text "In validation, the model failed to predict a late decrease in neutral lipid concentration during the 300 PPFD and 3.80 mM nitrate experiment." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the carbon yield is smaller when cells are initially exposed to high background light intensity." ;
+            mkg:text "The model represents light-inhibition hysteresis by reducing carbon yield on light energy for cells exposed to higher background light." ;
+            mkg:topic "light" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/par/Q_nm> a mkg:Parameter ;
+    rdfs:label "Q_{nm} (wang_2019 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Quota parameter regulating the nitrate uptake rate." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "$Q_{nm}$ was only used in eq 17 to regulate the nitrate uptake rate." ;
+    mkg:reason "A model quota parameter that regulates nitrate uptake, identified as nonidentifiable rather than an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Q_{nm}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/par/nu_nm> a mkg:Parameter ;
+    rdfs:label "\\nu_{nm} (wang_2019 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum nitrate uptake rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:page "4" ;
+    mkg:quote "the maximum nitrate uptake rate $v_{nm}$ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate." ;
+    mkg:reason "A fitted maximum-rate constant for nitrate uptake." ;
+    mkg:siFactor 1.157407e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu_{nm}" ;
+    mkg:unit "1 / d" ;
+    mkg:unitNote "N X_{cd}-C" ;
+    mkg:unitString "mol N (mol X_{cd}-C)^{-1} d^{-1}" ;
+    mkg:value 1.154e-01 ;
+    mkg:valueUncertainty "SD: 0.0039" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/par/q_n> a mkg:Parameter ;
+    rdfs:label "q_{n} (wang_2019 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Quota parameter in the nitrogen-quota-regulated partitioning of fixed carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique" ;
+    mkg:reason "A fitted quota constant in the carbon-partitioning law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" ;
+    mkg:value 1.75e-02 ;
+    mkg:valueUncertainty "SD: 0.0035" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/var/Q_n> a mkg:Variable ;
+    rdfs:label "Q_{n} (wang_2019 eq 17)"@en ;
+    mkg:description "Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "Q_{n}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "N C" ;
+    mkg:unitString "mol N (mol C)^{-1}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3> a mkg:Variable ;
+    rdfs:label "S_{NO3} (wang_2019 eq 17)"@en ;
+    mkg:description "Concentration of nitrate as N in the reactor" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S_{NO3}" ;
+    mkg:unit "mol / m ** 3" ;
+    mkg:unitNote "N" ;
+    mkg:unitString "mol N m^{-3}" .
+
+<http://example.org/kg/wang_2019/law/wang_2019_eq17/var/S_NO3_0> a mkg:Variable ;
+    rdfs:label "S_{NO3_0} (wang_2019 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial extracellular nitrate concentration used to normalize nitrate uptake." ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days." ;
+    mkg:reason "An initial nitrate concentration supplied for each experimental run, so it is an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{NO3_0}" ;
+    mkg:unit "mM" ;
+    mkg:unitString "mM as N" .
+

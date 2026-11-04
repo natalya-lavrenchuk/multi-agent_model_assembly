@@ -1,0 +1,570 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "osberghaus_2012_kinetic_sma": {
+   "name": "Kinetic SMA",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "7",
+    "8"
+   ],
+   "description": "The model represents protein binding and transport during ion-exchange chromatography on a strong cation-exchange adsorbent. It predicts outlet chromatograms and retention times by combining column convection and axial dispersion, mass transfer between mobile and particle phases, and steric mass action (SMA) sorption. For the parameter-estimation study, the authors fitted an inverse mechanistic model using SMA parameters for ribonuclease A, cytochrome c, and lysozyme, and compared the results with parameters derived from gradient and breakthrough experiments. Experiments used a prepacked 1 ml column at pH 5 and pH 7, with salt gradients of several lengths and separate breakthrough runs. The authors recommend the inverse approach for chromatography process development because it predicts complete chromatograms and can support process optimization, troubleshooting, and error diagnosis.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model was studied for ribonuclease A, cytochrome c, and lysozyme in ion-exchange chromatography.",
+     "quote": "the determination of SMA parameters will be performed based on a case study for three proteins (lysozyme, ribonuclease A and cytochrome c)",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The experiments used SP Sepharose FF, a strong cation-exchange adsorbent.",
+     "quote": "on a prepacked 1 ml column with the strong cation exchange adsorbent SP Sepharose FF.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Column experiments used prepacked HiTrap SP Sepharose FF columns with a 1 ml bed, 0.025 m length, and 0.7 cm internal diameter.",
+     "quote": "Prepacked HiTrap SP Sepharose FF 1 ml columns [0.025 m length, 0.7E–2 m ID] from GE Healthcare",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Experiments were conducted at pH 5 in 0.02 M acetate buffer and at pH 7 in 0.02 M sodium phosphate buffer, with 0.5 M NaCl added to the elution buffer.",
+     "quote": "The running buffer for all experiments at pH 5 was a 0.02M acetate buffer. The running buffer for all experiments at pH 7 was a 0.02M sodium phosphate buffer; the same buffers with additional 0.5 M NaCl served for elution purposes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The system flow rate was 0.5 ml/min.",
+     "quote": "with a system flow rate of 2.17 × 10−4 m/s [0.5 ml/min].",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Each gradient experiment injected 20 μl of protein solution at 0.2 mM after column equilibration, followed by a wash and a linear salt gradient.",
+     "quote": "then 20 μl of the protein solution were injected. This step was followed by another wash step with 4 cv running buffer. Afterwards, a linear gradient from 0% to 100% high salt buffer was set to elute the protein.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Gradient lengths were 5, 10, 30, 60, and 120 column volumes.",
+     "quote": "This experimental setup was executed for five different gradient lengths: 5 cv, 10 cv, 30 cv, 60 cv and 120 cv.",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "Breakthrough experiments loaded each protein isocratically until breakthrough was complete after a 10-column-volume equilibration.",
+     "quote": "After equilibrating the column for 10 cv with running buffer, it was isocratically loaded with a system flow rate of 2.17 × 10−4 m/s until the breakthrough was complete.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Absorbance at 280 nm and 528 nm was measured online during all experiments.",
+     "quote": "The absorption at 280 nm and 528 nm was measured online in all experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The chromatographic model is a time- and position-dependent transport-dispersive model with column-scale and particle-scale balances.",
+     "quote": "On column level, the time- and position-dependent change of concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The column balance represents convection, axial dispersion, and mass transfer to the particle surface.",
+     "quote": "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model includes a lumped film diffusion coefficient for transfer to the particle surface.",
+     "quote": "keff,i representing the lumped film diffusion coefficient",
+     "basis": "stated"
+    },
+    {
+     "topic": "sorption",
+     "text": "The SMA model represents competition between charged modifiers and proteins for adsorbent binding sites.",
+     "quote": "accounts for the influence of charged modifiers and their rivalry with proteins for binding sites on the absorber surface.",
+     "basis": "stated"
+    },
+    {
+     "topic": "sorption",
+     "text": "The SMA formulation describes adsorption and desorption, with a rapid-equilibrium form available for isothermal sorption.",
+     "quote": "If the assumption of a rapid equilibrium is valid",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The column and particle balances were solved with Danckwerts boundary conditions.",
+     "quote": "For the solution of the whole differential-algebraic equation system, Danckwert's boundary conditions were employed",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The paper does not state a total count of model states or equations.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "computation",
+     "text": "The mechanistic model was solved in Matlab on a dual-core 2.81 GHz processor in about 10 seconds using 200 knots along the column.",
+     "quote": "This model was solved in MatLab on a Dual Core Processor with 2.81 GHz in approximately 10 s with a density of 200 knots over the whole column length.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The inverse fit estimated three protein-specific SMA parameters: characteristic charge, equilibrium coefficient, and steric factor.",
+     "quote": "for estimating the SMA parameters θest={ν, keq,σ}",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The inverse approach fitted parameters by minimizing a least-squares residual with Matlab's lsqnonlin procedure.",
+     "quote": "The minimization of Eq. (9) was in all cases performed with the Matlab procedure lsqnonlin.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The inverse estimates were assessed using structured multiple start guesses.",
+     "quote": "Structured multiple start guesses at the beginning of the optimization process",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "Multiple-start estimates had mean relative deviations of about 0.25% for characteristic charge and about 0.5% for steric factor and equilibrium coefficient, apart from some outliers.",
+     "quote": "Apart from some outliers, the estimations for the steric factor and for the equilibrium coefficients show significantly higher mean relative deviations (about 0.5%) than the estimations for the characteristic charge (about 0.25%)",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The conventional approach estimated characteristic charge and equilibrium coefficient from gradient data, then used breakthrough data to estimate the steric factor.",
+     "quote": "The determination of the parameter σ based on the previously determined parameters ν and keq and additional frontal chromatographic experiments",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "For each protein and pH, the inverse fits used the five gradient chromatograms acquired at 5, 10, 30, 60, and 120 column volumes.",
+     "quote": "simultaneous least-squares fits of the mechanistic model to the five chromatograms at 5 cv, 10 cv, 30 cv, 60 cv and 120 cv",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "External packed-bed information was determined using pulse and displacement experiments, with those experiments repeated at least three times to check reproducibility and variance.",
+     "quote": "All experiments were at least three times repeated for a check of reproducibility and variances.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The lumped film diffusion coefficient was estimated by inverse fitting the mechanistic model to tracer peaks from pulse experiments.",
+     "quote": "The lumped film diffusion coefficient keff was estimated to be 1.5 × 10−6 m/s by the inverse fit of the mechanistic model to the tracer peaks from the pulse experiments",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The conventional method's fitted retention-time versus gradient-volume relationship had an R² of 0.99 for the illustrated cytochrome c data.",
+     "quote": "each fit having a coefficient of determination R2 of 0.99.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The inverse model generally fitted the gradient-elution profiles closely, with slight deviations for the shortest, 5-column-volume gradients.",
+     "quote": "Only for short gradients with a length of 5 cv the model response slightly deviates from the data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The authors attributed the short-gradient fit deviations to kinetic effects omitted to allow comparison with the isothermal conventional method.",
+     "quote": "The observed small deviations of the model fit to the data of elution gradients with 5 cv can be attributed to kinetic effects that were neglected in order to impossible the comparison of both approaches (only isothermal SMA parameters can be determined with approach I).",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "Both approaches predicted retention volumes for 25, 80, and 106 column-volume gradients, and the corresponding experiments were performed for validation.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The tested prediction gradients were inside the 5–120 column-volume calibration range; predictions outside that range were not examined.",
+     "quote": "No predictions outside the calibration range were examined, as the considered range with gradient lengths from 5 to 120 cv is very broad.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "Most predicted retention-volume deviations from validation experiments were less than 1 ml, including for long gradients.",
+     "quote": "most of the deviances between prediction and validation are smaller than 1 ml, even for long elution gradients with 106 cv.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prediction",
+     "text": "The inverse method predicts complete chromatograms, whereas the conventional approach predicts retention times.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "The Monte Carlo sensitivity study generated 10,000 chromatograms for each noise analysis.",
+     "quote": "10,000 chromatograms were simulated based on the model equations",
+     "basis": "stated"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "Absolute concentration noise had little influence on inverse SMA parameter estimates, even at the strongest tested level of 50 mM.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "Retention-time shifts affected parameter estimates more strongly than absolute concentration noise; at shifts of about 50 s, characteristic charge had a relative standard deviation of 0.075 and steric factor nearly 1.5.",
+     "quote": "ν (rel. std. deviation of 0.075 for peak shifts of about 50 s (0.43 ml)) is the least sensitive parameter to time-dependent shifts and σ (rel. std. deviation of almost 1.5 for peak shifts of about 50 s (0.43 ml)) the most sensitive parameter.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The two parameter-estimation approaches produced similar parameter order relations and comparably high predictivity, despite differences in the estimated values.",
+     "quote": "SMA parameters with comparable internal relations and equal predictivity could be determined based on both methods",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "Compared with the conventional approach, the inverse method estimated higher characteristic charges and equilibrium coefficients about ten times smaller, while steric factors were similar.",
+     "quote": "the steric factor σ has very similar values in both approaches, the characteristic charge ν determined by the inverse method is always higher than the value determined by approach I. Conversely, the equilibrium coefficients determined by the model-based inverse method are about ten times smaller",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The SMA model was introduced by Brooks and Cramer (1992), and the conventional gradient-and-frontal parameter procedure followed Brooks and Cramer (1992) and Shukla et al. (1998).",
+     "quote": "the steric mass action (SMA) model introduced by Brooks and Cramer [14]",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "Earlier inverse methods for sorption-parameter determination are cited from Kempe et al. (1999), Titchener-Hooker et al. (2008), and Beckley et al. (2009).",
+     "quote": "Recently, this method was applied more often for sorption parameter determination, for example in [20,21,4]",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors recommend the inverse method for fast process development and propose its use for process optimization, process control, troubleshooting, and error diagnosis.",
+     "quote": "the inverse method for SMA parameter determination is recommended for fast process development.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper identifies Matlab and Unicorn software for analysis and computation but does not state that code or experimental data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "q_{i}",
+    "c_{i}",
+    "c_{p,i}"
+   ],
+   "inputs": [
+    "c_{1}",
+    "q_{1}",
+    "u_{int}"
+   ],
+   "status": "pending",
+   "review": [
+    "5 of 41 facts inferred (no quote found)"
+   ]
+  },
+  "osberghaus_2012_rapid_equilibrium_sma": {
+   "name": "Rapid-equilibrium SMA",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "7",
+    "8"
+   ],
+   "description": "The rapid-equilibrium steric mass action model represents protein binding and elution during strong cation-exchange chromatography. It predicts protein retention and outlet chromatograms by combining column transport, particle mass transfer, and SMA sorption, which represents competition between salt ions and proteins for binding capacity as well as protein shielding of binding sites. The paper compares estimating SMA parameters from gradient and breakthrough experiments with estimating them by inverse fitting of a mechanistic column model. Experiments used ribonuclease A, cytochrome c, and lysozyme on a prepacked 1 ml SP Sepharose FF column at pH 5 and pH 7. The authors use the comparison and noise analysis to assess parameter reliability and prediction, and recommend inverse fitting for process development because it predicts complete chromatograms.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The case study models ion-exchange chromatography of ribonuclease A, cytochrome c, and lysozyme at pH 5 and pH 7.",
+     "quote": "These approaches for SMA parameter determination were carried out for three proteins (ribonuclease A, cytochrome c and lysozyme) at pH 5 and pH 7.",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The proteins were bovine-pancreas ribonuclease A, horse-heart cytochrome c, and chicken-egg-white lysozyme.",
+     "quote": "cytochrome c (horse heart), lysozyme (chicken egg white) and ribonuclease A (bovine pancreas)",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "All column experiments used a prepacked 1 ml HiTrap SP Sepharose FF strong cation-exchange column measuring 0.025 m long and 0.7 cm in internal diameter.",
+     "quote": "Prepacked HiTrap SP Sepharose FF 1 ml columns [0.025 m length, 0.7E–2 m ID] from GE Healthcare",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The column experiments were run at a flow rate of 0.5 ml/min.",
+     "quote": "with a system flow rate of 2.17 × 10−4 m/s [0.5 ml/min].",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The running buffer was 0.02 M acetate at pH 5 or 0.02 M sodium phosphate at pH 7, and the high-salt elution buffer contained an additional 0.5 M NaCl.",
+     "quote": "The running buffer for all experiments at pH 5 was a 0.02M acetate buffer. The running buffer for all experiments at pH 7 was a 0.02M sodium phosphate buffer; the same buffers with additional 0.5 M NaCl served for elution purposes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "For gradient runs, each protein was prepared at 0.2 mM and a 20 μl sample was injected after four column volumes of equilibration.",
+     "quote": "At first the column was equilibrated with the running buffer for four column volumes (cv), then 20 μl of the protein solution were injected.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "After sample loading and a further four column volumes of washing, proteins were eluted with a linear gradient from 0% to 100% high-salt buffer.",
+     "quote": "This step was followed by another wash step with 4 cv running buffer. Afterwards, a linear gradient from 0% to 100% high salt buffer was set to elute the protein.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The gradient lengths used to estimate parameters were 5, 10, 30, 60, and 120 column volumes.",
+     "quote": "This experimental setup was executed for five different gradient lengths: 5 cv, 10 cv, 30 cv, 60 cv and 120 cv.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Breakthrough experiments equilibrated the column for 10 column volumes and then loaded protein isocratically until breakthrough was complete.",
+     "quote": "After equilibrating the column for 10 cv with running buffer, it was isocratically loaded with a system flow rate of 2.17 × 10−4 m/s until the breakthrough was complete.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The chromatography model is a spatially distributed transport-dispersive model with column- and particle-level concentration balances.",
+     "quote": "On column level, the time- and position-dependent change of concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model solves a differential-algebraic equation system with Danckwerts boundary conditions.",
+     "quote": "For the solution of the whole differential-algebraic equation system, Danckwert's boundary conditions were employed",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model tracks mobile-phase concentrations at column and particle levels and component concentrations bound to the particle surface.",
+     "quote": "with qi denoting the concentration of particle-bound component i",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The column balance represents convection, axial dispersion, and mass transfer from the mobile phase to the particle surface.",
+     "quote": "the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The SMA model represents competition between charged modifiers and proteins for adsorbent binding sites.",
+     "quote": "accounts for the influence of charged modifiers and their rivalry with proteins for binding sites on the absorber surface.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The SMA steric correction accounts for salt ions shielded from exchange by protein-bound material.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "parameters",
+     "text": "Each protein is characterized by three SMA parameters under the rapid-equilibrium formulation: characteristic charge, equilibrium coefficient, and steric factor.",
+     "quote": "every component interacting with the particle surface owns four characterizing parameters (three in case of a rapid equilibrium assumption)",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The inverse fit estimates the three protein-specific SMA parameters while treating other model inputs as fixed.",
+     "quote": "Let now θfix be the set of all model input parameters that are fixed on a constant value and θest the set of model input parameters that can be manipulated by the algorithm solving the inverse problem",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The paper does not state a total number of model states or equations; its numerical solution used 200 knots along the column.",
+     "quote": "with a density of 200 knots over the whole column length",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Each protein and pH condition had five gradient chromatograms and a corresponding breakthrough experiment available for parameter determination.",
+     "quote": "Based on Eqs. (5) and (6), on the five chromatograms at 5 cv, 10 cv, 30 cv, 60 cv and 120 cv and the breakthrough curve for every single protein, SMA parameters were determined for pH 5 and pH 7.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The gradient and breakthrough experiments were single-component protein experiments rather than mixture separations.",
+     "quote": "the experimental results from the single component experiments are superimposed",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Online absorbance at 280 nm and 528 nm was measured in all experiments.",
+     "quote": "The absorption at 280 nm and 528 nm was measured online in all experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The inverse method fitted the mechanistic model to concentration time series derived from chromatograms measured at the column outlet.",
+     "quote": "Let c(tj) be the chromatogram monitored at column outlet at the points in time",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The first approach derived SMA parameters from gradient retention data and frontal breakthrough data using the procedure of Brooks and Cramer (1992) and Shukla et al. (1998).",
+     "quote": "Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in [14,16].",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The inverse approach estimated SMA parameters by least-squares fitting of the mechanistic model to chromatograms, using Matlab's lsqnonlin procedure.",
+     "quote": "The minimization of Eq. (9) was in all cases performed with the Matlab procedure lsqnonlin.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "Approach I obtains the steric factor from breakthrough data after determining characteristic charge and equilibrium coefficient from gradient data.",
+     "quote": "The determination of the parameter σ based on the previously determined parameters ν and keq and additional frontal chromatographic experiments was carried out",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "Packed-bed and transport inputs for the inverse model included ionic capacity, axial dispersion, interstitial velocity, porosities, film transfer, and column and particle geometry.",
+     "quote": "information characterizing the packed bed",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "External bed parameters were characterized using pulse and displacement experiments, with each experiment repeated at least three times.",
+     "quote": "For the determination of external information in approach I and approach II (εc, εp, εt, the column, particle and total porosity, Λ, the ionic capacity of the column, Dax, the axial dispersion coefficient and V0, the breakthrough volume of a non-retarded species), pulse and displacement experiments were performed according to instructions in [11,26]. All experiments were at least three times repeated for a check of reproducibility and variances.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The lumped film-transfer coefficient was estimated by inverse fitting the mechanistic model to tracer peaks from pulse experiments.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit",
+     "text": "The inverse method produced highly precise fits for most gradient datasets at both pH conditions.",
+     "quote": "The fit of the model response to the gradient elution data is for most of the datasets at both pH-conditions highly precise",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "The rapid-equilibrium model showed small deviations from data for the shortest, 5-column-volume gradients, which the authors attributed to neglected kinetic effects.",
+     "quote": "The observed small deviations of the model fit to the data of elution gradients with 5 cv can be attributed to kinetic effects that were neglected",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "Multiple-start optimization indicated mean relative deviations of about 0.25% for characteristic charge estimates and about 0.5% for equilibrium-coefficient and steric-factor estimates, apart from outliers.",
+     "quote": "Apart from some outliers, the estimations for the steric factor and for the equilibrium coefficients show significantly higher mean relative deviations (about 0.5%) than the estimations for the characteristic charge (about 0.25%)",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors tested retention predictions at gradient lengths of 25, 80, and 106 column volumes for every protein at both pH conditions.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "Most predicted retention volumes differed from experimental validation by less than 1 ml, including predictions for 106-column-volume gradients.",
+     "quote": "most of the deviances between prediction and validation are smaller than 1 ml, even for long elution gradients with 106 cv.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The tested validation gradients were within the 5-to-120-column-volume calibration range, and the paper reports no predictions outside that range.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "prediction",
+     "text": "Approach I predicts retention using an empirical correlation, whereas the inverse mechanistic approach can predict complete chromatograms.",
+     "quote": "The approach based on an inverse method and the mechanistic model has the advantage that not only retention times but also complete elution profiles can be predicted.",
+     "basis": "stated"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "The Monte Carlo analysis generated 10,000 chromatograms and examined concentration-noise and time-shift effects at three gradient lengths.",
+     "quote": "10,000 chromatograms were simulated",
+     "basis": "stated"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "Absolute concentration noise had nearly no influence on inverse-method SMA parameter estimates, even at the highest tested noise level.",
+     "quote": "the application of absolute noise to the chromatograms had nearly no influence on the SMA parameter estimations by the inverse method.",
+     "basis": "stated"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "Retention-time shifts affected parameter estimates more strongly than concentration noise, with the steric factor most sensitive and characteristic charge least sensitive.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "comparison",
+     "text": "The two estimation approaches gave similar parameter order relations, although inverse estimates of characteristic charge were consistently higher and equilibrium coefficients about ten times lower.",
+     "quote": "the characteristic charge ν determined by the inverse method is always higher than the value determined by approach I. Conversely, the equilibrium coefficients determined by the model-based inverse method are about ten times smaller",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors report comparable high predictivity from both parameter-estimation approaches, despite differences in their parameter values.",
+     "quote": "for both approaches it could be demonstrated that they provide parameters of comparable high predictivity",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper builds its experimental SMA-parameter procedure on Brooks and Cramer (1992) and Shukla et al. (1998), and discusses the chromatography transport model in relation to von Lieres and Andersson (2010).",
+     "quote": "according to instructions in [14,16]",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper notes that SMA parameter values reported by different studies can vary with protein, pH, adsorbent, column properties, and experimental approach.",
+     "quote": "absolute values for SMA parameters are not only dependent on the examined protein and the pH value, but in the same way on the adsorbent and column properties like bed geometry or porosity.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors recommend inverse parameter estimation for fast process development and describe the mechanistic model as useful for optimization, process control, troubleshooting, and error diagnosis.",
+     "quote": "the inverse method for SMA parameter determination is recommended for fast process development.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper identifies Matlab and Unicorn software used in the work but does not report a public code or data repository.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "q_{i}",
+    "c_{i}",
+    "c_{p,i}"
+   ],
+   "inputs": [
+    "c_{1}",
+    "q_{1}",
+    "u_{int}"
+   ],
+   "status": "pending",
+   "review": [
+    "6 of 44 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

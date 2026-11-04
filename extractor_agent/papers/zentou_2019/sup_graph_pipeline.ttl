@@ -1,0 +1,825 @@
+@prefix kg: <http://example.org/kg/zentou_2019_andrews/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:zentou_2019_andrews a mkg:Sup ;
+    rdfs:label "zentou_2019_andrews · Modelling of Molasses Fermentation for Bioethanol Production: A Comparative Investigation of Monod and Andrews Models Accuracy Assessment (Andrews)"@en ;
+    mkg:hasMetadata kg:zentou_2019_andrews_meta ;
+    mkg:includes <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1>,
+        <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5>,
+        <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6>,
+        <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7> .
+
+<http://example.org/kg/zentou_2019_monod/zentou_2019_monod> a mkg:Sup ;
+    rdfs:label "zentou_2019_monod · Modelling of Molasses Fermentation for Bioethanol Production: A Comparative Investigation of Monod and Andrews Models Accuracy Assessment (Monod)"@en ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_monod/zentou_2019_monod_meta> ;
+    mkg:includes <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1>,
+        <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3>,
+        <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6>,
+        <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7> .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 1"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1/var/X> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1_meta> ;
+    mkg:latex "\\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X" ;
+    mkg:uses <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1/var/mu> .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1/var/X> a mkg:Variable ;
+    rdfs:label "X (zentou_2019 eq 1)"@en ;
+    mkg:description "Bacterial cell concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer (Shimadzu Scientific Instruments, Inc., Kyoto, Japan) and calibrated against the cell dry weight measurements." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (zentou_2019 eq 1)"@en ;
+    mkg:description "Specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Batch-culture biomass growth rate is proportional to biomass concentration during the exponential growth phase." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "the exponential or logarithmic phase" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The growth law applies during the exponential or logarithmic growth phase." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 5"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/var/mu> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_S>,
+        <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_i>,
+        <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/mu_max> ;
+    mkg:latex "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}" ;
+    mkg:uses <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/var/S> .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (zentou_2019 eq 5)"@en ;
+    mkg:description "Specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The Andrews law computes the specific growth rate of S. cerevisiae with substrate inhibition at excess substrate concentrations." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_i> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/mu_max> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/var/S> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_S> ;
+            mkg:slot "saturation constant" ] ;
+    mkg:page "4" ;
+    mkg:quote "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 6"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/var/S> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/par/Y_x_s> ;
+    mkg:latex "\\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}" ;
+    mkg:uses <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/var/X> .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/par/Y_x_s> a mkg:Parameter ;
+    rdfs:label "Y_{x/s} (zentou_2019 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Substrate-specific yield coefficient." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "$ Y_{x/s} $ and $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively." ;
+    mkg:reason "Substrate-specific yield coefficient, a proportional yield constant in the substrate-consumption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 2.86e-01 ;
+    mkg:valuesByCase "{\"Monod, initial substrate concentration 5 g.L^-1\": \"0.267\", \"Monod, initial substrate concentration 10 g.L^-1\": \"0.282\", \"Monod, initial substrate concentration 15 g.L^-1\": \"0.290\", \"Monod, initial substrate concentration 20 g.L^-1\": \"0.278\", \"Monod, initial substrate concentration 25 g.L^-1\": \"0.283\"}" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/var/S> a mkg:Variable ;
+    rdfs:label "S (zentou_2019 eq 6)"@en ;
+    mkg:description "Concentration of the growth limiting substrate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6/var/X> a mkg:Variable ;
+    rdfs:label "X (zentou_2019 eq 6)"@en ;
+    mkg:description "Bacterial cell concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer (Shimadzu Scientific Instruments, Inc., Kyoto, Japan) and calibrated against the cell dry weight measurements." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Substrate concentration decreases in proportion to biomass growth, scaled by the substrate-specific yield coefficient." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 7"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/var/P> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/par/Y_p_s> ;
+    mkg:latex "\\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}" ;
+    mkg:latexCorrected "$$ \\frac{dP}{dt}=-Y_{p/s}\\frac{ds}{dt} $$" ;
+    mkg:uses <http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/var/s> .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/par/Y_p_s> a mkg:Parameter ;
+    rdfs:label "Y_{p/s} (zentou_2019 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Product-specific yield coefficient." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "$ Y_{x/s} $ and $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively." ;
+    mkg:reason "Product-specific yield coefficient, a proportional yield constant in the product-formation law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{p/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 4.31e-01 ;
+    mkg:valuesByCase "{\"Monod, initial substrate concentration 5 g.L^-1\": \"0.384\", \"Monod, initial substrate concentration 10 g.L^-1\": \"0.397\", \"Monod, initial substrate concentration 15 g.L^-1\": \"0.446\", \"Monod, initial substrate concentration 20 g.L^-1\": \"0.435\", \"Monod, initial substrate concentration 25 g.L^-1\": \"0.439\"}" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/var/P> a mkg:Variable ;
+    rdfs:label "P (zentou_2019 eq 7)"@en ;
+    mkg:description "Ethanol concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7/var/s> a mkg:Variable ;
+    rdfs:label "s (zentou_2019 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Substrate concentration in the product-production equation." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:reason "Substrate concentration used as a process quantity in the product-production equation." ;
+    mkg:sameQuantityAs "S" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "s" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "“the mathematical model for the substrate consumption and ethanol production can be expressed as follows:”" ;
+    mkg:correctionReason "The printed positive sign makes ethanol decrease as substrate is consumed, so the sign must be negative for the equation to describe ethanol production." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Ethanol concentration change is computed from the substrate concentration change using the product-specific yield coefficient." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The positive sign in the product-production equation is inconsistent with substrate consumption: because ds/dt is negative as substrate is consumed, it makes dP/dt negative rather than indicating ethanol production." ;
+    mkg:quote "\\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+kg:zentou_2019_andrews_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The Andrews model describes batch alcoholic fermentation of molasses by Saccharomyces cerevisiae and predicts changes in biomass, sugar substrate, and ethanol concentration. It combines a substrate-inhibition growth law with batch balances that link substrate consumption and ethanol production to cell growth through yield coefficients. Fermentation experiments used a stirred 1-L bioreactor with a 250-mL working volume, initially micro-aerated and then run anaerobically. The Andrews parameters were estimated from growth data at high substrate concentrations, and the model was simulated with MATLAB and compared against separate batch experiments at three initial substrate concentrations. The model agreed best with the high-concentration validation data and less well with the low-concentration data; the authors present it as useful for describing fermentation within a suitable operating range, rather than as a universal model." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "Table 1 reviews some recent articles highlighting the modelling of alcoholic fermentation using different feedstocks based on the Monod model and Andrews model." ;
+            mkg:text "The paper compares the Andrews-model results with earlier Andrews applications to soft-drink mixtures, sucrose, sugar-cane juice, and glucose, citing Comelli et al. (2016), Guidini et al. (2014), Oliveira et al. (2016), and Kostov et al. (2012)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with R2 equal to 0.8743932, 0.891686, and 0.90020 for the biomass, substrate, and product concentrations, respectively at S0 = 75 g.L−1." ;
+            mkg:text "At 75 g L⁻¹ initial substrate, the Andrews model had R² values of 0.8743932 for biomass, 0.891686 for substrate, and 0.90020 for ethanol." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with R2 equal to 0.99795, 0.99903, and 0.99962 for the biomass, substrate, and product concentrations, respectively." ;
+            mkg:text "At 225 g L⁻¹ initial substrate, the Andrews model had R² values of 0.99795 for biomass, 0.99903 for substrate, and 0.99962 for ethanol." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+            mkg:text "Glucose, fructose, sucrose, and ethanol concentrations were measured by HPLC using a Bio-Rad Aminex HPX 87H column." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reported Andrews parameter estimates were a maximum specific growth rate of 0.5086 h⁻¹, a half-velocity constant of 47.53789 g L⁻¹, and a substrate inhibition coefficient of 181.01639 g L⁻¹." ;
+            mkg:topic "parameterization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a batch bioreactor with a 1-L volume containing 250 mL of culture media" ;
+            mkg:text "Fermentation was performed in a 1-L batch bioreactor with a 250-mL culture volume." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "mathematical modelling may be regarded as a tool to optimise the fermentation process in order to meet the industry needs" ;
+            mkg:text "The authors propose fermentation models as tools for process optimization and control to support industrial bioethanol production." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Andrews model has successfully presented the experimental dataset at a high concentration" ;
+            mkg:text "The authors attribute the Andrews model’s stronger performance at high substrate concentration to its representation of substrate inhibition." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the pH value was adjusted at pH = 4.5 by the automatic addition of 0.1 M NaOH and the stirring speed was maintained at 250 rpm. The fermentation temperature was kept at 30 °C" ;
+            mkg:text "The fermentation pH was maintained at 4.5 by automatic addition of 0.1 M NaOH, and the temperature and stirring speed were 30 °C and 250 rpm." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the model presented by Monod (1950) seems to enjoy the widest acceptance model" ;
+            mkg:text "The paper identifies Monod (1950) as the source of the widely accepted Monod model used as the comparator." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A sample of 5 mL was taken at a predetermined time (0, 2, 4, 6, 8, 10, 12, 18, 24, 30, 36, 48, and 72 h) in order to determine the concentration of sugars, ethanol, and biomass." ;
+            mkg:text "Samples of 5 mL were taken at 13 time points from 0 to 72 h to measure sugars, ethanol, and biomass." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "μmax was 0.179 h−1, which is half of the value reported by Raposo et al. [23] for molasses fermentation, whereas Ks was almost double as compared to the same study" ;
+            mkg:text "The paper compares its molasses growth parameters with Raposo et al. (2009), reporting its maximum growth rate as about half that study’s value and its half-velocity constant as almost twice the value." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "where Yx/s and Yp/s are the substrate- and product-specific yield coefficients, respectively." ;
+            mkg:text "Substrate consumption and ethanol production are linked to cell growth through substrate- and product-specific yield coefficients." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The Andrews growth-law fit had an adjusted R² of 0.99071 and a reduced chi-squared value of 7.90971 × 10⁻⁶." ;
+            mkg:topic "parameterization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer" ;
+            mkg:text "Yeast growth was measured spectrophotometrically at 620 nm and calibrated against cell dry weight." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fermentation was carried out under micro-aeration conditions (1 vvm) for 2 h and turned later to anaerobic during the rest time of fermentation." ;
+            mkg:text "The culture was micro-aerated at 1 vvm for 2 h and then kept anaerobic for the remainder of fermentation." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the concentration of other sugars (Fructose and sucrose) was converted into the equivalent concentration of glucose." ;
+            mkg:text "Fructose and sucrose concentrations were converted to glucose-equivalent concentrations for the calculations." ;
+            mkg:topic "medium" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "equivalent of 50–200 g.L−1 glucose for the Andrews model" ;
+            mkg:text "The methods section gives an Andrews-model fermentation substrate range equivalent to 50–200 g L⁻¹ glucose." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "predicting the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae" ;
+            mkg:text "The model represents alcoholic fermentation of molasses by Saccharomyces cerevisiae for bioethanol production." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the average values of Yx/s and Yp/s were 0.286 and 0.431 respectively." ;
+            mkg:text "The average Andrews-model substrate and product yield coefficients were reported as 0.286 and 0.431, respectively." ;
+            mkg:topic "parameterization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the Andrews model was less accurate at a low initial substrate concentration compared to the Monod model" ;
+            mkg:text "The authors report that the Andrews model is less accurate than Monod at low initial substrate concentration." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The values of substrate concentration used for the validation of the models are different from the concentrations which were used for the modelling" ;
+            mkg:text "The validation experiments used initial substrate concentrations of 75, 150, and 225 g L⁻¹, distinct from the concentrations used for parameter estimation." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "this statistic cannot determine whether the parameter estimates and predictions are biased, which is why the residual plots must be assessed." ;
+            mkg:text "The paper cautions that R² alone cannot reveal bias in parameter estimates or predictions and says residual plots should also be assessed." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "200 mL of culture media containing diluted molasses (50 g.L−1 glucose), ammonium sulphate (0.7 g.L−1), and ammonium phosphate (0.4 g.L−1)" ;
+            mkg:text "The inoculum medium contained diluted molasses at 50 g L⁻¹ glucose, ammonium sulphate at 0.7 g L⁻¹, and ammonium phosphate at 0.4 g L⁻¹." ;
+            mkg:topic "medium" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper identifies the software used for fitting and simulation but does not state that model code or experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "different initial substrate concentrations (75, 150, and 225 g.L−1)" ;
+            mkg:text "The paper’s validation discussion names 75, 150, and 225 g L⁻¹ as the tested concentrations but also says the Monod model’s maximum R² values occurred at 50 g L⁻¹." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "using Origin 2018a software based on the SubstrateInhib function" ;
+            mkg:text "The paper reports fitting the Andrews parameters with Origin software, identified as version 2018a in Methods and 2018b in Results." ;
+            mkg:topic "parameterization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the suitability of a model can only be determined for a specific range." ;
+            mkg:text "The authors conclude that no universal model describes different fermentation cultures and that a model’s suitability depends on its operating range." ;
+            mkg:topic "applicability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the dynamics of biomass, substrate, and ethanol for the batch fermentation" ;
+            mkg:text "The model is a time-dependent batch model with three concentration states: biomass, substrate, and ethanol." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models were solved and simulated by using the fourth-order Runge–Kutta method ODE 45 with the MATLAB R2014a software" ;
+            mkg:text "The models were simulated in MATLAB R2014a using a fourth-order Runge–Kutta method with the ODE 45 solver." ;
+            mkg:topic "simulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "estimated for a set of batch fermentation at different substrate concentrations (100, 200, and 300 g.L−1)" ;
+            mkg:text "The Andrews kinetic parameters were estimated from batch growth data at initial substrate concentrations of 100, 200, and 300 g L⁻¹." ;
+            mkg:topic "parameterization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Yeast was added to the prepared fermentation medium with a concentration of 1 g.L−1 (calculated as fresh baker's yeast)." ;
+            mkg:text "The bioreactor was inoculated with yeast at 1 g L⁻¹, calculated as fresh baker’s yeast." ;
+            mkg:topic "inoculum" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the predicted inhibition caused by the excess of the substrate" ;
+            mkg:text "The Andrews growth law represents inhibition of S. cerevisiae growth by excess substrate." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the mathematical model for the substrate consumption and ethanol production can be expressed as follows" ;
+            mkg:text "The paper describes growth, substrate consumption, and ethanol production using differential equations, with an algebraic Andrews growth-rate law." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fermentation medium was incubated at 35 °C besides shaking with 250 rpm for 6 h under aerobic conditions." ;
+            mkg:text "The active dry yeast preculture was incubated aerobically for 6 h at 35 °C and 250 rpm." ;
+            mkg:topic "inoculum" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 1"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1/var/X> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1_meta> ;
+    mkg:latex "\\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X" ;
+    mkg:uses <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1/var/mu> .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1/var/X> a mkg:Variable ;
+    rdfs:label "X (zentou_2019 eq 1)"@en ;
+    mkg:description "Bacterial cell concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer (Shimadzu Scientific Instruments, Inc., Kyoto, Japan) and calibrated against the cell dry weight measurements." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (zentou_2019 eq 1)"@en ;
+    mkg:description "Specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Batch-culture biomass growth rate is proportional to biomass concentration during the exponential growth phase." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "the exponential or logarithmic phase" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The growth law applies during the exponential or logarithmic growth phase." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\mathrm{\\frac{dX}{dt}}\\!=\\!\\upmu X" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 3"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/var/mu> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/K_S>,
+        <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/mu_max> ;
+    mkg:latex "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}" ;
+    mkg:uses <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/var/S> .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (zentou_2019 eq 3)"@en ;
+    mkg:description "Specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The Monod law computes specific growth rate from the concentration of the limiting substrate." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/var/S> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/K_S> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/mu_max> ;
+            mkg:slot "maximum rate" ] ;
+    mkg:page "4" ;
+    mkg:quote "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 6"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/var/S> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/par/Y_x_s> ;
+    mkg:latex "\\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}" ;
+    mkg:uses <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/var/X> .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/par/Y_x_s> a mkg:Parameter ;
+    rdfs:label "Y_{x/s} (zentou_2019 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Substrate-specific yield coefficient." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "$ Y_{x/s} $ and $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively." ;
+    mkg:reason "Substrate-specific yield coefficient, a proportional yield constant in the substrate-consumption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"Monod, initial substrate concentration 5 g.L^-1\": \"0.267\", \"Monod, initial substrate concentration 10 g.L^-1\": \"0.282\", \"Monod, initial substrate concentration 15 g.L^-1\": \"0.290\", \"Monod, initial substrate concentration 20 g.L^-1\": \"0.278\", \"Monod, initial substrate concentration 25 g.L^-1\": \"0.283\"}" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/var/S> a mkg:Variable ;
+    rdfs:label "S (zentou_2019 eq 6)"@en ;
+    mkg:description "Concentration of the growth limiting substrate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6/var/X> a mkg:Variable ;
+    rdfs:label "X (zentou_2019 eq 6)"@en ;
+    mkg:description "Bacterial cell concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer (Shimadzu Scientific Instruments, Inc., Kyoto, Japan) and calibrated against the cell dry weight measurements." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Substrate concentration decreases in proportion to biomass growth, scaled by the substrate-specific yield coefficient." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{dS}{dt}=-\\frac{1}{Y_{x/s}}\\frac{dX}{dt}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7> a mkg:Law ;
+    rdfs:label "zentou_2019 eq 7"@en ;
+    mkg:computes <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/var/P> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/par/Y_p_s> ;
+    mkg:latex "\\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}" ;
+    mkg:latexCorrected "$$ \\frac{dP}{dt}=-Y_{p/s}\\frac{ds}{dt} $$" ;
+    mkg:uses <http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/var/s> .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/par/Y_p_s> a mkg:Parameter ;
+    rdfs:label "Y_{p/s} (zentou_2019 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Product-specific yield coefficient." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "$ Y_{x/s} $ and $ Y_{p/s} $ are the substrate- and product-specific yield coefficients, respectively." ;
+    mkg:reason "Product-specific yield coefficient, a proportional yield constant in the product-formation law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{p/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"Monod, initial substrate concentration 5 g.L^-1\": \"0.384\", \"Monod, initial substrate concentration 10 g.L^-1\": \"0.397\", \"Monod, initial substrate concentration 15 g.L^-1\": \"0.446\", \"Monod, initial substrate concentration 20 g.L^-1\": \"0.435\", \"Monod, initial substrate concentration 25 g.L^-1\": \"0.439\"}" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/var/P> a mkg:Variable ;
+    rdfs:label "P (zentou_2019 eq 7)"@en ;
+    mkg:description "Ethanol concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7/var/s> a mkg:Variable ;
+    rdfs:label "s (zentou_2019 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Substrate concentration in the product-production equation." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:reason "Substrate concentration used as a process quantity in the product-production equation." ;
+    mkg:sameQuantityAs "S" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "s" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "“the mathematical model for the substrate consumption and ethanol production can be expressed as follows:”" ;
+    mkg:correctionReason "The printed positive sign makes ethanol decrease as substrate is consumed, so the sign must be negative for the equation to describe ethanol production." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Ethanol concentration change is computed from the substrate concentration change using the product-specific yield coefficient." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "ODE" ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The positive sign in the product-production equation is inconsistent with substrate consumption: because ds/dt is negative as substrate is consumed, it makes dP/dt negative rather than indicating ethanol production." ;
+    mkg:quote "\\frac{dP}{dt}=Y_{p/s}\\frac{ds}{dt}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/zentou_2019_monod/zentou_2019_monod_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model represents batch alcoholic fermentation of molasses by Saccharomyces cerevisiae and predicts biomass, sugar substrate, and ethanol concentrations over time. It is a compact dynamic concentration model in which substrate-dependent Monod growth is linked to substrate consumption and ethanol production through yield coefficients. Fermentation was run in a stirred, 1-L-capacity bioreactor with 250 mL of medium, initially micro-aerated and then operated anaerobically. The authors estimated the Monod growth parameters from batch data at low initial sugar concentrations and compared simulated predictions with separate experiments at initial concentrations of 75, 150, and 225 g/L. The model fit best at low substrate concentration and became less accurate at high concentration, where it does not represent substrate inhibition. The authors present it as a practical model for predicting and supporting the optimization and control of molasses fermentation under a suitable, specific range of conditions." ;
+    mkg:doi "10.3390/biom9080308" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "In order to simplify the calculations, the concentration of other sugars (Fructose and sucrose) was converted into the equivalent concentration of glucose." ;
+            mkg:text "Fructose and sucrose concentrations were converted to glucose-equivalent concentrations for the calculations." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a key limitation of R2 is that this statistic cannot determine whether the parameter estimates and predictions are biased, which is why the residual plots must be assessed." ;
+            mkg:text "The paper cautions that R² does not establish whether predictions or parameter estimates are biased and says residual plots should also be assessed." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Monod model showed a good agreement with the experimental data at a low concentration where the maximum R2 values for the biomass, substrate, and ethanol concentrations were achieved at S0 = 50 g.L−1." ;
+            mkg:text "The paper gives conflicting locations for the Monod model’s best low-concentration fit: its abstract reports 75 g/L, while the Results discussion says 50 g/L despite listing validation runs at 75, 150, and 225 g/L." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the classical Monod equation does not consider the inhibitory effect of a high substrate on cell growth." ;
+            mkg:text "The Monod model does not include inhibition of cell growth by high substrate concentrations." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the model presented by Monod (1950) seems to enjoy the widest acceptance model" ;
+            mkg:text "The paper identifies Monod (1950) as the widely accepted basic fermentation-growth model on which its Monod formulation is based." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the Monod model, an emphasis has been laid to the exponential or logarithmic phase in modelling the microbial cells growth" ;
+            mkg:text "The biomass-growth formulation focuses on the exponential or logarithmic growth phase." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A sample of 5 mL was taken at a predetermined time (0, 2, 4, 6, 8, 10, 12, 18, 24, 30, 36, 48, and 72 h)" ;
+            mkg:text "Fermentation samples were collected at 13 times from 0 to 72 h." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Yeast growth was evaluated by spectrophotometric measurements at 620 nm in Shimadzu UV-1280 spectrophotometer" ;
+            mkg:text "Biomass growth was measured by absorbance at 620 nm and calibrated against cell dry weight." ;
+            mkg:topic "analytics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Anaerobic fermentation was carried out in a batch bioreactor with a 1-L volume containing 250 mL of culture media" ;
+            mkg:text "Fermentation was carried out in a 1-L-capacity batch bioreactor containing 250 mL of culture medium." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Initial Substrate Concentration (g.L−1): 5" ;
+            mkg:text "The Monod experiments used initial substrate concentrations of 5, 10, 15, 20, and 25 g/L." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A sample of 5 mL was taken" ;
+            mkg:text "Each fermentation sample was 5 mL." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the pH value was adjusted at pH = 4.5 by the automatic addition of 0.1 M NaOH and the stirring speed was maintained at 250 rpm. The fermentation temperature was kept at 30 °C using a water jacket." ;
+            mkg:text "The fermentation was held at pH 4.5 and 30 °C with stirring at 250 rpm." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The current study aims at developing and validating the Monod and Andrews mathematical models for predicting the dynamics of biomass, substrate, and ethanol" ;
+            mkg:text "The model predicts three state concentrations: biomass, growth-limiting substrate, and ethanol." ;
+            mkg:topic "states" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The formulation is a dynamic, spatially lumped concentration model and can be considered unstructured because it tracks bulk biomass rather than intracellular components." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Monod equation describes the dependence of a microorganism's growth rate on the concentration of a limiting substrate" ;
+            mkg:text "The Monod law represents growth as substrate-limited, with the specific growth rate approaching a maximum as substrate concentration increases." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "No significant change in both yield coefficients was noted in this range" ;
+            mkg:text "The paper says the Monod yield coefficients did not change significantly across the 5–25 g/L range, but its prose and table give inconsistent average values." ;
+            mkg:topic "yields" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models were solved and simulated by using the fourth-order Runge–Kutta method ODE 45 with the MATLAB R2014a software (Version 8.3)." ;
+            mkg:text "The simulations used MATLAB R2014a and the paper describes solving the models with a fourth-order Runge–Kutta method, ODE 45." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report uncertainty intervals for the Monod growth-parameter estimates." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "As specified by the model formulation, it has three dynamic balances, one algebraic growth-rate relation, and four parameters: two growth-kinetic parameters and two yield coefficients." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "predicting the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae" ;
+            mkg:text "The model describes batch alcoholic fermentation of molasses for bioethanol production by Saccharomyces cerevisiae." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fermentation medium was incubated at 35 °C besides shaking with 250 rpm for 6 h under aerobic conditions." ;
+            mkg:text "The inoculum was prepared by incubating yeast in diluted molasses medium with ammonium sulphate and ammonium phosphate for 6 h at 35 °C and 250 rpm under aerobic conditions." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "μmax was 0.179 h−1, which is half of the value reported by Raposo et al. [23] for molasses fermentation, whereas Ks was almost double as compared to the same study" ;
+            mkg:text "The paper contrasts its Monod estimates with Raposo et al. (2009), reporting a lower maximum specific growth rate and a higher half-velocity constant than that study." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The μ values were used to evaluate μmax and Ks by Lineweaver–Burk plots derived from Equation (3)." ;
+            mkg:text "The Monod growth parameters were obtained from specific growth rate data using Lineweaver–Burk plots." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the highest R squared was observed at S0 = 75 g.L−1 with an R squared equal to 0.99956, 0.99954, and 0.99859 for the biomass, substrate, and product concentrations, respectively." ;
+            mkg:text "At 75 g/L initial substrate, the paper reports R² values of 0.99956 for biomass, 0.99954 for substrate, and 0.99859 for product." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state that its model code or experimental dataset is publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The viable cell concentrations both in the carriers and the broth were determined and used for μ determination using Equation (2)." ;
+            mkg:text "The paper states that viable-cell concentrations in carriers and broth were used to determine the specific growth rate, although the described batch setup does not otherwise specify carriers." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The low accuracy of the Monod model in a high substrate concentration is due to the fact that the classical Monod equation does not consider the inhibitory effect of a high substrate on cell growth." ;
+            mkg:text "The paper concludes that the Monod model is more suitable at low initial substrate concentration, whereas its accuracy decreases at high concentration because it omits substrate inhibition." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A mathematical model which predicts, simulates, and controls the alcoholic fermentation development would be a valuable technical tool to promote the bioethanol industry" ;
+            mkg:text "The authors propose the model as a technical tool for predicting, simulating, and controlling alcoholic fermentation to support the bioethanol industry." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "which were too close to the values reported in previous studies [17,18] using sweet sorghum leaves and oil palm jus." ;
+            mkg:text "The paper says its Monod kinetic estimates were close to those reported by Rorke and Gueguim Kana (2017) and Srimachai et al. (2015) for other feedstocks." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The values of substrate concentration used for the validation of the models are different from the concentrations which were used for the modelling" ;
+            mkg:text "The validation experiments used initial substrate concentrations of 75, 150, and 225 g/L, which differed from the Monod parameter-estimation range." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "R2 biomass = 0.99956, R2 substrate = 0.99954, and R2 product = 0.99859 to R2 biomass = 0.92462, R2 substrate = 0.921547, and R2 product = 0.916246 for an increase in the initial substrate concentration from 75 to 225 g.L−1." ;
+            mkg:text "At 225 g/L initial substrate, the paper reports R² values of 0.92462 for biomass, 0.921547 for substrate, and 0.916246 for product for the Monod model." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fermentation was carried out under micro-aeration conditions (1 vvm) for 2 h and turned later to anaerobic during the rest time of fermentation." ;
+            mkg:text "The batch was micro-aerated at 1 vvm for 2 h and then kept anaerobic for the remainder of fermentation." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "where Yx/s and Yp/s are the substrate- and product-specific yield coefficients, respectively." ;
+            mkg:text "Substrate consumption and ethanol formation are linked to biomass growth through substrate- and product-specific yield coefficients." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All the used chemicals and materials were sterilized in an autoclave at 121 °C for 20 min before the experiment." ;
+            mkg:text "The chemicals and materials used were autoclaved at 121 °C for 20 min." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Yeast was added to the prepared fermentation medium with a concentration of 1 g.L−1 (calculated as fresh baker's yeast)." ;
+            mkg:text "Fresh baker’s yeast was added at 1 g/L." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "different initial sugar concentrations (equivalent 5–25 g.L−1 glucose for the Monod model" ;
+            mkg:text "The initial sugar range used for Monod parameter estimation was 5–25 g/L glucose-equivalent." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Three loops of active dry Saccharomyces cerevisiae yeast from Saf-Levure (Lesaffre, Marcq, France)" ;
+            mkg:text "The yeast was active dry Saccharomyces cerevisiae from Saf-Levure." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+            mkg:text "Glucose, fructose, sucrose, and ethanol were measured by HPLC using a Bio-Rad Aminex HPX 87H column and the cited NREL methods." ;
+            mkg:topic "analytics" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_S> a mkg:Parameter ;
+    rdfs:label "K_{S} (zentou_2019 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Half velocity constant, i.e., substrate concentration at half of the maximum growth rate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function" ;
+    mkg:page "4" ;
+    mkg:quote "$ K_{s} $ is the half velocity constant, i.e., the substrate concentration at half of the maximum growth rate (g.L $ ^{-1} $)." ;
+    mkg:reason "Half velocity constant, a substrate saturation constant of the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{S}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" ;
+    mkg:value 4.753789e+01 .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/K_i> a mkg:Parameter ;
+    rdfs:label "K_{i} (zentou_2019 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Substrate inhibition coefficient." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function" ;
+    mkg:page "4" ;
+    mkg:quote "$ K_i $ (g.L $ ^{-1} $) is the substrate inhibition coefficient." ;
+    mkg:reason "Substrate inhibition coefficient, a constant of the Andrews growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{i}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" ;
+    mkg:value 1.810164e+02 ;
+    mkg:valueUncertainty "± 29.14" .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (zentou_2019 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function" ;
+    mkg:page "4" ;
+    mkg:quote "$ \\mu_{max} $ is the maximum specific growth rate ( $ h^{-1} $)" ;
+    mkg:reason "Maximum specific growth rate, a fitted constant of the growth law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" ;
+    mkg:value 5.086e-01 .
+
+<http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5/var/S> a mkg:Variable ;
+    rdfs:label "S (zentou_2019 eq 5)"@en ;
+    mkg:description "Concentration of the growth limiting substrate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/K_S> a mkg:Parameter ;
+    rdfs:label "K_{S} (zentou_2019 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Half velocity constant, i.e., substrate concentration at half of the maximum growth rate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function" ;
+    mkg:page "4" ;
+    mkg:quote "$ K_{s} $ is the half velocity constant, i.e., the substrate concentration at half of the maximum growth rate (g.L $ ^{-1} $)." ;
+    mkg:reason "Half velocity constant, a substrate saturation constant of the growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{S}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" ;
+    mkg:value 1.137e+01 .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (zentou_2019 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $, $ K_s $, and $ K_i $) using Origin 2018a software based on the SubstrateInhib function" ;
+    mkg:page "4" ;
+    mkg:quote "$ \\mu_{max} $ is the maximum specific growth rate ( $ h^{-1} $)" ;
+    mkg:reason "Maximum specific growth rate, a fitted constant of the growth law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h $ ^{-1} $" ;
+    mkg:value 1.79e-01 .
+
+<http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3/var/S> a mkg:Variable ;
+    rdfs:label "S (zentou_2019 eq 3)"@en ;
+    mkg:description "Concentration of the growth limiting substrate." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g.L $ ^{-1} $" .
+

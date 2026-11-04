@@ -1,0 +1,154 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.214220831,
+  "prompt_tokens": 2181,
+  "prompt_time": 0.412056459,
+  "completion_tokens": 1158,
+  "completion_time": 2.6799429850000003,
+  "total_tokens": 3339,
+  "total_time": 3.091999444,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 125
+  }
+ },
+ "user": "Equations:\n(1) \\frac{d V}{d t}=F_{i n}-F_{o u t}      <- \"The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\"\n(2) \\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}      <- \"The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\"\n(3) \\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}      <- \"The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\"\n(4) \\mu=\\mu_{m a x}f_{l i m}f_{i n h}      <- \"The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\"\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)      <- \"The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\"\n(6) f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right)      <- \"The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\"\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1      <- \"Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by\"\n(8) \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(9) Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(10) \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]      <- \"The mass balances for lactate and ammonia are\"\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]      <- \"The mass balances for lactate and ammonia are\"\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]      <- \"Finally, the rate of MAb production is\"\n\nSymbols:\n\nV   [COMPUTED by eq 1, 2, 3, 8]\n  [156] (sentence, p.4) This is done by minimising the volume of the confidence ellipsoid, i.e., minimising the determinant of the variance-covariance matrix, V, of the parameters to be estimated.\n\nF_{in}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nF_{out}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nX_{\\nu}   [COMPUTED by eq 2]\n  (no snippet mentions this symbol)\n\n\\mu   [COMPUTED by eq 4]\n  (no snippet mentions this symbol)\n\n\\mu_{d}   [COMPUTED by eq 7]\n  (no snippet mentions this symbol)\n\nX_{t}   [COMPUTED by eq 3]\n  (no snippet mentions this symbol)\n\n\\mu_{max}   [NOT COMPUTED]\n  [75] (line, p.2) $ \\mu_{max} $ maximum specific growth rate (h $ ^{-1} $)\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [196] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{max} (h^{-1}) $ | Batch operation value: $ 5.8 \\times 10^{-2} $ | Fed-batch operation value: $ 5.8 \\times 10^{-2} $\n\nf_{lim}   [COMPUTED by eq 5]\n  (no snippet mentions this symbol)\n\nf_{inh}   [COMPUTED by eq 6]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "V",
+    "description": "Reactor liquid volume",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "F_{in}",
+    "description": "Inlet volumetric flow rate into the bioreactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "process operating variable",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "F_{out}",
+    "description": "Outlet volumetric flow rate from the bioreactor",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "process operating variable",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "X_{\\nu}",
+    "description": "Viable cell concentration (viable cell density)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cells L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu",
+    "description": "Specific viable cell growth rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{d}",
+    "description": "Specific cell death rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "X_{t}",
+    "description": "Total cell concentration (viable + dead)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cells L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{max}",
+    "description": "Maximum specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 75,
+    "quote": "maximum specific growth rate (h ^{-1})",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": "5.8 \\times 10^{-2} h^{-1}",
+    "class_reason": "process parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "f_{lim}",
+    "description": "Limiting factor term for growth (product of Monod saturation functions)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "f_{inh}",
+    "description": "Inhibition factor term for growth (product of inhibition functions)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

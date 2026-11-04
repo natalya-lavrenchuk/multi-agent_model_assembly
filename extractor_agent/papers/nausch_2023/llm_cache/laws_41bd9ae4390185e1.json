@@ -1,0 +1,104 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.213380743,
+  "prompt_tokens": 1653,
+  "prompt_time": 0.053149177,
+  "completion_tokens": 4304,
+  "completion_time": 10.42447936,
+  "total_tokens": 5957,
+  "total_time": 10.477628537,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4022
+  }
+ },
+ "user": "Section(s): An improved model including glucose and fructose enables the prediction of cell growth at low sucrose concentrations\n\nText and equations in reading order:\n    Time trajectories of measured and predicted data (continuous line) for the initial model validation representing the cultivation of BY-2 cells under optimal (experiments #4 and #5) and non-optimal (experiments #6 and #7) conditions (A–D) Iteration 2. Measurement uncertainty made of a constant and proportional component (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}    [code: algebraic, computes \\mu, code proposes constitutive]\n\nSymbols:\n  \\mu: μ is the specific growth rate. [h^{-1}] (computed)\n  \\mu_{m}: Maximum specific growth rate [h^{-1}] (parameter)\n  \\mu_{m}^{A}: maximum specific growth rate for ammonium [h^{-1}] (parameter)\n  A: Concentration of nutrients (sucrose, ammonium, nitrate, phosphate) in the reactor [g L^{-1}] (computed)\n  \\delta_{A}: Minimal ammonium concentration in the medium at which cell growth occurs (parameter)\n  \\mu_{m}^{P}: Maximum specific growth rate contribution from phosphate [h^-1] (parameter)\n  P: phosphate concentration (computed)\n  \\delta_{P}: Minimal phosphate concentration in the medium at which cell growth occurs (parameter)\n  G: Glucose concentration (computed)\n  K_{G}: Monod saturation constant for glucose (parameter)\n  K_{IG}: Glucose inhibition constant [g L^{-1}] (parameter)\n  F: Fructose concentration (computed)\n  K_{F}: Fructose saturation constant [g L^{-1}] (parameter)\n  K_{IF}: Fructose inhibition constant [g L^{-1}] (parameter)\n  N: Nitrate concentration [g L^{-1}] (computed)\n  K_{N}: Nitrate saturation constant [g L^{-1}] (parameter)\n  K_{IN}: Nitrate inhibition constant [g L^{-1}] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM).\n\nLaws: 18",
+ "answer": {
+  "laws": [
+   {
+    "eq": "18",
+    "description": "Specific growth rate μ expressed as the product of a baseline maximum rate and contributions from ammonium and phosphate, multiplied by combined Monod-type saturation and inhibition terms for glucose, fructose, and nitrate.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It defines μ as a kinetic expression based on substrate saturation and inhibition.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "μ"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "μ_m"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "μ_m^A"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "μ_m^P"
+     },
+     {
+      "role": "substrate",
+      "symbol": "A"
+     },
+     {
+      "role": "threshold constant",
+      "symbol": "δ_A"
+     },
+     {
+      "role": "substrate",
+      "symbol": "P"
+     },
+     {
+      "role": "threshold constant",
+      "symbol": "δ_P"
+     },
+     {
+      "role": "substrate",
+      "symbol": "G"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_G"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_IG"
+     },
+     {
+      "role": "substrate",
+      "symbol": "F"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_F"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_IF"
+     },
+     {
+      "role": "substrate",
+      "symbol": "N"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_N"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_IN"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

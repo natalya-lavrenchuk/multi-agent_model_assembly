@@ -1,0 +1,165 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2232,
+  "completion_tokens": 4818,
+  "total_tokens": 7050,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2229,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3806,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: birol_2002\n\nEquations:\n(12) \\begin{aligned}\\frac{\\mathrm{d}C_{\\mathrm{L}}}{\\mathrm{d}t}=&-\\frac{\\mu}{Y_{\\mathrm{x/o}}}\\ X-\\frac{\\mu_{\\mathrm{pp}}}{Y_{\\mathrm{p/o}}}\\ X-m_{\\mathrm{o}}X+K_{\\mathrm{la}}(C_{\\mathrm{L}}^{*}-C_{\\mathrm{L}})-\\frac{C_{\\mathrm{L}}}{V}\\\\&\\times\\frac{\\mathrm{d}V}{\\mathrm{d}t}\\tag{12}\\end{aligned}      <- \"Dissolved oxygen:\"\n(13) K_{\\mathrm{l a}}=\\alpha\\sqrt{f_{\\mathrm{g}}}\\biggl(\\frac{P_{\\mathrm{w}}}{V}\\biggr)^{\\beta}      <- \". Here we have assumed $ K_{la} $ to be a function of agitation power input $ P_{w} $ and flow rate of oxygen $ f_{g} $ as suggested by Bailey and Ollis (1986).\"\n(14) \\frac{\\mathrm{d}V}{\\mathrm{d}t}=F+F_{\\mathrm{a/b}}-F_{\\mathrm{loss}}      <- \"The fed-batch process operation causes a volume change in the fermentor. This is calculated by:\"\n\nSymbols:\n\nY_{x/o}   [NOT COMPUTED]\n  [127] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Yield constant:  $ Y_{x/o} $ (g biomass/g oxygen) | operation: 0.04\n\nY_{p/o}   [NOT COMPUTED]\n  [129] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Yield constant:  $ Y_{p/o} $ (g penicillin/g oxygen) | operation: 0.20\n\nm_{o}   [NOT COMPUTED]\n  [133] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Maintenance coefficient on oxygen:  $ m_o $ (per h) | operation: 0.467\n\nK_{la}   [COMPUTED by eq 13]\n  [157] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constants in  $ K_{la} $:  $ \\alpha $,  $ \\beta $ | operation: 70, 0.4\n  [219] (sentence, p.6) In the original model of Bajpai and Reuss, the overall mass transfer coefficient  $ K_{la} $ is constant (Bajpai & Reuss, 1980).\n  [220] (sentence, p.6) Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).\n\nC_{L}^{*}   [NOT COMPUTED]\n  [70] (table_row, p.2) Table 1 Functional relationship among the process variables: Model structure: $ X=f(X, S, C_{L}, H, T) $\n  [71] (table_row, p.2) Table 1 Functional relationship among the process variables: Model structure: $ S=f(X, S, C_{L}, H, T) $\n  [72] (table_row, p.2) Table 1 Functional relationship among the process variables: Model structure: $ C_{L}=f(X, S, C_{L}, H, T) $\n\n\\alpha   [NOT COMPUTED]\n  [157] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constants in  $ K_{la} $:  $ \\alpha $,  $ \\beta $ | operation: 70, 0.4\n  [221] (sentence, p.6) The values of  $ \\alpha $ and  $ \\beta $ are assigned so that the dependence of penicillin concentration on  $ K_{la} $ showed a very similar behavior to the predictions of Bajpai and Reuss (1980).\n\nf_{g}   [NOT COMPUTED]\n  [220] (sentence, p.6) Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).\n\nP_{w}   [NOT COMPUTED]\n  [220] (sentence, p.6) Here we have assumed  $ K_{la} $ to be a function of agitation power input  $ P_{w} $ and flow rate of oxygen  $ f_{g} $ as suggested by Bailey and Ollis (1986).\n\n\\beta   [NOT COMPUTED]\n  [157] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constants in  $ K_{la} $:  $ \\alpha $,  $ \\beta $ | operation: 70, 0.4\n  [221] (sentence, p.6) The values of  $ \\alpha $ and  $ \\beta $ are assigned so that the dependence of penicillin concentration on  $ K_{la} $ showed a very similar behavior to the predictions of Bajpai and Reuss (1980).\n\nF_{a/b}   [NOT COMPUTED]\n  [227] (sentence, p.6) In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term,  $ F_{a/b} $.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "Y_{x/o}",
+    "description": "Yield constant for biomass per oxygen.",
+    "description_basis": "stated",
+    "snippet_id": 127,
+    "quote": "Yield constant:  $ Y_{x/o} $ (g biomass/g oxygen)",
+    "unit": "g biomass/g oxygen",
+    "unit_basis": "stated",
+    "value": "0.04 g biomass/g oxygen",
+    "value_set": "this model",
+    "class_reason": "It is a biomass yield constant, a constant of the model’s yield law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{p/o}",
+    "description": "Yield constant for penicillin per oxygen.",
+    "description_basis": "stated",
+    "snippet_id": 129,
+    "quote": "Yield constant:  $ Y_{p/o} $ (g penicillin/g oxygen)",
+    "unit": "g penicillin/g oxygen",
+    "unit_basis": "stated",
+    "value": "0.20 g penicillin/g oxygen",
+    "value_set": "this model",
+    "class_reason": "It is a penicillin yield constant, a constant of the model’s yield law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "m_{o}",
+    "description": "Maintenance coefficient on oxygen.",
+    "description_basis": "stated",
+    "snippet_id": 133,
+    "quote": "Maintenance coefficient on oxygen:  $ m_o $ (per h)",
+    "unit": "per h",
+    "unit_basis": "stated",
+    "value": "0.467 per h",
+    "value_set": "this model",
+    "class_reason": "It is a maintenance coefficient, a constant of the model’s oxygen-consumption law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{la}",
+    "description": "Overall mass transfer coefficient.",
+    "description_basis": "stated",
+    "snippet_id": 219,
+    "quote": "overall mass transfer coefficient  $ K_{la} $",
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "C_{L}^{*}",
+    "description": "Saturation dissolved-oxygen concentration in the oxygen-transfer driving force.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a concentration used by the model without computing it.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\alpha",
+    "description": "Constant in the K_la correlation.",
+    "description_basis": "stated",
+    "snippet_id": 157,
+    "quote": "Constants in  $ K_{la} $:  $ \\alpha $,  $ \\beta $",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": "70",
+    "value_set": "this model",
+    "class_reason": "It is a constant coefficient in the K_la law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "f_{g}",
+    "description": "Flow rate of oxygen.",
+    "description_basis": "stated",
+    "snippet_id": 220,
+    "quote": "flow rate of oxygen  $ f_{g} $",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the oxygen flow rate, an operating flow specified or measured for a run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "P_{w}",
+    "description": "Agitation power input.",
+    "description_basis": "stated",
+    "snippet_id": 220,
+    "quote": "agitation power input  $ P_{w} $",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the agitation power input, an operating quantity set or measured for a run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\beta",
+    "description": "Exponent on the agitation-power-to-volume term in the K_la relation.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "0.4",
+    "value_set": "this model",
+    "class_reason": "It is an exponent in the K_la law, a constant of that law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "F_{a/b}",
+    "description": "Term accounting for acid/base addition to the culture broth volume.",
+    "description_basis": "stated",
+    "snippet_id": 227,
+    "quote": "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term,  $ F_{a/b} $.",
+    "unit": "volume time^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the acid/base-addition contribution to the volume-change rate, an operating addition flow rate.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

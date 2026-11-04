@@ -1,0 +1,155 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2863,
+  "completion_tokens": 2941,
+  "total_tokens": 5804,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2860,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1950,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equations:\n(6) V\\frac{dN}{dt}+N\\frac{dV}{dt}=F_{t}N_{f}-\\mu_{N}\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)X_{a}V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(7) V\\frac{d\\boldsymbol{A}}{d t}+\\boldsymbol{A}\\frac{d\\boldsymbol{V}}{d t}=\\boldsymbol{F}_{t}\\boldsymbol{A}_{f}-\\mu_{A}\\left(\\frac{\\boldsymbol{A}}{\\boldsymbol{A}+\\boldsymbol{K}_{A}}\\frac{\\boldsymbol{K}_{I A}}{\\boldsymbol{A}+\\boldsymbol{K}_{I A}}\\right)\\boldsymbol{X}_{a}\\boldsymbol{V}      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nN   [COMPUTED by eq 6]\n  [256] (sentence, p.8) N, nitrate;\n  [346] (sentence, p.11) N, nitrate;\n  [408] (table_row, p.13) Model: Initial | aMAE $ _{{X}} $ [g L $ ^{{-1}} $]\\n(anMAE $ _{{X}} $ [-1]): 1.069 (0.214) | aMAE $ _{{X-8}} $\\n[g L $ ^{{-1}} $]\\n(anMAE $ _{{X-8}} $ [-1]): 1.850 (0.371) | aMAE $ _{{S}} $ [mM]\\n(anMAE $ _{{S}} $ [-1]): 5.841 (0.198) | aMAE $ _{{A}} $ [mM]\\n(\n\nN_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{N}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n  [207] (table_row, p.6) Parameter: $ \\mu_N $ | Description: Nitrate consumption rate | Unit: $ h^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 3.013 \\times 10^{-2} $ | 90% CI: $ 2.49 \\times 10^{-3} $\n  [433] (table_row, p.15) Parameter: $ \\mu_{{N}} $ | Description: Nitrate consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 1.71 \\times 10^{-2} $ | 90% CI: $ 2.7 \\times 10^{-2} $\n\nK_{N}   [NOT COMPUTED]\n  [203] (table_row, p.6) Parameter: $ K_N $ | Description: Nitrate saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.133 | 90% CI: 0.057\n  [424] (table_row, p.14) Parameter: $ K_N $ | Description: Nitrate saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.835 | 90% CI: 0.25\n\nK_{IN}   [NOT COMPUTED]\n  [204] (table_row, p.6) Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 0.135 | 90% CI: 0.097\n  [425] (table_row, p.14) Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 5 | Optimal: 1.0 | 90% CI: 0.06\n\nA   [COMPUTED by eq 7]\n  [68] (sentence, p.2) A mechanistic, kinetic modeling approach is preferred for PCCs, where all metabolic effects are lumped into unstructured kinetic functions for simplification (Resat et al., 2009), especially for model-based DoE where the number of experiments is small and henc\n  [79] (sentence, p.3) A similar workflow has been applied in chemical engineering (Höller et al., 2019;\n  [115] (sentence, p.3) A 5-L bioreactor was used in the initial experiments (#1-3) for model setup, whereas 2-L reactors were used for validation experiments (#4-9).\n\nA_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{A}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n  [206] (table_row, p.6) Parameter: $ \\mu_A $ | Description: Ammonium consumption rate | Unit: $ h^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 4.863 \\times 10^{-3} $ | 90% CI: $ 6.34 \\times 10^{-4} $\n  [432] (table_row, p.15) Parameter: $ \\mu_{{A}} $ | Description: Ammonium consumption rate | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: $ 6.9 \\times 10^{-3} $ | 90% CI: $ 1.9 \\times 10^{-3} $\n\nK_{A}   [NOT COMPUTED]\n  [201] (table_row, p.6) Parameter: $ K_A $ | Description: Ammonium saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.796 | 90% CI: 0.040\n  [422] (table_row, p.14) Parameter: $ K_A $ | Description: Ammonium saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.221 | 90% CI: 0.22\n\nK_{IA}   [NOT COMPUTED]\n  [202] (table_row, p.6) Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.797 | 90% CI: 0.024\n  [423] (table_row, p.14) Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.221 | 90% CI: 0.065",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "N",
+    "description": "Nitrate concentration.",
+    "description_basis": "stated",
+    "snippet_id": 256,
+    "quote": "N, nitrate;",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "Computed by a law.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "N_{f}",
+    "description": "Feed-medium nitrate concentration.",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "A feed concentration set for the run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{N}",
+    "description": "Nitrate consumption rate.",
+    "description_basis": "stated",
+    "snippet_id": 207,
+    "quote": "Nitrate consumption rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "3.013 × 10^{-2} h^{-1} (p. 6); 1.71 × 10^{-2} h^{-1} (p. 15)",
+    "class_reason": "A fitted nitrate-consumption rate constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{N}",
+    "description": "Nitrate saturation constant.",
+    "description_basis": "stated",
+    "snippet_id": 203,
+    "quote": "Nitrate saturation constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.133 g L^{-1} (p. 6); 0.835 g L^{-1} (p. 14)",
+    "class_reason": "A nitrate saturation constant in the consumption law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IN}",
+    "description": "Nitrate inhibition constant.",
+    "description_basis": "stated",
+    "snippet_id": 204,
+    "quote": "Nitrate inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.135 g L^{-1} (p. 6); 1.0 g L^{-1} (p. 14)",
+    "class_reason": "A nitrate inhibition constant in the consumption law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A",
+    "description": "Ammonium concentration.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "Computed by a law.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A_{f}",
+    "description": "Feed-medium ammonium concentration.",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "A feed concentration set for the run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{A}",
+    "description": "Ammonium consumption rate.",
+    "description_basis": "stated",
+    "snippet_id": 206,
+    "quote": "Ammonium consumption rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "4.863 × 10^{-3} h^{-1} (p. 6); 6.9 × 10^{-3} h^{-1} (p. 15)",
+    "class_reason": "A fitted ammonium-consumption rate constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{A}",
+    "description": "Ammonium saturation constant.",
+    "description_basis": "stated",
+    "snippet_id": 201,
+    "quote": "Ammonium saturation constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.796 g L^{-1} (p. 6); 0.221 g L^{-1} (p. 14)",
+    "class_reason": "An ammonium saturation constant in the consumption law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IA}",
+    "description": "Ammonium inhibition constant.",
+    "description_basis": "stated",
+    "snippet_id": 202,
+    "quote": "Ammonium inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "0.797 g L^{-1} (p. 6); 0.221 g L^{-1} (p. 14)",
+    "class_reason": "An ammonium inhibition constant in the consumption law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

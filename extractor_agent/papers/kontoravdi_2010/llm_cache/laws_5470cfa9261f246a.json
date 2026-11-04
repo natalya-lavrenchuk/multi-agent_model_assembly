@@ -1,0 +1,191 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.059132071,
+  "prompt_tokens": 1847,
+  "prompt_time": 0.132405874,
+  "completion_tokens": 1729,
+  "completion_time": 3.680767327,
+  "total_tokens": 3576,
+  "total_time": 3.813173201,
+  "completion_tokens_details": {
+   "reasoning_tokens": 432
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\n(1) \\frac{d V}{d t}=F_{i n}-F_{o u t}    [code: ODE, computes V, code proposes balance]\n(2) \\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}    [code: ODE, computes X_{\\nu}, code proposes balance]\n(3) \\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}    [code: ODE, computes X_{t}, code proposes balance]\n    The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\n(4) \\mu=\\mu_{m a x}f_{l i m}f_{i n h}    [code: algebraic, computes \\mu, code proposes constitutive]\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)    [code: algebraic, computes f_{lim}, code proposes constitutive]\n(6) f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)    [code: algebraic, computes f_{inh}, code proposes constitutive]\n    Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1    [code: algebraic, computes \\mu_{d}, code proposes constitutive]\n    The mass balances on glucose and glutamine around the bioreactor are:\n(8) \\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]    [code: algebraic, computes ?, code proposes constitutive]\n\nSymbols:\n  V: reactor liquid volume [L] (computed)\n  F_{in}: inlet volumetric flow rate [L h^-1] (variable)\n  F_{out}: outlet volumetric flow rate [L h^-1] (variable)\n  X_{\\nu}: viable cell concentration (cells per volume) [cells L^-1] (computed)\n  \\mu: specific growth rate of viable cells [h^-1] (computed)\n  \\mu_{d}: specific death rate of cells [h^-1] (computed)\n  X_{t}: total cell concentration (viable + dead) [cells L^-1] (computed)\n  \\mu_{max}: maximum specific growth rate [h^-1] (variable)\n  f_{lim}: limiting factor for growth (product of substrate saturation terms) [-] (computed)\n  f_{inh}: inhibition factor for growth (product of inhibition terms) [-] (computed)\n  [GLC]: glucose concentration in the reactor [mM] (computed)\n  K_{glc}: Monod constant for glucose [mM] (parameter)\n  K_{gln}: Monod constant for glutamine [mM] (parameter)\n  K: heavy- and light-chain mRNA decay rate [h^{-1}] (parameter)\n  I_{lac}: inhibition term for lactate in the death rate expression (parameter)\n  [LAC]: lactate concentration in the reactor (computed)\n  I_{amm}: inhibition term for ammonia in the death rate expression (parameter)\n  [AMM]: ammonia concentration in the reactor (computed)\n  \\mu_{d,max}: maximum specific death rate [h^{-1}] (parameter)\n  K_{d,amm}: ammonia constant for cell death [mM] (parameter)\n  n: exponent in the death rate equation [-] (parameter)\n  d: time derivative operator used in the mass balance (computed)\n  Q_{glc}: specific glucose consumption rate [mmol/cell·h] (computed)\n  [GLC]_{in}: inlet glucose concentration [mmol·L^-1] (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 1, 2, 3, 4, 5, 6, 7, 8",
+ "answer": {
+  "laws": [
+   {
+    "eq": "dV/dt = F_{in} - F_{out}",
+    "description": "volume balance in the reactor",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "volume",
+      "symbol": "V"
+     },
+     {
+      "role": "inlet flow",
+      "symbol": "F_{in}"
+     },
+     {
+      "role": "outlet flow",
+      "symbol": "F_{out}"
+     }
+    ]
+   },
+   {
+    "eq": "d(V X_{\\nu})/dt = \\mu V X_{\\nu} - \\mu_{d} V X_{\\nu} - F_{out} X_{\\nu}",
+    "description": "viable cell mass balance",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "viable biomass",
+      "symbol": "X_{\\nu}"
+     },
+     {
+      "role": "specific growth rate",
+      "symbol": "\\mu"
+     },
+     {
+      "role": "specific death rate",
+      "symbol": "\\mu_{d}"
+     },
+     {
+      "role": "outlet flow",
+      "symbol": "F_{out}"
+     },
+     {
+      "role": "volume",
+      "symbol": "V"
+     }
+    ]
+   },
+   {
+    "eq": "d(V X_{t})/dt = \\mu V X_{\\nu} - F_{out} X_{t}",
+    "description": "total cell mass balance (viable + dead)",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "total biomass",
+      "symbol": "X_{t}"
+     },
+     {
+      "role": "specific growth rate",
+      "symbol": "\\mu"
+     },
+     {
+      "role": "viable biomass",
+      "symbol": "X_{\\nu}"
+     },
+     {
+      "role": "outlet flow",
+      "symbol": "F_{out}"
+     },
+     {
+      "role": "volume",
+      "symbol": "V"
+     }
+    ]
+   },
+   {
+    "eq": "\\mu = \\mu_{max} f_{lim} f_{inh}",
+    "description": "specific growth rate computed as the maximum growth rate multiplied by limiting and inhibition factors",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": []
+   },
+   {
+    "eq": "f_{lim} = \\left(\\frac{[GLC]}{K_{glc} + [GLC]}\\right) \\left(\\frac{[GLC]}{K_{gln} + [GLC]}\\right)",
+    "description": "product of Monod saturation terms for glucose and glutamine",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": []
+   },
+   {
+    "eq": "f_{inh} = \\left(\\frac{K I_{lac}}{K I_{lac} + [LAC]}\\right) \\left(\\frac{K I_{amm}}{K I_{amm} + [AMM]}\\right)",
+    "description": "product of inhibition terms for lactate and ammonia",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": []
+   },
+   {
+    "eq": "\\mu_{d} = \\frac{\\mu_{d,max}}{1 + (K_{d,amm}/[AMM])^{n}}, \\quad n>1",
+    "description": "cell death rate as a function of ammonia concentration",
+    "description_basis": "inferred",
+    "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+    "law_type": "constitutive",
+    "law_type_reason": "",
+    "assumptions": [
+     {
+      "text": "cell death only depends on the concentration of ammonia in the extracellular medium",
+      "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": []
+   },
+   {
+    "eq": "d(V[GLC])/dt = -Q_{glc} V X_{\\nu} + F_{in}[GLC]_{in} - F_{out}[GLC]",
+    "description": "glucose mass balance in the reactor",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "specific consumption rate",
+      "symbol": "Q_{glc}"
+     },
+     {
+      "role": "viable biomass",
+      "symbol": "X_{\\nu}"
+     },
+     {
+      "role": "inlet flow",
+      "symbol": "F_{in}"
+     },
+     {
+      "role": "inlet concentration",
+      "symbol": "[GLC]_{in}"
+     },
+     {
+      "role": "outlet flow",
+      "symbol": "F_{out}"
+     },
+     {
+      "role": "volume",
+      "symbol": "V"
+     }
+    ]
+   }
+  ]
+ }
+}

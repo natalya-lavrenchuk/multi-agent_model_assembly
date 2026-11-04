@@ -1,0 +1,198 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 5892,
+  "completion_tokens": 10593,
+  "total_tokens": 16485,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 5889,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 9218,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids\n\nAbstract: Membrane capacity during the filtration of biotech process streams is typically limited by fouling, which can occur by pore blocking, pore constriction, caking or a combination of the mechanisms. In this study five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were generated. Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation and volume to time during constant pressure operation. The models used two fitted parameters and reduced to the individual models when one mechanism dominated. The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested. The combined caking and complete blockage model was the most useful, as it was able to provide good fits of both data sets, and provide good fits of each of the other individual model predictions. The cake-complete model will provide good fits of a broad range of curves wher\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [NEEDED: a model law] p.2  ...The flow rate Q can be calculated as a function of resistance R and membrane frontal area A using Darcy's law\n    Q=\\frac{P A}{R\\mu}\n(2) [CONFLICT: computes R, like eq 3] p.2  ...accumulates on the pore walls [1,2]. The resistance can be calculated as a function of volume processed using Eq. (2), or time using Eq. (3)\n    R=R_{0}\\Bigg(1-\\frac{K_{s}V}{2}\\Bigg)^{-2}\n(3) [CONFLICT: computes R, like eq 2] p.2  ...accumulates on the pore walls [1,2]. The resistance can be calculated as a function of volume processed using Eq. (2), or time using Eq. (3)\n    R=R_{0}\\Bigg(1+\\frac{K_{\\mathrm{s}}J_{0}t}{2}\\Bigg)^{2}\n(4) [CONFLICT: computes V, like eq 7, 8, 13, 16, 17, 18, 19] p.2  ...The volume can be calculated as a function of time from\n    V=\\left(\\frac{1}{J_{0}t}+\\frac{K_{\\mathrm{s}}}{2}\\right)^{-1}\n(5) [NEEDED: a model law] p.2  ...area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $\n    \\frac{A}{A_{0}}=1-\\frac{K_{\\mathrm{b}}}{J_{0}}V\n(6) [NEEDED: a model law] p.2  ...area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $\n    \\frac{A}{A_{0}}=\\exp(-K_{i}V)\n(7) [CONFLICT: computes V, like eq 4, 8, 13, 16, 17, 18, 19] p.3  ...g and Eq. (8) describes intermediate blocking. These equations can be inserted into Eqs. (5) and (6) to calculate area as a function of time\n    V=\\frac{J_{0}}{K_{\\mathrm{b}}}(1-\\exp(-K_{\\mathrm{b}}t))\n(8) [CONFLICT: computes V, like eq 4, 7, 13, 16, 17, 18, 19] p.3  ...g and Eq. (8) describes intermediate blocking. These equations can be inserted into Eqs. (5) and (6) to calculate area as a function of time\n    V=\\frac{1}{K_{\\mathrm{i}}}\\ln(1+K_{\\mathrm{i}}J_{0}t)\n(9) [NEEDED: a model law] p.3  ...During constant flow rate operations, Eqs. (5) and (6) can be written in terms of time\n    \\frac{A}{A_{0}}=1-K_{\\mathrm{b}}t\n(10) [NEEDED: a model law] p.3  ...During constant flow rate operations, Eqs. (5) and (6) can be written in terms of time\n    \\frac{A}{A_{0}}=\\exp(-K_{i}J_{0}t)\n(11) [CONFLICT: computes R_{0}, like eq 12, 27] p.3  ... the sum of the membrane resistance and the cake resistance. This can be calculated as a function of volume by Eq. (11) and time by Eq. (12)\n    \\frac{R}{R_{0}}=(1+K_{\\mathrm{c}}J_{0}V)\n(12) [CONFLICT: computes R_{0}, like eq 11, 27] p.3  ... the sum of the membrane resistance and the cake resistance. This can be calculated as a function of volume by Eq. (11) and time by Eq. (12)\n    \\frac{R}{R_{0}}=(1+2K_{\\mathrm{c}}J_{0}^{2}t)^{1/2}\n(13) [CONFLICT: computes V, like eq 4, 7, 8, 16, 17, 18, 19] p.3  ...where  $ K_{c} $ has units of s/m $ ^{2} $. Eq. (13) describes volume as a function of time\n    V=\\frac{1}{K_{\\mathrm{c}}J_{0}}\\left(\\sqrt{1+2K_{\\mathrm{c}}J_{0}^{2}t}-1\\right)\n(14) [NEEDED: a model law] p.3  ...icted by the cake filtration model. Darcy's law was used to calculate the flux under constant pressure conditions. The flux  $ J = Q/A_{0} $\n    \\frac{J}{J_{0}}=\\frac{R_{0}A}{RA_{0}}\n(15) [NEEDED: a model law] p.3  ...ence of the cake. The flux equation with combined cake filtration-complete blocking is obtained by inserting Eqs. (12) and (5) into Eq. (14)\n    \\frac{J}{J_{0}}=\\left(1-\\frac{K_{\\mathrm{b}}V}{J_{0}}\\right)\\left(1+2K_{\\mathrm{c}}J_{0}^{2}t\\right)^{-1/2}\n(16) [CONFLICT: computes V, like eq 4, 7, 8, 13, 17, 18, 19] p.3  ...Eq. (15) can be integrated to solve for volume as a function of time\n    V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-K_{\\mathrm{b}}}{K_{\\mathrm{c}}J_{0}^{2}}\\left(\\sqrt{1+2K_{\\mathrm{c}}J_{0}^{2}t}-1\\right)\\right)\\right)\n(17) [CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 18, 19] p.4  ...r technique to create a combined intermediate blocking-cake filtration model. Eq. (17) can be used to calculate volume as a function of time\n    V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{K_{\\mathrm{i}}}{K_{\\mathrm{c}}J_{0}}((1+2K_{\\mathrm{c}}J_{0}^{2}t)^{1/2}-1)\\right)\n(18) [CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 17, 19] p.4  ...combined complete-standard blocking model\n    V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-2K_{\\mathrm{b}}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)\\right)\n(19) [CONFLICT: computes V, like eq 4, 7, 8, 13, 16, 17, 18] p.4  ...Eq. (19) can be used to calculate volume as a function of time with the combined intermediate-standard blocking model\n    V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{2K_{\\mathrm{i}}J_{0}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)\n(20) [NEEDED: a model law] p.4  ...available membrane area will not decline over the course of the run. For constant pressure operations Darcy's law can be reduced to Eq. (20)\n    \\frac{J}{J_{0}}=\\frac{R_{0}}{R}\n(21) [NEEDED: a model law] p.5  ...can still be used. The flux will be described by Eq. (21)\n    \\frac{J}{J_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}V}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}V\\right)^{-1}\n(22) [NEEDED: a model law] p.5  ...Eq. (21) can be integrated to determine time as a function of volume\n    t=\\frac{1}{(K_{\\mathrm{s}}V-2)}\\left(\\frac{K_{\\mathrm{s}}K_{\\mathrm{c}}V^{3}}{2}-K_{\\mathrm{c}}V^{2}-\\frac{2V}{J_{0}}\\right)\n(23) [NEEDED: a model law] p.5  ...n be used to calculate volume as a function of time numerically. It is also possible to solve Eq. (22) for volume as a function of time [10]\n    \\begin{aligned}&V{=}\\frac{2}{K_{\\mathrm{s}}}\\left(\\beta\\cos\\left(\\frac{2\\pi}{3}{-}\\frac{1}{3}\\operatorname{a r c c o s}(\\alpha)\\right){+}\\frac{1}{3}\\right),\\\\&\\alpha{=}\\frac{8}{27\\beta^{3}}+\\frac{4K_{\\mathrm{s}}}{3\\beta^{3}K_{\\mathrm{c}}J_{\n(24) [NEEDED: a model law] p.5  ...When the flux rate is kept constant, the pressure increases as the membrane becomes fouled and Darcy's law reduces to Eq. (24)\n    \\frac{P}{P_{0}}=\\frac{RA_{0}}{R_{0}A}\n(25) [NEEDED: a model law] p.5  ...ime can be obtained by inserting the complete blocking equation for area as a function of time  $ (9) $ into the equation for flux  $ (1) $.\n    J^{\\prime}=\\frac{J_{0}}{1-K_{\\mathrm{b}}t}\n(26) [NEEDED: a model law] p.5  ...d to derive an equation that describes the amount of permeate volume that has gone through the available membrane area as a function of time\n    V^{\\prime}=\\frac{-J_{0}}{K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\n(27) [CONFLICT: computes R_{0}, like eq 11, 12] p.5  ...esistance will increase with the amount of permeate volume that has gone through that remaining area according to the cake filtration model.\n    \\frac{R}{R_{0}}=(1+K_{\\mathrm{c}}J_{0}V^{\\prime})\n(28) [NEEDED: a model law] p.5  ... equation and the equation for area as a function of time (9) can then be inserted into Eq. (24) to determine pressure as a function of time\n    \\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)}\\left(1-\\frac{K_{\\mathrm{c}}J_{0}^{2}}{K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\right)\n(29) [NEEDED: a model law] p.5  ...reases over the course of the run and the membrane area remain constant. The pressure can be calculated as a function of time using Eq. (29)\n    \\frac{P}{P_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}J_{0}t}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}^{2}t\\right)\n(30) [NEEDED: a model law] p.5  ...Eq. (30) allows calculation of pressure as a function of time using the combined intermediate blocking-cake filtration model\n    \\frac{P}{P_{0}}=\\exp(K_{\\mathrm{i}}J_{0}t)\\left(1+\\frac{K_{\\mathrm{c}}J_{0}}{K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)\n(31) [NEEDED: a model law] p.6  ...Pressure as a function of time in the combined standard and complete blocking model will be described by Eq. (31)\n    \\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)\\Big(1+\\frac{K_{\\mathrm{s}}J_{0}}{2K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\Big)^{2}}\n(32) [NEEDED: a model law] p.6  ...Pressure as a function of time in the combined standard and intermediate blocking model will be described by Eq. (32)\n    \\frac{P}{P_{0}}=\\frac{\\exp(K_{\\mathrm{i}}J_{0}t)}{\\left(1-\\frac{K_{\\mathrm{s}}}{2K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)^{2}}\n\nSentences in which the paper lists equations:\n- \"The available membrane area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $\"  -> eqs 5, 6, 2\n- \"In practice Eqs. (17)–(19) do not span a wide range of flux decline rates and are not as useful as the combined cake-complete model.\"  -> eqs 17, 18, 19\n- \"The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23).\"  -> eqs 18, 19, 23\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation and volume to time during constant pressure operation.\n- (p.1) Complete blocking assumes that particles seal off pore entrances and prevent flow.\n- (p.1) Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.\n- (p.1) Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.\n- (p.2) The deposited aggregates were assumed to be permeable.\n- (p.2) Plots of volume versus time during constant pressure operation or pressure versus time during constant flow operation were obtained by numerical integration of the relevant equations.\n- (p.2) The goal was to develop models that described combined-mechanism fouling with two fitted parameters and with explicit equations for constant flow and constant pressure operation.\n- (p.2) Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.\n- (p.2) The resistance can be calculated as a function of volume processed using Eq. (2), or time using Eq. (3)\n- (p.2) The equations are valid for both constant pressure and constant flow operation.\n- (p.2) For constant trans-membrane pressure operations, the equations can be inserted into Darcy's law, Eq. (1), and integrated to derive equations for volume versus time.\n- (p.2) Eq. (7) describes\n- (p.3) complete blocking and Eq. (8) describes intermediate blocking.\n- (p.3) These equations can be inserted into Eqs. (5) and (6) to calculate area as a function of time\n- (p.3) During constant flow rate operations, Eqs. (5) and (6) can be written in terms of time\n- (p.3) Eqs. (9) and (10) can be inserted into Eq. (1) to obtain pressure as a function of time.\n- (p.3) This can be calculated as a function of volume by Eq. (11) and time by Eq. (12)\n- (p.3) Eq. (13) describes volume as a function of time\n- (p.3) In this model it was assumed that cake formation and complete pore blockage occur simultaneously.\n- (p.3) The resistance resulting from cake formation can be described either in terms of permeate volume, Eq. (11), or time, Eq. (12).\n- (p.3) Eq. (11) is not valid in this case because the permeate volume is defined relative to the available membrane area which is declining over the course of the run.\n- (p.3) If the equation for cake resistance in terms of volume processes was used, it would assume that there was a thin cake evenly distributed over the membrane.\n- (p.3) Eq. (12) is still valid for the area that remains available.\n- (p.3) The equation for area as a function of time therefore cannot be used.\n- (p.3) The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake.\n- (p.3) The flux equation with combined cake filtration-complete blocking is obtained by inserting Eqs. (12) and (5) into Eq. (14)\n- (p.3) Eq. (15) can be integrated to solve for volume as a function of time\n- (p.3) In this case Eq. (16) reduces to the form of the complete blocking model after a Taylor expansion of the square root term for small values of  $ K_c $:\n- (p.3) In this case Eq. (16) reduces to the form of the cake filtration model after a Taylor expansion of the exponent term for small\n- (p.4) It is not possible to obtain an equation that will allow calculation of volume as a function of flux with the cake-complete model.\n- (p.4) To determine the filtrate volume as a function of percent flux decline – for example, the volume after the flux has declined 75% from its initial value – it is necessary to solve Eq. (15) numerically.\n- (p.4) Eq. (17) can be used to calculate volume as a function of time\n- (p.4) The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.\n- (p.4) Eq. (18) can be used to calculate volume as a function of time with the\n- (p.4) Eq. (19) can be used to calculate volume as a function of time with the combined intermediate-standard blocking model",
+ "answer": {
+  "models": [
+   {
+    "name": "Cake-complete blocking",
+    "equations": [
+     "1",
+     "5",
+     "12",
+     "14",
+     "15",
+     "16",
+     "24",
+     "28"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Cake formation and complete pore blockage occur simultaneously.",
+      "quote": "In this model it was assumed that cake formation and complete pore blockage occur simultaneously."
+     },
+     {
+      "text": "Deposited aggregates are permeable.",
+      "quote": "The deposited aggregates were assumed to be permeable."
+     }
+    ],
+    "complete_model": true
+   },
+   {
+    "name": "Cake-intermediate blocking",
+    "equations": [
+     "1",
+     "6",
+     "11",
+     "14",
+     "17",
+     "24",
+     "30"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Intermediate blocking assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.",
+      "quote": "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles."
+     },
+     {
+      "text": "Deposited aggregates are permeable.",
+      "quote": "The deposited aggregates were assumed to be permeable."
+     }
+    ],
+    "complete_model": true
+   },
+   {
+    "name": "Cake-standard blocking",
+    "equations": [
+     "1",
+     "2",
+     "11",
+     "14",
+     "20",
+     "21",
+     "24",
+     "29"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+      "quote": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores."
+     },
+     {
+      "text": "Deposited aggregates are permeable.",
+      "quote": "The deposited aggregates were assumed to be permeable."
+     }
+    ],
+    "complete_model": true
+   },
+   {
+    "name": "Complete-standard blocking",
+    "equations": [
+     "1",
+     "2",
+     "5",
+     "14",
+     "24",
+     "18",
+     "31"
+    ],
+    "boundary_quote": "The available membrane area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $",
+    "assumptions": [
+     {
+      "text": "Complete blocking assumes that particles seal off pore entrances and prevent flow.",
+      "quote": "Complete blocking assumes that particles seal off pore entrances and prevent flow."
+     },
+     {
+      "text": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+      "quote": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores."
+     }
+    ],
+    "complete_model": true
+   },
+   {
+    "name": "Intermediate-standard blocking",
+    "equations": [
+     "1",
+     "2",
+     "6",
+     "14",
+     "24",
+     "19",
+     "32"
+    ],
+    "boundary_quote": "The available membrane area declines with permeate volume in the complete model according to Eq. (5), and in the intermediate model according to Eq. (6) $ ^{[2]} $",
+    "assumptions": [
+     {
+      "text": "Intermediate blocking assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.",
+      "quote": "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles."
+     },
+     {
+      "text": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+      "quote": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores."
+     }
+    ],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "3",
+    "reason": "Restates the standard-blocking resistance law in eq 2 as a function of time."
+   },
+   {
+    "eq": "4",
+    "reason": "Integrated single-mechanism volume solution; the standard-blocking resistance law is represented by eq 2."
+   },
+   {
+    "eq": "7",
+    "reason": "Single-mechanism complete-blocking volume solution, not one of the combined models."
+   },
+   {
+    "eq": "8",
+    "reason": "Single-mechanism intermediate-blocking volume solution, not one of the combined models."
+   },
+   {
+    "eq": "9",
+    "reason": "Restates the complete-blocking area law in eq 5 for constant-flow operation."
+   },
+   {
+    "eq": "10",
+    "reason": "Restates the intermediate-blocking area law in eq 6 for constant-flow operation."
+   },
+   {
+    "eq": "13",
+    "reason": "Integrated single-mechanism cake-filtration volume solution, not one of the combined models."
+   },
+   {
+    "eq": "22",
+    "reason": "Integrated time-versus-volume expression derived from the cake-standard flux law in eq 21."
+   },
+   {
+    "eq": "23",
+    "reason": "Analytical solution of the relationship in eq 22; it restates the cake-standard model."
+   },
+   {
+    "eq": "25",
+    "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+   },
+   {
+    "eq": "26",
+    "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+   },
+   {
+    "eq": "27",
+    "reason": "Intermediate derivation for the combined cake-complete pressure equation in eq 28."
+   }
+  ],
+  "free_laws": []
+ }
+}

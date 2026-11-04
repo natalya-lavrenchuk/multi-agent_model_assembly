@@ -1,0 +1,125 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.15324866,
+  "prompt_tokens": 2119,
+  "prompt_time": 0.104406128,
+  "completion_tokens": 1491,
+  "completion_time": 3.178036267,
+  "total_tokens": 3610,
+  "total_time": 3.282442395,
+  "completion_tokens_details": {
+   "reasoning_tokens": 574
+  }
+ },
+ "user": "Equations:\n(7) \\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}      <- \"The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.\"\n(8) \\alpha=\\frac{f A_{\\mathrm{a g g}}}{M_{\\mathrm{a g g}}}      <- \" to the membrane surface. Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter $ \\alpha $ can be expressed as\"\n(10) \\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}      <- \"he protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,\"\n(11) J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}      <- \"d $ f' $ is the fraction of the proteins that contribute to the growth of the deposit. $ J_{blocked} $ is the filtrate flux through each region of the membrane:\"\n(12) \\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}      <- \"le to contribute to the growth of the deposit. The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,\"\n\nSymbols:\n\nC_{b}   [NOT COMPUTED]\n  [58] (sentence, p.2) where  $ Q_{open} $ is the volumetric flow rate through the open pores,  $ C_{b} $ is the bulk protein concentration, and  $ \\alpha $ is a pore blockage parameter which is equal to the membrane area blocked per unit mass of protein convected to the membrane su\n  [61] (sentence, p.2) The product $f \\cdot C_{b}$ is equal to the concentration (mass/volume) of protein aggregates present in the solution that are too large to pass through the membrane pores.\n  [89] (sentence, p.3) At long times ( $ t \\gg \\frac{\\mu R_m}{\\alpha \\Delta P C_b} $), the volumetric flow rate is dominated by the second term and is thus proportional to the ratio of the membrane resistance to the total resistance.\n\nf   [NOT COMPUTED]\n  [60] (sentence, p.2) where $f$ is the fractional amount of total protein present as aggregates and $M_{agg}$ is the mass of a single aggregate.\n  [66] (sentence, p.2) where  $ m_{p} $ is the mass of the protein deposit per unit area, and  $ f' $ is the fraction of the proteins that contribute to the growth of the deposit.\n  [68] (sentence, p.3) The parameter  $ f' $ will be equal to f under conditions where only the protein aggregates add to the deposit.\n\nA_{agg}   [NOT COMPUTED]\n  [59] (sentence, p.2) Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter  $ \\alpha $ can be expressed as\n  [141] (sentence, p.5) The average diameter of the protein aggregates was also determined by both light scattering and scanning electron microscopy as $0.36 \\pm 0.1$ $\\mu$m, yielding $A_{agg} = 1.1 \\pm 0.6 \\times 10^{-13}$ m$^2$ and $M_{agg} = 3.0 \\pm 2.1 \\times 10^{-17}$ kg using a\n  [314] (table_row, p.11) $ A_{agg} $: $ A_{blocked} $ | Membrane area blocked by a single aggregate,  $ m^{2} $: Area of membrane blocked by protein deposit,  $ m^{2} $\n\nM_{agg}   [NOT COMPUTED]\n  [60] (sentence, p.2) where $f$ is the fractional amount of total protein present as aggregates and $M_{agg}$ is the mass of a single aggregate.\n  [141] (sentence, p.5) The average diameter of the protein aggregates was also determined by both light scattering and scanning electron microscopy as $0.36 \\pm 0.1$ $\\mu$m, yielding $A_{agg} = 1.1 \\pm 0.6 \\times 10^{-13}$ m$^2$ and $M_{agg} = 3.0 \\pm 2.1 \\times 10^{-17}$ kg using a\n  [322] (table_row, p.11) $ A_{agg} $: $ M_{agg} $ | Membrane area blocked by a single aggregate,  $ m^{2} $: Mass of a single aggregate, kg\n\nm_{p}   [COMPUTED by eq 10]\n  [66] (sentence, p.2) where  $ m_{p} $ is the mass of the protein deposit per unit area, and  $ f' $ is the fraction of the proteins that contribute to the growth of the deposit.\n\nf^{\\prime}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nJ_{blocked}   [COMPUTED by eq 11]\n  [67] (sentence, p.2) $ J_{blocked} $ is the filtrate flux through each region of the membrane:\n  [74] (sentence, p.3) The resistance provided by the protein deposit over a given region of the membrane can be evaluated by integrating Eq. [12] using Eq. [11] to evaluate  $ J_{blocked} $ to give\n\nR^{\\prime}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "C_{b}",
+    "description": "bulk protein concentration",
+    "description_basis": "stated",
+    "snippet_id": 58,
+    "quote": "C_{b} is the bulk protein concentration",
+    "unit": "mass/volume",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "f",
+    "description": "fractional amount of total protein present as aggregates",
+    "description_basis": "stated",
+    "snippet_id": 60,
+    "quote": "f is the fractional amount of total protein present as aggregates",
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "A_{agg}",
+    "description": "membrane area blocked by a single aggregate",
+    "description_basis": "stated",
+    "snippet_id": 59,
+    "quote": "A_{agg} ... membrane area blocked by a single aggregate",
+    "unit": "m^2",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "M_{agg}",
+    "description": "mass of a single aggregate",
+    "description_basis": "stated",
+    "snippet_id": 60,
+    "quote": "M_{agg} is the mass of a single aggregate",
+    "unit": "kg",
+    "unit_basis": "stated",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "m_{p}",
+    "description": "mass of the protein deposit per unit area",
+    "description_basis": "stated",
+    "snippet_id": 66,
+    "quote": "m_{p} is the mass of the protein deposit per unit area",
+    "unit": "kg m^-2",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "f^{\\prime}",
+    "description": "fraction of the proteins that contribute to the growth of the deposit",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "J_{blocked}",
+    "description": "filtrate flux through each region of the membrane",
+    "description_basis": "stated",
+    "snippet_id": 67,
+    "quote": "J_{blocked} is the filtrate flux through each region of the membrane",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "R^{\\prime}",
+    "description": "proportionality constant linking hydraulic resistance of the protein deposit to its mass per unit area",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "not computed; it is an input condition",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

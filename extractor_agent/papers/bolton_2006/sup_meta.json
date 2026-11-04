@@ -1,0 +1,1273 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "bolton_2006_cake_complete_blocking": {
+   "name": "Cake-complete blocking",
+   "equations": [
+    "1",
+    "5",
+    "12",
+    "14",
+    "15",
+    "16",
+    "24",
+    "28"
+   ],
+   "description": "The paper develops five combined fouling models for membrane filtration, including a cake-complete model for protein solutions filtered through microporous membranes. The model represents fouling through both growth of a cake layer and loss of open membrane area, and predicts permeate volume over time at constant pressure or pressure over time at constant flow. It uses Darcy’s law and two fitted parameters, and approaches the individual cake or complete-blocking models when one mechanism dominates. The authors tested it using sterile filtration of human plasma IgG and virus filtration of BSA, as well as constant-flow IgG tests, in bench-scale membrane holders. They compared its fits with individual and other combined fouling models and considered its use for membrane-area sizing.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes fouling during filtration of protein solutions through microporous membranes.",
+     "quote": "The combined models were assessed through testing under constant pressure and constant flow modes with solutions of bovine serum albumin and human IgG.",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The experimental streams were BSA for virus filtration and human plasma IgG for sterile filtration.",
+     "quote": "Bovine serum albumin was filtered through virus retention membranes and human IgG was filtered through sterilizing grade microporous membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "Complete blocking represents particles sealing pore entrances so those pores no longer carry flow.",
+     "quote": "Complete blocking assumes that particles seal off pore entrances and prevent flow.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "Cake filtration represents particles accumulating on the membrane surface in a permeable layer that adds flow resistance.",
+     "quote": "Cake filtration occurs when particles accumulate on the surface of a membrane in a permeable cake of increasing thickness that adds resistance to flow.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "In the cake-complete model, cake forms on the area that remains unblocked, and blockage removes membrane area from flow.",
+     "quote": "Cake forms on the membrane area that is not blocked. Complete blockage can occur on portions of the membrane area where a cake has formed. There is no flux through blocked membrane area.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The cake-complete model idealizes caking and complete blocking as independent effects, although the paper notes that they may interact in real filtration.",
+     "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The supplied formulation has eight algebraic laws and no state variables, so its time-dependent predictions are calculated from relations rather than state ODEs.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "structure",
+     "text": "The model uses two fitted parameters, one for cake filtration and one for complete blocking.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "structure",
+     "text": "The combined fouling relations were derived using Darcy’s law.",
+     "quote": "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law.",
+     "basis": "stated"
+    },
+    {
+     "topic": "outputs",
+     "text": "At constant pressure, the model predicts permeate volume as a function of time.",
+     "quote": "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "outputs",
+     "text": "At constant flow, the model predicts pressure as a function of time.",
+     "quote": "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "outputs",
+     "text": "When one mechanism contributes little, the combined model reduces to the corresponding individual cake-filtration or complete-blocking model.",
+     "quote": "This equation reduces to the equation for complete blocking when Kc is small and reduces to the equation for cake filtration when Kb is small.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inputs",
+     "text": "The formulation takes initial flux, initial membrane area, elapsed time, and initial pressure as inputs, and has no state variables.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "equipment",
+     "text": "Constant-pressure tests used a pressure vessel, stainless-steel membrane holders, an electronic balance, and a digital pressure gauge.",
+     "quote": "The fouling solution was contained in a pressure vessel (XX1100000, Millipore, Bedford, MA).",
+     "basis": "stated"
+    },
+    {
+     "topic": "materials",
+     "text": "BSA was prepared at 2.5 mg/mL in pH 7.2 PBS, and human plasma IgG was prepared at 10.0 mg/mL in pH 7.2 PBS.",
+     "quote": "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The IgG sterile-filtration tests used a nominal 0.22 μm Durapore PVDF membrane at 10 psi.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The BSA virus-filtration tests used Viresolve 180, a composite PVDF membrane, at 30 psi.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The constant-pressure equipment used 13 or 47 mm stainless-steel holders and four 600 mL chambers connected to the pressure source.",
+     "quote": "Four 600 mL chambers were connected to the pressure source.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Three constant-pressure IgG experiments used 13 mm holders, and permeate volume was measured until flux had fallen 95% from an initial 1.13 × 10⁻³ m/s.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "The experimental system collected filtration data every second for one hour.",
+     "quote": "Data was collected every second for 1 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Three constant-flow IgG experiments measured pressure over time while solution was pumped through 47 mm holders at 579 L m⁻² h⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "Five constant-pressure BSA runs used 47 mm holders, and permeate volume was measured until flux had fallen 98% from an initial 3.58 × 10⁻⁴ m/s.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "The BSA results were averaged across the five runs, with standard deviation calculated at each time point.",
+     "quote": "The data was similar for the five experiments. The average and standard deviation was calculated at each time point.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "Model fits were assessed by minimizing the sum of squared residuals between measured points and model predictions.",
+     "quote": "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "For the standard-model comparison in the constant-pressure IgG analysis, only the standard-blocking constant was fitted to avoid refitting the initial flux for each experiment.",
+     "quote": "In this study only the parameter Ks was fit to the data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "The paper reports fitted point estimates and fit errors but does not report parameter confidence intervals or other parameter-uncertainty estimates.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure IgG filtration, the cake-complete model had an SSR of 11.2, slightly lower than the standard model’s 13.9.",
+     "quote": "The best fit of the data occurred with the combined cake-complete model, which had and SSR value slightly lower than the standard model, as shown in Table 3.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-flow IgG filtration, the cake-intermediate model had the lowest SSR at 0.58, while the cake-complete model had an SSR of 1.36.",
+     "quote": "The best fit of the data occurred with the combined cake-intermediate model, which had and SSR value slightly lower than the cake-complete model, as shown in Table 4.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure BSA filtration, the cake-intermediate model fit best with an SSR of 959, compared with 1,620 for the cake-complete model, and the two fits were within the standard deviation of most data points.",
+     "quote": "The fit of the cake-intermediate model was slightly better than that of the cake-complete model, as shown in Table 5, though the fits of the two models were within the standard deviation of most data points.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "The cake-complete model could closely reproduce predictions from each of the four individual fouling models.",
+     "quote": "This is demonstrated in Fig. 10 where the combined cake-complete model is fit to predictions of each of the typical blocking models from Fig. 8.",
+     "basis": "stated"
+    },
+    {
+     "topic": "interpretation",
+     "text": "A good fit from the cake-complete model does not establish that pore blockage and cake formation actually occurred simultaneously.",
+     "quote": "Though providing a good data fit does not prove that fouling occurs by the simultaneous effects of pore blockage and cake formation, the cake-complete model can be viewed as a useful phenomenological equation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "interpretation",
+     "text": "Because the mechanisms may be coupled, the fitted cake and blocking parameters can represent average values over the filtration run.",
+     "quote": "The combined cake-complete model in effect provides complete blocking and cake filtration parameters that are average values for the length of the run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors present the cake-complete model as useful for curves whose flux decline lies between the cake-filtration and complete-blocking extremes.",
+     "quote": "The cake-complete model will provide good fits of a broad range of curves where the flux declines in a manner between the extremes of cake filtration and complete blocking.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The cake-standard and cake-intermediate models are intended for cases where those combinations agree with experimentally observed fouling mechanisms.",
+     "quote": "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The model does not provide a direct formula for permeate volume at a specified flux decline, so that quantity must be found numerically.",
+     "quote": "To determine the filtrate volume as a function of percent flux decline – for example, the volume after the flux has declined 75% from its initial value – it is necessary to solve Eq. (15) numerically.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper compares the combined models with the earlier pore-blockage and cake-filtration model of Ho and Zydney et al. (2000), which used three fitted parameters.",
+     "quote": "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors describe their combined models as less physically detailed than Ho and Zydney et al. (2000), but simpler to implement numerically.",
+     "quote": "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The four individual fouling mechanisms used as components are the classical mechanisms cited to Grace (1956) and Hermia (1982).",
+     "quote": "There are four mechanistic models that are typically used to describe fouling.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose the cake-complete model as useful for membrane-area sizing.",
+     "quote": "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing.",
+     "basis": "stated"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "J_{0}",
+    "A_{0}",
+    "t",
+    "P_{0}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 39 facts inferred (no quote found)"
+   ]
+  },
+  "bolton_2006_cake_intermediate_blocking": {
+   "name": "Cake-intermediate blocking",
+   "equations": [
+    "1",
+    "6",
+    "11",
+    "14",
+    "17",
+    "24",
+    "30"
+   ],
+   "description": "The cake-intermediate blocking model describes fouling during filtration of biological fluids through microporous or virus-retention membranes. It predicts permeate volume over time during constant-pressure operation and pressure rise over time during constant-flow operation. The model combines loss of available membrane area through intermediate blocking with increasing flow resistance from cake formation, using Darcy’s law to derive explicit time-dependent equations. The authors evaluated it with human plasma IgG filtered through Durapore PVDF membranes and BSA filtered through Viresolve 180 membranes, under both constant-pressure and constant-flow conditions. They fitted two parameters by minimizing squared residuals and compared its predictions with individual and other combined fouling models.",
+   "facts": [
+    {
+     "topic": "model",
+     "text": "The cake-intermediate blocking model combines intermediate blocking with cake filtration.",
+     "quote": "Cake filtration, intermediate blocking",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model represents fouling as a reduction in available filtration area together with an increase in filtration resistance.",
+     "quote": "To account for the combined effects of filtration area loss and caking",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model is built from Darcy’s law and gives explicit time-dependent predictions for both constant-pressure and constant-flow operation.",
+     "quote": "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The paper presents algebraic time-dependent equations rather than a spatially resolved description of the membrane.",
+     "quote": "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "Intermediate blocking represents particles sealing some pores while other particles accumulate on previously deposited particles.",
+     "quote": "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "Cake filtration represents particles accumulating on the membrane surface in a growing permeable layer that adds flow resistance.",
+     "quote": "Cake filtration occurs when particles accumulate on the surface of a membrane in a permeable cake of increasing thickness that adds resistance to flow.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "In the intermediate-blocking law, available membrane area decreases exponentially with processed permeate volume.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The cake-filtration law represents increasing resistance as processed volume increases.",
+     "quote": "The resistance to flow is increased by the presence of a cake layer on the membrane surface.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equations",
+     "text": "At constant pressure, the model predicts permeate volume as a function of time.",
+     "quote": "Eq. (17) can be used to calculate volume as a function of time",
+     "basis": "stated"
+    },
+    {
+     "topic": "equations",
+     "text": "At constant flow, the model predicts pressure as a function of time.",
+     "quote": "Eq. (30) allows calculation of pressure as a function of time using the combined intermediate blocking-cake filtration model",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The combined model uses two fitted parameters.",
+     "quote": "The models used two fitted parameters",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The paper reports fitted parameter estimates but does not report parameter confidence intervals or other uncertainty estimates.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "materials",
+     "text": "The IgG feed was human plasma IgG at 10.0 mg/mL in pH 7.2 PBS buffer.",
+     "quote": "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL.",
+     "basis": "stated"
+    },
+    {
+     "topic": "materials",
+     "text": "The BSA feed was bovine serum albumin at 2.5 mg/mL in pH 7.2 PBS buffer.",
+     "quote": "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer",
+     "basis": "stated"
+    },
+    {
+     "topic": "membrane",
+     "text": "The IgG tests used Durapore PVDF membranes with a nominal pore-size rating of 0.22 μm.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests.",
+     "basis": "stated"
+    },
+    {
+     "topic": "membrane",
+     "text": "The BSA tests used Viresolve 180, a PVDF composite membrane with a thin ultraporous layer over a thicker microporous layer.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-pressure IgG tests were run at 10 psi.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-pressure BSA tests were run at 30 psi.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-flow IgG tests used a flux of 579 L/m² h.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "equipment",
+     "text": "Constant-pressure filtration used 13 or 47 mm stainless-steel membrane holders.",
+     "quote": "The solutions were filtered at constant pressure in 13 or 47 mm stainless steel holders",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The constant-pressure system used a pressurized vessel, an electronic balance with a load cell, and a digital pressure gauge.",
+     "quote": "The system was pressurized with air and a digital pressure gauge was used",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Filtrate weight was collected and measured using a collection vessel and an electronic balance.",
+     "quote": "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The constant-pressure data-acquisition system recorded measurements every second for one hour.",
+     "quote": "Data was collected every second for 1 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Three constant-pressure IgG experiments were performed in 13 mm holders, and measurements continued until flux had fallen 95% from its initial value.",
+     "quote": "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Three constant-flow IgG experiments measured pressure over time in 47 mm holders.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "Five constant-pressure BSA runs were performed, and the reported curve and error bars show the average and one standard deviation across runs.",
+     "quote": "The average and standard deviation was calculated at each time point.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The BSA filtration measurements continued until flux had fallen 98% from its initial value.",
+     "quote": "The permeate volume was measured as a function of time until the flux had declined 98% from its initial value",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "Model fits were assessed by minimizing the sum of squared residuals between observations and model predictions.",
+     "quote": "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "For constant-flow IgG, the authors fitted the models to one experiment and reported that the other two experiments were similar.",
+     "quote": "The pressure versus time data was fit to one of the experimental data sets using the combined models and all other typical fouling models. The data from the other two experiments were similar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-flow IgG, the cake-intermediate model had an SSR of 0.58, lower than the cake-complete model’s 1.36 and the cake-standard model’s 13.5.",
+     "quote": "Model: Cake-intermediate (Eq. (30)) | Model fit error, SSR: 0.58",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-flow IgG, the three combined models fit substantially better than the individual fouling models.",
+     "quote": "The three combined models provided far better fits than the typical models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure BSA, the cake-intermediate model had an SSR of 9.59 × 10², slightly lower than the cake-complete model’s 1.62 × 10³.",
+     "quote": "Model: Cake-intermediate (Eq. (17)) | Model fit error, SSR: 9.59 × 10²",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure BSA, the cake-intermediate and cake-complete fits were within the standard deviation of most data points.",
+     "quote": "The fit of the cake-intermediate model was slightly better than that of the cake-complete model, as shown in Table 5, though the fits of the two models were within the standard deviation of most data points.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure IgG, the individual intermediate-blocking model fit about as well as the combined cake-intermediate model.",
+     "quote": "The fit of the intermediate model was as good as the fit of the combined intermediate blocking-cake filtration model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "The authors’ parameter-based comparison indicated that caking was a major component of the cake-intermediate fit for constant-flow IgG.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scope",
+     "text": "The paper says the cake-intermediate model is most applicable when its combined mechanisms agree with the mechanisms observed experimentally.",
+     "quote": "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The paper says the cake-intermediate model improves fits for data between the predictions of its two component models.",
+     "quote": "They only provide improved fits of data that falls between the curves of their respective individual component models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The paper reports evaluation of the cake-intermediate model with IgG and BSA filtration, not with other feed species or membrane types.",
+     "quote": "The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The reported assessments compare fitted curves with filtration data; the paper does not report an independent holdout validation set.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "comparison",
+     "text": "The model’s individual blocking and cake-filtration components follow the established blocking-filtration and cake-filtration laws discussed by Grace (1956) and Hermia (1982).",
+     "quote": "There are four mechanistic models that are typically used to describe fouling.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The combined-model development extends the earlier pore-blockage and cake-filtration model of Ho and Zydney (2000).",
+     "quote": "Recently a model was developed that used a two-stage mechanism to describe membrane fouling.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The authors describe their combined models as less physically detailed but simpler to implement than the Ho and Zydney model, which used three fitted parameters.",
+     "quote": "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors present the combined models as tools for describing filtration fouling and supporting membrane-area sizing.",
+     "quote": "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state whether the model code or experimental data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "A_{0}",
+    "J_{0}",
+    "t",
+    "P_{0}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 44 facts inferred (no quote found)"
+   ]
+  },
+  "bolton_2006_cake_standard_blocking": {
+   "name": "Cake-standard blocking",
+   "equations": [
+    "1",
+    "2",
+    "11",
+    "14",
+    "20",
+    "21",
+    "24",
+    "29"
+   ],
+   "description": "The combined cake-standard blocking model describes fouling of a membrane by both cake formation on its surface and pore constriction within the membrane. It predicts filtered volume over time during constant-pressure operation and pressure over time during constant-flow operation, using Darcy’s law and the two mechanisms’ effects on filtration resistance. The model has two fitted parameters and is formulated with algebraic relations rather than dynamic state equations. The paper tested combined fouling models using human plasma IgG filtered through a sterilizing-grade PVDF membrane and BSA filtered through a virus-retention membrane, under both constant-pressure and constant-flow conditions. The cake-standard model improved fits in some tests, but the authors present it as most applicable when the observed fouling is consistent with both mechanisms, rather than as a model that fits a broad range of fouling curves.",
+   "facts": [
+    {
+     "topic": "mechanisms",
+     "text": "The model combines cake filtration, in which a surface cake adds resistance, with standard blocking, in which material constricts pores from within.",
+     "quote": "The resistance after fouling can be calculated by adding the resistance from standard blocking to the resistance from cake formation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The standard-blocking mechanism represents particles accumulating on the walls of straight cylindrical pores.",
+     "quote": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "In the cake-standard model, the available membrane area remains constant over the run.",
+     "quote": "In this case the available membrane area will not decline over the course of the run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "assumptions",
+     "text": "The model treats cake formation and standard blocking as independent mechanisms that proceed throughout filtration.",
+     "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "assumptions",
+     "text": "The authors note that if the mechanisms become coupled during filtration, fitted parameters can represent average behavior over the run.",
+     "quote": "In this case the parameters used in the combined cake-standard model can be considered average values over the course of the run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The combined fouling models are derived from Darcy’s law.",
+     "quote": "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "For constant-pressure operation, the cake-standard model calculates filtered volume as a function of time, while for constant-flow operation it calculates pressure as a function of time.",
+     "quote": "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The model uses two fitted parameters.",
+     "quote": "The models used two parameters and reduced to the equations for the individual models in the absence of the second fouling mechanism.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "When one mechanism dominates, the cake-standard model reduces to the corresponding cake-filtration or standard-blocking model.",
+     "quote": "Eq. (22) reduces to the equation for cake filtration when $ K_{s} $ is small, and reduces to the equation for standard blocking when $ K_{c} $ is small.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The supplied model specification has no dynamic state variables; the paper presents time-dependent outputs through algebraic model equations.",
+     "quote": "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The paper’s closed-form constant-pressure solution is stated to apply when its intermediate parameter is not near 1 or −1; when one mechanism dominates, the corresponding individual model should be used.",
+     "quote": "Eq. (23) is applicable when $ \\alpha $ is not near 1 or -1. This will be the case when neither of the two fouling mechanisms dominates. When the parameter values indicate that one fouling mechanisms dominates the corresponding individual model should be used.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The IgG sterile-filtration tests used nominally 0.22 μm Durapore PVDF membranes in stainless-steel holders.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "The BSA virus-filtration tests used Viresolve 180, a PVDF composite membrane with a thin ultraporous layer over a thicker microporous layer.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer",
+     "basis": "stated"
+    },
+    {
+     "topic": "feed",
+     "text": "The BSA feed was prepared at 2.5 mg/mL in pH 7.2 PBS.",
+     "quote": "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer",
+     "basis": "stated"
+    },
+    {
+     "topic": "feed",
+     "text": "The human plasma IgG feed was prepared at 10.0 mg/mL in pH 7.2 PBS.",
+     "quote": "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-pressure IgG tests used a transmembrane pressure of 10 psi, and constant-pressure BSA tests used 30 psi.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests. Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-flow IgG filtration was run at 579 L/m² h through Durapore membranes.",
+     "quote": "During constant flow tests, a peristaltic pump (L/S Precision #WF77911-20, Cole Parmer, Vernon Hills, IL) with 16 gauge tubing (06409-16, Cole Parmer) was used to pump 10 mg/mL IgG through the Durapore membrane in the 47 mm holders at 579 L/m $ ^{2} $ h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Three constant-pressure IgG experiments used 13 mm holders and continued until flux had fallen by 95% from its initial value of 1.13 × 10⁻³ m/s.",
+     "quote": "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Five constant-pressure BSA experiments used 47 mm holders and continued until flux had fallen by 98% from its initial value of 3.58 × 10⁻⁴ m/s.",
+     "quote": "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of $ 3.58 \\times 10^{-4} $ m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Three constant-flow IgG experiments measured pressure over time while the feed was pumped through 47 mm membrane holders.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurement",
+     "text": "The constant-pressure setup measured filtrate weight using a collection vessel and electronic balance with a load cell interfaced to a computer.",
+     "quote": "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight. The electronic balance consisted of a load cell (1042-3-I, Tedea Huntleigh, Covina, CA) that interfaced with a computer through a data acquisition board.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Data were collected every second for one hour in the described constant-pressure setup.",
+     "quote": "Data was collected every second for 1 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The BSA results were reported as the average of five runs, with error bars showing one standard deviation.",
+     "quote": "The data is the average of five runs and the error bars are one standard deviation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "Model fits were assessed by minimizing the sum of squared residuals, with each residual defined as the difference between a measured point and its model prediction.",
+     "quote": "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "For the constant-pressure IgG comparison, the authors fit only the standard-blocking parameter in the standalone standard model rather than refitting the initial flux.",
+     "quote": "In this study only the parameter $ K_{s} $ was fit to the data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For constant-pressure IgG, the standalone standard model fit about as well as the combined standard-and-cake model.",
+     "quote": "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23).",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For constant-flow IgG, the cake-standard model had an SSR of 13.5, substantially below the standalone standard model’s SSR of 980.",
+     "quote": "Model: Cake-standard (Eq. (29)) | Model fit error, SSR: $ 1.35 \\times 10^{1} $",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For constant-flow IgG, the cake-standard model fit less well than the cake-intermediate and cake-complete models, whose SSR values were 0.58 and 1.36.",
+     "quote": "The best fit of the data occurred with the combined cake-intermediate model, which had and SSR value slightly lower than the cake-complete model",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For constant-pressure BSA, the cake-standard model had an SSR of 6.27 × 10³, better than the four standalone fouling models but worse than the cake-complete and cake-intermediate models.",
+     "quote": "Model: Cake-standard (Eq. (23)) | Model fit error, SSR: $ 6.27 \\times 10^{3} $",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For the constant-flow IgG and constant-pressure BSA fits, the authors found caking to be a major component of the cake-standard model’s fitted behavior.",
+     "quote": "indicating that caking was a major component of each of the combined models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The cake-standard model is most applicable when the observed fouling is consistent with both cake formation and standard blocking.",
+     "quote": "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The cake-standard model is less useful than the cake-complete model for fitting a broad range of individual-model predictions.",
+     "quote": "The cake-standard and cake-intermediate models were not as useful for fitting the predictions of the typical blocking models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The cake-standard model improves fits mainly for curves between the predictions of its two component models and cannot fit the described complete-blocking curve shape.",
+     "quote": "They only provide improved fits of data that falls between the curves of their respective individual component models. They cannot fit data that resembles the complete blocking model predictions where the flux declines more slowly than other models initially, and more rapidly later in the run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The paper builds the combined model from established individual fouling laws associated with Grace 1956 and Hermia 1982.",
+     "quote": "There are four mechanistic models that are typically used to describe fouling.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The authors compare their combined models with Ho and Zydney 2000, describing their own models as less physically detailed but numerically simpler.",
+     "quote": "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The earlier Ho and Zydney model used three fitted parameters and numerical integration for pressure-time or volume-time predictions.",
+     "quote": "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The cake-standard model is presented as a candidate for interpreting filtration data when the combined mechanisms match observed fouling, rather than as the paper’s general-purpose model for membrane sizing.",
+     "quote": "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not report whether model code or the experimental data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The paper evaluates fits against the reported filtration experiments but does not describe an independent validation dataset for the cake-standard model.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "A",
+    "V",
+    "J_{0}",
+    "A_{0}",
+    "P_{0}",
+    "t"
+   ],
+   "status": "pending",
+   "review": [
+    "3 of 39 facts inferred (no quote found)"
+   ]
+  },
+  "bolton_2006_complete_standard_blocking": {
+   "name": "Complete-standard blocking",
+   "equations": [
+    "1",
+    "2",
+    "5",
+    "14",
+    "18",
+    "24",
+    "31"
+   ],
+   "description": "The Complete-standard blocking model describes fouling during filtration of biological fluids through microporous membranes by combining complete pore blockage with standard blocking, in which deposits constrict pores. It predicts permeate volume over time at constant pressure and pressure over time at constant flow, using explicit relationships derived from Darcy’s law. The model has two fitted fouling parameters and is intended for cases where both mechanisms are relevant; it reduces to the corresponding single-mechanism model when one mechanism dominates. The paper compares its fits with individual fouling models using sterile filtration data for human plasma IgG and virus-filtration data for BSA, collected in small membrane holders. Across the reported comparisons, the combined model fit about as well as standard blocking alone, while other combined models performed better for some data sets. The authors present the combined models as tools for fitting fouling curves and assessing membrane sizing, while noting that a good fit does not establish the physical mechanism.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model represents membrane fouling caused by complete blockage and standard blocking during filtration of biological fluids.",
+     "quote": "five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were generated.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Complete blocking represents particles sealing pore entrances so that those pores no longer carry flow.",
+     "quote": "Complete blocking assumes that particles seal off pore entrances and prevent flow.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Standard blocking represents particles depositing on the walls of straight cylindrical pores and constricting them.",
+     "quote": "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The combined model represents loss of available membrane area from complete blocking together with increased resistance from standard blocking.",
+     "quote": "It is also possible to use a similar technique to create models that combine the standard blocking model with either the complete or intermediate blocking model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model form",
+     "text": "The paper gives an explicit permeate-volume-versus-time relation for constant-pressure operation and a pressure-versus-time relation for constant-flow operation.",
+     "quote": "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model form",
+     "text": "The combined formulation is expressed through aggregate membrane area, resistance, volume, pressure, and time relationships rather than spatially resolved fields.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "model size",
+     "text": "The model uses two fitted parameters, one for complete blocking and one for standard blocking.",
+     "quote": "The models all used two fitted parameters",
+     "basis": "stated"
+    },
+    {
+     "topic": "model size",
+     "text": "The complete-blocking parameter has units of s⁻¹, and the standard-blocking parameter has units of m⁻¹.",
+     "quote": "The constant K_b has units of s^{-1}, and K_i has units of m^{-1}.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model size",
+     "text": "The supplied model specification has no ODE state variables; it calculates time-dependent filtration outputs from explicit relationships.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "inputs",
+     "text": "The model calculations use initial flux and time, with initial membrane area and initial pressure used in the filtration relationships and pressure normalization.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "The constant-pressure IgG tests used 0.22 μm Durapore PVDF membranes at 10 psi in 13 mm holders.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The constant-flow IgG tests used 47 mm holders and a flow rate of 579 L m⁻² h⁻¹ through Durapore membranes.",
+     "quote": "During constant flow tests, a peristaltic pump (L/S Precision #WF77911-20, Cole Parmer, Vernon Hills, IL) with 16 gauge tubing (06409-16, Cole Parmer) was used to pump 10 mg/mL IgG through the Durapore membrane in the 47 mm holders at 579 L/m^{2} h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The BSA virus-filtration tests used Viresolve 180 PVDF composite membranes at 30 psi in 47 mm holders.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeds",
+     "text": "The IgG feed was human plasma IgG at 10.0 mg/mL in pH 7.2 PBS.",
+     "quote": "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeds",
+     "text": "The BSA feed was bovine serum albumin at 2.5 mg/mL in pH 7.2 PBS.",
+     "quote": "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Constant-pressure filtrate weight was collected on an electronic balance connected to a computer through a data-acquisition board.",
+     "quote": "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The constant-pressure system recorded data every second for one hour.",
+     "quote": "Data was collected every second for 1 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "igg data",
+     "text": "Three constant-pressure IgG experiments were run in 13 mm holders, and filtration continued until flux had fallen 95% from an initial 1.13 × 10⁻³ m/s.",
+     "quote": "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of 1.13 × 10^{-3} m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "igg data",
+     "text": "Three constant-flow IgG experiments measured pressure over time while the feed was pumped at 579 L m⁻² h⁻¹.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "bsa data",
+     "text": "Five constant-pressure BSA runs were conducted, and volume was measured until flux had fallen 98% from an initial 3.58 × 10⁻⁴ m/s.",
+     "quote": "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of 3.58 × 10^{-4} m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "bsa data",
+     "text": "The BSA results were summarized as the average and standard deviation across the five runs at each time point.",
+     "quote": "The data was similar for the five experiments. The average and standard deviation was calculated at each time point.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "Model parameters were fitted by minimizing the sum of squared residuals between observations and model predictions.",
+     "quote": "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "The paper does not identify optimization software or report uncertainty intervals for the fitted parameters.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit results",
+     "text": "For constant-pressure IgG filtration, the complete-standard model fit about as well as the standard model alone.",
+     "quote": "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18)",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit results",
+     "text": "For constant-flow IgG filtration, the standard-model fit was as good as the complete-standard model fit.",
+     "quote": "The fit of the standard model was as good as the fits of the standard model combined with the complete blocking model, Eq. (31).",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit results",
+     "text": "For constant-pressure BSA filtration, the standard model combined with complete blocking gave the same fit as standard blocking alone.",
+     "quote": "The standard model combined the complete blocking model, Eq. (18), provided the same fit as the standard model alone and is not shown in Fig. 9.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The constant-pressure IgG plots show one sample, while the paper reports that the other two experiments were similar.",
+     "quote": "The data and model predictions for one of the samples are shown in Figs. 4 and 5. The data from the other two experiments were similar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The constant-flow IgG model comparison was fitted to one experiment's data, with the other two experiments described as similar.",
+     "quote": "The pressure versus time data was fit to one of the experimental data sets using the combined models and all other typical fouling models. The data from the other two experiments were similar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "The paper says the combined complete-standard model is most applicable when a particular combination of mechanisms is observed and is not generally more useful than the individual models when one mechanism dominates.",
+     "quote": "Typically the best fits occur when one of the two mechanisms dominates, in which case the combined equations do not offer much benefit over the individual models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "A good fit from a combined model is not proof that both represented fouling mechanisms actually occurred.",
+     "quote": "Though providing a good data fit does not prove that fouling occurs by the simultaneous effects of pore blockage and cake formation",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The model combines classical complete- and standard-blocking laws associated in the paper with Grace (1956) and Hermia (1982).",
+     "quote": "There are four mechanistic models that are typically used to describe fouling.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The paper contrasts its combined models with Ho and Zydney (2000), describing their model as more physically detailed but numerically more complex.",
+     "quote": "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The combined models are presented as simpler equations for calculating filtration output over time and supporting membrane-area sizing.",
+     "quote": "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state whether model code or experimental data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "J_{0}",
+    "A_{0}",
+    "t",
+    "P_{0}"
+   ],
+   "status": "pending",
+   "review": [
+    "6 of 34 facts inferred (no quote found)"
+   ]
+  },
+  "bolton_2006_intermediate_standard_blocking": {
+   "name": "Intermediate-standard blocking",
+   "equations": [
+    "1",
+    "2",
+    "6",
+    "14",
+    "19",
+    "24",
+    "32"
+   ],
+   "description": "The Intermediate-standard blocking model represents protein fouling of microporous membranes by combining intermediate blocking, which reduces the available pore area, with standard blocking, which constricts pores and raises filtration resistance. Based on Darcy’s law, it predicts filtrate volume over time during constant-pressure filtration and pressure rise over time during constant-flow filtration using two fitted parameters. The paper tested it on human IgG filtration through a 0.22 μm PVDF membrane and BSA filtration through a virus-retention membrane, including constant-pressure and constant-flow runs. Model curves were fitted to measured filtration profiles by minimizing the sum of squared residuals. In the tested cases, this combined model did not improve on the relevant individual blocking model, and the authors describe it as applicable when the combined mechanisms match observed fouling.",
+   "facts": [
+    {
+     "topic": "model",
+     "text": "Intermediate-standard blocking is one of the five combined fouling models developed in the paper.",
+     "quote": "It is also possible to use a similar technique to create models that combine the standard blocking model with either the complete or intermediate blocking model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Intermediate blocking represents some particles sealing pores while other deposited particles accumulate on top of them.",
+     "quote": "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Standard blocking represents deposits constricting straight cylindrical membrane pores.",
+     "quote": "In the standard model, membranes have straight cylindrical pores that decline in radius as solid matter accumulates on the pore walls",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "In the combined model, intermediate blocking reduces available membrane area while standard blocking increases filtration resistance.",
+     "quote": "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prediction",
+     "text": "The model predicts permeate volume over time for constant-pressure operation and pressure over time for constant-flow operation.",
+     "quote": "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The combined fouling models were derived from Darcy’s law.",
+     "quote": "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The combined model reduces to its component individual models when one mechanism dominates.",
+     "quote": "The equations reduce to their respective component models at the limits where one fouling mode dominates.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The model uses two fitted parameters, the intermediate-blocking constant and the standard-blocking constant.",
+     "quote": "Fitted parameters: $K_i (m^{-1})$, $K_s (m^{-1})$",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model is expressed through algebraic time relationships rather than a state-based dynamic system.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "Constant-pressure tests used 10 psi for Durapore membranes and 30 psi for Viresolve 180 membranes.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests. Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Constant-pressure filtration was performed in 13 or 47 mm stainless-steel membrane holders supplied from pressure vessels.",
+     "quote": "The solutions were filtered at constant pressure in 13 or 47 mm stainless steel holders",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Filtrate mass was collected on an electronic balance with a load cell connected to a computer data-acquisition board.",
+     "quote": "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight. The electronic balance consisted of a load cell (1042-3-I, Tedea Huntleigh, Covina, CA) that interfaced with a computer through a data acquisition board.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The constant-pressure setup recorded data every second for one hour.",
+     "quote": "Data was collected every second for 1 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feed",
+     "text": "The human plasma IgG feed was prepared at 10.0 mg/mL in pH 7.2 PBS.",
+     "quote": "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feed",
+     "text": "The BSA feed was prepared at 2.5 mg/mL in pH 7.2 PBS.",
+     "quote": "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer",
+     "basis": "stated"
+    },
+    {
+     "topic": "membrane",
+     "text": "The IgG sterile-filtration tests used 0.22 μm nominal-pore-size Durapore PVDF membranes.",
+     "quote": "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm",
+     "basis": "stated"
+    },
+    {
+     "topic": "membrane",
+     "text": "The BSA virus-filtration tests used Viresolve 180, a PVDF composite with a thin ultraporous layer over a thicker microporous layer.",
+     "quote": "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "Three constant-pressure IgG experiments used 13 mm holders and continued until flux fell 95% from its initial value of 1.13 × 10⁻³ m/s.",
+     "quote": "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $1.13 \\times 10^{-3}$ m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "experiments",
+     "text": "The constant-flow IgG experiments used a flux of 579 L/m² h through 47 mm Durapore membrane samples.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "experiments",
+     "text": "Five constant-pressure BSA runs used Viresolve 180 in 47 mm holders and continued until flux fell 98% from its initial value of 3.58 × 10⁻⁴ m/s.",
+     "quote": "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of $3.58 \\times 10^{-4}$ m/s.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The BSA filtration results were averaged across five runs, with standard deviations calculated at each time point.",
+     "quote": "The data was similar for the five experiments. The average and standard deviation was calculated at each time point.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "Model fits were compared by minimizing the sum of squared residuals between measured data and model predictions.",
+     "quote": "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fitting",
+     "text": "For constant-pressure IgG, the paper fitted one of the three experimental data sets and reported that the other two were similar.",
+     "quote": "The data and model predictions for one of the samples are shown in Figs. 4 and 5. The data from the other two experiments were similar.",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure IgG, the intermediate-standard model fitted no better than the standard-blocking model alone.",
+     "quote": "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23).",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-flow IgG, the intermediate-standard model fitted as well as the intermediate-blocking model alone.",
+     "quote": "The fit the intermediate blocking model was as good as the fit of the intermediate model combined with the standard model, Eq. (32).",
+     "basis": "stated"
+    },
+    {
+     "topic": "results",
+     "text": "For constant-pressure BSA, the intermediate-standard model produced the same fit as the intermediate-blocking model alone.",
+     "quote": "The standard model combined with the intermediate model, Eq. (19), provided the same fit as the intermediate model alone and is not shown in Fig. 9.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The paper presents the combined standard-and-intermediate equations as applicable when fouling is observed to involve that specific combination of mechanisms.",
+     "quote": "Eqs. (17)–(19) will be applicable to the cases where the fouling is observed to occur by a specific combination of mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors say the combined models involving standard blocking do not cover as broad a range of flux-decline behavior as the cake-complete model.",
+     "quote": "The equations however will not fit as wide a range of data as the combined cake-complete model and are therefore not as useful in general.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper cites Grace (1956) for standard-blocking background and Hermia (1982) for standard, complete, and intermediate blocking laws.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "comparison",
+     "text": "The paper compares its combined models with the more physically detailed combined blockage-and-cake model of Ho and Zydney (2000), noting that the new models are simpler to implement.",
+     "quote": "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "The earlier Ho and Zydney (2000) model used three fitted parameters and required numerical integration for volume- or pressure-time predictions.",
+     "quote": "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating. Plots of volume versus time during constant pressure operation or pressure versus time during constant flow operation were obtained by numerical integration of the relevant equations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors position intermediate-standard blocking as a candidate for describing fouling when the combined mechanisms agree with experimental observations, rather than as a broadly useful general-purpose fit.",
+     "quote": "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The paper reports fitting the model to experimental profiles but does not describe a separate held-out validation data set.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "A_{0}",
+    "J_{0}",
+    "t",
+    "P_{0}"
+   ],
+   "status": "pending",
+   "review": [
+    "4 of 33 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4023,
+  "completion_tokens": 1991,
+  "total_tokens": 6014,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4020,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1734,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Using simple models to describe the kinetics of growth, glucose consumption, and monoclonal antibody formation in naive and infliximab producer CHO cells\n\nAbstract: Abstract Despite their practical and commercial relevance, there are few reports on the kinetics of growth and production of Chinese hamster ovary (CHO) cells—the most frequently used host for the industrial production of therapeutic proteins. We characterize the kinetics of cell growth, substrate consumption, and product formation in naive and monoclonal antibody (mAb) producing recombinant CHO cells. Culture experiments were performed in 125 mL shake flasks on commercial culture medium (CD Opti CHO™ Invitrogen, Carlsbad, CA, USA) diluted to different glucose concentrations (1.2–4.8 g/L).\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [CONFLICT: computes [X], like eq 2] p.4  ...y, a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration (Eq. 1).\n    \\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}=\\mu[\\boldsymbol{X}];\\mathrm{~w i t h~}[\\boldsymbol{X}]=[\\boldsymbol{X}]_{\\mathrm{o}}\\circledast\\mathbf{t}=\\mathbf{t}_{\\mathrm{o}}=0.0\n(2) [CONFLICT: computes [X], like eq 1] p.4  ...nt value at least during the initial portion of the exponential phase. The integrated version of Eq. 1 renders Eq. 2, a straight-line model.\n    \\ln[X]=\\upmu\\mathrm{t}+\\ln[X]_{\\mathrm{o}}\n(3) [CONFLICT: computes \\mu, like eq p9-1] p.4  ... A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate ($\\mu$) at different initial substrate concentrations.\n    \\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}\\mathbf{s}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}\n(4) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...The material balance for substrate consumption was assumed to be represented by Eq. 4.\n    \\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d t}=\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}}\n(5) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...$ r_x $) at each time. A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production (Eq. 5).\n    \\mathbf{d}[\\boldsymbol{P}]/\\mathbf{d}\\mathbf{t}=\\mathbf{r}_{\\mathbf{p}}=\\alpha\\mathbf{r}_{\\mathbf{x}}+\\boldsymbol{\\beta}[\\boldsymbol{X}];\\quad\\mathbf{r}_{\\mathbf{x}}=\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}\n(6) [NOT USED BY OTHERS: computes P_{n}; the model output (keep) or not part of the model (leave out)] p.5  ...approximated by the numerical integration of the Luedeking–Piret equation (see Eq. 6).\n    P_{\\mathrm{n}}=P_{\\mathrm{n}-1}+\\left(\\alpha\\mathrm{r}_{\\mathrm{x}}+\\beta X\\right)*\\Delta\\mathrm{t}\n(p9-1) [CONFLICT: computes \\mu, like eq 3] p.9  ...ent fit to our experimental data and was consistent with our experimental observation of existence of a substrate threshold for cell growth.\n    \\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}\\left[S\\right]*/(\\mathbf{K}\\mathbf{s}+\\left[S\\right]*);\\mathrm{~with~}\\left[S\\right]*=\\left[S\\right]_\\mathrm{o}-\\left[S\\right]_\\mathrm{t}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.4) The viable cell [X] and glucose concentration [S] profiles observed in the exponential phase of batch experiments were fitted to second-order polynomial equations using Excel Software (Microsoft®, Redmond, WA, USA).\n- (p.4) Polynomial equations were derived to calculate the experimental cell production rate (r_x), where r_x = d[X]/dt, and [X] is cell concentration; and the glucose consumption rate (r_s), where rs = d[S]/dt, and [S] is gluco\n- (p.4) Briefly, a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration (Eq. 1).\n- (p.4) In Eq. 1, [X] is the biomass concentration at a given time, [X]₀ is the cell concentration at an initial condition, t is the time, t₀ is the initial time (corresponding to the beginning of the exponential growth phase), \n- (p.4) The integrated version of Eq. 1 renders Eq. 2, a straight-line model.\n- (p.4) A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate ($\\mu$) at different initial substrate concentrations.\n- (p.4) The material balance for substrate consumption was assumed to be represented by Eq. 4.\n- (p.4) In this equation,  $ r_s $ is the global rate of glucose consumption,  $ r_x $ is the rate of cell growth, t is time, and  $ Y_{x/s} $ is a cell yield coefficient.\n- (p.4) In agreement with Eq. 4, the yield coefficient was calculated from the slopes of  $ r_x $ versus  $ r_s $ plots at different  $ [S]_o $ values.\n- (p.4) The polynomial equation was derived to obtain the experimental cell production rate ( $ r_x $) at each time.\n- (p.4) A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production (Eq. 5).\n- (p.5) approximated by the numerical integration of the Luedeking–Piret equation (see Eq. 6).\n- (p.5) For this purpose, the differential material balance equations for cell growth, substrate consumption, and mAb formation were numerically integrated using the values of  $ \\mu_{\\text{max}} $,  $ K_s $,  $ [S]_t $,  $ Y_{x\n- (p.8) We observed that cell growth was a first-order process (Eq. 1) with respect to cell concentration, at least at the beginning of the exponential growth phase for each initial substrate concentration.\n- (p.8) We used Eq. 2, the integrated version of Eq. 1, to calculate the initial specific growth rate ( $ \\mu $) from the slope of the plot of  $ \\ln[X] $ versus time constructed at each initial substrate concentration.\n- (p.9) For the present work, the model shown in Eq. 3 provided an excellent fit to our experimental data and was consistent with our experimental observation of existence of a substrate threshold for cell growth.\n- (p.9) The cell production rate ( $ r_{x} $) and the substrate consumption rate ( $ r_{s} $) were calculated as the analytical derivative of second-order polynomial equations fitted to time series data of [X] and [S] during the\n- (p.10) production rate versus the substrate consumption curve, see Eq. 4.\n- (p.10) For the calculation of the yield coefficient of the recombinant CHO cell line, we assumed that the substrate consumption during the first 7 days of culture was devoted to cell growth; that is, no significant glucose cons\n- (p.10) This assumption was based on the fact that the mAb concentration at day 7 was still modest (10–15 mg/L) compared to the maximum production potential of this cell line in fed-batch cultures with supplementation (final mAb\n- (p.11) As a first approximation in this study, we choose the Luedeking–Piret model to describe the kinetics of product formation in the recombinant cell cultures (Eq. 5).\n- (p.11) This model is based on the premise that the rate of product synthesis can be a function of both cellular density ([X]) and the rate of cell growth ( $ r_{x} $).\n- (p.11) We also assumed that a Luedeking–Piret model could describe the kinetics of mAb throughout the entire duration of the cell culture.\n- (p.11) We used these values ([X],  $ r_x $) together with  $ \\alpha $ and  $ \\beta $ sets to numerically integrate the Luedeking–Piret equation (see Eq. 6).\n- (p.12) The differential material balance equations for cell growth, substrate consumption, and mAb formation were numerically integrated.\n\nTables about fitted models:\n- (p.9) Table 2 Kinetic parameters determined from batch experiments for naive (n-CHO) and recombinant (r-CHO) cell cultures at 33 and 37 °C\n    Parameter: $ \\mu_{\\text{max}} $ (h $ ^{-1} $) | n-CHO cells (@ 33 °C): 0.038 | n-CHO cells (@ 37 °C): 0.05 | r-CHO cells (@ 33 °C): 0.040 | r-CHO cell\n    Parameter: $ K_s $ (mg/mL) | n-CHO cells (@ 33 °C): 0.286 | n-CHO cells (@ 37 °C): 1.023 | r-CHO cells (@ 33 °C): 0.664 | r-CHO cells (@ 37 °C): 0.664\n    Parameter: $ [S]_t $ (mg/mL) | n-CHO cells (@ 33 °C): 0.96 | n-CHO cells (@ 37 °C): 0.58 | r-CHO cells (@ 33 °C): 0.58 | r-CHO cells (@ 37 °C): 0.58\n    Parameter: $ Y_{x/s} $ (cell/mg) | n-CHO cells (@ 33 °C): $ \\approx 6.08 \\times 10^{6a} $ | n-CHO cells (@ 37 °C): $ \\approx 6.08 \\times 10^{6a} $ | r\n    Parameter: $ \\alpha $ ( $ \\mu $g/cell) | n-CHO cells (@ 33 °C): 0 | n-CHO cells (@ 37 °C): 0 | r-CHO cells (@ 33 °C): $ 7.65 \\times 10^{-7} $ | r-CHO \n    Parameter: $ \\beta $ ( $ \\mu $g/cell/h) | n-CHO cells (@ 33 °C): 0 | n-CHO cells (@ 37 °C): 0 | r-CHO cells (@ 33 °C): $ 7.65 \\times 10^{-8} $ | r-CHO",
+ "answer": {
+  "models": [
+   {
+    "name": "n-CHO, 33 °C",
+    "equations": [
+     "1",
+     "3",
+     "4",
+     "5"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   },
+   {
+    "name": "n-CHO, 37 °C",
+    "equations": [
+     "1",
+     "3",
+     "4",
+     "5"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   },
+   {
+    "name": "r-CHO, 33 °C",
+    "equations": [
+     "1",
+     "3",
+     "4",
+     "5"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   },
+   {
+    "name": "r-CHO, 37 °C",
+    "equations": [
+     "1",
+     "3",
+     "4",
+     "5"
+    ],
+    "boundary_quote": null,
+    "assumptions": [],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "2",
+    "reason": "Integrated form of eq 1; the differential growth equation is kept."
+   },
+   {
+    "eq": "6",
+    "reason": "Numerical integration of eq 5; the differential product-formation equation is kept."
+   },
+   {
+    "eq": "p9-1",
+    "reason": "Restates eq 3."
+   }
+  ],
+  "free_laws": []
+ }
+}

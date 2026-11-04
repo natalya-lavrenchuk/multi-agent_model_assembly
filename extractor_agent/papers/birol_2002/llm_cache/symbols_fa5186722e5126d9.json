@@ -1,0 +1,165 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2042,
+  "completion_tokens": 7910,
+  "total_tokens": 9952,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2039,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6601,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: birol_2002\n\nEquations:\n(14) \\frac{\\mathrm{d}V}{\\mathrm{d}t}=F+F_{\\mathrm{a/b}}-F_{\\mathrm{loss}}      <- \"The fed-batch process operation causes a volume change in the fermentor. This is calculated by:\"\n(15) F_{\\mathrm{l o s s}}=V\\lambda(\\mathrm{e}^{5((T-T_{0})/T_{\\mathrm{v}}-T_{0})}-1)      <- \"pending on the temperature of the fermentation. Here, we have taken $ F_{loss} $ to be a function of temperature and culture volume V of the fermentation broth:\"\n(16) \\frac{\\mathrm{d}Q_{\\mathrm{rxn}}}{\\mathrm{d}t}=r_{q_{1}}\\frac{\\mathrm{d}X}{\\mathrm{d}t}\\ V+r_{q_{2}}\\ X V\n(17) \\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{s_{\\mathrm{f}}}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned}      <- \"nd tabulated in Table 2. The energy balance is written based on a coiled type heat exchanger which is suitable for a laboratory scale fermentor (Nielsen, 1997):\"\n\nSymbols:\n\nF_{loss}   [COMPUTED by eq 15]\n  [158] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant in  $ F_{loss} $:  $ \\lambda $ (per h) | operation: $ 2.5 \\times 10^{-4} $\n  [228] (sentence, p.6) We have also included the  $ F_{loss} $ term to account for evaporative loss during fermentation.\n  [232] (sentence, p.6) Here, we have taken  $ F_{loss} $ to be a function of temperature and culture volume V of the fermentation broth:\n\n\\lambda   [NOT COMPUTED]\n  [158] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant in  $ F_{loss} $:  $ \\lambda $ (per h) | operation: $ 2.5 \\times 10^{-4} $\n  [235] (sentence, p.6) $ \\lambda $ is arranged to give an evaporation rate of  $ 2.5 \\times 10^{-4} $ l/h at the operation temperature (25 °C).\n\nT_{0}   [NOT COMPUTED]\n  [233] (sentence, p.6) where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.\n\nT_{v}   [NOT COMPUTED]\n  [233] (sentence, p.6) where  $ T_0 $ and  $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.\n\nQ_{rxn}   [COMPUTED by eq 16]\n  [121] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Heat generation:  $ Q_{rxn} $ (cal) | operation: 0\n\nr_{q_1}   [NOT COMPUTED]\n  [243] (sentence, p.7) where  $ r_{q_1} $ is assumed to be constant and might be treated as a yield coefficient (Nielsen & Villadsen, 1994).\n\nr_{q_2}   [NOT COMPUTED]\n  [247] (sentence, p.7) Based on this observation,  $ r_{q_2} $ is calculated and tabulated in Table 2.\n\nT_{f}   [NOT COMPUTED]\n  [125] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Feed temperature of substrate:  $ T_f $ (K) | operation: 298\n\n\\rho   [NOT COMPUTED]\n  [150] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Density  $ \\times $ heat capacity of medium:  $ \\rho $ ( $ C_p $) (per l °C) | operation: 1/1500\n\nc_{p}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "F_{loss}",
+    "description": "Evaporative loss from fermentation.",
+    "description_basis": "stated",
+    "snippet_id": 228,
+    "quote": "evaporative loss during fermentation",
+    "unit": "l h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\lambda",
+    "description": "Constant in the evaporative-loss law.",
+    "description_basis": "stated",
+    "snippet_id": 158,
+    "quote": "Constant in $ F_{loss} $:",
+    "unit": "per h",
+    "unit_basis": "stated",
+    "value": "2.5 × 10^-4 per h",
+    "value_set": "this model",
+    "class_reason": "It is a constant coefficient in the evaporative-loss law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "T_{0}",
+    "description": "Freezing temperature of the culture medium.",
+    "description_basis": "stated",
+    "snippet_id": 233,
+    "quote": "freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the freezing temperature of the culture medium, a material property.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "T_{v}",
+    "description": "Boiling temperature of the culture medium.",
+    "description_basis": "stated",
+    "snippet_id": 233,
+    "quote": "freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the boiling temperature of the culture medium, a material property.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Q_{rxn}",
+    "description": "Heat generation.",
+    "description_basis": "stated",
+    "snippet_id": 121,
+    "quote": "Heat generation:",
+    "unit": "cal",
+    "unit_basis": "stated",
+    "value": "0 cal",
+    "value_set": "this model",
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "r_{q_1}",
+    "description": "Yield coefficient for the biomass-growth contribution to heat generation.",
+    "description_basis": "stated",
+    "snippet_id": 243,
+    "quote": "is assumed to be constant and might be treated as a yield coefficient",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a constant yield coefficient for the biomass-growth contribution to heat generation.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "r_{q_2}",
+    "description": "Coefficient multiplying biomass concentration and volume in the heat-generation law.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a coefficient multiplying X V in the heat-generation law, rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "T_{f}",
+    "description": "Feed temperature of substrate.",
+    "description_basis": "stated",
+    "snippet_id": 125,
+    "quote": "Feed temperature of substrate:",
+    "unit": "K",
+    "unit_basis": "stated",
+    "value": "298 K",
+    "value_set": "this model",
+    "class_reason": "It is the feed temperature set for the fermentation run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\rho",
+    "description": "Density component of the medium's density–heat-capacity term.",
+    "description_basis": "stated",
+    "snippet_id": 150,
+    "quote": "Density × heat capacity of medium:",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is a density property of the medium in the thermal balance.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "c_{p}",
+    "description": "Specific heat capacity of the medium in the thermal balance.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "It is the medium's specific heat capacity, a physical property.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

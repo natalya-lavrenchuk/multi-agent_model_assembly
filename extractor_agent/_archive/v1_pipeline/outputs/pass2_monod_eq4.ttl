@@ -1,0 +1,20 @@
+@prefix mkg: <http://example.org/mkg#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mkg:doc_x_10_1016_j_sajce_2020_07_006_monod_model a mkg:Document ; mkg:doi "10.1016/j.sajce.2020.07.006#monod-model" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1 a mkg:RateLaw ;
+    mkg:sympyExpr "Eq(mu, mu_max*X*S/(K_H*X))" ;
+    mkg:latexSource "\\mu=\\frac{\\mu_{m a x}X S}{K_{H}\\,X}\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad" ;
+    mkg:kindStated false ;
+    mkg:computes "mu" ;
+    mkg:uses "\u03bc" ;
+    mkg:uses "\u03bcmax" ;
+    mkg:uses "X" ;
+    mkg:uses "S" ;
+    mkg:hasStatus mkg:flagged ; mkg:failedGate "symbol_unbound" ; mkg:failedGate "latex_glyph_mismatch" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_monod_model__L1_prov a mkg:ExtractionRecord ;
+    mkg:fromDocument mkg:doc_x_10_1016_j_sajce_2020_07_006_monod_model ;
+    mkg:fromBlock "/page/2/Equation/12" ;
+    mkg:producedBy "openai/gpt-oss-120b/strict/p2.v1" .

@@ -1,0 +1,48 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 1665,
+  "total_tokens": 3643,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1975,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1312,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Modelling of Molasses Fermentation for Bioethanol Production: A Comparative Investigation of Monod and Andrews Models Accuracy Assessment\n\nAbstract: Abstract: Modelling has recently become a key tool to promote the bioethanol industry and to optimise the fermentation process to be easily integrated into the industrial sector. In this context, this study aims at investigating the applicability of two mathematical models (Andrews and Monod) for molasses fermentation. The kinetics parameters for Monod and Andrews were estimated from experimental data using Matlab and OriginLab software. The models were simulated and compared with another set of experimental data that was not used for parameters' estimation. The results of modelling showed that  $ \\mu_{max} = 0.179 $ 1/h and  $ K_s = 11.37 $ g.L $ ^{-1} $ for the Monod model, whereas  $ \\mu_{max} = 0.508 $ 1/h,  $ K_s = 47.53 $ g.L $ ^{-1} $ and  $ K_i = 181.01 $ g.L $ ^{-1} $ for the Andrews model, which are too close to the values reported in previous studies. The validation of both models showed that the Monod model is more suitable for batch fermentation modelling at a low concentration, where the highest R squared was observed at  $ S_0 = 75 $ g.L $ ^{-1} $ with an R squared equal to 0.99956, 0.99954, and 0.99859 for the biomass, substrate, and product concentrations, respectively. In contrast, the Andrews model was more accurate at a high initial substrate concentration and the model data showed a good agreement compared to the experimental data of batch fermentation at  $ S_0 = 225 $ g.L $ ^{-1} $, which was reflected in a high R squared with values 0.99795, 0.99903, a\n\nSentences about the process and the data:\n- The kinetics parameters for Monod and Andrews were estimated from experimental data using Matlab and OriginLab software.\n- The models were simulated and compared with another set of experimental data that was not used for parameters' estimation.\n- The validation of both models showed that the Monod model is more suitable for batch fermentation modelling at a low concentration, where the highest R squared was observed at  $ S_0 = 75 $ g.L $ ^{-1} $ with an R squared equal to 0.99956, \n- In contrast, the Andrews model was more accurate at a high initial substrate concentration and the model data showed a good agreement compared to the experimental data of batch fermentation at  $ S_0 = 225 $ g.L $ ^{-1} $, which was reflect\n- With the growing interest in the industrial application of batch alcoholic fermentation for bioethanol production, different kinetic models have been developed to describe microbial growth, product formation, and substrate consumption to se\n- Batch bioprocesses, in particular, are hard to model owing to the time-varying characteristics of biological systems, which often result in process nonlinearities.\n- The multiplicity of reactions, the adaptability and evolution of organisms over short periods of time, and the continuous shift in environmental conditions are features that characterise batch processes.\n- In this regard, a large number of studies have been conducted on the modelling of batch alcoholic fermentation kinetics.\n- Batch reactors are firstly used to identify the main phenomena (limitation, inhibition, cell death, and maintenance, among others) that govern the fermentation kinetics by performing specific experiments for this purpose [15].\n- The current study aims at developing and validating the Monod and Andrews mathematical models for predicting the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae besides asses\n- Three loops of active dry Saccharomyces cerevisiae yeast from Saf-Levure (Lesaffre, Marcq, France) were dissolved in 50 mL of distilled water, which were then added directly into 200 mL of culture media containing diluted molasses (50 g.L $\n- All the used chemicals and materials were sterilized in an autoclave at 121 °C for 20 min before the experiment.\n- Anaerobic fermentation was carried out in a batch bioreactor with a 1-L volume containing 250 mL of culture media with different initial sugar concentrations (equivalent 5–25 g.L $ ^{-1} $ glucose for the Monod model and equivalent of 50–20\n- The concentrations of glucose, fructose, sucrose, and ethanol were measured by high performance liquid chromatography (HPLC) using a Biored Aminex HPX 87H column (Bio-Rad Laboratories, Inc., California, USA) as described in NREL (National R\n- The growth rate of a batch culture under the exponential phase is generally believed to follow the first order kinetic model, i.e., the growth rate is proportional to the microbial mass in the system.\n- The experimental growth data was fitted to determine the mathematical parameters ( $ \\mu_{max} $,  $ K_s $, and  $ K_i $) using Origin 2018a software based on the SubstrateInhib function, where  $ \\mu_{max} $ ( $ h^{-1} $) is the maximum sp\n- The models’ performance was statistically estimated using the coefficient of determination ( $ R^{2} $) where the simulation data were validated and compared with the experimental data set that was not used for parameters estimation.\n- In order to estimate the value of $\\mu_{\\mathrm{max}}$ and $K_{s}$ in the Monod model, a set of batch fermentation using different substrate (5–25 g) concentrations was carried out.\n\nModel: Andrews\nLaws:\n(1) [balance] Biomass concentration increases at a rate proportional to its current concentration during exponential-phase batch growth.\n(5) [constitutive] The Andrews growth-rate expression represents substrate inhibition at excess substrate concentrations.\n(6) [balance] Substrate concentration decreases in proportion to biomass formation according to the substrate-specific yield.\n(7) [balance] The ethanol production rate is related to the substrate concentration change through the product-specific yield.\n\nStates (computed by the ODEs):\n- X: bacterial cell concentration\n- S: concentration of the growth limiting substrate\n- P: ethanol concentration\n\nInputs (variables no law computes):\n- s: substrate concentration in the product-formation equation\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "Saccharomyces cerevisiae fermenting molasses to ethanol",
+   "quote": "the dynamics of biomass, substrate, and ethanol for the batch fermentation of molasses using Saccharomyces cerevisiae"
+  },
+  "unit_operation": {
+   "value": "Batch bioreactor",
+   "quote": "Anaerobic fermentation was carried out in a batch bioreactor with a 1-L volume"
+  },
+  "operating_mode": {
+   "value": [
+    "batch"
+   ],
+   "quote": "batch fermentation of molasses using Saccharomyces cerevisiae",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Experimental growth data from batch fermentation; the specific substrate-concentration range used to fit the Andrews model is not stated.",
+   "quote": "The experimental growth data was fitted to determine the mathematical parameters (μmax, Ks, and Ki) using Origin 2018a software"
+  },
+  "phenomena": [
+   "Substrate-dependent yeast growth with high-substrate inhibition (Andrews kinetics)",
+   "Yield-linked substrate consumption associated with biomass formation",
+   "Yield-linked ethanol formation from substrate consumption"
+  ],
+  "description": "The model predicts biomass, substrate, and ethanol concentrations during anaerobic molasses fermentation by Saccharomyces cerevisiae in a batch bioreactor. Biomass grows exponentially according to Andrews substrate-inhibition kinetics, while substrate consumption is linked to biomass formation by a yield and ethanol production to substrate consumption by a product yield."
+ }
+}

@@ -1,0 +1,752 @@
+@prefix kg: <http://example.org/kg/nopens_2004/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:nopens_2004 a mkg:Sup ;
+    rdfs:label "nopens_2004 · PBM AND ACTIVATED SLUDGE FLOCCULATION: FROM EXPERIMENTAL DATA TO A CALIBRATED MODEL"@en ;
+    mkg:hasMetadata kg:nopens_2004_meta ;
+    mkg:includes <http://example.org/kg/nopens_2004/law/nopens_2004_eq1>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq2>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq3>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq4>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq5>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq6>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq7>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq9> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 1"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/n> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq1_meta> ;
+    mkg:latex "\\frac{\\partial n(x,t)}{\\partial t}+\\frac{\\partial}{\\partial x}\\left(\\dot{X}(x,t)n(x,t)\\right)=h(x,t)_{agg}+h(x,t)_{break}" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/dot_X>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/h_agg>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/h_break>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/x> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/dot_X> a mkg:Variable ;
+    rdfs:label "\\dot{X} (nopens_2004 eq 1)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\dot{X}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/h_agg> a mkg:Variable ;
+    rdfs:label "h_{agg} (nopens_2004 eq 1)"@en ;
+    mkg:description "Net aggregation rate." ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "h_{agg}" ;
+    mkg:unit "1 / cm ** 3 / s" ;
+    mkg:unitString "cm⁻³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/h_break> a mkg:Variable ;
+    rdfs:label "h_{break} (nopens_2004 eq 1)"@en ;
+    mkg:description "Net breakage rate." ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "h_{break}" ;
+    mkg:unit "1 / cm ** 3 / s" ;
+    mkg:unitString "cm⁻³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/n> a mkg:Variable ;
+    rdfs:label "n (nopens_2004 eq 1)"@en ;
+    mkg:description "Floc size distribution function expressed in numbers." ;
+    mkg:dimension "1 / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The measured initial number distribution is used as initial condition for eq. 1." ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "n" ;
+    mkg:unit "number / cm ** 3" ;
+    mkg:unitString "#.cm⁻³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1/var/x> a mkg:Variable ;
+    rdfs:label "x (nopens_2004 eq 1)"@en ;
+    mkg:description "Floc size, expressed as volume." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-06 ;
+    mkg:symbol "x" ;
+    mkg:unit "cm ** 3" ;
+    mkg:unitString "cm³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The population balance computes how the floc size distribution changes over time through growth and net aggregation and breakage." ;
+    mkg:form "PDE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{\\partial n(x,t)}{\\partial t}+\\frac{\\partial}{\\partial x}\\left(\\dot{X}(x,t)n(x,t)\\right)=h(x,t)_{agg}+h(x,t)_{break}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 2"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/h_agg> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq2_meta> ;
+    mkg:hasParameter <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/par/alpha> ;
+    mkg:latex "\\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned}" ;
+    mkg:latexCorrected "$$ \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx^{\\prime}\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx^{\\prime}\\end{aligned} $$" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/beta>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/d>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/n>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/x_prime> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/d> a mkg:Variable ;
+    rdfs:label "d (nopens_2004 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Diameter of a particle in a size class." ;
+    mkg:reason "A particle-size quantity used in the volume-to-number conversion, rather than a fitted constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "d" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/h_agg> a mkg:Variable ;
+    rdfs:label "h_{agg} (nopens_2004 eq 2)"@en ;
+    mkg:description "Net aggregation rate." ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "h_{agg}" ;
+    mkg:unit "1 / cm ** 3 / s" ;
+    mkg:unitString "cm⁻³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/x_prime> a mkg:Variable ;
+    rdfs:label "x^{\\prime} (nopens_2004 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Floc-volume size coordinate of a particle in the aggregation and breakage integrals." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:reason "An integration coordinate representing floc size in the aggregation and breakage laws, rather than a fitted constant." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "x^{\\prime}" ;
+    mkg:unit "cm ** 3" ;
+    mkg:unitString "cm³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionReason "Both integrals are over x′, so the printed dx in each is a differential-variable typo and must be dx′." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The net aggregation rate is the collision-driven formation of flocs of size x minus their loss through further collisions." ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "α was chosen to be a constant between 0 and 1." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The collision efficiency α is taken as a constant between 0 and 1." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/beta> ;
+            mkg:slot "collision frequency" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/n> ;
+            mkg:slot "floc size distribution" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq2/par/alpha> ;
+            mkg:slot "collision efficiency" ] ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "The aggregation-birth integral uses dx although its integrand and limits are in x′; the differential should be dx′." ;
+    mkg:quote "\\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq3> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 3"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/beta> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq3_meta> ;
+    mkg:latex "$$ \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left({x^{\\prime}}^{1/3}+(x-x^{\\prime})^{1/3}\\right)^{3} $$" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/overline_G>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/x_prime> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The collision frequency is calculated from the mean velocity gradient and the cube-root size contributions of the colliding flocs." ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/x_prime> ;
+            mkg:slot "particle volume" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/overline_G> ;
+            mkg:slot "velocity gradient" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/beta> ;
+            mkg:slot "collision frequency" ] ;
+    mkg:ocrFixNote "The OCR read the 1/3 exponents as primes." ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "The terms x^{′/3} and (x−x′)^{′/3} put a prime in the exponent instead of specifying cube-root powers x′^{1/3} and (x−x′)^{1/3}." ;
+    mkg:quote "\\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left({x^{\\prime}}^{1/3}+(x-x^{\\prime})^{1/3}\\right)^{3}" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq4> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 4"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq4/var/overline_G> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/nopens_2004/law/nopens_2004_eq4/par/nu> ;
+    mkg:latex "\\overline{G}=\\sqrt{\\frac{\\varepsilon}{\\nu}}" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq4/var/varepsilon> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq4/var/overline_G> a mkg:Variable ;
+    rdfs:label "\\overline{G} (nopens_2004 eq 4)"@en ;
+    mkg:description "Average velocity gradient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\overline{G}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The average velocity gradient is calculated from turbulent energy dissipation and kinematic viscosity." ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq4/par/nu> ;
+            mkg:slot "kinematic viscosity" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq4/var/varepsilon> ;
+            mkg:slot "turbulent energy dissipation rate" ] ;
+    mkg:page "2" ;
+    mkg:quote "\\overline{G}=\\sqrt{\\frac{\\varepsilon}{\\nu}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 5"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/h_break> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/par/Gamma> ;
+    mkg:latex "\\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned}" ;
+    mkg:latexCorrected "$$ \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\end{aligned} $$" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/S>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/d>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/n>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/x_prime> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/d> a mkg:Variable ;
+    rdfs:label "d (nopens_2004 eq 5)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Diameter of a particle in a size class." ;
+    mkg:reason "A particle-size quantity used in the volume-to-number conversion, rather than a fitted constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "d" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/h_break> a mkg:Variable ;
+    rdfs:label "h_{break} (nopens_2004 eq 5)"@en ;
+    mkg:description "Net breakage rate." ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "h_{break}" ;
+    mkg:unit "1 / cm ** 3 / s" ;
+    mkg:unitString "cm⁻³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/x_prime> a mkg:Variable ;
+    rdfs:label "x^{\\prime} (nopens_2004 eq 5)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Floc-volume size coordinate of a particle in the aggregation and breakage integrals." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:reason "An integration coordinate representing floc size in the aggregation and breakage laws, rather than a fitted constant." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "x^{\\prime}" ;
+    mkg:unit "cm ** 3" ;
+    mkg:unitString "cm³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:correctionReason "The loss term is the disappearance of a parent floc at rate n(x,t)S(x), so the daughter-distribution factor Γ does not belong there." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The net breakage rate combines the production of size-x flocs from larger flocs with the loss of size-x flocs when they break." ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/par/Gamma> ;
+            mkg:slot "daughter distribution" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/S> ;
+            mkg:slot "breakage rate" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/n> ;
+            mkg:slot "floc size distribution" ] ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "The loss term −n(x,t)S(x)Γ(x,x′) contains an unintegrated x′ and applies the daughter distribution to parent disappearance; parent loss should be −n(x,t)S(x)." ;
+    mkg:quote "\\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq6> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 6"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq6/var/S> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/A>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/a> ;
+    mkg:latex "S(x)=Ax^{a}" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq6/var/S> a mkg:Variable ;
+    rdfs:label "S (nopens_2004 eq 6)"@en ;
+    mkg:description "Breakage rate of particles of size x." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The breakage rate increases with floc size according to a power law with coefficient A and exponent a." ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "a is a constant (=1/3)" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The breakage exponent a is fixed at 1/3." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/A> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/a> ;
+            mkg:slot "exponent" ] ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "Given x is a volume in cm³ and a=1/3, A must have units cm⁻¹s⁻¹ for S to have units s⁻¹, not the stated cm⁻³s⁻¹." ;
+    mkg:quote "S(x)=Ax^{a}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 7"@en ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/nopens_2004/law/nopens_2004_eq7/par/x_i> ;
+    mkg:latex "$$ D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{4}}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{3}} $$" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/C_4_3>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/D>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/Delta_F_N> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7/par/x_i> a mkg:Parameter ;
+    rdfs:label "x_{i} (nopens_2004 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Diameter of size class i." ;
+    mkg:dimension "[length]" ;
+    mkg:page "3" ;
+    mkg:quote "x_i represents the diameter of size class i" ;
+    mkg:reason "It is the fixed diameter assigned to size class i in the discretized model grid, rather than a run condition." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "x_{i}" ;
+    mkg:unit "µm" ;
+    mkg:unitString "μm" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/C_4_3> a mkg:Variable ;
+    rdfs:label "[4,3] (nopens_2004 eq 7)"@en ;
+    mkg:description "Moment-order indices identifying the D[4,3] statistic." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "[4,3]" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/D> a mkg:Variable ;
+    rdfs:label "D (nopens_2004 eq 7)"@en ;
+    mkg:description "Mass mean diameter, or D[4,3]." ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "one of the experimental D[4,3] data sets of Biggs & Lant (2000)" ;
+    mkg:siFactor 1e-06 ;
+    mkg:symbol "D" ;
+    mkg:unit "µm" ;
+    mkg:unitString "μm" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7/var/Delta_F_N> a mkg:Variable ;
+    rdfs:label "\\Delta F_{N} (nopens_2004 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Number fraction in size class i." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "3" ;
+    mkg:quote "the number fraction in size class i" ;
+    mkg:reason "It is a size-class number fraction in the population distribution, which varies across classes and over the process." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta F_{N}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The mass mean diameter is calculated as the ratio of the fourth and third moments of the number distribution." ;
+    mkg:form "algebraic" ;
+    mkg:ocrFixNote "The OCR turned ΔF_N(x_i)·x_i^4 into a function with two arguments." ;
+    mkg:page "3" ;
+    mkg:possibleMisprint "The numerator and denominator print ΔF_N with two arguments, although it is defined as the number fraction for a class; the moment formula requires multiplying that fraction by x_i⁴ and x_i³, respectively." ;
+    mkg:quote "D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{4}}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{3}}" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9> a mkg:Law ;
+    rdfs:label "nopens_2004 eq 9"@en ;
+    mkg:computes <http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/CON> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/nopens_2004/law/nopens_2004_eq9_meta> ;
+    mkg:latex "C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime }" ;
+    mkg:uses <http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/d>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/n>,
+        <http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/x_prime> .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/CON> a mkg:Variable ;
+    rdfs:label "CON (nopens_2004 eq 9)"@en ;
+    mkg:description "cumulative oversize numbers" ;
+    mkg:symbol "CON" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/d> a mkg:Variable ;
+    rdfs:label "d (nopens_2004 eq 9)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Diameter of a particle in a size class." ;
+    mkg:reason "A particle-size quantity used in the volume-to-number conversion, rather than a fitted constant." ;
+    mkg:status "accepted" ;
+    mkg:symbol "d" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/n> a mkg:Variable ;
+    rdfs:label "n (nopens_2004 eq 9)"@en ;
+    mkg:description "Floc size distribution function expressed in numbers." ;
+    mkg:dimension "1 / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The measured initial number distribution is used as initial condition for eq. 1." ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "n" ;
+    mkg:unit "number / cm ** 3" ;
+    mkg:unitString "#.cm⁻³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9/var/x_prime> a mkg:Variable ;
+    rdfs:label "x^{\\prime} (nopens_2004 eq 9)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Floc-volume size coordinate of a particle in the aggregation and breakage integrals." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:reason "An integration coordinate representing floc size in the aggregation and breakage laws, rather than a fitted constant." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "x^{\\prime}" ;
+    mkg:unit "cm ** 3" ;
+    mkg:unitString "cm³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq9_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The cumulative oversize number at size x is the number concentration integrated over all larger floc sizes." ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "C O N ( x, t ) = \\int _ { x } ^ { \\infty } n ( x ^ { \\prime }, t )   d x ^ { \\prime }" ;
+    mkg:status "flagged" .
+
+kg:nopens_2004_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The Aggregation-breakage PBM models how activated sludge flocs change in size during flocculation. It predicts the floc size distribution over time, representing aggregation between flocs and breakage of larger flocs. The model is a one-dimensional population balance that is discretized into size classes and solved using the moving pivot method. It was calibrated using online laser-diffraction measurements from flocculation experiments at two mixing intensities, with several distribution measures tried as fitting targets. The authors recommend fitting the number distribution for applications involving gravitational solid-liquid separation, while concluding that the model needs more flexibility to describe the measurements adequately." ;
+    mkg:form "PDE/algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Since the model will be used to describe rather short flocculation experiments (max. 4h), it can be assumed that no significant growth occurs ( $ \\dot{X}(x,t)=0 $)." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "No significant growth occurs during the short flocculation experiments." ],
+        [ mkg:quote "When binary breakage is assumed, which was the case in this study, Γ equals 2." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Binary breakage is assumed, so Γ equals 2." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "For the application at hand, gravitational solid-liquid separation, it is advised to calibrate the model by means of the number distribution since the smaller size flocs are problematic in wastewater treatment." ;
+            mkg:text "The authors recommend fitting the number distribution for gravitational solid-liquid separation because small flocs are problematic in wastewater treatment." ;
+            mkg:topic "application" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Optimisations were conducted using a weighted least squares (WLS) method" ;
+            mkg:text "Parameter estimation used weighted least squares in WEST." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Both fits show that the model lacks flexibility and that the structure needs to be improved." ;
+            mkg:text "The authors concluded that the model lacks flexibility to describe the measured distributions adequately." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Based on this assumption, every single measurement of N_i can be assumed to be multinomial distributed" ;
+            mkg:text "For weighted-number fitting, measurement variances and weights were calculated using a multinomial counting-error assumption." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "fitting the log-normal distribution as intermediate step introduced large errors in the number distributions." ;
+            mkg:text "The authors found that the earlier log-normal-distribution transformation used by Biggs & Lant 2000 introduced large errors in the resulting number distributions." ;
+            mkg:topic "transformation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A cumulative vol% distribution is calculated from the raw distribution and then interpolated at the pivots of the new grid resulting in a cumulative distribution in the new grid." ;
+            mkg:text "To transfer the measurements to a model grid, the authors interpolated the cumulative volume distribution at the pivots of the new grid and then calculated the volume fractions." ;
+            mkg:topic "transformation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "circulated through a Malvern Mastersizer E (Malvern, UK) in order to obtain on-line quantitative information about floc structure and floc size distribution (FSD)" ;
+            mkg:text "Floc size distributions were measured online with a Malvern Mastersizer E using laser light diffraction and a flow-through cell." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the cumulative vol% distribution matches the raw one and the D[4,3] is preserved" ;
+            mkg:text "The new grid-transformation method preserved the mass mean diameter D[4,3] of the original distribution." ;
+            mkg:topic "transformation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Since the model will be used to describe rather short flocculation experiments (max. 4h)" ;
+            mkg:text "The model is used for relatively short flocculation experiments, with a maximum duration of 4 h." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The description of β(x-x',x) used in this study was taken from Spicer & Pratsinis (1996)" ;
+            mkg:text "The collision-frequency description was taken from Spicer & Pratsinis 1996 and relates collisions to floc properties and mixing conditions." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reported comparisons use the two calibration datasets; the paper does not report an independent validation dataset." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Under predictions by a factor 10-15 occur in the classes with sizes up to 10 μm." ;
+            mkg:text "Volume-percent fitting underpredicted the small-size number classes by factors of about 10–15, while D[4,3] fitting underpredicted them by about 15–30." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "In a comparison on the same data, the fixed pivot method predicted a lower zeroth moment and more flocs in larger size classes than the moving pivot method." ;
+            mkg:topic "numerics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Both techniques were implemented in the modelling and simulation software platform WEST (Hemmis NV, Belgium)." ;
+            mkg:text "The authors recommend the moving pivot discretization, which they implemented alongside the fixed pivot method in WEST." ;
+            mkg:topic "numerics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The experimental sludge flocs were sonicated into single cells of about 1 μm and microcolonies of about 10 μm before being allowed to reflocculate." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A flow rate to the flow-through cell of 3ml/s was selected to minimise shear effects and pump pulsation influences (to approximate isokinetic sampling)" ;
+            mkg:text "The flow-through cell flow rate was set to 3 ml/s to reduce shear effects and pump-pulsation influences and approximate isokinetic sampling." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Under predictions of the lower end size classes range between 2-3.3." ;
+            mkg:text "Weighted-number fitting gave small-tail underpredictions of about 2–3.3." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports point estimates but does not provide confidence intervals or other measures of parameter uncertainty." ;
+            mkg:topic "calibration" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "α was chosen to be a constant between 0 and 1." ;
+            mkg:text "Collision efficiency is treated as a constant between zero and one." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Aggregation models are often based on the Smoluchowski model" ;
+            mkg:text "Aggregation is represented with a Smoluchowski population-balance model combining collision frequency and collision efficiency." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "S(x) was taken from Spicer & Pratsinis (1996)" ;
+            mkg:text "Breakage is represented by a size-dependent breakage rate from Spicer & Pratsinis 1996, with a breakage-rate coefficient estimated during calibration." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the aggregation parameter α must be decreased (by 50%), leading to erroneous estimates." ;
+            mkg:text "The fixed pivot method led to an aggregation-parameter estimate about 50% lower than the moving pivot method, which the authors regarded as erroneous." ;
+            mkg:topic "numerics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Drawbacks are: (1) the assumption of sphericity of particles and (2) the required dilution (< 0.2g/l)." ;
+            mkg:text "The laser-diffraction measurements require dilution below 0.2 g/L and assume that the particles are spherical." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The moving pivot recommendation follows Kumar & Ramkrishna 1996, whose comparison with an analytical solution found better predictions than the fixed pivot method, including on a coarse grid." ;
+            mkg:topic "numerics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report the number of size classes used, so the total number of distribution states cannot be determined from its description." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Models describing the time evolution of these property distributions are known as Population Balance Models (PBM)." ;
+            mkg:text "The model is dynamic and segregates biomass into a one-dimensional distribution of floc sizes rather than representing it as a single lumped sludge concentration." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "x is the floc size (expressed as volume), n(x,t) the floc size distribution function (#.cm⁻³) (expressed in numbers)" ;
+            mkg:text "The size distribution is expressed in numbers of flocs per unit volume, with floc size represented as volume." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "estimating the aggregation and breakage parameters of sludge flocs" ;
+            mkg:text "Two aggregation and breakage parameters were estimated: the collision efficiency and the breakage-rate coefficient." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The description of β(x-x',x) used in this study was taken from Spicer & Pratsinis (1996)" ;
+            mkg:text "The model draws on the Smoluchowski framework described by Ramkrishna 2000 and uses aggregation and breakage descriptions from Spicer & Pratsinis 1996." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The measured initial number distribution is used as initial condition for eq. 1." ;
+            mkg:text "The initial condition for the population balance is the measured initial number distribution." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the middle size classes ranging from roughly 35-350 μm." ;
+            mkg:text "Fits to volume-based targets described the middle of the volume distribution, roughly 35–350 μm, better than the distribution tails." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The data came from reflocculation experiments run at average velocity gradients of 19.4 and 37.0 s⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Recently, a laser diffraction technique was used to provide the experimental data to which a population balance model (PBM) was fitted by estimating the aggregation and breakage parameters of sludge flocs (Biggs & Lant, 2000; Nopens et al., 2002)." ;
+            mkg:text "The calibration methodology extends earlier activated-sludge flocculation PBM work by Nopens et al. 2002 and Biggs & Lant 2000." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "transforming the integro-differential equation into a set of i ordinary differential equations." ;
+            mkg:text "Discretization converts the population balance into a finite set of ordinary differential equations, one for each size class." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The second step deals with the separation of the purified water and the sludge flocs." ;
+            mkg:text "The model represents flocculation of activated sludge, the particle-aggregation process involved in the liquid-solid separation stage of wastewater treatment." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Biggs & Lant (2000) used the discretisation technique of Hounslow et al. (1988)" ;
+            mkg:text "The paper compares its discretization approach with Kumar & Ramkrishna 1996 and notes that Biggs & Lant 2000 used the Hounslow et al. 1988 discretization." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The new approach was used for the conversion of raw vol% distributions into number distributions (X=3g.L −1, ρ_l=1g.cm−3, ρ_l=1.04g.cm−3, ρ_s=1.7g.cm−3)." ;
+            mkg:text "For the volume-to-number conversion calculations, the paper used a biomass concentration of 3 g/L and density values of 1, 1.04, and 1.7 g/cm³." ;
+            mkg:topic "transformation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The experimental data used in this study were obtained from Biggs & Lant (2000) who studied the influence of mixing intensity on flocculation kinetics." ;
+            mkg:text "The two calibration datasets were obtained from Biggs & Lant 2000, who studied the effect of mixing intensity on flocculation kinetics." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To convert V_i into N_i, the total floc volume fraction V_f/V_T is needed." ;
+            mkg:text "The authors converted volume fractions to number concentrations using an estimate of total floc volume and assuming spherical flocs." ;
+            mkg:topic "transformation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Under predictions of the lower end tail now range between 1.5-2.5" ;
+            mkg:text "Fitting the number distribution reduced small-tail underprediction to about 1.5–2.5, although the predicted volume distribution was poor." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The PBM was fitted to 4 different fitting variables: (1) vol% distribution, (2) D[4,3], (3) number distribution and (4) weighted number distribution." ;
+            mkg:text "Calibration compared four fitting targets: volume-percent distribution, D[4,3], number distribution, and weighted number distribution." ;
+            mkg:topic "calibration" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/par/alpha> a mkg:Parameter ;
+    rdfs:label "\\alpha (nopens_2004 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Collision efficiency." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 1. Parameter estimates using fixed and moving pivot on the same dataset (G=19.4 s^{-1})" ;
+    mkg:page "2" ;
+    mkg:quote "α (-) is the collision efficiency" ;
+    mkg:reason "Collision efficiency is a constant of the aggregation law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"Fixed pivot, G=19.4 s⁻¹, D[4,3] fit (Table 1)\": \"0.00648 (unit: -)\", \"Moving pivot, G=19.4 s⁻¹, D[4,3] fit (Table 1)\": \"0.01364 (unit: -)\", \"G=19.4 s⁻¹, Vol% fit (Table 2)\": \"0.0121 (unit: -)\", \"G=19.4 s⁻¹, D[4,3] fit (Table 2)\": \"0.0136 (unit: -)\", \"G=19.4 s⁻¹, N_i fit (Table 2)\": \"0.0073 (unit: -)\", \"G=19.4 s⁻¹, weighted N_i fit (Table 2)\": \"0.0078 (unit: -)\", \"G=37.0 s⁻¹, Vol% fit (Table 2)\": \"0.0083 (unit: -)\", \"G=37.0 s⁻¹, D[4,3] fit (Table 2)\": \"0.0081 (unit: -)\", \"G=37.0 s⁻¹, N_i fit (Table 2)\": \"0.0098 (unit: -)\", \"G=37.0 s⁻¹, weighted N_i fit (Table 2)\": \"0.0078 (unit: -)\"}" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/beta> a mkg:Variable ;
+    rdfs:label "\\beta (nopens_2004 eq 2)"@en ;
+    mkg:description "Collision frequency for particles of volume x and x-x'." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e-06 ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "cm ** 3 / s" ;
+    mkg:unitString "cm³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq2/var/n> a mkg:Variable ;
+    rdfs:label "n (nopens_2004 eq 2)"@en ;
+    mkg:description "Floc size distribution function expressed in numbers." ;
+    mkg:dimension "1 / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The measured initial number distribution is used as initial condition for eq. 1." ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "n" ;
+    mkg:unit "number / cm ** 3" ;
+    mkg:unitString "#.cm⁻³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/beta> a mkg:Variable ;
+    rdfs:label "\\beta (nopens_2004 eq 3)"@en ;
+    mkg:description "Collision frequency for particles of volume x and x-x'." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 1e-06 ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "cm ** 3 / s" ;
+    mkg:unitString "cm³.s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/overline_G> a mkg:Variable ;
+    rdfs:label "\\overline{G} (nopens_2004 eq 3)"@en ;
+    mkg:description "Average velocity gradient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\overline{G}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s⁻¹" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq3/var/x_prime> a mkg:Variable ;
+    rdfs:label "x^{\\prime} (nopens_2004 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Floc-volume size coordinate of a particle in the aggregation and breakage integrals." ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:reason "An integration coordinate representing floc size in the aggregation and breakage laws, rather than a fitted constant." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "x^{\\prime}" ;
+    mkg:unit "cm ** 3" ;
+    mkg:unitString "cm³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq4/par/nu> a mkg:Parameter ;
+    rdfs:label "\\nu (nopens_2004 eq 4)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Kinematic viscosity, appearing in the denominator of the relation for average velocity gradient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:reason "It is the kinematic viscosity, a physical property of the liquid." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\nu" ;
+    mkg:unit "m ** 2 / s" ;
+    mkg:unitString "m^2.s^-1" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq4/var/varepsilon> a mkg:Variable ;
+    rdfs:label "\\varepsilon (nopens_2004 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Average turbulent energy dissipation rate." ;
+    mkg:dimension "[length] ** 2 / [time] ** 3" ;
+    mkg:page "2" ;
+    mkg:quote "the average turbulent energy dissipation rate" ;
+    mkg:reason "It is the average turbulent energy dissipation rate, an operating condition that varies with the mixing conditions." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon" ;
+    mkg:unit "m ** 2 / s ** 3" ;
+    mkg:unitString "m^2.s^-3" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/par/Gamma> a mkg:Parameter ;
+    rdfs:label "\\Gamma (nopens_2004 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Breakage distribution function." ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "When binary breakage is assumed, which was the case in this study, Γ equals 2." ;
+    mkg:page "2" ;
+    mkg:quote "the breakage distribution function" ;
+    mkg:reason "It is the breakage distribution function, a constant of the breakage law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Gamma" ;
+    mkg:value 2 .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/S> a mkg:Variable ;
+    rdfs:label "S (nopens_2004 eq 5)"@en ;
+    mkg:description "Breakage rate of particles of size x." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq5/var/n> a mkg:Variable ;
+    rdfs:label "n (nopens_2004 eq 5)"@en ;
+    mkg:description "Floc size distribution function expressed in numbers." ;
+    mkg:dimension "1 / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The measured initial number distribution is used as initial condition for eq. 1." ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "n" ;
+    mkg:unit "number / cm ** 3" ;
+    mkg:unitString "#.cm⁻³" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/A> a mkg:Parameter ;
+    rdfs:label "A (nopens_2004 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Breakage rate coefficient." ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "A the breakage rate coefficient" ;
+    mkg:reason "It is the breakage-rate coefficient in the breakage law, a fitted model constant." ;
+    mkg:siFactor 1e+06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "A" ;
+    mkg:unit "1 / cm ** 3 / s" ;
+    mkg:unitString "cm⁻³s⁻¹" ;
+    mkg:valuesByCase "{\"Table 1, fixed pivot, G=19.4 s^-1\": \"201.5 cm⁻³s⁻¹\", \"Table 1, moving pivot, G=19.4 s^-1\": \"195 cm⁻³s⁻¹\", \"Table 2, G=19.4, Vol%\": \"166 cm⁻³s⁻¹\", \"Table 2, G=19.4, D[4,3]\": \"195 cm⁻³s⁻¹\", \"Table 2, G=19.4, N_i\": \"12 cm⁻³s⁻¹\", \"Table 2, G=19.4, weighted N_i\": \"12 cm⁻³s⁻¹\", \"Table 2, G=37.0, Vol%\": \"260 cm⁻³s⁻¹\", \"Table 2, G=37.0, D[4,3]\": \"260 cm⁻³s⁻¹\", \"Table 2, G=37.0, N_i\": \"32 cm⁻³s⁻¹\", \"Table 2, G=37.0, weighted N_i\": \"18 cm⁻³s⁻¹\"}" .
+
+<http://example.org/kg/nopens_2004/law/nopens_2004_eq6/par/a> a mkg:Parameter ;
+    rdfs:label "a (nopens_2004 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant exponent in the breakage-rate expression." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "a is a constant (=1/3)" ;
+    mkg:page "2" ;
+    mkg:quote "a is a constant (=1/3)" ;
+    mkg:reason "It is the fixed exponent in the breakage law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3.333333e-01 .
+

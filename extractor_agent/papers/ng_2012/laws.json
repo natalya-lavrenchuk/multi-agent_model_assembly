@@ -1,0 +1,449 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "PDE",
+   "computes": "C",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The mobile-phase solute balance accounts for accumulation, transfer to the stationary phase, axial convection, and dispersion.",
+   "description_basis": "stated",
+   "quote": "a mass balance for the mobile phase",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The velocity term uses u, listed in cm h⁻¹, while the time derivatives and D_L use seconds; u must be converted to cm s⁻¹ or the time units reconciled.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The velocity term uses u, listed in cm h⁻¹, while the time derivatives and D_L use seconds; u must be converted to cm s⁻¹ or the time units reconciled."
+   ],
+   "llm": {
+    "eq": "1",
+    "description": "The mobile-phase solute balance accounts for accumulation, transfer to the stationary phase, axial convection, and dispersion.",
+    "description_basis": "stated",
+    "quote": "a mass balance for the mobile phase",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The velocity term uses u, listed in cm h⁻¹, while the time derivatives and D_L use seconds; u must be converted to cm s⁻¹ or the time units reconciled."
+   }
+  },
+  "2": {
+   "form": "PDE",
+   "computes": "q",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The stationary-phase solute concentration changes through mass transfer toward its equilibrium concentration.",
+   "description_basis": "stated",
+   "quote": "a kinetic equation for the stationary phase adsorption",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "2",
+    "description": "The stationary-phase solute concentration changes through mass transfer toward its equilibrium concentration.",
+    "description_basis": "stated",
+    "quote": "a kinetic equation for the stationary phase adsorption",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "algebraic",
+   "computes": "D_{L}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The apparent axial dispersion coefficient is calculated from velocity, column length, and theoretical plate number.",
+   "description_basis": "stated",
+   "quote": "defined by an empirical correlation",
+   "assumptions": [],
+   "roles": [],
+   "issue": "With u listed in cm h⁻¹, the right-hand side has units of cm² h⁻¹ rather than the listed cm² s⁻¹ for D_L, unless u is converted to cm s⁻¹.",
+   "status": "pending",
+   "review": [
+    "possible misprint: With u listed in cm h⁻¹, the right-hand side has units of cm² h⁻¹ rather than the listed cm² s⁻¹ for D_L, unless u is converted to cm s⁻¹."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "The apparent axial dispersion coefficient is calculated from velocity, column length, and theoretical plate number.",
+    "description_basis": "stated",
+    "quote": "defined by an empirical correlation",
+    "assumptions": [],
+    "roles": [],
+    "issue": "With u listed in cm h⁻¹, the right-hand side has units of cm² h⁻¹ rather than the listed cm² s⁻¹ for D_L, unless u is converted to cm s⁻¹."
+   }
+  },
+  "4": {
+   "form": "algebraic",
+   "computes": "h",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "Reduced plate height is calculated from column length, theoretical plate number, and particle diameter.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "Reduced plate height is calculated from column length, theoretical plate number, and particle diameter.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "h",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The reduced plate height is expressed as a baseline contribution plus a term proportional to linear velocity.",
+   "description_basis": "stated",
+   "quote": "the modified van Deemter expression",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "eddy diffusion contribution",
+     "symbol": "A"
+    },
+    {
+     "role": "velocity dependent coefficient",
+     "symbol": "B"
+    },
+    {
+     "role": "linear velocity",
+     "symbol": "u"
+    }
+   ],
+   "issue": "The product Bu is not dimensionless with the listed units B in s cm⁻¹ and u in cm h⁻¹; u must be converted to cm s⁻¹ or the units reconciled.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The product Bu is not dimensionless with the listed units B in s cm⁻¹ and u in cm h⁻¹; u must be converted to cm s⁻¹ or the units reconciled."
+   ],
+   "llm": {
+    "eq": "5",
+    "description": "The reduced plate height is expressed as a baseline contribution plus a term proportional to linear velocity.",
+    "description_basis": "stated",
+    "quote": "the modified van Deemter expression",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "eddy-diffusion contribution",
+      "symbol": "A"
+     },
+     {
+      "role": "velocity-dependent coefficient",
+      "symbol": "B"
+     },
+     {
+      "role": "linear velocity",
+      "symbol": "u"
+     }
+    ],
+    "issue": "The product Bu is not dimensionless with the listed units B in s cm⁻¹ and u in cm h⁻¹; u must be converted to cm s⁻¹ or the units reconciled."
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "k_{m}",
+   "condition": "w h e r e 0\\leq S_{1}\\leq1 a n d S_{2}>0",
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The lumped mass transfer coefficient varies empirically with the fraction of free binding capacity, following a power law.",
+   "description_basis": "stated",
+   "quote": "the effects of adsorption on kinetic limitations were considered empirically using a power law based on the fraction of free sites available",
+   "assumptions": [
+    {
+     "text": "Adsorption kinetics is taken to be the same for IgG and impurities.",
+     "quote": "Adsorption kinetics was assumed to be the same for both IgG and the impurities as the impurities consist of a range of solutes that include non-retainable IgG.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "rate constant",
+     "symbol": "k_{\\max}"
+    },
+    {
+     "role": "saturation dependent kinetic constant",
+     "symbol": "S_{1}"
+    },
+    {
+     "role": "retained solute concentration",
+     "symbol": "q_{R}"
+    },
+    {
+     "role": "maximum retained solute capacity",
+     "symbol": "q_{\\max,R}"
+    },
+    {
+     "role": "saturation dependent kinetic order",
+     "symbol": "S_{2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "6",
+    "description": "The lumped mass transfer coefficient varies empirically with the fraction of free binding capacity, following a power law.",
+    "description_basis": "stated",
+    "quote": "the effects of adsorption on kinetic limitations were considered empirically using a power law based on the fraction of free sites available",
+    "assumptions": [
+     {
+      "text": "Adsorption kinetics is taken to be the same for IgG and impurities.",
+      "quote": "Adsorption kinetics was assumed to be the same for both IgG and the impurities as the impurities consist of a range of solutes that include non-retainable IgG.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "k_{max}"
+     },
+     {
+      "role": "saturation-dependent kinetic constant",
+      "symbol": "S_{1}"
+     },
+     {
+      "role": "retained-solute concentration",
+      "symbol": "q_{R}"
+     },
+     {
+      "role": "maximum retained-solute capacity",
+      "symbol": "q_{max,R}"
+     },
+     {
+      "role": "saturation-dependent kinetic order",
+      "symbol": "S_{2}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": "C",
+   "condition": null,
+   "value": "0",
+   "section": "2.1. Chromatography model",
+   "description": "The initial mobile-phase solute concentration is zero throughout the column.",
+   "description_basis": "stated",
+   "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "7",
+    "description": "The initial mobile-phase solute concentration is zero throughout the column.",
+    "description_basis": "stated",
+    "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "8": {
+   "form": "algebraic",
+   "computes": "q",
+   "condition": null,
+   "value": "0",
+   "section": "2.1. Chromatography model",
+   "description": "The initial stationary-phase solute concentration is zero throughout the column.",
+   "description_basis": "stated",
+   "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "The initial stationary-phase solute concentration is zero throughout the column.",
+    "description_basis": "stated",
+    "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "9": {
+   "form": "PDE",
+   "computes": "C",
+   "condition": "w h e r e \\;C_{f}\\neq0 f o r 0<t<t_{L}",
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The inlet concentration gradient is set by the difference between the feed and column-inlet concentrations while feed is present during loading.",
+   "description_basis": "stated",
+   "quote": "At the column inlet, the axial concentration change depends on the difference between the feed and column inlet concentrations.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "9",
+    "description": "The inlet concentration gradient is set by the difference between the feed and column-inlet concentrations while feed is present during loading.",
+    "description_basis": "stated",
+    "quote": "At the column inlet, the axial concentration change depends on the difference between the feed and column inlet concentrations.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "algebraic",
+   "computes": "L",
+   "condition": null,
+   "value": "0",
+   "section": "2.1. Chromatography model",
+   "description": "The outlet boundary condition sets the axial concentration gradient of the mobile-phase solute to zero.",
+   "description_basis": "stated",
+   "quote": "At the column outlet, it is assumed that there is no axial concentration change.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "10",
+    "description": "The outlet boundary condition sets the axial concentration gradient of the mobile-phase solute to zero.",
+    "description_basis": "stated",
+    "quote": "At the column outlet, it is assumed that there is no axial concentration change.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "11": {
+   "form": "algebraic",
+   "computes": "q_{IgG}^{*}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The IgG equilibrium adsorption isotherm computes stationary-phase concentration from mobile-phase IgG concentration, with pH modifying the adsorption.",
+   "description_basis": "stated",
+   "quote": "a Langmuir adsorption isotherm considering pH as a modifier",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "solute concentration",
+     "symbol": "C_{IgG}"
+    },
+    {
+     "role": "maximum binding capacity",
+     "symbol": "q_{max}"
+    },
+    {
+     "role": "association equilibrium constant",
+     "symbol": "K_{A}"
+    },
+    {
+     "role": "ph modifier",
+     "symbol": "p"
+    },
+    {
+     "role": "reference ph",
+     "symbol": "H_{ref}"
+    },
+    {
+     "role": "ph dependence order",
+     "symbol": "n"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "11",
+    "description": "The IgG equilibrium adsorption isotherm computes stationary-phase concentration from mobile-phase IgG concentration, with pH modifying the adsorption.",
+    "description_basis": "stated",
+    "quote": "a Langmuir adsorption isotherm considering pH as a modifier",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "solute concentration",
+      "symbol": "C_{IgG}"
+     },
+     {
+      "role": "maximum binding capacity",
+      "symbol": "q_{max}"
+     },
+     {
+      "role": "association equilibrium constant",
+      "symbol": "K_{A}"
+     },
+     {
+      "role": "pH modifier",
+      "symbol": "p"
+     },
+     {
+      "role": "reference pH",
+      "symbol": "H_{ref}"
+     },
+     {
+      "role": "pH dependence order",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "algebraic",
+   "computes": "q_{imp}^{*}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Chromatography model",
+   "description": "The impurity equilibrium concentration in the stationary phase is proportional to its mobile-phase concentration.",
+   "description_basis": "stated",
+   "quote": "The impurities were assumed to follow a linear adsorption isotherm",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "solute concentration",
+     "symbol": "C_{imp}"
+    },
+    {
+     "role": "linear isotherm constant",
+     "symbol": "H"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "The impurity equilibrium concentration in the stationary phase is proportional to its mobile-phase concentration.",
+    "description_basis": "stated",
+    "quote": "The impurities were assumed to follow a linear adsorption isotherm",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "solute concentration",
+      "symbol": "C_{imp}"
+     },
+     {
+      "role": "linear isotherm constant",
+      "symbol": "H"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

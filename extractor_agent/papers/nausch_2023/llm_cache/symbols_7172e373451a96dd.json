@@ -1,0 +1,50 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.023892043,
+  "prompt_tokens": 1484,
+  "prompt_time": 0.068461219,
+  "completion_tokens": 10456,
+  "completion_time": 23.768318335,
+  "total_tokens": 11940,
+  "total_time": 23.836779554,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 10220
+  }
+ },
+ "user": "Equations:\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nm_{SF}   [NOT COMPUTED]\n  [352] (sentence, p.11) The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and  $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017).\n\n\\alpha   [NOT COMPUTED]\n  [354] (sentence, p.11) It has 20 parameters to identify, including the death rate constant  $ k_d $, maximum specific growth rate  $ \\mu_m $, maximum specific growth rate for ammonium and phosphate  $ \\mu^A_m $,  $ \\mu^P_m $, saturation and inhibition constants  $ K_h $ and  $ K_{lh\n  [431] (table_row, p.15) Parameter: $ \\alpha $ | Description: Sucrose hydrolysis constant | Unit: h $ ^{-1} $ | Min: 0 | Max: 1 | Optimal: 0.396 | 90% CI: 0.24",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "m_{SF}",
+    "description": "sucrose to glucose or fructose DM conversion parameter",
+    "description_basis": "stated",
+    "snippet_id": 352,
+    "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and  $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017).",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "0.526",
+    "class_reason": "parameter: a constant conversion factor for sucrose to fructose conversion set by the authors.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha",
+    "description": "Sucrose hydrolysis constant",
+    "description_basis": "stated",
+    "snippet_id": 431,
+    "quote": "Sucrose hydrolysis constant",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "0.396 h^{-1}",
+    "class_reason": "parameter: a constant representing the sucrose hydrolysis rate.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

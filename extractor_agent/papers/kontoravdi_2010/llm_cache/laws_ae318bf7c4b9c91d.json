@@ -1,0 +1,101 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1684,
+  "completion_tokens": 3929,
+  "total_tokens": 5613,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1681,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3378,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The intraER MAb balance is\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}    [code: ODE, computes [H_2L_2]_{ER}, code proposes balance]\n    Similarly, for the Golgi apparatus:\n(26) \\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}    [code: ODE, computes [H_2L_2]_{G}, code proposes balance]\n    Finally, the rate of MAb production is\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]    [code: ODE, computes [MAb], code proposes balance]\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}    [code: algebraic, computes Q_{MAb}, code proposes constitutive]\n\nSymbols:\n  [H_2L_2]_{ER}: Concentration of assembled MAb in the ER. (computed)\n  K_{A}: Assembly rate constant. [cell/molecule/h] (parameter)\n  [H_2L]: Intra-ER heavy-chain dimer–light-chain assembly intermediate concentration. (computed)\n  [L]: Intra-ER light-chain concentration. [molecule/cell] (computed)\n  K_{ER}: Rate constant for ER-to-Golgi transport. [h^-1] (parameter)\n  [H_2L_2]_{G}: Concentration of assembled MAb in the Golgi apparatus. (computed)\n  \\varepsilon_{1}: ER glycosylation efficiency factor. [-] (parameter)\n  K_{G}: Rate constant for Golgi-to-medium antibody transport. [h^-1] (parameter)\n  [MAb]: MAb concentration in the culture medium. (computed)\n  \\gamma_{2}: Constant for antibody production. [-] (parameter)\n  \\gamma_{1}: Constant for antibody production. [h] (parameter)\n  \\mu: Specific cell growth rate. [h^-1] (computed)\n  Q_{MAb}: MAb production quantity used in the MAb production rate equation. (computed)\n  V: Bioreactor volume. (computed)\n  X_{\\nu}: Viable cell density. (computed)\n  F_{out}: Outlet flow rate. (variable)\n  \\varepsilon_{2}: Golgi apparatus glycosylation efficiency factor [dimensionless] (parameter)\n  \\lambda: Multiplicative factor in the equation for the MAb production quantity. (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 25, 26, 27, 28",
+ "answer": {
+  "laws": [
+   {
+    "eq": "25",
+    "description": "The intraER assembled MAb balance adds MAb formed from the heavy-chain dimer–light-chain intermediate and light chain, and removes it through ER-to-Golgi transport.",
+    "description_basis": "stated",
+    "quote": "The intraER MAb balance is",
+    "law_type": "balance",
+    "law_type_reason": "It is an accumulation of assembled ER MAb with formation and transport-loss terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[H_2L_2]_{ER}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "26",
+    "description": "The Golgi assembled MAb balance adds the ER-transferred fraction and removes MAb through Golgi-to-medium transport.",
+    "description_basis": "stated",
+    "quote": "Similarly, for the Golgi apparatus:",
+    "law_type": "balance",
+    "law_type_reason": "It describes accumulation in the Golgi with an input from the ER and a transport loss.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[H_2L_2]_{G}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "27",
+    "description": "The culture-medium MAb balance adds the production term and removes MAb through the outlet flow.",
+    "description_basis": "stated",
+    "quote": "Finally, the rate of MAb production is",
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation of medium MAb as production minus outlet removal.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[MAb]"
+     }
+    ],
+    "issue": "The outlet term F_{out}[MAb] lacks the volume normalization required for a concentration balance: F_{out} is an outlet flow rate, so this term has amount/time rather than concentration/time units."
+   },
+   {
+    "eq": "28",
+    "description": "The MAb production quantity is calculated as proportional to assembled Golgi MAb concentration, scaled by glycosylation efficiency and a multiplicative factor.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It is a kinetic expression relating the Golgi MAb concentration to the MAb production quantity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H_2L_2]_{G}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{G}"
+     },
+     {
+      "role": "efficiency factor",
+      "symbol": "\\varepsilon_{2}"
+     },
+     {
+      "role": "multiplicative factor",
+      "symbol": "\\lambda"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

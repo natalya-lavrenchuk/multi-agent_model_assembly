@@ -1,0 +1,657 @@
+{
+ "paper": "seidel_2018",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "formulas": [
+  {
+   "eq": 1,
+   "page": 0,
+   "label": "display_formula",
+   "latex": " $$  CO+2H_{2}\\rightleftharpoons CH_{3}OH $$ ",
+   "bbox": [
+    64.0,
+    1431.0,
+    227.0,
+    1453.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 2,
+   "page": 0,
+   "label": "display_formula",
+   "latex": " $$  CO_{2}+3H_{2}\\rightleftharpoons CH_{3}OH+H_{2}O $$ ",
+   "bbox": [
+    64.0,
+    1457.0,
+    288.0,
+    1480.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 3,
+   "page": 0,
+   "label": "display_formula",
+   "latex": " $$  CO_{2}+H_{2}\\rightleftharpoons CO+H_{2}O. $$ ",
+   "bbox": [
+    65.0,
+    1484.0,
+    247.0,
+    1507.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 4,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{{C O}}}=k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}_{1}}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes} $$ ",
+   "bbox": [
+    63.0,
+    868.0,
+    331.0,
+    915.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 5,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{C O}_{2}}=k_{2}\\left(p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}-\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}_{2}}p_{\\mathrm{H}_{2}}^{2}}\\right)\\boldsymbol{\\Theta}^{*^{2}}\\boldsymbol{\\Theta}^{\\odot} $$ ",
+   "bbox": [
+    63.0,
+    920.0,
+    380.0,
+    973.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 6,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{R W G S}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}_{3}}p_{\\mathrm{H}_{2}}}\\right)\\boldsymbol{\\Theta}^{\\otimes}\\boldsymbol{\\Theta}^{*}. $$ ",
+   "bbox": [
+    62.0,
+    979.0,
+    340.0,
+    1033.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 13,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-} $$ ",
+   "bbox": [
+    61.0,
+    1148.0,
+    564.0,
+    1226.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 8,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1} $$ ",
+   "bbox": [
+    61.0,
+    1275.0,
+    285.0,
+    1367.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 9,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}{K_{\\mathrm{B}5}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{16}}\\frac{p_{\\mathrm{CH}_{3}\\mathrm{OH}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{14}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}++\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{15}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{12}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-} $$ ",
+   "bbox": [
+    61.0,
+    1395.0,
+    592.0,
+    1480.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 10,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ k_{i}=\\exp\\left(\\underbrace{A}_{\\beta_{1},\\beta_{3},\\beta_{5}}-\\underbrace{B}_{\\beta_{2},\\beta_{4},\\beta_{6}}\\left(\\frac{T_{ref}}{T}-1\\right)\\right) $$ ",
+   "bbox": [
+    622.0,
+    572.0,
+    919.0,
+    636.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 11,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{C O}}=k_{1}p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}}^{2}\\left(1-\\frac{1}{K_{\\mathrm{P}1}}\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}}{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}}^{2}}\\right)\\boldsymbol{\\Theta}^{\\odot}\\boldsymbol{\\Theta}^{\\otimes4} $$ ",
+   "bbox": [
+    623.0,
+    1007.0,
+    942.0,
+    1061.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 12,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{C O}_{2}}=k_{2}p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}^{2}\\left(1-\\frac{1}{K_{\\mathrm{P}2}}\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}^{3}}\\right)\\boldsymbol{\\Theta}^{*^{2}}\\boldsymbol{\\Theta}^{\\otimes^{4}} $$ ",
+   "bbox": [
+    622.0,
+    1067.0,
+    989.0,
+    1121.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 13,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ r_{R W G S}=k_{3}p_{C O_{2}}\\left(1-\\frac{1}{K_{P3}}\\frac{p_{C O}p_{H_{2}O}}{p_{C O_{2}}p_{H_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot} $$ ",
+   "bbox": [
+    622.0,
+    1126.0,
+    938.0,
+    1182.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 14,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\boldsymbol{\\Theta}^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}\\boldsymbol{p}_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}\\boldsymbol{p}_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}\\boldsymbol{p}_{\\mathrm{CO}_{2}}\\right)^{-1} $$ ",
+   "bbox": [
+    624.0,
+    1225.0,
+    1014.0,
+    1310.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 15,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-} $$ ",
+   "bbox": [
+    624.0,
+    1312.0,
+    823.0,
+    1402.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 16,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}}_{-\\frac{\\beta_{10}\\beta_{9}}{\\beta_{7}^{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{13}}p_{\\mathrm{CO}2}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-1} $$ ",
+   "bbox": [
+    624.0,
+    1408.0,
+    1140.0,
+    1539.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 17,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\underbrace{\\sum_{i}^{N}\\odot_{i}}_{oxidized~centers}+\\underbrace{\\sum_{j}^{M}\\ast_{j}}_{reduced~centers}=constant=1 $$ ",
+   "bbox": [
+    90.0,
+    737.0,
+    408.0,
+    800.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 18,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\mathrm{H_{2}}+\\odot_{\\mathrm{i}}\\rightleftharpoons\\mathrm{H_{2}O}+*_{\\mathrm{i}}, $$ ",
+   "bbox": [
+    84.0,
+    952.0,
+    247.0,
+    976.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 19,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$  CO+\\odot_{i}\\rightleftharpoons CO_{2}+*_{i}. $$ ",
+   "bbox": [
+    84.0,
+    979.0,
+    247.0,
+    1002.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 20,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ K_{1}=\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\cdot\\frac{\\phi}{1-\\phi}, $$ ",
+   "bbox": [
+    643.0,
+    258.0,
+    791.0,
+    305.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 21,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ K_{2}=\\frac{p_{\\mathrm{C O}_{2}}}{p_{\\mathrm{C O}}}\\cdot\\frac{\\phi}{1-\\phi}, $$ ",
+   "bbox": [
+    643.0,
+    309.0,
+    789.0,
+    355.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 22,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\phi=\\frac{1}{2}\\left(1-\\frac{\\gamma^{*}}{\\gamma_{0}}\\right) $$ ",
+   "bbox": [
+    644.0,
+    464.0,
+    770.0,
+    511.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 23,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}}\\mathrm{O}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}}\\mathrm{O}p_{\\mathrm{C O}_{2}}}}}. $$ ",
+   "bbox": [
+    642.0,
+    561.0,
+    839.0,
+    651.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 24,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ K_{1}=\\frac{k_{1}^{+}}{k_{1}^{-}}=\\exp\\left(\\frac{-\\Delta G_{1}}{RT}\\right), $$ ",
+   "bbox": [
+    643.0,
+    817.0,
+    841.0,
+    865.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 25,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ K_{2}=\\frac{k_{2}^{+}}{k_{2}^{-}}=\\exp\\left(\\frac{-\\Delta G_{2}}{RT}\\right). $$ ",
+   "bbox": [
+    643.0,
+    869.0,
+    839.0,
+    918.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 26,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\tilde{\\Theta}^{\\odot}=(1-\\phi)\\cdot\\Theta^{\\odot}, $$ ",
+   "bbox": [
+    645.0,
+    1056.0,
+    798.0,
+    1082.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 27,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\tilde{\\Theta}^{*}=\\phi\\cdot\\Theta^{*}. $$ ",
+   "bbox": [
+    646.0,
+    1086.0,
+    746.0,
+    1111.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 28,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(1-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(1-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*} $$ ",
+   "bbox": [
+    647.0,
+    1444.0,
+    930.0,
+    1540.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 29,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ R_{i,exp}=-\\left(y_{i,0}-y_{i}\\gamma\\right)\\frac{p_{N}\\dot{V}_{N}}{RT_{N}m_{kat}} $$ ",
+   "bbox": [
+    64.0,
+    820.0,
+    289.0,
+    867.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 30,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\min_{\\forall\\beta_{i}}\\left(\\sum_{i=1}^{N}\\left(R_{i,exp}-\\sum_{j=1}^{3}\\nu_{ij}r_{j}\\right)^{2}\\right). $$ ",
+   "bbox": [
+    64.0,
+    974.0,
+    304.0,
+    1039.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 31,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\Delta G_{1}=1.1348\\times10^{3}J mol^{-1} $$ ",
+   "bbox": [
+    64.0,
+    1323.0,
+    290.0,
+    1350.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 32,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\Delta G_{2}=-0.7693\\times10^{3}\\mathrm{J}\\mathrm{m o l}^{-1}. $$ ",
+   "bbox": [
+    64.0,
+    1354.0,
+    307.0,
+    1381.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 33,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\dot{y}_{i}=Z\\Bigg[\\frac{1}{\\tau}y_{i,0}-\\Bigg(\\frac{1}{\\tau}+\\frac{1}{\\mathcal{K}}\\sum_{i=1}^{N_{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg)y_{i}+\\frac{1}{\\mathcal{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg]. $$ ",
+   "bbox": [
+    622.0,
+    813.0,
+    1013.0,
+    871.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 34,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ m_{\\mathrm{k a t}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}=m_{\\mathrm{k a t}}\\cdot q_{\\mathrm{s a t}}\\sum_{j=1}^{N_{R}}\\sum_{e=1}^{N_{E S,j}}\\nu_{i j}^{(e)}r_{j}^{(e)}. $$ ",
+   "bbox": [
+    623.0,
+    988.0,
+    913.0,
+    1048.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 35,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\frac{d\\Theta_{s}}{d t}=\\sum_{i=1}^{N_{K}}\\frac{\\partial\\Theta_{i}}{\\partial p_{i}}\\frac{d p_{i}}{d t}=\\sum_{j=1}^{N_{R}}\\sum_{e=1}^{N_{E S,j}}\\nu_{i j}^{(e)}r_{j}^{(e)} $$ ",
+   "bbox": [
+    622.0,
+    1122.0,
+    890.0,
+    1181.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 36,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ M(t,y)\\cdot\\frac{dy}{dt}=f(t,y) $$ ",
+   "bbox": [
+    624.0,
+    1305.0,
+    782.0,
+    1349.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 37,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ \\min_{k_{1},k_{2}}\\sum_{k}\\sum_{i}\\left(y_{i,exp}(t_{k})-y_{i}(t_{k})\\right)^{2} $$ ",
+   "bbox": [
+    624.0,
+    1446.0,
+    859.0,
+    1492.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 11,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{{C O}}}=(1-\\phi)k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes^{4}} $$ ",
+   "bbox": [
+    82.0,
+    793.0,
+    413.0,
+    839.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 12,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}} $$ ",
+   "bbox": [
+    82.0,
+    860.0,
+    458.0,
+    916.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 13,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}0}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot} $$ ",
+   "bbox": [
+    82.0,
+    936.0,
+    474.0,
+    992.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 14,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{CO}_{2}}\\right)^{-1} $$ ",
+   "bbox": [
+    83.0,
+    1081.0,
+    491.0,
+    1193.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": null,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1} $$ ",
+   "bbox": [
+    83.0,
+    1211.0,
+    304.0,
+    1303.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 16,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-} $$ ",
+   "bbox": [
+    643.0,
+    630.0,
+    1164.0,
+    783.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 1,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\lg(K_{P1})&=13.8140+3784.4/T-9.2833\\cdot\\lg(T)\\\\&\\quad+3.1475\\times10^{-3}T-4.2613\\times10^{-7}T^{2}\\end{aligned} $$ ",
+   "bbox": [
+    65.0,
+    213.0,
+    439.0,
+    266.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 2,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\lg(K_{P2})&=15.0921+1581.7/T-8.7639\\cdot\\lg(T)\\\\&\\quad+2.1105\\times10^{-3}T-1.9303\\times10^{-7}T^{2}\\end{aligned} $$ ",
+   "bbox": [
+    64.0,
+    289.0,
+    438.0,
+    342.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 3,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\lg(K_{P3})&=1.2777-2167/T+0.5194\\cdot\\lg(T)\\\\&\\quad-1.037\\times10^{-3}T+2.331\\times10^{-7}T^{2}\\end{aligned} $$ ",
+   "bbox": [
+    63.0,
+    365.0,
+    417.0,
+    418.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 5,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}}k p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes} $$ ",
+   "bbox": [
+    63.0,
+    487.0,
+    381.0,
+    540.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 6,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*} $$ ",
+   "bbox": [
+    63.0,
+    563.0,
+    336.0,
+    618.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 31,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ \\Delta G_{1}=11.348\\mathrm{kJ}\\mathrm{m o l}^{-1} $$ ",
+   "bbox": [
+    64.0,
+    640.0,
+    250.0,
+    665.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 32,
+   "page": 11,
+   "label": "display_formula",
+   "latex": " $$ \\Delta G_{2}=-7.693\\mathrm{kJ}\\mathrm{mol}^{-1} $$ ",
+   "bbox": [
+    625.0,
+    137.0,
+    814.0,
+    162.0
+   ],
+   "route": "pipeline"
+  }
+ ]
+}

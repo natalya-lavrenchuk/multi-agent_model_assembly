@@ -1,0 +1,48 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1841,
+  "completion_tokens": 2186,
+  "total_tokens": 4027,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1838,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1643,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Determination of parameters for the steric mass action model—A comparison between two approaches\n\nAbstract: The application of mechanistic modeling for the optimization of chromatographic steps increased recently due to time efficiency of algorithms and rising calculation power. In the modeling of ion exchange chromatography steps, the sorption processes occurring on adsorbent particle surfaces can be simulated with the steric mass action (SMA) model introduced by Brooks and Cramer (1992) [14]. In this paper, two approaches for the determination of SMA parameters will be carried out and discussed concerning their specific experimental effort, quality of results, method differences, reasons for uncertainties and consequences for SMA parameter determination: Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in Brooks and Cramer (1992) [14] and Shukla et al. (1998) [16]. Approach II: application of an inverse method for parameter estimation, resulting in SMA parameters that induce a best fit of chromatographic data to a mechanistic model for column chromatography. These approaches for SMA parameter determination were carried out for three proteins (ribonuclease A, cytochrome c and lysozyme) at pH 5 and pH 7. The results were comparable and the order of parameter values and their relations to the chromatographic data similar. Nevertheless, differences in the complexity and effort of methods as well as the parameter values themselves were observed. The comparison of methods demonstrated that discrepancies depend mainly on model \n\nSentences about the process and the data:\n- In this paper, two approaches for the determination of SMA parameters will be carried out and discussed concerning their specific experimental effort, quality of results, method differences, reasons for uncertainties and consequences for SM\n- Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in Brooks and Cramer (1992) [14] and Shukla et al. (1998) [16].\n- Approach II: application of an inverse method for parameter estimation, resulting in SMA parameters that induce a best fit of chromatographic data to a mechanistic model for column chromatography.\n- The results were comparable and the order of parameter values and their relations to the chromatographic data similar.\n- Thus, the inverse method based on a mechanistic model for column chromatography is the most comfortable way to establish highly predictive SMA parameters lending themselves for the optimization of chromatography steps and process control.\n- The search for a favorable and robust operating point of a separation process represents a complex multi-factor optimization problem.\n- One way to tackle this problem is given by screenings for optimal factors in the design space based on design of experiments (DoE).\n- A calibrated mechanistic model simulates the flow of the mobile phase through the column and imitates interactions between the mobile phase and the adsorbent surface; a most important but hardly monitorable piece of the whole IEC process.\n- These simulations base on parameters that determine the chromatographic system on column and particle level.\n- Numerous publications with proposals for most effective model calibration have been released, like for example [11], discussing mainly the determination of parameters characterizing the packed bed, [12], dealing with parameters of mass tran\n- These publications reveal that system parameters (dead volume, etc.) and bed characterizing parameters (axial dispersion, porosities, etc.) can be determined with a few basic pulse experiments.\n- However, the determination of parameters for the steric mass action (SMA) model that describes the interaction between the proteins and the adsorbent surface in IEC [14] is based on time-consuming isocratic or gradiental experiments and mat\n- In this context, approaches for the determination of SMA parameters based on batch experiments, like in [18,19] are interesting but not yet fully established and validated.\n- A quite established alternative to the experimental determination of SMA parameters is given by model-based inverse methods.\n- In these methods the parameters are calculated by the best fit between data and chromatography model response.\n- Inverse modeling might, for example, be performed with historic data, data already existing from process development, process data etc.\n- Thus, only a direct comparison between different approaches can act as a background for discussion on the optimal determination of modeling parameters and influence of noise in chromatographic data on parameter estimation.\n- Such a comparison should on the one hand discuss experimental effort and parameter qualities, on the other hand it should pay attention to prediction performance, chances, advantages and disadvantages of both approaches.\n\nModel: Rapid-equilibrium SMA\nLaws:\n(1) [balance] The kinetic SMA law computes the rate of change of component i bound on the adsorbent through adsorption and desorption.\n(2) [definition] The equation computes the adsorbent's ionic capacity as the salt loading plus the charge-weighted loadings of the other bound components.\n(3) [definition] The equation computes the salt ions available for exchange by subtracting protein-shielded ions from the total bound salt concentration.\n(4) [constitutive] The equation gives the SMA equilibrium coefficient for component i in terms of its bound and mobile concentrations and the available salt-ion concentration.\n(7) [balance] The column-level balance computes the change in mobile-phase concentration from axial convection and dispersion, with transfer to the particles as a sink.\n(8) [balance] The particle-level balance computes the change in mobile-phase particle concentration from film transfer and adsorption or desorption.\n\nStates (computed by the ODEs):\n- q_{i}: Concentration of component i on the adsorbent surface.\n- c_{i}: Concentration of component i in the mobile phase on column level.\n- c_{p,i}: concentration of component i in the mobile phase on particle level\n\nInputs (variables no law computes):\n- c_{1}: Mobile-phase salt concentration.\n- q_{1}: Total salt ion concentration on the adsorbent surface.\n- u_{int}: interstitial velocity\n\nModel-wide assumptions:\n- Rapid equilibrium is assumed.",
+ "answer": {
+  "system": {
+   "value": "Ion-exchange chromatography of ribonuclease A, cytochrome c, and lysozyme on an adsorbent",
+   "quote": "These approaches for SMA parameter determination were carried out for three proteins (ribonuclease A, cytochrome c and lysozyme) at pH 5 and pH 7.; the steric mass action (SMA) model that describes the interaction between the proteins and the adsorbent surface in IEC"
+  },
+  "unit_operation": {
+   "value": "Packed-bed ion-exchange chromatography column",
+   "quote": "mechanistic model for column chromatography; parameters characterizing the packed bed"
+  },
+  "operating_mode": {
+   "value": [
+    "not stated"
+   ],
+   "quote": "gradient and frontal experiments",
+   "note": "The experiments are gradient and frontal, which are not represented in the allowed operating-mode list."
+  },
+  "fitted_on": {
+   "value": "Gradient and frontal experiments and chromatographic data for ribonuclease A, cytochrome c, and lysozyme at pH 5 and pH 7",
+   "quote": "Approach I: estimation of SMA parameters based on gradient and frontal experiments according to instructions in Brooks and Cramer (1992) [14] and Shukla et al. (1998) [16]. Approach II: application of an inverse method for parameter estimation, resulting in SMA parameters that induce a best fit of chromatographic data to a mechanistic model for column chromatography. These approaches for SMA parameter determination were carried out for three proteins (ribonuclease A, cytochrome c and lysozyme) at pH 5 and pH 7."
+  },
+  "phenomena": [
+   "SMA ion-exchange adsorption with salt competition and steric shielding",
+   "Axial convection and dispersion in the column",
+   "Film mass transfer between the column mobile phase and particle liquid"
+  ],
+  "description": "The model describes ion-exchange chromatography of ribonuclease A, cytochrome c, and lysozyme, predicting their concentration profiles through a column. It combines rapid-equilibrium SMA adsorption, including salt competition and steric shielding, with column convection and dispersion and film transfer between the mobile phase and adsorbent particles. SMA parameters were determined from gradient and frontal experiments or by inverse fitting to chromatographic data."
+ }
+}

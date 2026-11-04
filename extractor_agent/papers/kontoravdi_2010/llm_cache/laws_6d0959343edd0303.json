@@ -1,0 +1,128 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.156899625,
+  "prompt_tokens": 1525,
+  "prompt_time": 0.4126206,
+  "completion_tokens": 1296,
+  "completion_time": 2.732025723,
+  "total_tokens": 2821,
+  "total_time": 3.144646323,
+  "completion_tokens_details": {
+   "reasoning_tokens": 341
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The intraER MAb balance is\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}    [code: ODE, computes [H_2L_2]_{ER}, code proposes balance]\n    Similarly, for the Golgi apparatus:\n(26) \\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}    [code: ODE, computes [H_2L_2]_{G}, code proposes balance]\n    Finally, the rate of MAb production is\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]    [code: ODE, computes [MAb], code proposes balance]\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}    [code: algebraic, computes Q_{MAb}, code proposes constitutive]\n\nSymbols:\n  [H_2L_2]_{ER}: concentration of the ER‑localized H₂L₂ complex (computed)\n  K_{A}: assembly rate constant for the formation of H from monomers [cell/molecule-L] (parameter)\n  [H_2L]: concentration of the complex formed by H₂ and ligand L (parameter)\n  [L]: concentration of light‑chain monomer [chain/cell·h] (computed)\n  K_{ER}: rate constant for ER‑to‑Golgi transport [h^{-1}] (parameter)\n  [H_2L_2]_{G}: concentration of the Golgi‑localized H₂L₂ complex (computed)\n  \\varepsilon_{1}: ER glycosylation efficiency factor [-] (parameter)\n  K_{G}: rate constant for Golgi‑to‑medium antibody transport [h^{-1}] (parameter)\n  [MAb]: concentration of monoclonal antibody in the reactor (computed)\n  \\gamma_{2}: constant for antibody production [h] (variable)\n  \\gamma_{1}: constant for antibody production [h] (variable)\n  \\mu: specific growth rate of viable cells [h^-1] (computed)\n  Q_{MAb}: specific production rate of monoclonal antibody as defined by Eq. 28 (computed)\n  V: reactor liquid volume [L] (computed)\n  X_{\\nu}: viable cell concentration (cells per volume) [cells L^-1] (computed)\n  F_{out}: outlet volumetric flow rate [L h^-1] (variable)\n  \\varepsilon_{2}: Golgi apparatus glycosylation efficiency factor [-] (variable)\n  \\lambda: parameter appearing in Eq. 28 that scales the effect of K_G and substrate concentration on Q_{MAb} (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 25, 26, 27, 28",
+ "answer": {
+  "laws": [
+   {
+    "eq": "(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}",
+    "description": "intra‑ER monoclonal antibody complex balance: accumulation equals assembly from H₂L and L minus transport to Golgi",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "[H_{2}L_{2}]_{ER}"
+     },
+     {
+      "role": "reactant1",
+      "symbol": "[H_{2}L]"
+     },
+     {
+      "role": "reactant2",
+      "symbol": "[L]"
+     },
+     {
+      "role": "transport_rate",
+      "symbol": "K_{ER}"
+     },
+     {
+      "role": "assembly_rate_constant",
+      "symbol": "K_{A}"
+     }
+    ]
+   },
+   {
+    "eq": "(26) \\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}",
+    "description": "Golgi‑localized antibody complex balance: accumulation equals glycosylated influx from ER minus transport to the medium",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "[H_{2}L_{2}]_{G}"
+     },
+     {
+      "role": "influx_from_ER",
+      "symbol": "[H_{2}L_{2}]_{ER}"
+     },
+     {
+      "role": "glycosylation_efficiency",
+      "symbol": "\\varepsilon_{1}"
+     },
+     {
+      "role": "ER_to_Golgi_rate",
+      "symbol": "K_{E R}"
+     },
+     {
+      "role": "Golgi_to_medium_rate",
+      "symbol": "K_{G}"
+     }
+    ]
+   },
+   {
+    "eq": "(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]",
+    "description": "overall monoclonal antibody balance in the reactor: accumulation equals net specific production (growth‑adjusted) minus outlet removal",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "[MAb]"
+     },
+     {
+      "role": "specific_production_rate",
+      "symbol": "Q_{MAb}"
+     },
+     {
+      "role": "volume",
+      "symbol": "V"
+     },
+     {
+      "role": "viable_cell_concentration",
+      "symbol": "X_{\\nu}"
+     },
+     {
+      "role": "growth_adjustment",
+      "symbol": "(\\gamma_{2}-\\gamma_{1}\\mu)"
+     },
+     {
+      "role": "outlet_flow",
+      "symbol": "F_{out}"
+     }
+    ]
+   },
+   {
+    "eq": "(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}",
+    "description": "definition of the specific monoclonal antibody production rate as proportional to Golgi‑localized complex concentration",
+    "description_basis": "stated",
+    "quote": "Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}",
+    "law_type": "definition",
+    "law_type_reason": "",
+    "assumptions": [],
+    "roles": []
+   }
+  ]
+ }
+}

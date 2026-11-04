@@ -1,0 +1,65 @@
+{
+ "sup": "zentou_2019",
+ "title": "Modelling of Molasses Fermentation for Bioethanol Production: A Comparative Investigation of Monod and Andrews Models Accuracy Assessment",
+ "doi": "10.3390/biom9080308",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "models": [
+  {
+   "name": "Monod",
+   "equations": [
+    "1",
+    "3",
+    "6",
+    "7"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "human",
+   "complete_model": true,
+   "model_assumptions": []
+  },
+  {
+   "name": "Andrews",
+   "equations": [
+    "1",
+    "5",
+    "6",
+    "7"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "human",
+   "complete_model": true,
+   "model_assumptions": []
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "2",
+   "reason": "Estimates specific growth rate from measured biomass and time; it is not a model law."
+  },
+  {
+   "eq": "4",
+   "reason": "Combines eq 1 with the Monod law in eq 3 to restate the biomass-growth equation."
+  },
+  {
+   "eq": "8",
+   "reason": "Linearized form of the Monod law; restates eq 3."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "CONFLICT: computes X, like eq 4",
+   "2": "CONFLICT: computes \\mu, like eq 3, 5, 8",
+   "3": "CONFLICT: computes \\mu, like eq 2, 5, 8",
+   "4": "CONFLICT: computes X, like eq 1",
+   "5": "CONFLICT: computes \\mu, like eq 2, 3, 8",
+   "6": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "7": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "8": "CONFLICT: computes \\mu, like eq 2, 3, 5",
+   "9": "NEEDED: computes Y_{x/s}, used by the model",
+   "10": "NEEDED: computes Y_{p/s}, used by the model"
+  }
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "sup": "ng_2012",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 12,
+  "variable_nodes": 33,
+  "parameter_nodes": 13,
+  "distinct_symbols": 29,
+  "computes_edges": 12,
+  "uses_edges": 21,
+  "hasParameter_edges": 13,
+  "laws_by_form": {
+   "PDE": 3,
+   "algebraic": 9
+  },
+  "laws_flagged": [
+   7,
+   8,
+   10
+  ],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "A",
+   "B",
+   "H",
+   "H_{ref}",
+   "K_{A}",
+   "S_{1}",
+   "S_{2}",
+   "d_{p}",
+   "k_{\\max}",
+   "n",
+   "q_{\\max,R}",
+   "q_{max}"
+  ],
+  "for_review": [],
+  "triples": 1068
+ },
+ "flags": [
+  {
+   "law": 7,
+   "check": "reading",
+   "detail": "a value, not a law: 0"
+  },
+  {
+   "law": 8,
+   "check": "reading",
+   "detail": "a value, not a law: 0"
+  },
+  {
+   "law": 10,
+   "check": "reading",
+   "detail": "a value, not a law: 0"
+  },
+  {
+   "symbol": "h",
+   "check": "computed, never used",
+   "laws": [
+    4,
+    5
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  },
+  {
+   "symbol": "q_{IgG}^{*}",
+   "check": "computed, never used",
+   "laws": [
+    11
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  },
+  {
+   "symbol": "q_{imp}^{*}",
+   "check": "computed, never used",
+   "laws": [
+    12
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": []
+}

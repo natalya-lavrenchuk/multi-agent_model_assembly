@@ -1,0 +1,219 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.39245552,
+  "prompt_tokens": 2001,
+  "prompt_time": 0.138788167,
+  "completion_tokens": 2420,
+  "completion_time": 5.074680932,
+  "total_tokens": 4421,
+  "total_time": 5.213469099,
+  "completion_tokens_details": {
+   "reasoning_tokens": 853
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\n(1) \\frac{d V}{d t}=F_{i n}-F_{o u t}    [code: ODE, computes V, code proposes balance]\n(2) \\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}    [code: ODE, computes X_{\\nu}, code proposes balance]\n(3) \\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}    [code: ODE, computes X_{t}, code proposes balance]\n    The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\n(4) \\mu=\\mu_{m a x}f_{l i m}f_{i n h}    [code: algebraic, computes \\mu, code proposes constitutive]\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)    [code: algebraic, computes f_{lim}, code proposes constitutive]\n(6) f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right)    [code: algebraic, computes f_{inh}, code proposes constitutive]\n    Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1    [code: algebraic, computes \\mu_{d}, code proposes constitutive]\n    The mass balances on glucose and glutamine around the bioreactor are:\n(8) \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]    [code: ODE, computes [GLC], code proposes balance]\n\nSymbols:\n  V: Reactor liquid volume [L] (computed)\n  F_{in}: Inlet volumetric flow rate into the bioreactor [L h^-1] (variable)\n  F_{out}: Outlet volumetric flow rate from the bioreactor [L h^-1] (variable)\n  X_{\\nu}: Viable cell concentration (viable cell density) [cells L^-1] (computed)\n  \\mu: Specific viable cell growth rate [h^-1] (computed)\n  \\mu_{d}: Specific cell death rate [h^-1] (computed)\n  X_{t}: Total cell concentration (viable + dead) [cells L^-1] (computed)\n  \\mu_{max}: Maximum specific growth rate [h^-1] (parameter)\n  f_{lim}: Limiting factor term for growth (product of Monod saturation functions) [-] (computed)\n  f_{inh}: Inhibition factor term for growth (product of inhibition functions) [-] (computed)\n  [GLC]: Extracellular glucose concentration [mM] (computed)\n  K_{glc}: Monod constant for glucose [mM] (parameter)\n  K_{gln}: Monod constant for glutamine [mM] (parameter)\n  K_{Ilac}: Monod constant for lactate [mM] (parameter)\n  [LAC]: Extracellular lactate concentration [mM] (computed)\n  K_{Iamm}: Monod constant for ammonia [mM] (parameter)\n  [AMM]: Extracellular ammonia concentration [mM] (computed)\n  \\mu_{d,max}: Maximum specific death rate [h^{-1}] (parameter)\n  K_{d,amm}: Ammonia constant for cell death [mM] (parameter)\n  n: Hill coefficient in death rate expression (n > 1) [-] (parameter)\n  Q_{glc}: specific glucose consumption rate per cell mass [mmol g^{-1} h^{-1}] (computed)\n  [GLC]_{in}: glucose concentration in the inlet feed [mmol L^{-1}] (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 1, 2, 3, 4, 5, 6, 7, 8",
+ "answer": {
+  "laws": [
+   {
+    "eq": "1",
+    "description": "reactor liquid volume change equals inlet flow minus outlet flow",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "expresses accumulation of volume as net flow",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "V"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "2",
+    "description": "viable cell mass balance accounting for growth, death and outflow",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are",
+    "law_type": "balance",
+    "law_type_reason": "accumulation = growth – death – washout",
+    "assumptions": [
+     {
+      "text": "perfect mixing and negligible dilution effect",
+      "quote": "based on conventional assumptions such as perfect mixing and negligible dilution effect",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_ν"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "total cell mass balance accounting for growth of viable cells and outflow",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are",
+    "law_type": "balance",
+    "law_type_reason": "accumulation = production from viable cells – washout",
+    "assumptions": [
+     {
+      "text": "perfect mixing and negligible dilution effect",
+      "quote": "based on conventional assumptions such as perfect mixing and negligible dilution effect",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_t"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "specific viable cell growth rate equals maximum rate times limiting and inhibition factors",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:",
+    "law_type": "constitutive",
+    "law_type_reason": "defines μ from μ_max, f_lim and f_inh",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "μ_max"
+     },
+     {
+      "role": "balanced quantity",
+      "symbol": "f_lim"
+     },
+     {
+      "role": "balanced quantity",
+      "symbol": "f_inh"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "5",
+    "description": "product of Monod saturation functions for glucose and glutamine",
+    "description_basis": "stated",
+    "quote": "f_{lim}=\\left(\\frac{[GLC]}{K_{glc}+[GLC]}\\right)\\left(\\frac{[GLC]}{K_{gln}+[GLC]}\\right)",
+    "law_type": "constitutive",
+    "law_type_reason": "provides limiting factor as product of two Monod terms",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{glc}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{gln}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6",
+    "description": "product of inhibition terms for lactate and ammonia",
+    "description_basis": "stated",
+    "quote": "f_{inh}=\\left(\\frac{K_{Ilac}}{K_{Ilac}+[LAC]}\\right)\\left(\\frac{K_{Iamm}}{K_{Iamm}+[AMM]}\\right)",
+    "law_type": "constitutive",
+    "law_type_reason": "defines inhibition factor as product of two inhibition functions",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Ilac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Iamm}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7",
+    "description": "specific cell death rate follows a Hill-type inhibition by ammonia",
+    "description_basis": "stated",
+    "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+    "law_type": "constitutive",
+    "law_type_reason": "defines μ_d as a Hill function of ammonia concentration",
+    "assumptions": [
+     {
+      "text": "cell death only depends on the concentration of ammonia in the extracellular medium",
+      "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "μ_{d,max}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{d,amm}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "8",
+    "description": "glucose mass balance accounting for consumption by viable cells, inlet feed and outlet removal",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "balance",
+    "law_type_reason": "accumulation of glucose equals feed in minus out minus cellular consumption",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "[GLC]_{in}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X_ν"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "Q_{glc}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

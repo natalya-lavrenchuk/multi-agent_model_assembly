@@ -1,0 +1,644 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "ODE",
+   "computes": "X",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Biomass growth",
+   "description": "The biomass concentration balance accounts for specific growth and loss by culture-volume expansion.",
+   "description_basis": "stated",
+   "quote": "The biomass growth has been described as:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "1",
+    "description": "The biomass concentration balance accounts for specific growth and loss by culture-volume expansion.",
+    "description_basis": "stated",
+    "quote": "The biomass growth has been described as:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Biomass growth",
+   "description": "The specific growth rate combines Contois-type glucose and oxygen limitation with pH dependence and temperature-dependent growth and death.",
+   "description_basis": "stated",
+   "quote": "In order to take these effects into account, biomass formation has been related to these variables by introducing their effects in the specific growth rate expression to give:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{x}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "[H^+]"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{1}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "biomass",
+     "symbol": "X"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{x}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "C_{L}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{ox}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{g}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{d}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "3",
+    "description": "The specific growth rate combines Contois-type glucose and oxygen limitation with pH dependence and temperature-dependent growth and death.",
+    "description_basis": "stated",
+    "quote": "In order to take these effects into account, biomass formation has been related to these variables by introducing their effects in the specific growth rate expression to give:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{x}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[H^+]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{x}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "C_{L}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{ox}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{g}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{d}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "9": {
+   "form": "ODE",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.6. Penicillin production",
+   "description": "The penicillin concentration balance adds synthesis and subtracts hydrolysis and dilution.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "9",
+    "description": "The penicillin concentration balance adds synthesis and subtracts hydrolysis and dilution.",
+    "description_basis": "stated",
+    "quote": "The production of penicillin is described by non-growth associated product formation kinetics. The hydrolysis of penicillin is also included in the rate expression (Bajpai & Reuss, 1980):",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "algebraic",
+   "computes": "\\mu_{pp}",
+   "condition": null,
+   "value": null,
+   "section": "2.6. Penicillin production",
+   "description": "The specific penicillin production rate depends on substrate availability, is inhibited at high substrate concentration, and is limited by oxygen availability.",
+   "description_basis": "stated",
+   "quote": "where, $ \\mu_{pp} $ is the specific penicillin production rate defined as:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{p}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{p}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{I}"
+    },
+    {
+     "role": "biomass",
+     "symbol": "X"
+    },
+    {
+     "role": "substrate",
+     "symbol": "C_{L}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{op}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "10",
+    "description": "The specific penicillin production rate depends on substrate availability, is inhibited at high substrate concentration, and is limited by oxygen availability.",
+    "description_basis": "stated",
+    "quote": "where, $ \\mu_{pp} $ is the specific penicillin production rate defined as:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{p}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{p}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{I}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "substrate",
+      "symbol": "C_{L}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{op}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "11": {
+   "form": "ODE",
+   "computes": "S",
+   "condition": null,
+   "value": null,
+   "section": "2.7. Substrate utilization",
+   "description": "The glucose balance accounts for growth- and product-associated uptake, maintenance use, feed input, and dilution.",
+   "description_basis": "stated",
+   "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+   "assumptions": [
+    {
+     "text": "Yields and maintenance requirements are treated as constant.",
+     "quote": "with constant yields and maintenance requirements",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "11",
+    "description": "The glucose balance accounts for growth- and product-associated uptake, maintenance use, feed input, and dilution.",
+    "description_basis": "stated",
+    "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+    "assumptions": [
+     {
+      "text": "Yields and maintenance requirements are treated as constant.",
+      "quote": "with constant yields and maintenance requirements",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "ODE",
+   "computes": "C_{L}",
+   "condition": null,
+   "value": null,
+   "section": "2.7. Substrate utilization",
+   "description": "The dissolved-oxygen balance accounts for growth- and product-associated consumption, maintenance demand, gas-liquid transfer, and dilution.",
+   "description_basis": "stated",
+   "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+   "assumptions": [
+    {
+     "text": "Yields and maintenance requirements are treated as constant.",
+     "quote": "with constant yields and maintenance requirements",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "The dissolved-oxygen balance accounts for growth- and product-associated consumption, maintenance demand, gas-liquid transfer, and dilution.",
+    "description_basis": "stated",
+    "quote": "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980).",
+    "assumptions": [
+     {
+      "text": "Yields and maintenance requirements are treated as constant.",
+      "quote": "with constant yields and maintenance requirements",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "13": {
+   "form": "algebraic",
+   "computes": "K_{la}",
+   "condition": null,
+   "value": null,
+   "section": "2.7. Substrate utilization",
+   "description": "The overall oxygen mass-transfer coefficient is computed from oxygen flow rate and agitation power per culture volume.",
+   "description_basis": "stated",
+   "quote": "Here we have assumed $ K_{la} $ to be a function of agitation power input $ P_{w} $ and flow rate of oxygen $ f_{g} $ as suggested by Bailey and Ollis (1986).",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "oxygen flow rate",
+     "symbol": "f_{g}"
+    },
+    {
+     "role": "agitation power input",
+     "symbol": "P_{w}"
+    },
+    {
+     "role": "culture volume",
+     "symbol": "V"
+    },
+    {
+     "role": "correlation coefficient",
+     "symbol": "\\alpha"
+    },
+    {
+     "role": "exponent",
+     "symbol": "\\beta"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "13",
+    "description": "The overall oxygen mass-transfer coefficient is computed from oxygen flow rate and agitation power per culture volume.",
+    "description_basis": "stated",
+    "quote": "Here we have assumed $ K_{la} $ to be a function of agitation power input $ P_{w} $ and flow rate of oxygen $ f_{g} $ as suggested by Bailey and Ollis (1986).",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "oxygen flow rate",
+      "symbol": "f_{g}"
+     },
+     {
+      "role": "agitation power input",
+      "symbol": "P_{w}"
+     },
+     {
+      "role": "culture volume",
+      "symbol": "V"
+     },
+     {
+      "role": "correlation coefficient",
+      "symbol": "\\alpha"
+     },
+     {
+      "role": "exponent",
+      "symbol": "\\beta"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "14": {
+   "form": "ODE",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "2.8. Volume change",
+   "description": "Culture-volume balance for the fed-batch fermentor, accounting for substrate feed, acid/base addition, and evaporative loss.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "The fermentor is operated in fed-batch mode.",
+     "quote": "The fed-batch process operation causes a volume change in the fermentor.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: The fermentor is operated in fed-batch mode."
+   ],
+   "llm": {
+    "eq": "14",
+    "description": "Culture-volume balance for the fed-batch fermentor, accounting for substrate feed, acid/base addition, and evaporative loss.",
+    "description_basis": "stated",
+    "quote": "The fed-batch process operation causes a volume change in the fermentor. This is calculated by:",
+    "assumptions": [
+     {
+      "text": "The fermentor is operated in fed-batch mode.",
+      "quote": "The fed-batch process operation causes a volume change in the fermentor.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "15": {
+   "form": "algebraic",
+   "computes": "F_{loss}",
+   "condition": null,
+   "value": null,
+   "section": "2.8. Volume change",
+   "description": "Evaporative loss flow rate as a function of culture volume and temperature.",
+   "description_basis": "stated",
+   "quote": "We have also included the $ F_{loss} $ term to account for evaporative loss during fermentation.",
+   "assumptions": [
+    {
+     "text": "The culture medium's freezing and boiling temperatures are taken to be those of water.",
+     "quote": "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The evaporation rate is assumed to tend to infinity at the boiling point, represented using an exponent of 5.",
+     "quote": "We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The evaporative-loss expression is treated as a heuristic rather than as an experimentally based relationship.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    }
+   ],
+   "roles": [
+    {
+     "role": "flux",
+     "symbol": "F_{loss}"
+    },
+    {
+     "role": "evaporation coefficient",
+     "symbol": "\\lambda"
+    }
+   ],
+   "issue": "The exponent is printed with T_v-T_0 outside the denominator, making it dimensionally inconsistent and not singular at T=T_v; the stated boiling-point behavior requires (T_v-T_0) as the denominator.",
+   "status": "pending",
+   "review": [
+    "assumption quote not found: The evaporative-loss expression is treated as a heuristic rather than as an experimentally based relationship.",
+    "possible misprint: The exponent is printed with T_v-T_0 outside the denominator, making it dimensionally inconsistent and not singular at T=T_v; the stated boiling-point behavior requires (T_v-T_0) as the denominator."
+   ],
+   "llm": {
+    "eq": "15",
+    "description": "Evaporative loss flow rate as a function of culture volume and temperature.",
+    "description_basis": "stated",
+    "quote": "We have also included the $ F_{loss} $ term to account for evaporative loss during fermentation.",
+    "assumptions": [
+     {
+      "text": "The culture medium's freezing and boiling temperatures are taken to be those of water.",
+      "quote": "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively.",
+      "process_condition": false
+     },
+     {
+      "text": "The evaporation rate is assumed to tend to infinity at the boiling point, represented using an exponent of 5.",
+      "quote": "We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this.",
+      "process_condition": false
+     },
+     {
+      "text": "The evaporative-loss expression is treated as a heuristic rather than as an experimentally based relationship.",
+      "quote": "Since we do not base our $ F_{loss} $ term on experimental findings, this should be treated as a heuristic",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "flux",
+      "symbol": "F_{loss}"
+     },
+     {
+      "role": "evaporation coefficient",
+      "symbol": "\\lambda"
+     }
+    ],
+    "issue": "The exponent is printed with T_v-T_0 outside the denominator, making it dimensionally inconsistent and not singular at T=T_v; the stated boiling-point behavior requires (T_v-T_0) as the denominator."
+   }
+  },
+  "16": {
+   "form": "ODE",
+   "computes": "Q_{rxn}",
+   "condition": null,
+   "value": null,
+   "section": "2.9. Heat of reaction",
+   "description": "Total reaction-heat generation rate from biomass growth and biomass-dependent maintenance.",
+   "description_basis": "stated",
+   "quote": "the volumetric heat production rate is given as:",
+   "assumptions": [
+    {
+     "text": "Heat generation from sources other than microbial reactions is neglected.",
+     "quote": "Neglecting all other sources of heat generation except that caused by microbial reactions",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The growth-associated heat-generation coefficient is assumed constant.",
+     "quote": "where $ r_{q_1} $ is assumed to be constant",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The growth-associated and biomass-dependent heat-generation terms are taken to have the same ratio as a first approximation, based on the similarity of heat-generation and CO₂ profiles.",
+     "quote": "Because the heat generation and $ CO_2 $ evolution show similar profiles, their production rate due to growth (dX/dt) and biomass (X) should have the same ratio as a first approximation.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16",
+    "description": "Total reaction-heat generation rate from biomass growth and biomass-dependent maintenance.",
+    "description_basis": "stated",
+    "quote": "the volumetric heat production rate is given as:",
+    "assumptions": [
+     {
+      "text": "Heat generation from sources other than microbial reactions is neglected.",
+      "quote": "Neglecting all other sources of heat generation except that caused by microbial reactions",
+      "process_condition": false
+     },
+     {
+      "text": "The growth-associated heat-generation coefficient is assumed constant.",
+      "quote": "where $ r_{q_1} $ is assumed to be constant",
+      "process_condition": false
+     },
+     {
+      "text": "The growth-associated and biomass-dependent heat-generation terms are taken to have the same ratio as a first approximation, based on the similarity of heat-generation and CO₂ profiles.",
+      "quote": "Because the heat generation and $ CO_2 $ evolution show similar profiles, their production rate due to growth (dX/dt) and biomass (X) should have the same ratio as a first approximation.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "ODE",
+   "computes": "T",
+   "condition": null,
+   "value": null,
+   "section": "2.9. Heat of reaction",
+   "description": "Culture-temperature balance accounting for feed-temperature effects, reaction heat, and heat exchange with cooling liquid.",
+   "description_basis": "stated",
+   "quote": "The energy balance is written based on a coiled type heat exchanger which is suitable for a laboratory scale fermentor (Nielsen, 1997):",
+   "assumptions": [
+    {
+     "text": "The energy-balance model assumes a lab-scale fermentor with a cooling coil.",
+     "quote": "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The feed-temperature term uses F/s_f, but s_f is a feed concentration (g/l), so this factor is dimensionally inconsistent as a dilution rate and likely should be F/V.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: The energy-balance model assumes a lab-scale fermentor with a cooling coil.",
+    "possible misprint: The feed-temperature term uses F/s_f, but s_f is a feed concentration (g/l), so this factor is dimensionally inconsistent as a dilution rate and likely should be F/V."
+   ],
+   "llm": {
+    "eq": "17",
+    "description": "Culture-temperature balance accounting for feed-temperature effects, reaction heat, and heat exchange with cooling liquid.",
+    "description_basis": "stated",
+    "quote": "The energy balance is written based on a coiled type heat exchanger which is suitable for a laboratory scale fermentor (Nielsen, 1997):",
+    "assumptions": [
+     {
+      "text": "The energy-balance model assumes a lab-scale fermentor with a cooling coil.",
+      "quote": "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations.",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": "The feed-temperature term uses F/s_f, but s_f is a feed concentration (g/l), so this factor is dimensionally inconsistent as a dilution rate and likely should be F/V."
+   }
+  },
+  "18": {
+   "form": "ODE",
+   "computes": "CO_{2}",
+   "condition": null,
+   "value": null,
+   "section": "2.10. CO_{2} evolution",
+   "description": "Carbon-dioxide evolution rate from growth, penicillin biosynthesis, and maintenance requirements.",
+   "description_basis": "stated",
+   "quote": "In this work, $ CO_{2} $ evolution is assumed to be due to growth, penicillin biosynthesis and maintenance requirements",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "18",
+    "description": "Carbon-dioxide evolution rate from growth, penicillin biosynthesis, and maintenance requirements.",
+    "description_basis": "stated",
+    "quote": "In this work, $ CO_{2} $ evolution is assumed to be due to growth, penicillin biosynthesis and maintenance requirements",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

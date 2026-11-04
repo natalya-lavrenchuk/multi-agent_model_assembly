@@ -1,0 +1,1701 @@
+@prefix kg: <http://example.org/kg/birol_2002/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:birol_2002 a mkg:Sup ;
+    rdfs:label "birol_2002 · Birol et al. (2002) Penicillin production in a fed-batch fermentor (extended Bajpai and Reuss model)"@en ;
+    mkg:hasMetadata kg:birol_2002_meta ;
+    mkg:includes <http://example.org/kg/birol_2002/law/birol_2002_eq1>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq13>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq14>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq15>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq16>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq18>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq9> .
+
+kg:birol_2002_meta a mkg:Metadata ;
+    mkg:description "The model represents penicillin production by a glucose-fed culture in a batch-to-fed-batch fermentor, using a detailed unstructured mechanistic description. It predicts biomass, penicillin, glucose, dissolved oxygen, culture volume, temperature, heat generation and carbon dioxide, while accounting for pH and operating inputs such as aeration, agitation and feed. It combines substrate- and oxygen-dependent growth, pH and temperature effects, non-growth-associated penicillin formation and hydrolysis, material and energy balances, gas transfer, and pH and temperature control. The simulated run begins in batch mode and switches to fed-batch when glucose reaches a threshold; pH and temperature are controlled while glucose feeding is open loop. The authors compare its predictions with published fermentation results and simulations, and provide the simulator as a testbed for process monitoring, fault diagnosis, modeling, optimization and control." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "In this study, we have used experimental data available in literature (Pirt & Righoletto, 1967; Metz, Bruijin & van Suijdam, 1981) to improve the simulation of penicillin production by extending the existing mathematical models." ;
+            mkg:text "The authors say they used published experimental data from Pirt and Righoletto (1967) and Metz et al. (1981) to improve the simulation." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "pH and temperature are controlled via PID controllers at 5.0 and 25 °C, respectively." ;
+            mkg:text "The nominal pH and temperature set points are 5.0 and 25 °C." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Simulations are run under closed-loop control of pH and temperature while glucose addition is performed open-loop." ;
+            mkg:text "The simulator runs with pH and temperature under closed-loop control and glucose addition open loop." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term, F_a/b. We have also included the F_loss term to account for evaporative loss during fermentation." ;
+            mkg:text "The culture-volume balance accounts for feed, acid or base addition, and evaporative loss." ;
+            mkg:topic "volume" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The predictions of the model under different conditions are compared with experimental data of Pirt and Righoletto (1967) and the simulation results of Bajpai and Reuss (1980)." ;
+            mkg:text "The authors compared predictions under different conditions with Pirt and Righoletto (1967) experimental data and Bajpai and Reuss (1980) simulation results." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The additional terms that were introduced increased the stiffness of the ordinary differential equations. For that reason, some of the parameter values are readjusted." ;
+            mkg:text "The authors took typical temperature-kinetic parameter values from the literature and readjusted some parameter values after adding terms that increased ODE stiffness." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For industrial scale fermentors, the heat transfer mechanism should be modified to a jacketed fermentor with baffles and appropriate equations must be substituted." ;
+            mkg:text "The cooling-coil heat-transfer model is intended for laboratory scale; industrial use would require a jacketed-fermentor model with appropriate equations." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A summary of the faults introduced at different stages of fermentation" ;
+            mkg:text "The simulator was used to examine a pH-controller shutdown at 10 h, a 95% agitation-power decrease at 30 h, and a 30% substrate-feed decrease at 60 h." ;
+            mkg:topic "faults" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An adjustment has been made so that an increase in temperature enhanced the biomass formation up to 35 °C." ;
+            mkg:text "Temperature effects on growth and cell death are represented with Arrhenius-type kinetics, with biomass formation increasing up to 35 °C before declining." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The simulator developed for penicillin production is available at http://www.chee.iit.edu/~control/software.html" ;
+            mkg:text "The simulation package is made available through the authors' website." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Under pH control, the hydrogen ion concentration is calculated by taking the dissociation of water and acid/base into account as well as the hydrogen production from biomass." ;
+            mkg:text "The model relates hydrogen-ion concentration to biomass formation and uses acid and base additions to represent pH control." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Two PID controllers are used to manipulate the acid and base control values." ;
+            mkg:text "pH control adds concentrated acid or base, with separate PID controllers for the two additions." ;
+            mkg:topic "control" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Carbon dioxide generation is attributed to growth, penicillin biosynthesis and maintenance." ;
+            mkg:topic "transfer" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Direct effects of pH and temperature on penicillin production are not considered due to the complex nature of the phenomenon, and unavailability of the experimental data." ;
+            mkg:text "The model does not include direct effects of pH or temperature on penicillin production." ;
+            mkg:topic "product" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Penicillin concentration increased with increasing K_la values, then it levelled off indicating a high degree of dependence of penicillin production on oxygen (Fig. 6)." ;
+            mkg:text "Under oxygen limitation defined as oxygen saturation at or below 50%, penicillin concentration increased with the overall mass-transfer coefficient and then leveled off." ;
+            mkg:topic "conditions" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The dependence of specific growth rate on carbon and oxygen substrates was assumed to follow Contois kinetics (Bajpai & Reuss) to consider the biomass inhibition." ;
+            mkg:text "Biomass growth depends on glucose and oxygen and uses Contois kinetics to represent inhibition by biomass." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model extends the mechanistic model of Bajpai and Reuss by adding input variables such as pH, temperature, aeration rate, agitation power, and feed flow rate of substrate" ;
+            mkg:text "The extensions include pH, temperature, aeration rate, agitation power and substrate feed flow as process inputs." ;
+            mkg:topic "inputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Users are advised to conduct sensitivity studies if the intent is to use large deviations from nominal conditions." ;
+            mkg:text "The authors advise sensitivity studies when users intend to make large deviations from nominal conditions." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Penicillin production showed an increasing trend with an increase in the initial glucose concentration then levelled off." ;
+            mkg:text "Simulations tested initial glucose concentrations of 15, 25 and 30 g/L, with penicillin production increasing and then leveling off as initial glucose increased." ;
+            mkg:topic "conditions" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Since we do not base our F_loss term on experimental findings, this should be treated as a heuristic since as a general tendency, the temperature increase favors evaporative loss." ;
+            mkg:text "The evaporation-rate relationship is heuristic rather than experimentally based." ;
+            mkg:topic "volume" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Substrate inhibition kinetics for penicillin production was originally proposed by Bajpai and Reuss (1980) that successfully represented the observed behavior." ;
+            mkg:text "The product-formation rate includes substrate inhibition and oxygen availability." ;
+            mkg:topic "product" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In unstructured models, all cellular physiology information are gathered into a single biomass term so that there is no explicit structural information left about the cellular activity resulting in a rather simpler model." ;
+            mkg:text "The unstructured approach gathers cellular physiology into a single biomass term rather than explicitly representing cell structure." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Controller type selection; on/off (pH), PID (pH, temperature)." ;
+            mkg:text "The simulator offers on/off or PID control for pH and PID control for temperature." ;
+            mkg:topic "control" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports qualitative profile agreement but gives no numerical fit statistics or prediction-error measures." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "In a simulated batch with a small glucose-feed reduction, the first out-of-control signals occurred at 162.5 h on Hotelling's T² and 152 h on SPE." ;
+            mkg:topic "monitoring" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "For a multivariate monitoring demonstration, the authors generated a historical reference database of 50 simulated batches under normal operation with small random variations." ;
+            mkg:topic "monitoring" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The simulator mimicked the biomass, penicillin, glucose and oxygen concentrations in a similar fashion to the predictions of Bajpai and Reuss (1980) which were also validated by the experimental results of Pirt and Righoletto (1967)." ;
+            mkg:text "The authors report that simulated biomass, penicillin, glucose and oxygen profiles resembled the Bajpai and Reuss predictions, which had been validated against Pirt and Righoletto data." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations." ;
+            mkg:text "The heat-transfer model assumes a laboratory-scale fermentor with a cooling coil." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A detailed unstructured model for penicillin production in a fed-batch fermentor has been developed." ;
+            mkg:text "The authors characterize the model as a detailed, unstructured mechanistic model." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The nominal initial culture volume in the parameter table is 100 L." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "During the product synthesis phase, when the rate of biomass formation becomes very small there is still significant heat generation from metabolic maintenance activities." ;
+            mkg:text "The heat-generation model includes contributions from growth and maintenance, and the energy balance represents heat transfer through a cooling coil." ;
+            mkg:topic "transfer" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This has been done by assigning a threshold value to glucose concentration which was chosen as 0.3 g/l." ;
+            mkg:text "Simulations start in batch mode and switch to fed-batch when glucose concentration reaches 0.3 g/L." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report a total parameter count, a parameter-estimation method, or parameter uncertainty estimates." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The mechanistic model of Bajpai and Reuss (1980), which was shown to give a good agreement with the experimental results of Pirt and Righoletto (1967), was utilized as the starting point for model development." ;
+            mkg:text "The model is based on Bajpai and Reuss (1980), whose model had been reported to agree well with the experimental results of Pirt and Righoletto (1967)." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In industrial scale fermentations such variables are usually measured off-line via HPLC every 8–10 h." ;
+            mkg:text "The paper notes that industrial biomass and penicillin measurements are commonly made off-line by HPLC every 8–10 h." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Experimental findings suggest a high degree of dependence of biomass growth on both the carbon source (glucose) and oxygen as substrates (Bajpai & Reuss, 1980)." ;
+            mkg:text "The model describes penicillin production in a fermentation process using glucose as a carbon source." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model tracks eight dynamic states: biomass, penicillin, substrate, dissolved oxygen, culture volume, heat generation, temperature and carbon dioxide." ;
+            mkg:topic "states" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A detailed fundamental model on penicillin production and its applications based on a morphologically structured model which may be more suitable for such studies, can be found elsewhere (Birol, Undey, Parulekar & Cinar, 2002)." ;
+            mkg:text "The authors cite Birol et al. (2002) as a morphologically structured model better suited to studies of strain improvement or fundamental fermentation phenomena." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "for an initial substrate and biomass concentrations of 15 g/l and 0.1 g/l, respectively." ;
+            mkg:text "The figure caption reports simulations at initial glucose and biomass concentrations of 15 g/L and 0.1 g/L, respectively." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The production of penicillin is described by non-growth associated product formation kinetics. The hydrolysis of penicillin is also included in the rate expression (Bajpai & Reuss, 1980):" ;
+            mkg:text "Penicillin formation is modeled as non-growth-associated, with penicillin hydrolysis also included." ;
+            mkg:topic "product" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The simulator developed may be used for both research and educational purposes" ;
+            mkg:text "The authors present the model and simulator as a testbed for process monitoring, fault diagnosis, empirical modeling, optimization and control, including educational use." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A typical inhibition term that includes hydrogen ion concentration [H+] is introduced into the specific growth rate expression." ;
+            mkg:text "The growth-rate expression includes an inhibition effect of hydrogen-ion concentration." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Here we have assumed K_la to be a function of agitation power input P_w and flow rate of oxygen f_g as suggested by Bailey and Ollis (1986)." ;
+            mkg:text "Unlike the original Bajpai and Reuss model, the overall oxygen mass-transfer coefficient varies with agitation power and oxygen flow rate." ;
+            mkg:topic "transfer" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "During the simulation, the sampling time was chosen to be 0.02 h as default." ;
+            mkg:text "The default simulation sampling interval is 0.02 h, and the user can change the sampling interval for collecting or plotting results." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The utilization of substrate is assumed to be caused by biomass growth and product formation with constant yields and maintenance requirements of the microorganism as suggested by Bajpai and Reuss (1980)." ;
+            mkg:text "Glucose and oxygen consumption account for growth, product formation, and microbial maintenance using constant yields and maintenance requirements." ;
+            mkg:topic "substrate" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In fermentation processes, particularly in penicillin production, parameter values are closely related to medium composition, feed composition and the choice of the strain." ;
+            mkg:text "The authors caution that the parameters depend on strain, medium, feed composition and environmental conditions." ;
+            mkg:topic "scope" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq1> a mkg:Law ;
+    rdfs:label "birol_2002 eq 1"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq1/var/X> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq1_meta> ;
+    mkg:latex "\\frac{\\mathrm{d}X}{\\mathrm{d}t}=\\mu X-\\frac{X}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq1/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq1/var/mu> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq1/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 1)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq1/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 1)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq1/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (birol_2002 eq 1)"@en ;
+    mkg:description "specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10> a mkg:Law ;
+    rdfs:label "birol_2002 eq 10"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/mu_pp> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq10_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_I>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_op>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_p>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/mu_p>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/p> ;
+    mkg:latex "\\mu_{\\mathrm{pp}}=\\mu_{\\mathrm{p}}\\frac{S}{(K_{\\mathrm{p}}+S+S^{2}/K_{\\mathrm{I}})}\\frac{C^{\\mathrm{p}}_{\\mathrm{L}}}{(K_{\\mathrm{op}}X+C^{\\mathrm{p}}_{\\mathrm{L}})}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/C_L>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/S>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/X> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/par/p> a mkg:Parameter ;
+    rdfs:label "p (birol_2002 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Exponent on dissolved oxygen concentration in the oxygen-limitation term" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is an exponent in the penicillin production rate law, so it is a constant of that law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 3 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/var/mu_pp> a mkg:Variable ;
+    rdfs:label "\\mu_{pp} (birol_2002 eq 10)"@en ;
+    mkg:description "specific penicillin production rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{pp}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The specific penicillin production rate depends on substrate availability, is inhibited at high substrate concentration, and is limited by oxygen availability." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/X> ;
+            mkg:slot "biomass" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/mu_p> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/C_L> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_I> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_op> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_p> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq10/var/S> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "6" ;
+    mkg:quote "\\mu_{\\mathrm{pp}}=\\mu_{\\mathrm{p}}\\frac{S}{(K_{\\mathrm{p}}+S+S^{2}/K_{\\mathrm{I}})}\\frac{C^{\\mathrm{p}}_{\\mathrm{L}}}{(K_{\\mathrm{op}}X+C^{\\mathrm{p}}_{\\mathrm{L}})}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11> a mkg:Law ;
+    rdfs:label "birol_2002 eq 11"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/S> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq11/par/Y_p_s>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/par/Y_x_s>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/par/m_x> ;
+    mkg:latex "\\frac{\\mathrm{d}S}{\\mathrm{d}t}=-\\frac{\\mu}{Y_{\\mathrm{x/s}}}X-\\frac{\\mu_{\\mathrm{pp}}}{Y_{\\mathrm{p/s}}}X-m_{\\mathrm{x}}X+\\frac{Fs_{\\mathrm{f}}}{V}-\\frac{S}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/F>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/X>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/mu>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/mu_pp>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq11/var/s_f> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/par/Y_p_s> a mkg:Parameter ;
+    rdfs:label "Y_{p/s} (birol_2002 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of penicillin per glucose consumed" ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "Yield constant:" ;
+    mkg:reason "It is a penicillin yield constant for glucose consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{p/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "penicillin glucose" ;
+    mkg:unitString "g penicillin/g glucose" ;
+    mkg:value 9e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/par/Y_x_s> a mkg:Parameter ;
+    rdfs:label "Y_{x/s} (birol_2002 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield of biomass per glucose consumed" ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "Yield constant:" ;
+    mkg:reason "It is a biomass yield constant for glucose consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x/s}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "biomass glucose" ;
+    mkg:unitString "g biomass/g glucose" ;
+    mkg:value 4.5e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/par/m_x> a mkg:Parameter ;
+    rdfs:label "m_{x} (birol_2002 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maintenance coefficient on substrate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Maintenance coefficient on substrate:" ;
+    mkg:reason "It is a substrate maintenance coefficient in the model." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{x}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 1.4e-02 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/F> a mkg:Variable ;
+    rdfs:label "F (birol_2002 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed flow rate of substrate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Feed flow rate of substrate:" ;
+    mkg:reason "It is the substrate feed flow rate, an operating input set for a run." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/S> a mkg:Variable ;
+    rdfs:label "S (birol_2002 eq 11)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 11)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 11)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (birol_2002 eq 11)"@en ;
+    mkg:description "specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/mu_pp> a mkg:Variable ;
+    rdfs:label "\\mu_{pp} (birol_2002 eq 11)"@en ;
+    mkg:description "specific penicillin production rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{pp}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11/var/s_f> a mkg:Variable ;
+    rdfs:label "s_{f} (birol_2002 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Feed substrate concentration: $ s_f $ (g/l) | operation: 600" ;
+    mkg:initialValue "600 g/l" ;
+    mkg:page "4" ;
+    mkg:quote "Feed substrate concentration:" ;
+    mkg:reason "It is the substrate concentration in the feed, an operating condition set for a run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "s_{f}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq11_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The glucose balance accounts for growth- and product-associated uptake, maintenance use, feed input, and dilution." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "with constant yields and maintenance requirements" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Yields and maintenance requirements are treated as constant." ] ;
+    mkg:page "6" ;
+    mkg:quote "\\frac{\\mathrm{d}S}{\\mathrm{d}t}=-\\frac{\\mu}{Y_{\\mathrm{x/s}}}X-\\frac{\\mu_{\\mathrm{pp}}}{Y_{\\mathrm{p/s}}}X-m_{\\mathrm{x}}X+\\frac{Fs_{\\mathrm{f}}}{V}-\\frac{S}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12> a mkg:Law ;
+    rdfs:label "birol_2002 eq 12"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/C_L> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq12/par/C_L_star>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/par/Y_p_o>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/par/Y_x_o>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/par/m_o> ;
+    mkg:latex "\\begin{aligned}\\frac{\\mathrm{d}C_{\\mathrm{L}}}{\\mathrm{d}t}=&-\\frac{\\mu}{Y_{\\mathrm{x/o}}}\\ X-\\frac{\\mu_{\\mathrm{pp}}}{Y_{\\mathrm{p/o}}}\\ X-m_{\\mathrm{o}}X+K_{\\mathrm{la}}(C_{\\mathrm{L}}^{*}-C_{\\mathrm{L}})-\\frac{C_{\\mathrm{L}}}{V}\\\\&\\times\\frac{\\mathrm{d}V}{\\mathrm{d}t}\\tag{12}\\end{aligned}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/K_la>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/X>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/mu>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq12/var/mu_pp> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/par/C_L_star> a mkg:Parameter ;
+    rdfs:label "C_{L}^{*} (birol_2002 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Dissolved oxygen concentration at saturation." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "4" ;
+    mkg:quote "Dissolved oxygen concentration: $ C_L $ ( $ = C_L^* $ at saturation) (g/l)" ;
+    mkg:reason "It is the saturation concentration of dissolved oxygen, a physical property of the system." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{L}^{*}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" ;
+    mkg:value 1.16e+00 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/par/Y_p_o> a mkg:Parameter ;
+    rdfs:label "Y_{p/o} (birol_2002 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield constant for penicillin production per oxygen consumed." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "Yield constant: $ Y_{p/o} $ (g penicillin/g oxygen)" ;
+    mkg:reason "It is a yield constant relating penicillin production to oxygen consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{p/o}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "penicillin oxygen" ;
+    mkg:unitString "g penicillin/g oxygen" ;
+    mkg:value 2e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/par/Y_x_o> a mkg:Parameter ;
+    rdfs:label "Y_{x/o} (birol_2002 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Yield constant for biomass production per oxygen consumed." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "Yield constant: $ Y_{x/o} $ (g biomass/g oxygen)" ;
+    mkg:reason "It is a yield constant relating biomass production to oxygen consumption." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x/o}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "biomass oxygen" ;
+    mkg:unitString "g biomass/g oxygen" ;
+    mkg:value 4e-02 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/par/m_o> a mkg:Parameter ;
+    rdfs:label "m_{o} (birol_2002 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maintenance coefficient on oxygen." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Maintenance coefficient on oxygen: $ m_o $ (per h)" ;
+    mkg:reason "It is a maintenance coefficient for oxygen consumption, a constant in the model law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{o}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 4.67e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/C_L> a mkg:Variable ;
+    rdfs:label "C_{L} (birol_2002 eq 12)"@en ;
+    mkg:description "dissolved oxygen concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C_{L}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/K_la> a mkg:Variable ;
+    rdfs:label "K_{la} (birol_2002 eq 12)"@en ;
+    mkg:description "Overall mass transfer coefficient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "K_{la}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 12)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 12)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (birol_2002 eq 12)"@en ;
+    mkg:description "specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12/var/mu_pp> a mkg:Variable ;
+    rdfs:label "\\mu_{pp} (birol_2002 eq 12)"@en ;
+    mkg:description "specific penicillin production rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{pp}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The dissolved-oxygen balance accounts for growth- and product-associated consumption, maintenance demand, gas-liquid transfer, and dilution." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "with constant yields and maintenance requirements" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Yields and maintenance requirements are treated as constant." ] ;
+    mkg:page "6" ;
+    mkg:quote "\\begin{aligned}\\frac{\\mathrm{d}C_{\\mathrm{L}}}{\\mathrm{d}t}=&-\\frac{\\mu}{Y_{\\mathrm{x/o}}}\\ X-\\frac{\\mu_{\\mathrm{pp}}}{Y_{\\mathrm{p/o}}}\\ X-m_{\\mathrm{o}}X+K_{\\mathrm{la}}(C_{\\mathrm{L}}^{*}-C_{\\mathrm{L}})-\\frac{C_{\\mathrm{L}}}{V}\\\\&\\times\\frac{\\mathrm{d}V}{\\mathrm{d}t}\\tag{12}\\end{aligned}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13> a mkg:Law ;
+    rdfs:label "birol_2002 eq 13"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/K_la> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq13_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq13/par/alpha>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq13/par/beta> ;
+    mkg:latex "K_{\\mathrm{l a}}=\\alpha\\sqrt{f_{\\mathrm{g}}}\\biggl(\\frac{P_{\\mathrm{w}}}{V}\\biggr)^{\\beta}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/P_w>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/f_g> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/var/K_la> a mkg:Variable ;
+    rdfs:label "K_{la} (birol_2002 eq 13)"@en ;
+    mkg:description "Overall mass transfer coefficient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "K_{la}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The overall oxygen mass-transfer coefficient is computed from oxygen flow rate and agitation power per culture volume." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq13/par/beta> ;
+            mkg:slot "exponent" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq13/par/alpha> ;
+            mkg:slot "correlation coefficient" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/P_w> ;
+            mkg:slot "agitation power input" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/f_g> ;
+            mkg:slot "oxygen flow rate" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq13/var/V> ;
+            mkg:slot "culture volume" ] ;
+    mkg:page "6" ;
+    mkg:quote "K_{\\mathrm{l a}}=\\alpha\\sqrt{f_{\\mathrm{g}}}\\biggl(\\frac{P_{\\mathrm{w}}}{V}\\biggr)^{\\beta}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14> a mkg:Law ;
+    rdfs:label "birol_2002 eq 14"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq14/var/V> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq14_meta> ;
+    mkg:latex "\\frac{\\mathrm{d}V}{\\mathrm{d}t}=F+F_{\\mathrm{a/b}}-F_{\\mathrm{loss}}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F_a_b>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F_loss> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F> a mkg:Variable ;
+    rdfs:label "F (birol_2002 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed flow rate of substrate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Feed flow rate of substrate:" ;
+    mkg:reason "It is the substrate feed flow rate, an operating input set for a run." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F_a_b> a mkg:Variable ;
+    rdfs:label "F_{a/b} (birol_2002 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Acid/base addition flow rate included in the fermentor volume balance." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "6" ;
+    mkg:quote "In order to consider the effect of acid/base addition on the total volume change of the culture broth, we have included the second term, $ F_{a/b} $." ;
+    mkg:reason "It is an acid/base addition flow rate used as an operating input in the volume balance." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{a/b}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14/var/F_loss> a mkg:Variable ;
+    rdfs:label "F_{loss} (birol_2002 eq 14)"@en ;
+    mkg:description "Evaporative loss from the culture broth." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "F_{loss}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 14)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq14_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Culture-volume balance for the fed-batch fermentor, accounting for substrate feed, acid/base addition, and evaporative loss." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "The fed-batch process operation causes a volume change in the fermentor." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The fermentor is operated in fed-batch mode." ] ;
+    mkg:page "6" ;
+    mkg:quote "\\frac{\\mathrm{d}V}{\\mathrm{d}t}=F+F_{\\mathrm{a/b}}-F_{\\mathrm{loss}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15> a mkg:Law ;
+    rdfs:label "birol_2002 eq 15"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq15/var/F_loss> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq15/par/T_0>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq15/par/T_v>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq15/par/lambda> ;
+    mkg:latex "F_{\\mathrm{l o s s}}=V\\lambda(\\mathrm{e}^{5((T-T_{0})/T_{\\mathrm{v}}-T_{0})}-1)" ;
+    mkg:latexCorrected "$$ F_{\\mathrm{l o s s}}=V\\lambda\\left(\\mathrm{e}^{5\\left(\\frac{T-T_{0}}{T_{\\mathrm{v}}-T_{0}}\\right)}-1\\right) $$" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq15/var/T>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq15/var/V> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/par/T_0> a mkg:Parameter ;
+    rdfs:label "T_{0} (birol_2002 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Freezing temperature of the culture medium." ;
+    mkg:dimension "[temperature]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively." ;
+    mkg:page "6" ;
+    mkg:quote "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively." ;
+    mkg:reason "It is the freezing temperature, a physical property of the culture medium." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{0}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/par/T_v> a mkg:Parameter ;
+    rdfs:label "T_{v} (birol_2002 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Boiling temperature of the culture medium." ;
+    mkg:dimension "[temperature]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively." ;
+    mkg:page "6" ;
+    mkg:quote "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively." ;
+    mkg:reason "It is the boiling temperature, a physical property of the culture medium." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{v}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/var/T> a mkg:Variable ;
+    rdfs:label "T (birol_2002 eq 15)"@en ;
+    mkg:description "temperature" ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Temperature:  $ T $ (K) | operation: 297" ;
+    mkg:initialValue "297 K" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 15)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "“We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this.”" ;
+    mkg:correctionReason "The printed form lacks brackets around the denominator; it should be (T - T0)/(Tv - T0). At the boiling point the exponent is then 5, which the paper says is 'large enough' to stand in for an infinite rate. A (Tv - T) denominator would diverge for real and make that sentence unnecessary." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Evaporative loss flow rate as a function of culture volume and temperature." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "where $ T_0 $ and $ T_v $ are the freezing and boiling temperatures of the culture medium that were assumed to have the same properties as water, respectively." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The culture medium's freezing and boiling temperatures are taken to be those of water." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The evaporative-loss expression is treated as a heuristic rather than as an experimentally based relationship." ],
+        [ mkg:quote "We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The evaporation rate is assumed to tend to infinity at the boiling point, represented using an exponent of 5." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq15/par/lambda> ;
+            mkg:slot "evaporation coefficient" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq15/var/F_loss> ;
+            mkg:slot "flux" ] ;
+    mkg:page "6" ;
+    mkg:possibleMisprint "The exponent is printed with T_v-T_0 outside the denominator, making it dimensionally inconsistent and not singular at T=T_v; the stated boiling-point behavior requires (T_v-T_0) as the denominator." ;
+    mkg:quote "F_{\\mathrm{l o s s}}=V\\lambda(\\mathrm{e}^{5((T-T_{0})/T_{\\mathrm{v}}-T_{0})}-1)" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16> a mkg:Law ;
+    rdfs:label "birol_2002 eq 16"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq16/var/Q_rxn> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq16/par/r_q_1>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq16/par/r_q_2> ;
+    mkg:latex "\\frac{\\mathrm{d}Q_{\\mathrm{rxn}}}{\\mathrm{d}t}=r_{q_{1}}\\frac{\\mathrm{d}X}{\\mathrm{d}t}\\ V+r_{q_{2}}\\ X V" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq16/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq16/var/X> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16/par/r_q_1> a mkg:Parameter ;
+    rdfs:label "r_{q_1} (birol_2002 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant heat-generation yield coefficient." ;
+    mkg:dimension "[length] ** 2 / [time] ** 2" ;
+    mkg:page "7" ;
+    mkg:quote "where $ r_{q_1} $ is assumed to be constant and might be treated as a yield coefficient (Nielsen & Villadsen, 1994)." ;
+    mkg:reason "It is a yield coefficient in the heat-generation law." ;
+    mkg:siFactor 4.184e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{q_1}" ;
+    mkg:unit "cal / g" ;
+    mkg:unitNote "biomass" ;
+    mkg:unitString "cal/g biomass" ;
+    mkg:value 60 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16/par/r_q_2> a mkg:Parameter ;
+    rdfs:label "r_{q_2} (birol_2002 eq 16)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Coefficient for the biomass-dependent maintenance heat-generation term." ;
+    mkg:dimension "[length] ** 2 / [time] ** 3" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "Based on this observation, $ r_{q_2} $ is calculated and tabulated in Table 2." ;
+    mkg:reason "It is a constant coefficient in the heat-generation law." ;
+    mkg:siFactor 1.162222e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{q_2}" ;
+    mkg:unit "cal / g / h" ;
+    mkg:unitNote "biomass" ;
+    mkg:unitString "cal/g biomass h" ;
+    mkg:value 1.6783e-04 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16/var/Q_rxn> a mkg:Variable ;
+    rdfs:label "Q_{rxn} (birol_2002 eq 16)"@en ;
+    mkg:description "Heat generation." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Heat generation: $ Q_{rxn} $ (cal) | operation: 0" ;
+    mkg:initialValue "0 cal" ;
+    mkg:siFactor 4.184e+00 ;
+    mkg:symbol "Q_{rxn}" ;
+    mkg:unit "cal" ;
+    mkg:unitString "cal" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 16)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 16)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq16_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Total reaction-heat generation rate from biomass growth and biomass-dependent maintenance." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "where $ r_{q_1} $ is assumed to be constant" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The growth-associated heat-generation coefficient is assumed constant." ],
+        [ mkg:quote "Because the heat generation and $ CO_2 $ evolution show similar profiles, their production rate due to growth (dX/dt) and biomass (X) should have the same ratio as a first approximation." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The growth-associated and biomass-dependent heat-generation terms are taken to have the same ratio as a first approximation, based on the similarity of heat-generation and CO₂ profiles." ],
+        [ mkg:quote "Neglecting all other sources of heat generation except that caused by microbial reactions" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Heat generation from sources other than microbial reactions is neglected." ] ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{\\mathrm{d}Q_{\\mathrm{rxn}}}{\\mathrm{d}t}=r_{q_{1}}\\frac{\\mathrm{d}X}{\\mathrm{d}t}\\ V+r_{q_{2}}\\ X V" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17> a mkg:Law ;
+    rdfs:label "birol_2002 eq 17"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/T> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/a>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/b>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/c_p>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/c_pc>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/rho>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/par/rho_c> ;
+    mkg:latex "\\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{s_{\\mathrm{f}}}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned}" ;
+    mkg:latexCorrected "$$ \\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{V}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned} $$" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/F>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/F_c>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/Q_rxn>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/T_f>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq17/var/s_f> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/a> a mkg:Parameter ;
+    rdfs:label "a (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heat transfer coefficient of cooling/heating liquid" ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 3 / [temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "Heat transfer coefficient of cooling/heating liquid" ;
+    mkg:reason "A heat-transfer coefficient of the system, so it is a constant of the heat-transfer law." ;
+    mkg:siFactor 1.162222e-03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a" ;
+    mkg:unit "cal / Δ°C / h" ;
+    mkg:unitString "cal/h °C" ;
+    mkg:value 1000 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/b> a mkg:Parameter ;
+    rdfs:label "b (birol_2002 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Exponent in the cooling-water heat-transfer relationship" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "An exponent in the heat-transfer law, so it is a constant of that law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "b" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 6e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/c_p> a mkg:Parameter ;
+    rdfs:label "c_{p} (birol_2002 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific-heat factor paired with density in the medium heat-capacity term of the energy balance." ;
+    mkg:reason "It is a specific-heat property of the medium; the paper reports only a combined density–heat-capacity quantity." ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{p}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/c_pc> a mkg:Parameter ;
+    rdfs:label "c_{pc} (birol_2002 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Heat capacity of the cooling liquid" ;
+    mkg:reason "A heat-capacity property of the cooling liquid, so it is a physical-property parameter." ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{pc}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/rho> a mkg:Parameter ;
+    rdfs:label "\\rho (birol_2002 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Density factor in the medium density–heat-capacity term of the energy balance." ;
+    mkg:reason "It represents density, a physical property of the medium; the paper reports only a combined density–heat-capacity quantity." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\rho" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/par/rho_c> a mkg:Parameter ;
+    rdfs:label "\\rho_{c} (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Density × heat capacity of cooling liquid" ;
+    mkg:dimension "1 / [temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "Density × heat capacity of cooling liquid" ;
+    mkg:reason "A density and heat-capacity property of the cooling liquid in the heat-transfer law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\rho_{c}" ;
+    mkg:unit "1 / Δ°C" ;
+    mkg:unitString "per °C" ;
+    mkg:value 5e-04 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/F> a mkg:Variable ;
+    rdfs:label "F (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed flow rate of substrate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Feed flow rate of substrate:" ;
+    mkg:reason "It is the substrate feed flow rate, an operating input set for a run." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/F_c> a mkg:Variable ;
+    rdfs:label "F_{c} (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cooling water flow rate" ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Cooling water flow rate" ;
+    mkg:reason "A cooling-water flow rate manipulated by the temperature controller, so it is an operating variable." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "F_{c}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/Q_rxn> a mkg:Variable ;
+    rdfs:label "Q_{rxn} (birol_2002 eq 17)"@en ;
+    mkg:description "Heat generation." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Heat generation: $ Q_{rxn} $ (cal) | operation: 0" ;
+    mkg:initialValue "0 cal" ;
+    mkg:siFactor 4.184e+00 ;
+    mkg:symbol "Q_{rxn}" ;
+    mkg:unit "cal" ;
+    mkg:unitString "cal" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/T> a mkg:Variable ;
+    rdfs:label "T (birol_2002 eq 17)"@en ;
+    mkg:description "temperature" ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Temperature:  $ T $ (K) | operation: 297" ;
+    mkg:initialValue "297 K" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/T_f> a mkg:Variable ;
+    rdfs:label "T_{f} (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed temperature of substrate." ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Feed temperature of substrate: $ T_f $ (K) | operation: 298" ;
+    mkg:initialValue "298 K" ;
+    mkg:page "4" ;
+    mkg:quote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Feed temperature of substrate: $ T_f $ (K) | operation: 298" ;
+    mkg:reason "It is the feed temperature, an operating input for the run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{f}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 17)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17/var/s_f> a mkg:Variable ;
+    rdfs:label "s_{f} (birol_2002 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Feed substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Feed substrate concentration: $ s_f $ (g/l) | operation: 600" ;
+    mkg:initialValue "600 g/l" ;
+    mkg:page "4" ;
+    mkg:quote "Feed substrate concentration:" ;
+    mkg:reason "It is the substrate concentration in the feed, an operating condition set for a run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "s_{f}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq17_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionReason "The printed factor \\(F/s_{\\mathrm{f}}\\) is not a dilution rate: Table 2 gives \\(F\\) in l/h and \\(s_{\\mathrm{f}}\\) in g/l, whereas dividing by culture volume \\(V\\) in l gives the required inverse-time factor." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "Culture-temperature balance accounting for feed-temperature effects, reaction heat, and heat exchange with cooling liquid." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "A lab-scale fermentor was assumed in deciding to use a cooling coil, building the model, and developing the related equations." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The energy-balance model assumes a lab-scale fermentor with a cooling coil." ] ;
+    mkg:page "7" ;
+    mkg:possibleMisprint "The feed-temperature term uses F/s_f, but s_f is a feed concentration (g/l), so this factor is dimensionally inconsistent as a dilution rate and likely should be F/V." ;
+    mkg:quote "\\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{s_{\\mathrm{f}}}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18> a mkg:Law ;
+    rdfs:label "birol_2002 eq 18"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq18/var/CO_2> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq18_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_1>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_2>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_3> ;
+    mkg:latex "\\frac{\\mathrm{d}\\mathrm{CO}_{2}}{\\mathrm{~d}t}=\\alpha_{1}\\frac{\\mathrm{d}X}{\\mathrm{d}t}+\\alpha_{2}X+\\alpha_{3}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq18/var/X> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_1> a mkg:Parameter ;
+    rdfs:label "\\alpha_{1} (birol_2002 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant relating CO₂ to growth" ;
+    mkg:dimension "[substance] / [mass]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "Here, the values of $ \\alpha_1 $, $ \\alpha_2 $ and $ \\alpha_3 $ are chosen to give $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986)." ;
+    mkg:page "4" ;
+    mkg:quote "Constant relating $ CO_2 $ to growth" ;
+    mkg:reason "A proportionality constant relating carbon dioxide evolution to growth, so it is a constant of the law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{1}" ;
+    mkg:unit "mmol / g" ;
+    mkg:unitNote "CO_2 biomass" ;
+    mkg:unitString "mmol CO_2/g biomass" ;
+    mkg:value 1.43e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_2> a mkg:Parameter ;
+    rdfs:label "\\alpha_{2} (birol_2002 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant relating CO₂ to maintenance energy" ;
+    mkg:dimension "[substance] / [mass] / [time]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "Here, the values of $ \\alpha_1 $, $ \\alpha_2 $ and $ \\alpha_3 $ are chosen to give $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986)." ;
+    mkg:page "4" ;
+    mkg:quote "Constant relating $ CO_2 $ to maintenance energy" ;
+    mkg:reason "A proportionality constant relating carbon dioxide evolution to maintenance energy, so it is a constant of the law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{2}" ;
+    mkg:unit "mmol / g / h" ;
+    mkg:unitNote "CO_2 biomass" ;
+    mkg:unitString "mmol CO_2/g biomass h" ;
+    mkg:value 4e-07 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18/par/alpha_3> a mkg:Parameter ;
+    rdfs:label "\\alpha_{3} (birol_2002 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant relating CO₂ to penicillin production" ;
+    mkg:dimension "[substance] / [length] ** 3 / [time]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "Here, the values of $ \\alpha_1 $, $ \\alpha_2 $ and $ \\alpha_3 $ are chosen to give $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986)." ;
+    mkg:page "4" ;
+    mkg:quote "Constant relating $ CO_2 $ to penicillin production" ;
+    mkg:reason "A proportionality constant relating carbon dioxide evolution to penicillin production, so it is a constant of the law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{3}" ;
+    mkg:unit "mmol / h / l" ;
+    mkg:unitNote "CO_2" ;
+    mkg:unitString "mmol CO_2/l h" ;
+    mkg:value 1e-04 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18/var/CO_2> a mkg:Variable ;
+    rdfs:label "CO_{2} (birol_2002 eq 18)"@en ;
+    mkg:description "Carbon dioxide concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation" ;
+    mkg:initialValue "0.5 mmol/l" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "CO_{2}" ;
+    mkg:unit "mmol / l" ;
+    mkg:unitString "mmol/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 18)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq18_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Carbon-dioxide evolution rate from growth, penicillin biosynthesis, and maintenance requirements." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{\\mathrm{d}\\mathrm{CO}_{2}}{\\mathrm{~d}t}=\\alpha_{1}\\frac{\\mathrm{d}X}{\\mathrm{d}t}+\\alpha_{2}X+\\alpha_{3}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The biomass concentration balance accounts for specific growth and loss by culture-volume expansion." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{\\mathrm{d}X}{\\mathrm{d}t}=\\mu X-\\frac{X}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3> a mkg:Law ;
+    rdfs:label "birol_2002 eq 3"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/mu> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/E_d>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/E_g>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_1>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_2>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_ox>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_x>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/R>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_d>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_g>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/mu_x> ;
+    mkg:latex "\\begin{aligned}\\mu&=\\left[\\frac{\\mu_{\\mathrm{x}}}{1+{[K_{1}/[\\mathrm{H}^{+}]]}+[[[\\mathrm{H}^{+}]]/K_{2}]}\\right]\\frac{S}{K_{\\mathrm{x}}X+S}\\\\&\\quad\\times\\frac{C_{\\mathrm{L}}}{K_{\\mathrm{ox}}X+C_{\\mathrm{L}}}\\\\&\\left[k_{\\mathrm{g}}\\exp\\left(-\\frac{E_{\\mathrm{g}}}{\\mathrm{RT}}\\right)\\right]-\\left[k_{\\mathrm{d}}\\exp\\left(-\\frac{E_{\\mathrm{d}}}{\\mathrm{RT}}\\right)\\right].\\end{aligned}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_H>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_L>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/S>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/T>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/X> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/E_d> a mkg:Parameter ;
+    rdfs:label "E_{d} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "activation energy for cell death" ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance]" ;
+    mkg:estimation "from literature" ;
+    mkg:estimationQuote "Typical values for these parameters were taken from the literature (Shuler & Kargi, 2002)." ;
+    mkg:page "4" ;
+    mkg:quote "$ E_d $ are the constant and activation energy for death" ;
+    mkg:reason "It is an activation energy in the cell-death Arrhenius law, so it is a parameter." ;
+    mkg:siFactor 4.184e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "E_{d}" ;
+    mkg:unit "cal / mol" ;
+    mkg:unitString "cal/mol" ;
+    mkg:value 50000 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/E_g> a mkg:Parameter ;
+    rdfs:label "E_{g} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "activation energy for growth" ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance]" ;
+    mkg:estimation "from literature" ;
+    mkg:estimationQuote "Typical values for these parameters were taken from the literature (Shuler & Kargi, 2002)." ;
+    mkg:page "4" ;
+    mkg:quote "$ E_g $ are the constant and activation energy for growth" ;
+    mkg:reason "It is an activation energy in the growth Arrhenius law, so it is a parameter." ;
+    mkg:siFactor 4.184e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "E_{g}" ;
+    mkg:unit "cal / mol" ;
+    mkg:unitString "cal/mol" ;
+    mkg:value 5100 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/R> a mkg:Parameter ;
+    rdfs:label "R (birol_2002 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "universal gas constant in the Arrhenius terms" ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:reason "It is a universal constant in the Arrhenius terms, so it is a parameter." ;
+    mkg:siFactor 4.184e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R" ;
+    mkg:unit "cal / K / mol" ;
+    mkg:unitString "cal mol^-1 K^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/T> a mkg:Variable ;
+    rdfs:label "T (birol_2002 eq 3)"@en ;
+    mkg:description "temperature" ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Temperature:  $ T $ (K) | operation: 297" ;
+    mkg:initialValue "297 K" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (birol_2002 eq 3)"@en ;
+    mkg:description "specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The specific growth rate combines Contois-type glucose and oxygen limitation with pH dependence and temperature-dependent growth and death." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_1> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/X> ;
+            mkg:slot "biomass" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_2> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_d> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_H> ;
+            mkg:slot "inhibitor" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/mu_x> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_x> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_g> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/S> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_ox> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_L> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "3" ;
+    mkg:quote "\\begin{aligned}\\mu&=\\left[\\frac{\\mu_{\\mathrm{x}}}{1+{[K_{1}/[\\mathrm{H}^{+}]]}+[[[\\mathrm{H}^{+}]]/K_{2}]}\\right]\\frac{S}{K_{\\mathrm{x}}X+S}\\\\&\\quad\\times\\frac{C_{\\mathrm{L}}}{K_{\\mathrm{ox}}X+C_{\\mathrm{L}}}\\\\&\\left[k_{\\mathrm{g}}\\exp\\left(-\\frac{E_{\\mathrm{g}}}{\\mathrm{RT}}\\right)\\right]-\\left[k_{\\mathrm{d}}\\exp\\left(-\\frac{E_{\\mathrm{d}}}{\\mathrm{RT}}\\right)\\right].\\end{aligned}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9> a mkg:Law ;
+    rdfs:label "birol_2002 eq 9"@en ;
+    mkg:computes <http://example.org/kg/birol_2002/law/birol_2002_eq9/var/P> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/birol_2002/law/birol_2002_eq9_meta> ;
+    mkg:hasParameter <http://example.org/kg/birol_2002/law/birol_2002_eq9/par/K> ;
+    mkg:latex "\\frac{\\mathrm{d}P}{\\mathrm{d}t}=\\mu_{\\mathrm{pp}}X-KP-\\frac{P}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:uses <http://example.org/kg/birol_2002/law/birol_2002_eq9/var/V>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq9/var/X>,
+        <http://example.org/kg/birol_2002/law/birol_2002_eq9/var/mu_pp> .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9/par/K> a mkg:Parameter ;
+    rdfs:label "K (birol_2002 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "penicillin hydrolysis rate constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Penicillin hydrolysis rate constant:  $ K $ (per h)" ;
+    mkg:reason "It is the rate constant for penicillin hydrolysis, so it is a parameter." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 4e-02 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9/var/P> a mkg:Variable ;
+    rdfs:label "P (birol_2002 eq 9)"@en ;
+    mkg:description "penicillin concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Penicillin concentration:  $ P $ (g/l) | operation: 0" ;
+    mkg:initialValue "0 g/l" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 9)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 9)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9/var/mu_pp> a mkg:Variable ;
+    rdfs:label "\\mu_{pp} (birol_2002 eq 9)"@en ;
+    mkg:description "specific penicillin production rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu_{pp}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq9_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The penicillin concentration balance adds synthesis and subtracts hydrolysis and dilution." ;
+    mkg:doi "10.1016/S0098-1354(02)00127-8" ;
+    mkg:form "ODE" ;
+    mkg:page "6" ;
+    mkg:quote "\\frac{\\mathrm{d}P}{\\mathrm{d}t}=\\mu_{\\mathrm{pp}}X-KP-\\frac{P}{V}\\frac{\\mathrm{d}V}{\\mathrm{d}t}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_I> a mkg:Parameter ;
+    rdfs:label "K_{I} (birol_2002 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Substrate inhibition constant in the penicillin production law" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:reason "It is an inhibition constant in the penicillin production law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{I}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" ;
+    mkg:value 1e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_op> a mkg:Parameter ;
+    rdfs:label "K_{op} (birol_2002 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Oxygen limitation constant" ;
+    mkg:dimension "[mass] ** 2 / [length] ** 6" ;
+    mkg:page "4" ;
+    mkg:quote "Oxygen limitation constant:" ;
+    mkg:reason "It is an oxygen-limitation constant in the penicillin production rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{op}" ;
+    mkg:unit "g ** 2 / l ** 2" ;
+    mkg:unitString "(g/l)^2" ;
+    mkg:valuesByCase "{\"no oxygen limitation\": \"0 (g/l)^2\", \"with oxygen limitation\": \"5 × 10^-4 (g/l)^2\"}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/par/K_p> a mkg:Parameter ;
+    rdfs:label "K_{p} (birol_2002 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Inhibition constant in the penicillin production law" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "4" ;
+    mkg:quote "Inhibition constant:" ;
+    mkg:reason "It is an inhibition constant in the penicillin production law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{p}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" ;
+    mkg:value 2e-04 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/par/mu_p> a mkg:Parameter ;
+    rdfs:label "\\mu_{p} (birol_2002 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific rate of penicillin production" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Specific rate of penicillin production:" ;
+    mkg:reason "It is a specific production-rate constant in the penicillin production law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{p}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 5e-03 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/var/C_L> a mkg:Variable ;
+    rdfs:label "C_{L} (birol_2002 eq 10)"@en ;
+    mkg:description "dissolved oxygen concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C_{L}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/var/S> a mkg:Variable ;
+    rdfs:label "S (birol_2002 eq 10)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq10/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 10)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/par/alpha> a mkg:Parameter ;
+    rdfs:label "\\alpha (birol_2002 eq 13)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Constant in the K_{la} relation." ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The values of $ \\alpha $ and $ \\beta $ are assigned so that the dependence of penicillin concentration on $ K_{la} $ showed a very similar behavior to the predictions of Bajpai and Reuss (1980)." ;
+    mkg:page "4" ;
+    mkg:quote "Constants in $ K_{la} $: $ \\alpha $, $ \\beta $" ;
+    mkg:reason "It is a proportionality constant in the K_{la} law." ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha" ;
+    mkg:value 70 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/par/beta> a mkg:Parameter ;
+    rdfs:label "\\beta (birol_2002 eq 13)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Exponent in the K_{la} relation." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The values of $ \\alpha $ and $ \\beta $ are assigned so that the dependence of penicillin concentration on $ K_{la} $ showed a very similar behavior to the predictions of Bajpai and Reuss (1980)." ;
+    mkg:reason "It is an exponent in the K_{la} law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 4e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/var/P_w> a mkg:Variable ;
+    rdfs:label "P_{w} (birol_2002 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Agitation power input." ;
+    mkg:page "6" ;
+    mkg:quote "agitation power input $ P_{w} $" ;
+    mkg:reason "It is an operating agitation-power input to the K_{la} relation." ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{w}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/var/V> a mkg:Variable ;
+    rdfs:label "V (birol_2002 eq 13)"@en ;
+    mkg:description "culture volume" ;
+    mkg:dimension "[length] ** 3" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "V" ;
+    mkg:unit "l" ;
+    mkg:unitString "l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq13/var/f_g> a mkg:Variable ;
+    rdfs:label "f_{g} (birol_2002 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Flow rate of oxygen." ;
+    mkg:page "6" ;
+    mkg:quote "flow rate of oxygen $ f_{g} $" ;
+    mkg:reason "It is an operating gas-flow input to the K_{la} relation." ;
+    mkg:status "accepted" ;
+    mkg:symbol "f_{g}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/par/lambda> a mkg:Parameter ;
+    rdfs:label "\\lambda (birol_2002 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant in the evaporative-loss expression." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "$ \\lambda $ is arranged to give an evaporation rate of $ 2.5 \\times 10^{-4} $ l/h at the operation temperature (25 °C)." ;
+    mkg:page "4" ;
+    mkg:quote "Constant in $ F_{loss} $: $ \\lambda $ (per h)" ;
+    mkg:reason "It is a constant of the evaporative-loss law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\lambda" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 2.5e-04 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq15/var/F_loss> a mkg:Variable ;
+    rdfs:label "F_{loss} (birol_2002 eq 15)"@en ;
+    mkg:description "Evaporative loss from the culture broth." ;
+    mkg:dimension "[length] ** 3 / [time]" ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:symbol "F_{loss}" ;
+    mkg:unit "l / h" ;
+    mkg:unitString "l/h" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_1> a mkg:Parameter ;
+    rdfs:label "K_{1} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "hydrogen-ion inhibition constant in the pH effect on growth" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "the values of $ K_1 $ and $ K_2 $ are chosen to be in the range of their typical values in the literature" ;
+    mkg:reason "K_1 is a constant in the pH inhibition term of the growth-rate law." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{1}" ;
+    mkg:unit "mol / l" ;
+    mkg:unitString "mol/l" ;
+    mkg:value 1e-10 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_2> a mkg:Parameter ;
+    rdfs:label "K_{2} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "hydrogen-ion inhibition constant in the pH effect on growth" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "the values of $ K_1 $ and $ K_2 $ are chosen to be in the range of their typical values in the literature" ;
+    mkg:reason "K_2 is a constant in the pH inhibition term of the growth-rate law." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{2}" ;
+    mkg:unit "mol / l" ;
+    mkg:unitString "mol/l" ;
+    mkg:value 7e-05 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_ox> a mkg:Parameter ;
+    rdfs:label "K_{ox} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "oxygen limitation constant" ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "Oxygen limitation constant: $ K_{ox} $,  $ K_{op} $ (no limitation)" ;
+    mkg:reason "It is an oxygen-limitation constant in the growth-rate law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ox}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:valuesByCase "{\"no limitation\": \"0 -\", \"with limitation\": \"$ 2 \\\\times 10^{-2} $ -\"}" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/K_x> a mkg:Parameter ;
+    rdfs:label "K_{x} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Contois saturation constant" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "4" ;
+    mkg:quote "Contois saturation constant" ;
+    mkg:reason "K_x is the Contois saturation constant in the biomass-growth law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{x}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" ;
+    mkg:value 1.5e-01 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_d> a mkg:Parameter ;
+    rdfs:label "k_{d} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Arrhenius constant for cell death" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "from literature" ;
+    mkg:estimationQuote "Typical values for these parameters were taken from the literature (Shuler & Kargi, 2002)." ;
+    mkg:page "4" ;
+    mkg:quote "$ k_d $ and  $ E_d $ are the constant and activation energy for death" ;
+    mkg:reason "It is a constant in the cell-death Arrhenius law, so it is a parameter." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{d}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 1e+33 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/k_g> a mkg:Parameter ;
+    rdfs:label "k_{g} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Arrhenius constant for growth" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "from literature" ;
+    mkg:estimationQuote "Typical values for these parameters were taken from the literature (Shuler & Kargi, 2002)." ;
+    mkg:page "4" ;
+    mkg:quote "$ k_g $ and  $ E_g $ are the constant and activation energy for growth" ;
+    mkg:reason "It is a constant in the growth Arrhenius law, so it is a parameter." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{g}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 7000 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/par/mu_x> a mkg:Parameter ;
+    rdfs:label "\\mu_{x} (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "maximum specific growth rate" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "Maximum specific growth rate" ;
+    mkg:reason "\\mu_x is the maximum specific growth rate constant in the biomass-growth law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{x}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "per h" ;
+    mkg:value 9.2e-02 .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_H> a mkg:Variable ;
+    rdfs:label "[H^+] (birol_2002 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "hydrogen ion concentration" ;
+    mkg:dimension "[substance] / [length] ** 3" ;
+    mkg:page "3" ;
+    mkg:quote "hydrogen ion concentration" ;
+    mkg:reason "The paper treats [H^+] as the culture condition under pH control and gives its initial concentration, rather than as a fitted law constant." ;
+    mkg:siFactor 1e+03 ;
+    mkg:status "accepted" ;
+    mkg:symbol "[H^+]" ;
+    mkg:unit "mol / l" ;
+    mkg:unitString "mol/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/C_L> a mkg:Variable ;
+    rdfs:label "C_{L} (birol_2002 eq 3)"@en ;
+    mkg:description "dissolved oxygen concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C_{L}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/S> a mkg:Variable ;
+    rdfs:label "S (birol_2002 eq 3)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "S" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+
+<http://example.org/kg/birol_2002/law/birol_2002_eq3/var/X> a mkg:Variable ;
+    rdfs:label "X (birol_2002 eq 3)"@en ;
+    mkg:description "biomass concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/l" .
+

@@ -1,0 +1,320 @@
+{
+ "paper": "nausch_2023",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "formulas": [
+  {
+   "eq": 1,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ X=X_{a}+X_{d} $$ ",
+   "bbox": [
+    835.0,
+    1552.0,
+    937.0,
+    1579.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 2,
+   "page": 4,
+   "label": "display_formula",
+   "latex": " $$ V\\frac{dX_{a}}{dt}+X_{a}\\frac{dV}{dt}=\\mu X_{a}V-k_{d}X_{a}V $$ ",
+   "bbox": [
+    224.0,
+    249.0,
+    484.0,
+    299.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 3,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ \\frac{dV}{dt}=F_{t} $$ ",
+   "bbox": [
+    320.0,
+    156.0,
+    390.0,
+    203.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 4,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ \\mu=\\mu_{m}\\ \\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)\\left(\\frac{A}{A+K_{A}}\\frac{K_{IA}}{A+K_{IA}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right) $$ ",
+   "bbox": [
+    100.0,
+    310.0,
+    600.0,
+    361.0
+   ],
+   "route": "pipeline",
+   "ocr_fix": {
+    "was_eq": null,
+    "why": "number (4) not picked up; checked against the PDF p.6"
+   }
+  },
+  {
+   "eq": 5,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ V\\frac{dS}{dt}+S\\frac{dV}{dt}=F_{t}S_{f}-\\mu_{S}\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V $$ ",
+   "bbox": [
+    176.0,
+    886.0,
+    534.0,
+    937.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 6,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ V\\frac{dN}{dt}+N\\frac{dV}{dt}=F_{t}N_{f}-\\mu_{N}\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)X_{a}V $$ ",
+   "bbox": [
+    156.0,
+    967.0,
+    551.0,
+    1018.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 7,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ V\\frac{d\\boldsymbol{A}}{d t}+\\boldsymbol{A}\\frac{d\\boldsymbol{V}}{d t}=\\boldsymbol{F}_{t}\\boldsymbol{A}_{f}-\\mu_{A}\\left(\\frac{\\boldsymbol{A}}{\\boldsymbol{A}+\\boldsymbol{K}_{A}}\\frac{\\boldsymbol{K}_{I A}}{\\boldsymbol{A}+\\boldsymbol{K}_{I A}}\\right)\\boldsymbol{X}_{a}\\boldsymbol{V} $$ ",
+   "bbox": [
+    695.0,
+    156.0,
+    1076.0,
+    206.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 8,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ V\\frac{dP}{dt}+P\\frac{dV}{dt}=F_{t}P_{f}-\\mu_{P}P\\quad V $$ ",
+   "bbox": [
+    771.0,
+    237.0,
+    1004.0,
+    285.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 10,
+   "page": 5,
+   "label": "display_formula",
+   "latex": " $$ \\begin{align*}\\theta^{*}=\\min_{\\theta}Q(\\theta;\\tilde{x},\\tilde{t},\\tilde{y})=\\sum_{h=1}^{H}\\sum_{t=1}^{T(h)}q_{h,t}(\\theta;\\tilde{x}_{h},\\tilde{t}_{h,t},\\tilde{y}_{h,t})\\ (9)\\\\q_{h,t}(\\theta;\\tilde{x}_{h},\\tilde{t}_{h,t},\\tilde{y}_{h,t})=\\sum_{r=1}^{R(h,t)}w_{r}\\left[1-\\frac{g_{r}(\\theta;\\tilde{x}_{h},\\tilde{t}_{h,t})}{\\tilde{y}_{h,t,r}}\\right]^{2}\\end{align*} $$ ",
+   "bbox": [
+    658.0,
+    917.0,
+    1083.0,
+    1022.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 11,
+   "page": 6,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\sum=\\left[\\begin{array}{cccc}\\mathbf{u}_{1}^{0}+\\mathbf{u}_{1}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{1,1,1}&\\cdots&\\mathbf{u}_{1}^{0}+\\mathbf{u}_{1}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{t,h,1}&\\cdots\\\\\\mathbf{u}_{2}^{0}+\\mathbf{u}_{2}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{1,1,2}&\\cdots&\\mathbf{u}_{2}^{0}+\\mathbf{u}_{2}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{h,t,2,}&\\cdots\\\\\\cdots&\\cdots&\\cdots&\\cdots\\\\\\mathbf{u}_{R}^{0}+\\mathbf{u}_{R}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{1,1,R}&\\cdots&\\mathbf{u}_{R}^{0}+\\mathbf{u}_{R}^{\\%}\\tilde{\\boldsymbol{\\gamma}}_{h,t,R}&\\cdots\\\\\\end{array}\\right]\\end{aligned} $$ ",
+   "bbox": [
+    193.0,
+    614.0,
+    512.0,
+    745.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 12,
+   "page": 6,
+   "label": "display_formula",
+   "latex": " $$ M A E_{r}^{h}(\\boldsymbol{\\theta}^{\\star})=\\frac{1}{T(h)}\\sum_{t=1}^{T(h)}\\left|\\tilde{\\boldsymbol{y}}_{h,t,r}-\\boldsymbol{g}_{r}(\\boldsymbol{\\theta}^{\\star};\\tilde{\\boldsymbol{x}}_{h},\\tilde{t}_{h,t})\\right| $$ ",
+   "bbox": [
+    175.0,
+    1166.0,
+    532.0,
+    1211.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 13,
+   "page": 6,
+   "label": "display_formula",
+   "latex": " $$ n M A E_{r}^{h}(\\theta^{\\star})=\\frac{M A E_{r}^{h}(\\theta^{\\star})}{\\frac{1}{\\sum_{k=1}^{H}T(k)}\\sum_{h=1}^{\\bar{H}}\\sum_{t=1}^{T(j)}\\tilde{y}_{h,t,r}}=\\frac{M A E_{r}^{h}(\\theta^{\\star})}{\\bar{y}_{r}} $$ ",
+   "bbox": [
+    134.0,
+    1345.0,
+    535.0,
+    1413.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 14,
+   "page": 6,
+   "label": "display_formula",
+   "latex": " $$ M A E_{r}^{\\mathcal{D}}(\\boldsymbol{\\theta}^{\\star})=\\frac{1}{\\sum_{k\\in\\mathcal{D}}T(k)}\\sum_{h\\in\\mathcal{D}}\\sum_{t=1}^{T(h)}\\left|\\tilde{\\boldsymbol{y}}_{h,t,r}-g_{r}(\\boldsymbol{\\theta}^{\\star};\\tilde{\\boldsymbol{x}}_{h},\\tilde{t}_{h,t})\\right| $$ ",
+   "bbox": [
+    111.0,
+    1521.0,
+    562.0,
+    1571.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 15,
+   "page": 7,
+   "label": "display_formula",
+   "latex": " $$ \\min_{x\\in X}\\ (f_{1}(x),f_{2}(x),\\ldots,f_{r}(x)) $$ ",
+   "bbox": [
+    251.0,
+    940.0,
+    454.0,
+    974.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 16,
+   "page": 7,
+   "label": "display_formula",
+   "latex": " $$ Y_{a}=X_{a}(t)\\big/X_{0}\\overset{t\\to min}{\\Rightarrow}Y_{a}^{\\star}=X_{a}^{\\star}\\big(t^{\\star}\\big)\\big/X_{0} $$ ",
+   "bbox": [
+    216.0,
+    1322.0,
+    492.0,
+    1354.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 17,
+   "page": 7,
+   "label": "display_formula",
+   "latex": " $$ \\min_{X_{0},~S_{0}}-Y_{a}^{*}(X_{0},~S_{0}),\\quad t^{*}(X_{0},~S_{0}) $$ ",
+   "bbox": [
+    763.0,
+    1098.0,
+    1008.0,
+    1138.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": null,
+   "page": 8,
+   "label": "inline_formula",
+   "latex": " $$ 67 $$ ",
+   "bbox": [
+    399.0,
+    521.0,
+    421.0,
+    541.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": null,
+   "page": 8,
+   "label": "inline_formula",
+   "latex": " $$ t^{*} $$ ",
+   "bbox": [
+    321.0,
+    547.0,
+    342.0,
+    567.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 18,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned} $$ ",
+   "bbox": [
+    108.0,
+    911.0,
+    595.0,
+    1025.0
+   ],
+   "route": "pipeline",
+   "ocr_fix": {
+    "was_eq": null,
+    "why": "number (18) not picked up; checked against the PDF p.11",
+    "latex_was": " $$ \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+KI_{F}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned} $$ ",
+    "why_latex": "Paddle wrote KI_{F} once next to K_{IF}; the PDF prints K_IF in both places (p.11)"
+   }
+  },
+  {
+   "eq": 19,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*} $$ ",
+   "bbox": [
+    186.0,
+    1077.0,
+    524.0,
+    1194.0
+   ],
+   "route": "pipeline",
+   "ocr_fix": {
+    "latex_was": " $$ \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+KI_{F}}\\right)X_{a}V\\end{align*} $$ ",
+    "why_latex": "Paddle wrote KI_{F} once next to K_{IF}; the PDF prints K_IF in both places (p.11)"
+   }
+  },
+  {
+   "eq": 20,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*} $$ ",
+   "bbox": [
+    181.0,
+    1222.0,
+    528.0,
+    1337.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 21,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ a M A E_{i}=\\frac{1}{K}\\sum_{k=1}^{K}=1K M A E_{i}^{k}(\\theta_{k}^{\\star}) $$ ",
+   "bbox": [
+    752.0,
+    1475.0,
+    1019.0,
+    1518.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 22,
+   "page": 10,
+   "label": "display_formula",
+   "latex": " $$ anMAE_{i}=aMAE_{i}/\\bar{y}_{i} $$ ",
+   "bbox": [
+    803.0,
+    1574.0,
+    968.0,
+    1599.0
+   ],
+   "route": "pipeline"
+  }
+ ]
+}

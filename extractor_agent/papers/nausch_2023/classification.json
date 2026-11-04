@@ -1,0 +1,488 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": true,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "A_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The paper explicitly describes A_f as a feed concentration, which is supplied from outside the model and can change between runs.",
+   "llm": {
+    "symbol": "A_f",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "reason": "The paper explicitly describes A_f as a feed concentration, which is supplied from outside the model and can change between runs."
+   }
+  },
+  "F_{t}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_{t}$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$",
+   "page": 5,
+   "status": "accepted",
+   "reason": "F_t is identified as the feed rate, an operating quantity that is set externally and may vary during a run.",
+   "llm": {
+    "symbol": "F_{t}",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 170,
+    "quote": "Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_{t}$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$",
+    "reason": "F_t is identified as the feed rate, an operating quantity that is set externally and may vary during a run."
+   }
+  },
+  "K_{A}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_A $ | Description: Ammonium saturation constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly lists K_A as a parameter (saturation constant) used in the kinetic expressions.",
+   "llm": {
+    "symbol": "K_{A}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 201,
+    "quote": "Parameter: $ K_A $ | Description: Ammonium saturation constant",
+    "reason": "The table explicitly lists K_A as a parameter (saturation constant) used in the kinetic expressions."
+   }
+  },
+  "K_{F}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_F $ | Description: Fructose saturation constant",
+   "page": 14,
+   "status": "accepted",
+   "reason": "The table explicitly lists K_F as a parameter (saturation constant) used in the kinetic expressions.",
+   "llm": {
+    "symbol": "K_{F}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 426,
+    "quote": "Parameter: $ K_F $ | Description: Fructose saturation constant",
+    "reason": "The table explicitly lists K_F as a parameter (saturation constant) used in the kinetic expressions."
+   }
+  },
+  "K_{G}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "K_G appears in a Monod-type term (G/(G+K_G)). By modelling convention, such K values are saturation constants, which are fixed model parameters.",
+   "llm": {
+    "symbol": "K_{G}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "K_G appears in a Monod-type term (G/(G+K_G)). By modelling convention, such K values are saturation constants, which are fixed model parameters."
+   }
+  },
+  "K_{IA}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly lists K_{IA} as a parameter (inhibition constant) used in the kinetic expressions.",
+   "llm": {
+    "symbol": "K_{IA}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 202,
+    "quote": "Parameter: $ K_{IA} $ | Description: Ammonium inhibition constant",
+    "reason": "The table explicitly lists K_{IA} as a parameter (inhibition constant) used in the kinetic expressions."
+   }
+  },
+  "K_{IF}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_{IF} $ | Description: Fructose inhibition constant",
+   "page": 14,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{IF} as a parameter (inhibition constant).",
+   "llm": {
+    "symbol": "K_{IF}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 427,
+    "quote": "Parameter: $ K_{IF} $ | Description: Fructose inhibition constant",
+    "reason": "The table explicitly labels K_{IF} as a parameter (inhibition constant)."
+   }
+  },
+  "K_{IG}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_{{IG}} $ | Description: Glucose inhibition constant",
+   "page": 15,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{IG} as a parameter (inhibition constant).",
+   "llm": {
+    "symbol": "K_{IG}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 430,
+    "quote": "Parameter: $ K_{{IG}} $ | Description: Glucose inhibition constant",
+    "reason": "The table explicitly labels K_{IG} as a parameter (inhibition constant)."
+   }
+  },
+  "K_{IN}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{IN} as a parameter (inhibition constant).",
+   "llm": {
+    "symbol": "K_{IN}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 204,
+    "quote": "Parameter: $ K_{IN} $ | Description: Nitrate inhibition constant",
+    "reason": "The table explicitly labels K_{IN} as a parameter (inhibition constant)."
+   }
+  },
+  "K_{IS}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_{IS} $ | Description: Sucrose inhibition constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{IS} as a parameter (inhibition constant).",
+   "llm": {
+    "symbol": "K_{IS}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 200,
+    "quote": "Parameter: $ K_{IS} $ | Description: Sucrose inhibition constant",
+    "reason": "The table explicitly labels K_{IS} as a parameter (inhibition constant)."
+   }
+  },
+  "K_{N}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_N $ | Description: Nitrate saturation constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{N} as a parameter (saturation constant).",
+   "llm": {
+    "symbol": "K_{N}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 203,
+    "quote": "Parameter: $ K_N $ | Description: Nitrate saturation constant",
+    "reason": "The table explicitly labels K_{N} as a parameter (saturation constant)."
+   }
+  },
+  "K_{S}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ K_S $ | Description: Sucrose saturation constant",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The table explicitly labels K_{S} as a parameter (saturation constant).",
+   "llm": {
+    "symbol": "K_{S}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 199,
+    "quote": "Parameter: $ K_S $ | Description: Sucrose saturation constant",
+    "reason": "The table explicitly labels K_{S} as a parameter (saturation constant)."
+   }
+  },
+  "N_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The paper explicitly describes N_f as a feed medium concentration, i.e., an input variable that can change between runs.",
+   "llm": {
+    "symbol": "N_f",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "reason": "The paper explicitly describes N_f as a feed medium concentration, i.e., an input variable that can change between runs."
+   }
+  },
+  "P_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+   "page": 6,
+   "status": "accepted",
+   "reason": "P_f is identified as a feed concentration, which is an externally supplied variable.",
+   "llm": {
+    "symbol": "P_f",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "reason": "P_f is identified as a feed concentration, which is an externally supplied variable."
+   }
+  },
+  "S_{f}": {
+   "class": "variable",
+   "basis": "stated",
+   "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+   "page": 6,
+   "status": "accepted",
+   "reason": "S_f is a feed medium concentration, thus a manipulated/measured input variable.",
+   "llm": {
+    "symbol": "S_f",
+    "class": "variable",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "where $ S_f $, $ N_f $, $ A_f $ and $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "reason": "S_f is a feed medium concentration, thus a manipulated/measured input variable."
+   }
+  },
+  "\\alpha": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: $ \\alpha $ | Description: Sucrose hydrolysis constant | Unit: h^{-1}",
+   "page": 15,
+   "status": "accepted",
+   "reason": "The paper lists \\alpha as a parameter (hydrolysis constant) with a fixed value range, indicating it is constant during a simulation run.",
+   "llm": {
+    "symbol": "\\alpha",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 431,
+    "quote": "Parameter: $ \\alpha $ | Description: Sucrose hydrolysis constant | Unit: h^{-1}",
+    "reason": "The paper lists \\alpha as a parameter (hydrolysis constant) with a fixed value range, indicating it is constant during a simulation run."
+   }
+  },
+  "\\delta_{A}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Coefficients $ \\delta_A $, $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+   "page": 11,
+   "status": "accepted",
+   "reason": "These coefficients are described as fixed minimal concentrations, i.e., saturation/inhibition constants, which are model parameters.",
+   "llm": {
+    "symbol": "\\delta_{A}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 355,
+    "quote": "Coefficients $ \\delta_A $, $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+    "reason": "These coefficients are described as fixed minimal concentrations, i.e., saturation/inhibition constants, which are model parameters."
+   }
+  },
+  "\\delta_{P}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Coefficients $ \\delta_A $, $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+   "page": 11,
+   "status": "accepted",
+   "reason": "Same reasoning as for \\delta_{A}; they are constant model parameters representing inhibition thresholds.",
+   "llm": {
+    "symbol": "\\delta_{P}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 355,
+    "quote": "Coefficients $ \\delta_A $, $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+    "reason": "Same reasoning as for \\delta_{A}; they are constant model parameters representing inhibition thresholds."
+   }
+  },
+  "\\mu_{A}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The paper explicitly calls μ_A a consumption rate parameter in the text and tables. [quote not found in the paper]",
+   "llm": {
+    "symbol": "μ_A",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "μ_A denote the corresponding ... ammonium consumption rates [h^{-1}]",
+    "reason": "The paper explicitly calls μ_A a consumption rate parameter in the text and tables."
+   }
+  },
+  "\\mu_{F}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: μ_F | Description: Fructose consumption rate | Unit: h^{-1}",
+   "page": 15,
+   "status": "accepted",
+   "reason": "Listed in a table as a parameter representing a consumption rate.",
+   "llm": {
+    "symbol": "μ_F",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 434,
+    "quote": "Parameter: μ_F | Description: Fructose consumption rate | Unit: h^{-1}",
+    "reason": "Listed in a table as a parameter representing a consumption rate."
+   }
+  },
+  "\\mu_{G}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Parameter: μ_G | Description: Glucose consumption rate | Unit: h^{-1}",
+   "page": 15,
+   "status": "accepted",
+   "reason": "Explicitly identified as a parameter in the table.",
+   "llm": {
+    "symbol": "μ_G",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 435,
+    "quote": "Parameter: μ_G | Description: Glucose consumption rate | Unit: h^{-1}",
+    "reason": "Explicitly identified as a parameter in the table."
+   }
+  },
+  "\\mu_{N}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The text and tables label μ_N as a nitrate consumption rate parameter. [quote not found in the paper]",
+   "llm": {
+    "symbol": "μ_N",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "μ_N denote the corresponding ... nitrate consumption rates [h^{-1}]",
+    "reason": "The text and tables label μ_N as a nitrate consumption rate parameter."
+   }
+  },
+  "\\mu_{P}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Explicitly described as a phosphate consumption rate parameter. [quote not found in the paper]",
+   "llm": {
+    "symbol": "μ_P",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "μ_P denote the corresponding ... phosphate consumption rates [h^{-1}]",
+    "reason": "Explicitly described as a phosphate consumption rate parameter."
+   }
+  },
+  "\\mu_{S}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Identified in the text as the sucrose consumption rate parameter. [quote not found in the paper]",
+   "llm": {
+    "symbol": "μ_S",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 190,
+    "quote": "μ_S denote the corresponding ... sucrose consumption rates [h^{-1}]",
+    "reason": "Identified in the text as the sucrose consumption rate parameter."
+   }
+  },
+  "\\mu_{m}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "μ_m is the maximum specific growth rate [h ^{-1}]",
+   "page": 6,
+   "status": "accepted",
+   "reason": "The paper explicitly describes μ_m as a maximum specific growth rate, a constant parameter.",
+   "llm": {
+    "symbol": "μ_m",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 183,
+    "quote": "μ_m is the maximum specific growth rate [h ^{-1}]",
+    "reason": "The paper explicitly describes μ_m as a maximum specific growth rate, a constant parameter."
+   }
+  },
+  "\\mu_{m}^{A}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "μ_m^{A} appears as a maximum specific growth rate for ammonium in the Monod‑type term; such constants are conventionally model parameters.",
+   "llm": {
+    "symbol": "μ_m^{A}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "μ_m^{A} appears as a maximum specific growth rate for ammonium in the Monod‑type term; such constants are conventionally model parameters."
+   }
+  },
+  "\\mu_{m}^{P}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "μ_m^{P} appears as a maximum specific growth rate for phosphate in the Monod‑type term; by modelling convention this is a fixed parameter.",
+   "llm": {
+    "symbol": "μ_m^{P}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "μ_m^{P} appears as a maximum specific growth rate for phosphate in the Monod‑type term; by modelling convention this is a fixed parameter."
+   }
+  },
+  "k_{d}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "k_d [h^{-1}] is the death rate constant of active DM",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The paper explicitly defines k_d as a death rate constant, a constant parameter of the model.",
+   "llm": {
+    "symbol": "k_d",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 169,
+    "quote": "k_d [h^{-1}] is the death rate constant of active DM",
+    "reason": "The paper explicitly defines k_d as a death rate constant, a constant parameter of the model."
+   }
+  },
+  "m_{SF}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "The sucrose to glucose or fructose DM conversion parameters ( m_{SG} and m_{SF} ) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+   "page": 11,
+   "status": "accepted",
+   "reason": "The conversion factor is given a fixed value in the text, indicating it is a constant parameter.",
+   "llm": {
+    "symbol": "m_{SF}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 352,
+    "quote": "The sucrose to glucose or fructose DM conversion parameters ( m_{SG} and m_{SF} ) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+    "reason": "The conversion factor is given a fixed value in the text, indicating it is a constant parameter."
+   }
+  },
+  "m_{SG}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "The sucrose to glucose or fructose DM conversion parameters ( m_{SG} and m_{SF} ) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+   "page": 11,
+   "status": "accepted",
+   "reason": "The conversion factor is assigned a fixed value, making it a constant parameter.",
+   "llm": {
+    "symbol": "m_{SG}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 352,
+    "quote": "The sucrose to glucose or fructose DM conversion parameters ( m_{SG} and m_{SF} ) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose",
+    "reason": "The conversion factor is assigned a fixed value, making it a constant parameter."
+   }
+  }
+ }
+}

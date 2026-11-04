@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.22446409,
+  "prompt_tokens": 1506,
+  "prompt_time": 0.162535781,
+  "completion_tokens": 5429,
+  "completion_time": 11.440789771,
+  "total_tokens": 6935,
+  "total_time": 11.603325552,
+  "completion_tokens_details": {
+   "reasoning_tokens": 4978
+  }
+ },
+ "user": "Equations:\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\n\\delta_{A}   [NOT COMPUTED]\n  [355] (sentence, p.11) Coefficients  $ \\delta_A $,  $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.\n\n\\mu_{m}^{P}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\n\\delta_{P}   [NOT COMPUTED]\n  [355] (sentence, p.11) Coefficients  $ \\delta_A $,  $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.\n\nG   [COMPUTED by eq 20]\n  [181] (sentence, p.5) (G) phosphate P.\n  [255] (sentence, p.8) G, glucose;\n  [345] (sentence, p.11) G, glucose;\n\nK_{G}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\delta_{A}",
+    "description": "Minimal ammonium concentration in the medium at which cell growth occurs",
+    "description_basis": "stated",
+    "snippet_id": 355,
+    "quote": "Coefficients  $ \\delta_A $,  $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "It is a model coefficient representing the minimal substrate concentration for growth, thus a constant parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\mu_{m}^{P}",
+    "description": "Maximum specific growth rate contribution from phosphate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "It is a model parameter representing the maximum specific growth rate contribution from phosphate.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\delta_{P}",
+    "description": "Minimal phosphate concentration in the medium at which cell growth occurs",
+    "description_basis": "stated",
+    "snippet_id": 355,
+    "quote": "Coefficients  $ \\delta_A $,  $ \\delta_P $ can be interpreted as the minimal ammonium and phosphate concentration in the medium at which cell growth occurs.",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "It is a model coefficient representing the minimal substrate concentration for growth, thus a constant parameter.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "G",
+    "description": "Glucose concentration",
+    "description_basis": "stated",
+    "snippet_id": 255,
+    "quote": "G, glucose",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{G}",
+    "description": "Monod saturation constant for glucose",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "It is a model parameter representing the glucose saturation constant in the Monod term.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

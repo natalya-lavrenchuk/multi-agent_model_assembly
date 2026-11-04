@@ -1,0 +1,139 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1968,
+  "completion_tokens": 5767,
+  "total_tokens": 7735,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1965,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5122,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2.1. Chromatography model\n\nText and equations in reading order:\n    Fig. 2. Modeling strategy indicating experiments required for modified transport-dispersive model development.\n(9) \\left.\\frac{\\partial C}{\\partial z}\\right|_{z=0}=\\frac{u}{\\varepsilon_{T}D_{L}}(C(t,z=0)-C_{f}),\\quad\\mathrm{w h e r e}\\;C_{f}\\neq0\\mathrm{f o r}0<t<t_{L}    [code: PDE, computes C, code proposes balance]\n(10) \\left.\\frac{\\partial C}{\\partial z}\\right|_{z=L}=0    [code: algebraic, computes L, code proposes definition]\n    Different adsorption isotherms can be used in this approach. For the process example considered in this work of IgG capture by protein A chromatography, the components involved were assumed to behave as two pseudo-components: IgG and impurities. Here, IgG is the product and refers to all the retained materials during pulse injections under loading conditions, whereas impurities refer to all the non-retained materials under the same conditions. For IgG, a Langmuir adsorption isotherm considering pH as a modifier [19] (Eq. (11)) was selected. The impurities were assumed to follow a linear adsorp...\n(11) q_{\\mathrm{IgG}}^{*}=\\frac{q_{\\mathrm{max}}K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}{1+K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}    [code: algebraic, computes q_{IgG}^{*}, code proposes constitutive]\n(12) q_{i m p}^{*}=H C_{i m p}    [code: algebraic, computes q_{imp}^{*}, code proposes constitutive]\n    $ C_{\\mathrm{lgG}} $ is the $ \\mathrm{IgG} $ concentration in the mobile phase, $ q_{\\mathrm{lgG}}^{*} $ is the $ \\mathrm{IgG} $ concentration in the stationary phase at equilibrium, $ q_{\\mathrm{max}} $ is the maximum binding capacity, $ K_{A} $ is the association equilibrium constant, $ \\mathrm{pH}_{\\mathrm{ref}} $ is the reference pH (in this work, of the loading zone), n is the pH dependent equilibrium order, $ C_{\\mathrm{imp}} $ is the impurity concentration in the mobile phase, $ q_{\\mathrm{imp}}^{*} $ is the impurity concentration in the stationary phase at equilibrium, and H is the lin...\n\nSymbols:\n  C: Solute concentration in the mobile phase [g L^-1] (computed)\n  u: Superficial velocity [cm h^-1] (computed)\n  \\varepsilon_{T}: Total porosity [-] (computed)\n  D_{L}: Apparent axial dispersion coefficient [cm^2 s^-1] (computed)\n  C_{f}: Feed concentration. [gL^-1] (variable)\n  L: Column length [mm] (computed)\n  q_{IgG}^{*}: IgG concentration in the stationary phase at equilibrium. [gL^-1] (computed)\n  q_{max}: maximum binding capacity [g L^-1] (parameter)\n  K_{A}: association equilibrium constant [L g^-1] (parameter)\n  p: pH used as a modifier in the adsorption isotherm [-] (variable)\n  H: linear isotherm constant [-] (parameter)\n  H_{ref}: reference pH in the pH modifier of the adsorption isotherm [-] (parameter)\n  n: pH dependent equilibrium order [-] (parameter)\n  C_{IgG}: IgG concentration in the mobile phase [g L^-1] (variable)\n  q_{imp}^{*}: impurity concentration in the stationary phase at equilibrium [g L^-1] (computed)\n  C_{imp}: impurity concentration in the mobile phase [g L^-1] (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Isothermal adsorption, radial homogeneity, and lumped coefficients for axial dispersion and mass transfer resistances.\n  - The two terms in Eq. (5) are additive.\n  - Longitudinal diffusion is negligible.\n  - The components behave as two pseudo-components.\n  - The column is initially empty of solutes in both phases.\n  - There is no axial concentration change at the column outlet.\n\nLaws: 9, 10, 11, 12",
+ "answer": {
+  "laws": [
+   {
+    "eq": "9",
+    "description": "The inlet condition relates the axial concentration gradient to the difference between the column concentration and feed concentration during feeding.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It imposes an inlet mass-flux balance between the feed and the column.",
+    "assumptions": [
+     {
+      "text": "The feed concentration is nonzero for 0 < t < t_L.",
+      "quote": null,
+      "stated_as_assumption": false,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "C"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "C_{f}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "10",
+    "description": "The outlet boundary condition imposes zero axial concentration gradient.",
+    "description_basis": "stated",
+    "quote": "There is no axial concentration change at the column outlet.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a zero-gradient transport boundary condition, not a definition.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "transported species",
+      "symbol": "C"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11",
+    "description": "A pH-modified Langmuir isotherm computes the equilibrium stationary-phase IgG concentration from the mobile-phase IgG concentration.",
+    "description_basis": "stated",
+    "quote": "For IgG, a Langmuir adsorption isotherm considering pH as a modifier [19] (Eq. (11)) was selected.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is an equilibrium adsorption relation that specifies the IgG binding behavior.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "C_{IgG}"
+     },
+     {
+      "role": "equilibrium stationary-phase concentration",
+      "symbol": "q_{IgG}^{*}"
+     },
+     {
+      "role": "maximum binding capacity",
+      "symbol": "q_{max}"
+     },
+     {
+      "role": "association equilibrium constant",
+      "symbol": "K_{A}"
+     },
+     {
+      "role": "pH modifier",
+      "symbol": "p"
+     },
+     {
+      "role": "reference pH",
+      "symbol": "H_{ref}"
+     },
+     {
+      "role": "pH-dependent order",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "A linear adsorption isotherm relates mobile-phase impurity concentration to its equilibrium stationary-phase concentration.",
+    "description_basis": "stated",
+    "quote": "The impurities were assumed to follow a linear adsorp...",
+    "law_type": "constitutive",
+    "law_type_reason": "It is an equilibrium adsorption relation for impurities.",
+    "assumptions": [
+     {
+      "text": "Impurities are assumed to follow a linear adsorption isotherm.",
+      "quote": "The impurities were assumed to follow a linear adsorp...",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "mobile-phase impurity concentration",
+      "symbol": "C_{imp}"
+     },
+     {
+      "role": "equilibrium stationary-phase concentration",
+      "symbol": "q_{imp}^{*}"
+     },
+     {
+      "role": "linear isotherm constant",
+      "symbol": "H"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

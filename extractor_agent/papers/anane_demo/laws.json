@@ -1,0 +1,585 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "12": {
+   "form": "ODE",
+   "computes": "X",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Biomass concentration changes through fed-batch dilution and growth at the specific growth rate.",
+   "description_basis": "stated",
+   "quote": "expression for biomass balance in the fed-batch case",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "12",
+    "description": "Biomass concentration changes through fed-batch dilution and growth at the specific growth rate.",
+    "description_basis": "stated",
+    "quote": "expression for biomass balance in the fed-batch case",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "13": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Specific growth rate is the yield-weighted contribution of oxidative substrate use after maintenance, overflow-route use, and acetate uptake.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "q_{sox}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "q_{m}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "q_{sof}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "q_{sA}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{em}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{xsof}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{xa}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "13",
+    "description": "Specific growth rate is the yield-weighted contribution of oxidative substrate use after maintenance, overflow-route use, and acetate uptake.",
+    "description_basis": "stated",
+    "quote": "the overall growth of the culture results from usage of glucose through the oxidative, acetate uptake and re-use of other products from the overflow route, which all contribute energy equivalents for cell growth",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "q_{sox}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{m}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{sof}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{sA}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{em}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{xsof}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{xa}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "14": {
+   "form": "ODE",
+   "computes": "S",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Glucose concentration changes through fed-batch dilution and cellular glucose uptake.",
+   "description_basis": "stated",
+   "quote": "The mass balance for substrate (glucose) in the fed-batch process is given as",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "14",
+    "description": "Glucose concentration changes through fed-batch dilution and cellular glucose uptake.",
+    "description_basis": "stated",
+    "quote": "The mass balance for substrate (glucose) in the fed-batch process is given as",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "15": {
+   "form": "algebraic",
+   "computes": "q_{s}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Specific glucose uptake follows substrate saturation kinetics and is inhibited by extracellular acetate.",
+   "description_basis": "stated",
+   "quote": "The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "q_{smax}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "A"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{ia}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "15",
+    "description": "Specific glucose uptake follows substrate saturation kinetics and is inhibited by extracellular acetate.",
+    "description_basis": "stated",
+    "quote": "The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "q_{smax}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "A"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{ia}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "16": {
+   "form": "algebraic",
+   "computes": "q_{sox}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The oxidative glucose uptake rate is the portion of uptake not routed to overflow, reduced according to dissolved oxygen availability.",
+   "description_basis": "stated",
+   "quote": "Not all the substrate consumed is metabolized in the TCA cycle (qsox), but a portion goes to the overflow path qsof.",
+   "assumptions": [
+    {
+     "text": "The oxygen affinity constant is fixed at 0.1 to improve numerical stability.",
+     "quote": "K_{0} is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "DOT"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{o}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16",
+    "description": "The oxidative glucose uptake rate is the portion of uptake not routed to overflow, reduced according to dissolved oxygen availability.",
+    "description_basis": "stated",
+    "quote": "Not all the substrate consumed is metabolized in the TCA cycle (qsox), but a portion goes to the overflow path qsof.",
+    "assumptions": [
+     {
+      "text": "The oxygen affinity constant is fixed at 0.1 to improve numerical stability.",
+      "quote": "K_{0} is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "DOT"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{o}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "algebraic",
+   "computes": "q_{sof}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Specific substrate uptake through the overflow route increases saturably with the specific glucose uptake rate.",
+   "description_basis": "stated",
+   "quote": "a portion goes to the overflow path qsof",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "q_{s}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "P_{Amax}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{ap}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "17",
+    "description": "Specific substrate uptake through the overflow route increases saturably with the specific glucose uptake rate.",
+    "description_basis": "stated",
+    "quote": "a portion goes to the overflow path qsof",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "q_{s}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "P_{Amax}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{ap}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "18": {
+   "form": "ODE",
+   "computes": "A",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "Extracellular acetate concentration changes through fed-batch dilution and the net acetate production or uptake rate.",
+   "description_basis": "stated",
+   "quote": "Acetate production/consumption is a cyclic process and considering no addition of acetate in the feed, the mass balance yields",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The printed term q_s A X is inconsistent with the acetate balance: q_s is glucose uptake, and multiplying it by acetate and biomass concentrations does not give a concentration rate; the term should use the net acetate rate multiplied by X.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The printed term q_s A X is inconsistent with the acetate balance: q_s is glucose uptake, and multiplying it by acetate and biomass concentrations does not give a concentration rate; the term should use the net acetate rate multiplied by X."
+   ],
+   "llm": {
+    "eq": "18",
+    "description": "Extracellular acetate concentration changes through fed-batch dilution and the net acetate production or uptake rate.",
+    "description_basis": "stated",
+    "quote": "Acetate production/consumption is a cyclic process and considering no addition of acetate in the feed, the mass balance yields",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The printed term q_s A X is inconsistent with the acetate balance: q_s is glucose uptake, and multiplying it by acetate and biomass concentrations does not give a concentration rate; the term should use the net acetate rate multiplied by X."
+   }
+  },
+  "19": {
+   "form": "algebraic",
+   "computes": "q_{A}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The net specific acetate rate is the production rate minus the acetate uptake rate.",
+   "description_basis": "stated",
+   "quote": "The equilibrium q_{s}A=0 is reached when the acetate produced through the overflow route pA is equal to the acetate consumed q_{s}A.",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The term q_A is labeled a specific acetate consumption rate, but p_A minus q_{sA} gives net acetate production when production exceeds uptake.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The term q_A is labeled a specific acetate consumption rate, but p_A minus q_{sA} gives net acetate production when production exceeds uptake."
+   ],
+   "llm": {
+    "eq": "19",
+    "description": "The net specific acetate rate is the production rate minus the acetate uptake rate.",
+    "description_basis": "stated",
+    "quote": "The equilibrium q_{s}A=0 is reached when the acetate produced through the overflow route pA is equal to the acetate consumed q_{s}A.",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The term q_A is labeled a specific acetate consumption rate, but p_A minus q_{sA} gives net acetate production when production exceeds uptake."
+   }
+  },
+  "20": {
+   "form": "algebraic",
+   "computes": "p_{A}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The specific acetate production rate is computed from the overflow substrate-consumption rate and its acetate yield.",
+   "description_basis": "stated",
+   "quote": "where Yas is the gram of acetate per gram of substrate consumed through the overflow route.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "q_{sof}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{as}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "20",
+    "description": "The specific acetate production rate is computed from the overflow substrate-consumption rate and its acetate yield.",
+    "description_basis": "stated",
+    "quote": "where Yas is the gram of acetate per gram of substrate consumed through the overflow route.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "q_{sof}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{as}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "21": {
+   "form": "algebraic",
+   "computes": "q_{sA}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The specific acetate uptake rate follows acetate-saturation kinetics and is inhibited by glucose uptake.",
+   "description_basis": "stated",
+   "quote": "The specific acetate consumption rate is modelled as",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "q_{Amax}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "q_{s}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{is}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "A"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{sa}"
+    }
+   ],
+   "issue": "The q_{s} term in the glucose-inhibition factor has units of specific uptake rate, whereas K_{is} is given in concentration units, so their ratio is dimensionally inconsistent.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The q_{s} term in the glucose-inhibition factor has units of specific uptake rate, whereas K_{is} is given in concentration units, so their ratio is dimensionally inconsistent."
+   ],
+   "llm": {
+    "eq": "21",
+    "description": "The specific acetate uptake rate follows acetate-saturation kinetics and is inhibited by glucose uptake.",
+    "description_basis": "stated",
+    "quote": "The specific acetate consumption rate is modelled as",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "q_{Amax}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "q_{s}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{is}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "A"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{sa}"
+     }
+    ],
+    "issue": "The q_{s} term in the glucose-inhibition factor has units of specific uptake rate, whereas K_{is} is given in concentration units, so their ratio is dimensionally inconsistent."
+   }
+  },
+  "22": {
+   "form": "ODE",
+   "computes": "DOT_{a}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The dissolved-oxygen balance accounts for oxygen transfer from the gas phase and oxygen uptake by the biomass.",
+   "description_basis": "stated",
+   "quote": "The oxygen profile is described with the standard equation",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "22",
+    "description": "The dissolved-oxygen balance accounts for oxygen transfer from the gas phase and oxygen uptake by the biomass.",
+    "description_basis": "stated",
+    "quote": "The oxygen profile is described with the standard equation",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "23": {
+   "form": "algebraic",
+   "computes": "q_{o}",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The specific oxygen uptake rate is calculated from oxidative substrate use, maintenance, and acetate uptake using their oxygen-yield coefficients.",
+   "description_basis": "stated",
+   "quote": "the oxygen uptake rate described by",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "q_{sox}"
+    },
+    {
+     "role": "maintenance rate",
+     "symbol": "q_{m}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "q_{sA}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{os}"
+    },
+    {
+     "role": "yield",
+     "symbol": "Y_{oa}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "23",
+    "description": "The specific oxygen uptake rate is calculated from oxidative substrate use, maintenance, and acetate uptake using their oxygen-yield coefficients.",
+    "description_basis": "stated",
+    "quote": "the oxygen uptake rate described by",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "q_{sox}"
+     },
+     {
+      "role": "maintenance rate",
+      "symbol": "q_{m}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{sA}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{os}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{oa}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "24": {
+   "form": "ODE",
+   "computes": "DOT",
+   "condition": null,
+   "value": null,
+   "section": "3. Macro-kinetic model formulation",
+   "description": "The measured dissolved-oxygen tension follows the actual dissolved-oxygen tension with the sensor response dynamics.",
+   "description_basis": "stated",
+   "quote": "With the probe response, the measured DOT is modelled as:",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "24",
+    "description": "The measured dissolved-oxygen tension follows the actual dissolved-oxygen tension with the sensor response dynamics.",
+    "description_basis": "stated",
+    "quote": "With the probe response, the measured DOT is modelled as:",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

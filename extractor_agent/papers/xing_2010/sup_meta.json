@@ -1,0 +1,323 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "xing_2010": {
+   "name": "Fed-batch CHO kinetic model",
+   "equations": [
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4",
+    "6.5",
+    "6.6",
+    "7.1",
+    "7.2",
+    "8"
+   ],
+   "description": "The model describes a proprietary Chinese hamster ovary cell line producing the B1 antibody fusion protein in fed-batch bioreactors. It predicts time courses of viable cell density and glucose, glutamine, ammonia, lactate, and B1 concentrations using six coupled dynamic equations with nutrient-limited growth, metabolite inhibition, cell maintenance, and product formation mechanisms. The model represents the daily feed additions by simulating each interval between feeds and was calibrated with MCMC using seven 5,000-L culture runs. It was tested on separate seven-run data sets at 5,000 L and 500 L, including a perturbed culture condition at 500 L. The authors use it to examine culture kinetics and inform medium design and process improvement.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes a proprietary CHO cell line producing the B1 antibody fusion protein.",
+     "quote": "a large-scale fed-batch Chinese hamster ovary (CHO) cell culture process",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The model predicts viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and B1 protein.",
+     "quote": "The kinetic model consists of six differential equations, which describe dynamics of viable cell density and concentrations of glucose, glutamine, ammonia, lactate, and the antibody fusion protein B1 (B1).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The production process was operated in 5,000-L bioreactors, with scale-down studies in 500-L bioreactors.",
+     "quote": "Cell culture runs were carried out in 5,000-L and 500-L bioreactors",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Cultures were inoculated at approximately 0.2 × 10⁶ viable cells mL⁻¹ and started at 37°C.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "operation",
+     "text": "Temperature, pH, and dissolved oxygen were controlled using an internally developed process.",
+     "quote": "The temperature, pH, and dissolved oxygen were controlled with an internally developed process.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The fed-batch cultures received daily feed additions from the first day through the end of cultivation to maintain the proprietary glucose concentration.",
+     "quote": "Cell cultures were performed in fed-batch mode with daily feeding from the first day though the end of cultivation period to maintain the proprietary glucose concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The 500-L scale-down used the same bioreactor configuration and volumetric air flow rate as the 5,000-L process, with agitation scaled down.",
+     "quote": "The 500-L bioreactors were run under the scaled-down strategy with the same bioreactor configuration, the scaled agitation rate, and the same volume per volume per minute of air flow rate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model is a dynamic, six-equation kinetic model that predicts six culture variables.",
+     "quote": "This work reports the application of the MCMC method to develop a model that accurately described the kinetics of a large-scale fed-batch Chinese hamster ovary (CHO) cell culture process.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model uses extracellular nutrient and metabolite concentrations and does not explicitly resolve intracellular processes, consistent with an unstructured formulation.",
+     "quote": "An unstructured model relies on concentrations of nutrients and metabolites in cultures, and neglects intracellular processes.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model is a lumped culture description rather than a spatially distributed model.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "model",
+     "text": "The model has 18 parameters, of which six were calculated from culture data and 12 were estimated using MCMC.",
+     "quote": "The kinetic model has 18 parameters, six of which were calculated from the cell culture data, whereas the other 12 were estimated from a training data set",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model treats each interval between successive daily feeds as a batch-culture interval and numerically solves it with MATLAB's ODE23 function.",
+     "quote": "The ODE23 function of MATLAB Version 7.5 (Mathwork, Natick, MA) was used to numerically solve Eq. 6 for each time period.",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Cell growth is described with Monod-type nutrient limitation and inhibition by ammonia and lactate.",
+     "quote": "The Monod equation is based on the availability of limiting nutrients (such as glucose and glutamine) and inhibitors (such as lactate and ammonia) in a concentration-dependent pattern.",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The paper identifies 5.1 mM ammonia and 58 mM lactate as concentrations at which growth inhibition becomes significant in this process.",
+     "quote": "inhibition to cell growth became significant when ammonia and/or lactate reached concentrations of 5.1 and 58 mM, respectively (threshold values).",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The model includes nutrient maintenance consumption, and the glutamine maintenance coefficient varies with glutamine concentration.",
+     "quote": "The value of m_gln is a function of glutamine",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The glutamine balance includes first-order glutamine decomposition, and the ammonia balance includes viable-cell-dependent ammonia removal.",
+     "quote": "The kinetic model uniquely incorporated the ammonia removal",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "B1 production uses an exponential dependence on B1 concentration and accounts for the estimated fraction of arrested viable cells.",
+     "quote": "The [B1] protein mass balance was expressed as an exponential function of [B1] in Eq. 6.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The training data comprised seven 5,000-L culture runs, and each of the two validation data sets comprised seven runs.",
+     "quote": "Each data set comprised seven cell culture runs.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Samples were collected daily before feeding, so the reported measurements were prefeed values.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data",
+     "text": "Viable cell density was measured by averaging eight trypan-blue-exclusion counts made with a hemocytometer.",
+     "quote": "Viable cell density (X_v) was determined by the average of eight cell counts. Cell counts were performed by trypan blue dye exclusion using a hemocytometer.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Glucose, glutamine, lactate, and ammonia were measured using a NOVA Bioprofile 400.",
+     "quote": "Concentrations of glucose ([GLC]), glutamine ([GLN]), lactate ([LAC]), and ammonia ([AMM]) were measured using a NOVA Bioprofile 400",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "B1 titers were measured by affinity chromatography using an internally developed method.",
+     "quote": "B1 protein titers ([B1]) were measured by affinity chromatography using an internally developed method.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The training comparisons included 91 measured-simulated pairs for each of the five non-titer variables and 56 pairs for B1.",
+     "quote": "Although 56 measurements were plotted (seven cell culture runs at eight sampling times) for [B1], 91 measurements were plotted (seven cell culture runs at 13 sampling times) for the other five parameters.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "B1 measurements began after approximately 140 h, leaving fewer B1 observations than observations for the other variables.",
+     "quote": "Since the titer measurements started after 140 h, there were fewer numbers of measurements for [B1] than for the other variables.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "Maximum growth and cell-death rate constants were derived from 112 historical 5,000-L runs using upper limits at the 95% confidence level.",
+     "quote": "A total of 112 cell culture runs were used to estimate μ_max and k_d.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "The cell-death rate constant calculation omitted 23 historical runs because those cultures were harvested earlier.",
+     "quote": "The other 23 cell culture runs were not used for k_d calculation due to earlier harvest.",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameters",
+     "text": "Yield constants were calculated from the exponential-growth period using data from 14 culture runs.",
+     "quote": "The average values of 14 cell culture runs are presented in Table 2.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "MCMC estimation used three independent sampling trains per training run, each initialized with a different parameter set.",
+     "quote": "three MCMC sampling trains were used for each cell culture run.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Each MCMC train ran for 10,000 iterations, and the first 5,000 iterations were discarded before calculating the parameter estimate.",
+     "quote": "After completing 10,000 iterations, the outcomes of the first 5,000 iterations were discarded",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The likelihood calculation used measurement standard deviations estimated from 14 5,000-L culture runs.",
+     "quote": "The value of σ_i^(d) was the standard deviation for the corresponding measurement from the 14 cell culture runs in 5,000-L bioreactors used in this study.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The proposal distribution for the parameters was log-normal.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "estimation",
+     "text": "After 10,000 iterations, the 84 convergence statistics across 12 parameters and seven training runs ranged from 1.00 to 1.06.",
+     "quote": "All 84 PSRF-values (12 parameters from seven cell culture runs) fell in the range of 1.00 and 1.06, indicating that the estimates were consistent after 10,000 iterations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "fit",
+     "text": "For the training data, all six variables had coefficients of determination above 0.96 and regression slopes between 0.94 and 1.05.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The model predicted the time profiles of all six variables in seven independent 5,000-L runs and seven 500-L runs.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The 500-L validation set tested a perturbed culture condition because such perturbations were not permitted in the 5,000-L GMP facility.",
+     "quote": "Data from the 500 L pilot scale bioreactors were necessary because such perturbations were not allowed in the GMP environment of the 5,000-L bioreactors.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The paper reports agreement between predicted and measured profiles in both validation sets, including the perturbed 500-L cultures.",
+     "quote": "The predicted time profiles agreed with the measured time profiles for the six variables in both validation data sets",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors suggest applicability from 50-L through 5,000-L scales, based partly on reported similarity between 50-L and 500-L profiles.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scale",
+     "text": "The authors attribute lower viable cell density and B1 titer and different metabolite profiles at 5,000 L than at 500 L to inadequate mixing at 5,000 L.",
+     "quote": "the different metabolites profiles and lower viable cell density and B1 protein titer were observed in 5,000-L bioreactors, which was caused by inadequate mixing in 5,000-L bioreactors",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "Removing ammonia removal from the model caused ammonia concentrations to be overestimated.",
+     "quote": "An alternative model without the ammonia removal rate (r_amm) was evaluated and resulted in an overestimation for [AMM] values",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparison",
+     "text": "Replacing the exponential B1 balance with a linear one caused the model to underestimate B1 concentrations.",
+     "quote": "the linear function for [B1] protein mass balance underestimated [B1] values",
+     "basis": "stated"
+    },
+    {
+     "topic": "findings",
+     "text": "The model indicates that ammonia and lactate are important factors in cell growth and cell death.",
+     "quote": "ammonia and lactate played critical roles on cell growth and cell death.",
+     "basis": "stated"
+    },
+    {
+     "topic": "findings",
+     "text": "The authors estimate that about 83% of glucose consumed after 200 h was used for cell maintenance, while glutamine maintenance was negligible.",
+     "quote": "approximately 83% of consumed glucose was used for cell maintenance in the late stage of cell culture.",
+     "basis": "stated"
+    },
+    {
+     "topic": "findings",
+     "text": "The model suggests initial medium concentrations of 0.17 mM glucose and 0.09 mM glutamine to reduce lactate and ammonia production.",
+     "quote": "the estimated K_glc and K_gln values in this study suggest concentrations of [GLC] and [GLN] of 0.17 and 0.09 mM be used to reduce lactate and ammonia production in the current CHO cell culture process.",
+     "basis": "stated"
+    },
+    {
+     "topic": "application",
+     "text": "The authors propose the model for simulation, optimization, process control, medium design, and process improvement.",
+     "quote": "A kinetic model that quantitatively elucidates the effects of limiting nutrients and repressing metabolites on cell growth and protein productivity can be used for simulation, optimization, and process control in cell cultures.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The model's differential-equation framework draws on prior hybridoma culture kinetic work by Tatiraju et al. 1999.",
+     "quote": "The DAEs were used for kinetic modeling of a batch hybridoma cell culture.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The paper contrasts its exponential product balance with the linear product-balance formulations of Tatiraju et al. 1999 and Simon and Karim 2002, and notes an exponential formulation by Jang and Barford 2000.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "prior models",
+     "text": "The authors describe the model structure as similar to a neural network but with explicit kinetic equations replacing its hidden layer, in contrast to Marique et al. 2001.",
+     "quote": "the DAEs replaced the hidden layer of an ordinary neural network.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state that model code or underlying data are publicly available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "X_{V}",
+    "[GLC]",
+    "[GLN]",
+    "[LAC]",
+    "[AMM]",
+    "[B1]"
+   ],
+   "inputs": [],
+   "status": "pending",
+   "review": [
+    "9 of 48 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

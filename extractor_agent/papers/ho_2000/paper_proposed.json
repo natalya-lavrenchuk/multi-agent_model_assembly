@@ -1,0 +1,158 @@
+{
+ "sup": "ho_2000",
+ "title": "A Combined Pore Blockage and Cake Filtration Model for Protein Fouling during Microfiltration",
+ "doi": "10.1006/jcis.2000.7231",
+ "status": "proposed",
+ "proposed_by": "openai/gpt-oss-120b",
+ "equations": [
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "10",
+  "11",
+  "12",
+  "14",
+  "15",
+  "16",
+  "19",
+  "24"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "Rate of pore coverage proportional to convective flow rate of protein aggregates.",
+   "quote": "The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "7"
+  },
+  {
+   "text": "Each aggregate blocks a given membrane area.",
+   "quote": "Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $).",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "8"
+  },
+  {
+   "text": "Initial deposit is partially permeable, allowing some flow through blocked pores.",
+   "quote": "This initial deposit is assumed to be at least partially permeable to fluid flow, i.e., there is some small finite flow through even the “blocked” pores.",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false
+  },
+  {
+   "text": "Deposit hydraulic resistance proportional to mass per unit area.",
+   "quote": "The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,",
+   "page": 3,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "12"
+  },
+  {
+   "text": "Specific protein layer resistance R' assumed constant during constant pressure filtration.",
+   "quote": "$ R' $ is the specific protein layer resistance, which is assumed to be constant during a constant pressure filtration.",
+   "page": 3,
+   "severity": "blocking",
+   "reasoned": false
+  },
+  {
+   "text": "Deposit growth proportional to convective transport of protein through each blocked region.",
+   "quote": "The growth of the protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,",
+   "page": 2,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "10"
+  },
+  {
+   "text": "Initial deposit resistance estimated using Kozeny–Carman equation.",
+   "quote": "The resistance of the initial protein deposit ($R_{p0}$) can be estimated from the Kozeny–Carman equation,",
+   "page": 5,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "19"
+  }
+ ],
+ "model_name": "Combined pore blockage and cake filtration model",
+ "excluded": [
+  {
+   "eq": "1",
+   "reason": "generic form not used in specific model"
+  },
+  {
+   "eq": "9",
+   "reason": "restates eq 7"
+  },
+  {
+   "eq": "13",
+   "reason": "restates eq 12"
+  },
+  {
+   "eq": "17",
+   "reason": "approximates eq 16"
+  },
+  {
+   "eq": "18",
+   "reason": "approximates eq 13"
+  },
+  {
+   "eq": "20",
+   "reason": "restates eq 1"
+  },
+  {
+   "eq": "21",
+   "reason": "analysis equation, not part of model"
+  },
+  {
+   "eq": "22",
+   "reason": "analysis definition, not part of model"
+  },
+  {
+   "eq": "23",
+   "reason": "analysis expression, not part of model"
+  }
+ ],
+ "checks": [
+  "'Combined pore blockage and cake filtration model': eq 2 added back by code (computes J, used by eq 3)",
+  "'Combined pore blockage and cake filtration model': eqs 4, 16 all compute Q: keep one",
+  "'Combined pore blockage and cake filtration model': eqs 6, 15 all compute Q_{blocked}: keep one",
+  "'Combined pore blockage and cake filtration model': eqs 12, 19 all compute R_{p}: keep one",
+  "'Combined pore blockage and cake filtration model': n is used, but the equation computing it (eq 22, 23) is not in the model"
+ ],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "CONFLICT: computes t, like eq 20",
+   "2": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "3": "NOT USED BY OTHERS: computes R_{total}; the model output (keep) or not part of the model (leave out)",
+   "4": "NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)",
+   "5": "NEEDED: computes Q_{open}, used by the model",
+   "6": "NOT USED BY OTHERS: computes Q_{blocked}; the model output (keep) or not part of the model (leave out)",
+   "7": "CONFLICT: computes A_{open}, like eq 9",
+   "8": "NEEDED: computes \\alpha, used by the model",
+   "9": "CONFLICT: computes A_{open}, like eq 7",
+   "10": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11": "NEEDED: computes J_{blocked}, used by the model",
+   "12": "CONFLICT: computes R_{p}, like eq 13, 18, 19",
+   "13": "CONFLICT: computes R_{p}, like eq 12, 18, 19",
+   "14": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "15": "NOT USED BY OTHERS: computes Q_{blocked}; the model output (keep) or not part of the model (leave out)",
+   "16": "NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)",
+   "17": "NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)",
+   "18": "CONFLICT: computes R_{p}, like eq 12, 13, 19",
+   "19": "CONFLICT: computes R_{p}, like eq 12, 13, 18",
+   "20": "CONFLICT: computes t, like eq 1",
+   "21": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "22": "CONFLICT: computes n, like eq 23",
+   "23": "CONFLICT: computes n, like eq 22",
+   "24": "NEEDED: computes R^{\\prime}, used by the model"
+  }
+ }
+}

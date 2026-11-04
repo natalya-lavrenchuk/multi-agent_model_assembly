@@ -1,0 +1,143 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.050822469,
+  "prompt_tokens": 2071,
+  "prompt_time": 0.109910572,
+  "completion_tokens": 14964,
+  "completion_time": 31.173593254,
+  "total_tokens": 17035,
+  "total_time": 31.283503826,
+  "completion_tokens_details": {
+   "reasoning_tokens": 14313
+  }
+ },
+ "user": "Section(s): References\n\nText and equations in reading order:\n    The corresponding surface coverages are:\n(C-15) \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}    [code: algebraic, computes \\Theta^{\\otimes}, code proposes constitutive]\n(C-16) \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-}    [code: algebraic, computes \\Theta^{*}, code proposes constitutive]\n    Through fitting to experimental data using global optimization it was found that parameters $ \\beta_{8} $, $ \\beta_{12} $ and $ \\beta_{14} $ in these general expressions are zero for the conditions considered in Seidel et al., (2018). Experimental data in Seidel et al., (2018) were taken from Vollbrecht, (2007) as stated correctly in our paper.\n    Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n(C-1) \\begin{aligned}\\lg(K_{P1})&=13.8140+3784.4/T-9.2833\\cdot\\lg(T)\\\\&\\quad+3.1475\\times10^{-3}T-4.2613\\times10^{-7}T^{2}\\end{aligned}    [code: algebraic, computes K_{P1}, code proposes constitutive]\n(C-2) \\begin{aligned}\\lg(K_{P2})&=15.0921+1581.7/T-8.7639\\cdot\\lg(T)\\\\&\\quad+2.1105\\times10^{-3}T-1.9303\\times10^{-7}T^{2}\\end{aligned}    [code: algebraic, computes K_{P2}, code proposes constitutive]\n\nSymbols:\n  \\Theta^{\\otimes}: fraction of surface sites of type \\otimes (surface coverage) [-] (computed)\n  K_{H_2}: adsorption equilibrium constant for H2 on reduced surface sites (parameter)\n  p_{H_2}: partial pressure of hydrogen (variable)\n  \\Theta^{*}: fraction of reduced surface centers that are free (unoccupied) relative to total reduced surface centers [-] (computed)\n  K_{H_2O}: equilibrium constant for adsorption of H2O on a surface site [bar^{-1}] (parameter)\n  K_{O}: adsorption equilibrium constant for atomic oxygen (parameter)\n  p_{H_2O}: partial pressure of water vapor [bar] (variable)\n  K_{CO_2}^{*}: adsorption equilibrium constant for CO2 on a * site (parameter)\n  p_{CO_2}: partial pressure of CO2 in the gas phase (variable)\n  K_{CH_3OH}^{*}: equilibrium adsorption constant for methanol [bar^{-1}] (parameter)\n  p_{CH_3OH}: partial pressure of methanol (variable)\n  K_{P1}: equilibrium constant for the CO hydrogenation reaction (CO + 2 H2 ↔ CH3OH) expressed in terms of partial pressures (computed)\n  T: process temperature [K] (variable)\n  K_{P2}: equilibrium constant for reaction P2 [-] (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Catalyst deactivation neglected; only reactions (1)-(3) considered.\n  - Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.\n  - Oxidized centers (⊙) are active for CO hydrogenation.\n  - Reduced centers (∗) are active for CO₂ hydrogenation.\n  - Total numbers of oxidized, reduced and hydrogen centers are constant.\n  - Fast steps are at quasi‑equilibrium.\n  - Quasi‑equilibrium assumption for fast adsorption/desorption steps.\n  - Lumped kinetics for reactions (1)-(3).\n  - Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28).\n\nLaws: C-15, C-16, C-1, C-2",
+ "answer": {
+  "laws": [
+   {
+    "eq": "C-15",
+    "description": "Surface coverage of type ⊗ sites as a function of hydrogen partial pressure.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are:",
+    "law_type": "constitutive",
+    "law_type_reason": "Provides the adsorption equilibrium relation for hydrogen on ⊗ sites",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "coverage",
+      "symbol": "\\Theta^{\\otimes}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{H_2}"
+     },
+     {
+      "role": "partial pressure",
+      "symbol": "p_{H_2}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-16",
+    "description": "Surface coverage of reduced sites (*) as a function of water, CO2, and methanol partial pressures and adsorption constants.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are:",
+    "law_type": "constitutive",
+    "law_type_reason": "Provides the adsorption equilibrium relation for multiple species on * sites",
+    "assumptions": [
+     {
+      "text": "K_{CH_3OH}^{*} (β8) is zero for the conditions considered",
+      "quote": "Through fitting to experimental data using global optimization it was found that parameters $ \\beta_{8} $, $ \\beta_{12} $ and $ \\beta_{14} $ in these general expressions are zero for the conditions considered in Seidel et al., (2018).",
+      "stated_as_assumption": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "coverage",
+      "symbol": "\\Theta^{*}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{H_2O}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{O}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{H_2}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CO_2}^{*}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CH_3OH}^{*}"
+     },
+     {
+      "role": "partial pressure",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "partial pressure",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "partial pressure",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "partial pressure",
+      "symbol": "p_{CH_3OH}"
+     }
+    ],
+    "issue": "Exponent appears incomplete: ')^{-}' likely should be ')^{-1}'"
+   },
+   {
+    "eq": "C-1",
+    "description": "Temperature-dependent correlation for the equilibrium constant K_{P1} of the CO hydrogenation reaction.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "Provides a temperature correlation for equilibrium constant K_{P1}",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P1}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-2",
+    "description": "Temperature-dependent correlation for the equilibrium constant K_{P2}.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "Provides a temperature correlation for equilibrium constant K_{P2}",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P2}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

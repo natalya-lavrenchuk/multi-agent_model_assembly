@@ -1,0 +1,41 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: cached
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 2407
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 2305
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 114
+  statistical agent: 1570 in, 244 out (effort high, answer limit 32000)
+  statistical agent: accept C40  C40 (Andrews inhibition kinetics) fits within the measurement noise, and all five parameters are estimated precisely (t-values above 1). It has Akaike
+  hypothesis agent (confirmation): 4325 in, 1815 out (effort high, answer limit 32000)
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 126
+  eq 12: cached
+  modeler agent (muloiwa_2020_free_laws eq 12): cached
+  round 2: [18] fitting (limit 300 s)...
+  round 2: [18] muloiwa_2020_free_laws eq 12: chi2 114
+  eq 15: cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  round 2: [21] muloiwa_2020_free_laws eq 15: not built: x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394, x1=0.00182; 30% of the points checked). The rate law does not vanish when x2 runs out (limiting behaviour)
+  statistical agent (confirmation): 2305 in, 1178 out (effort high, answer limit 32000)
+  confirmation: confirmed -> C40  (rule: confirmed -> C40)  No additional experiment is needed for this decision. For optional validation, compare the laws at elevated glucose concentrations, roughly 2–8 g/L: h
+decision: {"decision": "accept", "chosen": "C40", "feedback": "C40 (Andrews inhibition kinetics) fits within the measurement noise, and all five parameters are estimated precisely (t-values above 1). It has Akaike weight 1.000, so it is clearly preferred among the fitted candidates. The fit was reached from only 2 of 4 starting points; this suggests some optimization sensitivity, so it would be prudent to verify the optimum with additional starts.", "reasoning": "C40 is the only candidate that fits within the 95% chi-square limit and has every parameter estimated precisely. The other candidates show substantial lack of fit. The local-optimum warning is a caveat, not a reason to reject the qualifying fit."}
+confirmation: confirmed -> C40 | adequate: C40 zentou_2019_andrews eq 5 (weight 1.00), C17 muloiwa_2020_free_laws eq 11 (weight 0.00) | agent agrees with the rule: True
+experiment to separate them: No additional experiment is needed for this decision. For optional validation, compare the laws at elevated glucose concentrations, roughly 2–8 g/L: hold dilution and other conditions fixed, measure biomass and glucose over time, and estimate specific growth after accounting for dilution. The Andrews law (C40) and the exponential-inhibition law (C17) predict different high-glucose inhibition profiles.
+final: {'model': 'C40', 'status': 'confirmed', 'marginal': False}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_andrews_seed2_confirm.json
+LLM: 3 calls (8200 in, 3237 out tokens), 17 answers from the cache

@@ -1,0 +1,49 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1561,
+  "completion_tokens": 1347,
+  "total_tokens": 2908,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1558,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1073,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Statistical tools for optimal dynamic model building\n\nAbstract: A general, systematic procedure is presented to support the development and statistical verification of dynamic process models. Within this procedure, methods are presented to address several key aspects, such as structural identifiability and distinguishability testing, as well as optimal design of dynamic experiments for both model discrimination and improving parameter precision. A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems. The design of dynamic experiments is cast as an optimal control problem within a framework that enables the calculation of optimal sampling points, experiment duration, fixed and variable external control profiles, and initial conditions of a dynamic experiment subject to general constraints on inputs and outputs. Within this framework, methods are presented to provide experiment design robustness, accounting for parameter uncertainty. The procedure is demonstrated through a practical biotechnology example. © 2000 Elsevier Science Ltd. All rights reserved.\n\nSentences about the process and the data:\n- Within this procedure, methods are presented to address several key aspects, such as structural identifiability and distinguishability testing, as well as optimal design of dynamic experiments for both model discrimination and improving par\n- The design of dynamic experiments is cast as an optimal control problem within a framework that enables the calculation of optimal sampling points, experiment duration, fixed and variable external control profiles, and initial conditions of\n- Within this framework, methods are presented to provide experiment design robustness, accounting for parameter uncertainty.\n- Optimal experiment design;\n- Parameter estimation\n- Detailed mathematical models are increasingly used by engineers in academia and industry to gain competitive advantage through such applications as model-based process design, operations, and control.\n- Thus, building and verifying high quality steady-state or dynamic, single or multiresponse mechanistic models of processing systems are key activities in process engineering.\n- The procedure comprises components that address several key aspects, such as structural identifiability and distinguishability testing, and optimal design of dynamic experiments for model discrimination and improving parameter precision.\n- Experiment design is concerned with the following question:\n- How does one adjust the time-varying controls, initial conditions or length of experiment for the experiment to generate the maximum amount of information for the purpose of determining the correct model from a set of candidates, and in tur\n- Within this framework, one can calculate optimal sampling points, experiment duration, fixed and variable external controls with input constraints, and initial conditions.\n- Potential applications of these techniques in all engineering disciplines are abundant, including applications in chemical kinetics and reaction mechanism elucidation, polymer reaction engineering, physical properties estimation, and bioche\n- Throughout the paper, an engineering example using a typical semicontinuous bioreactor application is used to demonstrate the overall procedure and the power of the proposed techniques in their ability to reduce the quantity of experimental\n- where  $ \\mathbf{x}(t) $ is an  $ n_s $-dimensional vector of time dependent state variables,  $ \\mathbf{u}(t) $ is an  $ n_c $-dimensional vector of time-varying controls or inputs to the process,  $ \\mathbf{w} $ is an  $ n_t $-dimensional\n- In Stage I, the strategy then uses these models to perform preliminary structural identifiability and distinguishability tests before any data are collected.\n- In Stage II, the strategy involves designing experiments for model discrimination, followed by\n- parameter estimation and model adequacy checking to determine whether or not any of the proposed models can be rejected, with the final purpose of selecting the 'best' model from the given set.\n- Once we are left with the 'best' model, we then go on to Stage III to design experiments for improving the precision of the parameters within that model, eventually arriving at a final, statistically-verified model formulation.\n\nModel: Monod kinetics\nLaws:\n(16.1) [balance] Biomass concentration balance in the reactor, including growth, dilution, and first-order loss.\n(16.2) [balance] Substrate concentration balance in the reactor, including growth-related consumption and dilution from the feed.\n(17) [constitutive] Monod-type specific growth rate as a function of substrate concentration.\n\nStates (computed by the ODEs):\n- x_{1}: Measured concentration x1 in the component balance.\n- x_{2}: Measured substrate concentration.\n\nInputs (variables no law computes):\n- u_{1}: Dilution factor.\n- u_{2}: Substrate concentration in the feed.\n\nModel-wide assumptions:\n- Monod-type kinetics for substrate consumption",
+ "answer": {
+  "system": {
+   "value": "Biomass growth and substrate consumption in a semicontinuous bioreactor; organism and substrate identity are not specified.",
+   "quote": null
+  },
+  "unit_operation": {
+   "value": "Bioreactor",
+   "quote": "typical semicontinuous bioreactor application"
+  },
+  "operating_mode": {
+   "value": [
+    "semi-continuous"
+   ],
+   "quote": "typical semicontinuous bioreactor application",
+   "note": null
+  },
+  "fitted_on": {
+   "value": null,
+   "quote": null
+  },
+  "phenomena": [
+   "Monod substrate-limited biomass growth",
+   "Growth-associated substrate consumption",
+   "First-order biomass loss",
+   "Biomass and substrate dilution by feed"
+  ],
+  "description": "The model represents biomass and substrate concentrations in a semicontinuous bioreactor; the organism and substrate are not identified in the provided material. It predicts their time courses using Monod growth, growth-associated substrate consumption, first-order biomass loss, and dilution driven by the dilution factor and feed substrate concentration."
+ }
+}

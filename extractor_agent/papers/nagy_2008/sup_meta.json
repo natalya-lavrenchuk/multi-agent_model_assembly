@@ -1,0 +1,264 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "nagy_2008": {
+   "name": "Dynamic crystallization moment model",
+   "equations": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5",
+    "12",
+    "13",
+    "21"
+   ],
+   "description": "The model describes unseeded batch cooling crystallization of paracetamol from water and predicts solution concentration and crystal-size-distribution moments, which are used to estimate particle size and metastable-zone behavior. It combines a dynamic population balance, represented by four moments, with a solute mass balance and power-law expressions for primary nucleation and crystal growth. The experiments were run in a stirred, 500 mL vessel at slow and fast cooling rates, with concentration measured by ATR-FTIR and particle information measured by FBRM. The four kinetic parameters were estimated from measurements collected shortly after crystals became detectable, and the model was tested against separate fast-cooling experiments. The authors use the model to estimate nucleation and growth kinetics and to assess how simplifying assumptions in earlier metastable-zone methods affect those estimates.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model represents cooling crystallization of paracetamol (4-acetamidophenol) from water.",
+     "quote": "The model system studied is the cooling crystallization of paracetamol (PCM) from water.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Experiments were conducted in a 500 mL jacketed round-bottom flask with magnetic stirring.",
+     "quote": "the experiments were conducted in a 500 mL jacketed round-bottom flask. The solution was agitated by a magnetic stirrer.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The metastable-zone experiments cooled solutions from slightly above saturation at a constant rate until crystals were detected.",
+     "quote": "the solution, slightly above its saturated temperature $ T_s $, is cooled at a constant rate until crystals are detected.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Five slow-cooling experiments used cooling rates of 3.2–4.0 °C/h and initial paracetamol concentrations of 0.015–0.030 g/g water.",
+     "quote": "The first batch consists of five sets of experimental data (S1–S5) obtained at slow cooling rates in the range 3.22–4.03 °C/h using different initial paracetamol concentrations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "A second series comprised 17 experiments at a constant cooling rate of 30 °C/h (0.5 °C/min), using different initial concentrations.",
+     "quote": "The second series of data contains 17 sets of experiments (F1–F17) performed at a constant fast cooling rate of 30 °C/h (0.5 °C/min) using different initial concentrations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "For the slow-cooling runs, measured maximum undercoolings were 2.3–6.6 °C and detectable particle sizes were 9.5–18.4 μm.",
+     "quote": "S1 | $ \\beta $ (°C/h): 3.8 | $ C_i $ (g/g water): 0.030 | $ \\Delta T_{max} $ (°C): 2.3 | $ L_d $ ( $ \\mu $m): 9.5",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The dynamic model uses four population-balance moment equations and one solution mass-balance equation.",
+     "quote": "considering the first four moment equations and the mass balance equation",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The five dynamic states are the zeroth through third crystal-size-distribution moments and the solution concentration.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "structure",
+     "text": "The moment formulation is a computationally efficient reduced representation of the population balance.",
+     "quote": "A computationally efficient method to solve for the PBE is to use the moment transformation, which computes the average and total properties of the solid phase.",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "Model outputs fitted to data were solution concentration and three moment ratios representing particle-size information.",
+     "quote": "In the case of Method 3, $ y = [C, \\mu_1/\\mu_0, \\mu_2/\\mu_0, \\mu_3/\\mu_0] $",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Primary number nucleation and crystal growth are each represented by empirical power-law kinetics in supersaturation.",
+     "quote": "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The model estimates four kinetic parameters: two for primary nucleation and two for growth.",
+     "quote": "To estimate the four kinetic parameters $(k_b, b, k_g, g)$",
+     "basis": "stated"
+    },
+    {
+     "topic": "initialization",
+     "text": "For the unseeded simulations, the initial crystal moments were zero and the starting solution concentration was set to the initial concentration.",
+     "quote": "For unseeded systems, the initial condition for eq 11 is given by $ \\mu_i(0) = 0 $ ( $ i = 0, 1, 2, 3 $), and $ C(0) = C_i $.",
+     "basis": "stated"
+    },
+    {
+     "topic": "initialization",
+     "text": "The model treats nuclei as having negligible size at formation.",
+     "quote": "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $).",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Primary nucleation is treated as the dominant nucleation mechanism from the start of supersaturation until shortly after the induction time.",
+     "quote": "The consideration of primary nucleation as the dominant form of nucleation is valid from $ t = 0 $ to a short period after $ t_{\\text{ind}} $",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "The in situ solution concentration was measured by ATR-FTIR spectroscopy.",
+     "quote": "The in situ solution concentration was measured using ATR-FTIR spectroscopy as described previously.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "FBRM was used both to detect the metastable limit and to measure the solid-phase chord-length distribution.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurements",
+     "text": "FBRM, ATR-FTIR concentration changes, and naked-eye cloud formation gave very similar metastable-zone widths in the slow-cooling experiments.",
+     "quote": "All three detection methods indicated very similar metastable zone widths",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "The particle-size distribution was inferred from FBRM chord lengths by treating crystals as spheres.",
+     "quote": "In this approach, the CSD is obtained from the CLD by considering spherical crystals.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Parameter estimation used concentration and particle-size measurements collected during a short period after the induction time.",
+     "quote": "The experimental data used includes the measurements from the ATR-FTIR and focused beam reflectance measurement (FBRM) during a short period after $t_{\\text{ind}}$.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The paper does not state the sensor sampling interval or measurement frequency.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "estimation",
+     "text": "The four kinetic parameters were estimated by nonlinear least squares against the measured concentration and moment-ratio outputs.",
+     "quote": "the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The parameter fit was formulated as a nonconvex nonlinear programming problem and solved using a sequential approach.",
+     "quote": "The estimation of the model parameters requires the solution of a nonconvex, nonlinear programming problem, which was solved using a sequential approach.",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "Parameter confidence intervals were calculated from sensitivity and covariance information using a t-test, with 95% intervals reported.",
+     "quote": "The 95% confidence intervals are obtained for $\\alpha = 0.05$.",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "The authors characterize the uncertainty in the proposed method’s estimated kinetic parameters as relatively high.",
+     "quote": "the uncertainty in the estimated kinetic parameters in this proposed method is still relatively high.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For the five slow-cooling experiments used in fitting, the model’s average absolute relative errors were 20.0% for maximum undercooling and 13.3% for particle size at induction.",
+     "quote": "experiment: avg. abs. rel. error | Method 1a: 29.2% | Method 1b: 19.7% | Method 2a: 26.3% | Method 2b: 26.4% | Method 3: 20.0% | Method 3: 13.3%",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The F1–F4 fast-cooling experiments were excluded from parameter estimation and used as unforeseen test data.",
+     "quote": "The data from experiments F1–F4 are used to test the models obtained and are excluded from the parameter estimation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "For the F1–F4 tests, the model’s average absolute relative errors were 18.8% for maximum undercooling and 16.6% for particle size at induction.",
+     "quote": "experiment: avg. abs. rel. error | Method 1a: 165.9% | Method 1b: 36.3% | Method 2a: 42.8% | Method 2b: 42.3% | Method 3: 18.8% | Method 3: 16.6%",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The authors report that the fitted parameters were physically realistic and that the model estimated metastable-zone widths and induction-time particle sizes reasonably well for most experiments.",
+     "quote": "all of the parameter values obtained with this approach are physically realistic. The obtained model is able to estimate reasonably well the metastable zone width and average crystal size at the induction time for most of the experiments",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "The discrepancy between model predictions and experimental data increases with time, partly because of errors in estimating distribution moments from the chord-length data.",
+     "quote": "The difference between the model prediction and the experimental data increases with time, which is partly caused by the error from the estimation of the moments of the CSD from the experimental CLD.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "Although crystals were approximately hexagonal at induction, their changing aspect ratio during growth can make sphere-based particle-size distributions differ substantially from the actual distribution.",
+     "quote": "Microscopic analysis revealed that the crystals at induction time are hexagonal, which were approximated as spheres, within acceptable errors. However, the aspect ratio of the shape of the crystals changes as they grow. Thus, the CSD estimated based on equivalent diameters can be significantly different from the actual CSD.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "Other nucleation mechanisms, including secondary nucleation, may occur in the experiments and add uncertainty to the identified model.",
+     "quote": "Different nucleation mechanisms (e.g., secondary nucleation) could also come into effect in the experiments, increasing the uncertainty in the identified model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper compares the moment-model approach with the classical metastable-zone method of Nyvlt (1968), which neglects growth of newly formed crystals and therefore yields an apparent rather than true nucleation parameter.",
+     "quote": "Because growth of nuclei is not taken into account, this method gives the apparent nucleation parameter rather than the true parameter.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper also assesses the Mersmann (1996) nucleation expression and the induction-time parameter-estimation approach of Kim and Mersmann (2001).",
+     "quote": "An approach to determine the kinetic parameters, $ \\varphi_{\\text{het}} $ and f, is proposed by Kim and Mersmann.",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "Using only slow-cooling data, the Nyvlt-based method gave a 165.9% average absolute relative error in predicting the held-out fast-cooling metastable-zone widths.",
+     "quote": "The average absolute relative error obtained is more than 165%",
+     "basis": "stated"
+    },
+    {
+     "topic": "comparisons",
+     "text": "The paper builds its population-balance moment formulation on the particulate-process framework of Randolph and Larson (1988).",
+     "quote": "The crystallization process is described by the population balance equation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose the estimated parameters as initial values for iterative parameter-estimation procedures and as a complement to batch-model identification.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not identify a software package or provide a code or data availability statement.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "\\mu_{0}",
+    "\\mu_{1}",
+    "\\mu_{2}",
+    "\\mu_{3}",
+    "C"
+   ],
+   "inputs": [
+    "\\Delta C",
+    "T"
+   ],
+   "status": "pending",
+   "review": [
+    "5 of 38 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

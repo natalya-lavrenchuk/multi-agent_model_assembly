@@ -1,0 +1,41 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 780 out (effort high, answer limit 32000)
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 383
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 118
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 118
+  statistical agent: 1332 in, 196 out (effort high, answer limit 32000)
+  statistical agent: accept C9  Accept the Monod rate law, r = theta1*x2/(theta2 + x2).
+  hypothesis agent (confirmation): 4318 in, 2389 out (effort high, answer limit 32000)
+  eq 8: cached
+  modeler agent (muloiwa_2020_free_laws eq 8): cached
+  round 2: [29] fitting (limit 300 s)...
+  round 2: [29] muloiwa_2020_free_laws eq 8: chi2 118
+  eq 7: cached
+  modeler agent (muloiwa_2020_free_laws eq 7): cached
+  round 2: [28] fitting (limit 300 s)...
+  round 2: [28] muloiwa_2020_free_laws eq 7: chi2 341
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 118
+  statistical agent (confirmation): 2320 in, 694 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C9  (rule: indistinguishable -> C9)  Run controlled glucose feed steps that produce measured substrate concentrations well below and around the fitted Ks (about 0.27–0.29 g/L), for exampl
+decision: {"decision": "accept", "chosen": "C9", "feedback": "Accept the Monod rate law, r = theta1*x2/(theta2 + x2).", "reasoning": "C9 fits within the noise (chi2 118.2 < 148.8), and every parameter is estimated precisely (all t-values exceed 1). It also has the higher Akaike weight among the fitting candidates. C40 has an effectively unbounded Ki, so its extra parameter is not meaningfully identified."}
+confirmation: indistinguishable -> C9 | adequate: C9 asprey_2000_monod_kinetics eq 17 (weight 0.67), C29 muloiwa_2020_free_laws eq 8 (weight 0.33) | agent agrees with the rule: True
+experiment to separate them: Run controlled glucose feed steps that produce measured substrate concentrations well below and around the fitted Ks (about 0.27–0.29 g/L), for example roughly 0.02–0.10 g/L and 0.3–1 g/L. Measure glucose and biomass more frequently during the steps, and estimate specific growth rate from biomass change corrected for dilution. The low-substrate response is where the fixed exponent in C9 and the fitted power-law exponent in C29 can differ.
+final: {'model': 'C9', 'status': 'indistinguishable'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_monod_seed2_confirm.json
+LLM: 4 calls (12221 in, 4059 out tokens), 15 answers from the cache

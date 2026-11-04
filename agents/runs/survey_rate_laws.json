@@ -1,0 +1,446 @@
+[
+ {
+  "id": 0,
+  "law": "anane_2017 eq 13",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq13",
+  "latex": "\\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}",
+  "status": "needs other variables",
+  "reason": "needs qsA (Acetate consumption rate), qsof (Substrate metabolized through the overfl), qsox (Substrate uptake rate for oxidation)"
+ },
+ {
+  "id": 1,
+  "law": "anane_2017 eq 15",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq15",
+  "latex": "q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}",
+  "status": "needs other variables",
+  "reason": "needs A (Extracellular acetate concentration.)"
+ },
+ {
+  "id": 2,
+  "law": "anane_2017 eq 16",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq16",
+  "latex": "q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}",
+  "status": "translation rejected",
+  "reason": "the terms DOT and Ko are added, but they differ: mass / length^3 vs 1"
+ },
+ {
+  "id": 3,
+  "law": "anane_2017 eq 17",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq17",
+  "latex": "q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}",
+  "status": "translation rejected",
+  "reason": "the terms Kap and qs are added, but they differ: 1 / time vs mass / length^3; the right side must have the dimension of qsof, but they differ: length^3 / mass time^2 vs 1 / time"
+ },
+ {
+  "id": 4,
+  "law": "anane_2017 eq 19",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq19",
+  "latex": "q_{A}=p_{A}-q_{sA}",
+  "status": "needs other variables",
+  "reason": "needs pA (Specific acetate production rate.), qsA (Acetate consumption rate)"
+ },
+ {
+  "id": 5,
+  "law": "anane_2017 eq 20",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq20",
+  "latex": "p_{A}=q_{sof}Y_{as}",
+  "mapping": {
+   "pA": "r",
+   "qsof": "x2"
+  },
+  "rate_law": "Yas*x2",
+  "status": "rejected: units",
+  "reason": "the right side must have the dimension of r, but they differ: mass / length^3 vs 1 / time"
+ },
+ {
+  "id": 6,
+  "law": "anane_2017 eq 21",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq21",
+  "latex": "q_{sA}=\\frac{q_{Amax}}{1+\\frac{S}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}",
+  "status": "translation rejected",
+  "reason": "uses S, which is not one of the law's symbols in the graph"
+ },
+ {
+  "id": 7,
+  "law": "anane_2017 eq 23",
+  "iri": "http://example.org/kg/anane_2017/law/anane_2017_eq23",
+  "latex": "q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}",
+  "status": "needs other variables",
+  "reason": "needs qsA (Acetate consumption rate)"
+ },
+ {
+  "id": 8,
+  "law": "asprey_2000_contois_kinetics eq 18",
+  "iri": "http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18",
+  "latex": "M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}}",
+  "mapping": {
+   "r": "r",
+   "x1": "x1",
+   "x2": "x2"
+  },
+  "rate_law": "theta1*x2/(theta2*x1 + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 9,
+  "law": "asprey_2000_monod_kinetics eq 17",
+  "iri": "http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17",
+  "latex": "M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}}",
+  "mapping": {
+   "r": "r",
+   "x2": "x2"
+  },
+  "rate_law": "theta1*x2/(theta2 + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 10,
+  "law": "birol_2002 eq 10",
+  "iri": "http://example.org/kg/birol_2002/law/birol_2002_eq10",
+  "latex": "\\mu_{\\mathrm{pp}}=\\mu_{\\mathrm{p}}\\frac{S}{(K_{\\mathrm{p}}+S+S^{2}/K_{\\mathrm{I}})}\\frac{C^{\\mathrm{p}}_{\\mathrm{L}}}{(K_{\\mathrm{op}}X+C^{\\mathrm{p}}_{\\mathrm{L}})}",
+  "status": "needs other variables",
+  "reason": "needs CL (dissolved oxygen concentration)"
+ },
+ {
+  "id": 11,
+  "law": "birol_2002 eq 13",
+  "iri": "http://example.org/kg/birol_2002/law/birol_2002_eq13",
+  "latex": "K_{\\mathrm{l a}}=\\alpha\\sqrt{f_{\\mathrm{g}}}\\biggl(\\frac{P_{\\mathrm{w}}}{V}\\biggr)^{\\beta}",
+  "status": "needs other variables",
+  "reason": "needs Pw (Agitation power input.), V (culture volume), fg (Flow rate of oxygen.)"
+ },
+ {
+  "id": 12,
+  "law": "birol_2002 eq 3",
+  "iri": "http://example.org/kg/birol_2002/law/birol_2002_eq3",
+  "latex": "\\begin{aligned}\\mu&=\\left[\\frac{\\mu_{\\mathrm{x}}}{1+{[K_{1}/[\\mathrm{H}^{+}]]}+[[[\\mathrm{H}^{+}]]/K_{2}]}\\right]\\frac{S}{K_{\\mathrm{x}}X+S}\\\\&\\quad\\times\\frac{C_{\\mathrm{L}}}{K_{\\mathrm{ox}}X+C_{\\mathrm{L}}}\\\\&\\left[k_{\\mathrm{g}}\\exp\\left(-\\frac{E_{\\mathrm{g}}}{\\mathrm{RT}}\\right)\\right]-\\left[k_{\\mathrm{d}}\\exp\\left(-\\frac{E_{\\mathrm{d}}}{\\mathrm{RT}}\\right)\\right].\\end{aligned}",
+  "status": "translation rejected",
+  "reason": "the terms S_ and Kx*X are added, but they differ: mass^2 / length^6 vs mass / length^3"
+ },
+ {
+  "id": 13,
+  "law": "kontoravdi_2010 eq 4",
+  "iri": "http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4",
+  "latex": "\\mu=\\mu_{m a x}f_{l i m}f_{i n h}",
+  "status": "needs other variables",
+  "reason": "needs finh (Inhibition factor for specific cell grow), flim (Limitation factor for specific cell grow)"
+ },
+ {
+  "id": 14,
+  "law": "kontoravdi_2010 eq 7",
+  "iri": "http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7",
+  "latex": "\\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1",
+  "status": "needs other variables",
+  "reason": "needs AMM (Extracellular ammonia concentration.)"
+ },
+ {
+  "id": 15,
+  "law": "lopezmeza_2016 eq 3",
+  "iri": "http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3",
+  "latex": "\\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(K + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 16,
+  "law": "muloiwa_2020_free_laws eq 10",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq10",
+  "latex": "\\mu=a+b~l n\\left(s\\right)",
+  "mapping": {
+   "mu": "r",
+   "s": "x2"
+  },
+  "rate_law": "a + b*log(x2)",
+  "status": "rejected: units",
+  "reason": "the argument of log() must be dimensionless, but they differ: mass / length^3 vs 1"
+ },
+ {
+  "id": 17,
+  "law": "muloiwa_2020_free_laws eq 11",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq11",
+  "latex": "\\mu=\\mu_{max}\\frac{S}{K_{s}+S}\\exp\\left(-\\frac{S}{K_{I}}\\right)",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2*exp(-x2/KI)/(Ks + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 18,
+  "law": "muloiwa_2020_free_laws eq 12",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq12",
+  "latex": "\\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{S^{2}}{K_{1}}+\\frac{S^{3}}{K_{2}^{2}}}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(Ks + x2 + x2**3/K2**2 + x2**2/K1)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 19,
+  "law": "muloiwa_2020_free_laws eq 13",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq13",
+  "latex": "\\mu=\\mu_{max}\\Bigg[1-\\Bigg(\\frac{S}{S_{m}}\\Bigg)\\Bigg]^{n}\\left[\\frac{S}{S+K_{s}\\Big(1-\\frac{S}{S_{m}}\\Big)^{m}}\\right]",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2*(1 - x2/Sm)**n/(Ks*(1 - x2/Sm)**m + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 20,
+  "law": "muloiwa_2020_free_laws eq 14",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq14",
+  "latex": "\\mu=\\frac{(\\mu_{m a x}+m)S}{K_{s}+S}-m",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "-m + x2*(m + mumax)/(Ks + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 21,
+  "law": "muloiwa_2020_free_laws eq 15",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq15",
+  "latex": "\\mu=\\mu_{max}\\left[1-\\frac{X}{X_{m}}\\right]",
+  "mapping": {
+   "mu": "r",
+   "X": "x1"
+  },
+  "rate_law": "mumax*(1 - x1/Xm)",
+  "status": "rejected: positivity",
+  "reason": "x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394, x1=0.00182; 30% of the points checked). The rate law does not vanish when x2 runs out (limiting behaviour)"
+ },
+ {
+  "id": 22,
+  "law": "muloiwa_2020_free_laws eq 16",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq16",
+  "latex": "\\mu=\\mu_{m a x}\\frac{S}{K_{S}+S}(1-\\frac{S}{S_{m}})^{n}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2*(1 - x2/Sm)**n/(KS + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 23,
+  "law": "muloiwa_2020_free_laws eq 17",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq17",
+  "latex": "\\mu=\\frac{\\mu_{max}S\\left(1+\\frac{S}{K_{i}}\\right)}{S+K_{s}+\\left(\\frac{S^{2}}{K_{i}}\\right)}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2*(1 + x2/Ki)/(Ks + x2 + x2**2/Ki)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 24,
+  "law": "muloiwa_2020_free_laws eq 3",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq3",
+  "latex": "\\mu=\\frac{\\mu_{max}S}{K_{s}+S}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(Ks + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 25,
+  "law": "muloiwa_2020_free_laws eq 4",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq4",
+  "latex": "\\mu=\\frac{\\mu_{max}XS}{K_{s}+S}",
+  "mapping": {
+   "mu": "r",
+   "X": "x1",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x1*x2/(Ks + x2)",
+  "status": "rejected: units",
+  "reason": "no unit for Ks makes the equation balance"
+ },
+ {
+  "id": 26,
+  "law": "muloiwa_2020_free_laws eq 5",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq5",
+  "latex": "\\mu=\\frac{\\mu_{max}S}{K_{s}}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/Ks",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 27,
+  "law": "muloiwa_2020_free_laws eq 6",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq6",
+  "latex": "\\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{S^{2}}{K_{i}}}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(Ks + x2 + x2**2/Ki)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 28,
+  "law": "muloiwa_2020_free_laws eq 7",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq7",
+  "latex": "\\mu=\\mu_{max}\\bigg(1-e^{-\\frac{S}{\\kappa_{T}}}\\bigg)",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*(1 - exp(-x2/kappaT))",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 29,
+  "law": "muloiwa_2020_free_laws eq 8",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq8",
+  "latex": "\\mu=\\frac{\\mu_{max}S^{n}}{K_{s}+S^{n}}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2**n/(Ks + x2**n)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 30,
+  "law": "muloiwa_2020_free_laws eq 9",
+  "iri": "http://example.org/kg/muloiwa_2020_free_laws/law/muloiwa_2020_eq9",
+  "latex": "\\mu=\\frac{\\mu_{max}S}{K_{s}X+S}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2",
+   "X": "x1"
+  },
+  "rate_law": "mumax*x2/(Ks*x1 + x2)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 31,
+  "law": "nausch_2023 eq 18",
+  "iri": "http://example.org/kg/nausch_2023/law/nausch_2023_eq18",
+  "latex": "\\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}",
+  "status": "translation rejected",
+  "reason": "the terms G and KG are added, but they differ: mass / length^3 vs substance / length^3; the terms G and KIG are added, but they differ: mass / length^3 vs substance / length^3; the terms F*KIF/((F + KF)*(F + KIF)) and G*KIG/((G + KG)*(G + KIG)) are added, but they differ: mass / substance vs dimensionless; the terms A and deltaA are added, but they differ: substance / length^3 vs mass / length^3"
+ },
+ {
+  "id": 32,
+  "law": "ng_2012 eq 6",
+  "iri": "http://example.org/kg/ng_2012/law/ng_2012_eq6",
+  "latex": "k_{m}=k_{\\max}\\left[S_{1}+\\left(1-S_{1}\\right)\\left(1-\\frac{q_{R}}{q_{\\max,R}}\\right)^{S_{2}}\\right],\\quad\\mathrm{w h e r e}0\\leq S_{1}\\leq1\\mathrm{a n d}S_{2}>0",
+  "status": "needs other variables",
+  "reason": "needs qR (sum of all the retained solute concentra)"
+ },
+ {
+  "id": 33,
+  "law": "nopens_2004 eq 4",
+  "iri": "http://example.org/kg/nopens_2004/law/nopens_2004_eq4",
+  "latex": "\\overline{G}=\\sqrt{\\frac{\\varepsilon}{\\nu}}",
+  "status": "needs other variables",
+  "reason": "needs varepsilon (Average turbulent energy dissipation rat)"
+ },
+ {
+  "id": 34,
+  "law": "nopens_2004 eq 6",
+  "iri": "http://example.org/kg/nopens_2004/law/nopens_2004_eq6",
+  "latex": "S(x)=Ax^{a}",
+  "status": "translation rejected",
+  "reason": "uses x, which is not one of the law's symbols in the graph"
+ },
+ {
+  "id": 35,
+  "law": "wang_2019 eq 12",
+  "iri": "http://example.org/kg/wang_2019/law/wang_2019_eq12",
+  "latex": "P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)",
+  "status": "needs other variables",
+  "reason": "needs Iavg (Instantaneous light intensity averaged o), Isat (Saturated light intensity in the photosy), XC (Total fixed organic carbon concentration), Xcd (Concentration of functional biomass (alg)"
+ },
+ {
+  "id": 36,
+  "law": "wang_2019 eq 16",
+  "iri": "http://example.org/kg/wang_2019/law/wang_2019_eq16",
+  "latex": "m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})",
+  "status": "needs other variables",
+  "reason": "needs IavgR (Average background light intensity over ), SNO3 (Concentration of nitrate as N in the rea)"
+ },
+ {
+  "id": 37,
+  "law": "wang_2019 eq 17",
+  "iri": "http://example.org/kg/wang_2019/law/wang_2019_eq17",
+  "latex": "\\nu_{\\mathrm{N}}=\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_0}}}",
+  "status": "needs other variables",
+  "reason": "needs SNO30 (Initial extracellular nitrate concentrat)"
+ },
+ {
+  "id": 38,
+  "law": "xing_2010 eq 7.1",
+  "iri": "http://example.org/kg/xing_2010/law/xing_2010_eq7.1",
+  "latex": "\\mu=\\mu_{\\max} \\frac{[GLC]}{K_{\\mathrm{glc}}+[GLC]}\\cdot\\frac{[GLN]}{K_{\\mathrm{g}\\ln}+[GLN]}\\cdot\\frac{\\mathrm{KI}_{\\mathrm{lac}}}{KI_{\\mathrm{lac}}+[LAC]} \\cdot\\frac{\\mathrm{KI}_{\\mathrm{amm}}}{KI_{\\mathrm{amm}}+[AMM]}",
+  "status": "needs other variables",
+  "reason": "needs AMM (ammonia concentration), GLN (Glutamine concentration), LAC (lactate concentration)"
+ },
+ {
+  "id": 39,
+  "law": "xing_2010 eq 7.2",
+  "iri": "http://example.org/kg/xing_2010/law/xing_2010_eq7.2",
+  "latex": "\\mu_{d}=k_{d} \\cdot\\frac{[LAC]}{KD_{\\mathrm{lac}}+[LAC]}\\cdot\\frac{[AMM]}{KD_{\\mathrm{amm}}+[AMM]}",
+  "status": "needs other variables",
+  "reason": "needs AMM (ammonia concentration), LAC (lactate concentration)"
+ },
+ {
+  "id": 40,
+  "law": "zentou_2019_andrews eq 5",
+  "iri": "http://example.org/kg/zentou_2019_andrews/law/zentou_2019_eq5",
+  "latex": "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S+\\left(\\frac{S^{2}}{K_{i}}\\right)}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(KS + x2 + x2**2/Ki)",
+  "status": "usable",
+  "reason": ""
+ },
+ {
+  "id": 41,
+  "law": "zentou_2019_monod eq 3",
+  "iri": "http://example.org/kg/zentou_2019_monod/law/zentou_2019_eq3",
+  "latex": "\\upmu=\\upmu_{m a x}\\frac{S}{K_{S}+S}",
+  "mapping": {
+   "mu": "r",
+   "S_": "x2"
+  },
+  "rate_law": "mumax*x2/(KS + x2)",
+  "status": "usable",
+  "reason": ""
+ }
+]

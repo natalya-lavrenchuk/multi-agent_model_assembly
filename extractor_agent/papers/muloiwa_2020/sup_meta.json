@@ -1,0 +1,308 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "muloiwa_2020_free_laws": {
+   "name": "free-floating laws (no Sup)",
+   "equations": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "description": "The paper compares models for bacterial growth in biological wastewater treatment, where microorganisms use dissolved or particulate organic matter as substrate. The models predict specific bacterial growth rate from substrate concentration, and in some cases biomass concentration, using 14 unstructured model families. Their rate expressions represent substrate limitation and, in several models, growth inhibition at high substrate concentrations; the paper reviews them rather than building one complete process model. The evidence comes from published experiments across different organisms, substrates and systems, including batch reactors, with biomass measured by dry weight or optical density. The authors compare reported fits mainly with R² and RMSE, and identify the Haldane model as the most frequently and successfully reported model, while noting that model performance varies with experimental and analytical practice.",
+   "facts": [
+    {
+     "topic": "scope",
+     "text": "The paper reviews 14 unstructured kinetic growth model families for describing specific bacterial growth rate.",
+     "quote": "This paper aims to review the performance of 14 unstructured kinetic growth models that are used to describe specific bacteria growth rate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "application",
+     "text": "The process context is biological wastewater treatment, where bacteria oxidize organic matter in wastewater into simpler products and new biomass.",
+     "quote": "In biological wastewater treatment process, bacteria are used to oxidise dissolved and particulate carbonaceous organic matter into simple end products.",
+     "basis": "stated"
+    },
+    {
+     "topic": "application",
+     "text": "The paper identifies substrate inhibition as a concern when high concentrations of toxic substrate hinder bacterial growth.",
+     "quote": "At high substrate concentration, nutrients inhibit the growth of bacteria due to toxic substrate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The reviewed laws are unstructured models that represent bacterial growth in relation to environmental substrate and, for some models, biomass concentration.",
+     "quote": "Unstructured kinetic growth models describe bacteria growth rate based on biomass and substrate concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "structure",
+     "text": "The paper presents specific-growth-rate laws rather than one integrated dynamic process model with a shared set of states.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "formulation",
+     "text": "The Monod model is presented in two forms, one based on substrate concentration alone and one based on substrate and biomass concentration.",
+     "quote": "The model can be defined in two forms: based on substrate concentration only, and based on both substrate and biomass concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The Monod model assumes that only one substrate limits growth in the bioreactor.",
+     "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor",
+     "basis": "stated"
+    },
+    {
+     "topic": "formulation",
+     "text": "The Contois model differs from substrate-only laws by making specific growth rate depend on both substrate and biomass concentration.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "formulation",
+     "text": "The Logistic model predicts growth from biomass concentration and maximum biomass rather than from substrate concentration.",
+     "quote": "The model is a substrate independent model, it describes kinetic growth based on biomass concentration only.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The paper states that parameters for all reviewed kinetic growth models were estimated using nonlinear least squares.",
+     "quote": "The parameter constants of all the kinetic growth models are estimated using nonlinear least of squares.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The review does not give a single overall parameter count or common parameter-uncertainty analysis for the different laws and studies.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "evaluation",
+     "text": "The review assesses reported model performance using coefficient of determination and root mean square error.",
+     "quote": "The performance review of the models were based on coefficient of determination ( R^{2} ). Another statistical measure of performance was root mean square error (RMSE).",
+     "basis": "stated"
+    },
+    {
+     "topic": "evaluation",
+     "text": "The paper notes that R² is disputed as a measure of goodness of fit and predictive error.",
+     "quote": "Ford, (2015) Statistical Research Consultant at the University of Virginia reported that R^{2} cannot be used as a measure of goodness to fit, predictive error, and cannot be used to compare models.",
+     "basis": "stated"
+    },
+    {
+     "topic": "evaluation",
+     "text": "The review compiles fit statistics from published studies rather than reporting a common independent validation exercise.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurement",
+     "text": "Calculating bacterial growth rate requires biomass measurements at different time intervals.",
+     "quote": "Eq. (2) requires the measurement of biomass concentration at different time intervals.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The paper identifies cell dry weight and optical density as common biomass measurement methods.",
+     "quote": "There are two common methods used to determine biomass concentration: Cell dry weight mass method and the Optical density (OD) method.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The general optical-density method measures absorbance at wavelengths from 540 to 600 nm and requires a calibration curve relating absorbance to cell dry weight.",
+     "quote": "The OD method measures the absorbance of the sample using a spectrophotometer at a wavelength between 540 - 600 nm. A calibration curve of absorbance and cell dry weight mass is required to relate absorbance with cell dry weight mass.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The paper warns that dry-weight measurements can include dead cells and non-cell solids and are time-consuming and labor-intensive.",
+     "quote": "The disadvantage of the cell dry weight mass method is interference from dead cells and non-cell solids. Further-more the method is time consuming and labour intense",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Optical-density measurements are described as quick and automatable, but susceptible to interference from non-cell solids.",
+     "quote": "The OD method has the advantage of its simplicity, quickness, and automation. The disadvantage of the OD method is the interference with non-cell solids.",
+     "basis": "stated"
+    },
+    {
+     "topic": "evidence",
+     "text": "The reviewed studies span different experimental systems, including batch reactors, continuous fermentation, microbial fuel cells, and suspended or immobilized biomass.",
+     "quote": "The model is capable of describing substrate inhibition effects at high substrate concentration in a continuous fermentation bioreactor",
+     "basis": "stated"
+    },
+    {
+     "topic": "evidence",
+     "text": "The paper reports that optical density at 600 nm was frequently used in the cited studies, while some studies used dry weight or other optical-density wavelengths.",
+     "quote": "The OD at 600 nm was used to measure the bacteria growth rates.",
+     "basis": "stated"
+    },
+    {
+     "topic": "origins",
+     "text": "The paper traces the Monod, Blackman, Haldane, Teissier, Moser, and Contois model families to Monod (1949), Blackman (1905), Haldane (1965), Teissier (1942), Moser (1958), and Contois (1959), respectively.",
+     "quote": "One of the earliest kinetic growth models used to describe specific growth rate is the Monod model (Monod, 1942).",
+     "basis": "stated"
+    },
+    {
+     "topic": "origins",
+     "text": "The paper traces the Logarithmic, Aiba-Edwards, Han and Levenspiel, Powell, Logistic, Luong, Webb, and Yano and Koga models to Westerhoff et al. (1982), Aiba et al. (1968), Han and Levenspiel (1988), Powell (1967), Verhulst (1838), Luong (1987), Webb (1963), and Yano and Koga (1969).",
+     "quote": "The logarithmic model was introduced by Westerhoff et al., (1982).",
+     "basis": "stated"
+    },
+    {
+     "topic": "monod",
+     "text": "The paper says the Monod model does not represent substrate inhibition, maintenance during the death phase, or lag and death phases.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "monod",
+     "text": "Reported Monod fits were poor for phenol degradation by mixed culture in Hamitouche et al. (2012), with R² of 52%, and atrazine biodegradation in Debasmita and Rajasimman (2013), with R² of 30.4%.",
+     "quote": "Hamitouche et al., (2012) reported a poor fit on biodegradation of phenol by mixed culture in a batch reactor. The growth rates were measured using Optical density (OD) at 600 nm to describe the specific growth rates. The model produced  R^{2} 52%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "monod",
+     "text": "The paper describes the Monod model as widely used despite its limitations.",
+     "quote": "Despite the poor fit of the Monod model on the literature mentioned above, the model still remains the most widely used to describe specific growth rate and substrate utilization rate",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The paper characterizes the Haldane model as an extension of Monod that adds an inhibition constant to represent growth inhibition at high substrate concentration.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Haldane model is said to represent lag, exponential, stationary, and death phases.",
+     "quote": "The advantage of the Haldane model is that it is capable of describing all growth phases: lag, exponential, stationary, and death phase",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "Haldane fits reported in the review include R² of 98.6% for cyanide degradation in Wu et al. (2018) and RMSE of 0.0067 for phenol biodegradation in Dey and Mukherjee (2010).",
+     "quote": "Wu et al., (2018) reported a satisfactory fit on kinetics and electro genesis change during cyanide degradation in a microbial fuel cell. The OD at 600 nm was used to measure the bacteria growth rates. The Haldane model produced  R^{2}  of 98.6%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Haldane model had a poor reported fit for cutinase-producing Pseudomonas cepacia in Dutta et al. (2015), with R² of 57%.",
+     "quote": "Dutta et al., (2015) reported a poor fit on growth kinetics for Cutinase producing Pseudomonas Cepacia using tomato-peel extracted cutin. The OD at 600 nm was used to measure the bacteria growth rates. The Haldane model produced  R^{2} 57%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "noninhibitory",
+     "text": "The paper says Teissier does not represent cell-growth inhibition and reports poor fits for lead, cadmium, caffeine, and atrazine studies.",
+     "quote": "Although the Teissier model was able to fit experimental data on phenol, ethanol, and ammonium, it struggled with fitting data on substrate that exhibits cell inhibition such as lead, cadmium, caffeine, and atrazine.",
+     "basis": "stated"
+    },
+    {
+     "topic": "noninhibitory",
+     "text": "The Moser model adds an adjustable exponent to the Monod form and is described as capable of representing lag but not death.",
+     "quote": "Unlike the Monod model, and Contois model, the Moser model is capable of describing the lag phase when substrate concentration is high (Kong, 2017). The Moser model cannot describe the death phase.",
+     "basis": "stated"
+    },
+    {
+     "topic": "noninhibitory",
+     "text": "The paper reports that the Blackman model performed poorly in Mahanta et al. (2014), with R² of 43.3%.",
+     "quote": "Mahanta et al., (2014) reported results on the comparison between Blackman, Monod, Powell, and Moser models. In the study the Blackman model was the only model that did not fit the experimental data with a reported  R^{2}  of 43.3%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Aiba-Edwards model adds an inhibition term to a Monod-type response, but the paper notes that performance varies across studies.",
+     "quote": "Although the model has been reported to struggle with describing critical values of inhibitory substrate, it has been applied by a number of authors with success",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "For phenol degradation, the Aiba-Edwards model gave R² of 78.6% in Mohanty et al. (2018), whereas Dey and Mukherjee (2010) reported RMSE of 0.0078.",
+     "quote": "Contrary to reported results by Dey and Mukherjee (2010) on phenol degradation, Mohanty et al., (2018) reported a poor fit on phenol degradation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Yano and Koga model is described as accounting for substrate inhibition at high concentrations and is reported to fit atrazine poorly in Debasmita and Rajasimman (2013), with R² of 38%.",
+     "quote": "The only author who reported a poor fit was Debasmita and Rajasimman (2013), who reported a poor fit on biodegradation of Atrazine using mixed microorganisms.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Han and Levenspiel model represents inhibition from substrate, cells, or products and uses a critical inhibitor concentration at which growth slows or ceases.",
+     "quote": "The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached.",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Luong model is described as predicting complete growth inhibition above a critical substrate concentration.",
+     "quote": "The new term is used to describe complete growth inhibition above a critical substrate concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "inhibition",
+     "text": "The Webb model modifies the Haldane model, but Dey and Mukherjee (2010) reported that the modification did not substantially improve it.",
+     "quote": "Although the aim of the Webb model was to improve to Haldane model, Dey and Mukherjee (2010) reported that it did not improve much.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "The Logarithmic model is reported to potentially predict negative growth at low substrate concentration and to overestimate growth.",
+     "quote": "The model has a reputation of over estimating cell growth, and if the substrate concentration is low, it can produce negative growth rate",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "The paper cautions that data collection, analysis, environmental conditions, and measurement accuracy can affect the apparent performance of each model.",
+     "quote": "The collection of data, analysing of data, and environmental conditions will have an impact on the performance of each kinetic growth model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The paper says kinetic growth models can assist engineers in designing and controlling biological processes.",
+     "quote": "Kinetic growth models are useful because they assist engineers to design and control biological processes",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors identify Haldane as the most notable model because it was frequently reported to fit different substrate types successfully.",
+     "quote": "The most notable model the performed well was the Haldane model. The model was the most reported model in the literature with success on different types of substrate.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The paper concludes that reported results depend in part on experimental cultivation systems and the selection and sensitivity of analytical methods.",
+     "quote": "In experimental work, data is sometimes not accurate and this could be attributed primarily to the experimental cultivation systems used to collect the data, and poor selection and sensitivity of analytical methods for measuring biomass and substrate concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not identify a code repository or provide a new common dataset for the compared laws.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [],
+   "inputs": [
+    "S",
+    "X",
+    "s"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 45 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

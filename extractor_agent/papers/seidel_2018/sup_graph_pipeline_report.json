@@ -1,0 +1,263 @@
+{
+ "sups": [
+  {
+   "sup": "seidel_2018_detailed_kinetic_model",
+   "summary": {
+    "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+    "source": "paddle.json (PaddleOCR-VL pipeline)",
+    "laws": 10,
+    "variable_nodes": 42,
+    "parameter_nodes": 18,
+    "distinct_symbols": 32,
+    "computes_edges": 10,
+    "uses_edges": 32,
+    "hasParameter_edges": 18,
+    "laws_by_form": {
+     "algebraic": 10
+    },
+    "laws_flagged": [],
+    "classification": "symbols.json (LLM)",
+    "parameter_symbols": [
+     "A",
+     "B",
+     "K_{A3}",
+     "K_{B5}",
+     "K_{B8}",
+     "K_{B9}",
+     "K_{CH_3OH}^{*}",
+     "K_{CH_3OH}^{\\odot}",
+     "K_{CO_2}",
+     "K_{CO}",
+     "K_{H_2O}",
+     "K_{H_2}",
+     "T_{ref}",
+     "k_{1}",
+     "k_{2}",
+     "k_{3}"
+    ],
+    "for_review": [],
+    "triples": 1239
+   },
+   "flags": [
+    {
+     "symbol": "k_{i}",
+     "check": "computed, never used",
+     "laws": [
+      10
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO_2}",
+     "check": "computed, never used",
+     "laws": [
+      "C-5"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO}",
+     "check": "computed, never used",
+     "laws": [
+      4
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{RWGS}",
+     "check": "computed, never used",
+     "laws": [
+      "C-6"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    }
+   ],
+   "schema_problems": []
+  },
+  {
+   "sup": "seidel_2018_simplified_kinetic_model_steady_state",
+   "summary": {
+    "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+    "source": "paddle.json (PaddleOCR-VL pipeline)",
+    "laws": 14,
+    "variable_nodes": 60,
+    "parameter_nodes": 21,
+    "distinct_symbols": 38,
+    "computes_edges": 13,
+    "uses_edges": 47,
+    "hasParameter_edges": 21,
+    "laws_by_form": {
+     "algebraic": 14
+    },
+    "laws_flagged": [
+     23
+    ],
+    "classification": "symbols.json (LLM)",
+    "parameter_symbols": [
+     "A",
+     "B",
+     "K_{CH_3OH}^{*}",
+     "K_{CH_3OH}^{\\odot}",
+     "K_{CO_2}^{*}",
+     "K_{CO_2}^{\\odot}",
+     "K_{CO}",
+     "K_{H_2O}",
+     "K_{H_2}",
+     "K_{O}",
+     "R",
+     "T_{ref}",
+     "\\Delta G_{1}",
+     "\\Delta G_{2}",
+     "k_{1}",
+     "k_{2}",
+     "k_{3}"
+    ],
+    "for_review": [],
+    "triples": 1559
+   },
+   "flags": [
+    {
+     "law": 23,
+     "check": "computes undecided",
+     "detail": "left side has 2 symbols ['\\\\gamma^{*}', '\\\\gamma_{0}']: which one this law computes needs another law, so no computes edge"
+    },
+    {
+     "symbol": "k_{i}",
+     "check": "computed, never used",
+     "laws": [
+      10
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO_2}",
+     "check": "computed, never used",
+     "laws": [
+      "C-12"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO}",
+     "check": "computed, never used",
+     "laws": [
+      "C-11"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{RWGS}",
+     "check": "computed, never used",
+     "laws": [
+      "C-13"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    }
+   ],
+   "schema_problems": [
+    "seidel_2018_simplified_kinetic_model_steady_state/law/seidel_2018_eq23: computes 0 variables (schema: exactly 1)"
+   ]
+  },
+  {
+   "sup": "seidel_2018_simplified_kinetic_model_dynamic",
+   "summary": {
+    "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+    "source": "paddle.json (PaddleOCR-VL pipeline)",
+    "laws": 14,
+    "variable_nodes": 60,
+    "parameter_nodes": 26,
+    "distinct_symbols": 47,
+    "computes_edges": 14,
+    "uses_edges": 46,
+    "hasParameter_edges": 26,
+    "laws_by_form": {
+     "ODE": 2,
+     "algebraic": 12
+    },
+    "laws_flagged": [
+     33
+    ],
+    "classification": "symbols.json (LLM)",
+    "parameter_symbols": [
+     "A",
+     "B",
+     "K",
+     "K_{CH_3OH}^{*}",
+     "K_{CH_3OH}^{\\odot}",
+     "K_{CO_2}^{*}",
+     "K_{CO_2}^{\\odot}",
+     "K_{CO}",
+     "K_{H_2O}",
+     "K_{H_2}",
+     "K_{O}",
+     "R",
+     "T_{ref}",
+     "Z",
+     "\\Delta G_{1}",
+     "\\Delta G_{2}",
+     "\\nu_{ij}",
+     "k_{1}",
+     "k_{2}",
+     "k_{3}"
+    ],
+    "for_review": [],
+    "triples": 1655
+   },
+   "flags": [
+    {
+     "law": 33,
+     "check": "reading",
+     "detail": "\\dot{y}_{i} on the left read as d/dt"
+    },
+    {
+     "law": 33,
+     "check": "reading",
+     "detail": "\\sum over i=1..N_{K}: index and limits not read as symbols"
+    },
+    {
+     "law": 33,
+     "check": "reading",
+     "detail": "\\sum over j=1..N_{R}: index and limits not read as symbols"
+    },
+    {
+     "law": 33,
+     "check": "reading",
+     "detail": "\\sum over j=1..N_{R}: index and limits not read as symbols"
+    },
+    {
+     "symbol": "k_{i}",
+     "check": "computed, never used",
+     "laws": [
+      10
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO_2}",
+     "check": "computed, never used",
+     "laws": [
+      "C-12"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{CO}",
+     "check": "computed, never used",
+     "laws": [
+      "C-11"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    },
+    {
+     "symbol": "r_{RWGS}",
+     "check": "computed, never used",
+     "laws": [
+      "C-13"
+     ],
+     "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+    }
+   ],
+   "schema_problems": []
+  }
+ ]
+}

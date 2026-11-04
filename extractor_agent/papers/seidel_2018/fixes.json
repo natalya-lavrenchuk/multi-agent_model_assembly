@@ -1,0 +1,113 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "7": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-1} $$",
+   "corrected_latex": null,
+   "reason": "The equation as provided already has the complete outer exponent \\(-1\\), so the flagged missing-exponent issue is not present.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "9": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}{K_{\\mathrm{B}5}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{16}}\\frac{p_{\\mathrm{CH}_{3}\\mathrm{OH}}}{p_{\\mathrm{H}_{2}}^{1/2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{14}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{15}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}^{1/2}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{12}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-1} $$",
+   "corrected_latex": null,
+   "reason": "The equation as provided has single plus signs between terms and the complete outer exponent \\(-1\\), so the flagged formatting problems are not present.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "22": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\phi=\\frac{1}{2}\\left(1-\\frac{\\gamma^{*}}{\\gamma_{0}}\\right)-0.1 $$",
+   "corrected_latex": null,
+   "reason": "The printed equation already includes the \\(-0.1\\) correction that the corrigendum says was used to cap the reduced-site fraction.",
+   "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "28": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(0.9-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(0.9-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*} $$",
+   "corrected_latex": null,
+   "reason": "The equation already uses \\((0.9-\\phi)\\) in both terms, as the corrigendum specifies for the dynamic case.",
+   "quote": "In the dynamic case this is ensured by replacing two times the factor \\((1-\\phi)\\) in Eq. (28) of Seidel et al., (2018) by the factor \\((0.9-\\phi)\\).",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "C-16": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-1} $$",
+   "corrected_latex": null,
+   "reason": "The equation as provided already has the complete outer exponent \\(-1\\), so the flagged missing-exponent issue is not present.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ },
+ "misreads": {
+  "7": {
+   "printed_latex": "$$ \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-} $$",
+   "corrected_latex": "$$ \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-1} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 7 was numbered 13: the number (7) sits below its formula, and the right column (13) was on the same line; eq 7: exponent -1 read as -; checked against the PDF",
+   "basis": "human",
+   "note": "The OCR dropped the 1 in the exponent −1."
+  },
+  "9": {
+   "printed_latex": "$$ \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}{K_{\\mathrm{B}5}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{16}}\\frac{p_{\\mathrm{CH}_{3}\\mathrm{OH}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{14}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}++\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{15}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{12}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-} $$",
+   "corrected_latex": "$$ \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}{K_{\\mathrm{B}5}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{16}}\\frac{p_{\\mathrm{CH}_{3}\\mathrm{OH}}}{p_{\\mathrm{H}_{2}}^{1/2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{14}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{15}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}^{1/2}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{12}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-1} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 9: ++ read for +, exponent -1 read as -, and ^{1/2} placed on the fraction instead of the denominator (twice); checked against the PDF",
+   "basis": "human",
+   "note": "The OCR read + as ++, dropped the 1 in the exponent −1, and put the ½ power on the wrong term."
+  },
+  "C-16": {
+   "printed_latex": "$$ \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-} $$",
+   "corrected_latex": "$$ \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-1} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq C-16: exponent -1 read as -; checked against the PDF",
+   "basis": "human",
+   "note": "The OCR dropped the 1 in the exponent −1."
+  },
+  "15": {
+   "printed_latex": "$$ \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-} $$",
+   "corrected_latex": "$$ \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 15: exponent -1 (OCR dropped the 1), checked against the PDF",
+   "basis": "human",
+   "note": "The OCR dropped the 1 in the exponent −1."
+  },
+  "C-12": {
+   "printed_latex": "$$ r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}} $$",
+   "corrected_latex": "$$ r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq C-12: p_CH3OH and p_H2O were merged into one subscript (brace misplaced); denominator kept as read",
+   "basis": "human",
+   "note": "The OCR merged p_CH3OH and p_H2O into one symbol."
+  },
+  "C-13": {
+   "printed_latex": "$$ r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}0}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot} $$",
+   "corrected_latex": "$$ r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq C-13: H_2 0 (zero) -> H_2O",
+   "basis": "human",
+   "note": "The OCR read H₂O as H₂0 (zero)."
+  },
+  "23": {
+   "printed_latex": "$$ \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}}\\mathrm{O}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}}\\mathrm{O}p_{\\mathrm{C O}_{2}}}}}. $$",
+   "corrected_latex": "$$ \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}. $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 23: p_H2 O -> p_H2O (2 places; brace misplaced, checked against the PDF)",
+   "basis": "human",
+   "note": "The OCR split p_H2O into p_H2 times O."
+  },
+  "C-5": {
+   "printed_latex": "$$ r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}}k p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes} $$",
+   "corrected_latex": "$$ r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq C-5: stray \"}k\" removed: numerator p_CH3OH p_H2O (checked against the PDF)",
+   "basis": "human",
+   "note": "The OCR added a stray \"k\" between p_CH3OH and p_H2O."
+  }
+ }
+}

@@ -1,0 +1,173 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1978,
+  "completion_tokens": 3330,
+  "total_tokens": 5308,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1975,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2144,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 2. Estimation of Nucleation Kinetics from Metastable Zone Experiments; 3. Experimental and Theoretical Assessment of the Approaches\n\nText and equations in reading order:\n    yet simple, model for the crystallization process by considering the first four moment equations and the mass balance equation,\n(11.1) \\dot{\\mu}_{0} = B    [code: ODE, computes \\mu_{0}, code proposes balance]\n(11.2) \\dot{\\mu}_{1} = G\\mu_{0}+Br_{0}    [code: ODE, computes \\mu_{1}, code proposes balance]\n(11.3) \\dot{\\mu}_{2} = 2G\\mu_{1}+Br_{0}^{~2}    [code: ODE, computes \\mu_{2}, code proposes balance]\n(11.4) \\dot{\\mu}_{3} = 3G\\mu_{2}+Br_{0}^{~3}    [code: ODE, computes \\mu_{3}, code proposes balance]\n(11.5) \\dot{C} = -\\rho_{c}k_{v}(3G\\mu_{2}+Br_{0}^{~3})    [code: ODE, computes C, code proposes balance]\n    where C is the solution concentration expressed in mass of crystal per unit mass of solvent, and $ r_{0} $ is the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\n(12) G=k_{g}\\Delta C^{g}    [code: algebraic, computes G, code proposes constitutive]\n(13) B=k_{b}\\Delta C^{b}    [code: algebraic, computes B, code proposes constitutive]\n    where B is the same nucleation rate as in eq 1 defined on a number basis.\n    The model system studied is the cooling crystallization of paracetamol (PCM) from water. The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by, $ ^{28} $\n(21) C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066    [code: algebraic, computes C^{*}, code proposes constitutive]\n    Paracetamol (4-acetamidophenol, Aldrich) and degassed, deionized water were used to prepare the solutions, and the experiments were conducted in a 500 mL jacketed round-bottom flask. The solution was agitated by a magnetic stirrer. The Lasentec FBRM was used to detect the metastable limit $ ^{28} $ and to measure the chord length distribution (CLD) of the solid phase, which was used to estimate the particle size distribution. The in situ solution concentration was measured using ATR-FTIR spectroscopy as described previously. $ ^{28} $ For comparison, the nucleation points were also detected us...\n\nSymbols:\n  \\mu_{0}: Zeroth moment of the crystal size distribution. (computed)\n  B: Primary number nucleation rate. (computed)\n  \\mu_{1}: First moment of the crystal size distribution. (computed)\n  G: Growth rate. (computed)\n  r_{0}: Crystal size at nucleation. (parameter)\n  \\mu_{2}: Second moment of the crystal size distribution. (computed)\n  \\mu_{3}: Third moment of the crystal size distribution. (computed)\n  C: Solution concentration expressed in mass of crystal per unit mass of solvent. [g/g water] (computed)\n  \\rho_{c}: Mass density of the crystal. (parameter)\n  k_{v}: Volumetric shape factor. [-] (parameter)\n  k_{g}: Kinetic constant for growth rate. (parameter)\n  \\Delta C: Concentration difference driving the nucleation and growth rates. [g PCM/g water] (variable)\n  g: Kinetic parameter (exponent) for growth. [-] (parameter)\n  k_{b}: Kinetic constant for number nucleation rate. (parameter)\n  b: Kinetic parameter (exponent) for nucleation. [-] (parameter)\n  C^{*}: Equilibrium concentration of the solute. [g PCM/g water] (computed)\n  T: Temperature. [K] (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 11.1, 11.2, 11.3, 11.4, 11.5, 12, 13, 21",
+ "answer": {
+  "laws": [
+   {
+    "eq": "11.1",
+    "description": "The zeroth moment of the crystal size distribution increases at the primary nucleation rate.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It is a population moment balance in which nucleation generates new crystals.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{0}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.2",
+    "description": "The first moment of the crystal size distribution changes through crystal growth and the birth of crystals at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It is a population moment balance with contributions from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{1}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.3",
+    "description": "The second moment of the crystal size distribution changes through growth and nucleation at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It is a population moment balance with contributions from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{2}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.4",
+    "description": "The third moment of the crystal size distribution changes through growth and nucleation at size r0.",
+    "description_basis": "stated",
+    "quote": "first four moment equations",
+    "law_type": "balance",
+    "law_type_reason": "It is a population moment balance with contributions from growth and nucleation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "\\mu_{3}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11.5",
+    "description": "The solution concentration decreases according to the rate at which crystal mass accumulates.",
+    "description_basis": "stated",
+    "quote": "mass balance equation",
+    "law_type": "balance",
+    "law_type_reason": "It balances solution concentration against the formation of crystal mass.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "C"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "The crystal growth rate follows a power law in the concentration difference.",
+    "description_basis": "stated",
+    "quote": "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic relation for the growth rate that a rival model could replace.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "growth rate",
+      "symbol": "G"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{g}"
+     },
+     {
+      "role": "driving force",
+      "symbol": "\\Delta C"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "The primary number nucleation rate follows a power law in the concentration difference.",
+    "description_basis": "stated",
+    "quote": "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a kinetic relation for the primary nucleation rate that a rival model could replace.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "nucleation rate",
+      "symbol": "B"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{b}"
+     },
+     {
+      "role": "driving force",
+      "symbol": "\\Delta C"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "21",
+    "description": "The equilibrium concentration of paracetamol in water is correlated with temperature.",
+    "description_basis": "stated",
+    "quote": "The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by,",
+    "law_type": "constitutive",
+    "law_type_reason": "It is an empirical temperature-dependent solubility correlation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium concentration",
+      "symbol": "C^{*}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

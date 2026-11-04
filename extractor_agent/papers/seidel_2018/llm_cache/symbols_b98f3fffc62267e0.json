@@ -1,0 +1,86 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.298369334,
+  "prompt_tokens": 1630,
+  "prompt_time": 0.09042939,
+  "completion_tokens": 7830,
+  "completion_time": 16.365761825,
+  "total_tokens": 9460,
+  "total_time": 16.456191215,
+  "completion_tokens_details": {
+   "reasoning_tokens": 7320
+  }
+ },
+ "user": "Equations:\n(25) K_{2}=\\frac{k_{2}^{+}}{k_{2}^{-}}=\\exp\\left(\\frac{-\\Delta G_{2}}{RT}\\right)      <- \"en et al., 1994; Wulff, 1901). The equilibrium constants $ K_{1} $ and $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\"\n(28) \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(1-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(1-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*}      <- \"ons (Vesborg et al., 2009; Wilmer and Hinrichsen, 2002). Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation\"\n\nSymbols:\n\n\\Delta G_{2}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\ny_{H_2}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a\n\ny_{H_2O}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\ny_{CO}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a\n\ny_{CO_2}   [NOT COMPUTED]\n  [195] (sentence, p.5) In addition to the comprehensive set of steady state experiments, dynamic experiments with step changes between CO feed ( $ y_{CO} = 12.6\\% $,  $ y_{H_2} = 72.2\\% $ and  $ y_{N_2} = 16.0\\% $), and  $ CO_2 $ feed ( $ y_{CO_2} = 11.9\\% $,  $ y_{H_2} = 71.5\\% $ a",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\Delta G_{2}",
+    "description": "standard Gibbs free energy change for reaction 2",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "J mol^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "ΔG_2 is a thermodynamic constant used to compute the equilibrium constant K2, not measured or varied in experiments",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{H_2}",
+    "description": "hydrogen mole fraction in the feed gas",
+    "description_basis": "stated",
+    "snippet_id": 195,
+    "quote": "y_{H_2} = 72.2%",
+    "unit": "%",
+    "unit_basis": "stated",
+    "value": "72.2% (CO feed) / 71.5% (CO2 feed)",
+    "class_reason": "y_{H_2} is a feed gas composition (mole fraction) set by the operator for each experiment",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "y_{H_2O}",
+    "description": "water mole fraction in the gas phase",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "y_{H_2O} is the water mole fraction in the gas phase, a process variable that changes during reaction",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "y_{CO}",
+    "description": "carbon monoxide mole fraction in the feed gas",
+    "description_basis": "stated",
+    "snippet_id": 195,
+    "quote": "y_{CO} = 12.6%",
+    "unit": "%",
+    "unit_basis": "stated",
+    "value": "12.6% (CO feed)",
+    "class_reason": "y_{CO} is a feed gas composition (mole fraction) set by the operator for each experiment",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "y_{CO_2}",
+    "description": "carbon dioxide mole fraction in the feed gas",
+    "description_basis": "stated",
+    "snippet_id": 195,
+    "quote": "y_{CO_2} = 11.9%",
+    "unit": "%",
+    "unit_basis": "stated",
+    "value": "11.9% (CO2 feed)",
+    "class_reason": "y_{CO_2} is a feed gas composition (mole fraction) set by the operator for each experiment",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

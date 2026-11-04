@@ -1,0 +1,71 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "2": {
+   "action": "correct",
+   "printed_latex": "$$ \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx\\end{aligned} $$",
+   "corrected_latex": "$$ \\begin{aligned}h(x,t)_{agg}=&\\frac{1}{2}\\int\\limits_{0}^{x}\\alpha\\beta(x-x^{\\prime},x^{\\prime})n(x-x^{\\prime},t)n(x^{\\prime},t)dx^{\\prime}\\\\&-n(x,t)\\int\\limits_{0}^{\\infty}\\alpha\\beta(x,x^{\\prime})n(x^{\\prime},t)dx^{\\prime}\\end{aligned} $$",
+   "reason": "Both integrals are over x′, so the printed dx in each is a differential-variable typo and must be dx′.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "3": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left({x^{\\prime}}^{1/3}+(x-x^{\\prime})^{1/3}\\right)^{3} $$",
+   "corrected_latex": null,
+   "reason": "The equation already has cube-root powers, with exponent 1/3 on both x′ and x−x′, so the flag is a notation-reading issue.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "5": {
+   "action": "correct",
+   "printed_latex": "$$ \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\Gamma(x,x^{\\prime})\\end{aligned} $$",
+   "corrected_latex": "$$ \\begin{aligned}h(x,t)_{break}&=\\int\\limits_{x}^{\\infty}n(x^{\\prime},t)S(x^{\\prime})\\Gamma(x^{\\prime}-x,x)dx^{\\prime}\\\\&-n(x,t)S(x)\\end{aligned} $$",
+   "reason": "The loss term is the disappearance of a parent floc at rate n(x,t)S(x), so the daughter-distribution factor Γ does not belong there.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "6": {
+   "action": "keep as printed",
+   "printed_latex": "$$ S(x)=Ax^{a} $$",
+   "corrected_latex": null,
+   "reason": "The dimensional inconsistency is in the stated units for A, not in the printed breakage-rate equation.",
+   "quote": "“where a is a constant (=1/3) and A the breakage rate coefficient (cm⁻³s⁻¹).”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "7": {
+   "action": "keep as printed",
+   "printed_latex": "$$ D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{4}}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{3}} $$",
+   "corrected_latex": null,
+   "reason": "ΔF_N(x_i) denotes the number fraction at size class i; the flag concerns notation, not the moment formula.",
+   "quote": "“where x_i represents the diameter of size class i (μm) and ΔF_N(x)_i the number fraction in size class i.”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  }
+ },
+ "misreads": {
+  "3": {
+   "printed_latex": "$$ \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left(x^{\\prime/3}+(x-x^{\\prime})^{\\prime/3}\\right)^{3} $$",
+   "corrected_latex": "$$ \\beta(x-x^{\\prime},x)=0.31\\overline{G}\\left({x^{\\prime}}^{1/3}+(x-x^{\\prime})^{1/3}\\right)^{3} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 3: stylised 1/3 exponents read as prime/3; checked against the PDF",
+   "basis": "human",
+   "note": "The OCR read the 1/3 exponents as primes."
+  },
+  "7": {
+   "printed_latex": "$$ D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{4})}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i},x_{i}^{3})} $$",
+   "corrected_latex": "$$ D[4,3]=\\frac{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{4}}{\\sum_{i=1}^{n}\\Delta F_{N}(x_{i})x_{i}^{3}} $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 7: Delta F_N(x)_i x_i^4 garbled into two arguments; checked against the PDF",
+   "basis": "human",
+   "note": "The OCR turned ΔF_N(x_i)·x_i^4 into a function with two arguments."
+  }
+ }
+}

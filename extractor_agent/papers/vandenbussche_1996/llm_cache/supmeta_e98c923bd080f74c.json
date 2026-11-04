@@ -1,0 +1,49 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1759,
+  "completion_tokens": 902,
+  "total_tokens": 2661,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1756,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 413,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: A Steady-State Kinetic Model for Methanol Synthesis and the Water Gas Shift Reaction on a Commercial Cu/ZnO/ $ Al_{2}O_{3} $ Catalyst\n\nAbstract: A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst. Experimental data, obtained in a bench scale setup, operating between 180 and 280°C and at pressures up to 51 bar, are subsequently used for the estimation of the parameters in the proposed model. The result is a mechanically sound kinetic model, comprising a set of statistically significant and physically meaningful parameter groups. It accurately predicts the experimentally obtained conversions, even upon extrapolation outside the originally applied experimental window. Using this model, the influence of inlet temperature, pressure, and the ratio of  $ p_{CO} $ and  $ p_{CO_2} $ are briefly illustrated. © 1996 Academic Press, Inc.\n\nSentences about the process and the data:\n- A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/A\n- Experimental data, obtained in a bench scale setup, operating between 180 and 280°C and at pressures up to 51 bar, are subsequently used for the estimation of the parameters in the proposed model.\n- It accurately predicts the experimentally obtained conversions, even upon extrapolation outside the originally applied experimental window.\n- in which $f_{i}$ denotes the fugacity of component $i$ and $A$, $B$, $C$, and $D$ are estimated constants.\n- Bakemeier et al. (2) noted an important discrepancy between their experimental observations on  $ \\mathrm{ZnO/Cr_{2}O_{3}} $ and Natta's predictions, particularly in the case of  $ \\mathrm{CO}_{2} $ rich feeds.\n- whereby A, E, m, n, D, and F were determined from experimental data.\n- Experimental variation of the  $ p_{CO}/p_{CO_2} $ ratio, at a fixed total pressure and hydrogen concentration revealed a maximum in the synthesis rate.\n- Despite the much larger number of parameters in the resulting model, the latter authors did not manage to show a significantly better agreement between the experimental and the simulated results than that already obtained by Klier et al. (5\n- Malinovskaya et al. (11) compared a number of these models using own experimental data and selected the following set of equations, originally presented by Mochalin et al. (12):\n- EXPERIMENTAL\n- Figure 1 presents a schematic view of the bench scale setup that was used for the acquisition of the kinetic data.\n- Schematic view of the bench scale reactor system used in the kinetic data acquisition.\n- The use of pure  $ CO_{2} $ ensures flexibility in the choice of the feed composition, but also sets an upper limit for the operating pressure, since  $ CO_{2} $ condenses at 54 bar at ambient temperature.\n- The stainless steel reactor was of the tubular type, with an internal diameter of 15.8 mm and a length of 150 mm, withstanding temperatures up to 400°C and pressures of 100 bar, governed by a membrane back pressure controller.\n- The reactor was divided into three heating zones, each with its own PID temperature controller (Shinho MCS), facilitating isothermal operation.\n- The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor.\n- The TC are linked to a PC, enabling a continuous and on line registration of the temperature profile.\n- The experiments involved a commercial ICI 51-2 Cu/ZnO/Al₂O₃ catalyst, ground into 0.125- to 0.25-mm or 0.3- to 0.7-mm particles.\n\nModel: Cu/ZnO/Al₂O₃ methanol synthesis and RWGS model\nLaws:\n(p5-5) [constitutive] Temperature correlation for the thermodynamic equilibrium constant K₁*.\n(p5-6) [constitutive] Temperature correlation for the thermodynamic equilibrium constant K₃*.\n(p5-8) [constitutive] Temperature-adjustment relation for the reparameterized quantity κ(i).\n(3.1) [constitutive] Methanol-synthesis rate law with a reaction-quotient driving force and adsorption terms in the denominator.\n(3.2) [constitutive] Reverse water-gas-shift rate law with a reaction-equilibrium driving force and adsorption terms in the denominator.\n\nStates (computed by the ODEs):\n\n\nInputs (variables no law computes):\n- T: Temperature used in the model equations and operating conditions.\n- p_{CO_2}: Carbon dioxide partial pressure.\n- p_{H_2}: Hydrogen partial pressure.\n- p_{H_2O}: Water partial pressure.\n- p_{CH_3OH}: Methanol partial pressure.\n- p_{CO}: Partial pressure of carbon monoxide.\n\nModel-wide assumptions:\n- CO₂ is the main source of carbon in methanol.\n- The concentrations of the different surface intermediates are in pseudo-steady state.",
+ "answer": {
+  "system": {
+   "value": "Methanol synthesis and reverse water-gas shift on a commercial Cu/ZnO/Al₂O₃ catalyst",
+   "quote": "A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst."
+  },
+  "unit_operation": {
+   "value": "Tubular reactor",
+   "quote": "The stainless steel reactor was of the tubular type, with an internal diameter of 15.8 mm and a length of 150 mm, withstanding temperatures up to 400°C and pressures of 100 bar, governed by a membrane back pressure controller."
+  },
+  "operating_mode": {
+   "value": [
+    "steady state"
+   ],
+   "quote": "A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst.",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Experimental data from a bench-scale setup, at 180–280°C and pressures up to 51 bar",
+   "quote": "Experimental data, obtained in a bench scale setup, operating between 180 and 280°C and at pressures up to 51 bar, are subsequently used for the estimation of the parameters in the proposed model."
+  },
+  "phenomena": [
+   "Methanol synthesis kinetics with reaction-equilibrium driving force and adsorption effects",
+   "Reverse water-gas shift kinetics with reaction-equilibrium driving force and adsorption effects",
+   "Temperature dependence of thermodynamic equilibrium constants",
+   "Temperature dependence of the reparameterized kinetic quantity"
+  ],
+  "description": "The model describes methanol synthesis and reverse water-gas shift on commercial Cu/ZnO/Al₂O₃ catalyst in a tubular bench-scale reactor. It predicts reaction rates and conversions using steady-state kinetic laws with equilibrium driving forces, adsorption terms, and temperature-dependent parameters; surface intermediates are assumed to be in pseudo-steady state."
+ }
+}

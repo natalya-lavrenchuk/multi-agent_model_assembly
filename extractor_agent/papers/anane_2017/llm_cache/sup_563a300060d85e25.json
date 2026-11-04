@@ -1,0 +1,99 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4927,
+  "completion_tokens": 7103,
+  "total_tokens": 12030,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4924,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 6545,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Modelling overflow metabolism in Escherichia coli by acetate cycling\n\nAbstract: A new set of mathematical equations describing overflow metabolism and acetate accumulation in E. coli cultivation is presented. The model is a significant improvement of already existing models in the literature, with modifications based on the more recent concept of acetate cycling in E. coli, as revealed by proteomic studies of overflow routes. This concept opens up new questions regarding the speed of response of the acetate production and its consumption mechanisms in E. coli. The model is formulated as a set of continuous differentiable equations, which significantly improves model tractability and facilitates the computation of dynamic sensitivities in all relevant stages of fermentation (batch, fed-batch, starvation). The model is fitted to data from a simple 2L fed-batch cultivation of E. coli W3110 M, where twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%. The framework presented gives valuable insight i\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [NEEDED: computes F, used by the model] p.3  ...e biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as\n    F\\left(t\\right)=\\frac{\\mu_{s e t}}{Y_{x/s}S_{i}}\\left(X V\\right)e^{s e t t}\n(7) [NOT USED BY OTHERS: computes \\hat{\\theta}; the model output (keep) or not part of the model (leave out)] p.3  ...The model parameters were estimated by solving the optimization problem\n    \\hat{\\theta}:=\\underset{}{\\arg\\operatorname*{m i n}_{\\theta}}{\\Phi\\left(U,\\theta\\right)}\n(8) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...nonlinear least-squares criterion between the model predictions $Y\\left(U,\\theta\\right)$ and the experimental data $Y^{m}$ was calculated as\n    \\Phi\\left(U,\\theta\\right):=\\frac{1}{2}\\left(Y\\left(U,\\theta\\right)-Y^{m}\\right)^{T}\\left(C_{y}\\right)^{-1}\\left(Y\\left(U,\\theta\\right)-Y^{m}\\right)\n(9) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...All the measured data were collected in the vector  $ Y(U,\\theta) $,\n    \\begin{aligned}&Y(U,\\theta):=(\\left(y_{O f_{1}}(t_{1},U,\\theta),\\cdots,y_{O f_{1}}(t_{N m_{O f}},U;\\theta)\\right)^{T},\\ldots,\\left(y_{O f_{N y_{O f}}}(t_{1},U,\\theta),\\cdots,y_{O f_{N y_{O f}}}(t_{N m_{O f}},U;\\theta)\\right)^{T},\\\\&\\left(y_\n(2) [CONFLICT: computes x, like eq 11] p.3  ... were generated using the Minimum bias Latin hypercube design (MBLHD) [22]. The dynamic model can be written in its general form as follows,\n    \\dot{x}\\left(t\\right)=f\\left(x\\left(t\\right),z\\left(t\\right),u\\left(t\\right);\\theta\\right)\n(3) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ... were generated using the Minimum bias Latin hypercube design (MBLHD) [22]. The dynamic model can be written in its general form as follows,\n    0=\\mathbf{g}\\left(x(t),z(t),u(t);\\theta\\right)\n(4) [NOT USED BY OTHERS: computes y_{Of}; the model output (keep) or not part of the model (leave out)] p.3  ... were generated using the Minimum bias Latin hypercube design (MBLHD) [22]. The dynamic model can be written in its general form as follows,\n    y_{O f}\\left(t\\right)=A x\\left(t\\right)\n(5) [NOT USED BY OTHERS: computes y_{On}; the model output (keep) or not part of the model (leave out)] p.3  ...here the set of differential equations $f$ corresponds to Eqs. (12), (14), (18), (22) and (24) whereas the algebraic equation set $g$ refers\n    y_{On}(t)=\\mathrm{B}x(t)\n(6) [NOT USED BY OTHERS: computes t_{0}; the model output (keep) or not part of the model (leave out)] p.3  ...here the set of differential equations $f$ corresponds to Eqs. (12), (14), (18), (22) and (24) whereas the algebraic equation set $g$ refers\n    x\\left(t_{0}\\right)=x_{0}\n(10) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...ated to obtain the point estimates  $ \\hat{\\theta}_1, \\ldots, \\hat{\\theta}_L $. Then the parameter covariance matrix was computed as [23,24]\n    C o v\\left(\\hat{\\boldsymbol{\\theta}}\\right)=\\frac{1}{(L-1)}\\sum_{j=1}^{L}\\left(\\hat{\\boldsymbol{\\theta}}_{j}-E\\left(\\hat{\\boldsymbol{\\Theta}}\\right)\\right)\\left(\\hat{\\boldsymbol{\\theta}}_{j}-E\\left(\\hat{\\boldsymbol{\\Theta}}\\right)\\right)^{T\n(11) [CONFLICT: computes x, like eq 2] p.4  ...The general form of the governing mass balance is expressed as follows.\n    \\frac{dx}{dt}=\\frac{F}{V}\\left(x_{i}-x\\right)+rX\n(12) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...ng that inlet concentration of biomass is zero (sterile feed), we obtain the following expression for biomass balance in the fed-batch case:\n    \\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X\n(13) [NEEDED: computes \\mu, used by the model] p.4  ...sents the concentration (cell dry weight) of cells and  $ \\mu $ (h $ ^{-1} $) is the non-inhibited Monod-type specific growth rate, given as\n    \\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}\n(14) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ... which all contribute energy equivalents for cell growth [14]. The mass balance for substrate (glucose) in the fed-batch process is given as\n    \\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X\n(15) [NEEDED: computes q_{s}, used by the model] p.4  ...by Shiloach and Fass [26]. The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition:\n    q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}\n(16) [NEEDED: computes q_{sox}, used by the model] p.4  ...constants respectively. Not all the substrate consumed is metabolized in the TCA cycle (qsox), but a portion goes to the overflow path qsof.\n    q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}\n(17) [NEEDED: computes q_{sof}, used by the model] p.4  ...constants respectively. Not all the substrate consumed is metabolized in the TCA cycle (qsox), but a portion goes to the overflow path qsof.\n    q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}\n(18) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...ty constants. Acetate production/consumption is a cyclic process and considering no addition of acetate in the feed, the mass balance yields\n    \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X}\n(19) [NOT USED BY OTHERS: computes q_{A}; the model output (keep) or not part of the model (leave out)] p.4  ...e equilibrium  $ q_{s}A=0 $ is reached when the acetate produced through the overflow route pA is equal to the acetate consumed  $ q_{s}A $.\n    q_{A}=p_{A}-q_{sA}\n(20) [NOT USED BY OTHERS: computes p_{A}; the model output (keep) or not part of the model (leave out)] p.4  ...e equilibrium  $ q_{s}A=0 $ is reached when the acetate produced through the overflow route pA is equal to the acetate consumed  $ q_{s}A $.\n    p_{A}=q_{sof}Y_{as}\n(21) [NEEDED: computes q_{sA}, used by the model] p.4  ...e Yas is the gram of acetate per gram of substrate consumed through the overflow route. The specific acetate consumption rate is modelled as\n    q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}\n(22) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...he feed solution in the fed-batch phase is fully saturated with dissolved oxygen. The oxygen profile is described with the standard equation\n    \\frac{d D O T_{a}}{d t}=K_{L a}\\left(D O T^{*}-D O T_{a}\\right)-q_{o}X H\n(23) [NEEDED: computes q_{o}, used by the model] p.4  ...e medium, KLa the volumetric mass transfer coefficient, H the Henry equilibrium constant, and q $ _{0} $ the oxygen uptake rate described by\n    q_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}\n(24) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...e yield coefficients for substrate and acetate to oxygen consumption respectively. With the probe response, the measured DOT is modelled as:\n    \\frac{dDOT}{dt}=K_{p}\\left(DOT_{a}-DOT\\right)\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) A new set of mathematical equations describing overflow metabolism and acetate accumulation in E. coli cultivation is presented.\n- (p.1) The model is a significant improvement of already existing models in the literature, with modifications based on the more recent concept of acetate cycling in E. coli, as revealed by proteomic studies of overflow routes.\n- (p.1) The model is formulated as a set of continuous differentiable equations, which significantly improves model tractability and facilitates the computation of dynamic sensitivities in all relevant stages of fermentation (ba\n- (p.1) The model is fitted to data from a simple 2L fed-batch cultivation of E. coli W3110 M, where twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%.\n- (p.1) Most of these models assume saturation of TCA cycle enzymes and are mainly built on discrete conditional statements in the metabolic routes [4,8].\n- (p.1) Therefore, a new mathematical representation is needed for model-based process development, which i) copes better with the real acetate conversion process in E. coli and ii) fulfils the requirements for gradient based al\n- (p.2) This cycling system can be represented by a set of continuous equations that describe overflow as an off-set of the equilibrium between  $ p_{A} $ and  $ q_{sA} $.\n- (p.2) In the current paper, the concept of acetate cycling is used to derive a set of tractable and continuously differentiable equations at macro-kinetic scale to describe acetate production in E. coli.\n- (p.2) This new set of equations allow a cheap computation of both first and second order sensitivity functions, which are needed in gradient-based methods for optimal experimental design [17,18] and process optimization [19].\n- (p.2) Finally, the model is validated with data from fed-batch cultivation of E. coli W3110M to show its applicability in real processes.\n- (p.3) To test the robustness of the acetate equations, intermittent glucose pulses were given in the constant feeding phase, and the corresponding response in all profiles were modelled.\n- (p.3) Conversion factors that were developed with the same spectrophotometer and the same to Eqs. (13), (15)–(17), (19)–(21) and (23),  $ t \\in [t_0, t_{end}] \\subseteq \\mathbb{R} $ is the independent time variable,  $ \\boldsy\n- (p.3) The E. coli model in Section 3 was solved using Matlab R2015a® with the CVODE integrator from SUNDIALS TB [21].\n- (p.3) where the set of differential equations $f$ corresponds to Eqs. (12), (14), (18), (22) and (24) whereas the algebraic equation set $g$ refers\n- (p.3) $ C_y \\in \\mathbb{R}^{N_y \\times N_m \\times N_y_0} \\cdot Nm_0 + Ny_0 \\cdot Nm_0 \\cdot Nm_0 + Ny_0 \\cdot Nm_0 $ was obtained from the measurement errors, which were assumed to be unbiased, independent and normally distrib\n- (p.3) The previous assumption ensures that the solution  $ \\hat{\\theta} $ of the optimization (Eq. (8)) is equivalent to the maximum likelihood estimation solution [23].\n- (p.4) The model comprises a set of ordinary differential equations (ODEs) describing six state variables, namely biomass X and extracellular concentrations of substrate S, acetate A, dissolved oxygen DOTa and DOT, and the feed\n- (p.4) A set of auxiliary algebraic equations describing intracellular interactions relating substrate (glucose), oxygen and acetate consumption as well as biomass formation are coupled to the ODEs to form the kinetic model.\n- (p.4) The dissolved oxygen, on the other hand, is modelled with two ordinary differential equations (Eqs. (22) and (24)).\n- (p.4) In Eq. (12), X represents the concentration (cell dry weight) of cells and  $ \\mu $ (h $ ^{-1} $) is the non-inhibited Monod-type specific growth rate, given as\n- (p.4) Thus, according to Eq. (13), the overall growth of the culture results from usage of glucose through the oxidative ( $ q_{sox} $), acetate uptake ( $ q_{SA} $) and re-use of other products from the overflow route ( $ q_{\n- (p.4) Thus, glucose and acetate exhibit a counter inhibition effect on their respective uptake capacities, as presented in Eqs. (15) and (21).\n- (p.4) Finally, the actual dissolved oxygen (DOT $ _{a} $) is calculated in% of saturation with the assumption that the feed solution in the fed-batch phase is fully saturated with dissolved oxygen.\n- (p.4) The oxygen profile is described with the standard equation\n- (p.5) In the current paper, we have explored the possibility of developing continuous differential equations for acetate production based on the concept of acetate cycling.\n- (p.5) The data to validate the new set of continuous equations describing acetate production in E. coli was obtained from a fed-batch cultivation of non-recombinant E. coli W3110M.\n- (p.7) The delicate equilibrium in the acetate cycling pathways is shown in the 3D plot in Fig. 4, which was generated by solving the set of algebraic equations at constant biomass concentration ( $ X=1.3 $ g/L) and DOT (65%) a\n- (p.7) We have used the concept of acetate cycling to derive a set of continuously differentiable and tractable equations to describe acetate accumulation in cultivation of E. coli.\n- (p.7) By fitting this model to experimental data, we show that the new set of equations sufficiently describe growth profiles in E. coli, as well as the acetate production and re-assimilation rates.\n- (p.7) Due to its continuous characteristics, this model is suitable for simulations that require higher order gradient calculation such as Computational Fluid Dynamics (CFD) models, as well as in complex optimization problems ",
+ "answer": {
+  "models": [
+   {
+    "name": "Acetate cycling fed-batch model",
+    "equations": [
+     "1",
+     "6",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "The inlet biomass concentration is zero (sterile feed).",
+      "quote": "inlet concentration of biomass is zero (sterile feed)"
+     },
+     {
+      "text": "There is no acetate addition in the feed.",
+      "quote": "no addition of acetate in the feed"
+     },
+     {
+      "text": "The feed solution is fully saturated with dissolved oxygen.",
+      "quote": "the feed solution in the fed-batch phase is fully saturated with dissolved oxygen"
+     }
+    ],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "2",
+    "reason": "Generic dynamic-model form, not a specific process equation."
+   },
+   {
+    "eq": "3",
+    "reason": "Generic algebraic-constraint form, not a specific model equation."
+   },
+   {
+    "eq": "4",
+    "reason": "Generic observation mapping, not part of the process model."
+   },
+   {
+    "eq": "5",
+    "reason": "Generic observation mapping, not part of the process model."
+   },
+   {
+    "eq": "7",
+    "reason": "Parameter-estimation optimization setup."
+   },
+   {
+    "eq": "8",
+    "reason": "Objective function for parameter estimation."
+   },
+   {
+    "eq": "9",
+    "reason": "Defines the measured-data vector for parameter estimation."
+   },
+   {
+    "eq": "10",
+    "reason": "Parameter covariance statistic."
+   },
+   {
+    "eq": "11",
+    "reason": "General mass-balance form; the model uses the specific balances in Eqs. 12, 14 and 18."
+   }
+  ]
+ }
+}

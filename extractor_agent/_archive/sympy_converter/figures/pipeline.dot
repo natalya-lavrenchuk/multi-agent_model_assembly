@@ -1,0 +1,23 @@
+digraph P { rankdir=LR; nodesep=0.35; ranksep=0.45; node [fontname="Helvetica" fontsize=11 penwidth=1.5]; edge [fontname="Helvetica" fontsize=10 color="#555555"];
+    pdf [shape=note style="filled,rounded" fillcolor="#55555520" color="#555555" label="paper PDF"];
+    ocr [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="PaddleOCR-VL\n(Colab, GPU)"];
+    pj [shape=note style="filled,rounded" fillcolor="#55555520" color="#555555" label="paddle.json\n28 formulas, LaTeX"];
+    bj [shape=note style="filled,rounded" fillcolor="#55555520" color="#555555" label="paddle_blocks.json\ntext, tables"];
+    conv [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="LaTeX -> SymPy\nrule-based, no LLM"];
+    struct [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="structure check\ncomputes / uses\n(elimination)"];
+    tab [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="table evidence\nParameter vs input"];
+    build [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="build Sup graph\n+ schema validation"];
+    ttl [shape=note style="filled,rounded" fillcolor="#3b3b6d20" color="#3b3b6d" label="sup_graph.ttl"];
+    gold [shape=note style="filled,rounded" fillcolor="#55555520" color="#555555" label="reference graph\n(hand-checked)"];
+    cmp [shape=box style="filled,rounded" fillcolor="#2f6db520" color="#2f6db5" label="compare"];
+    var [shape=box style="dashed,rounded" fillcolor="#9e9e9e20" color="#9e9e9e" label="symbol definitions\n& units (LLM picks\na paper snippet)"];
+    meta [shape=box style="dashed,rounded" fillcolor="#9e9e9e20" color="#9e9e9e" label="law metadata:\nassumptions, roles,\nlaw type"];
+    asm [shape=box style="dashed,rounded" fillcolor="#9e9e9e20" color="#9e9e9e" label="Assembler:\nmerge Sups"];
+    pdf -> ocr; ocr -> pj; ocr -> bj; pj -> conv -> struct -> build; bj -> tab -> build; build -> ttl;
+    ttl -> cmp; gold -> cmp;
+    bj -> var [style=dashed color="#9e9e9e"]; var -> build [style=dashed color="#9e9e9e"];
+    bj -> meta [style=dashed color="#9e9e9e"]; meta -> build [style=dashed color="#9e9e9e"];
+    ttl -> asm [style=dashed color="#9e9e9e"];
+    { rank=same; var; meta; }
+    legend [shape=plain fontname="Helvetica" fontsize=10 label=<<table border="0" cellspacing="2"><tr><td bgcolor="#2f6db5" width="14"></td><td align="left">built, code only</td></tr><tr><td border="1" color="#9e9e9e" style="dashed" width="14"></td><td align="left">postponed</td></tr></table>>];
+    }

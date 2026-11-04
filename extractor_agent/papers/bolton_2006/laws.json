@@ -1,0 +1,879 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "15": {
+   "form": "algebraic",
+   "computes": "J",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The flux relation combines complete pore blockage, which reduces available filtration area, with cake buildup, which increases resistance.",
+   "description_basis": "stated",
+   "quote": "The flux equation with combined cake filtration-complete blocking is obtained by inserting Eqs. (12) and (5) into Eq. (14)",
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The complete-blocking area relation as a function of permeate volume remains valid when cake is present.",
+     "quote": "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "The model treats cake formation and complete blocking as independent effects.",
+     "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "flux",
+     "symbol": "J"
+    },
+    {
+     "role": "initial flux",
+     "symbol": "J_{0}"
+    },
+    {
+     "role": "complete blocking constant",
+     "symbol": "K_{b}"
+    },
+    {
+     "role": "cake filtration constant",
+     "symbol": "K_{c}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: Filtration is operated at constant pressure.",
+    "assumption quote not found: The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked."
+   ],
+   "llm": {
+    "eq": "15",
+    "description": "The flux relation combines complete pore blockage, which reduces available filtration area, with cake buildup, which increases resistance.",
+    "description_basis": "stated",
+    "quote": "The flux equation with combined cake filtration-complete blocking is obtained by inserting Eqs. (12) and (5) into Eq. (14)",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The complete-blocking area relation as a function of permeate volume remains valid when cake is present.",
+      "quote": "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake.",
+      "process_condition": false
+     },
+     {
+      "text": "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked.",
+      "quote": "The cake will form over the unblocked pores at the same rate with respect to time whether or not adjacent pores are blocked. Eq. (12) is still valid for the area that remains available.",
+      "process_condition": false
+     },
+     {
+      "text": "The model treats cake formation and complete blocking as independent effects.",
+      "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "flux",
+      "symbol": "J"
+     },
+     {
+      "role": "initial flux",
+      "symbol": "J_{0}"
+     },
+     {
+      "role": "complete blocking constant",
+      "symbol": "K_{b}"
+     },
+     {
+      "role": "cake filtration constant",
+      "symbol": "K_{c}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "16": {
+   "form": "algebraic",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The equation gives filtered volume over time for the combined cake-filtration and complete-blocking model.",
+   "description_basis": "stated",
+   "quote": "Eq. (15) can be integrated to solve for volume as a function of time",
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The complete-blocking area relation as a function of permeate volume remains valid when cake is present.",
+     "quote": "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    },
+    {
+     "text": "The model treats cake formation and complete blocking as independent effects.",
+     "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: Filtration is operated at constant pressure.",
+    "assumption quote not found: The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked."
+   ],
+   "llm": {
+    "eq": "16",
+    "description": "The equation gives filtered volume over time for the combined cake-filtration and complete-blocking model.",
+    "description_basis": "stated",
+    "quote": "Eq. (15) can be integrated to solve for volume as a function of time",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The complete-blocking area relation as a function of permeate volume remains valid when cake is present.",
+      "quote": "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake.",
+      "process_condition": false
+     },
+     {
+      "text": "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked.",
+      "quote": "The cake will form over the unblocked pores at the same rate with respect to time whether or not adjacent pores are blocked. Eq. (12) is still valid for the area that remains available.",
+      "process_condition": false
+     },
+     {
+      "text": "The model treats cake formation and complete blocking as independent effects.",
+      "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "algebraic",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The equation gives filtered volume over time for combined intermediate blocking and cake filtration.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: Filtration is operated at constant pressure."
+   ],
+   "llm": {
+    "eq": "17",
+    "description": "The equation gives filtered volume over time for combined intermediate blocking and cake filtration.",
+    "description_basis": "stated",
+    "quote": "It is possible using a similar technique to create a combined intermediate blocking-cake filtration model. Eq. (17) can be used to calculate volume as a function of time",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "18": {
+   "form": "algebraic",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The equation gives filtered volume over time for combined complete blocking and standard blocking.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The standard-blocking resistance relation as a function of time is valid for this combined model.",
+     "quote": "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: Filtration is operated at constant pressure."
+   ],
+   "llm": {
+    "eq": "18",
+    "description": "The equation gives filtered volume over time for combined complete blocking and standard blocking.",
+    "description_basis": "stated",
+    "quote": "Eq. (18) can be used to calculate volume as a function of time with the combined complete-standard blocking model",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The standard-blocking resistance relation as a function of time is valid for this combined model.",
+      "quote": "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "19": {
+   "form": "algebraic",
+   "computes": "V",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The equation gives filtered volume over time for combined intermediate blocking and standard blocking.",
+   "description_basis": "stated",
+   "quote": "Eq. (19) can be used to calculate volume as a function of time with the combined intermediate-standard blocking model",
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The standard-blocking resistance relation as a function of time is valid for this combined model.",
+     "quote": "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: Filtration is operated at constant pressure."
+   ],
+   "llm": {
+    "eq": "19",
+    "description": "The equation gives filtered volume over time for combined intermediate blocking and standard blocking.",
+    "description_basis": "stated",
+    "quote": "Eq. (19) can be used to calculate volume as a function of time with the combined intermediate-standard blocking model",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The standard-blocking resistance relation as a function of time is valid for this combined model.",
+      "quote": "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "21": {
+   "form": "algebraic",
+   "computes": "J",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The flux relation combines the resistance contributions from cake filtration and standard pore blocking.",
+   "description_basis": "stated",
+   "quote": "A model of the combined effects of pore constriction and caking was developed.",
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The available membrane area remains constant over the run.",
+     "quote": "In this case the available membrane area will not decline over the course of the run.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model treats cake filtration and standard blocking as independent effects that operate throughout the run.",
+     "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Small particles that cause pore constriction are not retained by the cake.",
+     "quote": "The small particles must not be retained by the cake above the membrane.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "flux",
+     "symbol": "J"
+    },
+    {
+     "role": "initial flux",
+     "symbol": "J_{0}"
+    },
+    {
+     "role": "standard blocking constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "cake filtration constant",
+     "symbol": "K_{c}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: Filtration is operated at constant pressure.",
+    "blocking assumption: Small particles that cause pore constriction are not retained by the cake."
+   ],
+   "llm": {
+    "eq": "21",
+    "description": "The flux relation combines the resistance contributions from cake filtration and standard pore blocking.",
+    "description_basis": "stated",
+    "quote": "A model of the combined effects of pore constriction and caking was developed.",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The available membrane area remains constant over the run.",
+      "quote": "In this case the available membrane area will not decline over the course of the run.",
+      "process_condition": false
+     },
+     {
+      "text": "The model treats cake filtration and standard blocking as independent effects that operate throughout the run.",
+      "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+      "process_condition": false
+     },
+     {
+      "text": "Small particles that cause pore constriction are not retained by the cake.",
+      "quote": "The small particles must not be retained by the cake above the membrane.",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "flux",
+      "symbol": "J"
+     },
+     {
+      "role": "initial flux",
+      "symbol": "J_{0}"
+     },
+     {
+      "role": "standard blocking constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "cake filtration constant",
+      "symbol": "K_{c}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "22": {
+   "form": "algebraic",
+   "computes": "t",
+   "condition": null,
+   "value": null,
+   "section": "2.4.1. Constant pressure",
+   "description": "The equation gives elapsed time as a function of filtered volume for combined cake filtration and standard blocking.",
+   "description_basis": "stated",
+   "quote": "Eq. (21) can be integrated to determine time as a function of volume",
+   "assumptions": [
+    {
+     "text": "Filtration is operated at constant pressure.",
+     "quote": "Constant pressure",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The available membrane area remains constant over the run.",
+     "quote": "In this case the available membrane area will not decline over the course of the run.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The model treats cake filtration and standard blocking as independent effects that operate throughout the run.",
+     "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "Small particles that cause pore constriction are not retained by the cake.",
+     "quote": "The small particles must not be retained by the cake above the membrane.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The extent of both fouling contributions is taken to depend on the volume processed, so the volume-based resistance relations are used.",
+     "quote": null,
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": true
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: Filtration is operated at constant pressure.",
+    "blocking assumption: Small particles that cause pore constriction are not retained by the cake.",
+    "assumption quote not found: The extent of both fouling contributions is taken to depend on the volume processed, so the volume-based resistance relations are used."
+   ],
+   "llm": {
+    "eq": "22",
+    "description": "The equation gives elapsed time as a function of filtered volume for combined cake filtration and standard blocking.",
+    "description_basis": "stated",
+    "quote": "Eq. (21) can be integrated to determine time as a function of volume",
+    "assumptions": [
+     {
+      "text": "Filtration is operated at constant pressure.",
+      "quote": "Constant pressure",
+      "process_condition": true
+     },
+     {
+      "text": "The available membrane area remains constant over the run.",
+      "quote": "In this case the available membrane area will not decline over the course of the run.",
+      "process_condition": false
+     },
+     {
+      "text": "The model treats cake filtration and standard blocking as independent effects that operate throughout the run.",
+      "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+      "process_condition": false
+     },
+     {
+      "text": "Small particles that cause pore constriction are not retained by the cake.",
+      "quote": "The small particles must not be retained by the cake above the membrane.",
+      "process_condition": true
+     },
+     {
+      "text": "The extent of both fouling contributions is taken to depend on the volume processed, so the volume-based resistance relations are used.",
+      "quote": "In this case the extent of fouling by the two mechanisms will only depend on the volume processed and the equations for resistance as a function of volume can still be used.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "28": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.4.2. Constant flow",
+   "description": "Normalized pressure rises over time during constant-flow filtration as complete blocking and cake filtration act together.",
+   "description_basis": "stated",
+   "quote": "The fouling will occur both by loss of area through the complete blocking mechanism, and by increased resistance due to caking on the membrane.",
+   "assumptions": [
+    {
+     "text": "Cake formation and complete pore blockage occur simultaneously.",
+     "quote": "In this model it was assumed that cake formation and complete pore blockage occur simultaneously.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The effects of complete blocking and caking are treated as independent.",
+     "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The filtration is operated at constant flow rate.",
+     "quote": "When the flux rate is kept constant",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "complete blocking constant",
+     "symbol": "K_{b}"
+    },
+    {
+     "role": "cake filtration constant",
+     "symbol": "K_{c}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The filtration is operated at constant flow rate."
+   ],
+   "llm": {
+    "eq": "28",
+    "description": "Normalized pressure rises over time during constant-flow filtration as complete blocking and cake filtration act together.",
+    "description_basis": "stated",
+    "quote": "The fouling will occur both by loss of area through the complete blocking mechanism, and by increased resistance due to caking on the membrane.",
+    "assumptions": [
+     {
+      "text": "Cake formation and complete pore blockage occur simultaneously.",
+      "quote": "In this model it was assumed that cake formation and complete pore blockage occur simultaneously.",
+      "process_condition": false
+     },
+     {
+      "text": "The effects of complete blocking and caking are treated as independent.",
+      "quote": "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking.",
+      "process_condition": false
+     },
+     {
+      "text": "The filtration is operated at constant flow rate.",
+      "quote": "When the flux rate is kept constant",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "complete blocking constant",
+      "symbol": "K_{b}"
+     },
+     {
+      "role": "cake filtration constant",
+      "symbol": "K_{c}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "29": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.4.2. Constant flow",
+   "description": "Normalized pressure over time for constant-flow filtration combining standard blocking and cake filtration.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "Standard blocking and cake filtration are treated as independent mechanisms that occur throughout the run.",
+     "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The small particles causing pore constriction are not retained by the cake.",
+     "quote": "The small particles must not be retained by the cake above the membrane.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    },
+    {
+     "text": "The filtration is operated at constant flow rate.",
+     "quote": "When the flux rate is kept constant",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "standard blocking constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "cake filtration constant",
+     "symbol": "K_{c}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: The filtration is operated at constant flow rate."
+   ],
+   "llm": {
+    "eq": "29",
+    "description": "Normalized pressure over time for constant-flow filtration combining standard blocking and cake filtration.",
+    "description_basis": "stated",
+    "quote": "For the combined cake-standard blocking model, the resistance increases over the course of the run and the membrane area remain constant. The pressure can be calculated as a function of time using Eq. (29)",
+    "assumptions": [
+     {
+      "text": "Standard blocking and cake filtration are treated as independent mechanisms that occur throughout the run.",
+      "quote": "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run.",
+      "process_condition": false
+     },
+     {
+      "text": "The small particles causing pore constriction are not retained by the cake.",
+      "quote": "The small particles must not be retained by the cake above the membrane.",
+      "process_condition": false
+     },
+     {
+      "text": "The filtration is operated at constant flow rate.",
+      "quote": "When the flux rate is kept constant",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "standard blocking constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "cake filtration constant",
+      "symbol": "K_{c}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "30": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.4.2. Constant flow",
+   "description": "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and cake filtration.",
+   "description_basis": "stated",
+   "quote": "Eq. (30) allows calculation of pressure as a function of time using the combined intermediate blocking-cake filtration model",
+   "assumptions": [
+    {
+     "text": "The filtration is operated at constant flow rate.",
+     "quote": "When the flux rate is kept constant",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "intermediate blocking constant",
+     "symbol": "K_{i}"
+    },
+    {
+     "role": "cake filtration constant",
+     "symbol": "K_{c}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The filtration is operated at constant flow rate."
+   ],
+   "llm": {
+    "eq": "30",
+    "description": "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and cake filtration.",
+    "description_basis": "stated",
+    "quote": "Eq. (30) allows calculation of pressure as a function of time using the combined intermediate blocking-cake filtration model",
+    "assumptions": [
+     {
+      "text": "The filtration is operated at constant flow rate.",
+      "quote": "When the flux rate is kept constant",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "intermediate blocking constant",
+      "symbol": "K_{i}"
+     },
+     {
+      "role": "cake filtration constant",
+      "symbol": "K_{c}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "31": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.4.2. Constant flow",
+   "description": "Calculates normalized pressure over time for constant-flow filtration combining complete blocking and standard blocking.",
+   "description_basis": "stated",
+   "quote": "Pressure as a function of time in the combined standard and complete blocking model will be described by Eq. (31)",
+   "assumptions": [
+    {
+     "text": "The filtration is operated at constant flow rate.",
+     "quote": "When the flux rate is kept constant",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "complete blocking constant",
+     "symbol": "K_{b}"
+    },
+    {
+     "role": "standard blocking constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The filtration is operated at constant flow rate."
+   ],
+   "llm": {
+    "eq": "31",
+    "description": "Calculates normalized pressure over time for constant-flow filtration combining complete blocking and standard blocking.",
+    "description_basis": "stated",
+    "quote": "Pressure as a function of time in the combined standard and complete blocking model will be described by Eq. (31)",
+    "assumptions": [
+     {
+      "text": "The filtration is operated at constant flow rate.",
+      "quote": "When the flux rate is kept constant",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "complete blocking constant",
+      "symbol": "K_{b}"
+     },
+     {
+      "role": "standard blocking constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "32": {
+   "form": "algebraic",
+   "computes": "P",
+   "condition": null,
+   "value": null,
+   "section": "2.4.2. Constant flow",
+   "description": "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and standard blocking.",
+   "description_basis": "stated",
+   "quote": "Pressure as a function of time in the combined standard and intermediate blocking model will be described by Eq. (32)",
+   "assumptions": [
+    {
+     "text": "The filtration is operated at constant flow rate.",
+     "quote": "When the flux rate is kept constant",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "intermediate blocking constant",
+     "symbol": "K_{i}"
+    },
+    {
+     "role": "standard blocking constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The filtration is operated at constant flow rate."
+   ],
+   "llm": {
+    "eq": "32",
+    "description": "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and standard blocking.",
+    "description_basis": "stated",
+    "quote": "Pressure as a function of time in the combined standard and intermediate blocking model will be described by Eq. (32)",
+    "assumptions": [
+     {
+      "text": "The filtration is operated at constant flow rate.",
+      "quote": "When the flux rate is kept constant",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "intermediate blocking constant",
+      "symbol": "K_{i}"
+     },
+     {
+      "role": "standard blocking constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

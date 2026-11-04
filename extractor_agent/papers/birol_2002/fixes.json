@@ -1,0 +1,25 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "15": {
+   "action": "correct",
+   "printed_latex": "$$ F_{\\mathrm{l o s s}}=V\\lambda(\\mathrm{e}^{5((T-T_{0})/T_{\\mathrm{v}}-T_{0})}-1) $$",
+   "corrected_latex": "$$ F_{\\mathrm{l o s s}}=V\\lambda\\left(\\mathrm{e}^{5\\left(\\frac{T-T_{0}}{T_{\\mathrm{v}}-T_{0}}\\right)}-1\\right) $$",
+   "reason": "The printed form lacks brackets around the denominator; it should be (T - T0)/(Tv - T0). At the boiling point the exponent is then 5, which the paper says is 'large enough' to stand in for an infinite rate. A (Tv - T) denominator would diverge for real and make that sentence unnecessary.",
+   "quote": "“We have assumed that the evaporation rate will tend to infinity at the boiling point, and for engineering purposes the exponent 5 is large enough to represent this.”",
+   "basis": "human",
+   "checks": [],
+   "status": "proposed"
+  },
+  "17": {
+   "action": "correct",
+   "printed_latex": "$$ \\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{s_{\\mathrm{f}}}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned} $$",
+   "corrected_latex": "$$ \\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{V}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned} $$",
+   "reason": "The printed factor \\(F/s_{\\mathrm{f}}\\) is not a dilution rate: Table 2 gives \\(F\\) in l/h and \\(s_{\\mathrm{f}}\\) in g/l, whereas dividing by culture volume \\(V\\) in l gives the required inverse-time factor.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

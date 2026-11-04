@@ -1,0 +1,165 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3597,
+  "completion_tokens": 3476,
+  "total_tokens": 7073,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3594,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2503,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: improved unstructured model with sucrose hydrolysis\n\nEquations:\n(2) V\\frac{dX_{a}}{dt}+X_{a}\\frac{dV}{dt}=\\mu X_{a}V-k_{d}X_{a}V      <- \"The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM) (Jacob et al., 2020) (Eq. 2).\"\n(3) \\frac{dV}{dt}=F_{t}      <- \"nent (Table S4). Numbers – individual experiments- (A) Dry mass X. (B) Sucrose S. (C) Fructose (F, D) Glucose (G, E) Ammonium (A, F) Nitrate N. (G) phosphate P.\"\n(5) V\\frac{dS}{dt}+S\\frac{dV}{dt}=F_{t}S_{f}-\\mu_{S}\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(6) V\\frac{dN}{dt}+N\\frac{dV}{dt}=F_{t}N_{f}-\\mu_{N}\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)X_{a}V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(7) V\\frac{d\\boldsymbol{A}}{d t}+\\boldsymbol{A}\\frac{d\\boldsymbol{V}}{d t}=\\boldsymbol{F}_{t}\\boldsymbol{A}_{f}-\\mu_{A}\\left(\\frac{\\boldsymbol{A}}{\\boldsymbol{A}+\\boldsymbol{K}_{A}}\\frac{\\boldsymbol{K}_{I A}}{\\boldsymbol{A}+\\boldsymbol{K}_{I A}}\\right)\\boldsymbol{X}_{a}\\boldsymbol{V}      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(8) V\\frac{dP}{dt}+P\\frac{dV}{dt}=F_{t}P_{f}-\\mu_{P}P\\quad V      <- \"The sucrose, ammonium, nitrate and phosphate concentrations during BY-2 cultivation were modeled in Equations 5–8.\"\n(18) \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(19) \\begin{align*}V\\frac{dF}{dt}+F\\frac{dV}{dt}&=m_{SF}\\alpha\\left(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\right)X_{a}V\\\\&\\quad-\\mu_{F}\\left(\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n(20) \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*}      <- \"t (Table S4). A, ammonium; F, fructose; G, glucose; N, nitrate; P, phosphate; S, sucrose; V, volume; X, cell dry mass. See Table S3 for measured initial values.\"\n\nSymbols:\n\nV   [COMPUTED by eq 2, 3, 5, 6, 7, 8, 19, 20]\n  [169] (sentence, p.5) where $\\mu$ [$\\mathrm{h}^{-1}$] is the specific growth rate, $k_{d}$ [$\\mathrm{h}^{-1}$] is the death rate constant of active DM, and $V$ [L] is the volume of the cultivation medium.\n  [259] (sentence, p.8) V, volume;\n  [349] (sentence, p.11) V, volume;\n\nX_{a}   [COMPUTED by eq 2]\n  [164] (sentence, p.4) As proposed by Jacobs et al. (2020), we modeled two physiological states of cell DM: viable (active) ( $ X_{a} $) and dead ( $ X_{d} $).\n  [191] (sentence, p.6) As for equation 4, the influence of the active DM ( $ X_a $) on the phosphate uptake in (Eq. 8) was neglected because i) the phosphate concentration dropped close to zero within  $ \\sim90 $ h (Figure 2) and the “0” values would compromise numeric stability of \n  [267] (sentence, p.8) Here, we used two objective functions, i.e., maximized the dimensionless yield of the active DM (Eq. 16), i.e., the gram DM at fermentation end  $ (X_{a}(t)) $ divided by the inoculum (i.e., starting) cell DM  $ (X_{0}) $:\n\n\\mu   [COMPUTED by eq 18]\n  [169] (sentence, p.5) where $\\mu$ [$\\mathrm{h}^{-1}$] is the specific growth rate, $k_{d}$ [$\\mathrm{h}^{-1}$] is the death rate constant of active DM, and $V$ [L] is the volume of the cultivation medium.\n  [182] (sentence, p.6) The dependency of the specific growth rate (biomass formation) of active DM ($\\mu$) on sucrose (S), ammonium (A) and nitrate (N) concentrations can be expressed as a Monod kinetic (Eq. 4).\n  [354] (sentence, p.11) It has 20 parameters to identify, including the death rate constant  $ k_d $, maximum specific growth rate  $ \\mu_m $, maximum specific growth rate for ammonium and phosphate  $ \\mu^A_m $,  $ \\mu^P_m $, saturation and inhibition constants  $ K_h $ and  $ K_{lh\n\nk_{d}   [NOT COMPUTED]\n  [169] (sentence, p.5) where $\\mu$ [$\\mathrm{h}^{-1}$] is the specific growth rate, $k_{d}$ [$\\mathrm{h}^{-1}$] is the death rate constant of active DM, and $V$ [L] is the volume of the cultivation medium.\n  [197] (table_row, p.6) TABLE 1 Parameter ranges and identified optimal parameter values: Parameter: $ k_d $ | Description: Death rate constant | Unit: $ h^{-1} $ | Min: 0 | Max: 0.1 | Optimal: $ 6.62 \\times 10^{-4} $ | 90% CI: $ 5.8 \\times 10^{-5} $\n  [354] (sentence, p.11) It has 20 parameters to identify, including the death rate constant  $ k_d $, maximum specific growth rate  $ \\mu_m $, maximum specific growth rate for ammonium and phosphate  $ \\mu^A_m $,  $ \\mu^P_m $, saturation and inhibition constants  $ K_h $ and  $ K_{lh\n\nF_{t}   [NOT COMPUTED]\n  [170] (sentence, p.5) Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_{t}$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$ (Jiménez-Hornero et al., 2009a) (Eq. 3).\n\nS   [COMPUTED by eq 5]\n  [258] (sentence, p.8) S, sucrose;\n  [295] (sentence, p.9) S3) in 2-L STRs.\n  [348] (sentence, p.11) S, sucrose;\n\nS_{f}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\n\\mu_{S}   [NOT COMPUTED]\n  [190] (sentence, p.6) where  $ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively, and  $ \\mu_S $,  $ \\mu_N $,  $ \\mu_A $ and  $ \\mu_P $ denote the corresponding sucrose, nitrate, ammonium and phosphate\n\nK_{S}   [NOT COMPUTED]\n  [199] (table_row, p.6) TABLE 1 Parameter ranges and identified optimal parameter values: Parameter: $ K_S $ | Description: Sucrose saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 100 | Optimal: 17.64 | 90% CI: 3.5\n  [420] (table_row, p.14) TABLE 3 Parameter ranges and identified optimal parameter values for the improved model (experiments #1 to #7 were used for model setup): Parameter: $ K_S $ | Description: Sucrose saturation constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 100 | Optimal: 72.53 |\n\nK_{IS}   [NOT COMPUTED]\n  [200] (table_row, p.6) TABLE 1 Parameter ranges and identified optimal parameter values: Parameter: $ K_{IS} $ | Description: Sucrose inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 100 | Optimal: 17.64 | 90% CI: 3.4\n  [421] (table_row, p.14) TABLE 3 Parameter ranges and identified optimal parameter values for the improved model (experiments #1 to #7 were used for model setup): Parameter: $ K_{IS} $ | Description: Sucrose inhibition constant | Unit: g  $ L^{-1} $ | Min: 0 | Max: 100 | Optimal: 100.",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "V",
+    "description": "Volume of the cultivation medium",
+    "description_basis": "stated",
+    "snippet_id": 169,
+    "quote": "$V$ [L] is the volume of the cultivation medium.",
+    "unit": "L",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "X_{a}",
+    "description": "Active (viable) cell dry mass concentration",
+    "description_basis": "stated",
+    "snippet_id": 164,
+    "quote": "viable (active) ( $ X_{a} $)",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu",
+    "description": "Specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 169,
+    "quote": "$\u001b[0m\\mu$ [$\\mathrm{h}^{-1}$] is the specific growth rate",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "k_{d}",
+    "description": "Death rate constant of active DM",
+    "description_basis": "stated",
+    "snippet_id": 169,
+    "quote": "$k_{d}$ [$\\mathrm{h}^{-1}$] is the death rate constant of active DM",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A death rate constant in the active-cell conversion law is a kinetic constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "F_{t}",
+    "description": "Feed rate at each time point",
+    "description_basis": "stated",
+    "snippet_id": 170,
+    "quote": "Based on the volumetric change of the cultivation medium, we calculated the feed rate $F_{t}$ [$\\mathrm{L}\\ \\mathrm{h}^{-1}$] for each time point $t$",
+    "unit": "L h^{-1}",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A feed rate that varies over time is an operating quantity for the process.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S",
+    "description": "Sucrose concentration",
+    "description_basis": "stated",
+    "snippet_id": 258,
+    "quote": "S, sucrose;",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S_{f}",
+    "description": "Sucrose concentration in the feed medium",
+    "description_basis": "stated",
+    "snippet_id": 190,
+    "quote": "$ S_f $,  $ N_f $,  $ A_f $ and  $ P_f $ are the feed medium concentrations of sucrose, nitrate, ammonium and phosphate respectively",
+    "unit": "g L^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A feed-medium concentration is an operating condition set for the process.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{S}",
+    "description": "Specific sucrose consumption-rate coefficient",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^{-1}",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A coefficient in the sucrose uptake law is a kinetic constant.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K_{S}",
+    "description": "Sucrose saturation constant",
+    "description_basis": "stated",
+    "snippet_id": 420,
+    "quote": "Description: Sucrose saturation constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "72.53 g L^{-1}",
+    "value_set": "this model",
+    "class_reason": "A saturation constant in the sucrose uptake law is a kinetic constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{IS}",
+    "description": "Sucrose inhibition constant",
+    "description_basis": "stated",
+    "snippet_id": 421,
+    "quote": "Description: Sucrose inhibition constant",
+    "unit": "g L^{-1}",
+    "unit_basis": "stated",
+    "value": "100. g L^{-1}",
+    "value_set": "this model",
+    "class_reason": "An inhibition constant in the sucrose uptake law is a kinetic constant.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

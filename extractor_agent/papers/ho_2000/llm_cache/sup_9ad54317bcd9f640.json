@@ -1,0 +1,106 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "medium",
+ "usage": {
+  "queue_time": 0.213387689,
+  "prompt_tokens": 5440,
+  "prompt_time": 0.278270779,
+  "completion_tokens": 4375,
+  "completion_time": 9.234151008,
+  "total_tokens": 9815,
+  "total_time": 9.512421787,
+  "completion_tokens_details": {
+   "reasoning_tokens": 3936
+  }
+ },
+ "user": "Title: A Combined Pore Blockage and Cake Filtration Model for Protein Fouling during Microfiltration\n\nAbstract: Previous studies of protein fouling during microfiltration have shown significant discrepancies between filtrate flux data and predictions of the classical pore blockage, pore constriction, and cake filtration models. A new mathematical model was developed for the filtrate flux which accounts for initial fouling due to pore blockage and subsequent fouling due to the growth of a protein cake or deposit over these initially blocked regions. The model explicitly accounts for the inhomogeneity in the cake layer thickness over different regions of the membrane arising from the time-dependent blockage of the pore surface. The model was shown to be in excellent agreement with experimental data obtained during the stirred cell filtration of bovine serum albumin solutions through polycarbonate track-etched microfiltration membranes over the entire course of the filtration. The model provides a smooth transition from the pore blockage to cake filtration regimes, eliminating the need to use diffe\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [CONFLICT: computes t, like eq 20] p.1  ...iterature for these fouling models. However, the governing equations can all be conveniently written in a common mathematical form as (1, 2)\n    \\frac{d^{2}t}{d V^{2}}=k\\bigg(\\frac{d t}{d V}\\bigg)^{n}\n(2) [NEEDED: an ODE (the model, or background from earlier work?)] p.1  ...or\n    \\frac{d J}{d t}=-k J(J A_{0})^{2-n}\n(3) [NOT USED BY OTHERS: computes R_{total}; the model output (keep) or not part of the model (leave out)] p.1  ...ple, Tracey and Davis (6) examined the flux decline behavior during BSA microfiltration by evaluating the total resistance to filtrate flow,\n    R_total=\\frac{\\Delta P}{\\mu J}\n(4) [NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)] p.2  ...metric filtrate flow rate through the fouled membrane can thus be expressed as the sum of the flow rates through the open and blocked pores:\n    Q=Q_{\\mathrm{o p e n}}+Q_{\\mathrm{b l o c k e d}}\n(5) [NEEDED: computes Q_{open}, used by the model] p.2  ...$ Q_{open} $ is easily evaluated in terms of the clean membrane resistance ( $ R_{m} $) as\n    Q_{\\mathrm{o p e n}}=\\frac{\\Delta P}{\\mu R_{\\mathrm{m}}}A_{\\mathrm{o p e n}}\n(6) [NOT USED BY OTHERS: computes Q_{blocked}; the model output (keep) or not part of the model (leave out)] p.2  ...n} $ is the area of the membrane which remains uncovered at any given time. The volumetric flow rate through the blocked pores is written as\n    Q_{\\mathrm{b l o c k e d}}=\\int\\limits_{A_{\\mathrm{b l o c k e d}}}\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}d A\n(7) [CONFLICT: computes A_{open}, like eq 9] p.2  ...e rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.\n    \\frac{d A_{\\mathrm{o p e n}}}{d t}=-\\alpha Q_{\\mathrm{o p e n}}C_{\\mathrm{b}}\n(8) [NEEDED: computes \\alpha, used by the model] p.2  ...ace. Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter  $ \\alpha $ can be expressed as\n    \\alpha=\\frac{f A_{\\mathrm{a g g}}}{M_{\\mathrm{a g g}}}\n(9) [CONFLICT: computes A_{open}, like eq 7] p.2  ...ugh the membrane pores. Substitution of Eq. [5] into Eq. [7] gives a first-order ordinary differential equation for $A_{open}$ with solution\n    A_{\\mathrm{o p e n}}=A_{0}\\exp\\biggl(-\\frac{\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t\\biggr)\n(10) [NEEDED: an ODE (the model, or background from earlier work?)] p.2  ...ver each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,\n    \\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}\n(11) [NEEDED: computes J_{blocked}, used by the model] p.2  ...ion of the proteins that contribute to the growth of the deposit.  $ J_{blocked} $ is the filtrate flux through each region of the membrane:\n    J_{\\mathrm{b l o c k e d}}=\\frac{\\Delta P}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}\n(12) [CONFLICT: computes R_{p}, like eq 13, 18, 19] p.3  ...the growth of the deposit. The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,\n    \\frac{d R_{\\mathrm{p}}}{d t}=R^{\\prime}\\frac{d m_{\\mathrm{p}}}{d t}=f^{\\prime}R^{\\prime}J_{\\mathrm{b l o c k e d}}C_{\\mathrm{b}}\n(13) [CONFLICT: computes R_{p}, like eq 12, 18, 19] p.3  ...ein deposit over a given region of the membrane can be evaluated by integrating Eq. [12] using Eq. [11] to evaluate  $ J_{blocked} $ to give\n    R_{\\mathrm{p}}=(R_{\\mathrm{m}}+R_{\\mathrm{p0}})\\sqrt{1+\\frac{2f^{\\prime}R^{\\prime}\\Delta P C_{\\mathrm{b}}}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p0}})^{2}}(t-t_{\\mathrm{p}})}-R_{\\mathrm{m}}\n(14) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...t is blocked by the protein aggregates ( $ A_{blocked} $) increases with time as the aggregates continue to deposit on the membrane surface,\n    d A_{\\mathrm{b l o c k e d}}=-d A_{\\mathrm{o p e n}}=\\frac{\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}A_{0}\\exp\\left(\\frac{-\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t_{\\mathrm{p}}\\right)d t_{\\mathrm{p}}\n(15) [NOT USED BY OTHERS: computes Q_{blocked}; the model output (keep) or not part of the model (leave out)] p.3  ...ugh all of the blocked pores as a convolution integral over the time at which each region of the membrane was first blocked by an aggregate,\n    Q_{\\mathrm{b l o c k e d}}=Q_{0}\\int_{0}^{t}\\frac{\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}\\exp\\biggl(\\frac{-\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t_{\\mathrm{p}}\\biggr)d t_{\\mathrm{p}}\n(16) [NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)] p.3  ...], [9], and [15] can be combined to yield an expression for the filtrate flow rate through the fouled membrane at any given filtration time,\n    \\begin{align*}Q=&Q_{0}\\bigg[\\exp\\bigg(-\\frac{\\alpha\\Delta PC_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t\\bigg)+\\int_{0}^{t}\\frac{\\alpha\\Delta PC_{\\mathrm{b}}}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p}})}\\\\&\\times\\exp\\bigg(\\frac{-\\alpha\\Delta PC_{\\mathrm{b}}}\n(17) [NOT USED BY OTHERS: computes Q; the model output (keep) or not part of the model (leave out)] p.3  ...fficient multiplying the exponential in the convolution integral in Eq. [16] is a constant and can be pulled outside of the integral to give\n    \\begin{align*}Q=&Q_{0}\\bigg[\\exp\\bigg(-\\frac{\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t\\bigg)+\\frac{R_{\\mathrm{m}}}{R_{\\mathrm{m}}+R_{\\mathrm{p}}}\\\\&\\times\\bigg(1-\\exp\\bigg(-\\frac{\\alpha\\Delta P C_{\\mathrm{b}}}{\\mu R_{\\mathrm{m}}}t\n(18) [CONFLICT: computes R_{p}, like eq 12, 13, 19] p.3  ...3] with  $ t_p = 0 $, i.e., the maximum resistance occurs over the region where the deposit has continued to grow throughout the filtration:\n    R_{\\mathrm{p}}=(R_{\\mathrm{m}}+R_{\\mathrm{p0}})\\sqrt{1+\\frac{2f^{\\prime}R^{\\prime}\\triangle P C_{\\mathrm{b}}}{\\mu(R_{\\mathrm{m}}+R_{\\mathrm{p0}})^{2}}t}-R_{\\mathrm{m}}\n(19) [CONFLICT: computes R_{p}, like eq 12, 13, 18] p.5  ...the filtrate flux data in Fig. 1. The resistance of the initial protein deposit ($R_{p0}$) can be estimated from the Kozeny–Carman equation,\n    R_{\\mathrm{p}}=\\frac{5\\delta_{\\mathrm{m}}}{\\varepsilon S^{2}}\n(20) [CONFLICT: computes t, like eq 1] p.6  ... results as  $ d^2t/dV^2 $ versus  $ dt/dV $ as suggested by Eq. [1]. The required derivatives were evaluated in terms of the filtrate flux,\n    \\frac{dt}{dV}=\\frac{1}{JA}\n(21) [NEEDED: an ODE (the model, or background from earlier work?)] p.6  ... results as  $ d^2t/dV^2 $ versus  $ dt/dV $ as suggested by Eq. [1]. The required derivatives were evaluated in terms of the filtrate flux,\n    \\frac{d^{2}t}{d V^{2}}=-\\frac{1}{J^{3}A^{2}}\\frac{d J}{d t}\n(22) [CONFLICT: computes n, like eq 23] p.6  ... on the log–log plot can be evaluated analytically by differentiating the logarithm of $d^2t/dV^2$ with respect to the logarithm of $dt/dV$:\n    n=\\frac{d\\big[\\operatorname{l o g}\\big(\\frac{d^{2}t}{d V^{2}}\\big)\\big]}{d\\big[\\operatorname{l o g}\\big(\\frac{d t}{d V}\\big)\\big]}\n(23) [CONFLICT: computes n, like eq 22] p.7  ...approximate expression for the flux (Eqs. [17] and [18]) to give the following expression for the initial slope, i.e., n evaluated at t = 0:\n    n=3-\\frac{R_{\\mathrm{m}}+R_{\\mathrm{p0}}}{R_{\\mathrm{p0}}}+2\\frac{R_{\\mathrm{m}}^{2}}{R_{\\mathrm{p0}}^{2}(R_{\\mathrm{m}}+R_{\\mathrm{p0}})}\\frac{f^{\\prime}R^{\\prime}}{\\alpha}\n(24) [NEEDED: computes R^{\\prime}, used by the model] p.9  ... the power law relationship used previously by Porter (15) and Belter et al. (16) to describe the compressibility of different filter cakes:\n    R^{\\prime}=k(\\Delta P)^{s}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) However, the governing equations can all be conveniently written in a common mathematical form as (1, 2)\n- (p.1) Bowen et al. (7) obtained similar results using an analysis based directly on Eq. [1].\n- (p.2) This initial deposit is assumed to be at least partially permeable to fluid flow, i.e., there is some small finite flow through even the “blocked” pores.\n- (p.2) This is exactly what occurs in the classical cake filtration model, although this “cake growth” is now assumed to occur simultaneously with the coverage (or blockage) of the remaining open area of the membrane.\n- (p.2) Equation [6] is expressed as an integral over the blocked area to account for the spatial inhomogeneity in the resistance of the protein deposit arising from the time-dependent blockage of the membrane surface.\n- (p.2) The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.\n- (p.2) Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $), in which case the parameter  $ \\alpha $ can be expressed as\n- (p.2) Substitution of Eq. [5] into Eq. [7] gives a first-order ordinary differential equation for $A_{open}$ with solution\n- (p.2) The volumetric flow rate through the open pores is given directly by Eq. [5] with  $ A_{open} $ evaluated from Eq. [9].\n- (p.2) The growth of the protein deposit over each blocked region of the membrane is assumed to be proportional to the convective transport of protein through that particular region,\n- (p.3) The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,\n- (p.3) where the last expression is developed using Eq. [10].\n- (p.3) $ R' $ is the specific protein layer resistance, which is assumed to be constant during a constant pressure filtration.\n- (p.3) The resistance provided by the protein deposit over a given region of the membrane can be evaluated by integrating Eq. [12] using Eq. [11] to evaluate  $ J_{blocked} $ to give\n- (p.3) where the last expression in Eq. [14] was obtained using Eqs. [5], [7], and [9].\n- (p.3) Substitution of Eq. [14] into Eq. [6] yields the total volumetric flow rate through all of the blocked pores as a convolution integral over the time at which each region of the membrane was first blocked by an aggregate,\n- (p.3) Equations [4], [5], [9], and [15] can be combined to yield an expression for the filtrate flow rate through the fouled membrane at any given filtration time,\n- (p.3) with  $ R_{p} $ given as a function of  $ t $ and  $ t_{p} $ by Eq. [13].\n- (p.3) Equation [16] thus explicitly accounts for the variation in the protein layer resistance over the surface of the membrane associated with the different time at which each region of the membrane is first blocked or covere\n- (p.3) The convolution integral in Eq. [16] can be evaluated numerically using a simple Euler integration or it can be evaluated analytically in terms of the imaginary error function.\n- (p.3) Although Eq. [16] is relatively easy to evaluate numerically, a much simpler analytical solution can be developed for the filtrate flow rate by assuming a uniform resistance of the protein layer over the fouled surface o\n- (p.3) Under these conditions, the coefficient multiplying the exponential in the convolution integral in Eq. [16] is a constant and can be pulled outside of the integral to give\n- (p.3) The first term in Eq. [17] is equivalent to the classical pore blockage model and gives a simple exponential decay in the volumetric flow rate.\n- (p.3) The maximum value of the protein layer resistance at any time  $ t $ is given by Eq. [13] with  $ t_p = 0 $, i.e., the maximum resistance occurs over the region where the deposit has continued to grow throughout the filt\n- (p.3) Equation [18] can be used to evaluate  $ R_{p} $ in Eq. [17], giving a simple approximate solution for the volumetric flow rate as a function of the filtration time, t.\n- (p.3) Note that the value of Q given by Eq. [17] will always be slightly less than that given by the full numerical solution since the actual resistance of the protein layer will vary from the maximum value given by Eq. [18] t\n- (p.3) The use of Eq. [18] to evaluate  $ R_{p} $ means that at long times Eq. [17] reduces to the form of the classical cake filtration model.\n- (p.4) Solid and dotted curves are model calculations using the complete model (Eq. [16]) and the approximate analytical solution (Eq. [17]).\n- (p.5) The solid and dotted curves in the top and bottom panels of Fig. 1 are the model calculations using Eqs. [16] and [17], respectively.\n- (p.5) The best fit values of the parameters  $ \\alpha $,  $ R_{p0} $, and  $ f' $ were determined by minimizing the sum of the squared residuals between the filtrate flux data and the calculations from the complete model (Eq. \n- (p.5) Substitution of these values into Eq. [8] gives $\\alpha = 2.9 \\pm 2.6$ m$^2$ kg$^{-1}$, which is in good agreement with the best fit value of $\\alpha = 4.1 \\pm 0.2$ m$^2$ kg$^{-1}$ determined from the filtrate flux data \n- (p.5) The resistance of the initial protein deposit ($R_{p0}$) can be estimated from the Kozeny–Carman equation,\n- (p.5) Model calculations using the complete model (Eq. [16]) for the normalized protein layer resistance as a function of cumulative fractional blocked area for 2 g/L BSA filtration through the PCTE membrane at 14 kPa.\n- (p.5) The results from the approximate analytical solution (dotted curves in Fig. 1) are only slightly below those of the full solution, even though Eq. [17] is developed by assuming a uniform (maximum) resistance of the prote\n- (p.5) The protein layer resistance at each time t was evaluated from Eq. [13] as a function of  $ t_{p} $, the time at which the region of the membrane surface was first covered by an aggregate.",
+ "answer": {
+  "models": [
+   {
+    "name": "Combined pore blockage and cake filtration model",
+    "assumptions": [
+     {
+      "quote": "(p.2) This initial deposit is assumed to be at least partially permeable to fluid flow, i.e., there is some small finite flow through even the “blocked” pores.",
+      "text": "The initial deposit is partially permeable, allowing finite flow through blocked pores."
+     },
+     {
+      "quote": "(p.2) The rate of pore coverage or blockage is assumed to be proportional to the convective flow rate of protein aggregates to the membrane surface.",
+      "text": "Pore coverage rate is proportional to convective protein‑aggregate flow rate."
+     },
+     {
+      "quote": "(p.2) Each aggregate is assumed to block a given area of membrane ( $ A_{agg} $).",
+      "text": "Each protein aggregate blocks a fixed membrane area."
+     },
+     {
+      "quote": "(p.3) The hydraulic resistance of the protein deposit is assumed to be directly proportional to the mass per unit area,",
+      "text": "Deposit hydraulic resistance is directly proportional to mass per unit area."
+     },
+     {
+      "quote": "(p.3) $ R' $ is the specific protein layer resistance, which is assumed to be constant during a constant pressure filtration.",
+      "text": "Specific protein layer resistance R' is constant during constant‑pressure filtration."
+     }
+    ],
+    "boundary_quote": null,
+    "complete_model": true,
+    "equations": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "10",
+     "11",
+     "12",
+     "15",
+     "16",
+     "24"
+    ]
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "9",
+    "reason": "restates eq 7"
+   },
+   {
+    "eq": "13",
+    "reason": "restates eq 12"
+   },
+   {
+    "eq": "14",
+    "reason": "restates eq 7"
+   },
+   {
+    "eq": "17",
+    "reason": "approximates eq 16"
+   },
+   {
+    "eq": "18",
+    "reason": "restates eq 12"
+   },
+   {
+    "eq": "19",
+    "reason": "parameter estimation, not part of model"
+   },
+   {
+    "eq": "20",
+    "reason": "restates eq 1"
+   },
+   {
+    "eq": "21",
+    "reason": "restates eq 1"
+   },
+   {
+    "eq": "22",
+    "reason": "analysis, not part of model"
+   },
+   {
+    "eq": "23",
+    "reason": "analysis, not part of model"
+   }
+  ]
+ }
+}

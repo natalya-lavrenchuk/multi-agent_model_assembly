@@ -1,0 +1,92 @@
+{
+ "sup": "cheema_2018",
+ "title": "Operating envelope of Haber-Bosch process design for power-to-ammonia $ ^{\\dagger} $",
+ "doi": "10.1039/c8ra06821f",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": false,
+ "model_assumptions": [
+  {
+   "text": "Heat losses are ignored.",
+   "quote": "heat losses are ignored",
+   "page": 4,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  },
+  {
+   "text": "The reactor system is isobaric.",
+   "quote": "we assume isobaric condition",
+   "page": 4,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "3",
+   "process_condition": true
+  },
+  {
+   "text": "The temperature gradient inside catalyst pellets is negligible.",
+   "quote": "the temperature gradient ΔT inside the catalyst pellet is negligible",
+   "page": 4,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "3",
+   "process_condition": false
+  },
+  {
+   "text": "Gas mixing in the mixer is ideal and instantaneous.",
+   "quote": "The mixing of gases in the mixer is assumed to be ideal and instantaneous.",
+   "page": 5,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "6",
+   "process_condition": true
+  },
+  {
+   "text": "During normal operation, 27.79 mol% of NH₃ is carried along with the recycled unused reactants.",
+   "quote": "with assumption that 27.79 mol% of NH₃ is carried along with them during normal operation",
+   "page": 5,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  }
+ ],
+ "model_name": "Pseudo-homogeneous Haber–Bosch process",
+ "excluded": [
+  {
+   "eq": "1",
+   "reason": "Overall reaction stoichiometry is background chemistry, not a process-model equation."
+  },
+  {
+   "eq": "8",
+   "reason": "Defines an operational flexibility metric, not a model equation."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "not an equation",
+   "2": "NOT USED BY OTHERS: computes T_{s_{out}}; the model output (keep) or not part of the model (leave out)",
+   "3": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "4": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "5": "NOT USED BY OTHERS: computes R_{NH_3}; the model output (keep) or not part of the model (leave out)",
+   "6": "NOT USED BY OTHERS: computes X_{r,m_{out}}; the model output (keep) or not part of the model (leave out)",
+   "7": "NOT USED BY OTHERS: computes T_{m_{out}}; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes Flexibility; the model output (keep) or not part of the model (leave out)"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed).",
+  "2026-10-27: model-level assumptions re-checked with the sharpened rule (mechanism statements removed; neglected terms are warnings)."
+ ]
+}

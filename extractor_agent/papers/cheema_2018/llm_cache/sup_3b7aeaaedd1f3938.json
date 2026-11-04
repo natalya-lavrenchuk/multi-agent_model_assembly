@@ -1,0 +1,75 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3725,
+  "completion_tokens": 2494,
+  "total_tokens": 6219,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3722,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2082,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Operating envelope of Haber-Bosch process design for power-to-ammonia $ ^{\\dagger} $\n\nAbstract: The power-to-ammonia concept allows for the production of ammonia, one of the most produced inorganic chemicals, from air, water and (renewable) electricity. However, power-to-ammonia requires flexible operation for use with a directly intermittent renewable energy supply. In this paper, we systematically analyse the operating envelope for steady-state operation of the three bed autothermic Haber–Bosch reactor system for power-to-ammonia by pseudo-homogeneous model. Operational flexibilities of process variables, hydrogen intake and ammonia production flexibilities are analysed, along with maximum and minimum possible changes in recycle load and recycle to feed ratio for the following process variables: reactor pressure, inert gas percentage in synthesis loop, NH₃ concentration, H₂-to-N₂ ratio, total flow rate and feed temperature. Among the six process variables, inert gas fraction and H₂-to-N₂ ratio provided very high flexibilities, ca. 255% operational flexibility for Ar, up to 51 t\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [not an equation] p.2  ...ves an analysis on the exact challenges a flexible Haber-Bosch process faces, which then will be analysed using modelling in later sections.\n    \\mathrm{N}_{2}(\\mathrm{g})+3\\mathrm{H}_{2}(\\mathrm{g})\\xlongequal{\\Delta H=-92.44\\mathrm{~kJ~mol}^{-1}}2\\mathrm{NH}_{3}(\\mathrm{g})\n(2) [NOT USED BY OTHERS: computes T_{s_{out}}; the model output (keep) or not part of the model (leave out)] p.4  ...the feed-effluent heat exchanger is modelled by an  $ \\varepsilon $-NTU model $ ^{34} $ using the effectiveness  $ \\varepsilon $ as follows:\n    T_{\\mathrm{s_{out}}}=\\varepsilon T_{\\mathrm{t_{in}}}+(1-\\varepsilon)T_{\\mathrm{s_{in}}}\n(3) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...he steady state material and energy balance for the fine catalyst particles in catalyst beds are shown in eq $ ^{4} $ and (4), respectively:\n    \\frac{\\mathrm{d}X_{\\mathrm{r},b}}{\\mathrm{d}V_{b}}=\\frac{v_{\\mathrm{r}}R_{\\mathrm{N H_{3},b}}}{2\\dot{n}_{\\mathrm{r},b_{\\mathrm{i n}}}}\n(4) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...he steady state material and energy balance for the fine catalyst particles in catalyst beds are shown in eq $ ^{4} $ and (4), respectively:\n    \\frac{\\mathrm{d}T_{b}}{\\mathrm{d}V_{b}}=\\frac{(-\\Delta H_{b})R_{\\mathrm{N H}_{3},b}}{\\dot{m}_{b_{\\mathrm{i n}}}c_{\\mathrm{p}_{b}}}\n(5) [NOT USED BY OTHERS: computes R_{NH_3}; the model output (keep) or not part of the model (leave out)] p.4  ...in equation, $ ^{47} $ developed in 1968 by Dyson & Simon. $ ^{44} $ The activities are considered instead of partial pressures, as follows:\n    R_{\\mathrm{N H}_{3}}=k_{2}\\left(K^{2}a_{\\mathrm{N}_{2}}\\left(\\frac{a_{\\mathrm{H}_{2}}^{3}}{a_{\\mathrm{N H}_{3}}^{2}}\\right)^{\\alpha}-\\left(\\frac{a_{\\mathrm{N H}_{3}}^{2}}{a_{\\mathrm{H}_{2}}^{3}}\\right)^{1-\\alpha}\\right)\n(6) [NOT USED BY OTHERS: computes X_{r,m_{out}}; the model output (keep) or not part of the model (leave out)] p.5  ...rial and energy balance for the adiabatic mixer are used as follows for calculating the reactant conversion and temperature after quenching:\n    X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-\n(7) [NOT USED BY OTHERS: computes T_{m_{out}}; the model output (keep) or not part of the model (leave out)] p.5  ...rial and energy balance for the adiabatic mixer are used as follows for calculating the reactant conversion and temperature after quenching:\n    T_{m_{out}}=\\frac{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}+\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}}\n(8) [NOT USED BY OTHERS: computes Flexibility; the model output (keep) or not part of the model (leave out)] p.5  ...riables operational flexibility, the H₂ intake and the NH₃ production flexibility are defined as a fractional change from the normal values:\n    Flexibility=\\frac{actual-normal}{normal}\\times100\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) Additional equations for heat exchanger, catalyst beds and ammonia synthesis loop, along with supporting simulation data are provided.\n- (p.2) The Haber–Bosch ammonia synthesis loop for producing NH₃ consists of mixing and compression units, synthesis reactor system, a trail of heat exchangers and coolers, a separator, a recycle loop and a storage unit.\n- (p.3) Therefore, we first define the pseudo-homogeneous mathematical model along with the assumptions of the reactor system.\n- (p.4) First, the simplifying assumptions, along with mathematical models, are presented.\n- (p.4) Therefore, a pseudo-homogeneous reactor model is adapted and heat losses are ignored, though with this assumption, behaviour of the reactor system remains quite similar to real plant.\n- (p.4) In the following, the assumptions and physical equations for the subsystems are given.\n- (p.4) The  $ \\varepsilon $-NTU model is also suitable for solving off-design heat exchanger problems.\n- (p.4) Radial flow catalyst beds also permit the handling of small diameter catalyst particles $ ^1 $ with high catalyst efficiency $ ^{44} $ and almost negligible pressure drop, $ ^{45} $ therefore we assume isobaric condition\n- (p.4) $ ^{44} $ Further, the temperature gradient  $ \\Delta T $ inside the catalyst pellet is negligible, as high thermal conductivity magnetite Fe $ _3 $O $ _4 $ catalyst $ ^{46} $ is assumed.\n- (p.4) The steady state material and energy balance for the fine catalyst particles in catalyst beds are shown in eq $ ^{4} $ and (4), respectively:\n- (p.4) We have considered the conversion differential equation for both reactants, instead of just one reactant, as during the analysis of the operational envelope for  $ H_2 $-to- $ N_2 $ ratio we will be shifting limiting rea\n- (p.4) The rate of reaction is calculated by a modified form of the Temkin equation, $ ^{47} $ developed in 1968 by Dyson & Simon.\n- (p.4) Also, the equations used for calculating specific heat  $ C_p $ (eqn S15 to S17†) and heat of reaction  $ \\Delta H $ (eqn S18†) are stated in the ESI.†\n- (p.5) The mixing of gases in the mixer is assumed to be ideal and instantaneous.\n- (p.5) $ ^{48} $ Also, pressure remains constant, as isobaric conditions are assumed in overall reactor system.\n- (p.5) The equations used for calculating the material balance of streams ① to ⑦ mentioned in Fig. 1 for the ammonia synthesis loop are given in ESI.† The process variables operational flexibility, the H₂ intake and the NH₃ pro\n- (p.5) The simulation is performed in MATLAB software and a built-in ODE solver (ode45) is used for the implementation of differential equations.\n- (p.5) After the reactor system, unused reactants are separated from NH₃ and recycled back with assumption that 27.79 mol% of NH₃ is carried along with them during normal operation.\n- (p.5) With this NH₃ production capacity, an ammonia-to-power plant is capable of generating 50 MW h per day of energy from ca. 3 tons per day of ammonia via IC engine of 29% efficiency.¹⁶ For design only, the reaction is consi\n- (p.5) The plots consist of two different kinds of graphs: the S-shaped heat production curve and the straight-line for heat removal, e.g. see Fig. 3.\n- (p.7) For the catalyst bed 3 the  $ \\overline{TX} $ trajectory touches the operational (OP) line i.e. 90% of the equilibrium (EQ) line and reaction is stopped at 760 K as reactor volume was chosen such that 90% conversion may \n- (p.8) Here, 0 mol% of inert gas means zero purging of gas from recycle stream and fresh stream ① consist of  $ H_{2} $ and  $ N_{2} $ only.",
+ "answer": {
+  "models": [
+   {
+    "name": "Pseudo-homogeneous Haber–Bosch process",
+    "equations": [
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "The reactor is represented by a pseudo-homogeneous model.",
+      "quote": "a pseudo-homogeneous reactor model is adapted"
+     },
+     {
+      "text": "Heat losses are ignored.",
+      "quote": "heat losses are ignored"
+     },
+     {
+      "text": "The reactor system is isobaric.",
+      "quote": "we assume isobaric condition"
+     },
+     {
+      "text": "The temperature gradient inside catalyst pellets is negligible.",
+      "quote": "the temperature gradient ΔT inside the catalyst pellet is negligible"
+     },
+     {
+      "text": "Gas mixing in the mixer is ideal and instantaneous.",
+      "quote": "The mixing of gases in the mixer is assumed to be ideal and instantaneous."
+     },
+     {
+      "text": "During normal operation, 27.79 mol% of NH₃ is carried along with the recycled unused reactants.",
+      "quote": "with assumption that 27.79 mol% of NH₃ is carried along with them during normal operation"
+     }
+    ],
+    "complete_model": false
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "1",
+    "reason": "Overall reaction stoichiometry is background chemistry, not a process-model equation."
+   },
+   {
+    "eq": "8",
+    "reason": "Defines an operational flexibility metric, not a model equation."
+   }
+  ],
+  "free_laws": []
+ }
+}

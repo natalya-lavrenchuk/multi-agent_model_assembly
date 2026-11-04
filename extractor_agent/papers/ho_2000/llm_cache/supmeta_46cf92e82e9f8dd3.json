@@ -1,0 +1,49 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1856,
+  "completion_tokens": 1697,
+  "total_tokens": 3553,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1853,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1288,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: A Combined Pore Blockage and Cake Filtration Model for Protein Fouling during Microfiltration\n\nAbstract: Previous studies of protein fouling during microfiltration have shown significant discrepancies between filtrate flux data and predictions of the classical pore blockage, pore constriction, and cake filtration models. A new mathematical model was developed for the filtrate flux which accounts for initial fouling due to pore blockage and subsequent fouling due to the growth of a protein cake or deposit over these initially blocked regions. The model explicitly accounts for the inhomogeneity in the cake layer thickness over different regions of the membrane arising from the time-dependent blockage of the pore surface. The model was shown to be in excellent agreement with experimental data obtained during the stirred cell filtration of bovine serum albumin solutions through polycarbonate track-etched microfiltration membranes over the entire course of the filtration. The model provides a smooth transition from the pore blockage to cake filtration regimes, eliminating the need to use different mathematical formulations to describe these two phenomena. In addition, the model provides the first quantitative explanation for some of the unusual observations reported previously in investigations of protein microfiltration. The results provide important insights into the underlying mechanisms of protein fouling during microfiltration. © 2000 Academic Press\n\nSentences about the process and the data:\n- Previous studies of protein fouling during microfiltration have shown significant discrepancies between filtrate flux data and predictions of the classical pore blockage, pore constriction, and cake filtration models.\n- The model was shown to be in excellent agreement with experimental data obtained during the stirred cell filtration of bovine serum albumin solutions through polycarbonate track-etched microfiltration membranes over the entire course of the\n- Experimental data for the flux decline during protein filtration have often been analyzed using these simple fouling models, although there is still considerable controversy regarding the most appropriate fouling mechanism.\n- For example, Bowen and Gan (3) analyzed their data for fouling of capillary pore aluminum oxide membranes by bovine serum albumin (BSA) solutions using a pore constriction model.\n- Hlavacek and Bouchet (4) found good agreement between the intermediate blocking model and their data for the pressure rise during a constant flux filtration experiment.\n- The flux decline data for BSA were found to be consistent with either a pore constriction or a pore blockage mechanism at short times ($n > 1$), while the behavior at long times was governed by a cake filtration mechanism with $n \\approx 0$\n- In this case, the filtrate flux data at early times yielded an exponent of $n \\approx 2$ on a plot of $\\frac{d^2 t}{d V^2}$ versus $\\frac{d t}{d V}$, consistent with a pore blockage mechanism.\n- The data at longer\n- Although these experimental studies provide evidence for a transition in fouling mechanism from pore blockage to cake formation, there is currently no theoretical model capable of quantitatively describing this transition using a single mat\n- The objective of this study was to develop a new fouling model capable of explaining filtrate flux data over the entire filtration process, accounting for both pore blockage and cake filtration.\n- This model was verified using experimental data obtained during the constant pressure filtration of bovine serum albumin through track-etch polycarbonate membranes over a range of bulk protein concentrations and transmembrane pressures.\n- All BSA solutions were freshly prepared before each experiment and used within 8 h of preparation.\n- Filtration Experiments\n- All filtration experiments were conducted using a 25-mm-diameter stirred ultrafiltration cell (Model 8010, Amicon Corp.) connected to an acrylic solution reservoir that was air pressurized at 5.5 to 55 kPa.\n- Data were obtained using 0.2-μm polycarbonate track-etched (PCTE) membranes obtained from Osmonics (Livermore, CA).\n- The stirred cell and solution reservoir were initially filled with PBS, with the saline flux measured until steady state was attained (usually within 30 min).\n- At the end of the filtration, the stirred cell was rinsed with PBS, and the steady state PBS flux was reevaluated.\n- All experiments were performed at room temperature (22 ± 2°C).\n\nModel: Combined pore blockage and cake filtration model\nLaws:\n(4) [definition] Total filtrate flow is the sum of the flow through open and blocked pores.\n(5) [constitutive] Open-pore filtrate flow is computed from pressure, viscosity, clean membrane resistance, and open membrane area.\n(6) [constitutive] Blocked-pore filtrate flow is computed by integrating the local flow over the blocked membrane area.\n(7) [balance] The open membrane area decreases in proportion to convective protein-aggregate flow through the open pores.\n(10) [balance] Protein-deposit mass per unit area grows in proportion to protein transported through each blocked membrane region.\n(11) [constitutive] Filtrate flux through each blocked membrane region is computed from pressure, viscosity, and the combined membrane and deposit resistance.\n(12) [balance] Deposit hydraulic resistance changes in proportion to the rate of deposited protein mass accumulation per unit area.\n\nStates (computed by the ODEs):\n- A_{open}: Area of the membrane that remains uncovered at any given time.\n- m_{p}: Mass of the protein deposit per unit area.\n- R_{p}: Resistance of the protein deposit over a particular region of the membrane.\n\nInputs (variables no law computes):\n- \\Delta P: Transmembrane pressure.\n- A_{blocked}: Area of membrane blocked by protein aggregates.\n- C_{b}: Bulk protein concentration.\n\nModel-wide assumptions:\n- The initial deposit is partially permeable, allowing finite flow through blocked pores.\n- Pore coverage rate is proportional to convective protein‑aggregate flow rate.\n- Deposit hydraulic resistance is directly proportional to mass per unit area.\n- Specific protein layer resistance R' is constant during constant‑pressure filtration.",
+ "answer": {
+  "system": {
+   "value": "Bovine serum albumin (BSA) protein fouling during microfiltration through polycarbonate track-etched membranes",
+   "quote": "The model was shown to be in excellent agreement with experimental data obtained during the stirred cell filtration of bovine serum albumin solutions through polycarbonate track-etched microfiltration membranes over the entire course of the filtration."
+  },
+  "unit_operation": {
+   "value": "Stirred-cell membrane filtration",
+   "quote": "25-mm-diameter stirred ultrafiltration cell (Model 8010, Amicon Corp.)"
+  },
+  "operating_mode": {
+   "value": [
+    "batch"
+   ],
+   "quote": null,
+   "note": "Batch operation is inferred from the stirred-cell setup; filtration was at constant pressure."
+  },
+  "fitted_on": {
+   "value": "BSA filtration data from track-etch polycarbonate membranes, across bulk protein concentrations and transmembrane pressures",
+   "quote": "This model was verified using experimental data obtained during the constant pressure filtration of bovine serum albumin through track-etch polycarbonate membranes over a range of bulk protein concentrations and transmembrane pressures."
+  },
+  "phenomena": [
+   "Protein-aggregate-mediated pore blockage",
+   "Filtration through partially permeable blocked membrane regions",
+   "Spatially heterogeneous protein-cake growth over blocked regions",
+   "Hydraulic resistance buildup from deposited protein"
+  ],
+  "description": "The model describes BSA fouling during stirred-cell microfiltration through polycarbonate track-etched membranes and predicts filtrate flux over the course of constant-pressure filtration. It combines aggregate-driven loss of open membrane area with protein-deposit growth and increasing hydraulic resistance over blocked regions, accounting for the nonuniform cake thickness created as pores become blocked over time."
+ }
+}

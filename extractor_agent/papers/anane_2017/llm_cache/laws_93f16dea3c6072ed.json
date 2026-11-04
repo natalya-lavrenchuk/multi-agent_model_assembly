@@ -1,0 +1,224 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2249,
+  "completion_tokens": 7578,
+  "total_tokens": 9827,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2246,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5865,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): 3. Macro-kinetic model formulation\n\nText and equations in reading order:\n    where $ x \\in \\{X, S, A\\} $ represents the state variable in [g/l] and the subscript i represents the inlet concentration, F the feed, V the volume and r is the corresponding specific rate. Considering that inlet concentration of biomass is zero (sterile feed), we obtain the following expression for biomass balance in the fed-batch case:\n(12) \\frac{dX}{dt}=\\frac{F}{V}\\left(0-X\\right)+\\mu X    [code: ODE, computes X, code proposes balance]\n    In Eq. (12), X represents the concentration (cell dry weight) of cells and $ \\mu $ (h $ ^{-1} $) is the non-inhibited Monod-type specific growth rate, given as\n(13) \\mu=\\left(q_{s o x}-q_{m}\\right)Y_{e m}+q_{s o f}Y_{x s o f}+q_{s A}Y_{x a}    [code: algebraic, computes \\mu, code proposes constitutive]\n    where qsox, qsof, qsA, represent the uptake rates of substrate for oxidation, substrate metabolized through the overflow route and acetate respectively, the constants Y... define the respective yield coefficients, whereas qm represents the glucose expended for cell maintenance. Thus, according to Eq. (13), the overall growth of the culture results from usage of glucose through the oxidative ( $ q_{sox} $), acetate uptake ( $ q_{SA} $) and re-use of other products from the overflow route ( $ q_{sof} $), which all contribute energy equivalents for cell growth [14]. The mass balance for substrate...\n(14) \\frac{dS}{dt}=\\frac{F}{V}\\left(S_{i}-S\\right)-q_{s}X    [code: ODE, computes S, code proposes balance]\n    The substrate concentration S is modelled taking acetate inhibition into account, as reviewed by Shiloach and Fass [26]. The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition:\n(15) q_{s}=\\frac{q_{s max}}{1+\\frac{A}{K_{ia}}}\\cdot\\frac{S}{S+K_{s}}    [code: algebraic, computes q_{s}, code proposes constitutive]\n    where Kia and Ks are the acetate inhibition and the substrate affinity constants respectively. Not all the substrate consumed is metabolized in the TCA cycle (qsox), but a portion goes to the overflow path qsof.\n(16) q_{s o x}=\\left(q_{s}-q_{s o f}\\right)\\cdot\\frac{D O T}{D O T+K_{o}}    [code: algebraic, computes q_{sox}, code proposes constitutive]\n(17) q_{s o f}=\\frac{P_{A m a x}q_{s}}{q_{s}+K_{a p}}    [code: algebraic, computes q_{sof}, code proposes constitutive]\n    where $ K_{0} $ is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation, P $ _{Amax} $ and $ K_{ap} $ are the maximum acetate production and the production affinity constants. Acetate production/consumption is a cyclic process and considering no addition of acetate in the feed, the mass balance yields\n(18) \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X}    [code: ODE, computes A, code proposes balance]\n    The equilibrium $ q_{s}A=0 $ is reached when the acetate produced through the overflow route pA is equal to the acetate consumed $ q_{s}A $.\n(19) q_{A}=p_{A}-q_{sA}    [code: algebraic, computes q_{A}, code proposes definition]\n\nSymbols:\n  X: Concentration (cell dry weight) of cells. [g/l] (computed)\n  F: Flow rate. [L/h] (variable)\n  V: Volume. [L] (variable)\n  \\mu: Non-inhibited Monod-type specific growth rate. [h^-1] (computed)\n  q_{sox}: Uptake rate of substrate for oxidation. [g g^-1 h^-1] (computed)\n  q_{m}: Specific maintenance coefficient. [g/(g.h)] (parameter)\n  Y_{em}: Yield coefficient for the oxidative substrate term net of maintenance. [g g^-1] (parameter)\n  q_{sof}: Rate of substrate metabolized through the overflow route. [g g^-1 h^-1] (computed)\n  Y_{xsof}: Yield of biomass on substrate from auxiliary overflow routes, such as the mixed acid and pentose-phosphate pathways. [g g^-1] (parameter)\n  q_{sA}: Uptake rate of acetate. [g g^-1 h^-1] (computed)\n  Y_{xa}: Biomass yield coefficient for acetate consumption [g g^-1] (parameter)\n  S: Substrate (glucose) concentration [g/l] (computed)\n  S_{i}: Glucose concentration in the feed solution [g/L] (variable)\n  q_{s}: Specific glucose uptake rate [g/(g.h)] (computed)\n  q_{smax}: Maximum specific substrate uptake rate [g/(g.h)] (parameter)\n  A: Acetate concentration [g/l] (computed)\n  K_{ia}: Inhibition constant for glucose uptake by acetate [g/L] (parameter)\n  K_{s}: Affinity constant for substrate consumption [g/L] (parameter)\n  DOT: Dissolved oxygen tension [%] (computed)\n  K_{o}: Affinity constant for oxygen consumption [g/L] (parameter)\n  P_{Amax}: Maximum acetate production. [g/(g.h)] (parameter)\n  K_{ap}: Monod-type saturation constant for intracellular acetate production. [g L^-1] (parameter)\n  q_{A}: Specific acetate consumption rate. [g/(g.h)] (computed)\n  p_{A}: Specific acetate production rate. [g/(g.h)] (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 12, 13, 14, 15, 16, 17, 18, 19",
+ "answer": {
+  "laws": [
+   {
+    "eq": "12",
+    "description": "The biomass concentration changes through sterile-feed dilution and specific growth.",
+    "description_basis": "stated",
+    "quote": "biomass balance in the fed-batch case",
+    "law_type": "balance",
+    "law_type_reason": "It accounts for biomass accumulation through feed dilution and cellular generation.",
+    "assumptions": [
+     {
+      "text": "The inlet concentration of biomass is zero (sterile feed).",
+      "quote": "Considering that inlet concentration of biomass is zero (sterile feed)",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "The non-inhibited specific growth rate is computed from substrate and acetate uptake rates, maintenance, and their biomass yields.",
+    "description_basis": "stated",
+    "quote": "the non-inhibited Monod-type specific growth rate",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies how pathway rates, maintenance, and yields determine the specific growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "q_{s o x}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "q_{m}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{e m}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{s o f}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{x s o f}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "q_{s A}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{x a}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "14",
+    "description": "The glucose concentration changes through feed dilution and cellular substrate uptake.",
+    "description_basis": "stated",
+    "quote": "The mass balance for substrate",
+    "law_type": "balance",
+    "law_type_reason": "It accounts for substrate accumulation from the feed and consumption by cells.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "S"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "S_{i}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "15",
+    "description": "The specific glucose uptake rate follows Monod-type substrate saturation with non-competitive acetate inhibition.",
+    "description_basis": "stated",
+    "quote": "The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the kinetic relationship for glucose uptake, including saturation and inhibition.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "A"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "q_{s max}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{ia}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "16",
+    "description": "The oxidative substrate uptake rate is calculated from the uptake remaining after overflow, scaled by dissolved-oxygen availability.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It partitions substrate uptake into an oxygen-dependent oxidative pathway.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "total substrate uptake rate",
+      "symbol": "q_{s}"
+     },
+     {
+      "role": "overflow substrate uptake rate",
+      "symbol": "q_{s o f}"
+     },
+     {
+      "role": "driving force",
+      "symbol": "DOT"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{o}"
+     }
+    ],
+    "issue": "The symbol list gives K_{o} units of g/L, but the text calls it dimensionless and DOT is expressed as a percentage."
+   },
+   {
+    "eq": "17",
+    "description": "The overflow-route substrate uptake rate is calculated as a saturating function of glucose uptake.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a kinetic expression for the overflow pathway rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "glucose uptake rate",
+      "symbol": "q_{s}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "P_{Amax}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{ap}"
+     }
+    ],
+    "issue": "The left side q_{s o f} denotes overflow substrate uptake, whereas P_{Amax} and K_{ap} are described as acetate-production parameters; also, the listed units of K_{ap} do not match q_{s} in the denominator."
+   },
+   {
+    "eq": "18",
+    "description": "The acetate concentration balance accounts for feed dilution and net cellular acetate production or consumption, with no acetate added in the feed.",
+    "description_basis": "stated",
+    "quote": "Acetate production/consumption is a cyclic process and considering no addition of acetate in the feed, the mass balance yields",
+    "law_type": "balance",
+    "law_type_reason": "It is presented as an acetate mass balance with dilution and a cellular source or sink.",
+    "assumptions": [
+     {
+      "text": "No acetate is added in the feed.",
+      "quote": "considering no addition of acetate in the feed",
+      "stated_as_assumption": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "A"
+     }
+    ],
+    "issue": "As printed, the source term q_{s} A X uses the glucose uptake rate and acetate concentration; it is inconsistent with the acetate balance and Eq. 19, which indicate the term should use the net acetate rate q_{A} X."
+   },
+   {
+    "eq": "19",
+    "description": "The net specific acetate rate is defined as acetate production minus acetate uptake, and is zero when production equals uptake.",
+    "description_basis": "stated",
+    "quote": "the acetate produced through the overflow route pA is equal to the acetate consumed",
+    "law_type": "definition",
+    "law_type_reason": "It defines the net acetate rate as the difference between production and consumption rates.",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The accompanying text identifies the equilibrium as q_{sA}=0, but the net rate defined here is q_{A}, so the equilibrium condition should be q_{A}=0."
+   }
+  ]
+ }
+}

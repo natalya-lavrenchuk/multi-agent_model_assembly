@@ -1,0 +1,819 @@
+@prefix kg: <http://example.org/kg/vandenbussche_1996/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:vandenbussche_1996 a mkg:Sup ;
+    rdfs:label "vandenbussche_1996 · A Steady-State Kinetic Model for Methanol Synthesis and the Water Gas Shift Reaction on a Commercial Cu/ZnO/ $ Al_{2}O_{3} $ Catalyst"@en ;
+    mkg:hasMetadata kg:vandenbussche_1996_meta ;
+    mkg:includes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1> a mkg:Law ;
+    rdfs:label "vandenbussche_1996 eq 3.1"@en ;
+    mkg:computes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/r_MeOH> ;
+    mkg:equationNumber "3.1" ;
+    mkg:hasMetadata <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1_meta> ;
+    mkg:hasParameter <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_2_prime>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_3>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_4>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_8>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_9>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2O>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_star>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/k_5a_prime> ;
+    mkg:latex "r_{\\mathrm{MeOH}}= \\frac{k^{\\prime}_{\\mathrm{5a}}K^{\\prime}_{2}K_{3}K_{4}K_{\\mathrm{H}_{2}}p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}}\\left[1-(1/K^{*})\\left(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}/p_{\\mathrm{H}_{2}}^{3}p_{\\mathrm{CO}_{2}}\\right)\\right]}{(1+(K_{\\mathrm{H}_{2}\\mathrm{O}}/K_{8}K_{9}K_{\\mathrm{H}_{2}})(p_{\\mathrm{H}_{2}\\mathrm{O}}/p_{\\mathrm{H}_{2}})+\\sqrt{K_{\\mathrm{H}_{2}}p_{\\mathrm{H}_{2}}}+K_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{H}_{2}\\mathrm{O}})^{3}}" ;
+    mkg:uses <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CH_3OH>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CO_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2O> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_2_prime> a mkg:Parameter ;
+    rdfs:label "K_{2}^{\\prime} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant associated with the carbonate-forming CO₂ adsorption step." ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "An equilibrium constant for an elementary reaction is a constant of the kinetic law, not an operating condition." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{2}^{\\prime}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_3> a mkg:Parameter ;
+    rdfs:label "K_{3} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed carbonate to adsorbed bicarbonate." ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "An equilibrium constant for an elementary reaction is a constant of the kinetic law, not an operating condition." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{3}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_4> a mkg:Parameter ;
+    rdfs:label "K_{4} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed bicarbonate to adsorbed formate." ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "An equilibrium constant for an elementary reaction is a constant of the kinetic law, not an operating condition." ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{4}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_8> a mkg:Parameter ;
+    rdfs:label "K_{8} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed oxygen and hydrogen to adsorbed hydroxyl." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is an equilibrium constant for an elementary reaction step, a property of the kinetic law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{8}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_9> a mkg:Parameter ;
+    rdfs:label "K_{9} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed hydroxyl and hydrogen to adsorbed water." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is an equilibrium constant for an elementary reaction step, a property of the kinetic law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{9}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_star> a mkg:Parameter ;
+    rdfs:label "K^{*} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant for the overall hydrogenation of CO₂ to methanol." ;
+    mkg:dimension "[length] ** 2 * [time] ** 4 / [mass] ** 2" ;
+    mkg:reason "An equilibrium constant for the net methanol-synthesis reaction is a constant of the law, not an operating condition." ;
+    mkg:siFactor 1e-10 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K^{*}" ;
+    mkg:unit "1 / bar ** 2" ;
+    mkg:unitString "bar^-2" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/r_MeOH> a mkg:Variable ;
+    rdfs:label "r_{MeOH} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:description "Rate of methanol synthesis." ;
+    mkg:dimension "[substance] / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "r_{MeOH}" ;
+    mkg:unit "mol / kg / s" ;
+    mkg:unitString "mol/kgcat/s" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Computes the net methanol synthesis rate from the reactant and product partial pressures and the kinetic parameter groups." ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31)." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2O> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/k_5a_prime> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2O> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2O> ;
+            mkg:slot "inhibitor" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CO_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CH_3OH> ;
+            mkg:slot "product" ] ;
+    mkg:page "6" ;
+    mkg:quote "r_{\\mathrm{MeOH}}= \\frac{k^{\\prime}_{\\mathrm{5a}}K^{\\prime}_{2}K_{3}K_{4}K_{\\mathrm{H}_{2}}p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}}\\left[1-(1/K^{*})\\left(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}/p_{\\mathrm{H}_{2}}^{3}p_{\\mathrm{CO}_{2}}\\right)\\right]}{(1+(K_{\\mathrm{H}_{2}\\mathrm{O}}/K_{8}K_{9}K_{\\mathrm{H}_{2}})(p_{\\mathrm{H}_{2}\\mathrm{O}}/p_{\\mathrm{H}_{2}})+\\sqrt{K_{\\mathrm{H}_{2}}p_{\\mathrm{H}_{2}}}+K_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{H}_{2}\\mathrm{O}})^{3}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2> a mkg:Law ;
+    rdfs:label "vandenbussche_1996 eq 3.2"@en ;
+    mkg:computes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/r_RWGS> ;
+    mkg:equationNumber "3.2" ;
+    mkg:hasMetadata <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2_meta> ;
+    mkg:hasParameter <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_8>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_9>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2O>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/k_1_prime> ;
+    mkg:latex "r_{\\mathrm{RWGS}}= \\frac{k^{\\prime}_{1}p_{\\mathrm{CO}_{2}}\\left[1-K^{*}_{3}(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CO}}/p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}})\\right]}{(1+(K_{\\mathrm{H}_{2}\\mathrm{O}}/K_{8}K_{9}K_{\\mathrm{H}_{2}})(p_{\\mathrm{H}_{2}\\mathrm{O}}/p_{\\mathrm{H}_{2}})+\\sqrt{K_{\\mathrm{H}_{2}}p_{\\mathrm{H}_{2}}}+K_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{H}_{2}\\mathrm{O}})}" ;
+    mkg:uses <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/K_3_star>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2O> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_8> a mkg:Parameter ;
+    rdfs:label "K_{8} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed oxygen and hydrogen to adsorbed hydroxyl." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is an equilibrium constant for an elementary reaction step, a property of the kinetic law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{8}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_9> a mkg:Parameter ;
+    rdfs:label "K_{9} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for the conversion of adsorbed hydroxyl and hydrogen to adsorbed water." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is an equilibrium constant for an elementary reaction step, a property of the kinetic law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{9}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/K_3_star> a mkg:Variable ;
+    rdfs:label "K_{3}^{*} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:description "Equilibrium constant for the water gas shift reaction." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "K_{3}^{*}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/r_RWGS> a mkg:Variable ;
+    rdfs:label "r_{RWGS} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:description "Rate of the reverse water gas shift reaction." ;
+    mkg:dimension "[substance] / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "r_{RWGS}" ;
+    mkg:unit "mol / kg / s" ;
+    mkg:unitString "mol kgcat^-1 s^-1" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Computes the net reverse water-gas-shift rate from the reactant and product partial pressures and the kinetic parameter groups." ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "Fugacity corrections are neglected and partial pressures are used because the reported compressibility factors make the changes negligible." ],
+        [ mkg:quote "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions (16–18, 28, 31)." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Surface concentrations of the listed adsorbed intermediates are neglected because they are considered negligible under reaction conditions." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/k_1_prime> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2O> ;
+            mkg:slot "inhibition constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2O> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2O> ;
+            mkg:slot "inhibitor" ] ;
+    mkg:page "6" ;
+    mkg:quote "r_{\\mathrm{RWGS}}= \\frac{k^{\\prime}_{1}p_{\\mathrm{CO}_{2}}\\left[1-K^{*}_{3}(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CO}}/p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}})\\right]}{(1+(K_{\\mathrm{H}_{2}\\mathrm{O}}/K_{8}K_{9}K_{\\mathrm{H}_{2}})(p_{\\mathrm{H}_{2}\\mathrm{O}}/p_{\\mathrm{H}_{2}})+\\sqrt{K_{\\mathrm{H}_{2}}p_{\\mathrm{H}_{2}}}+K_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{H}_{2}\\mathrm{O}})}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5> a mkg:Law ;
+    rdfs:label "vandenbussche_1996 eq p5-5"@en ;
+    mkg:computes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5/var/k_1_star> ;
+    mkg:equationNumber "p5-5" ;
+    mkg:hasMetadata <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5_meta> ;
+    mkg:latex "\\log_{10}k_{1}^{*}=\\frac{3066}{T}-10.592" ;
+    mkg:uses <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5/var/T> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5/var/T> a mkg:Variable ;
+    rdfs:label "T (vandenbussche_1996 eq p5-5)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Temperature used in the model’s kinetic relations." ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor: T° (K) | -----: 493.2" ;
+    mkg:initialValue "493.2 K" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor." ;
+    mkg:reason "It is an operating temperature used as a run condition and measured along the reactor bed." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5/var/k_1_star> a mkg:Variable ;
+    rdfs:label "k_{1}^{*} (vandenbussche_1996 eq p5-5)"@en ;
+    mkg:description "Thermodynamically determined equilibrium constant." ;
+    mkg:dimension "[length] ** 2 * [time] ** 4 / [mass] ** 2" ;
+    mkg:siFactor 1e-10 ;
+    mkg:symbol "k_{1}^{*}" ;
+    mkg:unit "1 / bar ** 2" ;
+    mkg:unitString "bar^-2" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-5_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Temperature correlation for the thermodynamically determined equilibrium constant k₁*." ;
+    mkg:form "algebraic" ;
+    mkg:page "5" ;
+    mkg:possibleMisprint "The equation prints lowercase k₁*, whereas the surrounding text identifies this equilibrium constant as uppercase K₁*, suggesting a case misprint." ;
+    mkg:quote "\\log_{10}k_{1}^{*}=\\frac{3066}{T}-10.592" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6> a mkg:Law ;
+    rdfs:label "vandenbussche_1996 eq p5-6"@en ;
+    mkg:computes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6/var/K_3_star> ;
+    mkg:equationNumber "p5-6" ;
+    mkg:hasMetadata <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6_meta> ;
+    mkg:latex "\\log_{10}1/K_{3}^{*}=\\frac{-2073}{T}+2.029" ;
+    mkg:uses <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6/var/T> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6/var/K_3_star> a mkg:Variable ;
+    rdfs:label "K_{3}^{*} (vandenbussche_1996 eq p5-6)"@en ;
+    mkg:description "Equilibrium constant for the water gas shift reaction." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "K_{3}^{*}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6/var/T> a mkg:Variable ;
+    rdfs:label "T (vandenbussche_1996 eq p5-6)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Temperature used in the model’s kinetic relations." ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor: T° (K) | -----: 493.2" ;
+    mkg:initialValue "493.2 K" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor." ;
+    mkg:reason "It is an operating temperature used as a run condition and measured along the reactor bed." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-6_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Reciprocal temperature correlation for the water-gas-shift equilibrium constant K₃*." ;
+    mkg:form "algebraic" ;
+    mkg:page "5" ;
+    mkg:quote "\\log_{10}1/K_{3}^{*}=\\frac{-2073}{T}+2.029" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8> a mkg:Law ;
+    rdfs:label "vandenbussche_1996 eq p5-8"@en ;
+    mkg:computes <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/var/kappa> ;
+    mkg:equationNumber "p5-8" ;
+    mkg:hasMetadata <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8_meta> ;
+    mkg:hasParameter <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/A_star>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/B>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/R>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/T_av>,
+        <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/i> ;
+    mkg:latex "\\kappa(i)=A^{*}(i)\\mathrm{e x p}\\biggl(-\\frac{B(i)}{R}\\biggl(\\frac{1}{T_{\\mathrm{a v}}}-\\frac{1}{T}\\biggr)\\biggr)" ;
+    mkg:uses <http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/var/T> .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/A_star> a mkg:Parameter ;
+    rdfs:label "A^{*} (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Frequency factor in the reparameterized kinetic parameter groups." ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "so the number of parameters to be estimated amounted to 14." ;
+    mkg:reason "It is a frequency-factor constant of the kinetic parameter law, not an operating condition." ;
+    mkg:status "accepted" ;
+    mkg:symbol "A^{*}" ;
+    mkg:valueUncertainty "√K_H2 parameter group: 0.375; K_H2O parameter group: 10.18; K_H2O/(K_8 K_9 K_H2) parameter group: 260.29; k′_5a K′_2 K_3 parameter group: 259.75; k′_1 parameter group: 0.02" ;
+    mkg:valuesByCase "{\"√K_H2 parameter group\": \"30.82\", \"K_H2O parameter group\": \"558.17\", \"K_H2O/(K_8 K_9 K_H2) parameter group\": \"3,453.38\", \"k′_5a K′_2 K_3 parameter group\": \"7,070.34\", \"k′_1 parameter group\": \"1.65\"}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/B> a mkg:Parameter ;
+    rdfs:label "B (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Exponential factor representing E, −ΔH, or a combination of these." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "so the number of parameters to be estimated amounted to 14." ;
+    mkg:page "5" ;
+    mkg:quote "where $B(i)$ represents either $E$ or $(-\\Delta\\mathrm{H})$ or a combination of those" ;
+    mkg:reason "It is an exponential-factor constant representing activation-energy or adsorption-enthalpy terms, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "B" ;
+    mkg:unit "J / mol" ;
+    mkg:unitString "J mol^-1" ;
+    mkg:valueUncertainty "√K_H2 parameter group: 1,864; K_H2O parameter group: 3,058; K_4 K_H2 parameter group: 6,102.8; k′_1 parameter group: 1,694" ;
+    mkg:valuesByCase "{\"√K_H2 parameter group\": \"17,197 J mol^-1\", \"K_H2O parameter group\": \"124,119 J mol^-1\", \"K_4 K_H2 parameter group\": \"36,696 J mol^-1\", \"k′_1 parameter group\": \"-94,765 J mol^-1\"}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/R> a mkg:Parameter ;
+    rdfs:label "R (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Gas constant in the exponential parameter law." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:reason "It is a universal physical constant in the kinetic parameter law, not an operating condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R" ;
+    mkg:unit "J / K / mol" ;
+    mkg:unitString "J mol^-1 K^-1" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/T_av> a mkg:Parameter ;
+    rdfs:label "T_{av} (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Reference temperature in the reparameterized kinetic parameter law." ;
+    mkg:dimension "[temperature]" ;
+    mkg:reason "It is the fixed reference temperature used in the reparameterization, not a run-specific operating temperature." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{av}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" ;
+    mkg:value 5.0157e+02 .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/par/i> a mkg:Parameter ;
+    rdfs:label "i (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Index identifying a parameter group in κ(i)." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It identifies kinetic parameter groups rather than an operating condition or changing process quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "i" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/var/T> a mkg:Variable ;
+    rdfs:label "T (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Temperature used in the model’s kinetic relations." ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor: T° (K) | -----: 493.2" ;
+    mkg:initialValue "493.2 K" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor." ;
+    mkg:reason "It is an operating temperature used as a run condition and measured along the reactor bed." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8/var/kappa> a mkg:Variable ;
+    rdfs:label "\\kappa (vandenbussche_1996 eq p5-8)"@en ;
+    mkg:description "Temperature-dependent grouped kinetic quantity calculated from A* and B." ;
+    mkg:symbol "\\kappa" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eqp5-8_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Reparameterized temperature dependence of the fitted kinetic parameter groups." ;
+    mkg:form "algebraic" ;
+    mkg:page "5" ;
+    mkg:quote "\\kappa(i)=A^{*}(i)\\mathrm{e x p}\\biggl(-\\frac{B(i)}{R}\\biggl(\\frac{1}{T_{\\mathrm{a v}}}-\\frac{1}{T}\\biggr)\\biggr)" ;
+    mkg:status "pending" .
+
+kg:vandenbussche_1996_meta a mkg:Metadata ;
+    mkg:completeModel false ;
+    mkg:description "The model describes methanol synthesis and the reverse water-gas-shift reaction over a commercial Cu/ZnO/Al₂O₃ catalyst. It predicts the rates of both reactions and, when coupled to reactor material balances, gas conversions and concentration profiles. The kinetic equations are derived from a surface reaction scheme, with the two reactions coupled through a shared surface oxygen intermediate. The authors estimated parameters from integral bench-reactor experiments and used the fitted model to examine changes in temperature, pressure, and feed composition, including conditions outside the experimental range. They present it as a physically grounded model for predicting catalyst behavior, and make the full experimental data set available from the corresponding author." ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Based on the results of Chinchen et al. (14) and Rozovskii (15), we assume that  $ CO_{2} $ is the main source of carbon in methanol." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "CO₂ is the main source of carbon in methanol." ],
+        [ mkg:quote "Derivation of the corresponding set of kinetic equations is performed under the hypothesis of pseudo-steady-state of the concentration of the different surface intermediates (13)." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The concentrations of the different surface intermediates are in pseudo-steady state." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The actual minimization of this object function made use of a Levenberg–Marquardt routine of the multiresponse type (33)." ;
+            mkg:text "Parameter estimation minimized a weighted objective function using a multiresponse Levenberg–Marquardt routine." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Analysis of the parity plots for individual temperatures and pressures confirms the absence of systematic errors." ;
+            mkg:text "The authors report no systematic errors in parity plots examined at individual temperatures and pressures." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The fitted parameter groups were reported to satisfy the physicochemical criteria proposed by Boudart, including the required signs of frequency and exponential factors." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a gas chromatograph (GC, Packard 438S) determined its composition, while a mass spectrometer (Balzers 420), scanning the concentration of the different gas phase species in time, revealed possible disturbances in the intended steady-state reactor operation." ;
+            mkg:text "A gas chromatograph measured effluent composition, while a mass spectrometer scanned gas-phase species over time to detect possible reactor disturbances." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The use of fugacities, rather than partial pressures, was considered, applying the Soave–Redlich–Kwong equation of state (36). The compressibility factors were never outside the 0.99 to 1.01 range and found to give negligible changes in the results." ;
+            mkg:text "The authors considered fugacities using the Soave–Redlich–Kwong equation of state, but found that nonideality made negligible changes to the results." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The latter is inversely proportional to the variance of the response, derived from a set of replicate experiments." ;
+            mkg:text "Response weights were inversely proportional to response variances calculated from replicate experiments." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "These carbonates are quickly hydrogenated, first to bicarbonate structures and subsequently to Cu formate, formaldehyde, methoxy species, and finally methanol." ;
+            mkg:text "The proposed surface sequence includes carbonate, bicarbonate, formate, formaldehyde, methoxy, and methanol species, as well as oxygen, hydroxyl, and water species." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model assigns dissociative adsorption of CO₂ as the rate-determining step for the reverse water-gas-shift sequence." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The agreement is excellent over the complete range of conversions. The deviations from the diagonal are random and do not show any trends." ;
+            mkg:text "The model’s calculated and experimental conversion values showed excellent agreement across the conversion range, with random deviations from parity." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the pressure as well as the composition of the gas are well outside the experimental window used to estimate the kinetic parameters." ;
+            mkg:text "The authors tested model behavior beyond the original experimental window, including a 75 bar, 250°C comparison with the Klier et al. (1982) data." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Values were determined for the frequency and exponential factors of the parameter groups so the number of parameters to be estimated amounted to 14." ;
+            mkg:text "The authors estimated 14 parameters, consisting of frequency and exponential factors for parameter groups." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The responses used in the model evaluation were fractional conversions of CO and CO₂." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Unlike some other kinetic models available in the literature, the current model effectively couples the rate of both overall reactions through the common surface oxygen intermediate." ;
+            mkg:text "The authors describe the present model’s coupling through a common surface oxygen intermediate as a distinction from other available kinetic models." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reactor calculations under steady-state conditions use two independent material-balance responses, for example those for CO and CO₂." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model" ;
+            mkg:text "The kinetic model is steady-state and mechanistic, and the authors describe it as based on a detailed reaction network." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In view of the fact that the (isothermal) temperature profile was determined experimentally, integration of the energy equation was not necessary, while the pressure drop was also negligible." ;
+            mkg:text "The measured temperature profile was used in the parameter-estimation reactor calculations, so the energy equation was not integrated, and pressure drop was negligible." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the following expressions are obtained for the rate of methanol synthesis and the reverse water gas shift reaction" ;
+            mkg:text "The model has separate kinetic expressions for methanol synthesis and the reverse water-gas-shift reaction." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state whether the model code is available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This implies that the model simultaneously predicts two different concentrations of one and the same intermediate like formyl and methoxy species." ;
+            mkg:text "The paper contrasts its treatment with Graaf et al. (1988) and Graaf et al. (1990), whose selected model set could predict different concentrations for the same intermediate because it appeared in multiple overall reactions." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The experiments involved a commercial ICI 51-2 Cu/ZnO/Al₂O₃ catalyst" ;
+            mkg:text "The experiments used commercial ICI 51-2 Cu/ZnO/Al₂O₃ catalyst." ;
+            mkg:topic "catalyst" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Due to correlation between the heat of adsorption and the frequency factor, the probability of the latter fulfilling a significant role in the model is reduced to 90%." ;
+            mkg:text "After converting the fitted factors back to the original Arrhenius or Van’t Hoff forms, the water-adsorption frequency factor had an estimated 90% rather than 95% probability of being significant." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The experimental CO-to-CO₂ pressure ratio ranged from 0 to 4.1." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The integration of the two equations, containing the proposed kinetic expressions, was performed applying fourth-and fifth-order Runge-Kutta methods." ;
+            mkg:text "The reactor material balances were integrated with fourth- and fifth-order Runge–Kutta methods." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The temperature was varied between 180 and 280°C, and the pressure from 15 to 51 bar." ;
+            mkg:text "The parameter-estimation experiments covered 180–280°C and 15–51 bar." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reported confidence intervals are approximate because the model is nonlinear in its parameters." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The equilibrium constants for methanol synthesis and the water-gas-shift reaction were taken from Graaf et al. (1986)." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The absence of diffusional limitations, internal as well as external, was thoroughly verified using methods described by Froment and Bischoff (13)." ;
+            mkg:text "The authors thoroughly checked for internal and external diffusional limitations." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this sequence, shown in the left-hand side of Fig. 2, the rate determining step is the hydrogenation of the formate" ;
+            mkg:text "The model assigns formate hydrogenation as the rate-determining step for methanol synthesis." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Both reactions proceed on the copper phase of the catalyst (16). The role of ZnO is limited to structural promotion, at least under the typical industrial conditions applied in the current paper (21)." ;
+            mkg:text "The authors assign both overall reactions to the copper phase and describe ZnO as a structural promoter under the industrial conditions considered." ;
+            mkg:topic "catalyst" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "β represents a function of partial pressures and parameter groups" ;
+            mkg:text "The derived rate expressions use a shared factor that depends on partial pressures and parameter groups." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data set was too extensive to be incorporated in full in the text. It is available from the corresponding author." ;
+            mkg:text "The complete experimental data set was not printed in the paper but is available from the corresponding author." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the current model effectively couples the rate of both overall reactions through the common surface oxygen intermediate." ;
+            mkg:text "A common surface oxygen intermediate couples the rates of methanol synthesis and the water-gas-shift reaction." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst." ;
+            mkg:text "The model covers methanol synthesis and the reverse water-gas-shift reaction during syngas conversion over a copper-containing catalyst." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The study used 276 experiments, each providing two responses." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the obtained F value of 11,418 is three orders of magnitude larger than the tabulated 99% value, which is 2.56." ;
+            mkg:text "The regression F value was 11,418, compared with a tabulated 99% value of 2.56." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "For the Klier et al. (1982) comparison, the model qualitatively reproduced the observed methanol-conversion trend despite the experimental pressure and gas composition lying outside the estimation window." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The feed included CO, CO₂, H₂, and argon as an internal standard, delivered through mass-flow controllers." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Mass (g) | -----: 34.8" ;
+            mkg:text "The adiabatic bench-reactor base-case simulation used 34.8 g of catalyst, a 0.5 mm pellet diameter, 50 bar, 493.2 K, and a mass flow of 2.8 × 10⁻⁵ kg/s." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Based upon a detailed reaction scheme derived from literature data and own experimental work (21)" ;
+            mkg:text "The mechanistic development drew on Chinchen et al. (1987a), Rozovskii (1989), and the authors’ earlier experimental work, Vanden Bussche and Froment (1994)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Note that the concentrations of adsorbed bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl species were not taken into account, since their concentration is negligible under reaction conditions" ;
+            mkg:text "The concentrations of several adsorbed species, including bicarbonate, formaldehyde, methoxy, methanol, and hydroxyl, are omitted as negligible under reaction conditions." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "It was diluted with an inert, for the sake of isothermicity, and positioned in the reactor between a top and a bottom inert bed. The height of the bed in most cases amounted to about 5 cm." ;
+            mkg:text "Catalyst particles were diluted with inert material and most catalyst beds were about 5 cm high." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "At 3 mm into the bed the reverse water gas shift reaches its equilibrium value" ;
+            mkg:text "In the adiabatic base-case simulation, the reverse water-gas-shift reaction reached equilibrium about 3 mm into the bed and thermodynamic equilibrium concentrations were reached at about 3 cm." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The reactor was divided into three heating zones, each with its own PID temperature controller (Shinho MCS), facilitating isothermal operation. The temperature profile along the bed was measured by means of eight thermocouples (TC), situated at the central axis of the reactor. The TC are linked to a PC, enabling a continuous and on line registration of the temperature profile." ;
+            mkg:text "The reactor had three independently controlled heating zones, and eight axial thermocouples continuously registered the temperature profile." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The use of pure CO₂ in the feed limited the maximum operating pressure because CO₂ condenses at 54 bar at ambient temperature." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The stainless steel reactor was of the tubular type, with an internal diameter of 15.8 mm and a length of 150 mm" ;
+            mkg:text "Kinetic data were collected in a tubular stainless-steel bench reactor with a 15.8 mm internal diameter and a 150 mm length." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The fitted model was used to simulate Klier et al. (1982) experiments at 250°C without tuning the model to those data." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "never yielded any statistically significant contribution." ;
+            mkg:text "The carbonate- and formate-coverage parameter groups were found to lack statistical significance and their contribution was discarded from the shared factor in the rate expressions." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors used simulations to illustrate how inlet temperature, pressure, and the CO-to-CO₂ ratio affect reactor behavior." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Due to the limited sensitivity of the GC katharometer, the reactor was operated in an integral fashion (13), yielding the conversions of the different reactants as experimental responses." ;
+            mkg:text "Because the gas chromatograph was not sensitive enough for differential measurements, the experiments were run as integral reactors and conversions were used as responses." ;
+            mkg:topic "reactor" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the current context, a pseudohomogeneous one-dimensional model was applied (13)." ;
+            mkg:text "For reactor calculations, the authors used a pseudohomogeneous, one-dimensional model." ;
+            mkg:topic "model" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2> a mkg:Parameter ;
+    rdfs:label "K_{H_2} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant for dissociative adsorption of hydrogen on two surface sites." ;
+    mkg:dimension "[length] * [time] ** 2 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "An adsorption equilibrium constant is a constant of the kinetic law, not an operating condition." ;
+    mkg:siFactor 1e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{H_2}" ;
+    mkg:unit "1 / bar" ;
+    mkg:unitString "bar^-1" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/K_H_2O> a mkg:Parameter ;
+    rdfs:label "K_{H_2O} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for desorption of adsorbed water as gaseous H₂O." ;
+    mkg:dimension "[length] * [time] ** 2 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "It is an equilibrium constant for an adsorption/desorption step, a property of the kinetic law." ;
+    mkg:siFactor 1e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{H_2O}" ;
+    mkg:unit "1 / bar" ;
+    mkg:unitString "bar^-1" ;
+    mkg:valueUncertainty "Standard deviation: 10.18 (A*); 3,058 (B)" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/par/k_5a_prime> a mkg:Parameter ;
+    rdfs:label "k_{5a}^{\\prime} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Rate constant for the rate-determining hydrogenation of formate (step 5a)." ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "A rate constant for an elementary reaction is a constant of the kinetic law, not an operating condition." ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{5a}^{\\prime}" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CH_3OH> a mkg:Variable ;
+    rdfs:label "p_{CH_3OH} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of methanol." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "0.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure that changes as methanol is produced is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{CH_3OH}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_CO_2> a mkg:Variable ;
+    rdfs:label "p_{CO_2} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of carbon dioxide." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "3.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure that varies with feed composition and through the reactor is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{CO_2}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2> a mkg:Variable ;
+    rdfs:label "p_{H_2} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of hydrogen." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "82.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure set through the feed composition and changing through the reactor is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{H_2}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2> a mkg:Parameter ;
+    rdfs:label "K_{H_2} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Equilibrium constant for dissociative adsorption of hydrogen on two surface sites." ;
+    mkg:dimension "[length] * [time] ** 2 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "An adsorption equilibrium constant is a constant of the kinetic law, not an operating condition." ;
+    mkg:siFactor 1e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{H_2}" ;
+    mkg:unit "1 / bar" ;
+    mkg:unitString "bar^-1" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/K_H_2O> a mkg:Parameter ;
+    rdfs:label "K_{H_2O} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant for desorption of adsorbed water as gaseous H₂O." ;
+    mkg:dimension "[length] * [time] ** 2 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "It is an equilibrium constant for an adsorption/desorption step, a property of the kinetic law." ;
+    mkg:siFactor 1e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{H_2O}" ;
+    mkg:unit "1 / bar" ;
+    mkg:unitString "bar^-1" ;
+    mkg:valueUncertainty "Standard deviation: 10.18 (A*); 3,058 (B)" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/par/k_1_prime> a mkg:Parameter ;
+    rdfs:label "k_{1}^{\\prime} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Effective rate constant for the rate-determining reverse water gas shift step." ;
+    mkg:dimension "[substance] * [time] * [length] / [mass] ** 2" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Values were determined for the frequency and exponential factors of the parameter groups" ;
+    mkg:reason "It is a rate constant of the kinetic law, not a run condition." ;
+    mkg:siFactor 1e-05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{1}^{\\prime}" ;
+    mkg:unit "mol / bar / kg / s" ;
+    mkg:unitString "mol kgcat^-1 s^-1 bar^-1" ;
+    mkg:valueUncertainty "Standard deviation: 0.02 (A*); 1,694 (B)" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO> a mkg:Variable ;
+    rdfs:label "p_{CO} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Partial pressure of carbon monoxide in the reacting gas." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:measured true ;
+    mkg:measuredQuote "a gas chromatograph (GC, Packard 438S) determined its composition" ;
+    mkg:reason "It is a process-gas partial pressure used as a run-dependent condition in the rate law, rather than a fitted material constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{CO}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_CO_2> a mkg:Variable ;
+    rdfs:label "p_{CO_2} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of carbon dioxide." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "3.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure that varies with feed composition and through the reactor is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{CO_2}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2> a mkg:Variable ;
+    rdfs:label "p_{H_2} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of hydrogen." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "82.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure set through the feed composition and changing through the reactor is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{H_2}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.1/var/p_H_2O> a mkg:Variable ;
+    rdfs:label "p_{H_2O} (vandenbussche_1996 eq 3.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of water." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "0.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure that changes as water is produced and consumed is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{H_2O}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+
+<http://example.org/kg/vandenbussche_1996/law/vandenbussche_1996_eq3.2/var/p_H_2O> a mkg:Variable ;
+    rdfs:label "p_{H_2O} (vandenbussche_1996 eq 3.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Partial pressure of water." ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:initialQuote "Operating Conditions for the Simulation of the Bench Scale Reactor" ;
+    mkg:initialValue "0.00 mol%" ;
+    mkg:reason "A gas-phase partial pressure that changes as water is produced and consumed is a process quantity, not a law constant." ;
+    mkg:siFactor 1e+05 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p_{H_2O}" ;
+    mkg:unit "bar" ;
+    mkg:unitString "bar" .
+

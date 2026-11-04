@@ -1,0 +1,26 @@
+@prefix mkg: <http://example.org/mkg#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mkg:doc_x_10_1016_j_sajce_2020_07_006_contois_models a mkg:Document ; mkg:doi "10.1016/j.sajce.2020.07.006#contois-models" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_contois_models__L1 a mkg:RateLaw ;
+    mkg:sympyExpr "Eq(mu, mu_max*S/(K_dot_X+S))" ;
+    mkg:latexSource "\\mu=\\frac{\\mu_{m a x}S}{K.X+S}\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad\\qquad(9)" ;
+    mkg:kindStated false ;
+    mkg:hasName "Contois model" ;
+    mkg:nameSource "prose" ;
+    mkg:computes "mu" ;
+    mkg:uses "\u03bc" ;
+    mkg:uses "\\u03bcmax" ;
+    mkg:uses "S" ;
+    mkg:hasStatus mkg:flagged ; mkg:failedGate "symbol_unbound" ; mkg:failedGate "symbol_not_in_table" ; mkg:failedGate "latex_glyph_mismatch" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_contois_models__L1_prov a mkg:ExtractionRecord ;
+    mkg:fromDocument mkg:doc_x_10_1016_j_sajce_2020_07_006_contois_models ;
+    mkg:fromBlock "/page/5/Equation/10" ;
+    mkg:producedBy "openai/gpt-oss-120b/strict/p2.v1" .
+
+mkg:x_10_1016_j_sajce_2020_07_006_contois_models__L1_namespan a mkg:SourceSpan ;
+    mkg:fromDocument mkg:doc_x_10_1016_j_sajce_2020_07_006_contois_models ;
+    mkg:verbatimText "The Contois model can be defined by equation 9." ;
+    mkg:supports mkg:x_10_1016_j_sajce_2020_07_006_contois_models__L1 .

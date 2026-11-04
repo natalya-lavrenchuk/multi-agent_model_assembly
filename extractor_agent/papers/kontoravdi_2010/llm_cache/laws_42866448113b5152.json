@@ -1,0 +1,230 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1989,
+  "completion_tokens": 4557,
+  "total_tokens": 6546,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1986,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3378,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The mass balances on the viable and total cell populations, based on conventional assumptions such as perfect mixing and negligible dilution effect, are\n(1) \\frac{d V}{d t}=F_{i n}-F_{o u t}    [code: ODE, computes V, code proposes balance]\n(2) \\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}    [code: ODE, computes X_{\\nu}, code proposes balance]\n(3) \\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}    [code: ODE, computes X_{t}, code proposes balance]\n    The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\n(4) \\mu=\\mu_{m a x}f_{l i m}f_{i n h}    [code: algebraic, computes \\mu, code proposes constitutive]\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)    [code: algebraic, computes f_{lim}, code proposes constitutive]\n(6) f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right)    [code: algebraic, computes f_{inh}, code proposes constitutive]\n    Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1    [code: algebraic, computes \\mu_{d}, code proposes constitutive]\n    The mass balances on glucose and glutamine around the bioreactor are:\n(8) \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]    [code: ODE, computes [GLC], code proposes balance]\n\nSymbols:\n  V: Bioreactor volume. (computed)\n  F_{in}: Inlet flow rate. (variable)\n  F_{out}: Outlet flow rate. (variable)\n  X_{\\nu}: Viable cell density. (computed)\n  \\mu: Specific cell growth rate. [h^-1] (computed)\n  \\mu_{d}: Specific cell death rate. [h^-1] (computed)\n  X_{t}: Total cell density. (computed)\n  \\mu_{max}: Maximum specific growth rate. [h^-1] (parameter)\n  f_{lim}: Growth-limitation factor for substrate concentrations. [-] (computed)\n  f_{inh}: Growth-inhibition factor for inhibitory metabolite concentrations. [-] (computed)\n  [GLC]: Glucose concentration [mM] (computed)\n  K_{glc}: Monod constant for glucose [mM] (parameter)\n  K_{gln}: Monod constant for glutamine [mM] (parameter)\n  K_{Ilac}: Monod constant for lactate [mM] (parameter)\n  [LAC]: Lactate concentration [mM] (computed)\n  K_{Iamm}: Monod constant for ammonia [mM] (parameter)\n  [AMM]: Ammonia concentration [mM] (computed)\n  \\mu_{d,max}: Maximum specific growth rate [h^-1] (parameter)\n  K_{d,amm}: Ammonia constant for cell death [mM] (parameter)\n  n: Exponent in the ammonia-dependent cell-death law [-] (parameter)\n  Q_{glc}: Specific glucose consumption rate. [mmol cell^-1 h^-1] (computed)\n  [GLC]_{in}: Glucose concentration in the bioreactor inlet. (variable)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 1, 2, 3, 4, 5, 6, 7, 8",
+ "answer": {
+  "laws": [
+   {
+    "eq": "1",
+    "description": "The bioreactor volume changes according to inlet minus outlet flow.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It balances volume accumulation against inlet and outlet flows.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "V"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "2",
+    "description": "The viable-cell population increases through growth, decreases through cell death, and leaves with the outlet flow.",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations",
+    "law_type": "balance",
+    "law_type_reason": "It balances viable-cell accumulation against growth, death, and cell outflow.",
+    "assumptions": [
+     {
+      "text": "Perfect mixing.",
+      "quote": "perfect mixing",
+      "stated_as_assumption": true,
+      "process_condition": true
+     },
+     {
+      "text": "The dilution effect is negligible.",
+      "quote": "negligible dilution effect",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{\\nu}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "The total-cell population increases through viable-cell growth and leaves with the outlet flow.",
+    "description_basis": "stated",
+    "quote": "The mass balances on the viable and total cell populations",
+    "law_type": "balance",
+    "law_type_reason": "It balances total-cell accumulation against viable-cell growth and total-cell outflow.",
+    "assumptions": [
+     {
+      "text": "Perfect mixing.",
+      "quote": "perfect mixing",
+      "stated_as_assumption": true,
+      "process_condition": true
+     },
+     {
+      "text": "The dilution effect is negligible.",
+      "quote": "negligible dilution effect",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{t}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "Specific cell growth rate is the maximum growth rate multiplied by substrate-limitation and metabolite-inhibition factors.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the kinetic expression for the specific growth rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate-limitation factor",
+      "symbol": "f_{lim}"
+     },
+     {
+      "role": "inhibition factor",
+      "symbol": "f_{inh}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "5",
+    "description": "The substrate-limitation factor is the product of two Monod-type concentration terms, printed here with glucose in both numerators.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a Monod-type kinetic expression for substrate limitation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{glc}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{gln}"
+     }
+    ],
+    "issue": "The numerator [GLC] in the second factor is inconsistent with K_{gln} and the text identifying glutamine as a growth substrate; it should be the glutamine concentration."
+   },
+   {
+    "eq": "6",
+    "description": "The growth-inhibition factor is the product of concentration-dependent inhibition terms for lactate and ammonia.",
+    "description_basis": "stated",
+    "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the metabolite-dependent kinetic inhibition factor.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "inhibitor",
+      "symbol": "[LAC]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Ilac}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{Iamm}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "7",
+    "description": "Specific cell death rate increases with extracellular ammonia concentration according to a Hill-type expression.",
+    "description_basis": "stated",
+    "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies an ammonia-dependent kinetic law for cell death.",
+    "assumptions": [
+     {
+      "text": "Cell death depends only on the ammonia concentration in the extracellular medium.",
+      "quote": "cell death only depends on the concentration of ammonia in the extracellular medium",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{d,max}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "[AMM]"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{d,amm}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "8",
+    "description": "The glucose balance accounts for cellular consumption, glucose entering with the feed, and glucose leaving with the outlet.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "balance",
+    "law_type_reason": "It balances glucose accumulation against cellular consumption and inlet and outlet transport.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[GLC]"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "[GLC]_{in}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

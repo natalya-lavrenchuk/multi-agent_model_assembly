@@ -1,0 +1,63 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 1.6219403909999999,
+  "prompt_tokens": 2051,
+  "prompt_time": 0.917376248,
+  "completion_tokens": 4921,
+  "completion_time": 11.260542512,
+  "total_tokens": 6972,
+  "total_time": 12.17791876,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4675
+  }
+ },
+ "user": "Equations:\n(4) r_{\\mathrm{{C O}}}=k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes}      <- \" the fast reactions, one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\"\n(7) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(8) \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(C-11) r_{\\mathrm{{C O}}}=(1-\\phi)k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-12) r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-14) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{CO}_{2}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-15) \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\n\\Theta^{\\otimes}   [COMPUTED by eq 8, C-15]\n  (no snippet mentions this symbol)\n\nK_{CO}   [NOT COMPUTED]\n  [125] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_{3} catalyst (Vollbrecht, 2007): Elementary step: $ \\text{CO} \\odot \\Rightarrow \\text{CO} + \\odot $ | Quasi-equilibrium/velocity: $ \\theta_{CO}^{\\odot} = K_{CO} p_{CO} \\T\n\nK_{A3}   [NOT COMPUTED]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\Theta^{\\otimes}",
+    "description": "fraction of surface sites of type \\otimes (surface coverage)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{CO}",
+    "description": "adsorption equilibrium constant for CO",
+    "description_basis": "stated",
+    "snippet_id": 125,
+    "quote": "θ_{CO}^{\\odot} = K_{CO} p_{CO}",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "parameter: equilibrium adsorption constant for CO, a material property",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{A3}",
+    "description": "equilibrium constant for intermediate A3 adsorption",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "parameter: equilibrium constant for intermediate A3 adsorption, a model constant",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "sup": "wang_2019",
+ "title": "Dynamic Modeling of Microalgae Growth and Lipid Production under Transient Light and Nitrogen Conditions",
+ "doi": "10.1021/acs.est.9b02908",
+ "status": "approved",
+ "proposed_by": "openai/gpt-oss-120b",
+ "equations": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "9",
+  "10",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "description": "A dynamic model of Dunaliella viridis cultivated in a lab‑scale photobioreactor under transient light and nitrogen conditions, consisting of six state‑variable ODEs coupled with light‑attenuation and nutrient functions.",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "Optical cross‑section parameters a and b are taken as constant regardless of cultivation conditions.",
+   "quote": "a and b were independent of the cultivation conditions",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  },
+  {
+   "text": "The composition of functional biomass is fixed to CH1.8O0.5N0.2.",
+   "quote": "functional biomass is assumed as CH_{1.8}O_{0.5}N_{0.2}",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  },
+  {
+   "text": "Nitrate uptake is assumed to equal the nitrate removed from the medium.",
+   "quote": "algae cells assimilated the nitrate removed from the medium",
+   "page": 4,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  }
+ ],
+ "model_name": "Dynamic microalgae growth and lipid production model",
+ "excluded": [
+  {
+   "eq": "7",
+   "reason": "UNUSED: computes I_{l}, which no model equation uses"
+  },
+  {
+   "eq": "8",
+   "reason": "UNUSED: computes I_{R,l}, which no model equation uses"
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "7": "UNUSED: computes I_{l}, which no model equation uses",
+   "8": "UNUSED: computes I_{R,l}, which no model equation uses",
+   "9": "NEEDED: computes A, used by the model",
+   "10": "NEEDED: computes I_{avg}, used by the model",
+   "11": "NEEDED: computes I_{avg_R}, used by the model",
+   "12": "NEEDED: computes P, used by the model",
+   "13": "NEEDED: computes I_{sat}, used by the model",
+   "14": "NEEDED: computes Y_{E}^{c}, used by the model",
+   "15": "NEEDED: computes q_{nl}, used by the model",
+   "16": "NEEDED: computes m_{chl}, used by the model",
+   "17": "NEEDED: computes \\nu_{N}, used by the model",
+   "18": "NEEDED: computes Q_{n}, used by the model",
+   "1": "NEEDED: a balance (ODE)",
+   "2": "NEEDED: a balance (ODE)",
+   "3": "NEEDED: a balance (ODE)",
+   "4": "NEEDED: a balance (ODE)",
+   "5": "NEEDED: a balance (ODE)",
+   "6": "NEEDED: a balance (ODE)"
+  }
+ },
+ "review": {
+  "by": "human",
+  "note": "Dropped 2 of 5 assumptions: 'steady-state and balanced growth' is quoted from the introduction, where it describes the limitation of OTHER models (Wang's model avoids it); 'X_N0 = 0.2 X_cd0' is an initial condition, not a model assumption. Boundary eqs 1-6, 9-18 accepted (7-8 are written out inside eq 10). Note: X_C (total carbon) is used by eqs 9, 12, 13, 18 but no equation computes it.",
+  "dropped": [
+   {
+    "text": "The model assumes steady‑state and balanced growth for solving stoichiometric reactions.",
+    "quote": "steady-state and balanced-growth assumption",
+    "page": 1,
+    "severity": "blocking",
+    "reasoned": false
+   },
+   {
+    "text": "The initial intracellular nitrogen concentration is set to 20% of the initial carbon density.",
+    "quote": "initial concentration of intracellular nitrogen X_{N_0} to be 0.2 X_{cd_0}",
+    "page": 4,
+    "severity": "blocking",
+    "reasoned": false
+   }
+  ]
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed)."
+ ]
+}

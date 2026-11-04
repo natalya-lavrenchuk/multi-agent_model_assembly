@@ -1,0 +1,1252 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "4": {
+   "form": "algebraic",
+   "computes": "r_{CO}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Detailed Langmuir-Hinshelwood kinetic model",
+   "description": "The CO-hydrogenation rate is calculated from the net forward and reverse pressure terms, scaled by the free oxidized and hydrogen-center coverages.",
+   "description_basis": "stated",
+   "quote": "Using the quasi equilibrium assumption (QEA) for the fast reactions, one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used in place of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "rate constant",
+     "symbol": "k_{1}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CH_3OH}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "The CO-hydrogenation rate is calculated from the net forward and reverse pressure terms, scaled by the free oxidized and hydrogen-center coverages.",
+    "description_basis": "stated",
+    "quote": "Using the quasi equilibrium assumption (QEA) for the fast reactions, one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used in place of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "k_{1}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": "\\Theta^{\\odot}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Detailed Langmuir-Hinshelwood kinetic model",
+   "description": "The free oxidized surface-center coverage is calculated from the contributions of adsorbed species on oxidized centers.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are given by",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used in place of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The outer exponent is printed as ^{-} without an exponent, leaving the coverage expression incomplete.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The outer exponent is printed as ^{-} without an exponent, leaving the coverage expression incomplete."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "The free oxidized surface-center coverage is calculated from the contributions of adsorbed species on oxidized centers.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are given by",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used in place of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The outer exponent is printed as ^{-} without an exponent, leaving the coverage expression incomplete."
+   }
+  },
+  "8": {
+   "form": "algebraic",
+   "computes": "\\Theta^{\\otimes}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Detailed Langmuir-Hinshelwood kinetic model",
+   "description": "The free hydrogen surface-center coverage is calculated from the hydrogen adsorption contribution.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are given by",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used in place of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "The free hydrogen surface-center coverage is calculated from the hydrogen adsorption contribution.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are given by",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used in place of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "9": {
+   "form": "algebraic",
+   "computes": "\\Theta^{*}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Detailed Langmuir-Hinshelwood kinetic model",
+   "description": "The free reduced surface-center coverage is calculated from the water and methanol adsorption contributions and related surface-step terms.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are given by",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used in place of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The expression contains a doubled plus sign and an outer exponent printed as ^{-} without an exponent, so the printed coverage expression is malformed.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The expression contains a doubled plus sign and an outer exponent printed as ^{-} without an exponent, so the printed coverage expression is malformed."
+   ],
+   "llm": {
+    "eq": "9",
+    "description": "The free reduced surface-center coverage is calculated from the water and methanol adsorption contributions and related surface-step terms.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are given by",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used in place of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The expression contains a doubled plus sign and an outer exponent printed as ^{-} without an exponent, so the printed coverage expression is malformed."
+   }
+  },
+  "10": {
+   "form": "algebraic",
+   "computes": "k_{i}",
+   "condition": null,
+   "value": null,
+   "section": "2.1. Detailed Langmuir-Hinshelwood kinetic model",
+   "description": "The reparameterized Arrhenius relation computes each rate constant from its linearized parameters and the temperature relative to the reference temperature.",
+   "description_basis": "stated",
+   "quote": "the following reformulation of the Arrhenius-equation is used",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "10",
+    "description": "The reparameterized Arrhenius relation computes each rate constant from its linearized parameters and the temperature relative to the reference temperature.",
+    "description_basis": "stated",
+    "quote": "the following reformulation of the Arrhenius-equation is used",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "22": {
+   "form": "algebraic",
+   "computes": "\\phi",
+   "condition": null,
+   "value": null,
+   "section": "2.3. Extension to variable number of reduced and oxidized surface centers",
+   "description": "The equilibrium relation calculates the reduced fraction of surface centers from the relative surface-contact free-energy term.",
+   "description_basis": "stated",
+   "quote": "Following Ovesen et al. (1997), φ can be calculated from the equilibrium relations as follows",
+   "assumptions": [
+    {
+     "text": "This equilibrium relation applies at steady state.",
+     "quote": "At steady state, reactions (18) and (19) are in equilibrium according to",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The reduced surface-center fraction is capped at 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The printed Eq. (22) omits the -0.1 correction factor that the corrigendum says was used to cap the reduced surface-center fraction at 0.9.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: This equilibrium relation applies at steady state.",
+    "possible misprint: The printed Eq. (22) omits the -0.1 correction factor that the corrigendum says was used to cap the reduced surface-center fraction at 0.9."
+   ],
+   "llm": {
+    "eq": "22",
+    "description": "The equilibrium relation calculates the reduced fraction of surface centers from the relative surface-contact free-energy term.",
+    "description_basis": "stated",
+    "quote": "Following Ovesen et al. (1997), φ can be calculated from the equilibrium relations as follows",
+    "assumptions": [
+     {
+      "text": "This equilibrium relation applies at steady state.",
+      "quote": "At steady state, reactions (18) and (19) are in equilibrium according to",
+      "process_condition": true
+     },
+     {
+      "text": "The reduced surface-center fraction is capped at 90%.",
+      "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The printed Eq. (22) omits the -0.1 correction factor that the corrigendum says was used to cap the reduced surface-center fraction at 0.9."
+   }
+  },
+  "23": {
+   "form": "algebraic",
+   "computes": null,
+   "condition": null,
+   "value": null,
+   "section": "2.3. Extension to variable number of reduced and oxidized surface centers",
+   "description": "The equilibrium expression calculates the relative Cu–Zn surface-contact free-energy term from the gas partial pressures and equilibrium constants.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [
+    {
+     "text": "This equilibrium relation applies at steady state.",
+     "quote": "At steady state, reactions (18) and (19) are in equilibrium according to",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "blocking assumption: This equilibrium relation applies at steady state."
+   ],
+   "llm": {
+    "eq": "23",
+    "description": "The equilibrium expression calculates the relative Cu–Zn surface-contact free-energy term from the gas partial pressures and equilibrium constants.",
+    "description_basis": "stated",
+    "quote": "The ratio in γ/γ₀ is the relative free energy contact surface of Cu and Zn (see Fig. 1) (Ovesen et al., 1997; Vesborg et al., 2009).",
+    "assumptions": [
+     {
+      "text": "This equilibrium relation applies at steady state.",
+      "quote": "At steady state, reactions (18) and (19) are in equilibrium according to",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "24": {
+   "form": "algebraic",
+   "computes": "K_{1}",
+   "condition": null,
+   "value": null,
+   "section": "2.3. Extension to variable number of reduced and oxidized surface centers",
+   "description": "The equilibrium constant for the first surface-center conversion is calculated from its Gibbs free energy and temperature.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "24",
+    "description": "The equilibrium constant for the first surface-center conversion is calculated from its Gibbs free energy and temperature.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants K₁ and K₂ (Eqs. (20) and (21)) can be expressed as a function of free energy according to",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "25": {
+   "form": "algebraic",
+   "computes": "K_{2}",
+   "condition": null,
+   "value": null,
+   "section": "2.3. Extension to variable number of reduced and oxidized surface centers",
+   "description": "The equilibrium constant for the second surface-center conversion is calculated from its Gibbs free energy and temperature.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper"
+   ],
+   "llm": {
+    "eq": "25",
+    "description": "The equilibrium constant for the second surface-center conversion is calculated from its Gibbs free energy and temperature.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants K₁ and K₂ (Eqs. (20) and (21)) can be expressed as a function of free energy according to",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "28": {
+   "form": "ODE",
+   "computes": "\\phi",
+   "condition": null,
+   "value": null,
+   "section": "2.3. Extension to variable number of reduced and oxidized surface centers",
+   "description": "The kinetic law computes the transient change in the reduced surface-center fraction from the gas mole fractions and conversion rate constants.",
+   "description_basis": "stated",
+   "quote": "Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation",
+   "assumptions": [
+    {
+     "text": "The law is used under transient conditions, when the surface-center conversion reactions are not at equilibrium.",
+     "quote": "Under transient conditions, reaction equilibrium according to Eqs. (20) and (21) is not valid anymore.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The reduced surface-center fraction is capped at 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The printed Eq. (28) uses (1−φ) in both terms, but the corrigendum says both factors are replaced by (0.9−φ) in the dynamic equation to impose the 90% cap.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: The law is used under transient conditions, when the surface-center conversion reactions are not at equilibrium.",
+    "possible misprint: The printed Eq. (28) uses (1−φ) in both terms, but the corrigendum says both factors are replaced by (0.9−φ) in the dynamic equation to impose the 90% cap."
+   ],
+   "llm": {
+    "eq": "28",
+    "description": "The kinetic law computes the transient change in the reduced surface-center fraction from the gas mole fractions and conversion rate constants.",
+    "description_basis": "stated",
+    "quote": "Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation",
+    "assumptions": [
+     {
+      "text": "The law is used under transient conditions, when the surface-center conversion reactions are not at equilibrium.",
+      "quote": "Under transient conditions, reaction equilibrium according to Eqs. (20) and (21) is not valid anymore.",
+      "process_condition": true
+     },
+     {
+      "text": "The reduced surface-center fraction is capped at 90%.",
+      "quote": "A maximum coverage of 90% of reduced surface centers is assumed and ensured with a correction factor of -0.1 in Eq. (22) Seidel et al., (2018).",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The printed Eq. (28) uses (1−φ) in both terms, but the corrigendum says both factors are replaced by (0.9−φ) in the dynamic equation to impose the 90% cap."
+   }
+  },
+  "33": {
+   "form": "ODE",
+   "computes": "y_{i}",
+   "condition": null,
+   "value": null,
+   "section": "Table 4",
+   "description": "The dynamic reactor balance computes each component’s mole-fraction trajectory from the feed, residence time, and reaction terms.",
+   "description_basis": "stated",
+   "quote": "For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions yᵢ",
+   "assumptions": [
+    {
+     "text": "The reactor is a modified differential CSTR.",
+     "quote": "The experimental setup is based on a modified, differential CSTR of a Micro-Berty Reactor type described Berty (1999).",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The reactor is a modified differential CSTR."
+   ],
+   "llm": {
+    "eq": "33",
+    "description": "The dynamic reactor balance computes each component’s mole-fraction trajectory from the feed, residence time, and reaction terms.",
+    "description_basis": "stated",
+    "quote": "For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions yᵢ",
+    "assumptions": [
+     {
+      "text": "The reactor is a modified differential CSTR.",
+      "quote": "The experimental setup is based on a modified, differential CSTR of a Micro-Berty Reactor type described Berty (1999).",
+      "process_condition": true
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "C-11": {
+   "form": "algebraic",
+   "computes": "r_{CO}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The rate law computes CO hydrogenation from the CO and hydrogen reactants and methanol product, weighted by the catalyst state and available surface coverages.",
+   "description_basis": "stated",
+   "quote": "simplified reaction rate expressions",
+   "assumptions": [
+    {
+     "text": "The reduced surface-center fraction is capped at 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{1}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P1}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\phi"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-11",
+    "description": "The rate law computes CO hydrogenation from the CO and hydrogen reactants and methanol product, weighted by the catalyst state and available surface coverages.",
+    "description_basis": "stated",
+    "quote": "simplified reaction rate expressions",
+    "assumptions": [
+     {
+      "text": "The reduced surface-center fraction is capped at 90%.",
+      "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_1"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P1}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\phi"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-12": {
+   "form": "algebraic",
+   "computes": "r_{CO_2}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The rate law computes CO₂ hydrogenation from the CO₂ and hydrogen reactants and methanol and water products, weighted by the catalyst state and available surface coverages.",
+   "description_basis": "stated",
+   "quote": "simplified reaction rate expressions",
+   "assumptions": [
+    {
+     "text": "The reduced surface-center fraction is capped at 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{2}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P2}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\phi"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-12",
+    "description": "The rate law computes CO₂ hydrogenation from the CO₂ and hydrogen reactants and methanol and water products, weighted by the catalyst state and available surface coverages.",
+    "description_basis": "stated",
+    "quote": "simplified reaction rate expressions",
+    "assumptions": [
+     {
+      "text": "The reduced surface-center fraction is capped at 90%.",
+      "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_2"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P2}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\phi"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-13": {
+   "form": "algebraic",
+   "computes": "r_{RWGS}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The rate law computes the reverse water-gas shift rate from the CO₂-to-CO and water reaction driving force, weighted by the catalyst state and available surface coverages.",
+   "description_basis": "stated",
+   "quote": "prefactor of the reverse water–gas shift reaction (RWGS)",
+   "assumptions": [
+    {
+     "text": "The reduced surface-center fraction is capped at 90%.",
+     "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{3}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P3}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\phi"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-13",
+    "description": "The rate law computes the reverse water-gas shift rate from the CO₂-to-CO and water reaction driving force, weighted by the catalyst state and available surface coverages.",
+    "description_basis": "stated",
+    "quote": "prefactor of the reverse water–gas shift reaction (RWGS)",
+    "assumptions": [
+     {
+      "text": "The reduced surface-center fraction is capped at 90%.",
+      "quote": "A maximum coverage of 90% of reduced surface centers is assumed",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_3"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\phi"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-14": {
+   "form": "algebraic",
+   "computes": "\\Theta^{\\odot}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The expression computes the free oxidized-site coverage from CO, methanol, and CO₂ adsorption on oxidized centers.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "adsorbing species",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{CO}"
+    },
+    {
+     "role": "adsorbing species",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{CH_3OH}^{\\odot}"
+    },
+    {
+     "role": "adsorbing species",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{CO_2}^{\\odot}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-14",
+    "description": "The expression computes the free oxidized-site coverage from CO, methanol, and CO₂ adsorption on oxidized centers.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "adsorbing species",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CO}"
+     },
+     {
+      "role": "adsorbing species",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CH_3OH}^{\\odot}"
+     },
+     {
+      "role": "adsorbing species",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CO_2}^{\\odot}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-15": {
+   "form": "algebraic",
+   "computes": "\\Theta^{\\otimes}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The expression computes the free hydrogen-site coverage from hydrogen adsorption and dissociation.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "adsorbing species",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{H_2}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-15",
+    "description": "The expression computes the free hydrogen-site coverage from hydrogen adsorption and dissociation.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "adsorbing species",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{H_2}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-16": {
+   "form": "algebraic",
+   "computes": "\\Theta^{*}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The expression computes the free reduced-site coverage from CO₂, methanol, and water adsorption and the water-to-hydrogen pressure ratio.",
+   "description_basis": "stated",
+   "quote": "The corresponding surface coverages are:",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "species pressure",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "species pressure",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "species pressure",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "species pressure",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{H_2O}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{O}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{H_2}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{CO_2}^{*}"
+    },
+    {
+     "role": "adsorption constant",
+     "symbol": "K_{CH_3OH}^{*}"
+    }
+   ],
+   "issue": "The final parenthesis has exponent “−” rather than “−1,” so the printed expression does not specify the reciprocal.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The final parenthesis has exponent “−” rather than “−1,” so the printed expression does not specify the reciprocal."
+   ],
+   "llm": {
+    "eq": "C-16",
+    "description": "The expression computes the free reduced-site coverage from CO₂, methanol, and water adsorption and the water-to-hydrogen pressure ratio.",
+    "description_basis": "stated",
+    "quote": "The corresponding surface coverages are:",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "species pressure",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "species pressure",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "species pressure",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "species pressure",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{H_2O}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{O}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{H_2}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CO_2}^{*}"
+     },
+     {
+      "role": "adsorption constant",
+      "symbol": "K_{CH_3OH}^{*}"
+     }
+    ],
+    "issue": "The final parenthesis has exponent “−” rather than “−1,” so the printed expression does not specify the reciprocal."
+   }
+  },
+  "C-1": {
+   "form": "algebraic",
+   "computes": "K_{P1}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The correlation computes the CO-hydrogenation equilibrium constant as a function of temperature.",
+   "description_basis": "stated",
+   "quote": "The equilibrium constants for the reaction rates of the detailed and the simplified kinetic models in Seidel et al., (2018)",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-1",
+    "description": "The correlation computes the CO-hydrogenation equilibrium constant as a function of temperature.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants for the reaction rates of the detailed and the simplified kinetic models in Seidel et al., (2018)",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "C-2": {
+   "form": "algebraic",
+   "computes": "K_{P2}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The correlation computes the CO₂-hydrogenation equilibrium constant as a function of temperature.",
+   "description_basis": "stated",
+   "quote": "The equilibrium constants for the reaction rates of the detailed and the simplified kinetic models in Seidel et al., (2018)",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-2",
+    "description": "The correlation computes the CO₂-hydrogenation equilibrium constant as a function of temperature.",
+    "description_basis": "stated",
+    "quote": "The equilibrium constants for the reaction rates of the detailed and the simplified kinetic models in Seidel et al., (2018)",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "C-3": {
+   "form": "algebraic",
+   "computes": "K_{P3}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "Temperature correlation for the RWGS equilibrium constant K_P3.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P3}"
+    },
+    {
+     "role": "temperature",
+     "symbol": "T"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-3",
+    "description": "Temperature correlation for the RWGS equilibrium constant K_P3.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-5": {
+   "form": "algebraic",
+   "computes": "r_{CO_2}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The CO₂-hydrogenation rate is computed from its net pressure driving force, modulated by reduced-site and hydrogen-center coverages.",
+   "description_basis": "stated",
+   "quote": "one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used instead of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CH_3OH}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{2}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P2}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\Theta^{*}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\Theta^{\\otimes}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-5",
+    "description": "The CO₂-hydrogenation rate is computed from its net pressure driving force, modulated by reduced-site and hydrogen-center coverages.",
+    "description_basis": "stated",
+    "quote": "one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used instead of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{2}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P2}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{*}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{\\otimes}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "C-6": {
+   "form": "algebraic",
+   "computes": "r_{RWGS}",
+   "condition": null,
+   "value": null,
+   "section": "References",
+   "description": "The reverse-water-gas-shift rate is computed from its net pressure driving force, modulated by oxidized- and reduced-site coverages.",
+   "description_basis": "stated",
+   "quote": "one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+   "assumptions": [
+    {
+     "text": "Partial pressures are used instead of fugacities.",
+     "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "p_{CO_2}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "p_{H_2}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{CO}"
+    },
+    {
+     "role": "product",
+     "symbol": "p_{H_2O}"
+    },
+    {
+     "role": "rate constant",
+     "symbol": "k_{3}"
+    },
+    {
+     "role": "equilibrium constant",
+     "symbol": "K_{P3}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\Theta^{\\odot}"
+    },
+    {
+     "role": "catalyst",
+     "symbol": "\\Theta^{*}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "C-6",
+    "description": "The reverse-water-gas-shift rate is computed from its net pressure driving force, modulated by oxidized- and reduced-site coverages.",
+    "description_basis": "stated",
+    "quote": "one can calculate the reaction rates for the CO-hydrogenation, $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows",
+    "assumptions": [
+     {
+      "text": "Partial pressures are used instead of fugacities.",
+      "quote": "Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "k_{3}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{\\odot}"
+     },
+     {
+      "role": "catalyst",
+      "symbol": "\\Theta^{*}"
+     }
+    ],
+    "issue": null
+   }
+  }
+ }
+}

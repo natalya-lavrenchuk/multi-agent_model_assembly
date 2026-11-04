@@ -1,0 +1,386 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": true,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "K_{1}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Described as a positive constant for substrate inhibition; such inhibition constants are normally estimated by fitting kinetic data.",
+   "llm": {
+    "symbol": "K_{1}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Described as a positive constant for substrate inhibition; such inhibition constants are normally estimated by fitting kinetic data."
+   }
+  },
+  "K_{2}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Identified as a positive constant describing substrate inhibition; inhibition constants are typically obtained by parameter estimation.",
+   "llm": {
+    "symbol": "K_{2}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Identified as a positive constant describing substrate inhibition; inhibition constants are typically obtained by parameter estimation."
+   }
+  },
+  "K_{I}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears in an exponential inhibition term; such inhibition constants are usually fitted to experimental growth data.",
+   "llm": {
+    "symbol": "K_{I}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears in an exponential inhibition term; such inhibition constants are usually fitted to experimental growth data."
+   }
+  },
+  "K_{S}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Half‑saturation constant in a Monod‑type denominator; conventionally treated as an estimable kinetic parameter.",
+   "llm": {
+    "symbol": "K_{S}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Half‑saturation constant in a Monod‑type denominator; conventionally treated as an estimable kinetic parameter."
+   }
+  },
+  "K_{i}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Inhibition constant appearing in substrate‑inhibition expressions; normally determined by fitting to data.",
+   "llm": {
+    "symbol": "K_{i}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Inhibition constant appearing in substrate‑inhibition expressions; normally determined by fitting to data."
+   }
+  },
+  "K_{s}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Half‑saturation constant in Monod‑type kinetics; standard practice is to estimate it from experimental growth curves.",
+   "llm": {
+    "symbol": "K_{s}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Half‑saturation constant in Monod‑type kinetics; standard practice is to estimate it from experimental growth curves."
+   }
+  },
+  "S": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Substrate concentration is an input/state that can change during a run; not a constant parameter.",
+   "llm": {
+    "symbol": "S",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Substrate concentration is an input/state that can change during a run; not a constant parameter."
+   }
+  },
+  "S_{m}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Critical inhibitor concentration appears in denominator of inhibition terms; such saturation/inhibition constants are normally estimated from data.",
+   "llm": {
+    "symbol": "S_{m}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Critical inhibitor concentration appears in denominator of inhibition terms; such saturation/inhibition constants are normally estimated from data."
+   }
+  },
+  "X": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Biomass concentration is a state variable that evolves during the process.",
+   "llm": {
+    "symbol": "X",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Biomass concentration is a state variable that evolves during the process."
+   }
+  },
+  "X_{1}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "X₁ is a measured biomass concentration at time t₁, used to compute growth rate; it is not a model constant.",
+   "llm": {
+    "symbol": "X_{1}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "X₁ is a measured biomass concentration at time t₁, used to compute growth rate; it is not a model constant."
+   }
+  },
+  "X_{2}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "X₂ is a measured biomass concentration at time t₂, used to compute growth rate; it is not a model constant.",
+   "llm": {
+    "symbol": "X_{2}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "X₂ is a measured biomass concentration at time t₂, used to compute growth rate; it is not a model constant."
+   }
+  },
+  "X_{m}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Maximum biomass concentration is a kinetic parameter that is typically estimated from experimental data.",
+   "llm": {
+    "symbol": "X_{m}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Maximum biomass concentration is a kinetic parameter that is typically estimated from experimental data."
+   }
+  },
+  "\\kappa_{T}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears in the denominator of an exponential term controlling substrate effect; such constants are typically fitted saturation-like parameters, thus estimable.",
+   "llm": {
+    "symbol": "\\kappa_{T}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears in the denominator of an exponential term controlling substrate effect; such constants are typically fitted saturation-like parameters, thus estimable."
+   }
+  },
+  "\\mu_{max}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Description \\mu = Specific growth rate \\mu_{max} = Maximum Specific growth rate ...",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Identified in the paper as the maximum specific growth rate, a kinetic parameter that is obtained by fitting model to experimental data.",
+   "llm": {
+    "symbol": "\\mu_{max}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 91,
+    "quote": "Description \\mu = Specific growth rate \\mu_{max} = Maximum Specific growth rate ...",
+    "reason": "Identified in the paper as the maximum specific growth rate, a kinetic parameter that is obtained by fitting model to experimental data."
+   }
+  },
+  "a": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Models: Logarithmic:  $ \\mu = a + b \\ln(s) $",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Listed as a coefficient in the logarithmic growth model; such coefficients are estimated during model calibration.",
+   "llm": {
+    "symbol": "a",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 83,
+    "quote": "Models: Logarithmic:  $ \\mu = a + b \\ln(s) $",
+    "reason": "Listed as a coefficient in the logarithmic growth model; such coefficients are estimated during model calibration."
+   }
+  },
+  "b": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Models: Logarithmic:  $ \\mu = a + b \\ln(s) $",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Listed as a coefficient in the logarithmic growth model; such coefficients are estimated during model calibration.",
+   "llm": {
+    "symbol": "b",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 83,
+    "quote": "Models: Logarithmic:  $ \\mu = a + b \\ln(s) $",
+    "reason": "Listed as a coefficient in the logarithmic growth model; such coefficients are estimated during model calibration."
+   }
+  },
+  "m": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Models: Powell:  $ \\mu = \\frac{(\\mu_{max} + m)s}{K_s + S} - m $",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Described as a constant in the Powell model; constants of this type are normally fitted to data.",
+   "llm": {
+    "symbol": "m",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 86,
+    "quote": "Models: Powell:  $ \\mu = \\frac{(\\mu_{max} + m)s}{K_s + S} - m $",
+    "reason": "Described as a constant in the Powell model; constants of this type are normally fitted to data."
+   }
+  },
+  "n": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Models: Moser:  $ \\mu = \\frac{\\mu_{max}S^n}{K_s + S^n} $",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Appears as an exponent in the Moser kinetic expression; such exponents are typically estimated from experimental data.",
+   "llm": {
+    "symbol": "n",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 81,
+    "quote": "Models: Moser:  $ \\mu = \\frac{\\mu_{max}S^n}{K_s + S^n} $",
+    "reason": "Appears as an exponent in the Moser kinetic expression; such exponents are typically estimated from experimental data."
+   }
+  },
+  "s": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "s appears as substrate concentration in growth rate equations; substrate concentrations are inputs that can change during a run, thus they are model variables.",
+   "llm": {
+    "symbol": "s",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "s appears as substrate concentration in growth rate equations; substrate concentrations are inputs that can change during a run, thus they are model variables."
+   }
+  },
+  "t_{1}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "t_{1} is a time point used to compute the specific growth rate from biomass measurements; time points are external measurements that vary between experiments, so they are variables.",
+   "llm": {
+    "symbol": "t_{1}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "t_{1} is a time point used to compute the specific growth rate from biomass measurements; time points are external measurements that vary between experiments, so they are variables."
+   }
+  },
+  "t_{2}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "t_{2} is the second time point in the growth rate calculation, analogous to t_{1}, and is an external measurement that can differ across runs, thus a variable.",
+   "llm": {
+    "symbol": "t_{2}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "t_{2} is the second time point in the growth rate calculation, analogous to t_{1}, and is an external measurement that can differ across runs, thus a variable."
+   }
+  }
+ }
+}

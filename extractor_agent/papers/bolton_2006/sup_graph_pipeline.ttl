@@ -1,0 +1,2079 @@
+@prefix kg: <http://example.org/kg/bolton_2006_intermediate_standard_blocking/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/bolton_2006_cake_complete_blocking> a mkg:Sup ;
+    rdfs:label "bolton_2006_cake_complete_blocking · Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids (Cake-complete blocking)"@en ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_complete_blocking/bolton_2006_cake_complete_blocking_meta> ;
+    mkg:includes <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28> .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/bolton_2006_cake_intermediate_blocking> a mkg:Sup ;
+    rdfs:label "bolton_2006_cake_intermediate_blocking · Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids (Cake-intermediate blocking)"@en ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_intermediate_blocking/bolton_2006_cake_intermediate_blocking_meta> ;
+    mkg:includes <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30> .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/bolton_2006_cake_standard_blocking> a mkg:Sup ;
+    rdfs:label "bolton_2006_cake_standard_blocking · Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids (Cake-standard blocking)"@en ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_standard_blocking/bolton_2006_cake_standard_blocking_meta> ;
+    mkg:includes <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29> .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/bolton_2006_complete_standard_blocking> a mkg:Sup ;
+    rdfs:label "bolton_2006_complete_standard_blocking · Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids (Complete-standard blocking)"@en ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_complete_standard_blocking/bolton_2006_complete_standard_blocking_meta> ;
+    mkg:includes <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31> .
+
+kg:bolton_2006_intermediate_standard_blocking a mkg:Sup ;
+    rdfs:label "bolton_2006_intermediate_standard_blocking · Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids (Intermediate-standard blocking)"@en ;
+    mkg:hasMetadata kg:bolton_2006_intermediate_standard_blocking_meta ;
+    mkg:includes <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32> .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/bolton_2006_cake_complete_blocking_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The paper develops five combined fouling models for membrane filtration, including a cake-complete model for protein solutions filtered through microporous membranes. The model represents fouling through both growth of a cake layer and loss of open membrane area, and predicts permeate volume over time at constant pressure or pressure over time at constant flow. It uses Darcy’s law and two fitted parameters, and approaches the individual cake or complete-blocking models when one mechanism dominates. The authors tested it using sterile filtration of human plasma IgG and virus filtration of BSA, as well as constant-flow IgG tests, in bench-scale membrane holders. They compared its fits with individual and other combined fouling models and considered its use for membrane-area sizing." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The deposited aggregates were assumed to be permeable." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Deposited aggregates are permeable." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "At constant flow, the model predicts pressure as a function of time." ;
+            mkg:topic "outputs" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model uses two fitted parameters, one for cake filtration and one for complete blocking." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The supplied formulation has eight algebraic laws and no state variables, so its time-dependent predictions are calculated from relations rather than state ODEs." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit of the data occurred with the combined cake-intermediate model, which had and SSR value slightly lower than the cake-complete model, as shown in Table 4." ;
+            mkg:text "For constant-flow IgG filtration, the cake-intermediate model had the lowest SSR at 0.58, while the cake-complete model had an SSR of 1.36." ;
+            mkg:topic "results" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Five constant-pressure BSA runs used 47 mm holders, and permeate volume was measured until flux had fallen 98% from an initial 3.58 × 10⁻⁴ m/s." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this study only the parameter Ks was fit to the data." ;
+            mkg:text "For the standard-model comparison in the constant-pressure IgG analysis, only the standard-blocking constant was fitted to avoid refitting the initial flux for each experiment." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing." ;
+            mkg:text "The authors propose the cake-complete model as useful for membrane-area sizing." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To determine the filtrate volume as a function of percent flux decline – for example, the volume after the flux has declined 75% from its initial value – it is necessary to solve Eq. (15) numerically." ;
+            mkg:text "The model does not provide a direct formula for permeate volume at a specified flux decline, so that quantity must be found numerically." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking." ;
+            mkg:text "The cake-complete model idealizes caking and complete blocking as independent effects, although the paper notes that they may interact in real filtration." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer" ;
+            mkg:text "BSA was prepared at 2.5 mg/mL in pH 7.2 PBS, and human plasma IgG was prepared at 10.0 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "materials" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined models were assessed through testing under constant pressure and constant flow modes with solutions of bovine serum albumin and human IgG." ;
+            mkg:text "The model describes fouling during filtration of protein solutions through microporous membranes." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law." ;
+            mkg:text "The combined fouling relations were derived using Darcy’s law." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-complete model in effect provides complete blocking and cake filtration parameters that are average values for the length of the run." ;
+            mkg:text "Because the mechanisms may be coupled, the fitted cake and blocking parameters can represent average values over the filtration run." ;
+            mkg:topic "interpretation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This is demonstrated in Fig. 10 where the combined cake-complete model is fit to predictions of each of the typical blocking models from Fig. 8." ;
+            mkg:text "The cake-complete model could closely reproduce predictions from each of the four individual fouling models." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms." ;
+            mkg:text "The cake-standard and cake-intermediate models are intended for cases where those combinations agree with experimentally observed fouling mechanisms." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Data was collected every second for 1 h." ;
+            mkg:text "The experimental system collected filtration data every second for one hour." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes." ;
+            mkg:text "The BSA virus-filtration tests used Viresolve 180, a composite PVDF membrane, at 30 psi." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data was similar for the five experiments. The average and standard deviation was calculated at each time point." ;
+            mkg:text "The BSA results were averaged across the five runs, with standard deviation calculated at each time point." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests." ;
+            mkg:text "The IgG sterile-filtration tests used a nominal 0.22 μm Durapore PVDF membrane at 10 psi." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement." ;
+            mkg:text "The authors describe their combined models as less physically detailed than Ho and Zydney et al. (2000), but simpler to implement numerically." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Three constant-flow IgG experiments measured pressure over time while solution was pumped through 47 mm holders at 579 L m⁻² h⁻¹." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit of the data occurred with the combined cake-complete model, which had and SSR value slightly lower than the standard model, as shown in Table 3." ;
+            mkg:text "For constant-pressure IgG filtration, the cake-complete model had an SSR of 11.2, slightly lower than the standard model’s 13.9." ;
+            mkg:topic "results" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Three constant-pressure IgG experiments used 13 mm holders, and permeate volume was measured until flux had fallen 95% from an initial 1.13 × 10⁻³ m/s." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "There are four mechanistic models that are typically used to describe fouling." ;
+            mkg:text "The four individual fouling mechanisms used as components are the classical mechanisms cited to Grace (1956) and Hermia (1982)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Complete blocking assumes that particles seal off pore entrances and prevent flow." ;
+            mkg:text "Complete blocking represents particles sealing pore entrances so those pores no longer carry flow." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction." ;
+            mkg:text "Model fits were assessed by minimizing the sum of squared residuals between measured points and model predictions." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "At constant pressure, the model predicts permeate volume as a function of time." ;
+            mkg:topic "outputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating." ;
+            mkg:text "The paper compares the combined models with the earlier pore-blockage and cake-filtration model of Ho and Zydney et al. (2000), which used three fitted parameters." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This equation reduces to the equation for complete blocking when Kc is small and reduces to the equation for cake filtration when Kb is small." ;
+            mkg:text "When one mechanism contributes little, the combined model reduces to the corresponding individual cake-filtration or complete-blocking model." ;
+            mkg:topic "outputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The cake-complete model will provide good fits of a broad range of curves where the flux declines in a manner between the extremes of cake filtration and complete blocking." ;
+            mkg:text "The authors present the cake-complete model as useful for curves whose flux decline lies between the cake-filtration and complete-blocking extremes." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Though providing a good data fit does not prove that fouling occurs by the simultaneous effects of pore blockage and cake formation, the cake-complete model can be viewed as a useful phenomenological equation." ;
+            mkg:text "A good fit from the cake-complete model does not establish that pore blockage and cake formation actually occurred simultaneously." ;
+            mkg:topic "interpretation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The formulation takes initial flux, initial membrane area, elapsed time, and initial pressure as inputs, and has no state variables." ;
+            mkg:topic "inputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Four 600 mL chambers were connected to the pressure source." ;
+            mkg:text "The constant-pressure equipment used 13 or 47 mm stainless-steel holders and four 600 mL chambers connected to the pressure source." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports fitted point estimates and fit errors but does not report parameter confidence intervals or other parameter-uncertainty estimates." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fit of the cake-intermediate model was slightly better than that of the cake-complete model, as shown in Table 5, though the fits of the two models were within the standard deviation of most data points." ;
+            mkg:text "For constant-pressure BSA filtration, the cake-intermediate model fit best with an SSR of 959, compared with 1,620 for the cake-complete model, and the two fits were within the standard deviation of most data points." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cake forms on the membrane area that is not blocked. Complete blockage can occur on portions of the membrane area where a cake has formed. There is no flux through blocked membrane area." ;
+            mkg:text "In the cake-complete model, cake forms on the area that remains unblocked, and blockage removes membrane area from flow." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin was filtered through virus retention membranes and human IgG was filtered through sterilizing grade microporous membranes." ;
+            mkg:text "The experimental streams were BSA for virus filtration and human plasma IgG for sterile filtration." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cake filtration occurs when particles accumulate on the surface of a membrane in a permeable cake of increasing thickness that adds resistance to flow." ;
+            mkg:text "Cake filtration represents particles accumulating on the membrane surface in a permeable layer that adds flow resistance." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fouling solution was contained in a pressure vessel (XX1100000, Millipore, Bedford, MA)." ;
+            mkg:text "Constant-pressure tests used a pressure vessel, stainless-steel membrane holders, an electronic balance, and a digital pressure gauge." ;
+            mkg:topic "equipment" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 15"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_b>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_c> ;
+    mkg:latex "\\frac{J}{J_{0}}=\\left(1-\\frac{K_{\\mathrm{b}}V}{J_{0}}\\right)\\left(1+2K_{\\mathrm{c}}J_{0}^{2}t\\right)^{-1/2}" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/V>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 15)"@en ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The flux relation combines complete pore blockage, which reduces available filtration area, with cake buildup, which increases resistance." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The complete-blocking area relation as a function of permeate volume remains valid when cake is present." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked." ],
+        [ mkg:quote "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The model treats cake formation and complete blocking as independent effects." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J> ;
+            mkg:slot "flux" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J_0> ;
+            mkg:slot "initial flux" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_c> ;
+            mkg:slot "cake filtration constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_b> ;
+            mkg:slot "complete blocking constant" ] ;
+    mkg:page "3" ;
+    mkg:quote "\\frac{J}{J_{0}}=\\left(1-\\frac{K_{\\mathrm{b}}V}{J_{0}}\\right)\\left(1+2K_{\\mathrm{c}}J_{0}^{2}t\\right)^{-1/2}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 16"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/V> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/par/K_b>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/par/K_c> ;
+    mkg:latex "V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-K_{\\mathrm{b}}}{K_{\\mathrm{c}}J_{0}^{2}}\\left(\\sqrt{1+2K_{\\mathrm{c}}J_{0}^{2}t}-1\\right)\\right)\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/par/K_b> a mkg:Parameter ;
+    rdfs:label "K_{b} (bolton_2006 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "complete blocking constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a complete blocking constant in the area-loss law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{b}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" ;
+    mkg:valuesByCase "{\"Cake-complete blocking, IgG, constant pressure\": \"2.56 \\\\times 10^{-3} s^{-1}\", \"Cake-complete blocking, IgG, constant flow\": \"5.73 \\\\times 10^{-5} s^{-1}\", \"Cake-complete blocking, BSA, constant pressure\": \"1.38 \\\\times 10^{-3} s^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 16)"@en ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq16_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The equation gives filtered volume over time for the combined cake-filtration and complete-blocking model." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The model treats cake formation and complete blocking as independent effects." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The time-based cake-resistance relation applies to the area that remains available, with cake accumulating there at the same rate regardless of whether adjacent pores are blocked." ],
+        [ mkg:quote "The equation for complete blocking as a function of permeate volume, Eq. (5), will be valid in the presence of the cake." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The complete-blocking area relation as a function of permeate volume remains valid when cake is present." ] ;
+    mkg:page "3" ;
+    mkg:quote "V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-K_{\\mathrm{b}}}{K_{\\mathrm{c}}J_{0}^{2}}\\left(\\sqrt{1+2K_{\\mathrm{c}}J_{0}^{2}t}-1\\right)\\right)\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 28"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/P> ;
+    mkg:equationNumber "28" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_b>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_c> ;
+    mkg:latex "\\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)}\\left(1-\\frac{K_{\\mathrm{c}}J_{0}^{2}}{K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/P_0>,
+        <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/P> a mkg:Variable ;
+    rdfs:label "P (bolton_2006 eq 28)"@en ;
+    mkg:description "pressure" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/P_0> a mkg:Variable ;
+    rdfs:label "P_{0} (bolton_2006 eq 28)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial pressure used to normalize pressure in the equations" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:reason "It is the initial pressure for the constant-flow filtration run, a measured operating quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{0}" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Normalized pressure rises over time during constant-flow filtration as complete blocking and cake filtration act together." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "In this model it was assumed that cake formation and complete pore blockage occur simultaneously." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Cake formation and complete pore blockage occur simultaneously." ],
+        [ mkg:quote "When the flux rate is kept constant" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The filtration is operated at constant flow rate." ],
+        [ mkg:quote "The combined cake-complete model idealizes fouling as occurring by the independent effect of complete blocking and caking." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The effects of complete blocking and caking are treated as independent." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_c> ;
+            mkg:slot "cake filtration constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_b> ;
+            mkg:slot "complete blocking constant" ] ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)}\\left(1-\\frac{K_{\\mathrm{c}}J_{0}^{2}}{K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\right)" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/bolton_2006_cake_intermediate_blocking_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The cake-intermediate blocking model describes fouling during filtration of biological fluids through microporous or virus-retention membranes. It predicts permeate volume over time during constant-pressure operation and pressure rise over time during constant-flow operation. The model combines loss of available membrane area through intermediate blocking with increasing flow resistance from cake formation, using Darcy’s law to derive explicit time-dependent equations. The authors evaluated it with human plasma IgG filtered through Durapore PVDF membranes and BSA filtered through Viresolve 180 membranes, under both constant-pressure and constant-flow conditions. They fitted two parameters by minimizing squared residuals and compared its predictions with individual and other combined fouling models." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The deposited aggregates were assumed to be permeable." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Deposited aggregates are permeable." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The fit of the cake-intermediate model was slightly better than that of the cake-complete model, as shown in Table 5, though the fits of the two models were within the standard deviation of most data points." ;
+            mkg:text "For constant-pressure BSA, the cake-intermediate and cake-complete fits were within the standard deviation of most data points." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement." ;
+            mkg:text "The authors describe their combined models as less physically detailed but simpler to implement than the Ho and Zydney model, which used three fitted parameters." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Model: Cake-intermediate (Eq. (30)) | Model fit error, SSR: 0.58" ;
+            mkg:text "For constant-flow IgG, the cake-intermediate model had an SSR of 0.58, lower than the cake-complete model’s 1.36 and the cake-standard model’s 13.5." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The average and standard deviation was calculated at each time point." ;
+            mkg:text "Five constant-pressure BSA runs were performed, and the reported curve and error bars show the average and one standard deviation across runs." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The solutions were filtered at constant pressure in 13 or 47 mm stainless steel holders" ;
+            mkg:text "Constant-pressure filtration used 13 or 47 mm stainless-steel membrane holders." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "The model is built from Darcy’s law and gives explicit time-dependent predictions for both constant-pressure and constant-flow operation." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight." ;
+            mkg:text "Filtrate weight was collected and measured using a collection vessel and an electronic balance." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes." ;
+            mkg:text "Constant-pressure BSA tests were run at 30 psi." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "They only provide improved fits of data that falls between the curves of their respective individual component models." ;
+            mkg:text "The paper says the cake-intermediate model improves fits for data between the predictions of its two component models." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "In the intermediate-blocking law, available membrane area decreases exponentially with processed permeate volume." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To account for the combined effects of filtration area loss and caking" ;
+            mkg:text "The model represents fouling as a reduction in available filtration area together with an increase in filtration resistance." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Data was collected every second for 1 h." ;
+            mkg:text "The constant-pressure data-acquisition system recorded measurements every second for one hour." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors’ parameter-based comparison indicated that caking was a major component of the cake-intermediate fit for constant-flow IgG." ;
+            mkg:topic "results" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Three constant-flow IgG experiments measured pressure over time in 47 mm holders." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms." ;
+            mkg:text "The paper says the cake-intermediate model is most applicable when its combined mechanisms agree with the mechanisms observed experimentally." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer" ;
+            mkg:text "The BSA feed was bovine serum albumin at 2.5 mg/mL in pH 7.2 PBS buffer." ;
+            mkg:topic "materials" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models used two fitted parameters" ;
+            mkg:text "The combined model uses two fitted parameters." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The pressure versus time data was fit to one of the experimental data sets using the combined models and all other typical fouling models. The data from the other two experiments were similar." ;
+            mkg:text "For constant-flow IgG, the authors fitted the models to one experiment and reported that the other two experiments were similar." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL." ;
+            mkg:text "The IgG feed was human plasma IgG at 10.0 mg/mL in pH 7.2 PBS buffer." ;
+            mkg:topic "materials" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state whether the model code or experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Model: Cake-intermediate (Eq. (17)) | Model fit error, SSR: 9.59 × 10²" ;
+            mkg:text "For constant-pressure BSA, the cake-intermediate model had an SSR of 9.59 × 10², slightly lower than the cake-complete model’s 1.62 × 10³." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value" ;
+            mkg:text "Three constant-pressure IgG experiments were performed in 13 mm holders, and measurements continued until flux had fallen 95% from its initial value." ;
+            mkg:topic "data" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports fitted parameter estimates but does not report parameter confidence intervals or other uncertainty estimates." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "The paper presents algebraic time-dependent equations rather than a spatially resolved description of the membrane." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests." ;
+            mkg:text "The IgG tests used Durapore PVDF membranes with a nominal pore-size rating of 0.22 μm." ;
+            mkg:topic "membrane" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Eq. (17) can be used to calculate volume as a function of time" ;
+            mkg:text "At constant pressure, the model predicts permeate volume as a function of time." ;
+            mkg:topic "equations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Recently a model was developed that used a two-stage mechanism to describe membrane fouling." ;
+            mkg:text "The combined-model development extends the earlier pore-blockage and cake-filtration model of Ho and Zydney (2000)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests." ;
+            mkg:text "Constant-pressure IgG tests were run at 10 psi." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested." ;
+            mkg:text "The paper reports evaluation of the cake-intermediate model with IgG and BSA filtration, not with other feed species or membrane types." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "There are four mechanistic models that are typically used to describe fouling." ;
+            mkg:text "The model’s individual blocking and cake-filtration components follow the established blocking-filtration and cake-filtration laws discussed by Grace (1956) and Hermia (1982)." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fit of the intermediate model was as good as the fit of the combined intermediate blocking-cake filtration model." ;
+            mkg:text "For constant-pressure IgG, the individual intermediate-blocking model fit about as well as the combined cake-intermediate model." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Eq. (30) allows calculation of pressure as a function of time using the combined intermediate blocking-cake filtration model" ;
+            mkg:text "At constant flow, the model predicts pressure as a function of time." ;
+            mkg:topic "equations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cake filtration occurs when particles accumulate on the surface of a membrane in a permeable cake of increasing thickness that adds resistance to flow." ;
+            mkg:text "Cake filtration represents particles accumulating on the membrane surface in a growing permeable layer that adds flow resistance." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer" ;
+            mkg:text "The BSA tests used Viresolve 180, a PVDF composite membrane with a thin ultraporous layer over a thicker microporous layer." ;
+            mkg:topic "membrane" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing." ;
+            mkg:text "The authors present the combined models as tools for describing filtration fouling and supporting membrane-area sizing." ;
+            mkg:topic "use" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Constant-flow IgG tests used a flux of 579 L/m² h." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The reported assessments compare fitted curves with filtration data; the paper does not report an independent holdout validation set." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cake filtration, intermediate blocking" ;
+            mkg:text "The cake-intermediate blocking model combines intermediate blocking with cake filtration." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The permeate volume was measured as a function of time until the flux had declined 98% from its initial value" ;
+            mkg:text "The BSA filtration measurements continued until flux had fallen 98% from its initial value." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction." ;
+            mkg:text "Model fits were assessed by minimizing the sum of squared residuals between observations and model predictions." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The resistance to flow is increased by the presence of a cake layer on the membrane surface." ;
+            mkg:text "The cake-filtration law represents increasing resistance as processed volume increases." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles." ;
+            mkg:text "Intermediate blocking represents particles sealing some pores while other particles accumulate on previously deposited particles." ;
+            mkg:topic "mechanism" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The system was pressurized with air and a digital pressure gauge was used" ;
+            mkg:text "The constant-pressure system used a pressurized vessel, an electronic balance with a load cell, and a digital pressure gauge." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The three combined models provided far better fits than the typical models." ;
+            mkg:text "For constant-flow IgG, the three combined models fit substantially better than the individual fouling models." ;
+            mkg:topic "results" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 17"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/V> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/par/K_c>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/par/K_i> ;
+    mkg:latex "V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{K_{\\mathrm{i}}}{K_{\\mathrm{c}}J_{0}}((1+2K_{\\mathrm{c}}J_{0}^{2}t)^{1/2}-1)\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/par/K_i> a mkg:Parameter ;
+    rdfs:label "K_{i} (bolton_2006 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Intermediate blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "10" ;
+    mkg:quote "intermediate blocking constant" ;
+    mkg:reason "It is a fitted intermediate blocking constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{i}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^{-1}" ;
+    mkg:valuesByCase "{\"human plasma IgG, constant flow\": \"0.526 m^{-1}\", \"BSA, constant pressure\": \"6.79 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 17)"@en ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq17_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The equation gives filtered volume over time for combined intermediate blocking and cake filtration." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ] ;
+    mkg:page "4" ;
+    mkg:quote "V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{K_{\\mathrm{i}}}{K_{\\mathrm{c}}J_{0}}((1+2K_{\\mathrm{c}}J_{0}^{2}t)^{1/2}-1)\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 30"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/P> ;
+    mkg:equationNumber "30" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_c>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_i> ;
+    mkg:latex "\\frac{P}{P_{0}}=\\exp(K_{\\mathrm{i}}J_{0}t)\\left(1+\\frac{K_{\\mathrm{c}}J_{0}}{K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/P_0>,
+        <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 30)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/P> a mkg:Variable ;
+    rdfs:label "P (bolton_2006 eq 30)"@en ;
+    mkg:description "pressure" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/P_0> a mkg:Variable ;
+    rdfs:label "P_{0} (bolton_2006 eq 30)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial pressure used to normalize pressure in the equations" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:reason "It is the initial pressure for the constant-flow filtration run, a measured operating quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{0}" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 30)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and cake filtration." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "When the flux rate is kept constant" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The filtration is operated at constant flow rate." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_i> ;
+            mkg:slot "intermediate blocking constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_c> ;
+            mkg:slot "cake filtration constant" ] ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{P}{P_{0}}=\\exp(K_{\\mathrm{i}}J_{0}t)\\left(1+\\frac{K_{\\mathrm{c}}J_{0}}{K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/bolton_2006_cake_standard_blocking_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The combined cake-standard blocking model describes fouling of a membrane by both cake formation on its surface and pore constriction within the membrane. It predicts filtered volume over time during constant-pressure operation and pressure over time during constant-flow operation, using Darcy’s law and the two mechanisms’ effects on filtration resistance. The model has two fitted parameters and is formulated with algebraic relations rather than dynamic state equations. The paper tested combined fouling models using human plasma IgG filtered through a sterilizing-grade PVDF membrane and BSA filtered through a virus-retention membrane, under both constant-pressure and constant-flow conditions. The cake-standard model improved fits in some tests, but the authors present it as most applicable when the observed fouling is consistent with both mechanisms, rather than as a model that fits a broad range of fouling curves." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The deposited aggregates were assumed to be permeable." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Deposited aggregates are permeable." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+            mkg:text "Three constant-pressure IgG experiments used 13 mm holders and continued until flux had fallen by 95% from its initial value of 1.13 × 10⁻³ m/s." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms." ;
+            mkg:text "The cake-standard model is presented as a candidate for interpreting filtration data when the combined mechanisms match observed fouling, rather than as the paper’s general-purpose model for membrane sizing." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Model: Cake-standard (Eq. (23)) | Model fit error, SSR: $ 6.27 \\times 10^{3} $" ;
+            mkg:text "For constant-pressure BSA, the cake-standard model had an SSR of 6.27 × 10³, better than the four standalone fouling models but worse than the cake-complete and cake-intermediate models." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of $ 3.58 \\times 10^{-4} $ m/s." ;
+            mkg:text "Five constant-pressure BSA experiments used 47 mm holders and continued until flux had fallen by 98% from its initial value of 3.58 × 10⁻⁴ m/s." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters." ;
+            mkg:text "The authors compare their combined models with Ho and Zydney 2000, describing their own models as less physically detailed but numerically simpler." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL." ;
+            mkg:text "The human plasma IgG feed was prepared at 10.0 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feed" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating." ;
+            mkg:text "The earlier Ho and Zydney model used three fitted parameters and numerical integration for pressure-time or volume-time predictions." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer" ;
+            mkg:text "The BSA feed was prepared at 2.5 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feed" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this case the parameters used in the combined cake-standard model can be considered average values over the course of the run." ;
+            mkg:text "The authors note that if the mechanisms become coupled during filtration, fitted parameters can represent average behavior over the run." ;
+            mkg:topic "assumptions" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper evaluates fits against the reported filtration experiments but does not describe an independent validation dataset for the cake-standard model." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "For constant-pressure operation, the cake-standard model calculates filtered volume as a function of time, while for constant-flow operation it calculates pressure as a function of time." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Data was collected every second for 1 h." ;
+            mkg:text "Data were collected every second for one hour in the described constant-pressure setup." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this study only the parameter $ K_{s} $ was fit to the data." ;
+            mkg:text "For the constant-pressure IgG comparison, the authors fit only the standard-blocking parameter in the standalone standard model rather than refitting the initial flux." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this case the available membrane area will not decline over the course of the run." ;
+            mkg:text "In the cake-standard model, the available membrane area remains constant over the run." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run." ;
+            mkg:text "The model treats cake formation and standard blocking as independent mechanisms that proceed throughout filtration." ;
+            mkg:topic "assumptions" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "There are four mechanistic models that are typically used to describe fouling." ;
+            mkg:text "The paper builds the combined model from established individual fouling laws associated with Grace 1956 and Hermia 1982." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Eq. (22) reduces to the equation for cake filtration when $ K_{s} $ is small, and reduces to the equation for standard blocking when $ K_{c} $ is small." ;
+            mkg:text "When one mechanism dominates, the cake-standard model reduces to the corresponding cake-filtration or standard-blocking model." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "They only provide improved fits of data that falls between the curves of their respective individual component models. They cannot fit data that resembles the complete blocking model predictions where the flux declines more slowly than other models initially, and more rapidly later in the run." ;
+            mkg:text "The cake-standard model improves fits mainly for curves between the predictions of its two component models and cannot fit the described complete-blocking curve shape." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests. Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes." ;
+            mkg:text "Constant-pressure IgG tests used a transmembrane pressure of 10 psi, and constant-pressure BSA tests used 30 psi." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The resistance after fouling can be calculated by adding the resistance from standard blocking to the resistance from cake formation." ;
+            mkg:text "The model combines cake filtration, in which a surface cake adds resistance, with standard blocking, in which material constricts pores from within." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight. The electronic balance consisted of a load cell (1042-3-I, Tedea Huntleigh, Covina, CA) that interfaced with a computer through a data acquisition board." ;
+            mkg:text "The constant-pressure setup measured filtrate weight using a collection vessel and electronic balance with a load cell interfaced to a computer." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer" ;
+            mkg:text "The BSA virus-filtration tests used Viresolve 180, a PVDF composite membrane with a thin ultraporous layer over a thicker microporous layer." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Eq. (23) is applicable when $ \\alpha $ is not near 1 or -1. This will be the case when neither of the two fouling mechanisms dominates. When the parameter values indicate that one fouling mechanisms dominates the corresponding individual model should be used." ;
+            mkg:text "The paper’s closed-form constant-pressure solution is stated to apply when its intermediate parameter is not near 1 or −1; when one mechanism dominates, the corresponding individual model should be used." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data is the average of five runs and the error bars are one standard deviation." ;
+            mkg:text "The BSA results were reported as the average of five runs, with error bars showing one standard deviation." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "During constant flow tests, a peristaltic pump (L/S Precision #WF77911-20, Cole Parmer, Vernon Hills, IL) with 16 gauge tubing (06409-16, Cole Parmer) was used to pump 10 mg/mL IgG through the Durapore membrane in the 47 mm holders at 579 L/m $ ^{2} $ h." ;
+            mkg:text "Constant-flow IgG filtration was run at 579 L/m² h through Durapore membranes." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores." ;
+            mkg:text "The standard-blocking mechanism represents particles accumulating on the walls of straight cylindrical pores." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report whether model code or the experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Model: Cake-standard (Eq. (29)) | Model fit error, SSR: $ 1.35 \\times 10^{1} $" ;
+            mkg:text "For constant-flow IgG, the cake-standard model had an SSR of 13.5, substantially below the standalone standard model’s SSR of 980." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit of the data occurred with the combined cake-intermediate model, which had and SSR value slightly lower than the cake-complete model" ;
+            mkg:text "For constant-flow IgG, the cake-standard model fit less well than the cake-intermediate and cake-complete models, whose SSR values were 0.58 and 1.36." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The cake-standard and cake-intermediate models were not as useful for fitting the predictions of the typical blocking models." ;
+            mkg:text "The cake-standard model is less useful than the cake-complete model for fitting a broad range of individual-model predictions." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction." ;
+            mkg:text "Model fits were assessed by minimizing the sum of squared residuals, with each residual defined as the difference between a measured point and its model prediction." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests." ;
+            mkg:text "The IgG sterile-filtration tests used nominally 0.22 μm Durapore PVDF membranes in stainless-steel holders." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Three constant-flow IgG experiments measured pressure over time while the feed was pumped through 47 mm membrane holders." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23)." ;
+            mkg:text "For constant-pressure IgG, the standalone standard model fit about as well as the combined standard-and-cake model." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms." ;
+            mkg:text "The cake-standard model is most applicable when the observed fouling is consistent with both cake formation and standard blocking." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law." ;
+            mkg:text "The combined fouling models are derived from Darcy’s law." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "indicating that caking was a major component of each of the combined models." ;
+            mkg:text "For the constant-flow IgG and constant-pressure BSA fits, the authors found caking to be a major component of the cake-standard model’s fitted behavior." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "The supplied model specification has no dynamic state variables; the paper presents time-dependent outputs through algebraic model equations." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models used two parameters and reduced to the equations for the individual models in the absence of the second fouling mechanism." ;
+            mkg:text "The model uses two fitted parameters." ;
+            mkg:topic "formulation" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 21"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_c>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_s> ;
+    mkg:latex "\\frac{J}{J_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}V}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}V\\right)^{-1}" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/V> .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 21)"@en ;
+    mkg:basis "structure" ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:page "10" ;
+    mkg:quote "volume filtered" ;
+    mkg:reason "computed by a law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The flux relation combines the resistance contributions from cake filtration and standard pore blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The small particles must not be retained by the cake above the membrane." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Small particles that cause pore constriction are not retained by the cake." ],
+        [ mkg:quote "In this case the available membrane area will not decline over the course of the run." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The available membrane area remains constant over the run." ],
+        [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The model treats cake filtration and standard blocking as independent effects that operate throughout the run." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_s> ;
+            mkg:slot "standard blocking constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_c> ;
+            mkg:slot "cake filtration constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J> ;
+            mkg:slot "flux" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J_0> ;
+            mkg:slot "initial flux" ] ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{J}{J_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}V}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}V\\right)^{-1}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 22"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/t> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/par/K_c>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/par/K_s> ;
+    mkg:latex "t=\\frac{1}{(K_{\\mathrm{s}}V-2)}\\left(\\frac{K_{\\mathrm{s}}K_{\\mathrm{c}}V^{3}}{2}-K_{\\mathrm{c}}V^{2}-\\frac{2V}{J_{0}}\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/V> .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 22)"@en ;
+    mkg:basis "structure" ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:page "10" ;
+    mkg:quote "volume filtered" ;
+    mkg:reason "computed by a law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 22)"@en ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq22_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The equation gives elapsed time as a function of filtered volume for combined cake filtration and standard blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The small particles must not be retained by the cake above the membrane." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Small particles that cause pore constriction are not retained by the cake." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The extent of both fouling contributions is taken to depend on the volume processed, so the volume-based resistance relations are used." ],
+        [ mkg:quote "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The model treats cake filtration and standard blocking as independent effects that operate throughout the run." ],
+        [ mkg:quote "In this case the available membrane area will not decline over the course of the run." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The available membrane area remains constant over the run." ] ;
+    mkg:page "5" ;
+    mkg:quote "t=\\frac{1}{(K_{\\mathrm{s}}V-2)}\\left(\\frac{K_{\\mathrm{s}}K_{\\mathrm{c}}V^{3}}{2}-K_{\\mathrm{c}}V^{2}-\\frac{2V}{J_{0}}\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 29"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/P> ;
+    mkg:equationNumber "29" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_c>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_s> ;
+    mkg:latex "\\frac{P}{P_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}J_{0}t}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}^{2}t\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/J_0>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/P_0>,
+        <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/t> .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 29)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/P> a mkg:Variable ;
+    rdfs:label "P (bolton_2006 eq 29)"@en ;
+    mkg:description "pressure" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/P_0> a mkg:Variable ;
+    rdfs:label "P_{0} (bolton_2006 eq 29)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial pressure used to normalize pressure in the equations" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:reason "It is the initial pressure for the constant-flow filtration run, a measured operating quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{0}" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 29)"@en ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Normalized pressure over time for constant-flow filtration combining standard blocking and cake filtration." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The combined cake-standard model assumes that the two fouling mechanisms are independent and will occur throughout the run." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Standard blocking and cake filtration are treated as independent mechanisms that occur throughout the run." ],
+        [ mkg:quote "When the flux rate is kept constant" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The filtration is operated at constant flow rate." ],
+        [ mkg:quote "The small particles must not be retained by the cake above the membrane." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The small particles causing pore constriction are not retained by the cake." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_s> ;
+            mkg:slot "standard blocking constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_c> ;
+            mkg:slot "cake filtration constant" ] ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{P}{P_{0}}=\\left(\\left(1-\\frac{K_{\\mathrm{s}}J_{0}t}{2}\\right)^{-2}+K_{\\mathrm{c}}J_{0}^{2}t\\right)" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/bolton_2006_complete_standard_blocking_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The Complete-standard blocking model describes fouling during filtration of biological fluids through microporous membranes by combining complete pore blockage with standard blocking, in which deposits constrict pores. It predicts permeate volume over time at constant pressure and pressure over time at constant flow, using explicit relationships derived from Darcy’s law. The model has two fitted fouling parameters and is intended for cases where both mechanisms are relevant; it reduces to the corresponding single-mechanism model when one mechanism dominates. The paper compares its fits with individual fouling models using sterile filtration data for human plasma IgG and virus-filtration data for BSA, collected in small membrane holders. Across the reported comparisons, the combined model fit about as well as standard blocking alone, while other combined models performed better for some data sets. The authors present the combined models as tools for fitting fouling curves and assessing membrane sizing, while noting that a good fit does not establish the physical mechanism." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The models all used two fitted parameters" ;
+            mkg:text "The model uses two fitted parameters, one for complete blocking and one for standard blocking." ;
+            mkg:topic "model size" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Though providing a good data fit does not prove that fouling occurs by the simultaneous effects of pore blockage and cake formation" ;
+            mkg:text "A good fit from a combined model is not proof that both represented fouling mechanisms actually occurred." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The constant K_b has units of s^{-1}, and K_i has units of m^{-1}." ;
+            mkg:text "The complete-blocking parameter has units of s⁻¹, and the standard-blocking parameter has units of m⁻¹." ;
+            mkg:topic "model size" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL." ;
+            mkg:text "The IgG feed was human plasma IgG at 10.0 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feeds" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state whether model code or experimental data are publicly available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "During constant flow tests, a peristaltic pump (L/S Precision #WF77911-20, Cole Parmer, Vernon Hills, IL) with 16 gauge tubing (06409-16, Cole Parmer) was used to pump 10 mg/mL IgG through the Durapore membrane in the 47 mm holders at 579 L/m^{2} h." ;
+            mkg:text "The constant-flow IgG tests used 47 mm holders and a flow rate of 579 L m⁻² h⁻¹ through Durapore membranes." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests." ;
+            mkg:text "The constant-pressure IgG tests used 0.22 μm Durapore PVDF membranes at 10 psi in 13 mm holders." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of 3.58 × 10^{-4} m/s." ;
+            mkg:text "Five constant-pressure BSA runs were conducted, and volume was measured until flux had fallen 98% from an initial 3.58 × 10⁻⁴ m/s." ;
+            mkg:topic "bsa data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "There are four mechanistic models that are typically used to describe fouling." ;
+            mkg:text "The model combines classical complete- and standard-blocking laws associated in the paper with Grace (1956) and Hermia (1982)." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Data was collected every second for 1 h." ;
+            mkg:text "The constant-pressure system recorded data every second for one hour." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The pressure versus time data was fit to one of the experimental data sets using the combined models and all other typical fouling models. The data from the other two experiments were similar." ;
+            mkg:text "The constant-flow IgG model comparison was fitted to one experiment's data, with the other two experiments described as similar." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Typically the best fits occur when one of the two mechanisms dominates, in which case the combined equations do not offer much benefit over the individual models." ;
+            mkg:text "The paper says the combined complete-standard model is most applicable when a particular combination of mechanisms is observed and is not generally more useful than the individual models when one mechanism dominates." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The combined formulation is expressed through aggregate membrane area, resistance, volume, pressure, and time relationships rather than spatially resolved fields." ;
+            mkg:topic "model form" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight." ;
+            mkg:text "Constant-pressure filtrate weight was collected on an electronic balance connected to a computer through a data-acquisition board." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The ability of the combined cake-complete model to provide the best fits of both the sterile filtration data and nearly the best fit of the virus filtration data indicates it will be useful for fitting data from a wide range of solutions and membrane types and be useful for membrane area sizing." ;
+            mkg:text "The combined models are presented as simpler equations for calculating filtration output over time and supporting membrane-area sizing." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were generated." ;
+            mkg:text "The model represents membrane fouling caused by complete blockage and standard blocking during filtration of biological fluids." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The supplied model specification has no ODE state variables; it calculates time-dependent filtration outputs from explicit relationships." ;
+            mkg:topic "model size" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer" ;
+            mkg:text "The BSA feed was bovine serum albumin at 2.5 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feeds" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes." ;
+            mkg:text "The BSA virus-filtration tests used Viresolve 180 PVDF composite membranes at 30 psi in 47 mm holders." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fit of the standard model was as good as the fits of the standard model combined with the complete blocking model, Eq. (31)." ;
+            mkg:text "For constant-flow IgG filtration, the standard-model fit was as good as the complete-standard model fit." ;
+            mkg:topic "fit results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Complete blocking assumes that particles seal off pore entrances and prevent flow." ;
+            mkg:text "Complete blocking represents particles sealing pore entrances so that those pores no longer carry flow." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction." ;
+            mkg:text "Model parameters were fitted by minimizing the sum of squared residuals between observations and model predictions." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18)" ;
+            mkg:text "For constant-pressure IgG filtration, the complete-standard model fit about as well as the standard model alone." ;
+            mkg:topic "fit results" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Three constant-flow IgG experiments measured pressure over time while the feed was pumped at 579 L m⁻² h⁻¹." ;
+            mkg:topic "igg data" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model calculations use initial flux and time, with initial membrane area and initial pressure used in the filtration relationships and pressure normalization." ;
+            mkg:topic "inputs" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data was similar for the five experiments. The average and standard deviation was calculated at each time point." ;
+            mkg:text "The BSA results were summarized as the average and standard deviation across the five runs at each time point." ;
+            mkg:topic "bsa data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "It is also possible to use a similar technique to create models that combine the standard blocking model with either the complete or intermediate blocking model." ;
+            mkg:text "The combined model represents loss of available membrane area from complete blocking together with increased resistance from standard blocking." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The standard model combined the complete blocking model, Eq. (18), provided the same fit as the standard model alone and is not shown in Fig. 9." ;
+            mkg:text "For constant-pressure BSA filtration, the standard model combined with complete blocking gave the same fit as standard blocking alone." ;
+            mkg:topic "fit results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores." ;
+            mkg:text "Standard blocking represents particles depositing on the walls of straight cylindrical pores and constricting them." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data and model predictions for one of the samples are shown in Figs. 4 and 5. The data from the other two experiments were similar." ;
+            mkg:text "The constant-pressure IgG plots show one sample, while the paper reports that the other two experiments were similar." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of 1.13 × 10^{-3} m/s." ;
+            mkg:text "Three constant-pressure IgG experiments were run in 13 mm holders, and filtration continued until flux had fallen 95% from an initial 1.13 × 10⁻³ m/s." ;
+            mkg:topic "igg data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters." ;
+            mkg:text "The paper contrasts its combined models with Ho and Zydney (2000), describing their model as more physically detailed but numerically more complex." ;
+            mkg:topic "prior work" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not identify optimization software or report uncertainty intervals for the fitted parameters." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "The paper gives an explicit permeate-volume-versus-time relation for constant-pressure operation and a pressure-versus-time relation for constant-flow operation." ;
+            mkg:topic "model form" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 18"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/V> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/par/K_b>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/par/K_s> ;
+    mkg:latex "V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-2K_{\\mathrm{b}}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/J_0>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/t> .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/par/K_b> a mkg:Parameter ;
+    rdfs:label "K_{b} (bolton_2006 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "complete blocking constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a complete blocking constant in the area-loss law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{b}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" ;
+    mkg:valuesByCase "{\"Cake-complete blocking, IgG, constant pressure\": \"2.56 \\\\times 10^{-3} s^{-1}\", \"Cake-complete blocking, IgG, constant flow\": \"5.73 \\\\times 10^{-5} s^{-1}\", \"Cake-complete blocking, BSA, constant pressure\": \"1.38 \\\\times 10^{-3} s^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 18)"@en ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq18_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The equation gives filtered volume over time for combined complete blocking and standard blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The standard-blocking resistance relation as a function of time is valid for this combined model." ] ;
+    mkg:page "4" ;
+    mkg:quote "V=\\frac{J_{0}}{K_{\\mathrm{b}}}\\left(1-\\exp\\left(\\frac{-2K_{\\mathrm{b}}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 31"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/P> ;
+    mkg:equationNumber "31" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_b>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_s> ;
+    mkg:latex "\\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)\\Big(1+\\frac{K_{\\mathrm{s}}J_{0}}{2K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\Big)^{2}}" ;
+    mkg:uses <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/J_0>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/P_0>,
+        <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/t> .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 31)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/P> a mkg:Variable ;
+    rdfs:label "P (bolton_2006 eq 31)"@en ;
+    mkg:description "pressure" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/P_0> a mkg:Variable ;
+    rdfs:label "P_{0} (bolton_2006 eq 31)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial pressure used to normalize pressure in the equations" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:reason "It is the initial pressure for the constant-flow filtration run, a measured operating quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{0}" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 31)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Calculates normalized pressure over time for constant-flow filtration combining complete blocking and standard blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "When the flux rate is kept constant" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The filtration is operated at constant flow rate." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_s> ;
+            mkg:slot "standard blocking constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_b> ;
+            mkg:slot "complete blocking constant" ] ;
+    mkg:page "6" ;
+    mkg:quote "\\frac{P}{P_{0}}=\\frac{1}{(1-K_{\\mathrm{b}}t)\\Big(1+\\frac{K_{\\mathrm{s}}J_{0}}{2K_{\\mathrm{b}}}\\ln(1-K_{\\mathrm{b}}t)\\Big)^{2}}" ;
+    mkg:status "flagged" .
+
+kg:bolton_2006_intermediate_standard_blocking_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The Intermediate-standard blocking model represents protein fouling of microporous membranes by combining intermediate blocking, which reduces the available pore area, with standard blocking, which constricts pores and raises filtration resistance. Based on Darcy’s law, it predicts filtrate volume over time during constant-pressure filtration and pressure rise over time during constant-flow filtration using two fitted parameters. The paper tested it on human IgG filtration through a 0.22 μm PVDF membrane and BSA filtration through a virus-retention membrane, including constant-pressure and constant-flow runs. Model curves were fitted to measured filtration profiles by minimizing the sum of squared residuals. In the tested cases, this combined model did not improve on the relevant individual blocking model, and the authors describe it as applicable when the combined mechanisms match observed fouling." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The data and model predictions for one of the samples are shown in Figs. 4 and 5. The data from the other two experiments were similar." ;
+            mkg:text "For constant-pressure IgG, the paper fitted one of the three experimental data sets and reported that the other two were similar." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An electronic balance aperture and a collection vessel were used to collect and measure the filtrate weight. The electronic balance consisted of a load cell (1042-3-I, Tedea Huntleigh, Covina, CA) that interfaced with a computer through a data acquisition board." ;
+            mkg:text "Filtrate mass was collected on an electronic balance with a load cell connected to a computer data-acquisition board." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms." ;
+            mkg:text "The authors position intermediate-standard blocking as a candidate for describing fouling when the combined mechanisms agree with experimental observations, rather than as a broadly useful general-purpose fit." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Data was collected every second for 1 h." ;
+            mkg:text "The constant-pressure setup recorded data every second for one hour." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The best fit was determined by minimizing the sum of squared residuals (SSR) where the residual was equal to the difference between a data point and the model prediction." ;
+            mkg:text "Model fits were compared by minimizing the sum of squared residuals between measured data and model predictions." ;
+            mkg:topic "fitting" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "It is also possible to use a similar technique to create models that combine the standard blocking model with either the complete or intermediate blocking model." ;
+            mkg:text "Intermediate-standard blocking is one of the five combined fouling models developed in the paper." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fit the intermediate blocking model was as good as the fit of the intermediate model combined with the standard model, Eq. (32)." ;
+            mkg:text "For constant-flow IgG, the intermediate-standard model fitted as well as the intermediate-blocking model alone." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The equations reduce to their respective component models at the limits where one fouling mode dominates." ;
+            mkg:text "The combined model reduces to its component individual models when one mechanism dominates." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The equations however will not fit as wide a range of data as the combined cake-complete model and are therefore not as useful in general." ;
+            mkg:text "The authors say the combined models involving standard blocking do not cover as broad a range of flux-decline behavior as the cake-complete model." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating. Plots of volume versus time during constant pressure operation or pressure versus time during constant flow operation were obtained by numerical integration of the relevant equations." ;
+            mkg:text "The earlier Ho and Zydney (2000) model used three fitted parameters and required numerical integration for volume- or pressure-time predictions." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Intermediate blocking is similar to complete blocking but assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles." ;
+            mkg:text "Intermediate blocking represents some particles sealing pores while other deposited particles accumulate on top of them." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer" ;
+            mkg:text "The BSA virus-filtration tests used Viresolve 180, a PVDF composite with a thin ultraporous layer over a thicker microporous layer." ;
+            mkg:topic "membrane" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case." ;
+            mkg:text "In the combined model, intermediate blocking reduces available membrane area while standard blocking increases filtration resistance." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data was similar for the five experiments. The average and standard deviation was calculated at each time point." ;
+            mkg:text "The BSA filtration results were averaged across five runs, with standard deviations calculated at each time point." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The solutions were filtered at constant pressure in 13 or 47 mm stainless steel holders" ;
+            mkg:text "Constant-pressure filtration was performed in 13 or 47 mm stainless-steel membrane holders supplied from pressure vessels." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Three experiments were performed using the 13 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $1.13 \\times 10^{-3}$ m/s." ;
+            mkg:text "Three constant-pressure IgG experiments used 13 mm holders and continued until flux fell 95% from its initial value of 1.13 × 10⁻³ m/s." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fits of the standard model alone were as good as the fits of the standard model combined with the complete blocking model, Eq. (18), the intermediate blocking model, Eq. (19), or the cake filtration model, Eq. (23)." ;
+            mkg:text "For constant-pressure IgG, the intermediate-standard model fitted no better than the standard-blocking model alone." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Eqs. (17)–(19) will be applicable to the cases where the fouling is observed to occur by a specific combination of mechanisms." ;
+            mkg:text "The paper presents the combined standard-and-intermediate equations as applicable when fouling is observed to involve that specific combination of mechanisms." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model is expressed through algebraic time relationships rather than a state-based dynamic system." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation." ;
+            mkg:text "The model predicts permeate volume over time for constant-pressure operation and pressure over time for constant-flow operation." ;
+            mkg:topic "prediction" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were derived from Darcy's law." ;
+            mkg:text "The combined fouling models were derived from Darcy’s law." ;
+            mkg:topic "formulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The standard model combined with the intermediate model, Eq. (19), provided the same fit as the intermediate model alone and is not shown in Fig. 9." ;
+            mkg:text "For constant-pressure BSA, the intermediate-standard model produced the same fit as the intermediate-blocking model alone." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Fitted parameters: $K_i (m^{-1})$, $K_s (m^{-1})$" ;
+            mkg:text "The model uses two fitted parameters, the intermediate-blocking constant and the standard-blocking constant." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper cites Grace (1956) for standard-blocking background and Hermia (1982) for standard, complete, and intermediate blocking laws." ;
+            mkg:topic "comparison" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Human plasma IgG (Seracare, Oceanside, CA) was prepared in pH 7.2 PBS at a concentration of 10.0 mg/mL." ;
+            mkg:text "The human plasma IgG feed was prepared at 10.0 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feed" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm" ;
+            mkg:text "The IgG sterile-filtration tests used 0.22 μm nominal-pore-size Durapore PVDF membranes." ;
+            mkg:topic "membrane" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bovine serum albumin (BSA, Sigma, St. Louis, MO) was prepared at 2.5 mg/mL concentration in pH 7.2 PBS buffer" ;
+            mkg:text "The BSA feed was prepared at 2.5 mg/mL in pH 7.2 PBS." ;
+            mkg:topic "feed" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the standard model, membranes have straight cylindrical pores that decline in radius as solid matter accumulates on the pore walls" ;
+            mkg:text "Standard blocking represents deposits constricting straight cylindrical membrane pores." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports fitting the model to experimental profiles but does not describe a separate held-out validation data set." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The BSA solution was filtered at a constant pressure through five samples of Viresolve 180 membrane in the 47 mm membrane holders. The permeate volume was measured as a function of time until the flux had declined 98% from its initial value of $3.58 \\times 10^{-4}$ m/s." ;
+            mkg:text "Five constant-pressure BSA runs used Viresolve 180 in 47 mm holders and continued until flux fell 98% from its initial value of 3.58 × 10⁻⁴ m/s." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The constant-flow IgG experiments used a flux of 579 L/m² h through 47 mm Durapore membrane samples." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Durapore PVDF based membrane with a nominal pore size rating of 0.22 μm was run at 10 psi during constant pressure tests. Viresolve 180, a PVDF composite membrane composed of a thin ultraporous layer on top of a thicker microporous layer, was run at 30 psi during constant pressure tests of virus filtration membranes." ;
+            mkg:text "Constant-pressure tests used 10 psi for Durapore membranes and 30 psi for Viresolve 180 membranes." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The models derived in this study are less physically detailed than the model of Ho and Zydney and will therefore be less useful for estimation of physical parameters. The new combined models, however, are more numerically simple to implement." ;
+            mkg:text "The paper compares its combined models with the more physically detailed combined blockage-and-cake model of Ho and Zydney (2000), noting that the new models are simpler to implement." ;
+            mkg:topic "comparison" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 19"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/V> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/par/K_i>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/par/K_s> ;
+    mkg:latex "V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{2K_{\\mathrm{i}}J_{0}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)" ;
+    mkg:uses <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/J_0>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/t> .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/par/K_i> a mkg:Parameter ;
+    rdfs:label "K_{i} (bolton_2006 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Intermediate blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "10" ;
+    mkg:quote "intermediate blocking constant" ;
+    mkg:reason "It is a fitted intermediate blocking constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{i}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^{-1}" ;
+    mkg:valuesByCase "{\"human plasma IgG, constant flow\": \"0.526 m^{-1}\", \"BSA, constant pressure\": \"6.79 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/V> a mkg:Variable ;
+    rdfs:label "V (bolton_2006 eq 19)"@en ;
+    mkg:description "volume filtered" ;
+    mkg:dimension "[length]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "V" ;
+    mkg:unit "m" ;
+    mkg:unitString "m^3/m^2" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq19_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The equation gives filtered volume over time for combined intermediate blocking and standard blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Constant pressure" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Filtration is operated at constant pressure." ],
+        [ mkg:quote "The standard blocking equation for resistance as a function of time, Eq. (3) is valid in this case." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The standard-blocking resistance relation as a function of time is valid for this combined model." ] ;
+    mkg:page "4" ;
+    mkg:quote "V=\\frac{1}{K_{\\mathrm{i}}}\\ln\\left(1+\\frac{2K_{\\mathrm{i}}J_{0}t}{2+K_{\\mathrm{s}}J_{0}t}\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32> a mkg:Law ;
+    rdfs:label "bolton_2006 eq 32"@en ;
+    mkg:computes <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/P> ;
+    mkg:equationNumber "32" ;
+    mkg:hasMetadata <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32_meta> ;
+    mkg:hasParameter <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_i>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_s> ;
+    mkg:latex "\\frac{P}{P_{0}}=\\frac{\\exp(K_{\\mathrm{i}}J_{0}t)}{\\left(1-\\frac{K_{\\mathrm{s}}}{2K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)^{2}}" ;
+    mkg:uses <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/J_0>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/P_0>,
+        <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/t> .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 32)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/P> a mkg:Variable ;
+    rdfs:label "P (bolton_2006 eq 32)"@en ;
+    mkg:description "pressure" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "P" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/P_0> a mkg:Variable ;
+    rdfs:label "P_{0} (bolton_2006 eq 32)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Initial pressure used to normalize pressure in the equations" ;
+    mkg:dimension "[mass] / [length] / [time] ** 2" ;
+    mkg:reason "It is the initial pressure for the constant-flow filtration run, a measured operating quantity." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "P_{0}" ;
+    mkg:unit "kg / m / s ** 2" ;
+    mkg:unitString "kg/ms^2" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/var/t> a mkg:Variable ;
+    rdfs:label "t (bolton_2006 eq 32)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Time" ;
+    mkg:dimension "[time]" ;
+    mkg:reason "It is the time coordinate that changes during the filtration run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "t" ;
+    mkg:unit "s" ;
+    mkg:unitString "s" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Calculates normalized pressure over time for constant-flow filtration combining intermediate blocking and standard blocking." ;
+    mkg:doi "10.1016/j.memsci.2004.12.053" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "When the flux rate is kept constant" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The filtration is operated at constant flow rate." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_i> ;
+            mkg:slot "intermediate blocking constant" ],
+        [ mkg:boundTo <http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_s> ;
+            mkg:slot "standard blocking constant" ] ;
+    mkg:page "6" ;
+    mkg:quote "\\frac{P}{P_{0}}=\\frac{\\exp(K_{\\mathrm{i}}J_{0}t)}{\\left(1-\\frac{K_{\\mathrm{s}}}{2K_{\\mathrm{i}}}(\\exp(K_{\\mathrm{i}}J_{0}t)-1)\\right)^{2}}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_b> a mkg:Parameter ;
+    rdfs:label "K_{b} (bolton_2006 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "complete blocking constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a complete blocking constant in the area-loss law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{b}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" ;
+    mkg:valuesByCase "{\"Cake-complete blocking, IgG, constant pressure\": \"2.56 \\\\times 10^{-3} s^{-1}\", \"Cake-complete blocking, IgG, constant flow\": \"5.73 \\\\times 10^{-5} s^{-1}\", \"Cake-complete blocking, BSA, constant pressure\": \"1.38 \\\\times 10^{-3} s^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J> a mkg:Variable ;
+    rdfs:label "J (bolton_2006 eq 15)"@en ;
+    mkg:description "Flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "J" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq15/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_b> a mkg:Parameter ;
+    rdfs:label "K_{b} (bolton_2006 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "complete blocking constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a complete blocking constant in the area-loss law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{b}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" ;
+    mkg:valuesByCase "{\"Cake-complete blocking, IgG, constant pressure\": \"2.56 \\\\times 10^{-3} s^{-1}\", \"Cake-complete blocking, IgG, constant flow\": \"5.73 \\\\times 10^{-5} s^{-1}\", \"Cake-complete blocking, BSA, constant pressure\": \"1.38 \\\\times 10^{-3} s^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_complete_blocking/law/bolton_2006_eq28/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 30)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_intermediate_blocking/law/bolton_2006_eq30/par/K_i> a mkg:Parameter ;
+    rdfs:label "K_{i} (bolton_2006 eq 30)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Intermediate blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "10" ;
+    mkg:quote "intermediate blocking constant" ;
+    mkg:reason "It is a fitted intermediate blocking constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{i}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^{-1}" ;
+    mkg:valuesByCase "{\"human plasma IgG, constant flow\": \"0.526 m^{-1}\", \"BSA, constant pressure\": \"6.79 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J> a mkg:Variable ;
+    rdfs:label "J (bolton_2006 eq 21)"@en ;
+    mkg:description "Flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The permeate volume was measured as a function of time until the flux had declined 95% from its initial value of $ 1.13 \\times 10^{-3} $ m/s." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "J" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq21/var/J_0> a mkg:Variable ;
+    rdfs:label "J_{0} (bolton_2006 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "initial flux" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:page "2" ;
+    mkg:quote "$ J_{0} $ is the initial flux" ;
+    mkg:reason "initial flux, a run-specific operating quantity" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "J_{0}" ;
+    mkg:unit "m / s" ;
+    mkg:unitString "m/s" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_c> a mkg:Parameter ;
+    rdfs:label "K_{c} (bolton_2006 eq 29)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cake filtration constant" ;
+    mkg:dimension "[time] / [length] ** 2" ;
+    mkg:page "10" ;
+    mkg:quote "cake filtration constant" ;
+    mkg:reason "It is a fitted cake filtration constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{c}" ;
+    mkg:unit "s / m ** 2" ;
+    mkg:unitString "s/m^2" ;
+    mkg:valuesByCase "{\"Cake-complete, human plasma IgG, constant pressure\": \"1.30 × 10^3 s/m^2\", \"Cake-intermediate, human plasma IgG, constant flow\": \"4.93 × 10^4 s/m^2\", \"Cake-complete, human plasma IgG, constant flow\": \"5.74 × 10^4 s/m^2\", \"Cake-standard, human plasma IgG, constant flow\": \"7.82 × 10^4 s/m^2\", \"Cake-intermediate, BSA, constant pressure\": \"2.26 × 10^5 s/m^2\", \"Cake-complete, BSA, constant pressure\": \"3.05 × 10^5 s/m^2\", \"Cake-standard, BSA, constant pressure\": \"4.81 × 10^5 s/m^2\"}" .
+
+<http://example.org/kg/bolton_2006_cake_standard_blocking/law/bolton_2006_eq29/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 29)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_b> a mkg:Parameter ;
+    rdfs:label "K_{b} (bolton_2006 eq 31)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "complete blocking constant" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a complete blocking constant in the area-loss law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{b}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" ;
+    mkg:valuesByCase "{\"Cake-complete blocking, IgG, constant pressure\": \"2.56 \\\\times 10^{-3} s^{-1}\", \"Cake-complete blocking, IgG, constant flow\": \"5.73 \\\\times 10^{-5} s^{-1}\", \"Cake-complete blocking, BSA, constant pressure\": \"1.38 \\\\times 10^{-3} s^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_complete_standard_blocking/law/bolton_2006_eq31/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 31)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_i> a mkg:Parameter ;
+    rdfs:label "K_{i} (bolton_2006 eq 32)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Intermediate blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "10" ;
+    mkg:quote "intermediate blocking constant" ;
+    mkg:reason "It is a fitted intermediate blocking constant of the fouling law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{i}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^{-1}" ;
+    mkg:valuesByCase "{\"human plasma IgG, constant flow\": \"0.526 m^{-1}\", \"BSA, constant pressure\": \"6.79 m^{-1}\"}" .
+
+<http://example.org/kg/bolton_2006_intermediate_standard_blocking/law/bolton_2006_eq32/par/K_s> a mkg:Parameter ;
+    rdfs:label "K_{s} (bolton_2006 eq 32)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "standard blocking constant" ;
+    mkg:dimension "1 / [length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ K_{s} $ is the standard blocking constant" ;
+    mkg:reason "a standard blocking constant in the fouling law" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{s}" ;
+    mkg:unit "1 / m" ;
+    mkg:unitString "m^-1" ;
+    mkg:valuesByCase "{\"Cake-standard blocking, IgG, constant flow\": \"1.67 m^{-1}\", \"Cake-standard blocking, BSA, constant pressure\": \"0.183 m^{-1}\"}" .
+

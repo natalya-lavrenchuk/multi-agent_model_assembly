@@ -1,0 +1,102 @@
+I have data from a bioprocess and I need a mechanistic model of it.
+
+Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.
+
+The model's balance equations (Asprey and Macchietto's fed-batch yeast model) are fixed:
+  dx1/dt = (r - u1 - theta4) * x1
+  dx2/dt = -r * x1 / theta3 + u1 * (u2 - x2)
+x1: biomass [g/L], x2: substrate (glucose) [g/L], u1: dilution rate [1/h], u2: substrate concentration in the
+feed [g/L], theta3: yield, theta4: decay/maintenance rate [1/h]. The specific growth rate r [1/h] is unknown.
+
+Your task: find the growth rate law r (a function of x1 and/or x2) that explains the data, with values for all of
+its parameters and for theta3 and theta4. Measurement error is normal with standard deviation 5% of the reading
+plus 0.01 g/L.
+
+Experiment E1 (20 h). Starting values x1 = 5.0, x2 = 0.01 g/L.
+  u1 (1/h): from t = 0 h: 0.2
+  u2 (g/L): from t = 0 h: 15.0
+  Measurements:
+     t       x1       x2
+     0    5.049    0.012
+     1    4.932    0.549
+     2    5.212    0.608
+     3    4.867    0.512
+     4    6.313    0.520
+     5    6.279    0.521
+     6    5.940    0.380
+     7    6.371    0.365
+     8    6.281    0.363
+     9    6.063    0.428
+    10    6.596    0.402
+    11    6.208    0.427
+    12    6.224    0.414
+    13    6.089    0.397
+    14    6.511    0.398
+    15    6.340    0.383
+    16    6.560    0.413
+    17    6.187    0.354
+    18    6.433    0.374
+    19    6.101    0.393
+    20    6.676    0.439
+
+Experiment E2 (20 h). Starting values x1 = 2.0, x2 = 0.01 g/L.
+  u1 (1/h): from t = 0 h: 0.05; from t = 10 h: 0.15
+  u2 (g/L): from t = 0 h: 35.0; from t = 10 h: 10.0
+  Measurements:
+     t       x1       x2
+     0    1.916    0.009
+     1    2.342    0.479
+     2    3.065    0.418
+     3    4.064    0.223
+     4    4.387    0.140
+     5    5.272    0.191
+     6    4.849    0.160
+     7    6.100    0.178
+     8    6.443    0.147
+     9    5.963    0.130
+    10    6.772    0.148
+    11    6.626    0.113
+    12    5.853    0.097
+    13    5.779    0.106
+    14    5.867    0.152
+    15    5.074    0.132
+    16    4.752    0.135
+    17    4.488    0.126
+    18    4.710    0.122
+    19    4.413    0.150
+    20    4.338    0.135
+
+Experiment E3 (20 h). Starting values x1 = 8.0, x2 = 0.01 g/L.
+  u1 (1/h): from t = 0 h: 0.15; from t = 7 h: 0.08; from t = 14 h: 0.2
+  u2 (g/L): from t = 0 h: 5.0; from t = 7 h: 25.0
+  Measurements:
+     t       x1       x2
+     0    7.689    0.036
+     1    6.828    0.051
+     2    5.696    0.043
+     3    5.295    0.073
+     4    4.920    0.037
+     5    3.977    0.064
+     6    4.046    0.041
+     7    3.318    0.059
+     8    3.953    0.244
+     9    4.287    0.270
+    10    4.913    0.214
+    11    5.402    0.181
+    12    5.622    0.222
+    13    5.846    0.197
+    14    6.120    0.178
+    15    6.277    1.597
+    16    6.050    3.124
+    17    6.194    4.886
+    18    5.863    7.212
+    19    5.337    9.404
+    20    4.579   10.672
+
+End your answer with a JSON block in exactly this form (Python syntax for the formula, using x1, x2 and your own
+parameter names, plus theta3 and theta4):
+```json
+{"rate_law": "mumax*x2/(K + x2)", "parameters": {"mumax": 0.3, "K": 0.1, "theta3": 0.5, "theta4": 0.05},
+ "mechanism": "one line: what the law represents", "source": "where the law comes from, if from the literature",
+ "confidence": "how sure you are that this is the right law and why", "product": ""}
+```

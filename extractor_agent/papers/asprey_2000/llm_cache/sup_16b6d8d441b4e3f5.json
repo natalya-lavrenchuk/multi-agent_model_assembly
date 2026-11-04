@@ -1,0 +1,148 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 5534,
+  "completion_tokens": 1845,
+  "total_tokens": 7379,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 5531,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 950,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Statistical tools for optimal dynamic model building\n\nAbstract: A general, systematic procedure is presented to support the development and statistical verification of dynamic process models. Within this procedure, methods are presented to address several key aspects, such as structural identifiability and distinguishability testing, as well as optimal design of dynamic experiments for both model discrimination and improving parameter precision. A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems. The design of dynamic experiments is cast as an optimal control problem within a framework that enables the calculation of optimal sampling points, experiment duration, fixed and variable external control profiles, and initial conditions of a dynamic experiment subject to general constraints on inputs and outputs. Within this framework, methods are presented to provide experiment design robustness, accounting for parameter uncerta\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1.1) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.2  ...t follows, we therefore consider general deterministic models in the form of a set of (possibly mixed) differential and algebraic equations:\n    \\mathbf{f}(\\dot{\\mathbf{x}}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\boldsymbol{\\theta},t)=0\n(1.2) [NOT USED BY OTHERS: computes y; the model output (keep) or not part of the model (leave out)] p.2  ...t follows, we therefore consider general deterministic models in the form of a set of (possibly mixed) differential and algebraic equations:\n    \\mathbf{y}(t)=\\mathbf{g}(\\mathbf{x}(t))\n(2a) [NOT USED BY OTHERS: computes \\Phi_{I}; the model output (keep) or not part of the model (leave out)] p.2  ...on of interest,  $ t \\in [0, t_f] $, for all system inputs  $ u(t) \\in U $, and the same initial conditions  $ y(t=0) $, the global maximum:\n    \\mathbf{\\Phi}_{I}=\\operatorname*{m a x}_{\\substack{\\mathbf{\\theta}\\in\\mathbf{\\Theta},\\mathbf{\\theta}^{*}\\in\\mathbf{\\Theta}^{*}}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*})^{T}\\mathbf{W}_{\\mathbf{\\theta}}(\\mathbf{\\theta}-\\mathbf{\\theta}^{*})\n(p2-1) [not an equation] p.2  ...subject to:\n    \\begin{aligned}&\\int_{0}^{T}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))^{T}\\mathbf{W}_{y}(\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta})-\\mathbf{y}(\\mathbf{u}(t),\\boldsymbol{\\theta}^{*}))\n(2b) [not an equation] p.3  ...Fig. 2. Structural identifiability and distinguishability illustration.\n    \\begin{aligned}{}&{{}f(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=(}\\\\ {}&{{}\\quad\\mathrm{(t h e~m o d e l~e q u a t i o n s)}}\\\\ {}&{{}\\vdots}\\\\ {}&{{}\\theta_{i}^{L}\\leq\\theta_{i}\\leq\\theta_\n(3a) [not an equation] p.3  ...Test D1:\n    \\begin{aligned}{\\Phi_{D}=}&{{}\\operatorname*{m a x}_{\\mathbf{u}(t)\\in\\mathbf{U}}\\operatorname*{m i n}_{\\substack{\\theta\\in\\Theta,\\theta^{*}\\in\\Theta^{*}}}\\int_{0}^{T}(\\mathbf{y}_{(1)}(t)-\\mathbf{y}_{(2)}(t))^{T}}\\\\ {}&{{}\\times\\mathbf{W}(\\m\n(3b) [not an equation] p.3  ...subject to:\n    \\begin{aligned}{}&{{}f_{(1)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta},t)=0}\\\\ {}&{{}f_{(2)}(\\dot{\\mathbf{y}}(t),\\mathbf{y}(t),\\mathbf{x}(t),\\mathbf{u}(t),\\mathbf{w},\\mathbf{\\theta}^{*},t)=0}\\\\\n(4.1) [NOT USED BY OTHERS: computes \\varphi_{T}; the model output (keep) or not part of the model (leave out)] p.3  ...mmation over the data points in the original formulation was replaced by an integral over a pre-specified time interval  $ [t_{0}, t_{f}] $:\n    \\boldsymbol{\\varphi}_{T}= \\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{l=1}^{N_{m}}\\sum_{r=l+1}^{N_{m}}T_{l,r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)\\mathrm{d}t\n(4.2) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.3  ...mmation over the data points in the original formulation was replaced by an integral over a pre-specified time interval  $ [t_{0}, t_{f}] $:\n    T_{l,l}( \\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},\\hat{\\boldsymbol{\\theta}}^{\\prime},t)=(\\hat{\\boldsymbol{y}}_{l}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}},t)-\\hat{\\mathbf{y}}_{r}(\\boldsymbol{\\varphi},\\hat{\\boldsymbol{\\theta}}^{\\\n(6) [NOT USED BY OTHERS: computes \\Phi_{T}; the model output (keep) or not part of the model (leave out)] p.4  ...\n    \\mathbf{\\Phi}_{T}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{\\substack{r=l+1}}^{N_{M}}T_{l,l}(\\varphi,\\widehat{\\mathbf{\\theta}},\\widehat{\\mathbf{\\theta}}^{\\prime},t_{\n(7) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...y approach used for nonlinear steady-state process models (Stewart, Shon & Box, 1998), or by formulating either an expected value criterion:\n    =\\arg\\max_{\\boldsymbol{\\varphi}\\in\\Phi}\\underset{\\boldsymbol{\\theta}\\in\\Theta,\\boldsymbol{\\theta}^{\\prime}\\in\\Theta^{\\prime}}{E}\\left\\{\\sum_{k=1}^{n_{s p}}\\sum_{l=1}^{N_{M}}\\sum_{l^{\\prime}=l+1}^{N_{M}}T_{l,l^{\\prime}}(\\varphi,\\widehat{\\bol\n(8) [NOT USED BY OTHERS: computes \\Phi_{TWC}; the model output (keep) or not part of the model (leave out)] p.4  ...or a worst-case criterion:\n    \\Phi_{T W C}=\\arg\\max_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}\\atop{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\Phi}\\vphantom{t_{k}}}}\\min_{\\substack{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}\\setminus\\mathbf{\\P\n(9) [not an equation] p.4  ...ts of the parameter variance-covariance matrix'small'. Thus, we use the marginal posterior density covariance, given by (Box & Lucas, 1959):\n    \\mathbf{V}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\cong\\left[\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\widetilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{S}_{r}^{T}\\mathbf{S}_{s}\\right]^{-1}\n(10) [NEEDED: an ODE (the model, or background from earlier work?)] p.4  ...rtial derivatives of the $r$th response variable in the model with respect to the parameters $\\theta$ calculated at all experimental points:\n    \\mathbf{S}_{r}=\\frac{\\partial\\mathbf{y}_{r}(\\boldsymbol{\\varphi},\\boldsymbol{\\theta},t)}{\\partial\\boldsymbol{\\theta}}\\Bigg|_{\\boldsymbol{\\theta}=\\hat{\\boldsymbol{\\theta}}}\n(11) [UPDATE of \\Phi (applied in printed order on top of the law that computes it): not used by the model laws] p.4  ... an optimal control problem and suggesting a criterion based on maximising the weighted sum of the squared dynamic sensitivity coefficients:\n    \\mathbf{\\Phi}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\int_{t_{0}}^{t_{f}}\\sum_{j=1}^{P}\\sum_{i=1}^{M}\\mathbf{w}_{i j}(\\mathbf{S}_{i j})^{2}\\mathrm{d}t\n(12) [not an equation] p.4  ...o defined a discrete version of the dynamic information matrix for experiment design for the improvement of parameter precision, defined by:\n    \\mathbf{M}_{I}(\\widehat{\\boldsymbol{\\theta}},\\boldsymbol{\\varphi})\\equiv\\sum_{r=1}^{M}\\sum_{s=1}^{M}\\tilde{\\boldsymbol{\\sigma}}_{1}^{r s}\\mathbf{Q}_{r}^{T}\\mathbf{Q}_{s}\n(13) [not an equation] p.4  ...the matrix of dynamic sensitivity coefficients of the $r$th response variable in the model computed at each of the $n_{sp}$ sampling points:\n    \\[\\mathbf{Q}_{r}=\\left[\\begin{matrix}{S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ {\\vdots}&{\\vdots}&{\\vdots}&{\\vdots}\\\\ {S_{r1}}&{S_{r2}}&{\\cdots}&{S_{r P}}\\\\ \\end{matrix}\\right]\\Leftarrow\\begin{matrix}{\\qua\n(14) [not an equation] p.4  ...probability distribution function (pdf) describing the prior uncertainty in the parameters, $\\Theta \\sim N(\\tilde{\\Theta}, \\tilde{\\Sigma})$.\n    \\begin{aligned}{}&{{}\\mathbf{\\Phi}_{{E V}}=\\operatorname{a r g}\\operatorname*{m a x}_{\\mathbf{\\Phi}\\in\\mathbf{\\Phi}}\\mathop{E}_{\\mathbf{\\Phi}\\in\\Phi}\\left\\{\\left|\\mathbf{M}_{I}(\\mathbf{\\theta},\\mathbf{\\Phi})\\mathbf{\\Phi}\\right|\\right\\}}\\\\ {\n(15) [NOT USED BY OTHERS: computes \\varphi_{R}; the model output (keep) or not part of the model (leave out)] p.5  ...or a worst-case approach over an admissible domain:\n    \\boldsymbol{\\varphi}_{R}=\\arg\\max_{\\boldsymbol{\\varphi}\\in\\boldsymbol{\\Phi}}\\min_{\\boldsymbol{\\theta}\\in\\boldsymbol{\\Theta}}\\left\\{\\left|\\mathbf{M}_{I}(\\boldsymbol{\\theta},\\boldsymbol{\\varphi})\\right|\\right\\}\n(16.1) [NEEDED: an ODE (the model, or background from earlier work?)] p.5  ...se two models to describe the system. Two differential equations, common to both models, describe the component balances within the reactor:\n    \\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t} =(r-u_{1}-\\theta_{4})x_{1}\n(16.2) [NEEDED: an ODE (the model, or background from earlier work?)] p.5  ...se two models to describe the system. Two differential equations, common to both models, describe the component balances within the reactor:\n    \\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t} =-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})\n(17) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...The first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:\n    M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}}\n(18) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:\n    M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}}\n(p5-1.1) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...nts and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98. We impose the constraints (cf. Asprey et al., 2000):\n    1.0 \\leq t_{sp_{i}}-t_{sp_{i-1}}\\leq20.0  i~=~1,\\ldots,n_{sp}\n(p5-1.2) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...nts and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98. We impose the constraints (cf. Asprey et al., 2000):\n    5.0 \\leq t_{sw_{i,j}}-t_{sw_{i,j-1}}\\leq20.0  i=1,\\ldots,n_{u}\n(p5-1.3) [NOT USED BY OTHERS: computes j; the model output (keep) or not part of the model (leave out)] p.5  ...nts and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98. We impose the constraints (cf. Asprey et al., 2000):\n    j=1,\\ldots,n_{sw,i}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.2) In what follows, we therefore consider general deterministic models in the form of a set of (possibly mixed) differential and algebraic equations:\n- (p.2) Past approaches for testing identifiability in nonlinear-in-input dynamic models find their roots in differential geometry, where, in particular, the model is approximated locally by its input-output mapping using functi\n- (p.2) Coefficients of these functional expansions are then evaluated at parameter values $\\theta$ and $\\theta^{*}$, and used to form systems of nonlinear algebraic equations, whose unique solution $\\theta=\\theta^{*}$ ensures i\n- (p.3) However, by using a continuous function (Eq. (4)), the meaning of the sampling time of the responses is lost.\n- (p.4) However, this formulation is restricted to a diagonal variance-covariance matrix of the parameters, an assumption that is almost always false.\n- (p.4) Again, the continuous function (Eq. (11)) approach does not explicitly allow one to optimise discrete sampling times of the system responses.\n- (p.5) Two differential equations, common to both models, describe the component balances within the reactor:\n- (p.5) The first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:\n- (p.5) The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:\n- (p.5) Using models $M_{l}(\\theta, \\boldsymbol{u}, t)$ and $M_{l}(\\theta, \\boldsymbol{u}, t)$, we begin by assuming availability of initial parameter estimates $\\theta_{t} = [0.30, 0.25, 0.56, 0.02]^{T}$ and $\\theta_{tt} = [0.3\n- (p.5) A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h.\n- (p.6) Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed.",
+ "answer": {
+  "models": [
+   {
+    "name": "Monod kinetics",
+    "equations": [
+     "16.1",
+     "16.2",
+     "17"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Monod-type kinetics for substrate consumption",
+      "quote": "The first model assumes Monod-type kinetics for substrate consumption, giving a third model equation:"
+     }
+    ],
+    "complete_model": true
+   },
+   {
+    "name": "Canoid kinetics",
+    "equations": [
+     "16.1",
+     "16.2",
+     "18"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "Canoid-type kinetics",
+      "quote": "The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:"
+     }
+    ],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "1.1",
+    "reason": "General model form, not a process-specific balance or rate law."
+   },
+   {
+    "eq": "1.2",
+    "reason": "General output mapping, not part of the process model equations."
+   },
+   {
+    "eq": "2a",
+    "reason": "Structural identifiability objective, not a process model equation."
+   },
+   {
+    "eq": "p2-1",
+    "reason": "Constraint in the structural identifiability optimization, not a process model equation."
+   },
+   {
+    "eq": "2b",
+    "reason": "Structural distinguishability test formulation, not a process model equation."
+   },
+   {
+    "eq": "3a",
+    "reason": "Model-discrimination optimization objective, not a process model equation."
+   },
+   {
+    "eq": "3b",
+    "reason": "Constraints for the model-discrimination optimization, not process model equations."
+   },
+   {
+    "eq": "4.1",
+    "reason": "Experiment-design objective, not a process model equation."
+   },
+   {
+    "eq": "4.2",
+    "reason": "Model-discrimination metric, not a process model equation."
+   },
+   {
+    "eq": "6",
+    "reason": "Experiment-design criterion, not a process model equation."
+   },
+   {
+    "eq": "7",
+    "reason": "Alternative experiment-design criterion, not a process model equation."
+   },
+   {
+    "eq": "8",
+    "reason": "Worst-case experiment-design criterion, not a process model equation."
+   },
+   {
+    "eq": "9",
+    "reason": "Parameter covariance expression for experiment design, not a process model equation."
+   },
+   {
+    "eq": "10",
+    "reason": "Sensitivity definition used for parameter-precision analysis, not a process model equation."
+   },
+   {
+    "eq": "11",
+    "reason": "Experiment-design objective based on sensitivities, not a process model equation."
+   },
+   {
+    "eq": "12",
+    "reason": "Information matrix for experiment design, not a process model equation."
+   },
+   {
+    "eq": "13",
+    "reason": "Sensitivity matrix definition, not a process model equation."
+   },
+   {
+    "eq": "14",
+    "reason": "Experiment-design criterion, not a process model equation."
+   },
+   {
+    "eq": "15",
+    "reason": "Robust experiment-design criterion, not a process model equation."
+   },
+   {
+    "eq": "p5-1.1",
+    "reason": "Sampling-time constraint for experiment design, not a process model equation."
+   },
+   {
+    "eq": "p5-1.2",
+    "reason": "Control switching-time constraint for experiment design, not a process model equation."
+   },
+   {
+    "eq": "p5-1.3",
+    "reason": "Index range for experiment-design switching times, not a process model equation."
+   }
+  ],
+  "free_laws": []
+ }
+}

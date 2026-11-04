@@ -1,0 +1,173 @@
+{
+ "paper": "wang_2019",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "formulas": [
+  {
+   "eq": 7,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ I_{l}=I_{R,l}\\times\\exp(-A\\times l) $$ ",
+   "bbox": [
+    145.0,
+    692.0,
+    346.0,
+    721.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 8,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ I_{R,l}=1.7324(l+d)^{-1.993} $$ ",
+   "bbox": [
+    145.0,
+    738.0,
+    357.0,
+    770.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 9,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right) $$ ",
+   "bbox": [
+    145.0,
+    788.0,
+    423.0,
+    816.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 10,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l $$ ",
+   "bbox": [
+    143.0,
+    1068.0,
+    594.0,
+    1120.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 11,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l $$ ",
+   "bbox": [
+    144.0,
+    1156.0,
+    482.0,
+    1211.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 12,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right) $$ ",
+   "bbox": [
+    695.0,
+    427.0,
+    1036.0,
+    491.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 13,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}} $$ ",
+   "bbox": [
+    695.0,
+    508.0,
+    874.0,
+    567.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 14,
+   "page": 2,
+   "label": "display_formula",
+   "latex": " $$ Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}}) $$ ",
+   "bbox": [
+    695.0,
+    582.0,
+    945.0,
+    614.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 15,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3})) $$ ",
+   "bbox": [
+    144.0,
+    403.0,
+    419.0,
+    433.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 16,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}}) $$ ",
+   "bbox": [
+    143.0,
+    706.0,
+    578.0,
+    735.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 17,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ \\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}} $$ ",
+   "bbox": [
+    144.0,
+    1328.0,
+    436.0,
+    1395.0
+   ],
+   "route": "pipeline"
+  },
+  {
+   "eq": 18,
+   "page": 3,
+   "label": "display_formula",
+   "latex": " $$ Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}} $$ ",
+   "bbox": [
+    694.0,
+    317.0,
+    786.0,
+    371.0
+   ],
+   "route": "pipeline"
+  }
+ ],
+ "note": "rebuilt from paddle_blocks.json with the fixed A4 rules (display formulas only; number fallback): the Colab copy kept 36 inline formulas and missed the numbers of eqs 10 and 16",
+ "ocr_fixes": [
+  {
+   "where": "paddle_blocks.json, Table 1 (p.2)",
+   "was": "v_N",
+   "now": "\\nu_N",
+   "count": 7,
+   "why": "the nitrate uptake rate is nu_N in eq 17 and in the nomenclature/Table 2; Paddle read the same italic letter as v in Table 1, which would split one quantity into two symbols"
+  }
+ ]
+}

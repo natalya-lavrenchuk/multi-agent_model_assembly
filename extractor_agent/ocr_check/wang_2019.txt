@@ -1,0 +1,16 @@
+9: $$ A=a\times X_{chl}+b\times\left(X_{C}-X_{chl}\right) $$
+10: $$ I_{\mathrm{avg}}=\frac{1}{z_{t}}\times\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\times\exp(-A\times l)\mathrm{d}l $$
+11: $$ I_{\mathrm{a v g\_{R}}}=\frac{1}{z_{t}}\times\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\mathrm{d}l $$
+12: $$ P=\left(\frac{X_{\mathrm{C}}}{X_{c d}}\right)\times P_{\mathrm{m}}\times\frac{I_{\mathrm{a v g}}}{I_{\mathrm{s a t}}}\times\exp\left(1-\frac{I_{\mathrm{a v g}}}{I_{\mathrm{s a t}}}\right) $$
+13: $$ I_{\mathrm{s a t}}=\frac{P_{\mathrm{m}}\times X_{\mathrm{C}}}{a\times Y_{\mathrm{E}}^{c}\times X_{\mathrm{c h l}}} $$
+14: $$ Y_{\mathrm{E}}^{c}=Y_{\mathrm{E}}\times\exp(-k_{y e}\times I_{\mathrm{a v g\_{R}}}) $$
+15: $$ q_{n l}=\phi\times(1-\mathrm{e r f}(k_{\mathrm{N}}\times S_{\mathrm{N O}3})) $$
+16: $$ m_{\mathrm{c h l}}=m\times(1-\operatorname{e r f}(k_{\mathrm{N}}\times S_{\mathrm{N O3}}))\times\operatorname{e r f}(k_{I}\times I_{\mathrm{a v g\_{R}}}) $$
+17: $$ \nu_{\mathrm{N}}=\left(\frac{Q_{\mathrm{n m}}-Q_{\mathrm{n}}}{Q_{\mathrm{n m}}-q_{\mathrm{n}}}\right)\times\frac{\nu_{\mathrm{n m}}\times S_{\mathrm{N O3}}}{S_{\mathrm{N O3\_{0}}}} $$
+18: $$ Q_{\mathrm{n}}=\frac{X_{\mathrm{N}}}{X_{\mathrm{C}}} $$
+1: $$  \frac{dX_{cd}}{dt} = \left(1 - \frac{q_n}{Q_n}\right) \cdot P \cdot X_{cd}   -m \cdot X_{cd}  $$
+2: $$  \frac{dX_{carb}}{dt} = \frac{q_n}{Q_n} \cdot P \cdot X_{cd}   -m_c \cdot \exp(-k_{mc} \cdot I_{avg\_R}) \cdot X_{carb}   -m_{cN} \cdot \nu_N \cdot X_{cd}   -\beta \cdot \exp(k_{nl} \cdot I_{avg}) \cdot \nu_N \cdot X_{cd}   -q_{nl} \cdot \frac{q_n}{Q_n} \cdot P \cdot X_{cd}  $$
+3: $$  \frac{dX_{nl}}{dt} = \beta \cdot \exp(k_{nl} \cdot I_{avg}) \cdot \nu_N \cdot X_{cd}   +q_{nl} \cdot \frac{q_n}{Q_n} \cdot P \cdot X_{cd}  $$
+4: $$  \frac{dX_{chl}}{dt} = \theta \cdot \exp(-k_{chl} \cdot I_{avg}) \cdot \nu_N \cdot X_{cd} - m_{chl} \cdot X_{chl}  $$
+5: $$  \frac{dS_{NO3}}{dt} = -\nu_N \cdot X_{cd}  $$
+6: $$  \frac{dX_N}{dt} = \nu_N \cdot X_{cd}  $$

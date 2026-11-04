@@ -1,0 +1,35 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "7": {
+   "action": "keep as printed",
+   "printed_latex": "$$ V\\frac{d\\boldsymbol{A}}{d t}+\\boldsymbol{A}\\frac{d\\boldsymbol{V}}{d t}=\\boldsymbol{F}_{t}\\boldsymbol{A}_{f}-\\mu_{A}\\left(\\frac{\\boldsymbol{A}}{\\boldsymbol{A}+\\boldsymbol{K}_{A}}\\frac{\\boldsymbol{K}_{I A}}{\\boldsymbol{A}+\\boldsymbol{K}_{I A}}\\right)\\boldsymbol{X}_{a}\\boldsymbol{V} $$",
+   "corrected_latex": null,
+   "reason": "The boldface is a notation or formatting issue; the equation’s scalar quantities do not need to be changed.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "18": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned} $$",
+   "corrected_latex": null,
+   "reason": "The apparent dimensional conflicts are in the listed units, and the paper does not provide an alternate equation or conversion that supports changing the formula.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "20": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\begin{align*}V\\frac{dG}{dt}+G\\frac{dV}{dt}&=m_{SG}\\alpha\\Bigg(\\frac{S}{S+K_{S}}\\frac{K_{IS}}{S+K_{IS}}\\Bigg)X_{a}V\\\\&\\quad-\\mu_{G}\\Bigg(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}\\Bigg)X_{a}V\\end{align*} $$",
+   "corrected_latex": null,
+   "reason": "The dimensional flag depends on the listed glucose units; the paper describes a sucrose-to-glucose mass conversion but does not show a different balance equation.",
+   "quote": "The sucrose to glucose or fructose DM conversion parameters ( $ m_{SG} $ and $ m_{SF} $) were set at 0.526 because one mole of sucrose always produces one mole each of glucose and fructose (Puad et al., 2017).",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

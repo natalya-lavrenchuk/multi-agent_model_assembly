@@ -1,0 +1,750 @@
+@prefix kg: <http://example.org/kg/asprey_2000_contois_kinetics/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:asprey_2000_contois_kinetics a mkg:Sup ;
+    rdfs:label "asprey_2000_contois_kinetics · Statistical tools for optimal dynamic model building (Contois kinetics)"@en ;
+    mkg:hasMetadata kg:asprey_2000_contois_kinetics_meta ;
+    mkg:includes <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18> .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/asprey_2000_monod_kinetics> a mkg:Sup ;
+    rdfs:label "asprey_2000_monod_kinetics · Statistical tools for optimal dynamic model building (Monod kinetics)"@en ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_monod_kinetics/asprey_2000_monod_kinetics_meta> ;
+    mkg:includes <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17> .
+
+kg:asprey_2000_contois_kinetics_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model represents baker’s yeast fermentation in a fed-batch reactor, using the paper’s second, Canoid-type kinetic alternative, identified here as Contois kinetics. It predicts changes in biomass and substrate concentrations from shared reactor balances and a substrate-consumption rate that depends on the kinetic model. The process is run by varying dilution and the substrate concentration in the feed, with inoculum size also available as an experimental design choice. The paper demonstrates the model-building procedure using simulated response data rather than measurements from a fermentation experiment. The example compares this model with a Monod-kinetics alternative and uses the comparison to demonstrate structural testing and dynamic experiment design for model discrimination." ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The optimal experiment lasts 40 h" ;
+            mkg:text "The optimal discrimination experiment lasted 40 h." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The biomass balance accounts for growth, dilution, and biomass loss." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model." ;
+            mkg:text "The example is used to demonstrate tools for dynamic model building and statistical verification, including model discrimination." ;
+            mkg:topic "purpose" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "ΦD = 3.392 × 10−1, giving a maximum larger than εΦD = 4.0 × 10−3 and thus confirming the distinguishability" ;
+            mkg:text "The two candidate structures were found distinguishable, with a test result of 3.392 × 10⁻¹ exceeding the stated threshold of 4.0 × 10⁻³." ;
+            mkg:topic "identifiability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Consider a fed-batch reactor" ;
+            mkg:text "The fermentation is represented as a fed-batch reactor." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case" ;
+            mkg:text "The paper’s dynamic model-discrimination criterion develops the Hunter–Reiner approach, whose dynamic extension was first attempted by Espie and Macchietto (1989)." ;
+            mkg:topic "precedents" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The initial substrate concentration, x2(0), is always 0.01 g l−1 and cannot be manipulated for experiment design purposes." ;
+            mkg:text "The initial substrate concentration is fixed at 0.01 g l⁻¹ and cannot be varied as part of experiment design." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the fermentation of baker’s yeast is carried out" ;
+            mkg:text "The process example models fermentation of baker’s yeast." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the dilution factor, u1, with range 0.05–0.20 h−1" ;
+            mkg:text "The dilution factor is an adjustable process input with a stated range of 0.05–0.20 h⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "both measured at the same sampling points" ;
+            mkg:text "Both response variables were sampled at the same selected times in the optimal discrimination experiment." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The second model assumes Canoid-type kinetics and thus, instead of Eq. (17), gives the model form:" ;
+            mkg:text "The Contois/Canoid alternative uses the two balances shared with the Monod model and a different algebraic kinetic relation." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report availability of model code or the simulated data, which limits direct reproduction of the example." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "giving an optimal divergence of 1.19 × 105" ;
+            mkg:text "The optimized discrimination design increased the reported model-prediction divergence from an initial 1.98 to 1.19 × 10⁵." ;
+            mkg:topic "discrimination" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the initial biomass concentration (or inoculation), x0^0, with range 1–10 g l−1" ;
+            mkg:text "The initial biomass concentration, or inoculum, can be selected within 1–10 g l⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "subsequent parameter estimation gives the results in Table 1." ;
+            mkg:text "Parameter estimation was performed after the simulated discrimination experiment, but the paper does not specify the estimation algorithm or software." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with a homoscedastic normal error variance of 0.04 for both responses" ;
+            mkg:text "The simulated responses used homoscedastic normal measurement errors with variance 0.04 for both measured concentrations." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "using the same conditions and CVP as above" ;
+            mkg:text "The structural distinguishability test used parameter bounds of 0.01–0.98, a five-element piecewise-constant input parameterisation, and a 40 h horizon." ;
+            mkg:topic "identifiability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Much of our work to date is based on a unique criterion put forth by Zullo (1991)" ;
+            mkg:text "The paper describes the discrete dynamic information-matrix criterion used in its parameter-precision methods as originating with Zullo (1991)." ;
+            mkg:topic "precedents" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "By simulating additional 'data' at these experimental conditions" ;
+            mkg:text "The paper generated simulated data at the designed conditions for the subsequent parameter estimation rather than reporting measurements from a physical fermentation run." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The first model assumes Monod-type kinetics for substrate consumption" ;
+            mkg:text "The example compares the Canoid-type kinetic alternative with a Monod-type substrate-consumption model." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Global structural distinguishability of MI(θ, u, t) and MII(θ, u, t) can be tested" ;
+            mkg:text "The paper applies a global structural distinguishability test to the Monod and Canoid-type models." ;
+            mkg:topic "identifiability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the substrate concentration in the feed, u2, with range 5–35 g l−1" ;
+            mkg:text "The substrate concentration in the feed is adjustable from 5 to 35 g l⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Two differential equations, common to both models, describe the component balances within the reactor" ;
+            mkg:text "The model is dynamic and its balances are formulated as differential equations." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper judged the Monod model better suited to the simulated data, although both candidate models described those data very well." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "with a maximum experiment duration of 40 h" ;
+            mkg:text "The discrimination experiment was designed with a maximum duration of 40 h." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "By simulating additional 'data' at these experimental conditions" ;
+            mkg:text "The model comparison and fit conclusions are based on the paper’s simulated data and do not establish performance against independent fermentation measurements." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The second model assumes Canoid-type kinetics" ;
+            mkg:text "The paper describes the second candidate’s substrate-consumption kinetics as Canoid-type." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The discrimination design used ten sampling times and five piecewise-constant intervals for each of the two input profiles." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "two measured concentrations" ;
+            mkg:text "The reactor model tracks biomass and substrate concentrations as its two measured responses." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The candidate models each have four parameters, as indicated by the four-component initial parameter estimates and four parameter rows in the results table." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "we begin by assuming availability of initial parameter estimates" ;
+            mkg:text "The discrimination design starts from available initial parameter estimates for both candidate models." ;
+            mkg:topic "parameters" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 16.1"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/x_1> ;
+    mkg:equationNumber "16.1" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/par/theta_4> ;
+    mkg:latex "\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t} =(r-u_{1}-\\theta_{4})x_{1}" ;
+    mkg:uses <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/r>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/u_1> .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/par/theta_4> a mkg:Parameter ;
+    rdfs:label "\\theta_{4} (asprey_2000 eq 16.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "first-order biomass loss-rate coefficient" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a first-order biomass loss-rate parameter in the biomass balance" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{4}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 4.9e-02 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.046 h^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 16.1)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/u_1> a mkg:Variable ;
+    rdfs:label "u_{1} (asprey_2000 eq 16.1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "dilution factor" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "0.2 h^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(ii) the dilution factor, $ u_1 $, with range 0.05–0.20 h $ ^{-1} $;" ;
+    mkg:reason "a time-varying dilution-factor input set for the experiment" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1/var/x_1> a mkg:Variable ;
+    rdfs:label "x_{1} (asprey_2000 eq 16.1)"@en ;
+    mkg:description "measured concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{1}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The biomass concentration balance in the reactor accounts for specific growth, dilution, and biomass loss." ;
+    mkg:form "ODE" ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t} =(r-u_{1}-\\theta_{4})x_{1}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 16.2"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/x_2> ;
+    mkg:equationNumber "16.2" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/par/theta_3> ;
+    mkg:latex "\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t} =-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})" ;
+    mkg:uses <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/r>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/u_1>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/u_2>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/x_1> .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/par/theta_3> a mkg:Parameter ;
+    rdfs:label "\\theta_{3} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "yield coefficient relating biomass formation to substrate consumption" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "a biomass-to-substrate yield parameter in the component balance" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{3}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 5.49e-01 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.523 - (dimensionless) (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 16.2)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/u_1> a mkg:Variable ;
+    rdfs:label "u_{1} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "dilution factor" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "0.2 h^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(ii) the dilution factor, $ u_1 $, with range 0.05–0.20 h $ ^{-1} $;" ;
+    mkg:reason "a time-varying dilution-factor input set for the experiment" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/u_2> a mkg:Variable ;
+    rdfs:label "u_{2} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "substrate concentration in the feed" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "15.0 g l^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(iii) the substrate concentration in the feed, $ u_2 $, with range 5–35 g l $ ^{-1} $." ;
+    mkg:reason "a time-varying feed substrate concentration set for the experiment" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/x_1> a mkg:Variable ;
+    rdfs:label "x_{1} (asprey_2000 eq 16.2)"@en ;
+    mkg:description "measured concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{1}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2/var/x_2> a mkg:Variable ;
+    rdfs:label "x_{2} (asprey_2000 eq 16.2)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The initial substrate concentration, $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes." ;
+    mkg:initialValue "0.01 g l^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq16.2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The substrate concentration balance in the reactor accounts for substrate consumption and exchange with the feed." ;
+    mkg:form "ODE" ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t} =-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 18"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/r> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_1>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_2> ;
+    mkg:latex "M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}}" ;
+    mkg:uses <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_1>,
+        <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_2> .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 18)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Canoid-type kinetics compute the specific substrate consumption rate from the substrate and biomass concentrations." ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_1> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_2> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_1> ;
+            mkg:slot "biomass" ] ;
+    mkg:page "5" ;
+    mkg:quote "M_{I I}(\\pmb{\\theta},\\mathbf{u},t)\\colon\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}x_{1}+x_{2}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/asprey_2000_monod_kinetics_meta> a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model describes baker’s yeast fermentation in a fed-batch reactor, predicting biomass and substrate concentrations over time. It combines reactor component balances with a Monod-type rate law for substrate consumption; the biomass and substrate balances account for growth, dilution, biomass loss, and substrate supplied in the feed. The process is represented by adjustable dilution and feed-substrate concentration profiles, with specified initial concentrations. The paper demonstrates model checking and experiment design using simulated response data with added measurement error, rather than reported measurements from a physical reactor. The authors use the example to test identifiability, distinguish the Monod model from a Canoid alternative, and design experiments for model discrimination and improved parameter precision." ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state that code or reusable data for the bioreactor model are available." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The biomass balance accounts for growth, dilution, and biomass loss, while the substrate balance accounts for consumption and dilution with the feed." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Consider a fed-batch reactor (see Fig. 3) in which the fermentation of baker's yeast is carried out." ;
+            mkg:text "The model is for fermentation of baker’s yeast in a fed-batch reactor." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Extensions of this criterion to account for the uncertainty in the point estimates of the parameters are made in Asprey et al. (2000)" ;
+            mkg:text "The robust optimal-design methods for dynamic experiments are described further in Asprey et al. (2000)." ;
+            mkg:topic "precedents" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Application of several of the tools was carried out using a typical biochemical application, demonstrating their effectiveness in aiding to build a dynamic process model." ;
+            mkg:text "The Monod fermentation model serves as an example for demonstrating tools for dynamic model building and statistical verification, rather than as a standalone validated production model." ;
+            mkg:topic "purpose" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model has two concentration states, biomass concentration and substrate concentration, and both are measured responses." ;
+            mkg:topic "states" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper identifies the measured quantities as biomass and substrate concentrations but does not state the measurement instrument or assay." ;
+            mkg:topic "data" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The initial biomass concentration can be chosen between 1 and 10 g l⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper concludes that the Monod model is better suited to the simulated data based on multiresponse chi-square lack-of-fit analysis, although both candidate models describe the data statistically well." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The substrate concentration in the feed is allowed to range from 5 to 35 g l⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The E-optimal criterion rises from 6.41 × 10⁻⁶ to 14.3 in the designed precision-improvement experiment." ;
+            mkg:topic "precision" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To mathematically represent time-varying external controls to the process, we use the control vector parameterisation (CVP) technique, with either piecewise constant, or higher-order functions" ;
+            mkg:text "The paper uses control vector parameterization to represent time-varying inputs, including piecewise-constant profiles in the bioreactor example." ;
+            mkg:topic "methods" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Under that test, the reported identifiability objective is 1.166 × 10⁻⁶, below the 1.0 × 10⁻⁵ tolerance, and the paper concludes the tested model is globally identifiable." ;
+            mkg:topic "identifiability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the confidence intervals have been reduced on average by 23.0% by using the designed experiments." ;
+            mkg:text "The paper reports that confidence intervals were reduced by an average of 23.0% after the sequentially designed precision-improvement experiment." ;
+            mkg:topic "precision" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A novel optimisation-based approach is introduced for testing of model structural identifiability and distinguishability, involving semi-infinite programming and max-min problems." ;
+            mkg:text "The paper's identifiability and distinguishability tests are formulated as optimization problems, including semi-infinite and max-min problems." ;
+            mkg:topic "methods" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper tests structural identifiability over a 40 h horizon using a five-element piecewise-constant input parameterization and parameter values in [0.01, 0.98]." ;
+            mkg:topic "identifiability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Espie and Macchietto (1989) were the first to attempt an extension of the Hunter and Reiner (1965) criterion to the dynamic case" ;
+            mkg:text "The dynamic model-discrimination criterion builds on the Hunter–Reiner approach, whose extension to dynamic experiments was first attempted by Espie and Macchietto (1989)." ;
+            mkg:topic "precedents" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses, subsequent parameter estimation gives the results in Table 1." ;
+            mkg:text "The paper reports parameter estimates and confidence intervals after the model-discrimination experiment, but does not specify the parameter-estimation algorithm or software." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The first model assumes Monod-type kinetics for substrate consumption" ;
+            mkg:text "The model uses Monod-type kinetics for substrate consumption." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model-discrimination design uses ten sampling times and five control-vector-parameterization intervals for each of the two inputs." ;
+            mkg:topic "design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Much of our work to date is based on a unique criterion put forth by Zullo (1991)" ;
+            mkg:text "For dynamic parameter-precision design, the paper discusses Espie and Macchietto (1989), Körkel et al. (1999), and Zullo (1991), and states that its work to date is based largely on Zullo’s criterion." ;
+            mkg:topic "precedents" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Under the same test conditions, the Monod and Canoid models are reported as distinguishable, with a value of 0.339 exceeding the 0.004 threshold." ;
+            mkg:topic "distinguishability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The optimal experiment lasts 40 h and vertical arrows along the abscissa show the optimal sampling points of the two response variables (both measured at the same sampling points)." ;
+            mkg:text "The optimized model-discrimination experiment lasts 40 h, and both responses are sampled at the same selected times." ;
+            mkg:topic "design" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The initial substrate concentration is fixed at 0.01 g l⁻¹ and cannot be manipulated in the experiment design." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper gives no reactor volume or physical scale for the example." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Two differential equations, common to both models, describe the component balances within the reactor:" ;
+            mkg:text "The example is a dynamic model with two differential component balances and an algebraic rate law." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Two differential equations, common to both models, describe the component balances within the reactor:" ;
+            mkg:text "The model is expressed as reactor-level concentration balances, with no spatially distributed reactor description presented." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The process has two time-varying controls: dilution factor and substrate concentration in the feed." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The dilution factor is allowed to range from 0.05 to 0.20 h⁻¹." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model has four estimated parameters, shown as θ₁ through θ₄ in the parameter-estimation results." ;
+            mkg:topic "parameters" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The lack-of-fit table reports values of 0.58 for the Monod model and 1.96 for the Canoid model, against a reference chi-square value of 26.3." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "By simulating additional 'data' at these experimental conditions, with a homoscedastic normal error variance of 0.04 for both responses" ;
+            mkg:text "The worked parameter-estimation example uses simulated response data with homoscedastic normal error variance 0.04 for each response, not reported physical reactor measurements." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A dynamic experiment design was then carried out for model discrimination using Eq. (6) and piece-wise constant control inputs, with a maximum experiment duration of 40 h." ;
+            mkg:text "The example demonstrates design over a maximum experiment duration of 40 h and within the stated ranges for inoculation, dilution, and feed substrate concentration." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Using the estimates shown in Table 1, an experiment design for improving parameter precision using the E-optimality criterion with Eq. (12) was performed." ;
+            mkg:text "For improving parameter precision, the paper applies an E-optimal design to the Monod model using the parameter estimates obtained after the discrimination experiment." ;
+            mkg:topic "precision" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "giving an optimal divergence of 1.19 × 10⁵" ;
+            mkg:text "The model-discrimination experiment improves the reported divergence criterion from an initial value of 1.98 to an optimal value of 1.19 × 10⁵." ;
+            mkg:topic "design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The second model assumes Canoid-type kinetics" ;
+            mkg:text "The paper compares the Monod model with a rival model using Canoid-type kinetics." ;
+            mkg:topic "comparison" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 16.1"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/x_1> ;
+    mkg:equationNumber "16.1" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/par/theta_4> ;
+    mkg:latex "\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t} =(r-u_{1}-\\theta_{4})x_{1}" ;
+    mkg:uses <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/r>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/u_1> .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/par/theta_4> a mkg:Parameter ;
+    rdfs:label "\\theta_{4} (asprey_2000 eq 16.1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "first-order biomass loss-rate coefficient" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a first-order biomass loss-rate parameter in the biomass balance" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{4}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 5.5e-02 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.046 h^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 16.1)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/u_1> a mkg:Variable ;
+    rdfs:label "u_{1} (asprey_2000 eq 16.1)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "dilution factor" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "0.2 h^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(ii) the dilution factor, $ u_1 $, with range 0.05–0.20 h $ ^{-1} $;" ;
+    mkg:reason "a time-varying dilution-factor input set for the experiment" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1/var/x_1> a mkg:Variable ;
+    rdfs:label "x_{1} (asprey_2000 eq 16.1)"@en ;
+    mkg:description "measured concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{1}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The biomass concentration balance in the reactor accounts for specific growth, dilution, and biomass loss." ;
+    mkg:form "ODE" ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{\\mathrm{d}x_{1}}{\\mathrm{d}t} =(r-u_{1}-\\theta_{4})x_{1}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 16.2"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/x_2> ;
+    mkg:equationNumber "16.2" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/par/theta_3> ;
+    mkg:latex "\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t} =-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})" ;
+    mkg:uses <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/r>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/u_1>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/u_2>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/x_1> .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/par/theta_3> a mkg:Parameter ;
+    rdfs:label "\\theta_{3} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "yield coefficient relating biomass formation to substrate consumption" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "a biomass-to-substrate yield parameter in the component balance" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{3}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 5.59e-01 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.523 - (dimensionless) (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 16.2)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/u_1> a mkg:Variable ;
+    rdfs:label "u_{1} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "dilution factor" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "0.2 h^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(ii) the dilution factor, $ u_1 $, with range 0.05–0.20 h $ ^{-1} $;" ;
+    mkg:reason "a time-varying dilution-factor input set for the experiment" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/u_2> a mkg:Variable ;
+    rdfs:label "u_{2} (asprey_2000 eq 16.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "substrate concentration in the feed" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "We start the optimisation with an experiment lasting 10 h, with hourly sampling points and constant control inputs at 0.2 and 15.0), giving an initial divergence of 1.98." ;
+    mkg:initialValue "15.0 g l^-1" ;
+    mkg:page "5" ;
+    mkg:quote "(iii) the substrate concentration in the feed, $ u_2 $, with range 5–35 g l $ ^{-1} $." ;
+    mkg:reason "a time-varying feed substrate concentration set for the experiment" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "u_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/x_1> a mkg:Variable ;
+    rdfs:label "x_{1} (asprey_2000 eq 16.2)"@en ;
+    mkg:description "measured concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{1}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2/var/x_2> a mkg:Variable ;
+    rdfs:label "x_{2} (asprey_2000 eq 16.2)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The initial substrate concentration, $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes." ;
+    mkg:initialValue "0.01 g l^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq16.2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The substrate concentration balance in the reactor accounts for substrate consumption and exchange with the feed." ;
+    mkg:form "ODE" ;
+    mkg:page "5" ;
+    mkg:quote "\\frac{\\mathrm{d}x_{2}}{\\mathrm{d}t} =-\\frac{rx_{1}}{\\theta_{3}}+u_{1}(u_{2}-x_{2})" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17> a mkg:Law ;
+    rdfs:label "asprey_2000 eq 17"@en ;
+    mkg:computes <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/var/r> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_1>,
+        <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_2> ;
+    mkg:latex "M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}}" ;
+    mkg:uses <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/var/x_2> .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/var/r> a mkg:Variable ;
+    rdfs:label "r (asprey_2000 eq 17)"@en ;
+    mkg:description "specific rate in the biomass and substrate balance equations" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Monod-type kinetics compute the specific substrate consumption rate from the substrate concentration." ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_2> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_1> ;
+            mkg:slot "maximum rate" ],
+        [ mkg:boundTo <http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/var/x_2> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "5" ;
+    mkg:quote "M_{I}(\\boldsymbol{\\theta},\\mathbf{u},t);\\quad r=\\frac{\\theta_{1}x_{2}}{\\theta_{2}+x_{2}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_1> a mkg:Parameter ;
+    rdfs:label "\\theta_{1} (asprey_2000 eq 18)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "maximum rate parameter in the kinetic law" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a maximum-rate parameter in the kinetic law" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 3.03e-01 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.311 h^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/par/theta_2> a mkg:Parameter ;
+    rdfs:label "\\theta_{2} (asprey_2000 eq 18)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "substrate saturation constant in Monod kinetics; denominator coefficient in Contois kinetics" ;
+    mkg:reason "a kinetic-law saturation constant or denominator coefficient" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{2}" ;
+    mkg:unitString "g l^-1 (Monod kinetics); - (Contois kinetics)" ;
+    mkg:value 1.1e-02 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.254 g l^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_1> a mkg:Variable ;
+    rdfs:label "x_{1} (asprey_2000 eq 18)"@en ;
+    mkg:description "measured concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{1}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_contois_kinetics/law/asprey_2000_eq18/var/x_2> a mkg:Variable ;
+    rdfs:label "x_{2} (asprey_2000 eq 18)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The initial substrate concentration, $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes." ;
+    mkg:initialValue "0.01 g l^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_1> a mkg:Parameter ;
+    rdfs:label "\\theta_{1} (asprey_2000 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "maximum rate parameter in the kinetic law" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:reason "a maximum-rate parameter in the kinetic law" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{1}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:value 3.25e-01 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.311 h^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/par/theta_2> a mkg:Parameter ;
+    rdfs:label "\\theta_{2} (asprey_2000 eq 17)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "substrate saturation constant in Monod kinetics; denominator coefficient in Contois kinetics" ;
+    mkg:reason "a kinetic-law saturation constant or denominator coefficient" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\theta_{2}" ;
+    mkg:unitString "g l^-1 (Monod kinetics); - (Contois kinetics)" ;
+    mkg:value 2.67e-01 ;
+    mkg:valuesByCase "{\"sequential precision experiment, Monod kinetics\": \"0.254 g l^-1 (p.6, Table 2)\"}" .
+
+<http://example.org/kg/asprey_2000_monod_kinetics/law/asprey_2000_eq17/var/x_2> a mkg:Variable ;
+    rdfs:label "x_{2} (asprey_2000 eq 17)"@en ;
+    mkg:description "substrate concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The initial substrate concentration, $ x_2(0) $, is always 0.01 g l $ ^{-1} $ and cannot be manipulated for experiment design purposes." ;
+    mkg:initialValue "0.01 g l^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "x_{2}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g l^-1" .
+

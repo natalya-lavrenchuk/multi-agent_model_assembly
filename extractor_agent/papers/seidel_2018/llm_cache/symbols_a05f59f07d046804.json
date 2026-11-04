@@ -1,0 +1,208 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 5142,
+  "completion_tokens": 6619,
+  "total_tokens": 11761,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 5139,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5120,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Detailed kinetic model | Simplified kinetic model, steady-state φ | Simplified kinetic model, dynamic φ\n\nEquations:\n(7) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{10}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\beta_{11}}p_{\\mathrm{CO}_{2}}\\right)^{-}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(8) \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(9) \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}{K_{\\mathrm{B}5}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{16}}\\frac{p_{\\mathrm{CH}_{3}\\mathrm{OH}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{14}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}++\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}^{1/2}}}_{\\beta_{15}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}^{1/2}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{12}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-}      <- \"ugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\"\n(23) \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}      <- \"ters and $ 1 - \\phi $ the total amount of oxidized centers. Following Ovesen et al. (1997), $ \\phi $ can be calculated from the equilibrium relations as follows\"\n(C-12) r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes^{4}}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-13) r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}      <- \"The correct model equations used for all calculations presented in Seidel et al., (2018), are:\"\n(C-14) \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{CO}_{2}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-15) \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}      <- \"The corresponding surface coverages are:\"\n(C-16) \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{*}}_{\\beta_{8}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{H}_{2}\\mathrm{O}}}_{\\beta_{9}}p_{\\mathrm{H}_{2}\\mathrm{O}}\\right)^{-}      <- \"The corresponding surface coverages are:\"\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}      <- \"Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\"\n\nSymbols:\n\nK_{H_2}   [NOT COMPUTED]\n  [118] (table_row, p.3) Table 2 Elementary reaction steps for $ CO_{2} $-hydrogenation on a Cu/ZnO/ $ Al_{2}O_{3} ...: Elementary step: $ \\text{H}_2 + 2 \\otimes \\neq 2\\text{H} \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_{\\text{H}}^{*} = K_{H_2}^{1/2} p_{H_2}^{1/2} \\theta^\\otimes $\n  [126] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{H}_2 + 2 \\otimes \\Rightarrow 2\\text{H} \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_H^{\\otimes} = K_{H_2}^{1/2} p_{H_2}^{1/2} \\Theta^{\\otimes} $\n\nK_{CH_3OH}^{\\odot}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nK_{CO_2}   [NOT COMPUTED]\n  [123] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{CO}_2 + \\odot \\Rightarrow \\text{CO}_2 \\odot $ | Quasi-equilibrium/velocity: $ \\theta_{CO_2}^{\\odot} = K_{CO_2} p_{CO_2} \\Theta^{\\odot} $\n\np_{CO_2}   [NOT COMPUTED]\n  [123] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{CO}_2 + \\odot \\Rightarrow \\text{CO}_2 \\odot $ | Quasi-equilibrium/velocity: $ \\theta_{CO_2}^{\\odot} = K_{CO_2} p_{CO_2} \\Theta^{\\odot} $\n\n\\Theta^{*}   [COMPUTED by eq 9, C-16]\n  [176] (sentence, p.4) Here,  $ \\Theta^{\\circ} $ and  $ \\Theta^{*} $ are the amounts of free oxidized and reduced surface centers relative to the corresponding total amounts of oxidized and reduced surface centers.\n  [61] (table_row, p.2) Nomenclature: *: $ \\bar{\\Theta}^k $ | reduced surface centers: surface coverage of species with variable  $ \\phi $ | $ K_i $: $ y_{i,0} $ | equilibrium constant: mole fraction of component i at input\n  [63] (table_row, p.2) Nomenclature: *: $ \\Theta^k $ | reduced surface centers: surface coverage of species k | $ K_i $: $ y_i $ | equilibrium constant: mole fraction of component i\n  [107] (table_row, p.2) Table 1 Elementary reaction steps for CO-hydrogenation on a Cu/ZnO/Al_{2}O_{3} catalyst (V...: Elementary step: $ \\text{H}_2 + 2 \\otimes \\rightleftharpoons 2\\text{H} \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_{\\text{H}}^{\\odot} = K_{\\text{H}_2}^{1/2} p_{\\text{H}_2}^{1/2} \\Theta^{\\odot} $\n  [108] (table_row, p.2) Table 1 Elementary reaction steps for CO-hydrogenation on a Cu/ZnO/Al_{2}O_{3} catalyst (V...: Elementary step: $ 3\\text{H} \\otimes + \\text{CO} \\odot \\rightleftharpoons \\text{H}_3\\text{CO} \\odot + 3 \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_{\\text{H}_3\\text{CO}}^{\\odot} = K_{\\text{A}3} \\Theta_{\\text{H}}^{\\odot,3} \\Theta_{\\text{CO}}^{\\odot} \\Theta^{\\odot}^{-3} $\n  [109] (table_row, p.2) Table 1 Elementary reaction steps for CO-hydrogenation on a Cu/ZnO/Al_{2}O_{3} catalyst (V...: Elementary step: $ \\text{H} \\otimes + \\text{H}_3\\text{CO} \\odot \\rightleftharpoons \\text{CH}_3\\text{OH} \\odot + \\otimes $ | Quasi-equilibrium/velocity: $ r_{\\text{A}4} = k_{\\text{A}4}^{+} \\Theta_{\\text{H}}^{\\odot} \\Theta_{\\text{H}_3\\text{CO}}^{+} - k_{\\text{A}4}^{-} \\Theta_{\\text{CH}_3\\text{OH}}^{\\odot} \\Theta^{\\odot} $ (RDS)\n\nK_{H_2O}   [NOT COMPUTED]\n  [129] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{H}_2\\text{O}^* \\Rightarrow \\text{H}_2\\text{O} + * $ | Quasi-equilibrium/velocity: $ \\theta_{H_2O}^* = K_{H_2O} p_{H_2O} \\Theta^* $\n\nK_{B8}   [NOT COMPUTED]\n  [119] (table_row, p.3) Table 2 Elementary reaction steps for $ CO_{2} $-hydrogenation on a Cu/ZnO/ $ Al_{2}O_{3} ...: Elementary step: $ \\text{H} \\otimes + \\text{O} * = \\text{OH} * + \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_0^{*} = K_{B8}^{-1} \\theta_{\\text{OH}}^{*} \\theta^\\otimes \\theta_H^\\otimes^{-1} $\n\nK_{B9}   [NOT COMPUTED]\n  [120] (table_row, p.3) Table 2 Elementary reaction steps for $ CO_{2} $-hydrogenation on a Cu/ZnO/ $ Al_{2}O_{3} ...: Elementary step: $ \\text{H} \\otimes + \\text{OH} * \\neq = \\text{H}_2\\text{O} * + \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_{\\text{OH}}^{*} = K_{B9}^{-1} \\theta_{\\text{H}_2\\text{O}}^{*} \\theta^\\otimes \\theta_H^\\otimes^{-1} $\n  [128] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{H} \\otimes + \\text{OH}^* \\Rightarrow \\text{H}_2\\text{O}^* + \\otimes $ | Quasi-equilibrium/velocity: $ \\theta_{OH}^* = K_{B9}^{-1} \\theta_H_2 \\phi^* \\Theta^{\\otimes^{-1}} \\text{H} $\n\n\\beta_{13}   [NOT COMPUTED]\n  [257] (sentence, p.6) Application to the detailed model reveals that parameters  $ \\beta_{7}, \\beta_{12} $ and  $ \\beta_{13} $ are not structural identifiable.\n  [262] (sentence, p.6) This would also require  $ \\beta_{13} $ to be zero, which is not observed in Table 5.\n  [278] (table_row, p.7) List of estimated parameters for the detailed Eqs. (4)–(9) and simplified model Eqs. (11)–...: Unknown parameter: $ \\beta_{13} $ | Estimated detailed model: 38.6097 | Units: - | Estimated simplified model: 0.04712 | Units: $ bar^{-1} $\n\np_{H_2O}   [NOT COMPUTED]\n  [129] (table_row, p.3) Table 3 Elementary reaction steps for reverse-watergas-shift reaction on a Cu/ZnO/Al_{2}O_...: Elementary step: $ \\text{H}_2\\text{O}^* \\Rightarrow \\text{H}_2\\text{O} + * $ | Quasi-equilibrium/velocity: $ \\theta_{H_2O}^* = K_{H_2O} p_{H_2O} \\Theta^* $",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "K_{H_2}",
+    "description": "Equilibrium constant for hydrogen adsorption on vacant reduced sites.",
+    "description_basis": "stated",
+    "snippet_id": 126,
+    "quote": "Quasi-equilibrium/velocity: $ \\theta_H^{\\otimes} = K_{H_2}^{1/2} p_{H_2}^{1/2} \\Theta^{\\otimes} $",
+    "unit": "bar^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an equilibrium constant in the hydrogen adsorption relation, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{CH_3OH}^{\\odot}",
+    "description": "Adsorption coefficient for methanol in the oxidized-site surface-coverage expression.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "bar^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an adsorption coefficient in a surface-coverage law, a model constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "K_{CO_2}",
+    "description": "Equilibrium adsorption constant for carbon dioxide on oxidized sites.",
+    "description_basis": "stated",
+    "snippet_id": 123,
+    "quote": "Quasi-equilibrium/velocity: $ \\theta_{CO_2}^{\\odot} = K_{CO_2} p_{CO_2} \\Theta^{\\odot} $",
+    "unit": "bar^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an equilibrium adsorption constant in the carbon-dioxide surface relation, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "p_{CO_2}",
+    "description": "Partial pressure of carbon dioxide used in the surface-coverage expression.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "bar",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a process partial pressure used by the model and varying with operating conditions, not a fitted law constant.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\Theta^{*}",
+    "description": "Free reduced surface centers relative to the total amount of reduced surface centers.",
+    "description_basis": "stated",
+    "snippet_id": 176,
+    "quote": "Here,  $ \\Theta^{\\circ} $ and $ \\Theta^{*} $ are the amounts of free oxidized and reduced surface centers relative to the corresponding total amounts of oxidized and reduced surface centers.",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{H_2O}",
+    "description": "Equilibrium constant for water desorption from reduced surface centers.",
+    "description_basis": "stated",
+    "snippet_id": 129,
+    "quote": "Quasi-equilibrium/velocity: $ \\theta_{H_2O}^* = K_{H_2O} p_{H_2O} \\Theta^* $",
+    "unit": "bar^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an equilibrium constant in the water surface relation, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{B8}",
+    "description": "Equilibrium constant for the surface step converting oxygen to hydroxyl.",
+    "description_basis": "stated",
+    "snippet_id": 119,
+    "quote": "Quasi-equilibrium/velocity: $ \\theta_0^{*} = K_{B8}^{-1} \\theta_{\\text{OH}}^{*} \\theta^\\otimes \\theta_H^\\otimes^{-1} $",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an equilibrium constant for an elementary surface reaction, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{B9}",
+    "description": "Equilibrium constant for the surface step converting hydroxyl to water.",
+    "description_basis": "stated",
+    "snippet_id": 120,
+    "quote": "Quasi-equilibrium/velocity: $ \\theta_{\\text{OH}}^{*} = K_{B9}^{-1} \\theta_{\\text{H}_2\\text{O}}^{*} \\theta^\\otimes \\theta_H^\\otimes^{-1} $",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is an equilibrium constant for an elementary surface reaction, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\beta_{13}",
+    "description": "Coefficient of the water-to-hydrogen pressure-ratio term in the detailed-model surface coverage; in the simplified model it is the carbon-dioxide adsorption coefficient.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "model-dependent: - (detailed); bar^-1 (simplified)",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [
+     {
+      "model": "Detailed kinetic model",
+      "value": "38.6097 -"
+     },
+     {
+      "model": "Simplified kinetic model, steady-state φ",
+      "value": "0.04712 bar^-1"
+     },
+     {
+      "model": "Simplified kinetic model, dynamic φ",
+      "value": "0.04712 bar^-1"
+     }
+    ],
+    "class_reason": "It is an estimated model coefficient in the surface-coverage expressions, a law constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "p_{H_2O}",
+    "description": "Partial pressure of water used in the surface-coverage expressions.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "bar",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "It is a process partial pressure used by the model and varying with operating conditions, not a fitted law constant.",
+    "class": "variable",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

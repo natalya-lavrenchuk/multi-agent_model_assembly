@@ -1,0 +1,154 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.300252641,
+  "prompt_tokens": 2022,
+  "prompt_time": 0.416746686,
+  "completion_tokens": 1171,
+  "completion_time": 3.037241088,
+  "total_tokens": 3193,
+  "total_time": 3.453987774,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 62
+  }
+ },
+ "user": "Equations:\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)      <- \"The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\"\n(6) f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right)      <- \"The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:\"\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1      <- \"Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by\"\n(8) \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]      <- \"The mass balances for lactate and ammonia are\"\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]      <- \"The mass balances for lactate and ammonia are\"\n\nSymbols:\n\n[GLC]   [COMPUTED by eq 8]\n  (no snippet mentions this symbol)\n\nK_{glc}   [NOT COMPUTED]\n  [173] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{glc} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-1} $ | Fed-batch operation value: $ 7.5 \\times 10^{-1} $\n  [55] (line, p.2) K $ _{glc} $ Monod constant for glucose (mM)\n\nK_{gln}   [NOT COMPUTED]\n  [174] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{gln} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-2} $ | Fed-batch operation value: $ 7.5 \\times 10^{-2} $\n  [56] (line, p.2) K $ _{gln} $ Monod constant for glutamine (mM)\n\nK_{Ilac}   [NOT COMPUTED]\n  [58] (line, p.2) K $ _{llac} $ Monod constant for lactate (mM)\n  [176] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ KI_{lac} $ (mM) | Batch operation value: 171.76 | Fed-batch operation value: 171.76\n\n[LAC]   [COMPUTED by eq 13]\n  (no snippet mentions this symbol)\n\nK_{Iamm}   [NOT COMPUTED]\n  [57] (line, p.2) K $ _{lamm} $ Monod constant for ammonia (mM)\n  [175] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ KI_{amm} $ (mM) | Batch operation value: 28.48 | Fed-batch operation value: 28.48\n\n[AMM]   [COMPUTED by eq 15]\n  (no snippet mentions this symbol)\n\n\\mu_{d,max}   [NOT COMPUTED]\n  [74] (line, p.2) $ \\mu_{d,max} $ maximum specific growth rate (h $ ^{-1} $)\n  [197] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{d,max} (h^{-1}) $ | Batch operation value: $ 6 \\times 10^{-2} $ | Fed-batch operation value: $ 6 \\times 10^{-2} $\n\nK_{d,amm}   [NOT COMPUTED]\n  [169] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,amm} $ (mM) | Batch operation value: 1.76 | Fed-batch operation value: 1.76\n  [51] (line, p.2) K $ _{d,amm} $ ammonia constant for cell death (mM)\n\nn   [NOT COMPUTED]\n  [179] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: n | Batch operation value: 2 | Fed-batch operation value: 2",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "[GLC]",
+    "description": "Extracellular glucose concentration",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{glc}",
+    "description": "Monod constant for glucose",
+    "description_basis": "stated",
+    "snippet_id": 55,
+    "quote": "Monod constant for glucose (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "7.5 × 10^{-1} mM",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{gln}",
+    "description": "Monod constant for glutamine",
+    "description_basis": "stated",
+    "snippet_id": 56,
+    "quote": "Monod constant for glutamine (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "7.5 × 10^{-2} mM",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{Ilac}",
+    "description": "Monod constant for lactate",
+    "description_basis": "stated",
+    "snippet_id": 58,
+    "quote": "Monod constant for lactate (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "171.76 mM",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "[LAC]",
+    "description": "Extracellular lactate concentration",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{Iamm}",
+    "description": "Monod constant for ammonia",
+    "description_basis": "stated",
+    "snippet_id": 57,
+    "quote": "Monod constant for ammonia (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "28.48 mM",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "[AMM]",
+    "description": "Extracellular ammonia concentration",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "mM",
+    "unit_basis": "inferred",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\mu_{d,max}",
+    "description": "Maximum specific death rate",
+    "description_basis": "stated",
+    "snippet_id": 74,
+    "quote": "maximum specific growth rate (h^{-1})",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "6 × 10^{-2} h^{-1}",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K_{d,amm}",
+    "description": "Ammonia constant for cell death",
+    "description_basis": "stated",
+    "snippet_id": 51,
+    "quote": "ammonia constant for cell death (mM)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "1.76 mM",
+    "class_reason": "parameter representing a kinetic constant",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "n",
+    "description": "Hill coefficient in death rate expression (n > 1)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": "2",
+    "class_reason": "parameter representing an exponent in the kinetic law",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

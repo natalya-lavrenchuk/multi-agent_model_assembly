@@ -1,0 +1,309 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "kontoravdi_2010": {
+   "name": "kontoravdi_2005",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28"
+   ],
+   "description": "This model describes hybridoma cell cultures that produce IgG1 monoclonal antibody, predicting viable and total cell concentrations, nutrient and metabolite levels, and antibody concentration in the culture medium. It combines a population-level description of cell growth, death, nutrient use, and metabolite formation with intracellular steps for antibody synthesis, assembly, processing, and secretion. The model was developed from batch-culture data and then its sensitive parameters were estimated using data from an optimally designed fed-batch experiment. The cultures were run in Erlenmeyer flasks, with concentrated glucose and glutamine feed added in pulses. Its predictions were checked against a separate fed-batch experiment, with good overall agreement but some mismatch in late-culture viability predictions. The paper presents the model-development method as a way to support in-silico experimentation, control, and optimisation while limiting experimental work.",
+   "facts": [
+    {
+     "topic": "cell line",
+     "text": "The cultures used HFN7.1 hybridoma cells producing IgG1 against human-plasma fibronectin.",
+     "quote": "Hybridoma cell line HFN7.1 producing IgG1 against fibronectin from human plasma (CRL-1606 from ATCC) was cultured",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Batch and fed-batch cultures were run in 1 L Erlenmeyer flasks with a 200 mL working volume.",
+     "quote": "Both batch and fed-batch cultures were conducted in 1L Erlenmeyer flasks with a working volume of 200 mL",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Culture temperature and carbon-dioxide concentration were automatically controlled at 37°C and 5%, respectively.",
+     "quote": "Temperature and CO2 air concentration were automatically controlled at 37°C and 5%, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "medium",
+     "text": "The basal medium was high-glucose DMEM at 4.5 g/L supplemented with 2.5% bovine calf serum.",
+     "quote": "Hybridoma cell line HFN7.1 producing IgG1 against fibronectin from human plasma (CRL-1606 from ATCC) was cultured in high-glucose (4.5 g/L) DMEM (Gibco) supplemented with 2.5% bovine calf serum (ATCC).",
+     "basis": "stated"
+    },
+    {
+     "topic": "inoculation",
+     "text": "The cultures were inoculated at 2 × 10^8 cells/L.",
+     "quote": "inoculation cell density of 2 × 10^8 cells/L.",
+     "basis": "stated"
+    },
+    {
+     "topic": "replicates",
+     "text": "Batch cultures were conducted in triplicate flasks, while fed-batch cultures were conducted in duplicate flasks.",
+     "quote": "Batch cultures were carried out in triplicate flasks",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Batch cultures began at 29.1 mM glucose and 4.9 mM glutamine.",
+     "quote": "initial concentrations of 29.1 mM for glucose and 4.9 mM for glutamine",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The designed fed-batch experiment began at 25.1 mM glucose and 5.01 mM glutamine.",
+     "quote": "In the first fed-batch culture experiment used for model validation, the initial concentration of glucose was 25.1 mM and of glutamine 5.01 mM.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The independent fed-batch experiment began at 18.4 mM glucose and 3.74 mM glutamine.",
+     "quote": "In the second, independent experiment, the initial concentration of glucose was 18.4 mM and of glutamine 3.74 mM.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The concentrated feed contained 500 mM glucose and 100 mM glutamine.",
+     "quote": "the concentrations of glucose and glutamine in the feed were set at 500 and 100 mM, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The maximum total feed volume was 8.75 mL, less than 5% of the 200 mL culture volume.",
+     "quote": "The maximum total volume of feed was fixed at 8.75 mL, which represents less than 5% of the total culture volume (200 mL), so as to avoid dilution effects.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The designed experiment used one feed pulse per day, whereas the independent experiment used two doses per day.",
+     "quote": "a pulse feed was introduced once a day, at an interval of 24 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model form",
+     "text": "The model is described as a hybrid structured/unstructured model of antibody-secreting hybridoma cultures.",
+     "quote": "a fed-batch structured/unstructured model of antibody-secreting hybridoma cultures",
+     "basis": "stated"
+    },
+    {
+     "topic": "model form",
+     "text": "The model comprises 28 differential and algebraic equations and 30 parameters.",
+     "quote": "The model equations are listed in Appendix A and consist of 28 differential and algebraic equations containing 30 parameters.",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "Cell growth depends on glucose and glutamine availability and on extracellular lactate and ammonia accumulation, with growth described using Monod kinetics.",
+     "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:",
+     "basis": "stated"
+    },
+    {
+     "topic": "cell death",
+     "text": "The model makes the specific cell-death rate dependent on extracellular ammonia.",
+     "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+     "basis": "stated"
+    },
+    {
+     "topic": "metabolism",
+     "text": "The model represents glucose and glutamine uptake, glutamine degradation, lactate production, and ammonia production.",
+     "quote": "The mass balances for lactate and ammonia are",
+     "basis": "stated"
+    },
+    {
+     "topic": "antibody",
+     "text": "The antibody mechanism represents heavy- and light-chain gene transcription and translation, sequential assembly in the endoplasmic reticulum, transport to the Golgi, and secretion into the medium.",
+     "quote": "These are then translated into heavy and light antibody chains, which sequentially combine to form the antibody molecule (two heavy and two light chains) in the endoplasmic reticulum. This molecule then travels to the Golgi apparatus and is finally secreted into the extracellular medium.",
+     "basis": "stated"
+    },
+    {
+     "topic": "outputs",
+     "text": "The model describes cell growth and antibody synthesis and production alongside extracellular culture variables.",
+     "quote": "In summary, the model describes cell growth and antibody synthesis and production in the context of laboratory-scale cell cultures.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Cell density was measured with a hemacytometer and viability was determined by Trypan Blue dye exclusion.",
+     "quote": "Cell density was measured using a hemacytometer, where cell viability was determined by the method of Trypan Blue dye exclusion.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Extracellular glucose, glutamine, lactate, and ammonia were measured with a YSI Bioprofiler 200.",
+     "quote": "Extra-cellular glucose, glutamine, lactate and ammonia concentrations were measured with the YSI Bioprofiler 200 (Nova Biomedical, UK).",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurements",
+     "text": "Extracellular antibody concentration was measured by indirect sandwich ELISA, with absorbance read at 450 nm.",
+     "quote": "Antibody concentration in the supernatant was estimated by indirect sandwich enzyme-linked immunosorbent assay (ELISA).",
+     "basis": "stated"
+    },
+    {
+     "topic": "sampling",
+     "text": "For the fed-batch design, the earliest sample was set at 12 h and the minimum interval between measurements was 6 h.",
+     "quote": "The earliest measurement time was set at 12 h and the minimum time between measurements at 6 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "sampling",
+     "text": "At each sampling point, viable and total cell, nutrient, metabolite, and extracellular antibody concentrations were determined in the independent fed-batch experiment.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "The authors used Sobol' global sensitivity analysis to assess how parameter variation affected predicted antibody concentration.",
+     "quote": "The Sobol' method of global sensitivity analysis was employed to quantitatively assess the effect of variation in model parameter values on model output, in this case MAb concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "sensitivity",
+     "text": "A one-at-a-time screening was used to identify parameters influencing the other measured outputs, and seven parameters were selected for estimation.",
+     "quote": "Those were found to be the yield of cells on glucose (Yx,glc), the yield of cells on glutamine (Yx,gln), the yield of lactate on glucose (Ylac,glc), the yield of ammonia on glutamine (Yamm,gln), the rate of dead cell lysis (Klysis), the maximum specific cell growth rate (μmax), and the gene copy number of MAb heavy chains (NH). These parameters were targeted for the parameter estimation process",
+     "basis": "stated"
+    },
+    {
+     "topic": "parameterisation",
+     "text": "Batch-culture data provided initial estimates for parameters targeted for estimation because cell growth and product synthesis and secretion parameters were considered cell-line-specific.",
+     "quote": "Batch culture experiments were initially carried out, through which the validity of the model structure to the HFN7.1 hybridoma cell line was confirmed",
+     "basis": "stated"
+    },
+    {
+     "topic": "experimental design",
+     "text": "The fed-batch experiment was designed using a D-optimal criterion to maximise information for estimating the seven selected parameters.",
+     "quote": "D-optimal experimental design was used to maximise the information content of experimental data, specifically for the estimation of the seven parameters identified in the sensitivity analysis and one-at-a-time screening.",
+     "basis": "stated"
+    },
+    {
+     "topic": "experimental design",
+     "text": "The design was implemented in gPROMS using its experiment-design-for-parameter-precision function and an SRQPD sequential quadratic programming code.",
+     "quote": "The design was conducted in the gPROMS (PSE, 2002b) modelling environment, which has a dedicated function, namely 'experiment design for parameter precision', and uses a SRQPD sequential quadratic programming code.",
+     "basis": "stated"
+    },
+    {
+     "topic": "experimental design",
+     "text": "The designed experiment lasted 168 h, with a daily feed pulse at 24 h intervals.",
+     "quote": "The optimal duration was determined at 168 h (7 days), during which a pulse feed was introduced once a day, at an interval of 24 h.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Parameter estimation used maximum likelihood, constant-variance measurement errors, and the SRQPD sequential quadratic programming code in gPROMS.",
+     "quote": "Parameter estimation was based on the maximum likelihood formulation",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "The 95% confidence intervals were within ±10% of final estimates for all selected parameters except the ammonia yield, whose interval was ±17%.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "batch fit",
+     "text": "In batch cultures, the model reproduced the viable-cell peak and antibody concentration profiles and showed similar agreement for the measured nutrients and metabolites.",
+     "quote": "Moreover, MAb concentration is accurately predicted throughout the duration of the culture (Fig. 2). Similar agreement was achieved for glutamine and ammonia (Fig. 3), and glucose and lactate (Fig. 4).",
+     "basis": "stated"
+    },
+    {
+     "topic": "fed-batch fit",
+     "text": "For the designed fed-batch experiment, the model closely tracked glutamine and antibody concentrations and captured the overall profiles of the measured variables.",
+     "quote": "Overall, the model captures the profiles of all measure variables successfully.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "In the final 40 h of the designed fed-batch experiment, the model overpredicted viable-cell concentration.",
+     "quote": "Over the last 40 h the model over-predicts the concentration of viable cells in the culture.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "In the designed fed-batch experiment, the model predicted faster use of newly supplied glutamine than the measurements showed after glutamine had reached zero.",
+     "quote": "Discrepancies only occur once glutamine has reached zero concentration (after 80 h), when additional glutamine fed to the culture is metabolised more quickly than predicted.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "Predictive capability was evaluated against a separate fed-batch experiment with lower initial glucose and glutamine and feeding twice daily.",
+     "quote": "In order to demonstrate the model's predictive capability, its simulation results were compared with an independent set of data from a fed-batch experiment.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "In the independent fed-batch experiment, the model correctly estimated the final extracellular monoclonal-antibody concentration.",
+     "quote": "Finally, the final extracellular concentration of monoclonal antibodies is correctly estimated by the model (Fig. 10).",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The model structure was presented previously by Kontoravdi et al. 2005 and compared with data for the 14-4-4S hybridoma cell line.",
+     "quote": "In a previous study (Kontoravdi, Asprey, Pistikopoulos, & Mantalaris, 2005), a hybrid model of antibody-producing mammalian cell cultures was presented and compared to experimental data for the hybridoma 14-4-4S cell line (Tatiraju, Soroush, & Mutharasan, 1999).",
+     "basis": "stated"
+    },
+    {
+     "topic": "application",
+     "text": "The authors propose using the resulting model for in-silico experimentation and model-based control and optimisation.",
+     "quote": "The resulting model, which was developed at a minimum experimental cost, can be used for in silico experimentation, as well as model-based control and optimisation studies.",
+     "basis": "stated"
+    }
+   ],
+   "states": [
+    "V",
+    "X_{\\nu}",
+    "X_{t}",
+    "[GLC]",
+    "[GLN]",
+    "[LAC]",
+    "[AMM]",
+    "m_{H}",
+    "m_{L}",
+    "[H]",
+    "[L]",
+    "[H_2]",
+    "[H_2L]",
+    "[H_2L_2]_{ER}",
+    "[H_2L_2]_{G}",
+    "[MAb]"
+   ],
+   "inputs": [
+    "F_{in}",
+    "F_{out}",
+    "[GLC]_{in}",
+    "[GLN]_{in}"
+   ],
+   "status": "pending",
+   "review": [
+    "2 of 40 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.055586018,
+  "prompt_tokens": 2098,
+  "prompt_time": 0.103179139,
+  "completion_tokens": 2678,
+  "completion_time": 5.628288934,
+  "total_tokens": 4776,
+  "total_time": 5.731468073,
+  "completion_tokens_details": {
+   "reasoning_tokens": 2258
+  }
+ },
+ "user": "Title: Kinetic modeling of methanol synthesis from renewable resources\n\nAbstract: In the present paper new detailed kinetic model for the methanol synthesis from  $ H_{2} $,  $ CO_{2} $ and/or CO using a Cu/ZnO/ $ Al_{2}O_{3} $ catalyst is proposed. In contrast to most established models different active surface species for CO and  $ CO_{2} $ hydrogenation are taken into account. It is shown that changes in the relative amounts of these different surface species, which are related to changes in catalyst morphology, play an important role for the dynamic transient behavior. The model is therefore suitable for evaluating new applications in chemical energy storage, where strongly varying ratios of CO and  $ CO_{2} $ are of relevance. The model parameters were fitted to steady state and dynamic experimental data for varying  $ CO/CO_{2} $ feed ratios using global optimization. Identifiability is studied using the Profile-Likelihood method giving rise to a reduced kinetic model.\n\nSentences about the process and the data:\n- • Parameters are fitted to a large number of steady state and dynamic experiments using global optimization.\n- The model parameters were fitted to steady state and dynamic experimental data for varying  $ CO/CO_{2} $ feed ratios using global optimization.\n- It is produced continuously in large amounts from synthesis gas using Cu/ZnO/Al₂O₃ catalysts.\n- But in this case the methanol reactor may also face strongly varying ratios of CO to  $ CO_{2} $ in the feed resulting in more transient modes of operation, where established kinetics are insufficient.\n- Dynamic experiments by Muhler et al. (1994);\n- For this reason the main objective of this paper is to develop an extended reaction kinetic model, that is able to handle transient operating modes and a wide range of feed gas compositions.\n- The paper is based on a comprehensive set of steady state and dynamic experiments, that are reported in the PhD thesis by Vollbrecht (2007) and starts with a detailed Langmuir-Hinshelwood model based on elementary reaction steps as proposed\n- Parameters are fitted to steady state and dynamic experiments for varying ratios of CO to  $ CO_{2} $ using global optimization.\n- Identifiability is critically discussed using the profile likelihood method leading to a simplified kinetic model, which fits the experimental data almost equally well and has improved structural identifiability.\n- Here partial pressures are used instead of fugacities, which is justified by the fact that fugacity coefficients are close to one for the operating conditions considered in this paper (Vollbrecht, 2007).\n- Therein, a reparametrization is introduced as indicated with the lumped  $ \\beta_{i} $ parameters, which have to be fitted to experimental data.\n- A known problem for the parameter estimation is the correlation between frequency factor and activation energy, which impedes reasonable results.\n- This increased sensitivity, however, is not effective if the reactor is operated with hydrogen in excess, leading to almost constant value of  $ \\Theta^{\\otimes} $.\n- Experiments showed that Cu particles on the catalyst are flat under reducing and more spherical under oxidizing conditions as shown in Fig. 1 (Grunwaldt et al., 2000;\n- At steady state, reactions (18) and (19) are in equilibrium according to\n- Experiments have shown characteristic methanol overshoots after switching between different gas compositions (Vesborg et al., 2009;\n- Additional rate constants  $ k_{1}^{+}, k_{2}^{+} $ are fitted to transient data.\n- Experiments and parameter estimation\n\nModel: Simplified kinetic model, steady-state φ\nLaws:\n(10) [constitutive] Arrhenius-like expression for the reaction rate constant k_i using lumped parameters A and B.\n(22) [definition] Definition of the fraction of reduced surface centers φ based on the relative free energy ratio γ*/γ0.\n(23) [constitutive] Constitutive relation giving the relative free energy ratio γ*/γ0 as a function of equilibrium constants K1, K2 and gas partial pressures.\n(24) [constitutive] Constitutive expression linking equilibrium constant K1 to the forward and reverse rate constants and to the standard Gibbs free energy ΔG1.\n(25) [constitutive] Equilibrium constant K2 expressed as an exponential function of the standard Gibbs free energy change\n(C-11) [constitutive] Rate of CO hydrogenation expressed by a Langmuir–Hinshelwood kinetic expression that includes reactant and product partial pressures, surface coverages, and the fraction of oxidized sites.\n(C-12) [constitutive] Rate of CO2 hydrogenation expressed by a Langmuir–Hinshelwood kinetic expression that includes reactant and product partial pressures, surface coverages, and the fraction of reduced sites.\n(C-13) [constitutive] Rate of the reverse water‑gas shift reaction expressed by a Langmuir–Hinshelwood kinetic expression involving CO2 and H2 partial pressures, product partial pressures, surface coverages, and site fractions.\n(C-14) [definition] Coverage of oxidized catalytic sites (Θ^{⊙}) defined by a competitive Langmuir adsorption expression for CO, methanol, and CO2.\n(C-15) [constitutive] Surface coverage of type ⊗ sites as a function of hydrogen partial pressure.\n(C-16) [constitutive] Surface coverage of reduced sites (*) as a function of water, CO2, and methanol partial pressures and adsorption constants.\n(C-1) [constitutive] Temperature-dependent correlation for the equilibrium constant K_{P1} of the CO hydrogenation reaction.\n(C-2) [constitutive] Temperature-dependent correlation for the equilibrium constant K_{P2}.\n(C-3) [constitutive] The equation provides a temperature-dependent correlation for the equilibrium constant K_{P3} of the reverse water‑gas shift reaction.\n\nStates (computed by the ODEs):\n\n\nInputs (variables no law computes):\n- T: process temperature\n- p_{H_2}: partial pressure of hydrogen\n- p_{CO}: partial pressure of CO\n- p_{H_2O}: partial pressure of water vapor\n- p_{CO_2}: partial pressure of CO2 in the gas phase\n- p_{CH_3OH}: partial pressure of methanol\n\nModel-wide assumptions:\n- Catalyst deactivation neglected; only reactions (1)-(3) considered.\n- Lumped kinetics for reactions (1)-(3).\n- Fast steps are at quasi‑equilibrium.\n- Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28).",
+ "answer": {
+  "system": {
+   "value": "Methanol synthesis from H2, CO2 and CO over Cu/ZnO/Al2O3 catalyst",
+   "quote": "methanol synthesis from $ H_{2} $, $ CO_{2} $ and/or CO using a Cu/ZnO/ $ Al_{2}O_{3} $ catalyst"
+  },
+  "unit_operation": {
+   "value": "fixed-bed reactor",
+   "quote": null
+  },
+  "operating_mode": {
+   "value": "continuous, steady-state, dynamic",
+   "quote": "steady state and dynamic experiments"
+  },
+  "fitted_on": {
+   "value": "steady state and dynamic experiments with varying CO/CO2 feed ratios",
+   "quote": "The model parameters were fitted to steady state and dynamic experimental data for varying CO/CO_{2} feed ratios using global optimization."
+  },
+  "phenomena": [
+   "Arrhenius temperature dependence of reaction rate constants",
+   "Fraction of reduced/oxidized surface sites (φ) dynamics",
+   "Equilibrium thermodynamics linking rate constants to Gibbs free energy",
+   "Langmuir‑Hinshelwood kinetics for CO hydrogenation",
+   "Langmuir‑Hinshelwood kinetics for CO2 hydrogenation",
+   "Langmuir‑Hinshelwood kinetics for reverse water‑gas shift reaction",
+   "Competitive adsorption on oxidized sites (CO, CO2, methanol)",
+   "Hydrogen adsorption determining type ⊗ site coverage",
+   "Water, CO2 and methanol adsorption determining reduced site coverage",
+   "Temperature‑dependent equilibrium constants for reactions"
+  ],
+  "description": "The model describes methanol synthesis from H2, CO, and CO2 over a Cu/ZnO/Al2O3 catalyst in a continuous fixed‑bed reactor. It predicts reaction rates and surface coverages using a detailed Langmuir‑Hinshelwood framework that distinguishes active sites for CO and CO2 hydrogenation, includes temperature‑dependent equilibrium constants, and accounts for the fraction of reduced and oxidized surface sites. Parameters are estimated from extensive steady‑state and transient experiments covering a range of CO/CO2 feed ratios, allowing the model to capture both steady‑state and dynamic behavior."
+ }
+}

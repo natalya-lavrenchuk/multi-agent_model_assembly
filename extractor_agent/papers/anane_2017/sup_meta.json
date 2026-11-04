@@ -1,0 +1,270 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "anane_2017": {
+   "name": "anane_2017",
+   "equations": [
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24"
+   ],
+   "description": "Anane_2017 models a fed-batch culture of non-recombinant Escherichia coli W3110M and predicts biomass, glucose, acetate, and dissolved-oxygen profiles. It is a continuous, macro-kinetic model that represents glucose partitioning and acetate cycling, with oxygen transfer and the dissolved-oxygen probe response also included. The culture is run through batch and fed-batch phases, including exponential and constant feeding and glucose pulses. The authors fitted the model to data from a 2-L culture, using hourly samples for biomass, glucose, and acetate and online dissolved-oxygen measurements. They propose it for fermentation process development, optimization, control, and gradient-based simulations.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model concerns acetate overflow metabolism and acetate accumulation during cultivation of non-recombinant E. coli W3110M.",
+     "quote": "The data for model calibration was obtained from a fed-batch culture of non-recombinant E. coli W3110M.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The model treats acetate excretion as the result of an imbalance between its ongoing intracellular production and re-assimilation.",
+     "quote": "Thus, acetate excretion into the extracellular medium only results from an offset of the equilibrium between its production and re-assimilation",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "The model is formulated at macro-kinetic scale, with the many metabolic routes represented by lumped kinetic parameters.",
+     "quote": "The large set of metabolic routes are approximated by lumped kinetic parameters",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanism",
+     "text": "Glucose use is partitioned among oxidative metabolism, overflow metabolism, acetate uptake, and maintenance, with these routes contributing to growth.",
+     "quote": "the overall growth of the culture results from usage of glucose through the oxidative (qsox), acetate uptake (qSA) and re-use of other products from the overflow route (qsof), which all contribute energy equivalents for cell growth",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Glucose uptake uses Monod-type kinetics with non-competitive inhibition by extracellular acetate.",
+     "quote": "The specific substrate uptake rate is therefore modelled with Mono-type kinetics with non-competitive inhibition:",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "Acetate uptake depends on extracellular acetate availability and is inhibited non-competitively by glucose.",
+     "quote": "The uptake of acetate, however, is inhibited in a non-competitive way by the presence of glucose in the medium due to E. coli's higher preference for glucose over acetate",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The equations represent acetate production and re-assimilation as continuous processes rather than switching between discrete metabolic phases.",
+     "quote": "This formulation of acetate profiles and overflow metabolism is closer to reality since E. coli does not have clear cut switching points in its metabolic routes on the onset of overflow, but rather slow or gradual switching systems from oxidative to overflow metabolism",
+     "basis": "stated"
+    },
+    {
+     "topic": "kinetics",
+     "text": "The authors interpret the rapid modeled response to glucose pulses and lack of a diauxic delay as evidence of continuous acetate re-assimilation alongside glucose use.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "transport",
+     "text": "The model represents measured dissolved oxygen as a first-order response to actual dissolved oxygen to account for probe lag.",
+     "quote": "The difference between the two dissolved oxygen profiles DOTa and DOT is due to the response lag of the sensor, which is approximated by first order response kinetics for the DO-probe",
+     "basis": "stated"
+    },
+    {
+     "topic": "transport",
+     "text": "The paper says probe response dynamics are important for the strain when the probe response time exceeds 8 seconds.",
+     "quote": "At the calculated q0 values for the current E. coli strain, when the probe response time is greater than 8 s, it is important to include it in the dynamics of the oxygen profile.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The paper describes six state variables: biomass, glucose, acetate, actual and measured dissolved oxygen, and feed rate.",
+     "quote": "The model comprises a set of ordinary differential equations (ODEs) describing six state variables, namely biomass X and extracellular concentrations of substrate S, acetate A, dissolved oxygen DOTa and DOT, and the feed F (which can be constant or a function of time).",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model couples differential balances with auxiliary algebraic equations for intracellular substrate, oxygen, acetate, and biomass relations.",
+     "quote": "A set of auxiliary algebraic equations describing intracellular interactions relating substrate (glucose), oxygen and acetate consumption as well as biomass formation are coupled to the ODEs to form the kinetic model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The parameter table reports estimates for 16 model parameters.",
+     "quote": "twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Cultivation was carried out at 37 °C and pH 7.0 in a 3.7-L bench-top bioreactor fitted with a polarographic dissolved-oxygen probe.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "equipment",
+     "text": "The batch was started with 2 L of medium containing 5 g/L glucose and inoculated to an optical density at 600 nm of 0.1.",
+     "quote": "To start the batch phase, 2 L of medium was inoculated wit E. coli W3110 to OD₆₀₀ of 0.1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The medium contained mineral salts and trace elements, and the batch phase began with 5 g/L glucose.",
+     "quote": "The medium consisted of mineral salts and trace elements, as described by Glazyrina et al. [20], with 5 g/L glucose in the batch phase.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Fed-batch feeding began at batch glucose exhaustion, indicated by a sudden rise in dissolved-oxygen tension, using a 300 g/L glucose feed.",
+     "quote": "The fed-batch phase was initiated with a 300 g/L glucose feed at the exhaustion of the batch phase glucose, signalled by a sudden rise in dissolved oxygen tension.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The methods specify an exponential-feed growth-rate set point of 0.22 h⁻¹, followed after 3 h by constant feeding at an initial specific growth rate of 0.11 h⁻¹ for 17 h.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "feeding",
+     "text": "The Fig. 2 caption gives 0.25 h⁻¹ for the start of exponential feeding, differing from the methods section's 0.22 h⁻¹ set point.",
+     "quote": "A= start of exponential feed fed-batch phase at m_set=0.25 h−1",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Intermittent glucose pulses were added during constant feeding to test the acetate equations' response.",
+     "quote": "To test the robustness of the acetate equations, intermittent glucose pulses were given in the constant feeding phase, and the corresponding response in all profiles were modelled.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The authors report a maximum specific growth rate of 0.31 h⁻¹ in the glucose-excess batch phase, during which extracellular acetate increased.",
+     "quote": "A maximum specific growth rate (mmax) of 0.31 h−1 was recorded during the batch phase, in the presence of excess glucose. Growth at mmax was associated with a steady increase in extracellular acetate concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "During constant feeding, specific growth fell below 0.05 h⁻¹ when glucose supply fell below 0.1 g glucose per g biomass per hour.",
+     "quote": "During the constant feed phase the specific growth rate decreased to values below 0.05 h−1, when the glucose supply fell to values below 0.1 gglu gx−1 h−1",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The authors report that acetate consumption exceeded production during slow constant feeding.",
+     "quote": "In the constant, slow feeding phase, acetate consumption was greater than its production, which represented a shift in the cycling equilibrium that favoured the consumption of extracellular acetate",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The experiment was intended to cover growth regimes from excess glucose in batch to chronic starvation at the end of cultivation.",
+     "quote": "From an excess substrate (glucose) environment in the batch phase to chronic starvation conditions at the end, the acetate profile evolved according to predictable kinetics (Fig. 2).",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Biomass growth was monitored by measuring sample optical density at 600 nm with a UV–vis spectrophotometer, then converting optical density to cell dry weight using a conversion factor.",
+     "quote": "Cellular growth was monitored by measuring the optical density of samples at 600 nm in a UV–vis spectrophotometer (Novaspec III, Amersham Biosciences, Amersham, UK).",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Residual glucose and acetate were measured by hourly HPLC sampling using a refractive-index detector.",
+     "quote": "To determine the concentration of residual glucose and acetate, hourly samples were analysed on an Agilent 1200 HPLC system, equipped with a HyperRez™ XP Carbohydrate H+ column (Fisher Scientific, Schwerte, Germany) and a refractive index detector.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "The dataset contained 19 measurements each for biomass, glucose, and acetate, and 11,336 online dissolved-oxygen readings.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "estimation",
+     "text": "The model was solved in Matlab R2015a using the CVODE integrator from SUNDIALS.",
+     "quote": "The E. coli model in Section 3 was solved using Matlab R2015a® with the CVODE integrator from SUNDIALS TB [21].",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Parameters were estimated with lsqnonlin using a trust-region-reflective algorithm.",
+     "quote": "The parameter estimates (PE) were computed using lsqnonlin with the trust region reflective algorithm.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "Initial parameter values came from literature, and initial search points were generated with a minimum-bias Latin hypercube design.",
+     "quote": "The initial parameter values for PE were based on literature [4,5,17]. The initial values for the search in the parameter space were generated using the Minimum bias Latin hypercube design (MBLHD) [22].",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "Parameter uncertainty was assessed by Monte Carlo resampling, with 95% confidence intervals calculated using parameter standard deviations and a Student t-distribution.",
+     "quote": "The 95% confidence intervals were estimated using σθi and a Student t-distribution.",
+     "basis": "stated"
+    },
+    {
+     "topic": "uncertainty",
+     "text": "Twelve of the 16 estimated parameters had relative standard deviations below 10%.",
+     "quote": "twelve (12) out of the sixteen (16) parameters were exclusively identified with relative standard deviation less than 10%.",
+     "basis": "stated"
+    },
+    {
+     "topic": "performance",
+     "text": "The paper describes the fit between model predictions and experimental data as adequate.",
+     "quote": "There was an adequate fit between the model and the experimental data.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The reported calibration and validation use fed-batch data from W3110M, and the paper does not describe a separate independent validation dataset.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "prior work",
+     "text": "The model is presented as a continuous reformulation and improvement of macro-kinetic models by Xu et al. 1999, Lin et al. 2001, and Neubauer et al. 2003.",
+     "quote": "The mechanistic models of Xu [4], Lin [5] and Neubauer [8] are among the most widely used macro-kinetic models for description of E. coli fermentations.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior work",
+     "text": "The paper describes its glucose-partitioning formulation as an advanced version of the overflow-metabolism representation by Pham et al. 1998 for Saccharomyces cerevisiae.",
+     "quote": "The formulation is an advanced version of a similar representation of overflow metabolism in Saccharomyces cerevisiae, as presented by Pham and co-workers [14].",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose the differentiable model for simulations requiring higher-order gradients, including computational fluid dynamics, and for complex optimization problems.",
+     "quote": "Due to its continuous characteristics, this model is suitable for simulations that require higher order gradient calculation such as Computational Fluid Dynamics (CFD) models, as well as in complex optimization problems involving the E. coli expression system.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper makes the Matlab code and fermentation data available through a GitLab repository.",
+     "quote": "The Matlab code and fermentation data can be found at https://gitlab.tubit.tu-berlin.de/nicolas.cruz/E_coli_fed-batch/tree/master/Anane_2017_BEJ.",
+     "basis": "stated"
+    }
+   ],
+   "states": [
+    "X",
+    "S",
+    "A",
+    "DOT_{a}",
+    "DOT"
+   ],
+   "inputs": [
+    "F",
+    "V",
+    "S_{i}"
+   ],
+   "status": "pending",
+   "review": [
+    "5 of 38 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

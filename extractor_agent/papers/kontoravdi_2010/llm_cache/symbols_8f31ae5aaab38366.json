@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.023529295,
+  "prompt_tokens": 2512,
+  "prompt_time": 0.107110206,
+  "completion_tokens": 1333,
+  "completion_time": 2.802822812,
+  "total_tokens": 3845,
+  "total_time": 2.9099330180000003,
+  "completion_tokens_details": {
+   "reasoning_tokens": 94
+  }
+ },
+ "user": "Equations:\n(12) m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}      <- \"The mass balances on glucose and glutamine around the bioreactor are:\"\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]      <- \"The mass balances for lactate and ammonia are\"\n(14) Q_{l a c}=Y_{l a c,g l c}Q_{g l c}      <- \"The mass balances for lactate and ammonia are\"\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]      <- \"The mass balances for lactate and ammonia are\"\n(16) Q_{a m m}=Y_{a m m,g l n}Q_{g l n}      <- \"The mass balances for lactate and ammonia are\"\n(17) \\frac{d m_{H}}{d t}=N_{H}S_{H}-K m_{H}      <- \"The heavy- and light-chain mRNA balances are\"\n(18) \\frac{d m_{L}}{d t}=N_{L}S_{L}-K m_{L}      <- \"The heavy- and light-chain mRNA balances are\"\n(19) \\frac{d[H]}{d t}=T_{H}m_{H}-R_{H}      <- \"The intraER heavy- and light-chain and assembly intermediates balances are\"\n\nSymbols:\n\n\\alpha_{1}   [NOT COMPUTED]\n  [69] (line, p.2) $ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)\n  [190] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_1 $ (mM L/cell-h) | Batch operation value: $ 3.4 \\times 10^{-13} $ | Fed-batch operation value: $ 3.4 \\times 10^{-13} $\n\n\\alpha_{2}   [NOT COMPUTED]\n  [69] (line, p.2) $ \\alpha_{1} $,  $ \\alpha_{2} $ constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)\n  [191] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_2 $ (mM) | Batch operation value: 4 | Fed-batch operation value: 4\n\nQ_{lac}   [COMPUTED by eq 14]\n  (no snippet mentions this symbol)\n\nY_{lac,glc}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [187] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{lac,glc} $ (mmol/mmol) | Batch operation value: 1.4 | Fed-batch operation value: 2.0\n  [216] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ Y_{lac,glc} $ | Final value: 2.0 | Confidence intervals: $ 1.768 \\times 10^{-1} $ | Confidence intervals: $ 2.109 \\times 10^{-1} $ | Confidence intervals: $ 2.777 \\times 10^{-1} $\n\nQ_{amm}   [COMPUTED by eq 16]\n  (no snippet mentions this symbol)\n\nY_{amm,gln}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [186] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{amm,gln} $ (mmol/mmol) | Batch operation value: $ 4.3 \\times 10^{-1} $ | Fed-batch operation value: $ 4.5 \\times 10^{-1} $\n  [217] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ Y_{amm,gln} $ | Final value: $ 4.5 \\times 10^{-1} $ | Confidence intervals: $ 6.564 \\times 10^{-2} $ | Confidence intervals: $ 7.832 \\times 10^{-2} $ | Confidence intervals: $ 1.031 \\time\n\nm_{H}   [COMPUTED by eq 17]\n  (no snippet mentions this symbol)\n\nN_{H}   [NOT COMPUTED]\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [180] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_H $ (gene/cell) | Batch operation value: $ 1.4 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $\n  [220] (table_row, p.5) Table 2 Parameter estimation results for fed-batch culture: Parameter: $ N_{H} $ | Final value: 101 | Confidence intervals: 5.067 | Confidence intervals: 6.045 | Confidence intervals: 7.959\n\nS_{H}   [NOT COMPUTED]\n  [182] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_H $ (mRNA/gene-h) | Batch operation value: $ 3 \\times 10^{3} $ | Fed-batch operation value: $ 3 \\times 10^{3} $\n  [62] (line, p.2) S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)\n\nK   [NOT COMPUTED]\n  [49] (line, p.2) K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)\n  [167] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K (h^{-1}) $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "\\alpha_{1}",
+    "description": "constant of glutamine maintenance coefficient",
+    "description_basis": "stated",
+    "snippet_id": 69,
+    "quote": "constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "unit": "mM L/cell/h",
+    "unit_basis": "stated",
+    "value": "3.4 \\times 10^{-13}",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha_{2}",
+    "description": "constant of glutamine maintenance coefficient",
+    "description_basis": "stated",
+    "snippet_id": 69,
+    "quote": "constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "unit": "mM",
+    "unit_basis": "stated",
+    "value": "4",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Q_{lac}",
+    "description": "specific lactate production rate derived from glucose consumption",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{lac,glc}",
+    "description": "yield of lactate on glucose (mmol lactate per mmol glucose)",
+    "description_basis": "stated",
+    "snippet_id": 142,
+    "quote": "the yield of lactate on glucose ( $ Y_{lac,glc} $)",
+    "unit": "mmol/mmol",
+    "unit_basis": "stated",
+    "value": "1.4 (batch), 2.0 (fed‑batch)",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Q_{amm}",
+    "description": "specific ammonia production rate derived from glutamine consumption",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "Y_{amm,gln}",
+    "description": "yield of ammonia on glutamine (mmol ammonia per mmol glutamine)",
+    "description_basis": "stated",
+    "snippet_id": 142,
+    "quote": "the yield of ammonia on glutamine ( $ Y_{amm,gln} $)",
+    "unit": "mmol/mmol",
+    "unit_basis": "stated",
+    "value": "0.43 (batch), 0.45 (fed‑batch)",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "m_{H}",
+    "description": "heavy‑chain mRNA amount per cell",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "N_{H}",
+    "description": "number of heavy‑chain genes per cell",
+    "description_basis": "stated",
+    "snippet_id": 180,
+    "quote": "Parameter: $ N_H $ (gene/cell)",
+    "unit": "gene/cell",
+    "unit_basis": "stated",
+    "value": "1.4 \\times 10^{2} (batch), 1.0 \\times 10^{2} (fed‑batch)",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "S_{H}",
+    "description": "heavy‑chain gene‑specific transcription rate",
+    "description_basis": "stated",
+    "snippet_id": 62,
+    "quote": "S $ _{H} $, S $ _{L} $ heavy- and light-chain gene specific transcription rates (mRNA/gene/h)",
+    "unit": "mRNA/gene/h",
+    "unit_basis": "stated",
+    "value": "3 \\times 10^{3}",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "K",
+    "description": "heavy‑ and light‑chain mRNA decay rate",
+    "description_basis": "stated",
+    "snippet_id": 49,
+    "quote": "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)",
+    "unit": "h^{-1}",
+    "unit_basis": "stated",
+    "value": "10^{-1}",
+    "class_reason": "not computed constant parameter",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

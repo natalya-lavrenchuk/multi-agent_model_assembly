@@ -1,0 +1,48 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1843,
+  "completion_tokens": 2275,
+  "total_tokens": 4118,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1840,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1820,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Using simple models to describe the kinetics of growth, glucose consumption, and monoclonal antibody formation in naive and infliximab producer CHO cells\n\nAbstract: Abstract Despite their practical and commercial relevance, there are few reports on the kinetics of growth and production of Chinese hamster ovary (CHO) cells—the most frequently used host for the industrial production of therapeutic proteins. We characterize the kinetics of cell growth, substrate consumption, and product formation in naive and monoclonal antibody (mAb) producing recombinant CHO cells. Culture experiments were performed in 125 mL shake flasks on commercial culture medium (CD Opti CHO™ Invitrogen, Carlsbad, CA, USA) diluted to different glucose concentrations (1.2–4.8 g/L).\n\nSentences about the process and the data:\n- Culture experiments were performed in 125 mL shake flasks on commercial culture medium (CD Opti CHO™ Invitrogen, Carlsbad, CA, USA) diluted to different glucose concentrations (1.2–4.8 g/L).\n- The time evolution of cell, glucose, lactic acid concentration and monoclonal antibody concentrations was monitored on a daily basis for mAb-producing cultures and their naive counterparts.\n- A set of values for  $ \\mu_{max} $, and  $ K_s $ was determined for naive and recombinant cell cultures cultured at 33 and 37 °C.\n- The yield coefficient ( $ Y_{x/s} $) was observed to be a function of substrate concentration, with values in the range of  $ 0.27–1.08 \\times 10^7 $ cell/mL and  $ 0.72–2.79 \\times 10^6 $ cells/mL for naive and recombinant cultures, respec\n- The kinetics of mAb production can be described by a Luedeking–Piret model (d[mAb]/dt =  $ \\alpha d[X] $/dt +  $ \\beta[X] $) with values of  $ \\alpha = 7.65 \\times 10^{-7} $  $ \\mu $g/cell and  $ \\beta = 7.68 \\times 10^{-8} $  $ \\mu $g/cell\n- The production of biopharmaceuticals, including mAbs, relies on mammalian cell culture (Dickson 2014;\n- Rodrigues et al. 2012), mainly because many therapeutic proteins require complex post-translational modifications, and mammalian cells are uniquely suited to perform these operations (Craven et al. 2013;\n- Currently, Chinese hamster ovary (CHO) cells are the most commonly used mammalian host cells in the large-scale commercial production of biopharmaceuticals (Spadiut et al. 2014;\n- CHO cells are suitable for large-scale cultivation, as they grow to very high density in suspension cultures in bioreactors of up to 10,000 L (Omasa et al. 2010).\n- Rodrigues et al. 2012), and they are able to properly synthesize, fold, glycosylate, and secrete complex proteins in suspension culture (Ho et al. 2006;\n- In this contribution, we aim to describe the kinetics of growth, product production, and substrate consumption in naive and mAb producer CHO cell cultures, the warhorse in the production of biopharmaceuticals, using simple kinetic models.\n- Despite their wide use for more than three decades in the production of recombinant therapeutics (Kumar and Singh 2014), there are limited formal reports on the kinetics of combined cell growth and protein production in CHO cell cultures: s\n- The high added value of biopharmaceuticals is probably part of the reason why mathematical modeling has not been used as frequently in biopharmaceutical mammalian cell culture applications.\n- The focus of the biopharmaceutical industry has been on the development of high-production cell lines, culture medium optimization, and migration of process design from batch culture to fed-batch and continuous perfusion systems.\n- Mathematical modeling can be a useful tool for the rational design and optimization of cell culture systems (Almquist et al. 2014).\n- The selection of the model type depends on the end purpose of the model and the trade-offs of formulation time, model complexity, and solution time as well as the nature of the available experimental data (Craven et al. 2013).\n- The majority of the kinetic models in the literature are categorized as unstructured because they are not only the simplest methods for modeling cell culture systems, but they provide good starting points for relatively new cell systems whe\n- In addition, they are equally effective for evaluating different bioreactor designs and devising feeding strategies (Slininger et al. 2014;\n\nModel: Monod growth with Luedeking-Piret mAb formation (CHO, 33 and 37 C)\nLaws:\n(1) [balance] Biomass grows at a first-order rate during the initial exponential-growth stage.\n(3) [constitutive] A Monod-type specific growth rate depends on substrate concentration adjusted by the minimum concentration at which growth was observed.\n(4) [balance] The substrate-consumption balance relates glucose consumption to cell growth through the cell yield coefficient.\n(5) [balance] The mAb production rate combines growth-associated production with production proportional to viable cell concentration.\n\nStates (computed by the ODEs):\n- [X]: Cell concentration at a given time\n- r_{s}: Global rate of glucose consumption\n- [P]: mAb concentration at a given point\n\nInputs (variables no law computes):\n- [S]: Substrate concentration in the culture used in the Monod growth law\n- r_{x}: Rate of cell growth\n- r_{p}: Rate of accumulation of product in time within the reaction vessel\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "Naive CHO cells and infliximab-producing CHO cells",
+   "quote": "naive and infliximab producer CHO cells"
+  },
+  "unit_operation": {
+   "value": "125 mL shake flasks",
+   "quote": "Culture experiments were performed in 125 mL shake flasks"
+  },
+  "operating_mode": {
+   "value": [
+    "batch"
+   ],
+   "quote": null,
+   "note": null
+  },
+  "fitted_on": {
+   "value": "Daily cell, glucose, and monoclonal antibody measurements from naive and mAb-producing cultures at different glucose concentrations, including cultures at 33 and 37 °C",
+   "quote": "Culture experiments were performed in 125 mL shake flasks on commercial culture medium (CD Opti CHO™ Invitrogen, Carlsbad, CA, USA) diluted to different glucose concentrations (1.2–4.8 g/L). The time evolution of cell, glucose, lactic acid concentration and monoclonal antibody concentrations was monitored on a daily basis for mAb-producing cultures and their naive counterparts. A set of values for  $ \\mu_{max} $, and  $ K_s $ was determined for naive and recombinant cell cultures cultured at 33 and 37 °C."
+  },
+  "phenomena": [
+   "Monod growth limited by glucose concentration and a minimum growth-supporting concentration",
+   "Glucose consumption linked to cell growth by a yield coefficient",
+   "Growth-associated and cell-associated infliximab production"
+  ],
+  "description": "The model describes naive and infliximab-producing CHO cells in shake-flask culture and predicts cell concentration, glucose consumption, and monoclonal antibody accumulation. Cell growth depends on glucose through a Monod relationship with a minimum growth-supporting concentration, while glucose consumption is linked to growth by a yield coefficient. Antibody formation follows a Luedeking–Piret model with growth-associated and cell-associated contributions."
+ }
+}

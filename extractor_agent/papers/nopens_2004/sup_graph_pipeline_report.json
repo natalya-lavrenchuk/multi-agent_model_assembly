@@ -1,0 +1,94 @@
+{
+ "sup": "nopens_2004",
+ "summary": {
+  "structure": "v0 distinct nodes (one Variable/Parameter node per symbol per law)",
+  "source": "paddle.json (PaddleOCR-VL pipeline)",
+  "laws": 8,
+  "variable_nodes": 28,
+  "parameter_nodes": 6,
+  "distinct_symbols": 21,
+  "computes_edges": 7,
+  "uses_edges": 21,
+  "hasParameter_edges": 6,
+  "laws_by_form": {
+   "PDE": 1,
+   "algebraic": 7
+  },
+  "laws_flagged": [
+   1,
+   2,
+   5,
+   7,
+   9
+  ],
+  "classification": "symbols.json (LLM)",
+  "parameter_symbols": [
+   "A",
+   "\\Gamma",
+   "\\alpha",
+   "\\nu",
+   "a",
+   "x_{i}"
+  ],
+  "for_review": [],
+  "triples": 753
+ },
+ "flags": [
+  {
+   "law": 1,
+   "check": "reading",
+   "detail": "\\frac{...}{\\partial x} but the numerator has no d: derivative marker missing?"
+  },
+  {
+   "law": 1,
+   "check": "reading",
+   "detail": "unknown command \\partial skipped"
+  },
+  {
+   "law": 1,
+   "check": "reading",
+   "detail": "unknown command \\partial skipped"
+  },
+  {
+   "law": 2,
+   "check": "reading",
+   "detail": "unknown command \\infty skipped"
+  },
+  {
+   "law": 5,
+   "check": "reading",
+   "detail": "unknown command \\infty skipped"
+  },
+  {
+   "law": 7,
+   "check": "computes undecided",
+   "detail": "left side has 2 symbols ['D', '[4,3]']: which one this law computes needs another law, so no computes edge"
+  },
+  {
+   "law": 7,
+   "check": "reading",
+   "detail": "\\sum over i=1..n: index and limits not read as symbols"
+  },
+  {
+   "law": 7,
+   "check": "reading",
+   "detail": "\\sum over i=1..n: index and limits not read as symbols"
+  },
+  {
+   "law": 9,
+   "check": "reading",
+   "detail": "unknown command \\infty skipped"
+  },
+  {
+   "symbol": "CON",
+   "check": "computed, never used",
+   "laws": [
+    9
+   ],
+   "detail": "an algebraic law computes it but no law uses it: a misread or misprinted symbol elsewhere, or the model output (e.g. rate laws printed without balances)"
+  }
+ ],
+ "schema_problems": [
+  "nopens_2004/law/nopens_2004_eq7: computes 0 variables (schema: exactly 1)"
+ ]
+}

@@ -1,0 +1,19 @@
+digraph E { rankdir=TB; nodesep=0.3; ranksep=0.6; node [fontname="Helvetica" fontsize=11 style=filled penwidth=1.2]; edge [fontname="Helvetica" fontsize=9 color="#777777"];
+sup [shape=box label="Sup: Kontoravdi 2005" fillcolor="#3b3b6d" fontcolor=white];
+L4 [shape=box label="Law eq 4\nEq(mu, f_inh*f_lim*mu_max)" fillcolor="#2f6db5" fontcolor=white];
+sup -> L4 [label="includes"];
+M4 [shape=note label="Metadata\nform: algebraic\npage 7, DOI\nstatus: pending" fillcolor="#8a8a8a25" color="#8a8a8a"];
+L4 -> M4 [label="hasMetadata"];
+"mu" [shape=ellipse fillcolor="#2e8b5730" color="#2e8b57"]; L4 -> "mu" [label="computes" color="#2f6db5" penwidth=2];
+"f_inh" [shape=ellipse fillcolor="#2e8b5730" color="#2e8b57"]; L4 -> "f_inh" [label="uses" style=dashed];
+"f_lim" [shape=ellipse fillcolor="#2e8b5730" color="#2e8b57"]; L4 -> "f_lim" [label="uses" style=dashed];
+"mu_max" [shape=diamond fillcolor="#d9822b30" color="#d9822b"]; L4 -> "mu_max" [label="hasParameter"];
+L5 [shape=box label="Law eq 5\nEq(f_lim, C_GLC**2/((C_GLC + K_glc)*(C_GLC + K_gln)))" fillcolor="#2f6db5" fontcolor=white];
+sup -> L5 [label="includes"];
+M5 [shape=note label="Metadata\nform: algebraic\npage 7, DOI\nstatus: pending" fillcolor="#8a8a8a25" color="#8a8a8a"];
+L5 -> M5 [label="hasMetadata"];
+"f_lim" [shape=ellipse fillcolor="#2e8b5730" color="#2e8b57"]; L5 -> "f_lim" [label="computes" color="#2f6db5" penwidth=2];
+"C_GLC" [shape=ellipse fillcolor="#2e8b5730" color="#2e8b57"]; L5 -> "C_GLC" [label="uses" style=dashed];
+"K_glc" [shape=diamond fillcolor="#d9822b30" color="#d9822b"]; L5 -> "K_glc" [label="hasParameter"];
+"K_gln" [shape=diamond fillcolor="#d9822b30" color="#d9822b"]; L5 -> "K_gln" [label="hasParameter"];
+}

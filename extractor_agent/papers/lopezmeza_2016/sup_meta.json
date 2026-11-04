@@ -1,0 +1,271 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "lopezmeza_2016": {
+   "name": "Monod growth with Luedeking-Piret mAb formation (CHO, 33 and 37 C)",
+   "equations": [
+    "1",
+    "3",
+    "4",
+    "5"
+   ],
+   "description": "The model describes growth, glucose use, and infliximab-biosimilar production by native and recombinant CHO-S cells. It combines first-order growth during the exponential phase with a threshold-modified Monod growth relationship, a cell-yield description of glucose consumption, and a Luedeking–Piret description of antibody formation. The authors developed it using batch cultures in shake flasks at different initial glucose concentrations and temperatures, then evaluated its product-formation description in instrumented batch and fed-batch bioreactors. Cell, glucose, lactate, and active antibody concentrations were measured daily. The authors present the simple kinetic models as tools for understanding and characterizing cell-culture processes, and for applications such as monitoring, control, and optimization.",
+   "facts": [
+    {
+     "topic": "cell lines",
+     "text": "The model concerns native CHO-S cells and an in-house engineered recombinant CHO-S clone producing an infliximab biosimilar.",
+     "quote": "we used a CHO-S clone engineered in-house (Carrillo-Cocom et al. 2014; González-Leal et al. 2011) to produce a biosimilar of the monoclonal antibody infliximab and its native counterpart",
+     "basis": "stated"
+    },
+    {
+     "topic": "medium",
+     "text": "Cultures used CD Opti CHO medium supplemented with 8 mM glutamine.",
+     "quote": "The cell culture medium consisted of CD Opti CHO (Invitrogen, Carlsbad, CA, USA) supplemented with 8-mM glutamine (Invitrogen, Carlsbad, CA, USA).",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Shake-flask batch cultures used 125-mL flasks with a 30-mL working volume.",
+     "quote": "Batch cultures were performed using naive (n-CHO) or recombinant cells (r-CHO) in 125-mL shake flasks with 30-mL working volume.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Shake-flask cultures were inoculated at about 2 × 10⁵ viable cells/mL and incubated at 33 or 37 °C, 125 rpm, and 8% CO₂.",
+     "quote": "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL and maintained at 33 or 37 °C in an 8 % CO₂ humidified orbital shaking incubator at 125 rpm",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "Shake-flask batch experiments tested initial glucose concentrations of 1.2, 2.4, 3.6, and 4.8 g/L.",
+     "quote": "Experiments were run at different initial substrate concentrations, ranging from 1.2 to 4.8 g/L of glucose (1.2, 2.4, 3.6, and 4.8 g/L).",
+     "basis": "stated"
+    },
+    {
+     "topic": "sampling",
+     "text": "Shake-flask cultures were run in triplicate with daily sampling and were stopped after 7 days for recombinant cells or 10 days for naive cells.",
+     "quote": "All batch cultures were performed in triplicate with daily sampling. Cultures were terminated at day 7 for the r-CHO cell line and at day 10 for the n-CHO line",
+     "basis": "stated"
+    },
+    {
+     "topic": "equipment",
+     "text": "Instrumented bioreactor experiments used 1.6-L vessels with a 1.0-L working volume and were conducted only with recombinant cells.",
+     "quote": "Bioreactor-batch and fed-batch cultures were performed only with the recombinant cell line at basal medium concentration. Experiments were performed in 1.6-L bioreactors (DASGIP, Julich, Germany) with 1.0-L working volume.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Bioreactor cultures were agitated at 80 rpm and supplied with 2 standard L/h of gas to maintain dissolved oxygen at 40% saturation.",
+     "quote": "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL and maintained at 33 °C with an 80-rpm rate of agitation. Cultures were supplied with a gas mixture (2 sL/h) consisting of air, oxygen, nitrogen, and carbon dioxide to maintain a dissolved oxygen saturation of 40 %.",
+     "basis": "stated"
+    },
+    {
+     "topic": "feeding",
+     "text": "The methods describe fed-batch operation with five intermittent additions of feed, each 10% of the initial culture volume, starting on day 1, and a temperature reduction on day 7.",
+     "quote": "The fed-batch protocol consisted of a temperature reduction (31 °C) on the seventh day and five intermittent feed additions (CD EfficientFeed™ B, Invitrogen, Carlsbad, CA, USA) of 10 % the initial volume starting on day 1.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "Bioreactor batch runs lasted 10 days and fed-batch runs lasted 20 days, with duplicate cultures and daily sampling.",
+     "quote": "All cultures were performed by duplicate with daily sampling. Batch cultures were terminated after 10 days and fed-batch cultures after 20 days.",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "The measured time series included viable cell density, glucose, lactic acid, and monoclonal antibody concentrations.",
+     "quote": "The time evolution of cell, glucose, lactic acid concentration and monoclonal antibody concentrations was monitored on a daily basis",
+     "basis": "stated"
+    },
+    {
+     "topic": "measurement",
+     "text": "Cell density and viability were measured by trypan-blue exclusion using a Guava easyCyte flow cytometer.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurement",
+     "text": "Glucose and lactate were measured by HPLC with refractive-index detection using an Aminex HPX 87H column and 5 mM sulfuric acid mobile phase.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "measurement",
+     "text": "The antibody assay quantified active monoclonal antibody in culture samples by ELISA.",
+     "quote": "An enzyme-linked immunosorbent assay (ELISA) was used to quantify the active monoclonal antibody in the collected samples",
+     "basis": "stated"
+    },
+    {
+     "topic": "model type",
+     "text": "The authors characterize their approach as simple, unstructured kinetic modeling.",
+     "quote": "The majority of the kinetic models in the literature are categorized as unstructured",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "The authors treat cell growth as first-order in cell concentration during at least the initial portion of exponential growth.",
+     "quote": "We observed that cell growth was a first-order process (Eq. 1) with respect to cell concentration, at least at the beginning of the exponential growth phase",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "The growth relationship is Monod-type but includes a nonzero glucose threshold below which growth is not observed.",
+     "quote": "a useful growth model requires the inclusion of a threshold substrate parameter",
+     "basis": "stated"
+    },
+    {
+     "topic": "growth",
+     "text": "The fitted Monod parameters for recombinant cells were reported to change little with temperature, whereas those for naive cells changed with temperature.",
+     "quote": "Interestingly, the Monod-type kinetic values for recombinant cells do not change significantly as a function of temperature",
+     "basis": "stated"
+    },
+    {
+     "topic": "substrate use",
+     "text": "The model relates glucose consumption to cell growth through a cell/substrate yield coefficient.",
+     "quote": "The material balance for substrate consumption was assumed to be represented by Eq. 4.",
+     "basis": "stated"
+    },
+    {
+     "topic": "substrate use",
+     "text": "The authors found that the cell/substrate yield coefficient varied with glucose concentration rather than remaining constant.",
+     "quote": "Our results suggested that the cell/substrate yield coefficient was not constant, but was a function of the substrate concentration",
+     "basis": "stated"
+    },
+    {
+     "topic": "product",
+     "text": "Antibody formation is represented with a Luedeking–Piret model, combining growth-associated and viable-cell-associated production.",
+     "quote": "the rate of product synthesis can be a function of both cellular density ([X]) and the rate of cell growth",
+     "basis": "stated"
+    },
+    {
+     "topic": "product",
+     "text": "The authors describe production by this recombinant line as mixed-mode, with formation related to both growth rate and viable-cell concentration.",
+     "quote": "it followed mixed-mode production kinetics, where at any given time the rate of product formation depends on the rate of cell growth and the current viable cell concentration.",
+     "basis": "stated"
+    },
+    {
+     "topic": "lactate",
+     "text": "Lactate was measured and discussed, but the model laws described in the paper do not include a lactate balance or lactate effect.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "data processing",
+     "text": "Cell and glucose profiles during exponential growth were fitted with second-order polynomials and differentiated to estimate growth and glucose-consumption rates.",
+     "quote": "The viable cell [X] and glucose concentration [S] profiles observed in the exponential phase of batch experiments were fitted to second-order polynomial equations using Excel Software",
+     "basis": "stated"
+    },
+    {
+     "topic": "data processing",
+     "text": "For antibody-production analysis, viable-cell profiles were fitted with a sixth-order polynomial and differentiated to estimate cell-growth rates.",
+     "quote": "the viable cell concentration profile [X] was fit to a sixth-order polynomial. The polynomial equation was derived to obtain the experimental cell production rate",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The growth-kinetic parameters were obtained using Lineweaver–Burk linearization, and a linear regression was accepted only when its r² exceeded 0.97.",
+     "quote": "A Lineweaver–Burk linearization was used to obtain values for the kinetic parameters",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "The authors selected the product-formation coefficients by fitting multiple cell-density and antibody-production data sets and numerically integrating the model.",
+     "quote": "The values of α and β were chosen to fit several experimental data sets of cell concentration and mAb production profiles.",
+     "basis": "stated"
+    },
+    {
+     "topic": "estimation",
+     "text": "For 37 °C recombinant batch data, the authors iteratively adjusted selected growth, yield, and production parameters while holding the threshold and one production coefficient fixed.",
+     "quote": "The parameters [S]t and α were kept constant, while μmax, Yx/s, and β were varied iteratively until a good agreement between the [X], [S], and [P] experimental time series and the simulation values was achieved.",
+     "basis": "stated"
+    },
+    {
+     "topic": "model size",
+     "text": "The paper does not give a consolidated count of model states, equations, or estimated parameters.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "fit",
+     "text": "The authors report that the product-formation parameters fitted shake-flask data over initial substrate concentrations from 2.4 to 4.5 g/L.",
+     "quote": "These α and β values can be used to accurately reproduce data obtained in experiments where the initial substrate concentration ranges from 2.4 to 4.5 g/L",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The product-formation description was tested on recombinant-cell batch cultures in instrumented bioreactors, and the authors report a good fit using the shake-flask parameter set.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "validation",
+     "text": "The authors also applied the batch-derived kinetic parameter set to fed-batch cultures, where they report that the model fit the measured data.",
+     "quote": "The Luedeking–Piret model previously tested for batch processes (in shake flasks and bioreactors) fit the experimental data",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "For fed-batch validation, the paper describes a representative instrumented run with a temperature shift from 37 to 33 °C on day 7.",
+     "quote": "The culture was set to 37 °C for the first 7 days of culture. At day 7, the temperature set point was decreased to 33 °C.",
+     "basis": "stated"
+    },
+    {
+     "topic": "limitations",
+     "text": "A single pair of product-formation coefficients did not describe all the 37 °C batch data sets, and the authors suggest lactate inhibition as a possible model improvement.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors state that the proposed product-formation parameters fit experimental data sets in the range of 31–33 °C.",
+     "quote": "The proposed parameter values for the Luedeking–Piret model fit reasonably well with several independent experimental data sets in the range of 31–33 °C.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The paper places its growth model alongside Monod-like and logistic hybridoma models, Monod and metabolic-flux models, and dynamic metabolic models for nonproducing CHO cells.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "prior models",
+     "text": "The authors contrast their approach with earlier recombinant-cell studies using structured kinetic, logistic, Monte Carlo, and regression models, including Sandadi et al. 2011, Goudar et al. 2009, Xing et al. 2010, and Farges et al. 2008.",
+     "quote": "structured kinetic (Sandadi et al. 2011) and logistic models for r-CHO producing IgG (Goudar et al. 2009); Monte Carlo methodology model for CHO cells producing B1 fusion proteins (Xing et al. 2010); and logistic and regression models for a CHO cell line producing IFN-γ (Farges et al. 2008).",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The product-formation model is identified as a Luedeking–Piret model, citing Luedeking and Piret 1959.",
+     "quote": "A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose simple kinetic models as practical tools for process characterization, online monitoring, process control, and optimization.",
+     "quote": "simple models are particularly appreciated; they are easy to use in real process characterization, online monitoring, process control and process optimization scenarios",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not report a code or data repository.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "[X]",
+    "r_{s}",
+    "[P]"
+   ],
+   "inputs": [
+    "[S]",
+    "r_{x}",
+    "r_{p}"
+   ],
+   "status": "pending",
+   "review": [
+    "8 of 40 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

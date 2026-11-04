@@ -1,0 +1,174 @@
+{
+ "sup": "nagy_2008",
+ "title": "Determination of the Kinetic Parameters for the Crystallization of Paracetamol from Water Using Metastable Zone Width Experiments",
+ "doi": "10.1021/ie060637c",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "12",
+  "13",
+  "21",
+  "11.1",
+  "11.2",
+  "11.3",
+  "11.4",
+  "11.5"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [],
+ "model_name": "Dynamic crystallization moment model",
+ "excluded": [
+  {
+   "eq": "1",
+   "reason": "Classical maximum-supersaturation form of the nucleation law; the dynamic model uses eq 13."
+  },
+  {
+   "eq": "2",
+   "reason": "Mass-basis nucleation rate used in the classical metastable-zone-width approach, not the dynamic model."
+  },
+  {
+   "eq": "3",
+   "reason": "Maximum-supersaturation relation used in the classical approach, not the dynamic model."
+  },
+  {
+   "eq": "4",
+   "reason": "Classical assumption-based expression for the mass nucleation rate, not the dynamic model."
+  },
+  {
+   "eq": "5",
+   "reason": "Parameter-estimation relation for cooling rate, not a process-model equation."
+  },
+  {
+   "eq": "6",
+   "reason": "Alternative heterogeneous nucleation expression discussed for the classical approach, not the dynamic model."
+  },
+  {
+   "eq": "7",
+   "reason": "Induction-time relation used in the classical metastable-zone-width approach, not the dynamic model."
+  },
+  {
+   "eq": "8",
+   "reason": "Nuclei-count expression for the classical method, not the dynamic model."
+  },
+  {
+   "eq": "9",
+   "reason": "Average nucleation-rate approximation for the classical method, not the dynamic model."
+  },
+  {
+   "eq": "14",
+   "reason": "Parameter-estimation objective function."
+  },
+  {
+   "eq": "15",
+   "reason": "Parameter-estimation bounds."
+  },
+  {
+   "eq": "16",
+   "reason": "Measurement matrix for parameter-confidence analysis, not a process-model equation."
+  },
+  {
+   "eq": "17",
+   "reason": "Sensitivity matrix for parameter estimation, not a process-model equation."
+  },
+  {
+   "eq": "18",
+   "reason": "Precision matrix for parameter-confidence analysis."
+  },
+  {
+   "eq": "19",
+   "reason": "Covariance matrix for parameter-confidence analysis."
+  },
+  {
+   "eq": "20",
+   "reason": "Confidence interval for estimated parameters."
+  },
+  {
+   "eq": "22",
+   "reason": "Analytical cooling-rate relation used to estimate nucleation parameters, not the dynamic model."
+  },
+  {
+   "eq": "23",
+   "reason": "Parameter-estimation relation for nucleation order, not a process-model equation."
+  },
+  {
+   "eq": "24",
+   "reason": "Analysis comparing nuclei counts from two methods."
+  },
+  {
+   "eq": "A1",
+   "reason": "Supersaturation relation used in the analytical metastable-zone-width derivation, not the dynamic model."
+  },
+  {
+   "eq": "A2",
+   "reason": "Integrated growth expression used in the analytical method, not the dynamic model."
+  },
+  {
+   "eq": "A3",
+   "reason": "Analytical crystal-mass calculation for the metastable-zone-width method."
+  },
+  {
+   "eq": "A4",
+   "reason": "Closed-form result for the analytical crystal-mass calculation; not a process-model equation."
+  },
+  {
+   "eq": "A5",
+   "reason": "Definition used to rewrite the analytical cooling-rate relation."
+  },
+  {
+   "eq": "A6",
+   "reason": "Analytical cooling-rate relation used for parameter estimation, not the dynamic model."
+  },
+  {
+   "eq": "10",
+   "reason": "definition of the moments, not a model equation"
+  }
+ ],
+ "checks": [
+  "'Dynamic crystallization moment model': \\Delta C (used by eq 13) is computed only by eq A1, which the LLM left out (Supersaturation relation used in the analytical metastable-zone-width ): an input of this model, or should eq A1 be in?",
+  "'Dynamic crystallization moment model': b (used by eq 13) is computed only by eq 23, which the LLM left out (Parameter-estimation relation for nucleation order, not a process-mode): an input of this model, or should eq 23 be in?"
+ ],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "CONFLICT: computes B, like eq 6, 9, 13",
+   "2": "CONFLICT: computes B_{m}, like eq 4",
+   "3": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "4": "CONFLICT: computes B_{m}, like eq 2",
+   "5": "CONFLICT: computes \\beta, like eq 22, A6",
+   "6": "CONFLICT: computes B, like eq 1, 9, 13",
+   "7": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "8": "NEEDED: computes N, used by the model",
+   "9": "CONFLICT: computes B, like eq 1, 6, 13",
+   "10": "NOT USED BY OTHERS: computes \\mu_{j}; the model output (keep) or not part of the model (leave out)",
+   "11.1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11.2": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11.3": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11.4": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "11.5": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "12": "NEEDED: computes G, used by the model",
+   "13": "CONFLICT: computes B, like eq 1, 6, 9",
+   "14": "not an equation",
+   "15": "not an equation",
+   "16": "UPDATE of M_{\\theta} (applied in printed order on top of the law that computes it): NEEDED: updates M_{\\theta}, used by the model",
+   "17": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "18": "NOT USED BY OTHERS: computes P; the model output (keep) or not part of the model (leave out)",
+   "19": "NOT USED BY OTHERS: computes V; the model output (keep) or not part of the model (leave out)",
+   "20": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "21": "NEEDED: computes C^{*}, used by the model",
+   "22": "CONFLICT: computes \\beta, like eq 5, A6",
+   "23": "NEEDED: computes b, used by the model",
+   "24": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "A1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "A2": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "A3": "CONFLICT: computes m_{c}, like eq A4",
+   "A4": "CONFLICT: computes m_{c}, like eq A3",
+   "A5": "NEEDED: computes K, used by the model",
+   "A6": "CONFLICT: computes \\beta, like eq 5, 22"
+  }
+ },
+ "review_notes": [
+  "boundary edited in review (21 Oct): kept ['12', '13', '21', '11.1', '11.2', '11.3', '11.4', '11.5']; removed ['10']"
+ ]
+}

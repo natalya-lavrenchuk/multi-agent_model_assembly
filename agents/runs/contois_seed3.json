@@ -1,0 +1,349 @@
+{
+ "seed": 3,
+ "description": "Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.",
+ "problem": {
+  "name": "baker's yeast, fed-batch (Asprey and Macchietto 2000)",
+  "base_model": "asprey_2000_monod_kinetics",
+  "unknown": "r",
+  "unknown_text": "the specific growth rate r",
+  "unknown_dimension": "1 / [time]",
+  "measured": [
+   "x1",
+   "x2"
+  ],
+  "inputs": [
+   "u1",
+   "u2"
+  ],
+  "roles": {
+   "substrate": "x2",
+   "biomass": "x1"
+  },
+  "hints": {
+   "mechanisms": "saturation, substrate inhibition,\n  biomass dependence (Contois type), and so on",
+   "variables": " (substrate, biomass); a law that needs, for example, glutamine,\n  ammonia or oxygen cannot be used here.",
+   "data": "how biomass and substrate behave at high and low substrate, across\n  experiments with different starting biomass",
+   "misfit": "high or low substrate",
+   "modeler_example": "S (substrate) -> the model's substrate symbol",
+   "challenger_example": "another form of substrate\n  inhibition when the accepted law has one"
+  },
+  "written_by": "hand (stands in for the interpreter in the 3-4 Nov experiments)",
+  "description": "Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data."
+ },
+ "measured": [
+  "x1",
+  "x2"
+ ],
+ "noise": {
+  "rel_sd": 0.05,
+  "abs_sd": 0.01
+ },
+ "units": {
+  "x1": "g / l",
+  "x2": "g / l",
+  "u1": "1 / h",
+  "u2": "g / l",
+  "t": "h"
+ },
+ "experiments": [
+  {
+   "name": "E1",
+   "tf": 20,
+   "samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "x0": {
+    "x1": 5.0,
+    "x2": 0.01
+   },
+   "inputs": {
+    "u1": [
+     [
+      0,
+      0.2
+     ]
+    ],
+    "u2": [
+     [
+      0,
+      15.0
+     ]
+    ]
+   },
+   "y": {
+    "x1": [
+     5.530638971560148,
+     4.364736354929031,
+     5.312711969724516,
+     5.2286802886522965,
+     5.449971470939818,
+     5.705973846753829,
+     5.3244683714594565,
+     6.020128126943687,
+     5.927939959191715,
+     7.358178584789241,
+     6.405248106367334,
+     6.250018026698757,
+     6.297765900507923,
+     6.188116794087832,
+     6.0734525267459025,
+     6.303955980535439,
+     6.601869631233796,
+     6.368875444740152,
+     6.771676155488459,
+     6.390355955234522,
+     6.4678604881614135
+    ],
+    "x2": [
+     0.026231118937734527,
+     0.6343073133619705,
+     0.8150821329032197,
+     0.9109145011080292,
+     0.9277590842722413,
+     0.9044207961953316,
+     0.6699970322115726,
+     0.5482443202156125,
+     0.4951114453783726,
+     0.37737974036744776,
+     0.3657917534916102,
+     0.38337005757565285,
+     0.3658472137148222,
+     0.3466966494576121,
+     0.3583333291962726,
+     0.2613477402861819,
+     0.36249264697794015,
+     0.30792836173671656,
+     0.28787515387034035,
+     0.33867809248753605,
+     0.34919129825055384
+    ]
+   }
+  },
+  {
+   "name": "E2",
+   "tf": 20,
+   "samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "x0": {
+    "x1": 2.0,
+    "x2": 0.01
+   },
+   "inputs": {
+    "u1": [
+     [
+      0,
+      0.05
+     ],
+     [
+      10,
+      0.15
+     ]
+    ],
+    "u2": [
+     [
+      0,
+      35.0
+     ],
+     [
+      10,
+      10.0
+     ]
+    ]
+   },
+   "y": {
+    "x1": [
+     1.9510755798748938,
+     2.2474099110437487,
+     2.900564179095455,
+     3.5049737326483097,
+     4.557046738370311,
+     5.191439346078421,
+     5.529903157105092,
+     6.213112775913274,
+     6.1708832846358455,
+     6.250778717519865,
+     7.065759077491308,
+     6.562021128590383,
+     5.896305918163326,
+     5.399668518542008,
+     5.416851243624895,
+     4.463652286351164,
+     5.120786411899424,
+     4.914433215348832,
+     4.268656924603364,
+     4.580206822012743,
+     4.256303973663334
+    ],
+    "x2": [
+     0.01795082096996058,
+     0.5590033474168514,
+     0.8976667172456356,
+     0.989714109530064,
+     0.6786404253614552,
+     0.11710371788252222,
+     0.07644708795314162,
+     0.0805005406790875,
+     0.06274107556065282,
+     0.08871762877879216,
+     0.04902405259557289,
+     0.05597273527359819,
+     0.04088458660020266,
+     0.07504432766080484,
+     0.05948751910435119,
+     0.057639400174794665,
+     0.0424160079310696,
+     0.09025901587023168,
+     0.08029181613109554,
+     0.08257515271092825,
+     0.08990537104737127
+    ]
+   }
+  },
+  {
+   "name": "E3",
+   "tf": 20,
+   "samples": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "x0": {
+    "x1": 8.0,
+    "x2": 0.01
+   },
+   "inputs": {
+    "u1": [
+     [
+      0,
+      0.15
+     ],
+     [
+      7,
+      0.08
+     ],
+     [
+      14,
+      0.2
+     ]
+    ],
+    "u2": [
+     [
+      0,
+      5.0
+     ],
+     [
+      7,
+      25.0
+     ]
+    ]
+   },
+   "y": {
+    "x1": [
+     8.143182897030442,
+     6.696836186281476,
+     5.79670432725697,
+     5.105915611370936,
+     5.075413798523518,
+     3.9284581525226674,
+     3.73626734939371,
+     3.472288379369569,
+     4.030249999793082,
+     4.683589361194363,
+     4.742011969023136,
+     5.006517744998169,
+     5.865313369685053,
+     6.574520617890225,
+     6.719791084100695,
+     6.70838573638602,
+     6.817903840076536,
+     7.367309794297105,
+     7.511039775621452,
+     8.305248180138882,
+     8.011593048758137
+    ],
+    "x2": [
+     0.011409519444406558,
+     0.017282848173846954,
+     0.025116495420748793,
+     0.02240070802268556,
+     0.04895535727709255,
+     0.03839939185906683,
+     0.039540991263158444,
+     0.0011946434066544866,
+     0.2989324277905039,
+     0.2414397277531759,
+     0.16203515673365423,
+     0.08220805679598965,
+     0.12243548090861173,
+     0.11191119320716511,
+     0.07149943872917416,
+     1.5480124573138885,
+     2.481688424743451,
+     3.204292903164431,
+     3.6363357009743837,
+     3.9936039713155225,
+     3.4613865715702765
+    ]
+   }
+  }
+ ]
+}

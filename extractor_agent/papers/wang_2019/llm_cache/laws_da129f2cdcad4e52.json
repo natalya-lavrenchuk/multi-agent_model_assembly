@@ -1,0 +1,182 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2843,
+  "completion_tokens": 4884,
+  "total_tokens": 7727,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2840,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3476,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): METHODS\n\nText and equations in reading order:\n    Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $\n(1) \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd}   -m \\cdot X_{cd}    [code: ODE, computes X_{cd}, code proposes balance]\n(2) \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}   -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb}   -m_{cN} \\cdot \\nu_N \\cdot X_{cd}   -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}    [code: ODE, computes X_{carb}, code proposes balance]\n(3) \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd}   +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd}    [code: ODE, computes X_{nl}, code proposes balance]\n(4) \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl}    [code: ODE, computes X_{chl}, code proposes balance]\n(5) \\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd}    [code: ODE, computes S_{NO3}, code proposes balance]\n(6) \\frac{dX_N}{dt} = \\nu_N \\cdot X_{cd}    [code: ODE, computes X_{N}, code proposes balance]\n    and background absorbing material.¹⁶ Equation 7 is formulated to express the local light intensity $ I_l $ along the optical path $ l $ inside the reactor. The light attenuation due to background absorbing material is modeled in $ I_{R,p} $ which is estimated by an empirical equation (eq 8) obtained from experimental measurements (Figure S2). The light attenuation due to Chl-a and the remaining biomass ( $ X_C - X_{chl} $) is modeled by formulating the light absorbance $ A $ (eq 9) based on the Beer–Lambert Law. We calibrated the values of $ a $ (the optical cross section of Chl-a) and $ b $ (...\n    ...ntration since they noticed that the initial nitrate concentrations (between 0.5 to 10 mmol·N L $ ^{-1} $) had negligible effect on the specific growth rate of Dunaliella viridis. As a result, the nitrate uptake rate $ v_{N} $ in eq 17 is linearly related to the extracellular nitrate concentration $ S_{NO3} $ and is divided by the initial concentration $ S_{NO3} $ to offset the effect of initial nitrate level. Additionally, the maximum nitrate uptake rate $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate. $ ^{12,13,27} $\n(17) \\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}}    [code: algebraic, computes \\nu_{N}, code proposes constitutive]\n    Intracellular Nitrogen and Nitrogen Quota. We assumed that algae cells assimilated the nitrate removed from the medium. The resulting rate of intracellular nitrogen accumulation (eq 6) was obtained by negating the sign of the nitrate uptake rate. We assumed the initial concentration of intracellular nitrogen $ X_{N\\_0} $ to be $ 0.2X_{cd\\_0} $. In prior models, the nitrogen quota $ Q_{n} $ was usually defined as the ratio of the cellular nitrogen to either the total cellular carbon (or biomass) $ ^{11,27,33} $ or the functional carbon (or functional biomass). However, based on prior experiment...\n(18) Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}}    [code: algebraic, computes Q_{n}, code proposes constitutive]\n    Model Calibration and Validation. The experimental data was split into two subsets (Table S1): the calibration set (~65% of total data) and the validation set (~35% of total data). The calibration set was expected to cover most conditions in terms of the wide-ranging light intensities and the transition of nitrogen level from sufficiency to deficiency. Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis. We chose the profile likelihood method to perform identifiability analysis owing to its ability to detect both structural...\n\nSymbols:\n  \\nu_{N}: Nitrate uptake rate per unit functional biomass (computed)\n  Q_{nm}: Maximum nitrogen quota used to regulate nitrate uptake [mol N mol C^-1] (parameter)\n  Q_{n}: Total cellular nitrogen-to-carbon ratio [mol N mol C^-1] (computed)\n  q_{n}: Minimum nitrogen quota [mol N mol C^-1] (parameter)\n  \\nu_{nm}: Maximum nitrate uptake rate (parameter)\n  S_{NO3}: Concentration of nitrate as N in the reactor [mol N m^{-3}] (computed)\n  S_{NO3_0}: Reference (initial) extracellular nitrate concentration in the uptake-rate expression [mol N m^-3] (variable)\n  X_{N}: Concentration of cellular nitrogen as N [mol N m^{-3}] (computed)\n  X_{C}: Total carbon concentration of the biomass [mol C m^{-3}] (variable)\n  X_{cd}: Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C [mol X_{cd}-C m^{-3}] (computed)\n  P: Photosynthesis rate normalized to functional biomass [mol C (mol X_{cd}-C)^{-1} d^{-1}] (computed)\n  m: Functional biomass degradation-rate constant (parameter)\n  X_{carb}: Concentration of carbohydrates as C [mol X_{carb}-C m^{-3}] (computed)\n  m_{c}: Respiration rate constant [time^-1] (parameter)\n  k_{mc}: Coefficient for the light-dependent photoinhibition of respiration (parameter)\n  I_{avg_R}: Reference average light intensity calculated without the absorbance term [mol photons m^{-2} d^{-1}] (computed)\n  m_{cN}: Coefficient for nitrogen-uptake-associated carbohydrate loss (parameter)\n  \\beta: Coefficient for nitrogen-uptake-associated neutral-lipid synthesis (parameter)\n  k_{nl}: Coefficient for the light-dependent neutral-lipid synthesis term (parameter)\n  I_{avg}: Average light intensity inside the reactor [mol photons m^{-2} d^{-1}] (computed)\n  q_{nl}: Rate portion of carbon redirection from carbohydrate to lipid accumulation [unitless] (computed)\n  X_{nl}: Concentration of neutral lipids as C [mol X_{nl}-C m^{-3}] (computed)\n  X_{chl}: Concentration of Chl-a as C [mol X_{chl}-C m^{-3}] (computed)\n  \\theta: Maximum Chl-a:N ratio (parameter)\n  k_{chl}: Coefficient for the light-dependent Chl-a synthesis term (parameter)\n  m_{chl}: Chl-a degradation rate (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Optical cross‑section parameters a and b are taken as constant regardless of cultivation conditions.\n  - The composition of functional biomass is fixed to CH1.8O0.5N0.2.\n  - Nitrate uptake is assumed to equal the nitrate removed from the medium.\n\nLaws: 17, 18, 1, 2, 3, 4, 5, 6",
+ "answer": {
+  "laws": [
+   {
+    "eq": "17",
+    "description": "The nitrate uptake rate per unit functional biomass scales with extracellular nitrate normalized by its initial value and is regulated by the current quota relative to its minimum and maximum quotas.",
+    "description_basis": "stated",
+    "quote": "the nitrate uptake rate $ v_{N} $ in eq 17 is linearly related to the extracellular nitrate concentration $ S_{NO3} $ and is divided by the initial concentration $ S_{NO3\\_{0}} $ to offset the effect of initial nitrate level. Additionally, the maximum nitrate uptake rate $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate.",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies a quota-regulated kinetic expression for nitrate uptake.",
+    "assumptions": [
+     {
+      "text": "Initial nitrate concentrations between 0.5 and 10 mmol·N L⁻¹ have negligible effect on the specific growth rate.",
+      "quote": "they noticed that the initial nitrate concentrations (between 0.5 to 10 mmol·N L $ ^{-1} $) had negligible effect on the specific growth rate of Dunaliella viridis.",
+      "stated_as_assumption": false,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum quota",
+      "symbol": "Q_{nm}"
+     },
+     {
+      "role": "nitrogen quota",
+      "symbol": "Q_{n}"
+     },
+     {
+      "role": "minimum quota",
+      "symbol": "q_{n}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\nu_{nm}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S_{NO3}"
+     },
+     {
+      "role": "reference concentration",
+      "symbol": "S_{NO3_0}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "18",
+    "description": "The total nitrogen quota is calculated as cellular nitrogen concentration divided by total biomass carbon concentration.",
+    "description_basis": "stated",
+    "quote": "the nitrogen quota $ Q_{n} $ was usually defined as the ratio of the cellular nitrogen to either the total cellular carbon (or biomass)",
+    "law_type": "definition",
+    "law_type_reason": "It defines the nitrogen quota as a ratio of two concentrations.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   },
+   {
+    "eq": "1",
+    "description": "The functional biomass balance adds photosynthetic carbon allocated to functional biomass and subtracts functional biomass degradation.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation rate of functional biomass from production and degradation terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{cd}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "2",
+    "description": "The carbohydrate balance adds the photosynthetic allocation to carbohydrates and subtracts respiration, nitrogen-associated losses, and carbon redirected to neutral lipids.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives carbohydrate accumulation as the sum of production and loss terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{carb}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "The neutral-lipid balance accumulates lipids produced through nitrogen-associated synthesis and redirection of carbohydrate carbon.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation rate of neutral lipids from two production terms.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{nl}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "The Chl-a balance adds light-dependent synthesis associated with nitrogen uptake and subtracts Chl-a degradation.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives Chl-a accumulation as synthesis minus degradation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{chl}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "5",
+    "description": "The reactor nitrate balance decreases nitrate concentration according to uptake by functional biomass.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives the nitrate concentration accumulation rate as a consumption term.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "S_{NO3}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "6",
+    "description": "The cellular nitrogen balance increases intracellular nitrogen through nitrate uptake by functional biomass.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It gives the accumulation rate of cellular nitrogen from an uptake term.",
+    "assumptions": [
+     {
+      "text": "The initial cellular nitrogen concentration is 0.2 times the initial functional biomass concentration.",
+      "quote": "We assumed the initial concentration of intracellular nitrogen $ X_{N\\_0} $ to be $ 0.2X_{cd\\_0} $.",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "X_{N}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

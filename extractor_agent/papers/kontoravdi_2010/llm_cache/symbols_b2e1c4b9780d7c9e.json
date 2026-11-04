@@ -1,0 +1,151 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.298833732,
+  "prompt_tokens": 1788,
+  "prompt_time": 0.101455512,
+  "completion_tokens": 1180,
+  "completion_time": 2.484021787,
+  "total_tokens": 2968,
+  "total_time": 2.585477299,
+  "completion_tokens_details": {
+   "reasoning_tokens": 138
+  }
+ },
+ "user": "Equations:\n(1) \\frac{d V}{d t}=F_{i n}-F_{o u t}\n(2) \\frac{d(V X_{\\nu})}{d t}=\\mu V X_{\\nu}-\\mu_{d}V X_{\\nu}-F_{o u t}X_{\\nu}\n(3) \\frac{d(V X_{t})}{d t}=\\mu V X_{\\nu}-F_{o u t}X_{t}\n(4) \\mu=\\mu_{m a x}f_{l i m}f_{i n h}\n(5) f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right)\n(6) f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right)\n(7) \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1\n(8) \\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C]\n(9) Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}\n(10) \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]\n\nSymbols:\n\nV   [COMPUTED by eq 1, 2, 3, 8]\n  [156] (sentence, p.4) This is done by minimising the volume of the confidence ellipsoid, i.e., minimising the determinant of the variance-covariance matrix, V, of the parameters to be estimated.\n\nF_{in}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nF_{out}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nX_{\\nu}   [COMPUTED by eq 2]\n  (no snippet mentions this symbol)\n\n\\mu   [COMPUTED by eq 4]\n  (no snippet mentions this symbol)\n\n\\mu_{d}   [COMPUTED by eq 7]\n  (no snippet mentions this symbol)\n\nX_{t}   [COMPUTED by eq 3]\n  (no snippet mentions this symbol)\n\n\\mu_{max}   [NOT COMPUTED]\n  [75] (line, p.2) $ \\mu_{max} $ maximum specific growth rate (h $ ^{-1} $)\n  [142] (sentence, p.3) Those were found to be the yield of cells on glucose ( $ Y_{x,glc} $), the yield of cells on glutamine ( $ Y_{x,gln} $), the yield of lactate on glucose ( $ Y_{lac,glc} $), the yield of ammonia on glutamine ( $ Y_{amm,gln} $), the rate of dead cell lysis ( $ K\n  [196] (table_row, p.4) Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{max} (h^{-1}) $ | Batch operation value: $ 5.8 \\times 10^{-2} $ | Fed-batch operation value: $ 5.8 \\times 10^{-2} $\n\nf_{lim}   [COMPUTED by eq 5]\n  (no snippet mentions this symbol)\n\nf_{inh}   [COMPUTED by eq 6]\n  (no snippet mentions this symbol)",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "V",
+    "description": "reactor liquid volume",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "F_{in}",
+    "description": "inlet volumetric flow rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as an input to the model"
+   },
+   {
+    "symbol": "F_{out}",
+    "description": "outlet volumetric flow rate",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "L h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; supplied as an input to the model"
+   },
+   {
+    "symbol": "X_{\\nu}",
+    "description": "viable cell concentration (cells per volume)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cells L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "\\mu",
+    "description": "specific growth rate of viable cells",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "\\mu_{d}",
+    "description": "specific death rate of cells",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "h^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "X_{t}",
+    "description": "total cell concentration (viable + dead)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "cells L^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "\\mu_{max}",
+    "description": "maximum specific growth rate",
+    "description_basis": "stated",
+    "snippet_id": 75,
+    "quote": "maximum specific growth rate (h ^{-1})",
+    "unit": "h^-1",
+    "unit_basis": "stated",
+    "value": "5.8 \\times 10^{-2} h^{-1}",
+    "class": "variable",
+    "class_basis": "inferred",
+    "class_reason": "not computed; parameter supplied for the model"
+   },
+   {
+    "symbol": "f_{lim}",
+    "description": "limiting factor for growth (product of substrate saturation terms)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   },
+   {
+    "symbol": "f_{inh}",
+    "description": "inhibition factor for growth (product of inhibition terms)",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "stated",
+    "value": null,
+    "class": "variable",
+    "class_basis": "stated",
+    "class_reason": "computed by a law"
+   }
+  ]
+ }
+}

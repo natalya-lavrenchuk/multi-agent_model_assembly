@@ -1,0 +1,96 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 4694,
+  "completion_tokens": 1011,
+  "total_tokens": 5705,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 4691,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 769,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Comparison of unstructured kinetic bacterial growth models. $ ^{\\star} $\n\nAbstract: Bacteria in biological wastewater treatment process play an important role in the removal of substrate concentration. When bacteria removes the substrate, they continuously growth until such time when the substrate concentration is depleted. This paper aims to review the performance of kinetic growth rate models that describe specific bacteria growth rate. The kinetic growth rate models reviewed were: Monod, Blackman, Haldane, Teissier, Moser, Contois, Logarithmic, Powell, Han and Levenspiel, Logistic, Luong, Webb, Yano and Koga, and Aiba-Edwards. The performance review of the models were based on coefficient of determination ( $ R^{2} $). Another statistical measure of performance was root mean square error (RMSE). All kinetic growth rate models performed well when subjected to both toxic and non-toxic substrate concentration. The most notable kinetic growth rate model was the Haldane model which was well represented in the literature.\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [not an equation] p.1  ...ed to complete biological wastewater treatment process. The biological wastewater treatment process can be expressed by reaction equation 1.\n    \\begin{aligned}v_{1}(S)+v_{2}O_{2}+v_{3}NH_{3}+v_{4}PO_{4}^{3-}\\xrightarrow{microorganisms}v_{5}(new~cell)+v_{6}CO_{2}\\\\+v_{7}H_{2}O\\end{aligned}\n(2) [CONFLICT: computes \\mu, like eq 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.2  ...Fig. 1. Bacteria growth rate curve.\n    \\mu=\\frac{\\ln\\left(\\frac{X_{2}}{X_{1}}\\right)}{\\left(t_{2}-t_{1}\\right)}\n(3) [CONFLICT: computes \\mu, like eq 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.3  ...bstrate concentration only, and based on both substrate and biomass concentration. The two forms of the model are defined by Eqs. (3) and 4.\n    \\mu=\\frac{\\mu_{max}S}{K_{s}+S}\n(4) [CONFLICT: computes \\mu, like eq 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.3  ...bstrate concentration only, and based on both substrate and biomass concentration. The two forms of the model are defined by Eqs. (3) and 4.\n    \\mu=\\frac{\\mu_{max}XS}{K_{s}+S}\n(5) [CONFLICT: computes \\mu, like eq 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.4  ...pable of making a sharp transition from first order kinetics to zero order kinetics (Mrwebi, 2004). Blackman model is defined by equation 5.\n    \\mu=\\frac{\\mu_{max}S}{K_{s}}\n(6) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.4  ...of the inhibition constant, the model is capable of handling both toxic and non-toxic substrate. The Haldane model is defined by equation 6.\n    \\mu=\\frac{\\mu_{max}S}{K_{s}+S+\\frac{s^{2}}{K_{i}}}\n(7) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.5  ...scribing cell growth inhibition. Hence it is not capable of describing the lag and death phase. The Teissier model is defined by equation 7.\n    \\mu=\\mu_{m a x}\\bigg(1-e^{\\frac{S}{\\kappa_{T}}}\\bigg)\n(8) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15, 16, 17] p.5  ...nod model because the parameter (n) can be adjusted to fit the experimental data (Kong, 2017). The Moser model can be defined by equation 8.\n    \\mu=\\frac{\\mu_{max}S^{n}}{K_{s}+S^{n}}\n(9) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17] p.6  ...Contois models\n    \\mu=\\frac{\\mu_{max}S}{K_{s}X+S}\n(10) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17] p.6  ...annot be classified as negative, and hence the Logarithmic model is not well represented in literature. The model is defined by equation 10.\n    \\mu=a+b~l n\\left(s\\right)\n(11) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17] p.6  ...ity to handle toxic substrate, the model is capable of describing the lag and death phase (Kong, 2017). The model is defined by equation 11.\n    \\mu=\\mu_{max}\\frac{S}{K_{s}+S}\\exp\\left(-\\frac{S}{K_{I}}\\right)\n(12) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17] p.7  ...concentration in a continuous fermentation bioreactor (Dey and Mukherjee (2010); Dutta et al., (2015)). The model is defined by equation 12.\n    \\mu=\\frac{\\mu_{max}}{K_{s}+S+\\frac{s^{2}}{K_{1}}+\\frac{s^{3}}{K_{2}^{2}}}\n(13) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17] p.7  ...ntration where the reaction ceases or the growth rate slows down if that point is reached. The Han and Levenspiel is defined by equation 13.\n    \\mu=\\mu_{max}\\Bigg[1-\\Bigg(\\frac{S}{S_{m}}\\Bigg)\\Bigg]^{n}\\left[\\frac{S}{S+K_{s}\\Big(1-\\frac{S}{S_{m}}\\Big)^{m}}\\right]\n(14) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17] p.7  ...strate inhibition, hence it struggles with describing the lag and death phase (Wu et al., 2018). The Powell model is defined by equation 14.\n    \\mu=\\frac{(\\mu_{m a x}+m)S}{K_{s}+S}-m\n(15) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17] p.8  ...biomass concentration only. The model accounts for inhibition of substrate (Ali et al., 2017). The Logistic model is defined by equation 15.\n    \\mu=\\mu_{max}\\left[1-\\frac{X}{X_{m}}\\right]\n(16) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17] p.8  ...del is capable of predicting maximum threshold substrate concentration (Dey and Mukherjee, 2010). The Luong model is defined by equation 16.\n    \\mu=\\mu_{m a x}\\frac{S}{K_{S}+S}(1-\\frac{S}{S_{m}})^{n}\n(17) [CONFLICT: computes \\mu, like eq 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] p.8  ...b model. The Haldane model does not have the term  $ (1 + \\frac{S}{K_i}) $. The Webb model is defined by Eq. (17) (Dey and Mukherjee, 2010).\n    \\mu=\\frac{\\mu_{max}S\\left(1+\\frac{s}{K_{i}}\\right)}{S+K_{s}+\\left(\\frac{s^{2}}{K_{i}}\\right)}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The biological wastewater treatment process can be expressed by reaction equation 1.\n- (p.1) Bacteria growth is determined using Eq. (2).\n- (p.1) Eq. (2) requires the measurement of biomass concentration at different time intervals.\n- (p.2) Although structured kinetic growth models are capable of describing specific growth rate of the bacteria, they are complicated and they require a number of equations to solve (Dong et al., 2015;\n- (p.3) One of the error functions used to check the robustness of a model is by determining root mean square error (RMSE).\n- (p.3) The two forms of the model are defined by Eqs. (3) and 4.\n- (p.3) The Monod model assumes that there is only one growth limiting substrate in the bioreactor (Monod, 1942).\n- (p.4) The model is similar to the Monod model in terms of its assumptions.\n- (p.4) Blackman model is defined by equation 5.\n- (p.4) Just like the Monod model, the Blackman model is unable to capture the lag and death phase, and in turn it over estimates the specific growth rate (Kong, 2017).\n- (p.4) The Blackman model is not a popular method for modelling growth rate in microbial processes, and when utilized it performed poorly.\n- (p.4) The model is viewed as an extension of the Monod model.\n- (p.4) With the inclusion of the inhibition constant, the model is capable of handling both toxic and non-toxic substrate.\n- (p.4) The Haldane model is defined by equation 6.\n- (p.4) The advantage of the Haldane model is that it is capable of describing all growth phases: lag, exponential, stationary, and death phase (Dutta et al., 2015).\n- (p.5) The Teissier model is also known as the Exponential model that describes the specific growth rate as a function of continuous substrate concentration.\n- (p.5) The model is similar to the Monod model, and Blackman model.\n- (p.5) Just like the Monod model, Blackman model, and Moser model, the Teissier model is not capable of describing cell growth inhibition.\n- (p.5) The Teissier model is defined by equation 7.\n- (p.5) Literature has shown that the Teissier model is capable of describing specific growth rate in different substrate concentrations.\n- (p.5) The performance of the model is unpredictable and it may rely on the sampling methods, and data analysing methods.\n- (p.5) The Moser model is an unstructured model based on substrate concentration only introduced in 1958 by Herman Moser (Moser, 1958).\n- (p.5) The model is an extension of the Monod model.\n- (p.5) The Moser model is considered to be a better model than the Monod model because the parameter (n) can be adjusted to fit the experimental data (Kong, 2017).\n- (p.5) The Moser model can be defined by equation 8.\n- (p.5) On the contrary, Krishnan et al., (2017) reported that the parameter (n) of the Moser model is used to describe substrate inhibition.\n- (p.5) Unlike the Monod model, and Contois model, the Moser model is capable of describing the lag phase when substrate concentration is high (Kong, 2017).\n- (p.6) The model is an extension of the Monod model.\n- (p.6) The model is an unstructured model based on both substrate and biomass concentration (Ardestani and Kasebkar, 2018).\n- (p.6) The Contois model can be defined by equation 9.\n- (p.6) In the Contois model, the assumption is that biomass concentration is inversely proportional to specific growth rate.\n- (p.6) The Logarithmic model is the worse model when compared with models discussed above because it is not capable of describing the lag, stationary, and death phase.\n- (p.6) This is a set back because growth cannot be classified as negative, and hence the Logarithmic model is not well represented in literature.\n- (p.6) The model is defined by equation 10.\n- (p.6) The Logarithmic model is defined by Eq. (10).",
+ "answer": {
+  "models": [],
+  "excluded": [
+   {
+    "eq": "1",
+    "reason": "Stoichiometric reaction context, not part of a kinetic model."
+   },
+   {
+    "eq": "2",
+    "reason": "Calculates growth rate from biomass measurements; it is not a fitted kinetic law."
+   }
+  ],
+  "free_laws": [
+   {
+    "eq": "3",
+    "name": "Monod growth, substrate-only form"
+   },
+   {
+    "eq": "4",
+    "name": "Monod growth, biomass-dependent form"
+   },
+   {
+    "eq": "5",
+    "name": "Blackman growth"
+   },
+   {
+    "eq": "6",
+    "name": "Haldane growth"
+   },
+   {
+    "eq": "7",
+    "name": "Teissier growth"
+   },
+   {
+    "eq": "8",
+    "name": "Moser growth"
+   },
+   {
+    "eq": "9",
+    "name": "Contois growth"
+   },
+   {
+    "eq": "10",
+    "name": "Logarithmic growth"
+   },
+   {
+    "eq": "11",
+    "name": "Aiba-Edwards growth"
+   },
+   {
+    "eq": "12",
+    "name": "Yano-Koga growth"
+   },
+   {
+    "eq": "13",
+    "name": "Han-Levenspiel growth"
+   },
+   {
+    "eq": "14",
+    "name": "Powell growth"
+   },
+   {
+    "eq": "15",
+    "name": "Logistic growth"
+   },
+   {
+    "eq": "16",
+    "name": "Luong growth"
+   },
+   {
+    "eq": "17",
+    "name": "Webb growth"
+   }
+  ]
+ }
+}

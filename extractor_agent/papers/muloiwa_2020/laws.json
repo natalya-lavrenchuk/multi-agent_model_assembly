@@ -1,0 +1,942 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "3": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Monod model",
+   "description": "Monod specific growth rate computed from substrate concentration in the bioreactor.",
+   "description_basis": "stated",
+   "quote": "based on substrate concentration only",
+   "assumptions": [
+    {
+     "text": "There is only one growth-limiting substrate in the bioreactor.",
+     "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: There is only one growth-limiting substrate in the bioreactor."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "Monod specific growth rate computed from substrate concentration in the bioreactor.",
+    "description_basis": "stated",
+    "quote": "based on substrate concentration only",
+    "assumptions": [
+     {
+      "text": "There is only one growth-limiting substrate in the bioreactor.",
+      "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Monod model",
+   "description": "Monod specific growth rate computed from both substrate and biomass concentrations.",
+   "description_basis": "stated",
+   "quote": "based on both substrate and biomass concentration",
+   "assumptions": [
+    {
+     "text": "There is only one growth-limiting substrate in the bioreactor.",
+     "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "biomass",
+     "symbol": "X"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": "The biomass factor X makes the right-hand side have units of specific growth rate multiplied by biomass concentration, rather than the specific growth rate \\mu defined in the paper.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: There is only one growth-limiting substrate in the bioreactor.",
+    "possible misprint: The biomass factor X makes the right-hand side have units of specific growth rate multiplied by biomass concentration, rather than the specific growth rate \\mu defined in the paper."
+   ],
+   "llm": {
+    "eq": "4",
+    "description": "Monod specific growth rate computed from both substrate and biomass concentrations.",
+    "description_basis": "stated",
+    "quote": "based on both substrate and biomass concentration",
+    "assumptions": [
+     {
+      "text": "There is only one growth-limiting substrate in the bioreactor.",
+      "quote": "The Monod model assumes that there is only one growth limiting substrate in the bioreactor",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": "The biomass factor X makes the right-hand side have units of specific growth rate multiplied by biomass concentration, rather than the specific growth rate \\mu defined in the paper."
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Blackman model",
+   "description": "Blackman specific growth rate is computed from substrate concentration; the text characterizes the model as transitioning from first-order to zero-order kinetics.",
+   "description_basis": "stated",
+   "quote": "making a sharp transition from first order kinetics to zero order kinetics",
+   "assumptions": [
+    {
+     "text": "The model shares the Monod assumption of only one growth-limiting substrate in the bioreactor.",
+     "quote": "The model is similar to the Monod model in terms of its assumptions.",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": "As printed, \\mu=\\mu_{max}S/K_s increases linearly with S and has no zero-order plateau or transition, contrary to the text's description of a sharp transition.",
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model shares the Monod assumption of only one growth-limiting substrate in the bioreactor.",
+    "possible misprint: As printed, \\mu=\\mu_{max}S/K_s increases linearly with S and has no zero-order plateau or transition, contrary to the text's description of a sharp transition."
+   ],
+   "llm": {
+    "eq": "5",
+    "description": "Blackman specific growth rate is computed from substrate concentration; the text characterizes the model as transitioning from first-order to zero-order kinetics.",
+    "description_basis": "stated",
+    "quote": "making a sharp transition from first order kinetics to zero order kinetics",
+    "assumptions": [
+     {
+      "text": "The model shares the Monod assumption of only one growth-limiting substrate in the bioreactor.",
+      "quote": "The model is similar to the Monod model in terms of its assumptions.",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": "As printed, \\mu=\\mu_{max}S/K_s increases linearly with S and has no zero-order plateau or transition, contrary to the text's description of a sharp transition."
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Haldane model",
+   "description": "Haldane specific growth rate accounts for substrate inhibition at low and high substrate concentrations.",
+   "description_basis": "stated",
+   "quote": "deals with specific growth rate inhibition at low and high substrate concentration",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{i}"
+    }
+   ],
+   "issue": "The inhibition term is printed with lowercase s, but the text and symbol list identify substrate concentration as uppercase S.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The inhibition term is printed with lowercase s, but the text and symbol list identify substrate concentration as uppercase S."
+   ],
+   "llm": {
+    "eq": "6",
+    "description": "Haldane specific growth rate accounts for substrate inhibition at low and high substrate concentrations.",
+    "description_basis": "stated",
+    "quote": "deals with specific growth rate inhibition at low and high substrate concentration",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{i}"
+     }
+    ],
+    "issue": "The inhibition term is printed with lowercase s, but the text and symbol list identify substrate concentration as uppercase S."
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Teissier model",
+   "description": "Teissier specific growth rate is computed as a function of continuous substrate concentration.",
+   "description_basis": "stated",
+   "quote": "describes the specific growth rate as a function of continuous substrate concentration",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "\\kappa_{T}"
+    }
+   ],
+   "issue": "The exponent is printed as +S/\\kappa_T, which makes the rate negative for positive S and increasingly negative as S rises; a minus sign appears to be missing.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The exponent is printed as +S/\\kappa_T, which makes the rate negative for positive S and increasingly negative as S rises; a minus sign appears to be missing."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "Teissier specific growth rate is computed as a function of continuous substrate concentration.",
+    "description_basis": "stated",
+    "quote": "describes the specific growth rate as a function of continuous substrate concentration",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "\\kappa_{T}"
+     }
+    ],
+    "issue": "The exponent is printed as +S/\\kappa_T, which makes the rate negative for positive S and increasingly negative as S rises; a minus sign appears to be missing."
+   }
+  },
+  "8": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "The moser model",
+   "description": "Moser specific growth rate is computed from substrate concentration using an adjustable exponent.",
+   "description_basis": "stated",
+   "quote": "The Moser model is an unstructured model based on substrate concentration only",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "exponent",
+     "symbol": "n"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "8",
+    "description": "Moser specific growth rate is computed from substrate concentration using an adjustable exponent.",
+    "description_basis": "stated",
+    "quote": "The Moser model is an unstructured model based on substrate concentration only",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "9": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Contois models",
+   "description": "Contois specific growth rate is computed from both substrate and biomass concentrations.",
+   "description_basis": "stated",
+   "quote": "based on both substrate and biomass concentration",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "biomass",
+     "symbol": "X"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "9",
+    "description": "Contois specific growth rate is computed from both substrate and biomass concentrations.",
+    "description_basis": "stated",
+    "quote": "based on both substrate and biomass concentration",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "10": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Logarithmic model",
+   "description": "Logarithmic specific growth rate is computed as a function of the logarithm of substrate concentration.",
+   "description_basis": "stated",
+   "quote": "describes specific growth rate as a function of logarithm of substrate concentration",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "s"
+    },
+    {
+     "role": "intercept",
+     "symbol": "a"
+    },
+    {
+     "role": "logarithmic coefficient",
+     "symbol": "b"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "10",
+    "description": "Logarithmic specific growth rate is computed as a function of the logarithm of substrate concentration.",
+    "description_basis": "stated",
+    "quote": "describes specific growth rate as a function of logarithm of substrate concentration",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "s"
+     },
+     {
+      "role": "intercept",
+      "symbol": "a"
+     },
+     {
+      "role": "logarithmic coefficient",
+      "symbol": "b"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "11": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Aiba-Edward model",
+   "description": "The Aiba–Edwards law computes bacterial specific growth rate from substrate concentration with exponential substrate inhibition.",
+   "description_basis": "stated",
+   "quote": "The model introduces the inhibitory constant and an exponential ratio of substrate concentration and inhibitory constant (Sadhukhan et al., 2016).",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{I}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "11",
+    "description": "The Aiba–Edwards law computes bacterial specific growth rate from substrate concentration with exponential substrate inhibition.",
+    "description_basis": "stated",
+    "quote": "The model introduces the inhibitory constant and an exponential ratio of substrate concentration and inhibitory constant (Sadhukhan et al., 2016).",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{I}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "12": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Yano and koga model",
+   "description": "The Yano–Koga law computes specific growth rate as a substrate-dependent rate reduced by inhibition at high substrate concentration.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{1}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{2}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    }
+   ],
+   "issue": "The denominator has substrate-concentration units while \\mu_{max} has time⁻¹ units, so the expression yields time⁻¹ per concentration rather than the stated specific-growth-rate units.",
+   "status": "pending",
+   "review": [
+    "description quote not found in the paper",
+    "possible misprint: The denominator has substrate-concentration units while \\mu_{max} has time⁻¹ units, so the expression yields time⁻¹ per concentration rather than the stated specific-growth-rate units."
+   ],
+   "llm": {
+    "eq": "12",
+    "description": "The Yano–Koga law computes specific growth rate as a substrate-dependent rate reduced by inhibition at high substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The model is capable of describing substrate inhibition effects at high substrate concentration in a continuous fermentation bioreactor (Dey and Mukherjee (2010); Dutta et al., (2015)).",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{2}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     }
+    ],
+    "issue": "The denominator has substrate-concentration units while \\mu_{max} has time⁻¹ units, so the expression yields time⁻¹ per concentration rather than the stated specific-growth-rate units."
+   }
+  },
+  "13": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Han and Levenspiel",
+   "description": "The Han–Levenspiel law computes specific growth rate from substrate concentration with growth slowing or ceasing at a critical inhibitor concentration.",
+   "description_basis": "stated",
+   "quote": "The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "S_{m}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "exponent",
+     "symbol": "n"
+    },
+    {
+     "role": "exponent",
+     "symbol": "m"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "13",
+    "description": "The Han–Levenspiel law computes specific growth rate from substrate concentration with growth slowing or ceasing at a critical inhibitor concentration.",
+    "description_basis": "stated",
+    "quote": "The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_{m}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     },
+     {
+      "role": "exponent",
+      "symbol": "m"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "14": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Powell model",
+   "description": "The Powell law computes specific growth rate from substrate concentration with a cell-maintenance correction.",
+   "description_basis": "stated",
+   "quote": "The Powell model introduces the parameter (m), which is the maintenance parameter.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "maintenance parameter",
+     "symbol": "m"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "14",
+    "description": "The Powell law computes specific growth rate from substrate concentration with a cell-maintenance correction.",
+    "description_basis": "stated",
+    "quote": "The Powell model introduces the parameter (m), which is the maintenance parameter.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "maintenance parameter",
+      "symbol": "m"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "15": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Logistic model",
+   "description": "The Logistic law calculates specific growth rate from biomass concentration, declining as biomass approaches its maximum.",
+   "description_basis": "stated",
+   "quote": "The model is a substrate independent model, it describes kinetic growth based on biomass concentration only.",
+   "assumptions": [
+    {
+     "text": "The model is applied to a population in a closed habitat.",
+     "quote": "in a closed habitat",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "biomass",
+     "symbol": "X"
+    },
+    {
+     "role": "maximum biomass",
+     "symbol": "X_{m}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    }
+   ],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The model is applied to a population in a closed habitat."
+   ],
+   "llm": {
+    "eq": "15",
+    "description": "The Logistic law calculates specific growth rate from biomass concentration, declining as biomass approaches its maximum.",
+    "description_basis": "stated",
+    "quote": "The model is a substrate independent model, it describes kinetic growth based on biomass concentration only.",
+    "assumptions": [
+     {
+      "text": "The model is applied to a population in a closed habitat.",
+      "quote": "in a closed habitat",
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "maximum biomass",
+      "symbol": "X_{m}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "16": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Luong model",
+   "description": "The Luong law computes specific growth rate from substrate concentration, with complete growth inhibition above a critical substrate concentration.",
+   "description_basis": "stated",
+   "quote": "The new term is used to describe complete growth inhibition above a critical substrate concentration (Dutta et al., 2015).",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{S}"
+    },
+    {
+     "role": "inhibitor",
+     "symbol": "S_{m}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "exponent",
+     "symbol": "n"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "16",
+    "description": "The Luong law computes specific growth rate from substrate concentration, with complete growth inhibition above a critical substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The new term is used to describe complete growth inhibition above a critical substrate concentration (Dutta et al., 2015).",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{S}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_{m}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "17": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": null,
+   "value": null,
+   "section": "Webb model",
+   "description": "The Webb law computes specific growth rate from substrate concentration using a substrate-inhibition correction.",
+   "description_basis": "stated",
+   "quote": "The Webb model describes specific growth rate as a function of substrate concentration only.",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "S"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K_{s}"
+    },
+    {
+     "role": "inhibition constant",
+     "symbol": "K_{i}"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    }
+   ],
+   "issue": "The lower-case s terms in the numerator and denominator conflict with the paper’s defined substrate symbol S; s is separately listed for the logarithmic growth law.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The lower-case s terms in the numerator and denominator conflict with the paper’s defined substrate symbol S; s is separately listed for the logarithmic growth law."
+   ],
+   "llm": {
+    "eq": "17",
+    "description": "The Webb law computes specific growth rate from substrate concentration using a substrate-inhibition correction.",
+    "description_basis": "stated",
+    "quote": "The Webb model describes specific growth rate as a function of substrate concentration only.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{s}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{i}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     }
+    ],
+    "issue": "The lower-case s terms in the numerator and denominator conflict with the paper’s defined substrate symbol S; s is separately listed for the logarithmic growth law."
+   }
+  }
+ }
+}

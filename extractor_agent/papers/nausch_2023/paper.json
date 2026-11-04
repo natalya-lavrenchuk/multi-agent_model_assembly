@@ -1,0 +1,171 @@
+{
+ "sup": "nausch_2023",
+ "title": "Simulation and optimization of nutrient uptake and biomass formation using a multi-parameter Monod-type model of tobacco BY-2 cell suspension cultures in a stirred-tank bioreactor",
+ "doi": "10.3389/fpls.2023.1183254",
+ "status": "approved",
+ "proposed_by": "openai/gpt-oss-120b",
+ "excluded": [
+  {
+   "eq": 1,
+   "reason": "X = Xa + Xd: total DM, not in the improved model as the paper lists it"
+  },
+  {
+   "eq": 4,
+   "reason": "growth rate of the initial model, replaced by eq 18"
+  },
+  {
+   "eq": 9,
+   "reason": "Objective (weighted least‑squares) function, not part of the process model."
+  },
+  {
+   "eq": 10,
+   "reason": "Continuation of the objective function definition."
+  },
+  {
+   "eq": 11,
+   "reason": "Matrix formulation of measurement uncertainties, not a model equation."
+  },
+  {
+   "eq": 12,
+   "reason": "Error metric (MAE) used for model evaluation."
+  },
+  {
+   "eq": 13,
+   "reason": "Normalized MAE definition, not part of the mechanistic model."
+  },
+  {
+   "eq": 14,
+   "reason": "MAE for combined datasets, a performance statistic."
+  },
+  {
+   "eq": 15,
+   "reason": "no '=': not an equation that computes anything (code)"
+  },
+  {
+   "eq": 16,
+   "reason": "Dimensionless yield definition, an output metric, not a governing equation."
+  },
+  {
+   "eq": 17,
+   "reason": "no '=': not an equation that computes anything (code)"
+  },
+  {
+   "eq": 21,
+   "reason": "Average MAE calculation, a performance metric."
+  },
+  {
+   "eq": 22,
+   "reason": "Normalized average MAE, a performance metric."
+  }
+ ],
+ "checks": [],
+ "model_name": "improved unstructured model with sucrose hydrolysis",
+ "equations": [
+  2,
+  3,
+  5,
+  6,
+  7,
+  8,
+  18,
+  19,
+  20
+ ],
+ "equations_quote": "we used a second unstructured model (Eq. 2-3, 5-8, 18-20), accommodating the hydrolysis of sucrose into fructose and glucose (Eq. 18-20)",
+ "equations_quote_page": 10,
+ "boundary_basis": "stated",
+ "description": "Unstructured segregated Monod-type model of tobacco BY-2 cell suspension cultures in a stirred-tank bioreactor (batch and fed-batch): active and dead dry mass, volume, sucrose hydrolysed to glucose and fructose, ammonium, nitrate and phosphate.",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM).",
+   "quote": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM) (Jacob et al., 2020) (Eq. 2).",
+   "page": 5,
+   "severity": "warning",
+   "reasoned": false,
+   "process_condition": false
+  }
+ ],
+ "review": {
+  "by": "human",
+  "note": "LLM proposed two models (initial eqs 1-8, improved eqs 1-8 + 18-20) with invented boundary quotes (caught by the quote check). Kept the improved model only, as the paper states it: eqs 2-3, 5-8, 18-20 (eq 4 is replaced by eq 18; eq 1 X = Xa + Xd is not part of it). Kept the one quoted assumption (active to dead DM, eq 2); dropped three unquoted ones.",
+  "llm_proposal": [
+   {
+    "name": "initial unstructured segregated Monod-type model",
+    "equations": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "equations_quote": null,
+    "equations_quote_page": null,
+    "boundary_basis": "inferred",
+    "description": "An unstructured segregated mechanistic model for tobacco BY‑2 cell suspension cultures in a stirred‑tank bioreactor operated in batch/fed‑batch mode, predicting active and dead dry mass, volume, and concentrations of sucrose, ammonium, nitrate and phosphate.",
+    "complete_model": true,
+    "model_assumptions": [
+     {
+      "text": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM).",
+      "quote": "The model assumes an irreversible progression in which active cells (active DM) are converted into dead cells (dead DM) (Jacob et al., 2020) (Eq. 2).",
+      "page": 5,
+      "severity": "blocking",
+      "reasoned": false
+     },
+     {
+      "text": "Perfect mixing and isothermal operation are implicit in the volume and concentration balances.",
+      "quote": null,
+      "page": null,
+      "severity": "warning",
+      "reasoned": true
+     },
+     {
+      "text": "Negligible dilution of nutrients by feed is assumed in the Monod kinetic (phosphate uptake term omitted).",
+      "quote": null,
+      "page": null,
+      "severity": "warning",
+      "reasoned": true
+     }
+    ],
+    "quote_not_found": "the model consists of Eqs. (1)-(8)"
+   },
+   {
+    "name": "improved unstructured model with sucrose hydrolysis",
+    "equations": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     18,
+     19,
+     20
+    ],
+    "equations_quote": null,
+    "equations_quote_page": null,
+    "boundary_basis": "inferred",
+    "description": "A revised unstructured segregated model that adds hydrolysis of sucrose into fructose and glucose and uses an extended specific growth rate expression, applied to the same BY‑2 cell suspension bioreactor.",
+    "complete_model": true,
+    "model_assumptions": [
+     {
+      "text": "The same assumptions as the initial model plus the addition that sucrose hydrolyzes to fructose and glucose according to the introduced stoichiometric terms.",
+      "quote": null,
+      "page": null,
+      "severity": "warning",
+      "reasoned": true
+     }
+    ],
+    "quote_not_found": "the model consists of Eqs. (1)-(8), 18‑20"
+   }
+  ]
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed)."
+ ]
+}

@@ -1,0 +1,359 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "PDE",
+   "computes": "n",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The population balance computes how the floc size distribution changes over time through growth and net aggregation and breakage.",
+   "description_basis": "stated",
+   "quote": "eq. 1 describes the time evolution of the floc size distribution.",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "1",
+    "description": "The population balance computes how the floc size distribution changes over time through growth and net aggregation and breakage.",
+    "description_basis": "stated",
+    "quote": "eq. 1 describes the time evolution of the floc size distribution.",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "2": {
+   "form": "algebraic",
+   "computes": "h_{agg}",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The net aggregation rate is the collision-driven formation of flocs of size x minus their loss through further collisions.",
+   "description_basis": "stated",
+   "quote": "This model describes both the transport of flocs towards one another ($\\beta$) and the probability that these collisions lead to aggregation ($\\alpha$) accounting for short-range forces like van der Waals and hydrodynamic interactions.",
+   "assumptions": [
+    {
+     "text": "The collision efficiency α is taken as a constant between 0 and 1.",
+     "quote": "α was chosen to be a constant between 0 and 1.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "floc size distribution",
+     "symbol": "n"
+    },
+    {
+     "role": "collision frequency",
+     "symbol": "\\beta"
+    },
+    {
+     "role": "collision efficiency",
+     "symbol": "\\alpha"
+    }
+   ],
+   "issue": "The aggregation-birth integral uses dx although its integrand and limits are in x′; the differential should be dx′.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The aggregation-birth integral uses dx although its integrand and limits are in x′; the differential should be dx′."
+   ],
+   "llm": {
+    "eq": "2",
+    "description": "The net aggregation rate is the collision-driven formation of flocs of size x minus their loss through further collisions.",
+    "description_basis": "stated",
+    "quote": "This model describes both the transport of flocs towards one another ($\\beta$) and the probability that these collisions lead to aggregation ($\\alpha$) accounting for short-range forces like van der Waals and hydrodynamic interactions.",
+    "assumptions": [
+     {
+      "text": "The collision efficiency α is taken as a constant between 0 and 1.",
+      "quote": "α was chosen to be a constant between 0 and 1.",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "floc size distribution",
+      "symbol": "n"
+     },
+     {
+      "role": "collision frequency",
+      "symbol": "\\beta"
+     },
+     {
+      "role": "collision efficiency",
+      "symbol": "\\alpha"
+     }
+    ],
+    "issue": "The aggregation-birth integral uses dx although its integrand and limits are in x′; the differential should be dx′."
+   }
+  },
+  "3": {
+   "form": "algebraic",
+   "computes": "\\beta",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The collision frequency is calculated from the mean velocity gradient and the cube-root size contributions of the colliding flocs.",
+   "description_basis": "stated",
+   "quote": "the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "collision frequency",
+     "symbol": "\\beta"
+    },
+    {
+     "role": "velocity gradient",
+     "symbol": "\\overline{G}"
+    },
+    {
+     "role": "particle volume",
+     "symbol": "x^{\\prime}"
+    }
+   ],
+   "issue": "The terms x^{′/3} and (x−x′)^{′/3} put a prime in the exponent instead of specifying cube-root powers x′^{1/3} and (x−x′)^{1/3}.",
+   "status": "pending",
+   "review": [
+    "roles naming symbols not in the law dropped: ['x']",
+    "possible misprint: The terms x^{′/3} and (x−x′)^{′/3} put a prime in the exponent instead of specifying cube-root powers x′^{1/3} and (x−x′)^{1/3}."
+   ],
+   "llm": {
+    "eq": "3",
+    "description": "The collision frequency is calculated from the mean velocity gradient and the cube-root size contributions of the colliding flocs.",
+    "description_basis": "stated",
+    "quote": "the collision frequency for particles of volume $x$ (cm$^3$) and $x-x'$ (cm$^3$).",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "collision frequency",
+      "symbol": "\\beta"
+     },
+     {
+      "role": "velocity gradient",
+      "symbol": "\\overline{G}"
+     },
+     {
+      "role": "particle volume",
+      "symbol": "x"
+     },
+     {
+      "role": "particle volume",
+      "symbol": "x^{\\prime}"
+     }
+    ],
+    "issue": "The terms x^{′/3} and (x−x′)^{′/3} put a prime in the exponent instead of specifying cube-root powers x′^{1/3} and (x−x′)^{1/3}."
+   }
+  },
+  "4": {
+   "form": "algebraic",
+   "computes": "\\overline{G}",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The average velocity gradient is calculated from turbulent energy dissipation and kinematic viscosity.",
+   "description_basis": "stated",
+   "quote": "is the average velocity gradient",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "turbulent energy dissipation rate",
+     "symbol": "\\varepsilon"
+    },
+    {
+     "role": "kinematic viscosity",
+     "symbol": "\\nu"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "4",
+    "description": "The average velocity gradient is calculated from turbulent energy dissipation and kinematic viscosity.",
+    "description_basis": "stated",
+    "quote": "is the average velocity gradient",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "turbulent energy dissipation rate",
+      "symbol": "\\varepsilon"
+     },
+     {
+      "role": "kinematic viscosity",
+      "symbol": "\\nu"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "5": {
+   "form": "algebraic",
+   "computes": "h_{break}",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The net breakage rate combines the production of size-x flocs from larger flocs with the loss of size-x flocs when they break.",
+   "description_basis": "inferred",
+   "quote": null,
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "floc size distribution",
+     "symbol": "n"
+    },
+    {
+     "role": "breakage rate",
+     "symbol": "S"
+    },
+    {
+     "role": "daughter distribution",
+     "symbol": "\\Gamma"
+    }
+   ],
+   "issue": "The loss term −n(x,t)S(x)Γ(x,x′) contains an unintegrated x′ and applies the daughter distribution to parent disappearance; parent loss should be −n(x,t)S(x).",
+   "status": "pending",
+   "review": [
+    "possible misprint: The loss term −n(x,t)S(x)Γ(x,x′) contains an unintegrated x′ and applies the daughter distribution to parent disappearance; parent loss should be −n(x,t)S(x)."
+   ],
+   "llm": {
+    "eq": "5",
+    "description": "The net breakage rate combines the production of size-x flocs from larger flocs with the loss of size-x flocs when they break.",
+    "description_basis": "inferred",
+    "quote": null,
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "floc size distribution",
+      "symbol": "n"
+     },
+     {
+      "role": "breakage rate",
+      "symbol": "S"
+     },
+     {
+      "role": "daughter distribution",
+      "symbol": "\\Gamma"
+     }
+    ],
+    "issue": "The loss term −n(x,t)S(x)Γ(x,x′) contains an unintegrated x′ and applies the daughter distribution to parent disappearance; parent loss should be −n(x,t)S(x)."
+   }
+  },
+  "6": {
+   "form": "algebraic",
+   "computes": "S",
+   "condition": null,
+   "value": null,
+   "section": "2. THE POPULATION BALANCE MODEL",
+   "description": "The breakage rate increases with floc size according to a power law with coefficient A and exponent a.",
+   "description_basis": "stated",
+   "quote": "S(x) is the breakage rate of particles of size x",
+   "assumptions": [
+    {
+     "text": "The breakage exponent a is fixed at 1/3.",
+     "quote": "a is a constant (=1/3)",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [
+    {
+     "role": "rate constant",
+     "symbol": "A"
+    },
+    {
+     "role": "exponent",
+     "symbol": "a"
+    }
+   ],
+   "issue": "Given x is a volume in cm³ and a=1/3, A must have units cm⁻¹s⁻¹ for S to have units s⁻¹, not the stated cm⁻³s⁻¹.",
+   "status": "pending",
+   "review": [
+    "roles naming symbols not in the law dropped: ['x']",
+    "possible misprint: Given x is a volume in cm³ and a=1/3, A must have units cm⁻¹s⁻¹ for S to have units s⁻¹, not the stated cm⁻³s⁻¹."
+   ],
+   "llm": {
+    "eq": "6",
+    "description": "The breakage rate increases with floc size according to a power law with coefficient A and exponent a.",
+    "description_basis": "stated",
+    "quote": "S(x) is the breakage rate of particles of size x",
+    "assumptions": [
+     {
+      "text": "The breakage exponent a is fixed at 1/3.",
+      "quote": "a is a constant (=1/3)",
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "A"
+     },
+     {
+      "role": "particle size",
+      "symbol": "x"
+     },
+     {
+      "role": "exponent",
+      "symbol": "a"
+     }
+    ],
+    "issue": "Given x is a volume in cm³ and a=1/3, A must have units cm⁻¹s⁻¹ for S to have units s⁻¹, not the stated cm⁻³s⁻¹."
+   }
+  },
+  "7": {
+   "form": "algebraic",
+   "computes": null,
+   "condition": null,
+   "value": null,
+   "section": "3.1 Experimental set-up",
+   "description": "The mass mean diameter is calculated as the ratio of the fourth and third moments of the number distribution.",
+   "description_basis": "stated",
+   "quote": "as the ratio of the fourth and third moment of the distribution:",
+   "assumptions": [],
+   "roles": [],
+   "issue": "The numerator and denominator print ΔF_N with two arguments, although it is defined as the number fraction for a class; the moment formula requires multiplying that fraction by x_i⁴ and x_i³, respectively.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The numerator and denominator print ΔF_N with two arguments, although it is defined as the number fraction for a class; the moment formula requires multiplying that fraction by x_i⁴ and x_i³, respectively."
+   ],
+   "llm": {
+    "eq": "7",
+    "description": "The mass mean diameter is calculated as the ratio of the fourth and third moments of the number distribution.",
+    "description_basis": "stated",
+    "quote": "as the ratio of the fourth and third moment of the distribution:",
+    "assumptions": [],
+    "roles": [],
+    "issue": "The numerator and denominator print ΔF_N with two arguments, although it is defined as the number fraction for a class; the moment formula requires multiplying that fraction by x_i⁴ and x_i³, respectively."
+   }
+  },
+  "9": {
+   "form": "algebraic",
+   "computes": "CON",
+   "condition": null,
+   "value": null,
+   "section": "4.1 Solution method",
+   "description": "The cumulative oversize number at size x is the number concentration integrated over all larger floc sizes.",
+   "description_basis": "stated",
+   "quote": "represented as cumulative oversize numbers (CON)",
+   "assumptions": [],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "9",
+    "description": "The cumulative oversize number at size x is the number concentration integrated over all larger floc sizes.",
+    "description_basis": "stated",
+    "quote": "represented as cumulative oversize numbers (CON)",
+    "assumptions": [],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

@@ -1,0 +1,262 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3503,
+  "completion_tokens": 6704,
+  "total_tokens": 10207,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3500,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5377,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Aiba-Edward model; Yano and koga model; Han and Levenspiel; Powell model; Logistic model; Luong model; Webb model\n\nText and equations in reading order:\n    The Aiba-Edward model was introduced by Aiba et al., 1968 and later adopted by Edward in 1970. The model is an unstructured and inhibitory model extended from the Monod model. The model introduces the inhibitory constant and an exponential ratio of substrate concentration and inhibitory constant (Sadhukhan et al., 2016). The inhibitory constant accounts for the presence of toxic substrate concentration in the bioreactor. With the ability to handle toxic substrate, the model is capable of describing the lag and death phase (Kong, 2017). The model is defined by equation 11.\n(11) \\mu=\\mu_{max}\\frac{S}{K_{s}+S}\\exp\\left(-\\frac{S}{K_{I}}\\right)    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ S $ substrate concentration, $ K_s $ half saturation constant, and $ K_l $ inhibition constant. Although the model has been reported to struggle with describing critical values of inhibitory substrate, it has been applied by a number of authors with success (Dutta et al., 2015). Krishnan et al., (2017) reported a satisfactory fit on biodegradation of Azo dye. The OD at 600 nm was used to measure the bacteria growth rates. The Aiba-Edward model produced $ R^2 $ of 99.9%. Ibrahim et al., (2016) reported a satisfac...\n    Yano and Koga model was introduced in 1969 (Yano and Koga, 1969). The model is capable of describing substrate inhibition effects at high substrate concentration in a continuous fermentation bioreactor (Dey and Mukherjee (2010); Dutta et al., (2015)). The model is defined by equation 12.\n(12) \\mu=\\frac{\\mu_{max}}{K_{s}+S+\\frac{s^{2}}{K_{1}}+\\frac{s^{3}}{K_{2}^{2}}}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half saturation constant, S substrate concentration, and $ K_1 $ and $ K_2 $ positive constants that describe substrate inhibition. The model has not been criticised of its inability to described kinetic growth rate. This in evident from the literature described below. Shukor et al. (2014) reported satisfactory fit on Tannery effluent containing chromate. The OD at 600 nm was used to measure the bacteria growth rates. The Yano and Koga model produced $ R^2 $ of 95.6%. Mohanty et al., (2018) reported a sati...\n    The Han and Levenspiel model was introduced in 1988 as an extension of the Monod model. The extension includes inhibition effects that are present due to high concentration of substrate, cells, or other products (Han and Levenspiel, 1988). The model is capable of explaining the types of inhibition as either competitive or non-competitive (Dutta et al., 2015). The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached. The Han and Levenspiel is defined by equation 13.\n(13) \\mu=\\mu_{max}\\Bigg[1-\\Bigg(\\frac{S}{S_{m}}\\Bigg)\\Bigg]^{n}\\left[\\frac{S}{S+K_{s}\\Big(1-\\frac{S}{S_{m}}\\Big)^{m}}\\right]    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half saturation constant, S substrate concentration, $ S_m $ is the critical inhibitor concentration, and n and m are constants. The inclusion of the parameter $ S_m $ increased the model's ability to predict cell growth in both toxic and non-toxic substrate concentration as reported in the literature below. Saravanan et al., (2008) reported satisfactory fit of the Han and Levenspiel model in phenol degradation. The growth rates were measured using OD at 600 nm to describe the specific growth rates. The Ha...\n    The Powell model was introduced by Powell in 1967 (Powell, 1967). The model is a modification of the Monod model. The Powell model introduces the parameter (m), which is the maintenance parameter. The Powell model does not consider substrate inhibition, hence it struggles with describing the lag and death phase (Wu et al., 2018). The Powell model is defined by equation 14.\n(14) \\mu=\\frac{(\\mu_{m a x}+m)S}{K_{s}+S}-m    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half saturation constant, $ S $ substrate concentration, and $ m $ constant. The Powell model has not been used widely in literature. In this paper, only 2 literatures were found of the Powell model. Costa et al., (2014) reported poor fit of the degradation of diethyl-ketone by Streptococcus equisimilis. The OD at 620 nm was used to measure the bacteria growth rates. The model produced $ R^2 $ 72%. On the contrary, Mahanta et al., (2014) reported a satisfactory fit of the Powell in $ E. coli $ study. $ R^2...\n    The Logistic model was introduced by Pierre Verhulst in 1838 (Verhulst, 1838). The Logistic model is also known as Verhulst model (Omer, 2018). The model is based on an assumption that the growth rate of an organism is proportional to the current population, and the unutilized resources in a closed habitat (Horowitz et al., 2010). The model is a substrate independent model, it describes kinetic growth based on biomass concentration only. The model accounts for inhibition of substrate (Ali et al., 2017). The Logistic model is defined by equation 15.\n(15) \\mu=\\mu_{max}\\left[1-\\frac{X}{X_{m}}\\right]    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, X biomass concentration, $ X_{m} $ is the maximum biomass concentration, $ \\mu_{max} $ is the maximum specific growth rate. A number of authors have used the Logistic model to predict specific growth rate. Ardestani and Kasebkar (2018) reported a poor fit in Aspergillus niger growth. The cell dry weight method was used to measure the bacteria growth rates. The model was produced $ R^{2} $ of 67.7%. Abdullah et al., (2006) reported poor fit of Aspergillus oryzae in industrial natural rubber effluent serum. The Logistic model produced $ R^{2} $ of 20.9%. Arde...\n    ...structured model that describes kinetic growth rate based on substrate concentration only. The model is a generalization of the Monod equation. The model includes a new term, $ (1 - \\frac{S}{S_m})^\\alpha $. The new term is used to describe complete growth inhibition above a critical substrate concentration (Dutta et al., 2015). The model can predict substrate limitation at low and high substrate concentration accounted for by the parameter, $ S_m $. The model is capable of predicting maximum threshold substrate concentration (Dey and Mukherjee, 2010). The Luong model is defined by equation 16.\n(16) \\mu=\\mu_{m a x}\\frac{S}{K_{S}+S}(1-\\frac{S}{S_{m}})^{n}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half saturation constant, $ S $ substrate concentration, $ S_m $ is the critical inhibitor concentration, and $ n $ is a constant. The Luong model has been used by a number of authors as reported below and when utilized, it has performed well. Ibrahim et al., (2016) reported satisfactory fit of the Luong model in caffeine-degrading bacterium. The OD at 600 nm was used to measure the bacteria growth rates. The Luong model produced $ R^2 $ of 93.3%. Hamitouche et al., (2012) reported satisfactory results in ...\n    ... did not achieve much. Halmi et al., (2014), reported poor fit of the model on experimental data of the Catechol-degrading Candida parapsilopsis. Dutta et al., (2015) reported the Webb model is similar to the Yano Koga model. The difference between the 2 models is the term $ (1 + \\frac{S}{K_i}) $. In the Webb model the term is in the numerator and in the Yano Koga model it is in the denominator. The same observation can be said about the Haldane and the Webb model. The Haldane model does not have the term $ (1 + \\frac{S}{K_i}) $. The Webb model is defined by Eq. (17) (Dey and Mukherjee, 2010).\n(17) \\mu=\\frac{\\mu_{max}S\\left(1+\\frac{s}{K_{i}}\\right)}{S+K_{s}+\\left(\\frac{s^{2}}{K_{i}}\\right)}    [code: algebraic, computes \\mu, code proposes constitutive]\n    Where, $ \\mu $ specific growth rate, $ \\mu_{max} $ maximum specific growth rate, $ K_s $ half velocity saturation constant, S substrate concentration, and $ K_i $ inhibition constant. A number of authors have used to Webb model with success to describe microbial kinetic growth rate. Gharibzahedi et al., (2013) reported satisfactory fit on Canthaxanthin biosynthesis by Dietzia natronolimnaea HS-1 on waste molasses hydrolysate. The OD at 600 nm was used to measure the bacteria growth rates. The Webb model produced $ R^2 $ of 98.3%. Dutta et al., (2015) reported satisfactory fit on substrate inhi...\n\nSymbols:\n  \\mu: Specific bacteria growth rate (computed)\n  \\mu_{max}: Maximum specific growth rate (parameter)\n  S: Substrate concentration (variable)\n  K_{s}: Half saturation constant (parameter)\n  K_{I}: Substrate inhibition constant in the Aiba-Edwards growth law (parameter)\n  s: Lowercase substrate concentration appearing in the growth-law equations (variable)\n  K_{1}: Positive constant describing substrate inhibition (parameter)\n  K_{2}: Positive constant describing substrate inhibition (parameter)\n  S_{m}: Critical inhibitor concentration (parameter)\n  n: Exponent in the growth-law equations [-] (parameter)\n  m: Constant in the Powell growth law (parameter)\n  X: Biomass concentration (variable)\n  X_{m}: Maximum biomass concentration (parameter)\n  K_{S}: Half-saturation constant (parameter)\n  K_{i}: Inhibition constant (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 11, 12, 13, 14, 15, 16, 17",
+ "answer": {
+  "laws": [
+   {
+    "eq": "11",
+    "description": "Aiba–Edward computes specific growth rate from Monod-type substrate saturation multiplied by an exponential substrate-inhibition term.",
+    "description_basis": "stated",
+    "quote": "The model introduces the inhibitory constant and an exponential ratio of substrate concentration and inhibitory constant (Sadhukhan et al., 2016).",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{I}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "Yano and Koga computes specific growth rate with substrate inhibition at high substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The model is capable of describing substrate inhibition effects at high substrate concentration in a continuous fermentation bioreactor",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "substrate",
+      "symbol": "s"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{1}"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{2}"
+     }
+    ],
+    "issue": "The numerator is missing the substrate concentration S (or s): as printed, the denominator is concentration-valued while \\mu_{max} is a specific growth rate, so the result does not have units of specific growth rate."
+   },
+   {
+    "eq": "13",
+    "description": "Han and Levenspiel computes specific growth rate with substrate saturation and inhibition at a critical inhibitor concentration.",
+    "description_basis": "stated",
+    "quote": "The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [
+     {
+      "text": "There is a critical inhibitor concentration at which the reaction ceases or growth slows.",
+      "quote": "The model assumes that there is a critical inhibitor concentration where the reaction ceases or the growth rate slows down if that point is reached.",
+      "stated_as_assumption": true,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_m"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     },
+     {
+      "role": "exponent",
+      "symbol": "m"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "14",
+    "description": "Powell modifies Monod-type growth with a maintenance parameter.",
+    "description_basis": "stated",
+    "quote": "The Powell model introduces the parameter (m), which is the maintenance parameter.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [
+     {
+      "text": "Substrate inhibition is not considered.",
+      "quote": "The Powell model does not consider substrate inhibition",
+      "stated_as_assumption": false,
+      "process_condition": false
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "maintenance parameter",
+      "symbol": "m"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "15",
+    "description": "The Logistic law makes specific growth rate decline with biomass concentration toward zero at the maximum biomass concentration.",
+    "description_basis": "stated",
+    "quote": "The model is a substrate independent model, it describes kinetic growth based on biomass concentration only.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [
+     {
+      "text": "Growth rate is proportional to the current population and unutilized resources in a closed habitat.",
+      "quote": "The model is based on an assumption that the growth rate of an organism is proportional to the current population, and the unutilized resources in a closed habitat",
+      "stated_as_assumption": true,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X"
+     },
+     {
+      "role": "maximum biomass concentration",
+      "symbol": "X_{m}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "16",
+    "description": "Luong computes specific growth rate from substrate saturation with complete inhibition above a critical substrate concentration.",
+    "description_basis": "stated",
+    "quote": "The new term is used to describe complete growth inhibition above a critical substrate concentration (Dutta et al., 2015).",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_{S}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_{m}"
+     },
+     {
+      "role": "exponent",
+      "symbol": "n"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "17",
+    "description": "Webb computes specific growth rate with a substrate-dependent factor in the numerator in addition to the substrate-inhibition denominator.",
+    "description_basis": "stated",
+    "quote": "In the Webb model the term is in the numerator and in the Yano Koga model it is in the denominator.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a specific-growth-rate kinetic expression, not an accumulation balance or a derived quantity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "S"
+     },
+     {
+      "role": "substrate",
+      "symbol": "s"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K_s"
+     },
+     {
+      "role": "inhibition constant",
+      "symbol": "K_{i}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

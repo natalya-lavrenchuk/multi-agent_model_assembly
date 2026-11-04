@@ -1,0 +1,201 @@
+# kg_schema.ttl -- schema for paper graphs and the shared graph (v2, Oct 2026)
+#
+# Implements claude/KG_structure_decisions.md. Five classes, no others:
+#   Sup, Law, Variable, Parameter, Metadata
+# Everything else is a FIELD (datatype property) or an untyped blank node.
+#
+# Tags in comments:
+#   DECIDED   agreed in the 4 Oct discussion
+#   PROPOSED  added in the extractor planning chat, confirm with Marco/Edoardo
+#   COMPUTED  filled by code (SymPy / pint), never by the LLM
+#
+# Replaces mkg_schema.ttl (~15 classes), archived in _archive/v1_pipeline/.
+
+@prefix mkg:  <http://example.org/mkg#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ======================================================================
+# Classes (DECIDED)
+# ======================================================================
+
+mkg:Sup a owl:Class ;
+    rdfs:comment "One mechanistic model as published: paper + system, e.g. 'Kontoravdi 2005, CHO growth + mAb'. Not a domain label." .
+
+mkg:Law a owl:Class ;
+    rdfs:comment "One printed equation. Never split, never combined." .
+
+mkg:Variable a owl:Class ;
+    rdfs:comment "A quantity a law computes or uses. v0 (Oct 2026, for now): one node per symbol PER LAW, nothing shared, so the same symbol in two laws is two nodes. Target: shared within a Sup; merged across Sups by the Assembler." .
+
+mkg:Parameter a owl:Class ;
+    rdfs:comment "A constant of a law: what Layer 3 can fit. Reported value stored on the node." .
+
+mkg:Metadata a owl:Class ;
+    rdfs:comment "Structured, code-readable information about a Law or a Sup. Not prose." .
+
+# ======================================================================
+# Edges (DECIDED)
+# ======================================================================
+
+mkg:includes     a owl:ObjectProperty ; rdfs:domain mkg:Sup ; rdfs:range mkg:Law .
+mkg:computes     a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Variable ;
+    rdfs:comment "Exactly one per Law. Within a Sup, at most one Law computes a given Variable; two Laws computing the same Variable across candidate Sups are rivals (derived, never declared)." .
+mkg:uses         a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Variable .
+mkg:hasParameter a owl:ObjectProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Parameter ;
+    rdfs:comment "PROPOSED relaxation: if one parameter appears in several laws of the same Sup (e.g. a yield coefficient in two balances), every such law points at the same Parameter node." .
+mkg:hasMetadata  a owl:ObjectProperty ; rdfs:range mkg:Metadata .   # domain: Sup or Law
+
+# LEANING (section 4): link the same law printed in two papers. One edge, no class.
+mkg:sameAs a owl:ObjectProperty, owl:SymmetricProperty ; rdfs:domain mkg:Law ; rdfs:range mkg:Law .
+
+# ======================================================================
+# Law fields
+# ======================================================================
+
+mkg:latex          a owl:DatatypeProperty ; rdfs:domain mkg:Law ; rdfs:range xsd:string ;
+    rdfs:comment "v0 storage of the equation: LaTeX exactly as the reader produced it, minus the $$ delimiters and line-ending punctuation. Not corrected." .
+mkg:formula        a owl:DatatypeProperty ; rdfs:domain mkg:Law ; rdfs:range xsd:string ;
+    rdfs:comment "NOT FILLED in v0. Machine-readable form of the equation (SymPy string). How to produce it is open: SymPy's own LaTeX parser is unreliable on printed models (results/sympy_parser_eval.md); an LLM translation checked by code is one option." .
+mkg:equationNumber a owl:DatatypeProperty ; rdfs:domain mkg:Law ; rdfs:range xsd:string ;
+    rdfs:comment "As printed, e.g. '5' or 'A.5'. Together with the Sup this is the Law's identity." .
+
+# ======================================================================
+# Variable and Parameter fields
+# ======================================================================
+# Units: printed string + COMPUTED dimension exponents + COMPUTED affine
+# conversion to SI. unitString absent = the paper printed no unit (not the
+# same as dimensionless, which is unitString "-").
+
+mkg:symbol      a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "As printed in the paper, in canonical LaTeX (spaces removed, subscripts braced), e.g. K_{glc}, [GLC]_{in}, \\mu_{d,max}." .
+mkg:formulaName a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "ASCII name used inside Law formulas. Links formula symbols to nodes. Not filled in v0 (no formula)." .
+mkg:description a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "What the paper says this quantity is. PROPOSED: kept on the node, since Metadata is defined for Laws and Sups only." .
+mkg:unitString  a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:dimM     a owl:DatatypeProperty ; rdfs:range xsd:integer .   # COMPUTED
+mkg:dimL     a owl:DatatypeProperty ; rdfs:range xsd:integer .   # COMPUTED
+mkg:dimT     a owl:DatatypeProperty ; rdfs:range xsd:integer .   # COMPUTED
+mkg:dimN     a owl:DatatypeProperty ; rdfs:range xsd:integer .   # COMPUTED
+mkg:dimTheta a owl:DatatypeProperty ; rdfs:range xsd:integer .   # COMPUTED
+mkg:toSIFactor a owl:DatatypeProperty ; rdfs:range xsd:double .  # COMPUTED
+mkg:toSIOffset a owl:DatatypeProperty ; rdfs:range xsd:double .  # COMPUTED
+
+mkg:value a owl:DatatypeProperty ; rdfs:domain mkg:Parameter ; rdfs:range xsd:double ;
+    rdfs:comment "Value as reported in the paper, in unitString units." .
+
+# Classification of a symbol no law computes (Parameter or Variable), written on
+# every Variable/Parameter node of that symbol together with mkg:quote, mkg:page, mkg:status.
+mkg:basis  a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "stated (the paper says it; mkg:quote holds the words) | inferred (modelling convention; reviewed by a human)." .
+mkg:reason a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "One sentence: what the paper says, or which convention the decision rests on." .
+
+# ======================================================================
+# Metadata fields
+# ======================================================================
+
+# mkg:lawRole (balance | constitutive | definition) removed 26 Oct 2026: an LLM judgement the system does not need.
+
+mkg:form a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "PROPOSED, COMPUTED by code (v0: ODE when the LaTeX left side is printed as d../dt). Vocabulary follows OntoModel equation types: algebraic | ODE | PDE | integral | function_evaluation. On a Sup's Metadata, 'DAE' when its laws mix ODE and algebraic; DAE never applies to a single law." .
+
+mkg:index a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "DECIDED. Only for laws written in 'for every component' form, e.g. 'species (i), reactions (j)'. Corresponds to OntoModel's Vector Specification. Members come from the ProcessContext at run time, never from the graph." .
+
+mkg:status a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "pending | accepted | flagged | rejected. Model building reads accepted only." .
+
+# Source (one per Law; Variables/Parameters carry their own quote via the same properties)
+mkg:doi   a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:page  a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:quote a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "Verbatim text from the paper. Gate: must appear word for word in the source." .
+
+# Assumptions / scope conditions: untyped blank nodes, no class.
+#   [] mkg:text "..." ; mkg:severity "blocking"|"warning" ;
+#      mkg:reasoned true|false ; mkg:quote "..." .
+mkg:hasAssumption a owl:ObjectProperty ; rdfs:domain mkg:Metadata .
+mkg:text      a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:severity  a owl:DatatypeProperty ; rdfs:range xsd:string .
+# Sup description (supmeta.py): a paragraph plus free-form facts, no fixed fields (26 Oct 2026; replaced
+# system / unitOperation / operatingMode / phenomenon / fittedOn). On a Sup's Metadata, or on a free law's.
+#   [] mkg:topic "feeding strategy" ; mkg:text "..." ; mkg:quote "..." ; mkg:basis "stated"|"inferred"|"human" .
+mkg:hasFact   a owl:ObjectProperty ; rdfs:domain mkg:Metadata ;
+    rdfs:comment "One statement the paper makes about the model (process, data, estimation, validity, limits)." .
+mkg:topic     a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "What a fact is about, in plain words the extractor chose (organism, scale, validation ...). Not a closed list." .
+mkg:contextDescription a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a free law's Metadata: the paper's description of the setting the law was fitted in." .
+mkg:completeModel a owl:DatatypeProperty ; rdfs:range xsd:boolean ;
+    rdfs:comment "On a Sup's Metadata: true if its laws form a closed model that can be simulated; false if the paper gives rate expressions only." .
+mkg:valuesByCase a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Parameter: the paper's values per data set or condition, as JSON {case: value} (Osberghaus: per protein and pH). Then the Parameter has no single mkg:value." .
+mkg:freeLaw   a owl:DatatypeProperty ; rdfs:range xsd:boolean ;
+    rdfs:comment "On a Law's Metadata: true if the paper fits this law on its own, with no model around it (Muloiwa 2020: 15 growth-rate expressions). No Sup includes it; the paper's description and facts sit on the law's own Metadata. Rivals by what it computes, like any law." .
+mkg:updates   a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Law's Metadata: the law updates this variable in place (mu_X = 0.5 mu_X (1 - tanh(...)), Goldrick 2015): the new value is the expression of the old one, applied in printed order after the law that computes it." .
+mkg:reasoned  a owl:DatatypeProperty ; rdfs:range xsd:boolean ;
+    rdfs:comment "True if the LLM reasoned it out rather than quoting it. Always goes to a human." .
+
+# Roles: untyped blank nodes, no RoleBinding class (DECIDED).
+#   [] mkg:slot "S1" ; mkg:boundTo <Variable> .
+mkg:hasRole  a owl:ObjectProperty ; rdfs:domain mkg:Metadata .
+mkg:slot     a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:boundTo  a owl:ObjectProperty ; rdfs:range mkg:Variable .
+
+# What Layer 3 needs per symbol (symbols.py, 26 Oct 2026). Written only when the paper says it (quote found).
+mkg:estimation  a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Parameter: estimated (fitted to data in this paper) | from literature | set (fixed by the authors)." .
+mkg:measured    a owl:DatatypeProperty ; rdfs:range xsd:boolean ;
+    rdfs:comment "On a Variable: true if the paper measured it in the data the model was fitted to or compared with." .
+mkg:initialValue a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Variable: its starting value (with unit) in the run the model was fitted to or simulated." .
+mkg:estimationQuote a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:measuredQuote   a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:initialQuote    a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:valueUncertainty a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Parameter: the uncertainty the paper reports for its value, as printed (sd, CI, RSD)." .
+mkg:sameQuantityAs a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "The symbol (in the same model) this one is the same quantity as, written differently (s and S)." .
+# Units as quantities (units.py, 27 Oct 2026): next to mkg:unitString (as printed). Only when the printed unit parses.
+mkg:unit      a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "The printed unit as a pint unit (g / l, 1 / h, mmol / cells / h (x1e-12))." .
+mkg:dimension a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "Its dimension in base dimensions ([mass] / [length] ** 3); cell, optical density are own dimensions." .
+mkg:siFactor  a owl:DatatypeProperty ; rdfs:range xsd:double ;
+    rdfs:comment "Multiply a value in this unit by this factor to get SI base units." .
+mkg:unitNote  a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "What the unit counts or a caveat (biomass/glucose in g/g; dimension only, no unit printed)." .
+mkg:possibleMisprint a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Law's Metadata: the extractor's opinion that the printed equation has an error, with its reason (a misprint in the paper, a unit inconsistency, or an OCR error since fixed). Kept after review so later agents can see it." .
+# Corrected forms (fixes.py, 27 Oct 2026): next to the printed equation, never instead of it.
+mkg:latexCorrected   a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Law: the corrected equation when the printed one has an error the paper itself shows (another equation, the text, units, a corrigendum). mkg:latex keeps the printed form." .
+mkg:correctionReason a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:correctionQuote  a owl:DatatypeProperty ; rdfs:range xsd:string .
+mkg:correctionStatus a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "proposed (by the LLM, not yet reviewed) | accepted (a reviewer chose it as the equation the model uses)." .
+mkg:ocrFixNote a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Law's Metadata: the stored LaTeX was corrected by a reviewer to match the PDF (an OCR misread, not an error in the paper)." .
+mkg:reviewOutcome a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "On a Law's Metadata, once a reviewer resolved a possible misprint: paper misprint (mkg:latexCorrected is used) | reading corrected (mkg:latex now matches the PDF) | false alarm (the equation is used as printed)." .
+
+# ---- Sup map (supmap.py): closeness of Sups from embeddings of their description and facts
+mkg:similarity a owl:DatatypeProperty ; rdfs:range xsd:decimal ; rdfs:comment "On a link node: cosine similarity of the two Sups' embeddings, -1 to 1." .
+mkg:Group a owl:Class ; rdfs:label "Group" ;
+    rdfs:comment "A group of Sups that sit close together on the Sup map. Derived, not extracted: members are grouped by code (average-linkage clustering of embedding similarity); the name (rdfs:label) is written by an LLM from the members' descriptions. Rebuilt with every shared KG." .
+mkg:inGroup a owl:ObjectProperty ; rdfs:domain mkg:Sup ; rdfs:range mkg:Group ;
+    rdfs:comment "The map group this Sup falls in." .
+
+# ---- Links between Sups (links.py): one LLM call per related pair, written straight into the graph (no review)
+mkg:hasLink a owl:ObjectProperty ; rdfs:domain mkg:Sup ;
+    rdfs:comment "A link node shared by two related Sups (both point to it): rdfs:label names the two, mkg:linkDescription says how they relate, mkg:similarity and mkg:provenance say where it came from." .
+mkg:linkDescription a owl:DatatypeProperty ; rdfs:range xsd:string ;
+    rdfs:comment "Free paragraph written by an LLM: how the two Sups relate, what they share, how they differ (naming the two models). No fixed labels." .
+mkg:provenance a owl:DatatypeProperty ; rdfs:range xsd:string ; rdfs:comment "Which model wrote the link text, from what, and when." .
+mkg:cites a owl:ObjectProperty ; rdfs:domain mkg:Sup ; rdfs:range mkg:Sup ;
+    rdfs:comment "Found by code: the Sup's facts name the other Sup's first author and year." .

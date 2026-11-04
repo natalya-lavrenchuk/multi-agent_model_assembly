@@ -1,0 +1,15 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "4": {
+   "action": "correct",
+   "printed_latex": "$$ \\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d t}=\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}} $$",
+   "corrected_latex": "$$ \\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d}t=-\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}} $$",
+   "reason": "The paper defines \\(r_s=d[S]/dt\\) and reports a positive yield coefficient, so the growth term needs a minus sign; as printed, it predicts increasing substrate during growth.",
+   "quote": "“Polynomial equations were derived to calculate the experimental cell production rate (r_x), where r_x = d[X]/dt, and [X] is cell concentration; and the glucose consumption rate (r_s), where rs = d[S]/dt, and [S] is glucose concentration.”",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

@@ -1,0 +1,347 @@
+{
+ "sup": "seidel_2018",
+ "title": "Kinetic modeling of methanol synthesis from renewable resources",
+ "doi": "10.1016/j.ces.2017.09.043",
+ "status": "proposed",
+ "proposed_by": "openai/gpt-oss-120b",
+ "models": [
+  {
+   "name": "Detailed kinetic model",
+   "equations": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "33",
+    "35",
+    "36",
+    "C-1",
+    "C-2",
+    "C-3"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": [
+    {
+     "text": "Catalyst deactivation neglected; only reactions (1)-(3) considered.",
+     "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.",
+     "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Single type of active centers (oxidized \\(\\odot\\) and reduced \\(*\\)) are considered.",
+     "quote": "In the classical approach of Graaf et al. (1986, 1988) or Bussche and Froment (1996), a single type of active centers on the surface is assumed.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Total numbers of oxidized, reduced and hydrogen centers are constant.",
+     "quote": "In a first step, constant total numbers of oxidized, reduced as well as hydrogen centers are assumed.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Fast steps are at quasi‑equilibrium.",
+     "quote": "The other steps are assumed to be much faster such that equilibrium can be assumed for them.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    }
+   ]
+  },
+  {
+   "name": "Simplified kinetic model",
+   "equations": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "28",
+    "33",
+    "35",
+    "36",
+    "C-1",
+    "C-2",
+    "C-3"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": [
+    {
+     "text": "Catalyst deactivation neglected; only reactions (1)-(3) considered.",
+     "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.",
+     "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Total numbers of oxidized, reduced and hydrogen centers are constant.",
+     "quote": "In a first step, constant total numbers of oxidized, reduced as well as hydrogen centers are assumed.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Fast steps are at quasi‑equilibrium.",
+     "quote": "The other steps are assumed to be much faster such that equilibrium can be assumed for them.",
+     "page": 2,
+     "severity": "blocking",
+     "reasoned": false
+    },
+    {
+     "text": "Simplified kinetics use lumped rate expressions (eqs 11‑13).",
+     "quote": "The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.",
+     "page": 3,
+     "severity": "blocking",
+     "reasoned": false,
+     "eq": "11"
+    }
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "1",
+   "reason": "reaction stoichiometry, not a model equation"
+  },
+  {
+   "eq": "2",
+   "reason": "reaction stoichiometry, not a model equation"
+  },
+  {
+   "eq": "3",
+   "reason": "reaction stoichiometry, not a model equation"
+  },
+  {
+   "eq": "17",
+   "reason": "not placed by the LLM"
+  },
+  {
+   "eq": "18",
+   "reason": "not placed by the LLM"
+  },
+  {
+   "eq": "19",
+   "reason": "not placed by the LLM"
+  },
+  {
+   "eq": "20",
+   "reason": "conflict: alternative expression for K1, replaced by thermodynamic form eq 24"
+  },
+  {
+   "eq": "21",
+   "reason": "conflict: alternative expression for K2, replaced by thermodynamic form eq 25"
+  },
+  {
+   "eq": "22",
+   "reason": "conflict: quasistatic phi, replaced by kinetic ODE eq 28 for transient model"
+  },
+  {
+   "eq": "23",
+   "reason": "derived from eqs 20‑22, not a primary model equation"
+  },
+  {
+   "eq": "24",
+   "reason": "conflict: thermodynamic expression for K1, kept as background; detailed model uses kinetic K1 from eq 20"
+  },
+  {
+   "eq": "25",
+   "reason": "conflict: thermodynamic expression for K2, kept as background; detailed model uses kinetic K2 from eq 21"
+  },
+  {
+   "eq": "26",
+   "reason": "derived quantity \\(\\tilde{\\Theta}^{\\odot}\\), not directly used in model equations"
+  },
+  {
+   "eq": "27",
+   "reason": "derived quantity \\(\\tilde{\\Theta}^{*}\\), not directly used in model equations"
+  },
+  {
+   "eq": "29",
+   "reason": "experimental rate calculation, not part of the kinetic model"
+  },
+  {
+   "eq": "30",
+   "reason": "parameter estimation objective, not part of the model"
+  },
+  {
+   "eq": "31",
+   "reason": "fitted \\(\\Delta G_1\\) value, not a model equation"
+  },
+  {
+   "eq": "32",
+   "reason": "fitted \\(\\Delta G_2\\) value, not a model equation"
+  },
+  {
+   "eq": "34",
+   "reason": "used to extend CSTR dynamics together with eq 35 and 33; equations 33,35,36 already included"
+  },
+  {
+   "eq": "37",
+   "reason": "objective function for parameter fitting, not part of the model"
+  },
+  {
+   "eq": "C-5",
+   "reason": "conflict: corrected r_CO2, already represented by eq 5"
+  },
+  {
+   "eq": "C-6",
+   "reason": "conflict: corrected r_RWGS, already represented by eq 6"
+  },
+  {
+   "eq": "C-11",
+   "reason": "conflict: alternative form of r_CO, superseded by eq 4 (detailed) and eq 11 (simplified)"
+  },
+  {
+   "eq": "C-12",
+   "reason": "conflict: alternative form of r_CO2, superseded by eq 5 (detailed) and eq 12 (simplified)"
+  },
+  {
+   "eq": "C-13",
+   "reason": "conflict: alternative form of r_RWGS, superseded by eq 6 (detailed) and eq 13 (simplified)"
+  },
+  {
+   "eq": "C-14",
+   "reason": "conflict: alternative surface coverage \\(\\Theta^{\\odot}\\), superseded by eq 7 (detailed) and eq 14 (simplified)"
+  },
+  {
+   "eq": "C-15",
+   "reason": "conflict: alternative surface coverage \\(\\Theta^{\\otimes}\\), superseded by eq 8 (detailed) and eq 15 (simplified)"
+  },
+  {
+   "eq": "C-16",
+   "reason": "conflict: alternative surface coverage \\(\\Theta^{*}\\), superseded by eq 9 (detailed) and eq 16 (simplified)"
+  },
+  {
+   "eq": "C-31",
+   "reason": "fitted \\(\\Delta G_1\\) value, not a model equation"
+  },
+  {
+   "eq": "C-32",
+   "reason": "fitted \\(\\Delta G_2\\) value, not a model equation"
+  }
+ ],
+ "checks": [
+  "'Detailed kinetic model': eq C-1 added back by code (computes K_{P1}, used by eq 4)",
+  "'Detailed kinetic model': eq C-2 added back by code (computes K_{P2}, used by eq 5)",
+  "'Detailed kinetic model': eq C-3 added back by code (computes K_{P3}, used by eq 6)",
+  "'Simplified kinetic model': eq C-1 added back by code (computes K_{P1}, used by eq 11)",
+  "'Simplified kinetic model': eq C-2 added back by code (computes K_{P2}, used by eq 12)",
+  "'Simplified kinetic model': eq C-3 added back by code (computes K_{P3}, used by eq 13)",
+  "'Simplified kinetic model': K_{1} is used, but the equation computing it (eq 20, 24) is not in the model",
+  "'Simplified kinetic model': K_{2} is used, but the equation computing it (eq 21, 25) is not in the model"
+ ],
+ "code_analysis": {
+  "stated": [
+   {
+    "sentence": "Eqs. (34) and (35) can be used to extend the dynamic equation of the CSTR (Eq. (33)) and leads to this system of ordinary differential equations:",
+    "equations": [
+     "34",
+     "35",
+     "33"
+    ]
+   },
+   {
+    "sentence": "List of estimated parameters for the detailed Eqs. (4)–(9) and simplified model Eqs. (11)–(16) using global optimization.",
+    "equations": [
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16"
+    ]
+   },
+   {
+    "sentence": "The parameter estimation was also done for the simplified kinetic model Eqs. (11)–(13).",
+    "equations": [
+     "11",
+     "12",
+     "13"
+    ]
+   }
+  ],
+  "tags": {
+   "1": "not an equation",
+   "2": "not an equation",
+   "3": "not an equation",
+   "4": "NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)",
+   "5": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "6": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "7": "NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)",
+   "9": "NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)",
+   "10": "NOT USED BY OTHERS: computes k_{i}; the model output (keep) or not part of the model (leave out)",
+   "11": "NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)",
+   "12": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "13": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "14": "NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "15": "NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)",
+   "16": "NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)",
+   "17": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "18": "not an equation",
+   "19": "not an equation",
+   "20": "CONFLICT: computes K_{1}, like eq 24",
+   "21": "CONFLICT: computes K_{2}, like eq 25",
+   "22": "CONFLICT: computes \\phi, like eq 28",
+   "23": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "24": "CONFLICT: computes K_{1}, like eq 20",
+   "25": "CONFLICT: computes K_{2}, like eq 21",
+   "26": "NOT USED BY OTHERS: computes \\tilde{\\Theta}^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "27": "NOT USED BY OTHERS: computes \\tilde{\\Theta}^{*}; the model output (keep) or not part of the model (leave out)",
+   "28": "CONFLICT: computes \\phi, like eq 22",
+   "29": "NOT USED BY OTHERS: computes R_{i,exp}; the model output (keep) or not part of the model (leave out)",
+   "30": "not an equation",
+   "31": "NOT USED BY OTHERS: computes \\Delta G_{1}; the model output (keep) or not part of the model (leave out)",
+   "32": "NOT USED BY OTHERS: computes \\Delta G_{2}; the model output (keep) or not part of the model (leave out)",
+   "33": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "34": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "35": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "36": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "37": "not an equation",
+   "C-11": "NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)",
+   "C-12": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "C-13": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "C-14": "NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)",
+   "C-15": "NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)",
+   "C-16": "NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)",
+   "C-1": "NOT USED BY OTHERS: computes K_{P1}; the model output (keep) or not part of the model (leave out)",
+   "C-2": "NOT USED BY OTHERS: computes K_{P2}; the model output (keep) or not part of the model (leave out)",
+   "C-3": "NOT USED BY OTHERS: computes K_{P3}; the model output (keep) or not part of the model (leave out)",
+   "C-5": "NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)",
+   "C-6": "NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)",
+   "C-31": "NOT USED BY OTHERS: computes \\Delta G_{1}; the model output (keep) or not part of the model (leave out)",
+   "C-32": "NOT USED BY OTHERS: computes \\Delta G_{2}; the model output (keep) or not part of the model (leave out)"
+  }
+ }
+}

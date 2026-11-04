@@ -1,0 +1,153 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2698,
+  "completion_tokens": 2219,
+  "total_tokens": 4917,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2695,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1502,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Kinetic SMA | Rapid-equilibrium SMA\n\nEquations:\n(4) k_{i,e q}=\\left(\\frac{q_{i}}{c_{i}}\\right)\\left(\\frac{c_{1}}{\\Lambda-\\sum_{i=2}^{n}(\\nu_{i}+\\sigma_{i})q_{i}}\\right)^{\\nu_{i}}\\quad i>1      <- \"$ ( \\partial q_i / \\partial t = 0) $, the equation for the SMA-isotherm can be derived from the above equations to be:\"\n(7) \\frac{\\partial c_{i}}{\\partial t}=-u_{i n t}\\frac{\\partial c_{i}}{\\partial x}+D_{a x}\\frac{\\partial^{2}c_{i}}{\\partial x^{2}}-\\frac{1-\\varepsilon_{c}}{\\varepsilon_{c}}\\cdot\\frac{3}{r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]      <- \"On column level, the time- and position-dependent change of concentration for the ith component, $ \\partial c_i/\\partial t $, is described by:\"\n(8) \\frac{\\partial c_{p,i}}{\\partial t}=\\frac{3}{\\varepsilon_{p}r_{p}}k_{e f f,i}[c_{i}-c_{p,i}]-\\frac{1-\\varepsilon_{p}}{\\varepsilon_{p}}\\frac{\\partial q_{i}}{\\partial t}      <- \"Analogously, the time-dependent change of concentration on particle level for the ith component, $ \\partial c_{p,i}/\\partial t $, is described by:\"\n\nSymbols:\n\nk_{i,eq}   [COMPUTED by eq 4]\n  [480] (table_row, p.11) Nomenclature: DoE: $ k_{i,eq} $ | design of experiments: equilibrium coefficient of component i\n\nu_{int}   [NOT COMPUTED]\n  [125] (sentence, p.3) $ u_{int} $ denotes the interstitial velocity,  $ \\varepsilon_{c} $ the column porosity,  $ D_{ax} $ displays the axial dispersion, more precisely, a combined effect of dispersion and diffusive processes, dispersion being eddies and all effects implied by thre\n  [152] (line, p.4) –  $ u_{int} $ – interstitial velocity\n  [206] (sentence, p.4) with  $ u_{int} $ being the interstitial velocity,  $ L_C $ the column length and  $ \\mu_{mom} $ and  $ \\sigma_{mom} $ the first respectively second central moment of the nonbinding and nonpenetrating tracer peaks.\n\nD_{ax}   [NOT COMPUTED]\n  [125] (sentence, p.3) $ u_{int} $ denotes the interstitial velocity,  $ \\varepsilon_{c} $ the column porosity,  $ D_{ax} $ displays the axial dispersion, more precisely, a combined effect of dispersion and diffusive processes, dispersion being eddies and all effects implied by thre\n  [151] (line, p.4) –  $ D_{ax} $ – axial dispersion\n  [196] (sentence, p.4) For the determination of external information in approach I and approach II ( $ \\varepsilon_c $,  $ \\varepsilon_p $,  $ \\varepsilon_t $, the column, particle and total porosity,  $ \\Lambda $, the ionic capacity of the column,  $ D_{ax} $, the axial dispersion \n  [475] (table_row, p.11) Nomenclature: DoE: $ D_{ax} $ | design of experiments: axial dispersion ( $ m^{{2}} s^{{-1}} $)\n\n\\varepsilon_{c}   [NOT COMPUTED]\n  [125] (sentence, p.3) $ u_{int} $ denotes the interstitial velocity,  $ \\varepsilon_{c} $ the column porosity,  $ D_{ax} $ displays the axial dispersion, more precisely, a combined effect of dispersion and diffusive processes, dispersion being eddies and all effects implied by thre\n  [153] (line, p.4) –  $ \\varepsilon_{c} $ – column porosity\n  [114] (sentence, p.3) •  $ \\varepsilon_{c} $ – column porosity\n\nr_{p}   [NOT COMPUTED]\n  [124] (sentence, p.3) where the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface,  $ k_{eff,i} $ representing the lumped film diffusion coef\n  [159] (sentence, p.4) -  $ r_{p} $ - particle radius.\n  [483] (table_row, p.11) Nomenclature: DoE: $ r_p $ | design of experiments: particle radius (m)\n\nk_{eff,i}   [NOT COMPUTED]\n  [124] (sentence, p.3) where the first term on the right hand side describes the convective transport through the column, the second term the dispersive transport and the third term the mass transfer to the particle surface,  $ k_{eff,i} $ representing the lumped film diffusion coef\n  [477] (table_row, p.11) Nomenclature: DoE: $ k_{eff,i} $ | design of experiments: effective film transfer coefficient for component i (m/s)\n\nc_{p,i}   [COMPUTED by eq 8]\n  [126] (sentence, p.3) Analogously, the time-dependent change of concentration on particle level for the ith component,  $ \\partial c_{p,i}/\\partial t $, is described by:\n  [471] (table_row, p.11) Nomenclature: DoE: $ c_{p,i} $ | design of experiments: concentration of component i in the mobile phase on particle level (M)\n\n\\varepsilon_{p}   [NOT COMPUTED]\n  [154] (line, p.4) –  $ \\varepsilon_{p} $ – particle porosity\n  [127] (sentence, p.3) with  $ q_i $ denoting the concentration of particle-bound component i and  $ \\varepsilon_p $ the particle porosity.\n  [196] (sentence, p.4) For the determination of external information in approach I and approach II ( $ \\varepsilon_c $,  $ \\varepsilon_p $,  $ \\varepsilon_t $, the column, particle and total porosity,  $ \\Lambda $, the ionic capacity of the column,  $ D_{ax} $, the axial dispersion ",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "k_{i,eq}",
+    "description": "Equilibrium coefficient of component i",
+    "description_basis": "stated",
+    "snippet_id": 480,
+    "quote": "equilibrium coefficient of component i",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "u_{int}",
+    "description": "Interstitial velocity",
+    "description_basis": "stated",
+    "snippet_id": 152,
+    "quote": "interstitial velocity",
+    "unit": "m s^-1",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A run-dependent operating velocity, rather than a constant of a law.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "D_{ax}",
+    "description": "Axial dispersion",
+    "description_basis": "stated",
+    "snippet_id": 151,
+    "quote": "axial dispersion",
+    "unit": "m^2 s^-1",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A transport coefficient treated as a property of the column system.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\varepsilon_{c}",
+    "description": "Column porosity",
+    "description_basis": "stated",
+    "snippet_id": 153,
+    "quote": "column porosity",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A fraction describing the column system.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "r_{p}",
+    "description": "Particle radius",
+    "description_basis": "stated",
+    "snippet_id": 483,
+    "quote": "particle radius",
+    "unit": "m",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A particle-size property of the system.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "k_{eff,i}",
+    "description": "Effective film transfer coefficient for component i",
+    "description_basis": "stated",
+    "snippet_id": 477,
+    "quote": "effective film transfer coefficient for component i",
+    "unit": "m/s",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A film-transfer coefficient of the system.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "c_{p,i}",
+    "description": "Concentration of component i in the mobile phase on particle level",
+    "description_basis": "stated",
+    "snippet_id": 471,
+    "quote": "concentration of component i in the mobile phase on particle level",
+    "unit": "M",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\varepsilon_{p}",
+    "description": "Particle porosity",
+    "description_basis": "stated",
+    "snippet_id": 154,
+    "quote": "particle porosity",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_model": [],
+    "class_reason": "A fraction describing the particle system.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   }
+  ]
+ }
+}

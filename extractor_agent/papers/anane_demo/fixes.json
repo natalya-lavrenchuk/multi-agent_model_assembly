@@ -1,0 +1,35 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "18": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{s}\\boldsymbol{A}\\boldsymbol{X} $$",
+   "corrected_latex": "$$ \\frac{d\\boldsymbol{A}}{dt}=\\frac{\\boldsymbol{F}}{V}\\left(\\mathbf{0}-\\boldsymbol{A}\\right)+q_{A}\\boldsymbol{X} $$",
+   "reason": "The acetate balance requires the net acetate rate, so replace the printed glucose-uptake term with q_A, which the following equation defines as p_A-q_{sA}.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "19": {
+   "action": "keep as printed",
+   "printed_latex": "$$ q_{A}=p_{A}-q_{sA} $$",
+   "corrected_latex": null,
+   "reason": "Although the nomenclature calls q_A a consumption rate, the paper uses it as a signed net acetate excretion rate, with negative values indicating uptake.",
+   "quote": "Negative acetate excretion rates imply that extracellular acetate is taken up by the cell.",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "21": {
+   "action": "correct",
+   "printed_latex": "$$ q_{sA}=\\frac{q_{Amax}}{1+\\frac{q_{s}}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}} $$",
+   "corrected_latex": "$$ q_{sA}=\\frac{q_{Amax}}{1+\\frac{S}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}} $$",
+   "reason": "The inhibition term should use glucose concentration S, not specific glucose uptake q_s, because the paper describes inhibition by glucose in the medium and lists K_{is} in concentration units.",
+   "quote": "The uptake of acetate, however, is inhibited in a non-competitive way by the presence of glucose in the medium due to E. coli's higher preference for glucose over acetate [27].",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.303138742,
+  "prompt_tokens": 9287,
+  "prompt_time": 0.437515169,
+  "completion_tokens": 1731,
+  "completion_time": 3.613600568,
+  "total_tokens": 11018,
+  "total_time": 4.051115737,
+  "completion_tokens_details": {
+   "reasoning_tokens": 96
+  }
+ },
+ "user": "Title: Kinetic modeling of methanol synthesis from renewable resources\n\nAbstract: In the present paper new detailed kinetic model for the methanol synthesis from  $ H_{2} $,  $ CO_{2} $ and/or CO using a Cu/ZnO/ $ Al_{2}O_{3} $ catalyst is proposed. In contrast to most established models different active surface species for CO and  $ CO_{2} $ hydrogenation are taken into account. It is shown that changes in the relative amounts of these different surface species, which are related to changes in catalyst morphology, play an important role for the dynamic transient behavior. The model is therefore suitable for evaluating new applications in chemical energy storage, where strongly varying ratios of CO and  $ CO_{2} $ are of relevance. The model parameters were fitted to steady state and dynamic experimental data for varying  $ CO/CO_{2} $ feed ratios using global optimization. Identifiability is studied using the Profile-Likelihood method giving rise to a reduced kinetic model.\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [not an equation] p.1  .... The reaction network comprises three main reactions, i.e. hydrogenation of CO and CO₂ as well as the water-gas shift reaction according to\n    CO+2H_{2}\\rightleftharpoons CH_{3}OH\n(2) [not an equation] p.1  .... The reaction network comprises three main reactions, i.e. hydrogenation of CO and CO₂ as well as the water-gas shift reaction according to\n    CO_{2}+3H_{2}\\rightleftharpoons CH_{3}OH+H_{2}O\n(3) [not an equation] p.1  .... The reaction network comprises three main reactions, i.e. hydrogenation of CO and CO₂ as well as the water-gas shift reaction according to\n    CO_{2}+H_{2}\\rightleftharpoons CO+H_{2}O\n(4) [NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)] p.3  ...one can calculate the reaction rates for the CO-hydrogenation,  $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\n    r_{\\mathrm{{C O}}}=k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}_{1}}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes}\n(5) [NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)] p.3  ...one can calculate the reaction rates for the CO-hydrogenation,  $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\n    r_{\\mathrm{C O}_{2}}=k_{2}\\left(p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}-\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}_{2}}p_{\\mathrm{H}_{2}}^{2}}\\right)\\boldsymbol{\\Theta}^{*^{2}}\\boldsymbol{\\Theta}^{\\odot\n(6) [NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)] p.3  ...one can calculate the reaction rates for the CO-hydrogenation,  $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\n    r_{R W G S}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}_{3}}p_{\\mathrm{H}_{2}}}\\right)\\boldsymbol{\\Theta}^{\\otimes}\\boldsymbol{\\Theta}^{*}\n(7) [NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)] p.3  ... are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\n    \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{8}}p_{\\mathrm{CO}}+\\underbrace{\\left(K_{\\mathrm{A3}}K_{\\mathrm{CO}}K_{\\mathrm{H}_{2}}^{3/2}\\right)}_{\\beta_{9}}p_{\\mathrm{H}_{2}}^{3/2}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3\n(8) [NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)] p.3  ... are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\n    \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}\n(9) [NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)] p.3  ... are close to one for the operating conditions considered in this paper (Vollbrecht, 2007). The corresponding surface coverages are given by\n    \\boldsymbol{\\Theta}^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{B}8}K_{\\mathrm{B}9}K_{\\mathrm{H}_{2}}}_{\\beta_{13}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{\\frac{K_{\\mathrm{CH}_{3}\\mathr\n(10) [NOT USED BY OTHERS: computes k_{i}; the model output (keep) or not part of the model (leave out)] p.3  ...refore, the following reformulation of the Arrhenius-equation is used (Schwaab et al., 2008; Schwaab and Pinto, 2007; Xu and Froment, 1989):\n    k_{i}=\\exp\\left(\\underbrace{A}_{\\beta_{1},\\beta_{3},\\beta_{5}}-\\underbrace{B}_{\\beta_{2},\\beta_{4},\\beta_{6}}\\left(\\frac{T_{ref}}{T}-1\\right)\\right)\n(11) [NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)] p.3  ...ed reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis. This leads to the following simplified reaction rate expressions:\n    r_{\\mathrm{C O}}=k_{1}p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}}^{2}\\left(1-\\frac{1}{K_{\\mathrm{P}1}}\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}}{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}}^{2}}\\right)\\boldsymbol{\\Theta}^{\\odot}\\boldsymbol{\\Theta}^{\\otimes4}\n(12) [NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)] p.3  ...ed reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis. This leads to the following simplified reaction rate expressions:\n    r_{\\mathrm{C O}_{2}}=k_{2}p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}^{2}\\left(1-\\frac{1}{K_{\\mathrm{P}2}}\\frac{p_{\\mathrm{C H}_{3}\\mathrm{O H}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}^{3}}\\right)\\boldsymbol{\\Theta}^{\n(13) [NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)] p.3  ...ed reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis. This leads to the following simplified reaction rate expressions:\n    r_{R W G S}=k_{3}p_{C O_{2}}\\left(1-\\frac{1}{K_{P3}}\\frac{p_{C O}p_{H_{2}O}}{p_{C O_{2}}p_{H_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}\n(14) [NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)] p.3  ...The corresponding surface coverages are:\n    \\boldsymbol{\\Theta}^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}\\boldsymbol{p}_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}\\boldsymbol{p}_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}\n(15) [NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)] p.3  ...The corresponding surface coverages are:\n    \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}\n(16) [NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)] p.3  ...The corresponding surface coverages are:\n    \\Theta^{*}=\\left(1+\\underbrace{\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}}_{-\\frac{\\beta_{10}\\beta_{9}}{\\beta_{7}^{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}}_{\\bet\n(17) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...nt is relaxed and replaced by the more general assumption that the sum of all oxidized and reduced surface centers is constant according to:\n    \\underbrace{\\sum_{i}^{N}\\odot_{i}}_{oxidized~centers}+\\underbrace{\\sum_{j}^{M}\\ast_{j}}_{reduced~centers}=constant=1\n(18) [not an equation] p.4  ...ng components. This causes a reduction of the catalyst while facing CO and  $ H_{2} $ and an oxidation if facing  $ CO_{2} $ and  $ H_{2}O $\n    \\mathrm{H_{2}}+\\odot_{\\mathrm{i}}\\rightleftharpoons\\mathrm{H_{2}O}+*_{\\mathrm{i}}\n(19) [not an equation] p.4  ...ng components. This causes a reduction of the catalyst while facing CO and  $ H_{2} $ and an oxidation if facing  $ CO_{2} $ and  $ H_{2}O $\n    CO+\\odot_{i}\\rightleftharpoons CO_{2}+*_{i}\n(20) [CONFLICT: computes K_{1}, like eq 24] p.4  ...At steady state, reactions (18) and (19) are in equilibrium according to\n    K_{1}=\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\cdot\\frac{\\phi}{1-\\phi}\n(21) [CONFLICT: computes K_{2}, like eq 25] p.4  ...At steady state, reactions (18) and (19) are in equilibrium according to\n    K_{2}=\\frac{p_{\\mathrm{C O}_{2}}}{p_{\\mathrm{C O}}}\\cdot\\frac{\\phi}{1-\\phi}\n(22) [CONFLICT: computes \\phi, like eq 28] p.4  ... the total amount of oxidized centers. Following Ovesen et al. (1997),  $ \\phi $ can be calculated from the equilibrium relations as follows\n    \\phi=\\frac{1}{2}\\left(1-\\frac{\\gamma^{*}}{\\gamma_{0}}\\right)\n(23) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...with\n    \\frac{\\gamma^{*}}{\\gamma_{0}}=\\frac{1-\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}_{2}}}}}{1+\\sqrt{K_{1}K_{2}\\frac{p_{\\mathrm{H}_{2}}p_{\\mathrm{C O}}}{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\\n(24) [CONFLICT: computes K_{1}, like eq 20] p.4  ..., 1901). The equilibrium constants  $ K_{1} $ and  $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n    K_{1}=\\frac{k_{1}^{+}}{k_{1}^{-}}=\\exp\\left(\\frac{-\\Delta G_{1}}{RT}\\right)\n(25) [CONFLICT: computes K_{2}, like eq 21] p.4  ..., 1901). The equilibrium constants  $ K_{1} $ and  $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n    K_{2}=\\frac{k_{2}^{+}}{k_{2}^{-}}=\\exp\\left(\\frac{-\\Delta G_{2}}{RT}\\right)\n(26) [NOT USED BY OTHERS: computes \\tilde{\\Theta}^{\\odot}; the model output (keep) or not part of the model (leave out)] p.4  ...Theta^{*}$ in Eqs. (4)–(6), or (11)–(13), respectively, with $\\tilde{\\Theta}^{\\odot}$ and $\\tilde{\\Theta}^{*}$ from the following relations.\n    \\tilde{\\Theta}^{\\odot}=(1-\\phi)\\cdot\\Theta^{\\odot}\n(27) [NOT USED BY OTHERS: computes \\tilde{\\Theta}^{*}; the model output (keep) or not part of the model (leave out)] p.4  ...Theta^{*}$ in Eqs. (4)–(6), or (11)–(13), respectively, with $\\tilde{\\Theta}^{\\odot}$ and $\\tilde{\\Theta}^{*}$ from the following relations.\n    \\tilde{\\Theta}^{*}=\\phi\\cdot\\Theta^{*}\n(28) [CONFLICT: computes \\phi, like eq 22] p.4  ... 2009; Wilmer and Hinrichsen, 2002). Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation\n    \\begin{align*}\\frac{d\\phi}{dt}&=k_{1}^{+}\\bigg(y_{\\mathrm{H}_{2}}(1-\\phi)-\\frac{1}{K_{1}}y_{\\mathrm{H}_{2}\\mathrm{O}}\\phi\\bigg)\\\\&\\quad+k_{2}^{+}\\bigg(y_{\\mathrm{CO}}(1-\\phi)-\\frac{1}{K_{2}}y_{\\mathrm{CO}_{2}}\\phi\\bigg).\\end{align*}\n(29) [NOT USED BY OTHERS: computes R_{i,exp}; the model output (keep) or not part of the model (leave out)] p.5  ...ental reaction rates  $ R_{i,exp} $ can be calculated from the measured in- and output mole fractions  $ y_{i,0} $ and  $ y_i $ according to\n    R_{i,exp}=-\\left(y_{i,0}-y_{i}\\gamma\\right)\\frac{p_{N}\\dot{V}_{N}}{RT_{N}m_{kat}}\n(30) [not an equation] p.5  ...ng the reaction rates $R_{i,exp}$, parameters $\\beta_{i}$ are determined from the solution of a nonlinear least squares problem according to\n    \\min_{\\forall\\beta_{i}}\\left(\\sum_{i=1}^{N}\\left(R_{i,exp}-\\sum_{j=1}^{3}\\nu_{ij}r_{j}\\right)^{2}\\right)\n(31) [NOT USED BY OTHERS: computes \\Delta G_{1}; the model output (keep) or not part of the model (leave out)] p.5  ...g Eqs. (20)–(23) and the measured values of the partial pressures of CO, $CO_2$, $H_2$ and $H_2O$. The global optimum obtained from BARON is\n    \\Delta G_{1}=1.1348\\times10^{3}J mol^{-1}\n(32) [NOT USED BY OTHERS: computes \\Delta G_{2}; the model output (keep) or not part of the model (leave out)] p.5  ...g Eqs. (20)–(23) and the measured values of the partial pressures of CO, $CO_2$, $H_2$ and $H_2O$. The global optimum obtained from BARON is\n    \\Delta G_{2}=-0.7693\\times10^{3}\\mathrm{J}\\mathrm{m o l}^{-1}\n(33) [NEEDED: an ODE (the model, or background from earlier work?)] p.5  ...or this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions  $ y_i $\n    \\dot{y}_{i}=Z\\Bigg[\\frac{1}{\\tau}y_{i,0}-\\Bigg(\\frac{1}{\\tau}+\\frac{1}{\\mathcal{K}}\\sum_{i=1}^{N_{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg)y_{i}+\\frac{1}{\\mathcal{K}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}\\Bigg]\n(34) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.5  ...Vollbrecht, 2007). In this case the specific amount of surface centers  $ q_{sat} $ has to be considered that extends the reaction terms to:\n    m_{\\mathrm{k a t}}\\sum_{j=1}^{N_{R}}\\nu_{i j}r_{j}=m_{\\mathrm{k a t}}\\cdot q_{\\mathrm{s a t}}\\sum_{j=1}^{N_{R}}\\sum_{e=1}^{N_{E S,j}}\\nu_{i j}^{(e)}r_{j}^{(e)}\n(35) [NEEDED: an ODE (the model, or background from earlier work?)] p.5  ...Furthermore the dynamic change in the surface coverage for each species can be calculated by:\n    \\frac{d\\Theta_{s}}{d t}=\\sum_{i=1}^{N_{K}}\\frac{\\partial\\Theta_{i}}{\\partial p_{i}}\\frac{d p_{i}}{d t}=\\sum_{j=1}^{N_{R}}\\sum_{e=1}^{N_{E S,j}}\\nu_{i j}^{(e)}r_{j}^{(e)}\n(36) [NEEDED: an ODE (the model, or background from earlier work?)] p.5  ...(34) and (35) can be used to extend the dynamic equation of the CSTR (Eq. (33)) and leads to this system of ordinary differential equations:\n    M(t,y)\\cdot\\frac{dy}{dt}=f(t,y)\n(37) [not an equation] p.5  ...r nonlinear least squares problem was solved in terms of the mole fractions of the different components at different time point according to\n    \\min_{k_{1},k_{2}}\\sum_{k}\\sum_{i}\\left(y_{i,exp}(t_{k})-y_{i}(t_{k})\\right)^{2}\n(C-11) [NOT USED BY OTHERS: computes r_{CO}; the model output (keep) or not part of the model (leave out)] p.11  ...The correct model equations used for all calculations presented in Seidel et al., (2018), are:\n    r_{\\mathrm{{C O}}}=(1-\\phi)k_{1}\\left(p_{\\mathrm{{C O}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}}{K_{\\mathrm{{P}1}}}\\right)\\Theta^{\\odot}\\Theta^{\\otimes^{4}}\n(C-12) [NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)] p.11  ...The correct model equations used for all calculations presented in Seidel et al., (2018), are:\n    r_{\\mathrm{{C O}_{2}}}=\\phi^{2}k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}^{2}-\\frac{1}{K_{\\mathrm{{P}2}}}\\frac{p_{\\mathrm{{C H}_{3}\\mathrm{{O H}}}}p_{\\mathrm{{H}_{2}\\mathrm{O}}}}{p_{\\mathrm{{H}_{2}}}}\\right)\\Theta^{*^{2}}\\Theta^{\n(C-13) [NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)] p.11  ...The correct model equations used for all calculations presented in Seidel et al., (2018), are:\n    r_{\\mathrm{R W G S}}=\\phi(1-\\phi)^{-1}k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{1}{K_{\\mathrm{P}3}}\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}\\right)\\Theta^{*}\\Theta^{\\odot}\n(C-14) [NOT USED BY OTHERS: computes \\Theta^{\\odot}; the model output (keep) or not part of the model (leave out)] p.11  ...The corresponding surface coverages are:\n    \\Theta^{\\odot}=\\left(1+\\underbrace{K_{\\mathrm{CO}}}_{\\beta_{11}}p_{\\mathrm{CO}}+\\underbrace{K_{\\mathrm{CH}_{3}\\mathrm{OH}}^{\\odot}}_{\\beta_{12}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{\\odot}}_{\\beta_{14}}p_{\\mathrm{C\n(C-15) [NOT USED BY OTHERS: computes \\Theta^{\\otimes}; the model output (keep) or not part of the model (leave out)] p.11  ...The corresponding surface coverages are:\n    \\Theta^{\\otimes}=\\left(1+\\underbrace{\\sqrt{K_{\\mathrm{H}_{2}}}}_{ \\beta_{7}}\\sqrt{p_{\\mathrm{H}_{2}}}\\right)^{-1}\n(C-16) [NOT USED BY OTHERS: computes \\Theta^{*}; the model output (keep) or not part of the model (leave out)] p.11  ...The corresponding surface coverages are:\n    \\Theta^{*}=\\left(1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}K_{\\mathrm{O}}}{K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\underbrace{K_{\\mathrm{CO}_{2}}^{*}}_{\\beta_{13}}p_{\\mathrm{CO}_{2}}+\\underbrace{K_{\\mathrm{CH}_\n(C-1) [NOT USED BY OTHERS: computes K_{P1}; the model output (keep) or not part of the model (leave out)] p.12  ... al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n    \\begin{aligned}\\lg(K_{P1})&=13.8140+3784.4/T-9.2833\\cdot\\lg(T)\\\\&\\quad+3.1475\\times10^{-3}T-4.2613\\times10^{-7}T^{2}\\end{aligned}\n(C-2) [NOT USED BY OTHERS: computes K_{P2}; the model output (keep) or not part of the model (leave out)] p.12  ... al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n    \\begin{aligned}\\lg(K_{P2})&=15.0921+1581.7/T-8.7639\\cdot\\lg(T)\\\\&\\quad+2.1105\\times10^{-3}T-1.9303\\times10^{-7}T^{2}\\end{aligned}\n(C-3) [NOT USED BY OTHERS: computes K_{P3}; the model output (keep) or not part of the model (leave out)] p.12  ... al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n    \\begin{aligned}\\lg(K_{P3})&=1.2777-2167/T+0.5194\\cdot\\lg(T)\\\\&\\quad-1.037\\times10^{-3}T+2.331\\times10^{-7}T^{2}\\end{aligned}\n(C-5) [NOT USED BY OTHERS: computes r_{CO_2}; the model output (keep) or not part of the model (leave out)] p.12  ...Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n    r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}\n(C-6) [NOT USED BY OTHERS: computes r_{RWGS}; the model output (keep) or not part of the model (leave out)] p.12  ...Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n    r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}\n(C-31) [NOT USED BY OTHERS: computes \\Delta G_{1}; the model output (keep) or not part of the model (leave out)] p.12  ...Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n    \\Delta G_{1}=11.348\\mathrm{kJ}\\mathrm{m o l}^{-1}\n(C-32) [NOT USED BY OTHERS: computes \\Delta G_{2}; the model output (keep) or not part of the model (leave out)] p.12  ...Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n    \\Delta G_{2}=-7.693\\mathrm{kJ}\\mathrm{mol}^{-1}\n\nSentences in which the paper lists equations:\n- \"Eqs. (34) and (35) can be used to extend the dynamic equation of the CSTR (Eq. (33)) and leads to this system of ordinary differential equations:\"  -> eqs 34, 35, 33\n- \"List of estimated parameters for the detailed Eqs. (4)–(9) and simplified model Eqs. (11)–(16) using global optimization.\"  -> eqs 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16\n- \"The parameter estimation was also done for the simplified kinetic model Eqs. (11)–(13).\"  -> eqs 11, 12, 13\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The model is therefore suitable for evaluating new applications in chemical energy storage, where strongly varying ratios of CO and  $ CO_{2} $ are of relevance.\n- (p.1) A very popular and widely known kinetic model was proposed by Graaf et al. (1986, 1988) in the 1980s assuming hydrogenation of CO as dominant path to synthesize methanol.\n- (p.2) The model is extended with a dynamic morphology model taking a variable amount of different active centers for each reaction into account.\n- (p.2) In the remainder, this paper focuses on methanol synthesis from  $ H_2 $, CO, and  $ CO_2 $ over industrial  $ Cu/ZnO/Al_2O_3 $ catalysts with pressure between 50–100 bar and temperatures between 473.15 and 573.15 K acco\n- (p.2) In this work the following model assumptions are made:\n- (p.2) The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.\n- (p.2) The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.\n- (p.2) In the classical approach of Graaf et al. (1986, 1988) or Bussche and Froment (1996), a single type of active centers on the surface is assumed.\n- (p.2) i: ☐ for oxidized surface centers, also assumed as active center for CO-hydrogenation.\n- (p.2) ii: * for reduced surface centers, also assumed as active center for  $ CO_{2} $-hydrogenation.\n- (p.2) In a first step, constant total numbers of oxidized, reduced as well as hydrogen centers are assumed.\n- (p.2) This model assumes a constant relative amount of centers for each species.\n- (p.2) The other steps are assumed to be much faster such that equilibrium can be assumed for them.\n- (p.3) Using the quasi equilibrium assumption (QEA) for the fast reactions, one can calculate the reaction rates for the CO-hydrogenation,  $ CO_{2} $-hydrogenation and the reverse-water-gas shift reaction as follows\n- (p.3) Therefore, the following reformulation of the Arrhenius-equation is used (Schwaab et al., 2008;\n- (p.3) The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.\n- (p.4) This reduces the problem to a total number of 14 unknown parameters, which are 6 unknown parameters for the reaction rate constants according to Eq. (10) and another 8 unknown adsorption constants.\n- (p.4) But this assumption does not explain transient effects after changes in the feed gas composition as described for example in the work of Choi et al. (2001a,b), Muhler et al. (1994), Nakamura et al. (2003), Peter et al. (\n- (p.4) The assumption that the total number of oxidized and reduced surface centers is constant is relaxed and replaced by the more general assumption that the sum of all oxidized and reduced surface centers is constant accordi\n- (p.4) The equilibrium constants  $ K_{1} $ and  $ K_{2} $ (Eqs. (20) and (21)) can be expressed as a function of free energy according to\n- (p.4) With $\\phi$ from Eqs. (20)–(22) the kinetic equations from the previous section assuming a constant amount of reduced and oxidized centers can be reformulated for a variable number of reduced and oxidized centers by repl\n- (p.4) Under transient conditions, reaction equilibrium according to Eqs. (20) and (21) is not valid anymore.\n- (p.4) Therefore, under transient conditions Eq. (22) has to be replaced by the corresponding kinetic equation\n- (p.5) The dynamic experiments were used to estimate the kinetic parameters  $ k_1^+ $ and  $ k_2^+ $ in Eq. (28).\n- (p.5) with  $ r_j $ from Eqs. (4)–(6) for the detailed kinetics and Eqs. (11)–(13) for the simplified kinetics and stoichiometric coefficients from Table 4.\n- (p.5) In a first separate step, $\\Delta G_1$ and $\\Delta G_2$ are fitted to the experimental data using Eqs. (20)–(23) and the measured values of the partial pressures of CO, $CO_2$, $H_2$ and $H_2O$.\n- (p.5) For each subset, a nonlinear least squares problem (30) is solved using the results from the previous step.\n- (p.5) As pointed out above, dynamic experiments were used to fit the kinetic constants  $ k_1^+ $,  $ k_2^+ $ from Eq. (28).\n- (p.5) For this purpose, the dynamic reactor equations from Vollbrecht (2007) were used to calculate the trajectories of the mole fractions  $ y_i $\n- (p.5) which can be solved numerically.\n- (p.5) Another nonlinear least squares problem was solved in terms of the mole fractions of the different components at different time point according to\n- (p.5) This dynamic optimization problem was solved in MATLAB (MATLAB, 2014) using the TOMLAB toolbox (Holmstroem, 1997).\n- (p.7) The simplified model was either used with quasistatic  $ \\phi $ from Eq. (22) or dynamic  $ \\phi $ from Eq. (28).\n- (p.8) Estimated parameter for catalyst ODE (Eq. (33)) using the dynamic experimental data of (Vollbrecht, 2007) and the previously estimated equilibrium constants Eqs. (24) and (25).\n- (p.8) From Fig. 6 it is observed that the simplified model with dynamic  $ \\phi $ from Eq. (28) is able to reproduce the experiments quite well, whereas the simplified model with a quasistatic  $ \\phi $ from Eq. (28) neglects ",
+ "answer": {
+  "models": [
+   {
+    "name": "Detailed kinetic model",
+    "assumptions": [
+     {
+      "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+      "text": "Catalyst deactivation neglected; only reactions (1)-(3) considered."
+     },
+     {
+      "quote": "The Modeling is based on the Langmuir-Hinshelwood mechanism and consists of three main steps: first adsorption at the surface, reaction at the surface and desorption from the surface.",
+      "text": "Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption."
+     },
+     {
+      "quote": "i: ☐ for oxidized surface centers, also assumed as active center for CO‑hydrogenation.",
+      "text": "Oxidized centers (⊙) are active for CO hydrogenation."
+     },
+     {
+      "quote": "ii: * for reduced surface centers, also assumed as active center for CO₂‑hydrogenation.",
+      "text": "Reduced centers (∗) are active for CO₂ hydrogenation."
+     },
+     {
+      "quote": "In a first step, constant total numbers of oxidized, reduced as well as hydrogen centers are assumed.",
+      "text": "Total numbers of oxidized, reduced and hydrogen centers are constant."
+     },
+     {
+      "quote": "The other steps are assumed to be much faster such that equilibrium can be assumed for them.",
+      "text": "Fast steps are at quasi‑equilibrium."
+     },
+     {
+      "quote": "Using the quasi equilibrium assumption (QEA) for the fast reactions, one can calculate the reaction rates for the CO‑hydrogenation, CO₂‑hydrogenation and the reverse‑water‑gas shift reaction as follows",
+      "text": "Quasi‑equilibrium assumption for fast adsorption/desorption steps."
+     }
+    ],
+    "boundary_quote": null,
+    "complete_model": false,
+    "equations": [
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9",
+     "10",
+     "33",
+     "34",
+     "35",
+     "36"
+    ]
+   },
+   {
+    "name": "Simplified kinetic model",
+    "assumptions": [
+     {
+      "quote": "The catalyst deactivation is neglected and no side reactions beyond Eqs. (1)–(3) are considered.",
+      "text": "Catalyst deactivation neglected; only reactions (1)-(3) considered."
+     },
+     {
+      "quote": "The simplified Langmuir-Hinshelwood kinetics is not based on elementary reaction steps but on lumped reaction kinetics for reactions Eqs. (1)–(3) of the methanol synthesis.",
+      "text": "Lumped kinetics for reactions (1)-(3)."
+     },
+     {
+      "quote": "The other steps are assumed to be much faster such that equilibrium can be assumed for them.",
+      "text": "Fast steps are at quasi‑equilibrium."
+     },
+     {
+      "quote": "The simplified model was either used with quasistatic φ from Eq. (22) or dynamic φ from Eq. (28).",
+      "text": "Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28)."
+     }
+    ],
+    "boundary_quote": null,
+    "complete_model": false,
+    "equations": [
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "33",
+     "34",
+     "35",
+     "36"
+    ]
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "1",
+    "reason": "not an equation (reaction stoichiometry)"
+   },
+   {
+    "eq": "2",
+    "reason": "not an equation (reaction stoichiometry)"
+   },
+   {
+    "eq": "3",
+    "reason": "not an equation (reaction stoichiometry)"
+   },
+   {
+    "eq": "20",
+    "reason": "CONFLICT – duplicate definition of K₁, restated by Eq.24"
+   },
+   {
+    "eq": "21",
+    "reason": "CONFLICT – duplicate definition of K₂, restated by Eq.25"
+   },
+   {
+    "eq": "22",
+    "reason": "CONFLICT – duplicate definition of φ, restated by Eq.28"
+   },
+   {
+    "eq": "23",
+    "reason": "NOT USED BY OTHERS – intermediate expression not used in model equations"
+   },
+   {
+    "eq": "24",
+    "reason": "CONFLICT – alternative expression for K₁, restates Eq.20"
+   },
+   {
+    "eq": "25",
+    "reason": "CONFLICT – alternative expression for K₂, restates Eq.21"
+   },
+   {
+    "eq": "26",
+    "reason": "NOT USED BY OTHERS – auxiliary definition of \\tilde{Θ}^{⊙}"
+   },
+   {
+    "eq": "27",
+    "reason": "NOT USED BY OTHERS – auxiliary definition of \\tilde{Θ}^{*}"
+   },
+   {
+    "eq": "28",
+    "reason": "CONFLICT – kinetic equation for φ replaces Eq.22, alternative formulation"
+   },
+   {
+    "eq": "29",
+    "reason": "NOT USED BY OTHERS – experimental rate calculation, not part of model"
+   },
+   {
+    "eq": "30",
+    "reason": "NOT USED BY OTHERS – objective function for parameter estimation"
+   },
+   {
+    "eq": "31",
+    "reason": "NOT USED BY OTHERS – fitted ΔG₁, not part of kinetic model"
+   },
+   {
+    "eq": "32",
+    "reason": "NOT USED BY OTHERS – fitted ΔG₂, not part of kinetic model"
+   },
+   {
+    "eq": "34",
+    "reason": "NEEDED – part of extended dynamic CSTR model (used in both detailed and simplified)"
+   },
+   {
+    "eq": "35",
+    "reason": "NEEDED – dynamic surface‑coverage ODE (used in both models)"
+   },
+   {
+    "eq": "36",
+    "reason": "NEEDED – combined ODE system for reactor dynamics"
+   },
+   {
+    "eq": "37",
+    "reason": "not an equation (optimization objective)"
+   },
+   {
+    "eq": "C-11",
+    "reason": "CONFLICT – duplicate of Eq.4 (detailed) with φ factor, alternative formulation"
+   },
+   {
+    "eq": "C-12",
+    "reason": "CONFLICT – duplicate of Eq.5 (detailed) with φ factor, alternative formulation"
+   },
+   {
+    "eq": "C-13",
+    "reason": "CONFLICT – duplicate of Eq.6 (detailed) with φ factor, alternative formulation"
+   },
+   {
+    "eq": "C-14",
+    "reason": "CONFLICT – duplicate of Eq.7 (detailed) with φ factor, alternative formulation"
+   },
+   {
+    "eq": "C-15",
+    "reason": "CONFLICT – duplicate of Eq.8 (detailed)"
+   },
+   {
+    "eq": "C-16",
+    "reason": "CONFLICT – duplicate of Eq.9 (detailed)"
+   },
+   {
+    "eq": "C-1",
+    "reason": "NOT USED BY OTHERS – empirical expression for K_{P1}, not needed for model solving"
+   },
+   {
+    "eq": "C-2",
+    "reason": "NOT USED BY OTHERS – empirical expression for K_{P2}, not needed for model solving"
+   },
+   {
+    "eq": "C-3",
+    "reason": "NOT USED BY OTHERS – empirical expression for K_{P3}, not needed for model solving"
+   },
+   {
+    "eq": "C-5",
+    "reason": "CONFLICT – corrected version of Eq.5, duplicate of detailed Eq.5"
+   },
+   {
+    "eq": "C-6",
+    "reason": "CONFLICT – corrected version of Eq.6, duplicate of detailed Eq.6"
+   },
+   {
+    "eq": "C-31",
+    "reason": "NOT USED BY OTHERS – fitted ΔG₁, not part of kinetic model"
+   },
+   {
+    "eq": "C-32",
+    "reason": "NOT USED BY OTHERS – fitted ΔG₂, not part of kinetic model"
+   }
+  ]
+ }
+}

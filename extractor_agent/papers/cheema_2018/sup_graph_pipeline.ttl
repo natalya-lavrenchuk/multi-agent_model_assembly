@@ -1,0 +1,831 @@
+@prefix kg: <http://example.org/kg/cheema_2018/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:cheema_2018 a mkg:Sup ;
+    rdfs:label "cheema_2018 · Operating envelope of Haber-Bosch process design for power-to-ammonia $ ^{\\dagger} $"@en ;
+    mkg:hasMetadata kg:cheema_2018_meta ;
+    mkg:includes <http://example.org/kg/cheema_2018/law/cheema_2018_eq2>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq3>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq4>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq5>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq6>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7> .
+
+kg:cheema_2018_meta a mkg:Metadata ;
+    mkg:completeModel false ;
+    mkg:description "The paper models the steady-state operating envelope of a three-bed autothermic Haber–Bosch synthesis reactor and recycle loop for producing ammonia from hydrogen and nitrogen, with argon as an inert. It predicts bed temperatures and reactant conversions, along with operating limits, hydrogen intake, ammonia production, and recycle load as process conditions change. The pseudo-homogeneous model combines catalyst-bed material and energy balances, a modified Temkin reaction-rate law, quench mixers, and a feed–effluent heat exchanger. The authors simulate a nominal 120 kg h⁻¹ ammonia-production design in MATLAB and examine six variables relevant to flexible operation with intermittent renewable power. The model is designed using specified production and temperature targets and trial-and-error adjustment of bed volumes and flows; the paper does not report fitting or validation against new experimental data. The authors use the simulations to identify operating flexibilities and limits for power-to-ammonia plants, and provide supporting equations and simulation data in the electronic supplementary information." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "DAE" ;
+    mkg:hasAssumption [ mkg:quote "with assumption that 27.79 mol% of NH₃ is carried along with them during normal operation" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "During normal operation, 27.79 mol% of NH₃ is carried along with the recycled unused reactants." ],
+        [ mkg:quote "heat losses are ignored" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Heat losses are ignored." ] ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "During the steady-state stability analysis one process variable is changed and the other five process variables are held constant." ;
+            mkg:text "The operating-envelope analysis varies reactor pressure, inert concentration, ammonia concentration, hydrogen-to-nitrogen ratio, total flow rate, and reactor-system inlet temperature one at a time." ;
+            mkg:topic "stability" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The low hydrogen-to-nitrogen boundary reduces modeled ammonia production by about 73% and increases the recycle-to-feed ratio by about 257%." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the power-to-ammonia synthesis loop, the only inert gas is argon" ;
+            mkg:text "The modeled synthesis feed contains hydrogen and nitrogen, with argon as the inert species in the power-to-ammonia loop." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Morud and Skogestad in 1998 analysed the Haber-Bosch process with a pseudo-homogeneous dynamic model for a three catalyst bed reactor system and a static model for a counter current heat exchanger" ;
+            mkg:text "The model follows the three-bed pseudo-homogeneous dynamic reactor model of Morud and Skogestad (1998), while this paper analyzes steady-state operation and uses a static heat-exchanger representation." ;
+            mkg:topic "literature" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The simulation is performed in MATLAB software and a built-in ODE solver (ode45) is used for the implementation of differential equations." ;
+            mkg:text "The differential equations are implemented in MATLAB using the built-in ode45 solver." ;
+            mkg:topic "simulation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The focus of this work is to determine the steady-state operational and production limitations of the ammonia synthesis reactor system and recycle loop, as renewable energy will be only intermittently available for the production of the reactants." ;
+            mkg:text "The modeled process is a Haber–Bosch ammonia synthesis reactor system and recycle loop intended for power-to-ammonia operation." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper identifies inert concentration and hydrogen-to-nitrogen ratio as the largest flexibility levers, with hydrogen intake reductions of up to about 67%." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The stable operational envelope for pressure is 194.32 to 213.91 bar." ;
+            mkg:text "The stable operating pressure range is 194.32–213.91 bar, with the upper limit set by the catalyst-bed temperature limit." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Physicochemical modelling is applied to analyse the ammonia synthesis reactor system under steady-state operation." ;
+            mkg:text "The model is a steady-state physicochemical, pseudo-homogeneous model comprising heat-exchanger, catalyst-bed, and mixer subsystems." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Bed volumes, feed flow, and quench flow rates were adjusted by trial and error to meet the nominal ammonia-production target." ;
+            mkg:topic "design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Mancusi et al. in 2000, 2001 and 2009 analysed the same process with a heterogeneous model and concluded substantial qualitative agreement with the pseudo-homogeneous results" ;
+            mkg:text "Mancusi et al. (2000, 2001, 2009) used heterogeneous reactor models and reported qualitative agreement with pseudo-homogeneous results, with shutdown pressure and feed-temperature differences reported in the cited studies." ;
+            mkg:topic "literature" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The reaction takes place at the surface of the catalyst, where nitrogen and hydrogen are consumed, and ammonia is formed in an exothermic reaction." ;
+            mkg:text "The catalyst-bed model represents the exothermic synthesis of ammonia from hydrogen and nitrogen and accounts for equilibrium effects." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The steady state material and energy balance for the fine catalyst particles in catalyst beds are shown" ;
+            mkg:text "Catalyst-bed conversion and temperature are calculated using steady-state material and energy balances along bed volume." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The modeled inert concentration range is 0–12.73 mol%; concentrations above 12.73 mol% prevent autothermic operation." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model calculates conversion for both hydrogen and nitrogen in each of the three beds, as well as the reacting-mixture temperature, corresponding to nine bedwise state profiles." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For the Haber-Bosch loop, thermodynamic equilibrium is considered instead of a kinetic approach, which is suitable for design-based analysis only." ;
+            mkg:text "Unlike the equilibrium-based Haber–Bosch loop analysis of Cinti et al. (2017), the paper uses a kinetic reactor model; it also distinguishes itself from Sánchez and Martín (2018) by considering an autothermic synthesis reactor." ;
+            mkg:topic "literature" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Additional equations for heat exchanger, catalyst beds and ammonia synthesis loop, along with supporting simulation data are provided." ;
+            mkg:text "The electronic supplementary information provides additional model equations and supporting simulation data." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The desired operating range for ammonia concentration in the reactor feed is 3.39–4.53 mol%." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "T_ON/K: 523.00 | P_N/bar: 200.00" ;
+            mkg:text "The nominal modeled reactor pressure is 200 bar and the reactor-system intake temperature is 523 K." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports simulation-based analysis rather than parameter fitting or validation against new experimental measurements." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For achieving the optimal reactor design volume with the maximum possible reaction rate, inlet temperatures of all catalyst beds are maintained at 673 K and their outlet temperature at 773 K or 90% of the equilibrium temperature." ;
+            mkg:text "The nominal design targets 673 K at the inlet and 773 K at the outlet of each catalyst bed, with the outlet target alternatively limited to 90% of equilibrium temperature." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The nominal design produces 120 kg h⁻¹ of ammonia, excluding 1.11 kg h⁻¹ lost in the purge gas." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A concentration of 5 mol% of inert gas is maintained in the reactor system intake stream ③ by purging 0.0241weight fraction of recycle stream ⑤." ;
+            mkg:text "The normal reactor intake stream contains 5 mol% inert gas, and the modeled purge removes 0.0241 of the recycle-stream mass fraction." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For design only, the reaction is considered to be accomplished when reaching 90% of the equilibrium composition, as for equilibrium conversion operation an infinite amount of reactor space is required." ;
+            mkg:text "The model stops the design reaction at 90% of equilibrium composition because reaching equilibrium would require infinite reactor space." ;
+            mkg:topic "design" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The effectiveness of heat exchanger ε = 0.6329, which is calculated by using eqn (2) for normal operation temperature range." ;
+            mkg:text "The heat-exchanger effectiveness used for normal operation is 0.6329." ;
+            mkg:topic "heat transfer" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The maximum and minimum total feed flow rates are 707.61 to 527.78 kg h−1 respectively, with corresponding ammonia productions of 116.13 and 100.60 kg h−1." ;
+            mkg:text "Total feed flow can be varied from 527.78 to 707.61 kg h⁻¹; the low-flow case produces 100.60 kg h⁻¹ ammonia and the high-flow case 116.13 kg h⁻¹." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper states that limitations from the separation section, including the coolers and ammonia separator, are excluded from the analysis." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The ammonia formation rate uses a modified Temkin equation developed by Dyson and Simon, with activities used instead of partial pressures." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "using the quench based inter-stage cooling three bed ammonia synthesis reactor system" ;
+            mkg:text "The reactor system uses three catalyst beds with quench-based inter-stage cooling and heat exchange between the reactor outlet and inlet streams." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "fresh stream ① N₂ supply with 2 mol% of Ar and pure H₂ supply from storage is considered in ratio of 3 mol of H₂ to 1 mol of N₂." ;
+            mkg:text "Normal fresh feed is supplied at a hydrogen-to-nitrogen molar ratio of 3:1, with nitrogen feed containing 2 mol% argon and hydrogen supplied pure from storage." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bed 1: 0.0075 | Bed 2: 0.0221 | Bed 3: 0.0464 | Total: 0.0760" ;
+            mkg:text "The three catalyst beds have volumes of 0.0075, 0.0221, and 0.0464 m³, for a total catalyst-bed volume of 0.0760 m³." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors present the model as a way to assess whether an autothermic Haber–Bosch reactor can continue operating flexibly during renewable hydrogen shortages." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The reactor can be operated for H₂-to-N₂ ratios between 1.18 : 2.82 and 3.05 : 0.95." ;
+            mkg:text "The modeled hydrogen-to-nitrogen operating range is 1.18:2.82 to 3.05:0.95, and operation at the low ratio reduces hydrogen intake by about 67% while raising recycle load." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The operating envelope for the feed temperature is between 519.41 and 536.84 K" ;
+            mkg:text "The reactor-system inlet-temperature range is 519.41–536.84 K, with the upper limit associated with the maximum catalyst temperature." ;
+            mkg:topic "envelope" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Azarhoosh et al. (2014) compared a one-dimensional heterogeneous model with plant results and reported catalyst-bed temperature differences up to 13.5 K; Farivar and Ebrahim (2014) later reported a 4 K difference using a two-dimensional model." ;
+            mkg:topic "literature" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Operating outside these boundaries leads to the shutdown of reactor system autothermic operation or damage to the catalyst due to overheating." ;
+            mkg:text "Operation beyond the modeled envelope can end autothermic operation or overheat and damage the catalyst." ;
+            mkg:topic "limits" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For smaller scale plants and very low mass feed flow rate, these losses might be noticeable and influence operating envelope." ;
+            mkg:text "The authors note that unmodeled heat losses could affect the operating envelope in smaller plants or at very low feed rates." ;
+            mkg:topic "limits" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the reactor temperature decreases by up to 90 K with decrease in H₂-to-N₂ ratio" ;
+            mkg:text "The model indicates that reducing the hydrogen-to-nitrogen ratio can decrease reactor temperature by up to 90 K." ;
+            mkg:topic "results" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The upper steady state point is desired for operation due to stability and maximum conversion." ;
+            mkg:text "The authors use van Heerden plots to identify steady states and their stability; the upper stable branch is preferred because it gives maximum conversion." ;
+            mkg:topic "stability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For fine catalyst particles of size 1.5 to 3 mm" ;
+            mkg:text "The catalyst is assumed to be magnetite Fe₃O₄, and the paper discusses fine catalyst particles of 1.5–3 mm." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The ε-NTU model has the advantage over conventional methods as it does not require evaluation of mean temperature differences and detailed design of the heat exchanger." ;
+            mkg:text "The feed–effluent heat exchanger is represented with an ε-NTU effectiveness model, and its effectiveness is held constant during the stability analysis." ;
+            mkg:topic "heat transfer" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 2"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_s_out> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq2_meta> ;
+    mkg:hasParameter <http://example.org/kg/cheema_2018/law/cheema_2018_eq2/par/varepsilon> ;
+    mkg:latex "T_{\\mathrm{s_{out}}}=\\varepsilon T_{\\mathrm{t_{in}}}+(1-\\varepsilon)T_{\\mathrm{s_{in}}}" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_s_in>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_t_in> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2/par/varepsilon> a mkg:Parameter ;
+    rdfs:label "\\varepsilon (cheema_2018 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heat exchanger effectiveness." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The effectiveness of heat exchanger $ \\varepsilon = 0.6329 $, which is calculated by using eqn (2) for normal operation temperature range." ;
+    mkg:page "4" ;
+    mkg:quote "heat exchanger effectiveness" ;
+    mkg:reason "Heat-exchanger effectiveness, a constant property of the heat exchanger." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 6.329e-01 .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_s_in> a mkg:Variable ;
+    rdfs:label "T_{s_{in}} (cheema_2018 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Shell-side inlet temperature." ;
+    mkg:dimension "[temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "shell side inlet temperature" ;
+    mkg:reason "Shell-side inlet temperature, a feed condition set for each operating run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{s_{in}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_s_out> a mkg:Variable ;
+    rdfs:label "T_{s_{out}} (cheema_2018 eq 2)"@en ;
+    mkg:description "Shell-side outlet temperature." ;
+    mkg:dimension "[temperature]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T_{s_{out}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2/var/T_t_in> a mkg:Variable ;
+    rdfs:label "T_{t_{in}} (cheema_2018 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Tube-side inlet temperature, at the catalyst bed 3 outlet." ;
+    mkg:dimension "[temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "tube side inlet (catalyst bed 3 outlet) temperature" ;
+    mkg:reason "Tube-side inlet temperature at the bed 3 outlet, a process temperature that varies with reactor operation." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{t_{in}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq2_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "The feed-effluent heat-exchanger relation computes the shell-side outlet temperature from the tube-side inlet and shell-side inlet temperatures." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The temperature of the gases changes in the axial direction of flow and does not change in its radial direction." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Temperature varies axially but is assumed not to vary radially." ],
+        [ mkg:quote "Chemical reaction and mass transfer do not take place." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Chemical reaction and mass transfer in the exchanger are neglected." ],
+        [ mkg:quote "All thermal properties of the gases and the exchanger wall are constant." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Thermal properties of the gases and exchanger wall are taken as constant." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "Hot gas flows through the tube side and cold gas through the shell side, with a combination of counter-current and cross flow." ],
+        [ mkg:quote "All the fluids in the heat exchanger remain in the gaseous phase and as such no condensation is considered for modelling." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The exchanger streams remain gaseous, with no condensation." ],
+        [ mkg:quote "The ε is constant, independent of change in inlet temperature" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The effectiveness is held constant and independent of inlet-temperature changes." ],
+        [ mkg:quote "Heat of conduction in the axial direction is also negligible." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Axial heat conduction is neglected." ] ;
+    mkg:page "4" ;
+    mkg:quote "T_{\\mathrm{s_{out}}}=\\varepsilon T_{\\mathrm{t_{in}}}+(1-\\varepsilon)T_{\\mathrm{s_{in}}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 3"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/X_r_b> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/cheema_2018/law/cheema_2018_eq3/par/v_r> ;
+    mkg:latex "\\frac{\\mathrm{d}X_{\\mathrm{r},b}}{\\mathrm{d}V_{b}}=\\frac{v_{\\mathrm{r}}R_{\\mathrm{N H_{3},b}}}{2\\dot{n}_{\\mathrm{r},b_{\\mathrm{i n}}}}" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/R_NH_3_b>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/dot_n_r_b_in> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3/par/v_r> a mkg:Parameter ;
+    rdfs:label "v_{r} (cheema_2018 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Stoichiometric coefficient for reactant r." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "A stoichiometric coefficient, a constant of the reaction law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "v_{r}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/R_NH_3_b> a mkg:Variable ;
+    rdfs:label "R_{NH_3,b} (cheema_2018 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Ammonia reaction rate in catalyst bed b." ;
+    mkg:dimension "[substance] / [length] ** 3 / [time]" ;
+    mkg:reason "Reaction rate, a process quantity that varies with local bed conditions." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R_{NH_3,b}" ;
+    mkg:unit "kmol / h / m ** 3" ;
+    mkg:unitString "kmol m^{-3} h^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/X_r_b> a mkg:Variable ;
+    rdfs:label "X_{r,b} (cheema_2018 eq 3)"@en ;
+    mkg:description "Fractional conversion of reactant r in catalyst bed b." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{r,b}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3/var/dot_n_r_b_in> a mkg:Variable ;
+    rdfs:label "\\dot{n}_{r,b_{in}} (cheema_2018 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Inlet molar flow rate of reactant r to catalyst bed b." ;
+    mkg:dimension "[substance] / [time]" ;
+    mkg:reason "Reactant inlet molar flow rate, an operating flow condition that can vary between runs." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{n}_{r,b_{in}}" ;
+    mkg:unit "kmol / h" ;
+    mkg:unitString "kmol h^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The catalyst-bed material balance computes each reactant’s fractional conversion along bed volume from its stoichiometric ammonia reaction rate and inlet molar flow." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Mass and heat transport between the flowing gas and catalyst is represented using only convective driving forces." ],
+        [ mkg:quote "the temperature gradient ΔT inside the catalyst pellet is negligible" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The temperature gradient inside catalyst pellets is negligible." ],
+        [ mkg:quote "we assume isobaric condition" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The reactor system is isobaric." ],
+        [ mkg:quote "For fine catalyst particles of size 1.5 to 3 mm" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Catalyst particles are 1.5 to 3 mm in size." ],
+        [ mkg:quote "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The rate is used without correction factors such as an effectiveness factor." ],
+        [ mkg:quote "We consider a radial flow catalyst bed" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The catalyst bed is radial-flow." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\frac{\\mathrm{d}X_{\\mathrm{r},b}}{\\mathrm{d}V_{b}}=\\frac{v_{\\mathrm{r}}R_{\\mathrm{N H_{3},b}}}{2\\dot{n}_{\\mathrm{r},b_{\\mathrm{i n}}}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 4"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/T_b> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/cheema_2018/law/cheema_2018_eq4/par/Delta_H_b>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq4/par/c_p_b> ;
+    mkg:latex "\\frac{\\mathrm{d}T_{b}}{\\mathrm{d}V_{b}}=\\frac{(-\\Delta H_{b})R_{\\mathrm{N H}_{3},b}}{\\dot{m}_{b_{\\mathrm{i n}}}c_{\\mathrm{p}_{b}}}" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/R_NH_3_b>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/dot_m_b_in> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4/par/Delta_H_b> a mkg:Parameter ;
+    rdfs:label "\\Delta H_{b} (cheema_2018 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Heat of reaction in catalyst bed b." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance]" ;
+    mkg:reason "Heat of reaction, a thermochemical property of the reaction." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta H_{b}" ;
+    mkg:unit "kJ / kmol" ;
+    mkg:unitString "kJ kmol^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4/par/c_p_b> a mkg:Parameter ;
+    rdfs:label "c_{p_b} (cheema_2018 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific heat capacity of the reacting mixture in catalyst bed b." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:page "10" ;
+    mkg:quote "Specific heat capacity" ;
+    mkg:reason "It is the specific heat capacity of the reacting mixture, a physical property." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "c_{p_b}" ;
+    mkg:unit "kJ / K / kmol" ;
+    mkg:unitString "kJ kmol^-1 K^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/R_NH_3_b> a mkg:Variable ;
+    rdfs:label "R_{NH_3,b} (cheema_2018 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Ammonia reaction rate in catalyst bed b." ;
+    mkg:dimension "[substance] / [length] ** 3 / [time]" ;
+    mkg:reason "Reaction rate, a process quantity that varies with local bed conditions." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "R_{NH_3,b}" ;
+    mkg:unit "kmol / h / m ** 3" ;
+    mkg:unitString "kmol m^{-3} h^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/T_b> a mkg:Variable ;
+    rdfs:label "T_{b} (cheema_2018 eq 4)"@en ;
+    mkg:description "Temperature of the reacting mixture in catalyst bed b." ;
+    mkg:dimension "[temperature]" ;
+    mkg:initialQuote "inlet temperatures of all catalyst beds are maintained at 673 K" ;
+    mkg:initialValue "673 K" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T_{b}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4/var/dot_m_b_in> a mkg:Variable ;
+    rdfs:label "\\dot{m}_{b_{in}} (cheema_2018 eq 4)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Mass flow rate of the reacting mixture entering catalyst bed b." ;
+    mkg:dimension "[mass] / [time]" ;
+    mkg:initialQuote "Table 2 Catalyst bed volumes and normal operation flow rates" ;
+    mkg:initialValue "321.70 kg h^-1 (bed 1); 485.53 kg h^-1 (bed 2); 662.54 kg h^-1 (bed 3)" ;
+    mkg:reason "It is an inlet flow rate, an operating quantity varied as feed flow in the process." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{m}_{b_{in}}" ;
+    mkg:unit "kg / h" ;
+    mkg:unitString "kg h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The catalyst-bed energy balance computes the reacting-mixture temperature change along bed volume from reaction heat and the heat-capacity flow." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "heat transfer resistance between pellet and gas is also neglected" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Heat-transfer resistance between the catalyst pellet and gas is neglected." ],
+        [ mkg:quote "with consideration only for convective driving forces for transport of mass and heat between the flowing gases and catalyst" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Heat transport between the flowing gas and catalyst is represented using only convective driving forces." ],
+        [ mkg:quote "We consider a radial flow catalyst bed" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The catalyst bed is radial-flow." ],
+        [ mkg:quote "the rate of formation for ammonia can be taken without correction factors such as effectiveness factor" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The heat balance uses no correction factor such as an effectiveness factor." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "A high-thermal-conductivity magnetite catalyst is assumed." ],
+        [ mkg:quote "For fine catalyst particles of size 1.5 to 3 mm" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Catalyst particles are 1.5 to 3 mm in size." ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The denominator combines mass flow in kg h⁻¹ with specific heat capacity listed in kJ kmol⁻¹ K⁻¹, so the units do not form the stated energy balance." ;
+    mkg:quote "\\frac{\\mathrm{d}T_{b}}{\\mathrm{d}V_{b}}=\\frac{(-\\Delta H_{b})R_{\\mathrm{N H}_{3},b}}{\\dot{m}_{b_{\\mathrm{i n}}}c_{\\mathrm{p}_{b}}}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 5"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/R_NH_3> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/K>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/alpha>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/k_2> ;
+    mkg:latex "R_{\\mathrm{N H}_{3}}=k_{2}\\left(K^{2}a_{\\mathrm{N}_{2}}\\left(\\frac{a_{\\mathrm{H}_{2}}^{3}}{a_{\\mathrm{N H}_{3}}^{2}}\\right)^{\\alpha}-\\left(\\frac{a_{\\mathrm{N H}_{3}}^{2}}{a_{\\mathrm{H}_{2}}^{3}}\\right)^{1-\\alpha}\\right)" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_H_2>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_NH_3>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_N_2> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/alpha> a mkg:Parameter ;
+    rdfs:label "\\alpha (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Exponent in the modified Temkin reaction-rate law." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "It is a constant exponent in the reaction-rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 5e-01 .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/R_NH_3> a mkg:Variable ;
+    rdfs:label "R_{NH_3} (cheema_2018 eq 5)"@en ;
+    mkg:description "Rate of reaction." ;
+    mkg:dimension "[substance] / [length] ** 3 / [time]" ;
+    mkg:sameQuantityAs "R_{NH_3,b}" ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:symbol "R_{NH_3}" ;
+    mkg:unit "kmol / h / m ** 3" ;
+    mkg:unitString "kmol m^-3 h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "A modified Temkin rate law computes the ammonia synthesis rate from nitrogen, hydrogen and ammonia activities and the reaction constants." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_N_2> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_NH_3> ;
+            mkg:slot "product" ],
+        [ mkg:boundTo <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/K> ;
+            mkg:slot "equilibrium constant" ],
+        [ mkg:boundTo <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/k_2> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_H_2> ;
+            mkg:slot "substrate" ] ;
+    mkg:page "4" ;
+    mkg:quote "R_{\\mathrm{N H}_{3}}=k_{2}\\left(K^{2}a_{\\mathrm{N}_{2}}\\left(\\frac{a_{\\mathrm{H}_{2}}^{3}}{a_{\\mathrm{N H}_{3}}^{2}}\\right)^{\\alpha}-\\left(\\frac{a_{\\mathrm{N H}_{3}}^{2}}{a_{\\mathrm{H}_{2}}^{3}}\\right)^{1-\\alpha}\\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 6"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/X_r_m_out> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq6_meta> ;
+    mkg:latex "X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)+\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{out}}}+\\dot{n}_{\\mathrm{r},q_{\\mathrm{in}}}\\right)}" ;
+    mkg:latexCorrected "$$ X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)+\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{out}}}+\\dot{n}_{\\mathrm{r},q_{\\mathrm{in}}}\\right)} $$" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/X_r_b_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_b_in>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_b_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_q_in> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/X_r_b_out> a mkg:Variable ;
+    rdfs:label "X_{r,b_{out}} (cheema_2018 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Fractional conversion of reactant at the catalyst-bed outlet." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "X is fractional conversion of reactant" ;
+    mkg:reason "It is a reactant-conversion process quantity that varies with operating conditions." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "X_{r,b_{out}}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "—" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/X_r_m_out> a mkg:Variable ;
+    rdfs:label "X_{r,m_{out}} (cheema_2018 eq 6)"@en ;
+    mkg:description "Conversion of reactant r at the mixer outlet." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "X_{r,m_{out}}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_b_in> a mkg:Variable ;
+    rdfs:label "\\dot{n}_{r,b_{in}} (cheema_2018 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Inlet molar flow rate of reactant r to catalyst bed b." ;
+    mkg:dimension "[substance] / [time]" ;
+    mkg:reason "Reactant inlet molar flow rate, an operating flow condition that can vary between runs." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{n}_{r,b_{in}}" ;
+    mkg:unit "kmol / h" ;
+    mkg:unitString "kmol h^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_b_out> a mkg:Variable ;
+    rdfs:label "\\dot{n}_{r,b_{out}} (cheema_2018 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Molar flow rate of reactant leaving a catalyst bed." ;
+    mkg:dimension "[substance] / [time]" ;
+    mkg:page "10" ;
+    mkg:quote "Molecular flow rate" ;
+    mkg:reason "It is a reactant flow rate, an operating process quantity that varies with the run." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{n}_{r,b_{out}}" ;
+    mkg:unit "kmol / h" ;
+    mkg:unitString "kmol h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6/var/dot_n_r_q_in> a mkg:Variable ;
+    rdfs:label "\\dot{n}_{r,q_{in}} (cheema_2018 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Molar flow rate of reactant entering in the quench stream." ;
+    mkg:dimension "[substance] / [time]" ;
+    mkg:page "10" ;
+    mkg:quote "Molecular flow rate" ;
+    mkg:reason "It is a reactant flow rate in the quench stream, an operating process quantity." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{n}_{r,q_{in}}" ;
+    mkg:unit "kmol / h" ;
+    mkg:unitString "kmol h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "“X is fractional conversion of reactant”" ;
+    mkg:correctionReason "The printed product of bed-out conversions should be the corresponding bed’s fractional conversion paired with each bed inlet flow, as the paper defines X as reactant conversion." ;
+    mkg:correctionStatus "proposed" ;
+    mkg:description "The mixer material balance computes reactant conversion after combining the catalyst-bed effluent and quench streams." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The mixing of gases in the mixer is assumed to be ideal and instantaneous." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Gas mixing in the mixer is ideal and instantaneous." ] ;
+    mkg:page "5" ;
+    mkg:possibleMisprint "The numerator multiplies inlet flow rates by the product of all bed-out conversions; with per-bed fractional conversions, each inlet flow should instead be paired with its corresponding bed conversion." ;
+    mkg:quote "X_{\\mathrm{r},m_{\\mathrm{out}}}=\\frac{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)}{\\sum\\limits_{b=1}^{m-1}\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{in}}}\\prod_{b=1}^{m-1}X_{\\mathrm{r},b_{\\mathrm{out}}}\\right)+\\left(\\dot{n}_{\\mathrm{r},b_{\\mathrm{out}}}+\\dot{n}_{\\mathrm{r},q_{\\mathrm{in}}}\\right)}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7> a mkg:Law ;
+    rdfs:label "cheema_2018 eq 7"@en ;
+    mkg:computes <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_m_out> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/cheema_2018/law/cheema_2018_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_b_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_m_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_q_in> ;
+    mkg:latex "$$ T_{m_{out}}=\\frac{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}+\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}} $$" ;
+    mkg:uses <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_b_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_q_in>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/dot_m_b_out>,
+        <http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/dot_m_q_in> .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_b_out> a mkg:Parameter ;
+    rdfs:label "C_{p_{b_{out}}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific heat capacity of the gas leaving a catalyst bed." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:page "10" ;
+    mkg:quote "specific heat capacity" ;
+    mkg:reason "It is the specific heat capacity of the gas, a thermal property of the material." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{p_{b_{out}}}" ;
+    mkg:unit "kJ / K / kmol" ;
+    mkg:unitString "kJ kmol^-1 K^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_m_out> a mkg:Parameter ;
+    rdfs:label "C_{p_{m_{out}}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Specific heat capacity of the mixed outlet stream." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:reason "It is a specific heat capacity, a physical property of the reacting mixture." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{p_{m_{out}}}" ;
+    mkg:unit "kJ / K / kmol" ;
+    mkg:unitString "kJ kmol^{-1} K^{-1}" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/par/C_p_q_in> a mkg:Parameter ;
+    rdfs:label "C_{p_{q_{in}}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Specific heat capacity of the quench stream entering the mixer." ;
+    mkg:dimension "[mass] * [length] ** 2 / [time] ** 2 / [substance] / [temperature]" ;
+    mkg:page "10" ;
+    mkg:quote "specific heat capacity" ;
+    mkg:reason "It is the specific heat capacity of the gas, a thermal property of the material." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{p_{q_{in}}}" ;
+    mkg:unit "kJ / K / kmol" ;
+    mkg:unitString "kJ kmol^-1 K^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_b_out> a mkg:Variable ;
+    rdfs:label "T_{b_{out}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Temperature of the reacting mixture leaving a catalyst bed." ;
+    mkg:dimension "[temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "T temperature of reacting mixture" ;
+    mkg:reason "It is a catalyst-bed outlet temperature, a process quantity that changes during operation." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{b_{out}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_m_out> a mkg:Variable ;
+    rdfs:label "T_{m_{out}} (cheema_2018 eq 7)"@en ;
+    mkg:description "Temperature of the gas mixture leaving the mixer after quenching." ;
+    mkg:dimension "[temperature]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "T_{m_{out}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/T_q_in> a mkg:Variable ;
+    rdfs:label "T_{q_{in}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Temperature of the quench stream entering the mixer." ;
+    mkg:dimension "[temperature]" ;
+    mkg:page "4" ;
+    mkg:quote "T temperature of reacting mixture" ;
+    mkg:reason "It is an inlet temperature of the quench stream, an operating process condition." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{q_{in}}" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/dot_m_b_out> a mkg:Variable ;
+    rdfs:label "\\dot{m}_{b_{out}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Mass flow rate of the reacting mixture leaving a catalyst bed." ;
+    mkg:dimension "[mass] / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "dot m is the total mass flow rate of the reacting mixture" ;
+    mkg:reason "It is a mass flow rate through the catalyst bed, an operating process quantity." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{m}_{b_{out}}" ;
+    mkg:unit "kg / h" ;
+    mkg:unitString "kg h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7/var/dot_m_q_in> a mkg:Variable ;
+    rdfs:label "\\dot{m}_{q_{in}} (cheema_2018 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Mass flow rate of the quench stream entering the mixer." ;
+    mkg:dimension "[mass] / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "dot m is the total mass flow rate of the reacting mixture" ;
+    mkg:reason "It is a quench-stream flow rate, an operating process quantity." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\dot{m}_{q_{in}}" ;
+    mkg:unit "kg / h" ;
+    mkg:unitString "kg h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The mixer energy balance computes the mixed-stream outlet temperature after the catalyst-bed effluent and quench streams are combined." ;
+    mkg:doi "10.1039/c8ra06821f" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The heat of mixing is neglected, as components do not interact strongly with each other." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Heat of mixing is neglected because the components are assumed not to interact strongly." ] ;
+    mkg:ocrFixNote "The OCR could not read the fraction (the paper typesets it unusually); rewritten from the PDF." ;
+    mkg:page "5" ;
+    mkg:possibleMisprint "The equation combines mass flow rates in kg h⁻¹ with specific heat capacities listed in kJ kmol⁻¹ K⁻¹, so the units do not form a consistent energy balance." ;
+    mkg:quote "T_{m_{out}}=\\frac{\\dot{m}_{b_{out}}C_{p_{b_{out}}}T_{b_{out}}+\\dot{m}_{q_{in}}C_{p_{q_{in}}}T_{q_{in}}}{\\left(\\dot{m}_{b_{out}}+\\dot{m}_{q_{in}}\\right)C_{p_{m_{out}}}}" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/K> a mkg:Parameter ;
+    rdfs:label "K (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Equilibrium constant of reaction." ;
+    mkg:dimension "[length] ** 2 * [time] ** 4 / [mass] ** 2" ;
+    mkg:page "4" ;
+    mkg:quote "equilibrium constant of reaction" ;
+    mkg:reason "It is an equilibrium constant of the reaction, a thermodynamic law constant." ;
+    mkg:siFactor 1e-10 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" ;
+    mkg:unit "1 / bar ** 2" ;
+    mkg:unitString "bar^-2" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/par/k_2> a mkg:Parameter ;
+    rdfs:label "k_{2} (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Constant for the reverse reaction." ;
+    mkg:dimension "[substance] / [length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "constant for reverse reaction" ;
+    mkg:reason "It is a reverse-reaction rate constant in the reaction-rate law." ;
+    mkg:siFactor 2.777778e-01 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{2}" ;
+    mkg:unit "kmol / h / m ** 3" ;
+    mkg:unitString "kmol m^-3 h^-1" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_H_2> a mkg:Variable ;
+    rdfs:label "a_{H_2} (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Activity coefficient for hydrogen." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "activity coefficients for nitrogen, hydrogen and ammonia" ;
+    mkg:reason "It is a species activity that varies with reactor composition and is used in the rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a_{H_2}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_NH_3> a mkg:Variable ;
+    rdfs:label "a_{NH_3} (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Activity coefficient for ammonia." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "activity coefficients for nitrogen, hydrogen and ammonia" ;
+    mkg:reason "It is a species activity that varies with reactor composition and is used in the rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a_{NH_3}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/cheema_2018/law/cheema_2018_eq5/var/a_N_2> a mkg:Variable ;
+    rdfs:label "a_{N_2} (cheema_2018 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Activity coefficient for nitrogen." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "4" ;
+    mkg:quote "activity coefficients for nitrogen, hydrogen and ammonia" ;
+    mkg:reason "It is a species activity that varies with reactor composition and is used in the rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "a_{N_2}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+

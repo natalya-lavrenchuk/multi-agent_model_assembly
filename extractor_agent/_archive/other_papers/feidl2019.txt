@@ -1,0 +1,932 @@
+
+[page 1]
+processes
+Article
+Combining Mechanistic Modeling and Raman
+Spectroscopy for Monitoring Antibody
+Chromatographic Puriﬁcation
+Fabian Feidl 1, Simone Garbellini 1, Martin F. Luna 1, Sebastian Vogg 1
+, Jonathan Souquet 2,
+Hervé Broly 2, Massimo Morbidelli 1
+and Alessandro Butté 1,*
+1
+Institute for Chemical and Bioengineering, ETH Zurich, 8093 Zurich, Switzerland;
+Fabian.feidl@chem.ethz.ch (F.F.); simon.garbellini@outlook.com (S.G.); lunam@ethz.ch (M.F.L.);
+sebastian.vogg@chem.ethz.ch (S.V.); massimo.morbidelli@chem.ethz.ch (M.M.)
+2
+Merck Serono S.A. Biotech Process Sciences, 1809 Corsier-sur-Vevey, Switzerland;
+jonathan.souquet@merckgroup.com (J.S.); herve.broly@merckgroup.com (H.B.)
+*
+Correspondence: alessandro.butte@chem.ethz.ch; Tel.: +41-44-633-38-98
+Received: 30 August 2019; Accepted: 23 September 2019; Published: 1 October 2019
+
+
+Abstract: Chromatography is widely used in biotherapeutics manufacturing, and the corresponding
+underlying mechanisms are well understood. To enable process control and automation, spectroscopic
+techniques are very convenient as on-line sensors, but their application is often limited by their
+sensitivity. In this work, we investigate the implementation of Raman spectroscopy to monitor
+monoclonal antibody (mAb) breakthrough (BT) curves in chromatographic operations with a low titer
+harvest. A state estimation procedure is developed by combining information coming from a lumped
+kinetic model (LKM) and a Raman analyzer in the frame of an extended Kalman ﬁlter approach (EKF).
+A comparison with suitable experimental data shows that this approach allows for the obtainment of
+reliable estimates of antibody concentrations with reduced noise and increased robustness.
+Keywords: Raman spectroscopy; downstream processing; chromatography; ﬂow cell; extended
+Kalman ﬁlter
+1. Introduction
+The application of spectroscopic techniques to monitor chromatographic processes in the
+frame of the so-called process analytical technology (PAT) initiative is very promising due to its
+potential for gathering important on-line process information in a non-invasive way [1–5]. Available
+spectroscopic techniques range from UV/vis and Fourier transform infrared spectroscopy to dynamic
+light scattering [6]. Several applications of Raman spectroscopy have been reported in upstream
+processing [7–9], showing the potential of this technology, which often requires speciﬁc modeling
+techniques, such as partial least squares (PLS) regression, to extract the desired information from
+the measured spectra. Recently, a successful implementation of Raman spectroscopy for the on-line
+monitoring of monoclonal antibody (mAb) concentrations in downstream processing was reported by
+Feidl et al [10]. An ad hoc developed ﬂow cell enabled the integration of the Raman technology into
+the capture (protein A) step of a mAb manufacturing process, providing accurate on-line estimates of
+mAb concentration. However, in spite of these results, the use of this technology remains limited due
+to the intrinsic weakness of the Raman signal [11–13].
+In this work, we explore the possibility of overcoming these diﬃculties by combining estimates
+from the Raman signal with the predictions of a mechanistic model. This is particularly convenient in
+the chromatographic puriﬁcation of mAbs because these processes are well understood and reliable
+mechanistic simulation models are available [14]. It has been already shown in many other areas that
+Processes 2019, 7, 683; doi:10.3390/pr7100683
+www.mdpi.com/journal/processes
+
+[page 2]
+Processes 2019, 7, 683
+2 of 16
+the combination of deterministic knowledge and on-line measurements can lead to more accurate
+and reliable estimates [15–18], e.g., by using extended Kalman ﬁltering (EKF) [19]. While a general
+introduction to Kalman ﬁltering is given in [20], a more detailed description is provided in [21].
+In this work, the implementation of an EKF for a chromatographic capture step to estimate
+antibody concentration is shown by combining the information of a deterministic chromatographic
+model with on-line information derived from Raman-based PLS estimates. In particular, the objective
+is to monitor the chromatographic breakthrough curves of a low-concentrated monoclonal antibody
+harvest. The beneﬁcial eﬀect of the combination of the two approaches with respect to the stand-alone
+Raman and chromatographic model is discussed.
+2. Materials and Methods
+2.1. Raman Spectral Acquisition and Flow Cell
+Raman spectra were acquired with a Kaiser RamanRxn2 analyzer (Kaiser Optical Systems, Inc.,
+Ann Arbor, MI, USA), including a 785 nm laser at 400 mW and a cooled charged-coupled device (CCD)
+detector, measuring inelastic photon scattering across a 150–3425 cm−1 wavenumber range. A laser
+exposure time of 30 s was chosen to collect the single scan spectra. A ﬂow cell with an optimized
+ﬂow characteristic, signal enhancement, pressure tolerance, and a single use potential was developed.
+A schematic illustration of the ﬂow cell is shown in Figure 1. It includes four main modules: (A) An
+analyzer adapter, which connects the ﬂow cell to the Raman analyzer via a ﬁber cable; (B) a non-contact
+objective to focus the laser beam within the ﬂow path; (C) a ﬂow path, which guides the sample
+longitudinally to the laser beam; and (D) a reﬂector, reﬂecting scattered and unscattered light to the
+analyzer via the ﬂow path. In the application to chromatographic puriﬁcations, the inlet connection is
+coupled to the elution stream, and the outlet connection is linked to the sample fractionator.
+Figure 1. Schematic illustration of the developed ﬂow cell.
+2.2. Cell Culture Supernatant
+Two cell culture supernatant pools containing a recombinant mAb with product concentrations
+between 0.30 and 0.60 mg/mL were obtained from a CHO cell perfusion process, as reported in [22].
+Besides cell ﬁltering through the perfusion hollow ﬁber module (0.5 µm pore size, Spectrum Laboratories,
+Netherlands), no other treatment was applied to the supernatant, which therefore contained a large
+quantity of impurities, e.g., media components, host cell proteins (HCP, 3 × 105 ppm), DNA (4 × 104 ppm)
+and high molecular weight (HMW) species (1.1%).
+2.3. Breakthrough Runs and Reference Analytic
+Fifteen breakthrough (BT) runs were performed on MabSelect SuRe columns (GE Healthcare,
+Uppsala, Sweden), prepacked by Repligen GmbH (Ravensburg, Germany, 0.5 × 5 cm), as described
+
+[page 3]
+Processes 2019, 7, 683
+3 of 16
+in [10]. The feed concentration, ﬂow rate, and the fraction duration were changed between the diﬀerent
+BT runs, as described in Table 1. Since several Raman measurements were acquired while collecting
+the sample of a single fraction (between 4 and 16 spectra per fraction), a spline approach was applied
+to interpolate missing reference measurements for each Raman spectrum.
+Table 1.
+Chromatographic settings and Raman measurements availability of performed
+breakthrough curves.
+Breakthrough
+Curve ID
+Feed Conc.
+(mg/mL)
+Feed Flow Rate
+(mL/Min)
+Run Duration
+(Min)
+Fraction
+Duration (Min)
+Raman
+Measurements
+Used for PLS
+and EKF
+BT#1
+0.34
+1.0
+200
+8
++
+BT#2
+0.34
+1.5
+230
+4
++
+BT#3
+0.34
+1.0
+250
+6
++
+BT#4
+0.42
+1.5
+130
+2
++
+BT#5
+0.42
+1.0
+120
+3.5
++
+BT#6
+0.42
+1.0
+170
+3.5
++
+Used for
+LKM ﬁtting
+BT#7
+0.43
+1.0
+240
+4
+-
+BT#8
+0.43
+1.5
+160
+4
+-
+BT#9
+0.43
+0.5
+480
+4
+-
+BT#10
+0.30
+0.5
+690
+10
+-
+BT#11
+0.30
+1.5
+230
+10
+-
+BT#12
+0.30
+1.0
+340
+10
+-
+BT#13
+0.60
+0.5
+200
+3
+-
+BT#14
+0.60
+1.5
+80
+3.5
+-
+BT#15
+0.60
+1.0
+120
+3.5
+-
+The mAb concentrations were determined oﬀ-line by HPLC with an analytical standard deviation
+of 0.01 mg/mL as described in [23]. The HMW, HCP, and DNA content of the harvest were determined
+as described in [10]. A schematic illustration of the experimental set-up is shown in Figure 2.
+Figure 2. Schematic illustration of the experimental set up to perform chromatographic breakthrough
+runs and collecting synchronized Raman measurements and breakthrough fractions.
+2.4. Chemometric Modeling Procedure
+All calculations were performed with MATLAB R2018a (Mathworks, Natick, MA, USA) using
+in-house developed routines, if not stated otherwise. The modeling procedure included Savitzky–Golay
+smoothing with a second polynomial order and a frame size of 51 Raman shift wavenumbers [24],
+spectrum wise standard normal variate (SNV) processing [25], and Raman shift wavenumber wise mean
+centering on spectra and reference values [26]. The removal of spectral regions based on the bioprocess
+modeling experience resulted in spectral ranges of 450–1820 cm−1, 1880–2530 cm−1 and 2590–3100 cm−1
+to eliminate interferences with the window material and water as well as non-informative regions.
+No derivative, Raman shift wavenumber selection, or automated outlier removal tools were applied.
+The nonlinear iterative partial least squares (NIPALS) algorithm [27] was used to calibrate predictive
+PLS models, which regressed spectral data on HPLC reference values, including a threefold cross
+validation (CV) [28]. The optimal number of latent variables (LV) was determined based on the
+minimum CV error.
+After calibrating the model on ﬁve diﬀerent BT runs, the model was tested on an external BT
+run, i.e., not included in the calibration. In order to evaluate the model performance, the root mean
+
+[page 4]
+Processes 2019, 7, 683
+4 of 16
+square error was calculated for both cross validation (RMSECV) and external prediction (RMSEP),
+using Equation (1), where ˆyi is the predicted value of the i-th observation, yi is the corresponding
+measured value, and n is the total number of observations:
+RMSE =
+r
+1
+n
+Xn
+i=1(yi −ˆyi)2
+(1)
+Furthermore, the coeﬃcient of determination (R2) was calculated for the external prediction as
+follows:
+R2 = 1 −
+Pn
+i=1(yi −ˆyi)2
+Pn
+i=1(yi −y)2
+(2)
+A rotational approach was used to judge upon the model transferability and data set similarity.
+Hence, sets were rotated in order to have every BT run in the external prediction set once, as shown in
+Table 2. As an example, to build the model for rotation 1 (ROT1), the data of BT#2–6 were used for
+model calibration and tested on BT#1 (for further details, see [10]).
+Table 2. Modeling procedure including the Raman-PLS (partial least squares) calibration, mechanistic
+model ﬁtting, as well as the tuning, validation and perturbation of the extended Kalman ﬁltering (EKF).
+For a given Rot i
+1.
+Raman-PLS calibration:
+PLSRot i ←calibrate Raman-PLS on BT#1–6 except BT#i
+2.
+Mechanistic model ﬁtting:
+LKM ←ﬁt LKM on BT#7–15 with respective process inputs (PIBT#7−15)
+3.
+EKF tuning:
+EKFRot i ←tune EKF (Q, R, kRot i
+Q
+) on BT#1–6 except BT#i
+for n = BT#1–6 except BT#i
+kn
+Qbest = minkQRMSEPEKFn
+end for
+kRot i
+Q
+= average kn
+Qbest for all n
+4.
+EKF validation:
+Run EKFRot i with inputs LKM, PIRot i, PLSRot i and kRot i
+Q
+5.
+EKF perturbation:
+for n = 1–200 simulations
+PIRS = random sampling of ε, cin, Q flow from Gaussian probability distribution
+Run EKFRot i with inputs LKM, PIRS, PLSRot i and kRot i
+Q
+end for
+2.5. Deterministic Modeling Procedure
+The chromatographic process was modelled using the lumped kinetic model (LKM) [14,29]:
+∂c
+∂t = −v ∂c
+∂x + DL
+∂2c
+∂x2 −ϕ∂q
+∂t
+t ∈[0, tend], x ∈[0, LCol]
+(3)
+∂q
+∂t = km(q∗−q)
+(4)
+where c is the liquid phase concentration of the protein, t is the time, tend is the end of the BT run, v is the
+interstitial velocity (v =
+Qflow
+Acol ε), Q flow is the volumetric ﬂow rate (see Table 1), Acol is the column cross
+sectional area (Acol= 0.196 cm2), ε is the bed porosity (ε= 0.36 [30]), x is the coordinate along the column
+longitudinal axis, LCol is the column length (LCol= 5 cm), DL is the apparent axial dispersion coeﬃcient,
+ϕ = (1 −ε)/ε is the phase ratio of the column, q is the solid phase concentration of the protein, km is
+the mass transfer coeﬃcient, and q∗is the equilibrium solid phase concentration of the protein.
+
+[page 5]
+Processes 2019, 7, 683
+5 of 16
+The following initial conditions were applied:
+c(t = 0, x) = c0(x)
+(5)
+q(t = 0, x) = q0(x)
+(6)
+They were then combined with the classical Danckwerts’ boundary conditions:
+c(t > 0, x = 0) = cin(t) + DL
+v
+∂c
+∂x
+#
+x=0
+(7)
+∂c
+∂x
+#
+x=Lcol
+= 0
+(8)
+where cin(t) is the feed concentration (see Table 1). Both c0(x) and q0(x) are zero for all values of x. The
+apparent axial dispersion coeﬃcient DL can be estimated from the reduced van Deemter equation [31]:
+DL = A
+dp
+2 v
+(9)
+where A is the intercept of the reduced van Deemter equation, dp the average particle diameter (dp =
+85 µm). The van Deemter eddy diﬀusion coeﬃcient A was experimentally determined from pulse
+injection experiments at diﬀerent ﬂow rates with mAb under non-adsorbing conditions (A = 17.15;
+data not shown). An empirical correlation was used for the mass transfer coeﬃcient km, approximating
+hindered mass transfer due to pore blockage and other eﬀects [32]:
+km = kmax
+m
+
+S1 + (1 −S1)
+
+1 −q
+qsat
+!S2
+
+(10)
+where kmax
+m
+is the maximum mass transfer coeﬃcient, qsat is the saturation capacity of the resin, and
+S1 is a maximum hindrance coeﬃcient (0 < S1 ≤1). The coeﬃcient S2 (with S2 > 0) accounts for the
+nonlinear increase of the hindrance. The protein adsorption process was described using a Langmuir
+isotherm, where H is the Henry coeﬃcient:
+q∗=
+H c
+1 + H c
+qsat
+(11)
+Coeﬃcients km, S1, S2, qsat and H were ﬁtted on BT#7–15 using the corresponding process inputs
+(PI), such as ε, cin and Qflow, as shown in Table 2. The partial diﬀerential equations were discretized
+along the x coordinate using a ﬁrst order central ﬁnite diﬀerence method, and the resulting system of
+ordinary diﬀerential equations was solved using 100 grid points.
+2.6. Extended Kalman Filter Tuning, Validation and Perturbation
+A prerequisite for this technique is a general nonlinear time-invariant system in continuous time,
+which generates measurements at discrete time steps tk = k∆t [33,34]:
+∂x
+∂t = f(x(t), u(t), p) + w(t)
+(12)
+y(tk) = h(x(tk)) + v(tk)
+(13)
+where x denotes the states, u is the deterministic inputs, p is the time-invariant parameters, and y is
+the measurements of the system. The nonlinear function f() describes the state dynamics, and h()
+is the measurement function that relates state x with measurement y. The process noise w and the
+
+[page 6]
+Processes 2019, 7, 683
+6 of 16
+measurement noise v are assumed to be uncorrelated zero-mean Gaussian random processes with
+covariances Q(t) and R(t), respectively (E ˆ= expectation operator):
+E[w(t)] = E[v(tk)] = 0
+(14)
+E
+h
+w(t)wT(τ)
+i
+= Q(t)δ(t −τ)
+(15)
+E
+h
+v(tk)vT(tk)
+i
+= R(tk)
+(16)
+E
+h
+w(τ)vT(tk)
+i
+= 0
+(17)
+Given such a system, the EKF can estimate states from noisy measurements through a recursive
+procedure, including two main steps [34,35]. In the ﬁrst step (prediction step), the a posteriori state
+estimate ˆx
+
+t+
+k−1
+
+and covariance matrix P
+
+t+
+k−1
+
+are propagated from t+
+k−1 to t−
+k , leading to the a priori
+state estimate and covariance matrix (superscripts indicate values before (-) and (+) after measurement
+update):
+ˆx
+
+t−
+k
+
+= ˆx
+
+t+
+k−1
+
++
+Z t−
+k
+t+
+k−1
+f(ˆx(τ), u(τ), p)dτ
+(18)
+ˆy
+
+t−
+k
+
+= h
+
+ˆx
+
+t−
+k
+
+(19)
+As well as the state covariance matrix:
+P
+
+t−
+k
+
+= P
+
+t+
+k−1
+
++
+Z t−
+k
+t+
+k−1
+
+Z(τ)P(τ) + P(τ)ZT(τ) + Q(τ)
+
+dτ
+(20)
+The EKF formulation uses linearized models of the nonlinear system for state estimation. Hence,
+the system is linearized at each time tk to obtain local state–space matrices:
+Z(t) =
+ ∂f
+∂x
+!
+ˆx(t),u(t),p
+(21)
+C(tk) =
+
+∂h
+∂x
+!
+ˆx(t−
+k )
+(22)
+In the second step (update step), conducted as soon as a new measurement y(tk) becomes available,
+the Kalman ﬁlter gain K(tk) is calculated and used to update the a priori state estimates and covariance
+matrix to the a posteriori values:
+K(tk) = P
+
+t−
+k
+
+C(tk)T
+C(tk)P
+
+t−
+k
+
+C(tk)T + R(tk)
+−1
+(23)
+ˆx
+
+t+
+k
+
+= ˆx
+
+t−
+k
+
++ K(tk)
+
+y(tk) −h
+
+ˆx
+
+t−
+k
+
+(24)
+P
+
+t+
+k
+
+= (I −K(tk)C(tk))P
+
+t−
+k
+
+(25)
+The aim of the procedure is to obtain improved state estimates ˆx
+
+t+
+k
+
+, characterized by small
+values of the covariance matrix P
+
+t+
+k
+
+. In order to achieve this for a speciﬁc application, the design
+parameters of the EKF, such as the measurement noise covariance R, the initial state estimates ˆx
+
+t+
+0
+
+the corresponding covariance P0, and the process noise covariance Q need to be carefully selected.
+To initialize the ﬁlter, a consistent pair of ˆx0 and P0 needs to be selected to enable a fast convergence to
+the correct estimate [36].
+In this work, the in-built KF toolbox of MATLAB was used. The discretized lumped kinetic
+model served as state transition function f(), and the Raman-PLS results were used as physical
+
+[page 7]
+Processes 2019, 7, 683
+7 of 16
+measurements of the outlet concentration of the column. The corresponding variance of the rotation
+speciﬁc RMSEP multiplied by the identity matrix was used as the error covariance matrix R. The
+time-varying process noise covariance Q was computed on-line at any given time tk using a Monte
+Carlo approach, as reported in [33]. This takes the knowledge from the LKM parameter identiﬁcation
+step into account by using the nominal parameter values and its parameter covariance matrix, resulting
+in QMC. Additionally, a model mismatch factor kQ [34] was used and tuned for each rotation.
+Q = QMC kQ
+(26)
+For a certain rotation, as shown in Table 2, the EKF approach was separately applied to all n BT
+curves of the calibration set. For each BT curve, kQ was optimized (kn
+Qbest) based on the respective
+prediction error (RMSEPEKFn). Subsequently, the received kn
+Qbest of all n BT curves of the calibration
+set were averaged, resulting in the rotational speciﬁc model mismatch factor (kRot i
+Q
+). The EKF was
+applied to the external BT curve, which was included in neither the Raman-PLS calibration nor the
+EKF tuning, to externally validate its eﬀect. In a perturbation study, 200 simulations of the mechanistic
+model were ran with random process input values (PIRS) for bed porosity ε, the feed concentration
+cin as well as the volumetric ﬂow rate Q flow sampled from a Gaussian probability distribution with
+a standard deviation of 5% to compare the robustness of the LKM and EKF.
+3. Results and Discussion
+3.1. Partial Least Squares Raman Modeling
+The acquired Raman spectra of the BT curves are comparable with the spectra described in [10]
+and are shown in Figure S1A. Due to the high impurity content in the harvest, the spectral features of
+diﬀerent species (i.e., target mAb, media components, HCPs, DNA and HMW) overlapped, leading to
+broad bands and no distinct peak proﬁles within single spectra. Hence, only small variations between
+diﬀerent spectra could be observed, and a suitable data pretreatment and multivariate model calibration
+were needed to extract useful information, such as the target protein titer. This had an obvious inﬂuence
+on the spectral appearance shown in Figure S1B. The variable importance in projection (VIP), shown in
+Figure S1C, indicates the regions between 2300 and 2700 cm−1 as well as between 2900 and 3000 cm−1
+as very important. This is in line with the fact that proteins exhibit several Raman bands in the region
+between 2500–4000 cm−1 [37]. Results of the PLS modeling for diﬀerent rotations are shown in Table 3.
+Though the number of observations in the calibration set varied slightly between rotations, the optimal
+number of selected latent variables (LVs) was consistent among rotations and was either 11 or 12.
+The RMSECV was constant around 0.040 mg/mL on a calibration range from 0 to 0.42 mg/mL and was
+thus almost independent of the rotation scheme. However, variations in the RMSEP between 0.045
+and 0.072 mg/mL as well as varying values of R2 between 0.70 and 0.86 indicated slight diﬀerences
+between the BT runs.
+Table 3. Data set information and PLS modeling results of all rotations.
+Calibr.set
+(# Obs)
+Pred.set
+(# Obs)
+Opt. num.
+of LV
+RMSECV
+(mg/mL)
+RMSEP
+(mg/mL)
+R2
+ROT1
+1755
+398
+12
+0.042
+0.051
+0.80
+ROT2
+1711
+442
+12
+0.042
+0.047
+0.86
+ROT3
+1656
+497
+12
+0.040
+0.061
+0.78
+ROT4
+1906
+247
+12
+0.041
+0.072
+0.70
+ROT5
+1918
+235
+11
+0.042
+0.045
+0.84
+ROT6
+1819
+334
+12
+0.041
+0.055
+0.82
+The prediction of titer as a function of time for ROT1 is exemplarily shown in Figure 3. The red
+dots represent the oﬀ-line HPLC titer measurements for each fraction, whereas the continuous blue line
+
+[page 8]
+Processes 2019, 7, 683
+8 of 16
+represents the Raman-PLS-based prediction. It can be seen that the trend of the BT curve was generally
+well captured by Raman. However, the predictions were clearly scattered around the reference values.
+It is worth mentioning that increasing the number of scans per Raman measurement could improve
+the signal-to-noise ratio. However, this would extend the measurement duration, which is critical in
+most of the downstream processing applications.
+Figure 3. Time evolutions of Raman-PLS predictions (blue) for rotation 1 (ROT1) compared to oﬀ-line
+HPLC measurements (red).
+As for other rotations, shown in Figure 4, one can observe a clear oﬀset of the predictions at the
+initial phase (i.e., before breakthrough started). In spite of an optimized laser exposure time, signal
+enhancement through the ﬂow cell and spectral pretreatment methods, the signal-to-noise ratio was
+rather small and probably close to the detection limit. Though the obtained averaged RMSEP of
+0.05 mg/mL and averaged R2 of 0.8 is remarkable, one must probably conclude that Raman-PLS is
+insuﬃcient for a precise monitoring of a breakthrough at such small concentrations.
+3.2. Mechanistic Modeling
+As a next step, an additional set of nine BT runs (BT#7–15) were used to ﬁt the LKM parameters by
+minimizing the RMSE with the measured concentration values in the breakthrough. The corresponding
+estimated values (along with 95% conﬁdence intervals) are reported in Table 4 and contain the Henry
+coeﬃcient H, saturation capacity qsat, the maximum mass transfer coeﬃcient kmax
+m , maximum hindrance
+coeﬃcient S1, and the nonlinearity increase of hindrance coeﬃcient S2.
+Table 4. Fitting parameter of the lumped kinetic model (LKM) optimized on breakthrough (BT)#7–BT#15
+(ε = 0.36; A = 17.15; dp = 85 µm).
+H(−)
+qsat(mg/mL)
+kmax
+m
+(min−1)
+S1(−)
+S2(−)
+449.3 ± 31.5
+109.7 ± 4.7
+8.37 ×10−4 ± 0.94 ×10−4
+0.36 ± 0.24
+1.76 ± 1.38
+The corresponding model predictions of the breakthrough together with the ﬁtting data sets are
+shown in Figure 5. The red dots represent the HPLC titer measurements, whereas the continuous blue
+lines represent the predictions of the LKM. Additionally, the RMSE in ﬁtting (RMSEF) is indicated.
+
+[page 9]
+Processes 2019, 7, 683
+9 of 16
+Figure 4. Titer predictions of Raman-PLS (grey), the LKM (green), the EKF model with tuned kQ (black)
+and HPLC oﬀ-line measurements (red) for rotations 1–6 (A–F).
+Figure 5. Internal mechanistic model (LKM) predictions of titer for BT#7–15 (blue) and corresponding
+HPLC oﬀ-line measurements (red).
+It can be seen that the shapes of BT curves vary in steepness, inﬂection point and saturation
+level. This is due to the diﬀerences in feed concentration and loading ﬂow rate. At complete column
+saturation, the asymptotic value of the outlet concentration in the BT tended to the feed concentration.
+Moreover, higher feed concentrations generally produced earlier breakthroughs. Similarly, larger
+ﬂow rates not only reduced the residence time in the column but also increased the convection rate
+along the column with respect to the diﬀusion rate to the resin, thus producing faster and ﬂatter BT
+
+[page 10]
+Processes 2019, 7, 683
+10 of 16
+curves. In most cases, the LKM was able to closely predict the trend of the reference measurements.
+The worst results were obtained in the case of BT#10–12, where RMSEF ranged from 0.016 to 0.026
+mg/mL. For such runs, which correspond to the smaller feed concentrations, the error was mostly
+due to a shift of the predicted BT time with respect to the measured one. In spite of this, it appears
+that the slope of the predicted BT curves in the inﬂection point was very similar to the measured one.
+This result could be explained by an underestimation of the eﬀective column capacity. However, it is
+diﬃcult to identify the exact origin of this disagreement.
+The model ability of predicting new runs was tested by applying the LKM to the ﬁrst six BT curves
+(BT#1–6), which were not included in the ﬁtting process of the LKM. The results of the predictions
+are shown in Figure 6, where the red dots represent HPLC measurements and the blue line the
+LKM predictions.
+Figure 6. Mechanistic model (LKM) predictions of titer for BT# 1–6 with parameter values ﬁtted on
+BT# 7–15 (blue) compared to HPLC oﬀ-line measurements (red).
+It can be observed that the model was able to predict the shape of the BT curves and, in particular,
+the steepness, indicating a good estimation of the mass transport properties.
+Additionally, the
+saturation level seemed to be well predicted, since there is no signiﬁcant mismatch between estimated
+and measured times for reaching saturation conditions. However, BT#1–4 showed a signiﬁcant oﬀset,
+leading to RMSEP values up to 0.039 mg/mL. This may be related to the fact that the model might not
+have precisely captured the adsorption mechanism at lower feed concentrations, which could also
+explain the oﬀsets in Figure 5. Moreover, one can also observe a diﬀerent behavior in the curves at
+early BT times. The measured BT curves seem sharper than what was predicted by the model. Again,
+this might be due to unaccounted diﬀerences in the feed composition, resin aging, column packing
+quality or a more complex behavior of the system than described by the model. Of course, more
+complex models could be introduced to improve the description of, particularly, the mass transfer
+process [31,38]. On the contrary, the good ability of the model to predict the shape of the BT curve well
+in spite of its generality and simplicity makes it a good candidate for its application in the frame of the
+EKF, where such inaccuracies could be corrected in real-time by experimental measurements.
+3.3. Extended Kalman Filter Tuning
+Before applying the EKF concept, the ﬁlter design parameters R, ˆx
+
+t+
+0
+
+, Q and kQ needed to be
+carefully selected and tuned. For this, the variance of the Raman-PLS model (RMSECVPLS2) was
+used as the measurement noise R, while the process noise Q was computed on-line at any given tk,
+as described in Section 2.6. Since mismatches between the LKM predictions and external data set were
+
+[page 11]
+Processes 2019, 7, 683
+11 of 16
+expected, a rotation speciﬁc mismatch factor kQ was applied. In the following, the determination of kQ
+for ROT1 (kRot 1
+Q
+) is described: The EKF was applied for each BT curve of the calibration set of ROT1,
+i.e., BT#2–6, using the Raman-PLS calibrated for ROT1, LKM predicting the distinct BT curve and
+varying kQ in a range between 10 and 1 × 106. The resulting RMSEPEKF as a function of kQ for each BT
+curve of the training set is shown in Figure 7.
+Figure 7. Error in the EKF prediction of the monoclonal antibody (mAb) concentration as a function of
+the model mismatch factor kQ for each of the BT curves of the calibration set of ROT1.
+It can be seen that a minimal RMSEPEKF could be obtained by selecting kQ around 1 × 104 for
+all BT curves. Note that kQ can be regarded as a measure of the conﬁdence in Raman measurements
+versus the conﬁdence in the mechanistic model. The higher kQ, the more the EKF relied on Raman-PLS,
+while for small kQ, the LKM was considered as more trustworthy. It is also important to note that the
+absolute value of kQ depended strongly on the absolute values of the estimation of both measurement
+and process noise. The presence of the minimum in the middle of the investigated kQ range indicates
+the beneﬁcial eﬀect of considering both types of information in producing the estimates, thus indicating
+that this approach is better than using only the LKM (small kQ) or the Raman-PLS model (large kQ).
+It can be assumed that by further increasing kQ above 1 × 106, even higher RMSEP could be obtained,
+since the ﬁlter would singly rely on Raman-PLS. In contrast, when kQ tended towards 10, it singly
+relied on the LKM. This procedure was repeated for all rotations, and the resulting rotation-speciﬁc
+model mismatch factors (kRot i
+Q
+) are summarized in Table 5. It can be seen that the values of kRot i
+Q
+were similar for all rotations, thus indicating a robust conﬁdence balancing between Raman-PLS and
+LKM predictions.
+Table 5. Rotational speciﬁc model mismatch factor kRot i
+Q
+for all rotations.
+ROT1
+ROT2
+ROT3
+ROT4
+ROT5
+ROT6
+kRot i
+Q
+1.35 × 104
+1.92 × 104
+1.92 × 104
+2.15 × 104
+1.92 × 104
+1.07 × 104
+3.4. Extended Kalman Filter Validation
+To externally validate the EKF, the rotational approach explained in Section 2.6 and Table 2, was
+applied for all rotations. In Figure 4A–F, the ﬁnal results of Raman-PLS, the LKM and EKF for ROT1-6
+are shown, respectively.
+The red dots represent the oﬀ-line HPLC measurements; the continuous grey and green lines
+represent the Raman-PLS and LKM predictions, respectively; the black line represents the results of
+
+[page 12]
+Processes 2019, 7, 683
+12 of 16
+the EKF. As mentioned above, the Raman-PLS predictions showed signiﬁcant noise, although they
+captured the trend of the actual BT curve. A signiﬁcant prediction oﬀset can be seen in ranges at the
+beginning of the breakthrough. Here, the Raman-PLS prediction was rather untrustworthy, which
+might be explained through diﬃculties in training the model on samples which did not contain the
+target molecule or contained a very small amount of it, close to the limit of detection. On the other hand,
+the LKM was able to smoothly predict the shape of the BT curve, although it showed a constant and
+signiﬁcant error. As also noted before, the LKM tended to anticipate the onset of breakthrough, which
+appeared sharper in the experiments. The line of the EKF seemed, as expected, to be a combination of
+the curves above, with the beneﬁcial eﬀect of eliminating the mechanistic model oﬀsets on one hand
+and smoothening the high noise of the Raman predictions on the other. The EKF was particularly
+reliable in the region of the incipient breakthrough, where its predictions relied mostly on the LKM
+results, thus eliminating the negative concentration values predicted by the Raman-PLS. On the other
+hand, at concentration values of 0.1 mg/mL, the oﬀset with respect to the oﬀ-line measurements was
+eliminated and simultaneously reduced the noise. This same pattern exists in all other rotations, as seen
+by the data summarized in Table 6, where the errors in terms of RMSEP for Raman-PLS, LKM and EKF
+predictions are compared for all considered rotations.
+Table 6. Prediction errors of the Raman-PLS, the LKM and EKF model for all rotations.
+Raman-PLS RMSEP
+(mg/mL)
+LKM RMSEP
+(mg/mL)
+EKF RMSEP
+(mg/mL)
+ROT1
+0.051
+0.038
+0.019
+ROT2
+0.047
+0.023
+0.021
+ROT3
+0.061
+0.030
+0.035
+ROT4
+0.072
+0.030
+0.024
+ROT5
+0.045
+0.037
+0.028
+ROT6
+0.055
+0.045
+0.029
+Mean:
+0.055
+0.034
+0.026
+As can be observed in Table 6, the RMSEPPLS and RMSEPLKM could be reduced by applying the
+EKF. The only exception to this trend was ROT3, where the LKM was slightly better. In this case, both
+the Raman-PLS and the LKM both largely anticipated the BT time. Nevertheless, the advantage of
+using an EKF estimator appears very clear from this table, especially in signiﬁcantly reducing the error
+of those rotations exhibiting a large Raman-PLS model error.
+3.5. Extended Kalman Filter Perturbation
+One of the major drawbacks of the LKM approach is its sensitivity to the input process parameters.
+This is illustrated in Figure 8 with reference to ROT1, where the eﬀect of a 5% Gaussian distributed
+perturbation in feed concentration and ﬂow rate, as well as bed porosity on the predictions of the
+LKM and the EKF, is compared for 200 simulations. The selected perturbed process parameters are
+representative of the variables that are actually subject to perturbations in real applications.
+The solid line indicates the mean of the predictions of all 200 simulations using the LKM (red) and
+EKF (blue), whereas the shaded areas show the corresponding 68% conﬁdence intervals, respectively.
+While the red shaded area is broad and clearly deviates from the reference oﬀ-line HPLC measurements,
+the blue shaded area is rather narrow and distributed around the reference values. It can be concluded
+that the LKM was strongly aﬀected by perturbations of its input parameters, while this sensitivity was
+reduced for the EKF predictions due to the inﬂuence of the Raman-based estimates.
+
+[page 13]
+Processes 2019, 7, 683
+13 of 16
+Figure 8. Eﬀect of 5% Gaussian distributed perturbations in feed concentration and ﬂow rate, as well as
+bed porosity on the predictions of the LKM (mean = dark red; standard deviation interval = light red)
+and the EKF (mean = dark blue; standard deviation interval = light blue) of ROT1 in 200 simulations.
+4. Conclusions
+In this work, an EKF estimator of the monoclonal antibody concentration at the outlet of
+a chromatographic column was developed. Its predictions considerably improved with respect to the
+use of the single Raman-PLS or the LKM. This was demonstrated for the case of a low titer harvest
+(mAb conc. < 0.42 mg/mL), which is typical for perfusion bioreactors. In general, the PLS-based
+predictive Raman models were able to capture the shape of the breakthrough curves, but the obtained
+results were too noisy for practical applications—for example, in the direction of process control. On
+the other hand, the mechanistic LKM, properly tuned on an external data set, was able to capture
+the qualitative shape of the breakthrough curves, but it exhibited deviations that were too large
+with respect to the oﬀ-line reference measurements. The proper application of the EKF requires the
+preliminary estimation of the parameter kQ, which is responsible for weighting the contribution of the
+Raman-PLS and the LKM predictions in the ﬁnal estimate of the ﬁlter. By applying the tuned EKF
+to an external data set, its superiority as compared to Raman-PLS and LKM became obvious. While
+the LKM predictions served as a solid backbone for the EKF, the Raman-PLS real-time information
+updated the state estimates and signiﬁcantly reduced the LKM oﬀset. Though the LKM showed, in
+some cases, comparable prediction errors, the perturbation analysis showed the additional beneﬁt of
+EKF through the increased robustness with respect to the model input parameter values. It is worth
+noting that the RMSE-EKF of 0.026 mg/mL on a range of 0–0.42 mg/mL is very close to the analytical
+standard deviation of the reference oﬀ-line HPLC measurements (0.01 mg/mL). However, it needs
+to be mentioned that the low detection limit of Raman spectroscopy becomes critical at very low
+protein concentrations. Here, the LKM could of course be of help, and the EKF predictions should rely
+mostly on these values. To fully beneﬁt from the LKM, it should be speciﬁcally tuned in the region
+of low concentrations, which is at the incipient breakthrough. Nevertheless, the EKF performance
+reported in this work is already suﬃcient for the implementation in the frame of the control of a capture
+chromatographic step, where the range of interest is around 70% of the breakthrough value [39].
+It can be concluded that the EKF is a powerful tool for smart sensors and should be considered more
+often for monitoring and control within bioprocesses. In the future, this approach might be extended
+to other applications where deterministic knowledge is available, like in the monitoring of protein
+aggregation [40], crystallization [41] or in-line buﬀer preparation. At the same time, research activities
+on the diﬀerent components of a Raman analyzer towards increased signal intensities should be
+continued to further increase the prediction accuracy and reduce the measurement duration.
+
+[page 14]
+Processes 2019, 7, 683
+14 of 16
+Supplementary Materials: The following are available online at http://www.mdpi.com/2227-9717/7/10/683/s1,
+Figure S1: Acquired Raman spectra of the calibration set of ROT1.
+Author Contributions: Conceptualization, F.F.; formal analysis, M.F.L.; investigation, S.G. and S.V.; validation, J.S.
+and H.B.; supervision, M.M. and A.B.
+Funding:
+This research was funded by the KTI (CTI)-Program of the Swiss Economic Ministry Project
+19190.2 PFIW-IW.
+Acknowledgments: We would like to acknowledge Merck-Serono SA for providing the cell line and nutrition
+media, ChromaCon AG and Kaiser Optical Systems Inc. for the discussions and partnership as well as Dr. Moritz
+Wolf for producing the harvest.
+Conﬂicts of Interest: The authors declare no conﬂicts of interest.

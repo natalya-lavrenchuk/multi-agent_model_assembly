@@ -1,0 +1,510 @@
+@prefix kg: <http://example.org/kg/lopezmeza_2016/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:lopezmeza_2016 a mkg:Sup ;
+    rdfs:label "lopezmeza_2016 · Using simple models to describe the kinetics of growth, glucose consumption, and monoclonal antibody formation in naive and infliximab producer CHO cells"@en ;
+    mkg:hasMetadata kg:lopezmeza_2016_meta ;
+    mkg:includes <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5> .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1> a mkg:Law ;
+    rdfs:label "lopezmeza_2016 eq 1"@en ;
+    mkg:computes <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1/var/C_X> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1_meta> ;
+    mkg:latex "\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}=\\mu[\\boldsymbol{X}];\\mathrm{~w i t h~}[\\boldsymbol{X}]=[\\boldsymbol{X}]_{\\mathrm{o}}\\circledast\\mathbf{t}=\\mathbf{t}_{\\mathrm{o}}=0.0" ;
+    mkg:uses <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1/var/mu> .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1/var/C_X> a mkg:Variable ;
+    rdfs:label "[X] (lopezmeza_2016 eq 1)"@en ;
+    mkg:description "Cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL" ;
+    mkg:initialValue "~2 × 10^5 cells/mL" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density and viability were evaluated via the trypan blue dye exclusion assay using a flow cytometer" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "[X]" ;
+    mkg:unit "cells / ml" ;
+    mkg:unitString "cells/mL" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (lopezmeza_2016 eq 1)"@en ;
+    mkg:description "Specific growth rate of the cells." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Cell growth during the initial exponential phase is modeled as an increase proportional to biomass concentration." ;
+    mkg:doi "10.1007/s10616-015-9889-2" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "during the initial stage of exponential growth at each initial substrate concentration" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The law is applied during the initial exponential-growth stage at each initial substrate concentration." ],
+        [ mkg:quote "[ X ]=[ X ]_{ o }\\circledast t = t _{ o }=0.0" ;
+            mkg:reasoned false ;
+            mkg:text "[ X ]=[ X ]_{ o }\\circledast t = t _{ o }=0.0" ],
+        [ mkg:quote "μ is the specific growth rate with a constant value at least during the initial portion of the exponential phase." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The specific growth rate is treated as constant during at least the initial portion of the exponential phase." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}=\\mu[\\boldsymbol{X}];\\mathrm{~w i t h~}[\\boldsymbol{X}]=[\\boldsymbol{X}]_{\\mathrm{o}}\\circledast\\mathbf{t}=\\mathbf{t}_{\\mathrm{o}}=0.0" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3> a mkg:Law ;
+    rdfs:label "lopezmeza_2016 eq 3"@en ;
+    mkg:computes <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/var/mu> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3_meta> ;
+    mkg:hasParameter <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/K>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/mu_max> ;
+    mkg:latex "\\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}" ;
+    mkg:uses <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/var/C_S> .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (lopezmeza_2016 eq 3)"@en ;
+    mkg:description "Specific growth rate of the cells." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "\\mu" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "A Monod-type law computes specific growth rate from glucose concentration above the growth threshold." ;
+    mkg:doi "10.1007/s10616-015-9889-2" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "[ S ]*=[ S ]_ o -[ S ]_ t" ;
+            mkg:reasoned false ;
+            mkg:text "[ S ]*=[ S ]_ o -[ S ]_ t" ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/var/C_S> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/K> ;
+            mkg:slot "saturation constant" ],
+        [ mkg:boundTo <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/mu_max> ;
+            mkg:slot "maximum rate" ] ;
+    mkg:ocrFixNote "reading corrected by the reviewer against the PDF" ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "OCR reading: the bold \"K s\" (Ks, one parameter: the half-velocity constant) was read as two symbols K and s, so the equation read as K times s." ;
+    mkg:quote "\\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}" ;
+    mkg:reviewOutcome "reading corrected" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4> a mkg:Law ;
+    rdfs:label "lopezmeza_2016 eq 4"@en ;
+    mkg:computes <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/r_s> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/par/Y_x_s> ;
+    mkg:latex "\\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d t}=\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}}" ;
+    mkg:latexCorrected "$$ \\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d}t=-\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}} $$" ;
+    mkg:uses <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/C_S>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/r_x> .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/par/Y_x_s> a mkg:Parameter ;
+    rdfs:label "Y_{x/s} (lopezmeza_2016 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Cell yield coefficient." ;
+    mkg:dimension "[cell] / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "the yield coefficient was calculated from the slopes of $r_x$ versus $r_s$ plots at different $[S]_o$ values" ;
+    mkg:page "4" ;
+    mkg:quote "$Y_{x/s}$ is a cell yield coefficient" ;
+    mkg:reason "Cell yield coefficient, a material conversion yield determined from experimental rate data." ;
+    mkg:siFactor 1e+06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x/s}" ;
+    mkg:unit "cells / mg" ;
+    mkg:unitString "cell/mg" ;
+    mkg:valuesByCase "{\"n-CHO, 33 °C (Table 2 summary)\": \"≈ 6.08 × 10^6 cell/mg\", \"n-CHO, 37 °C (Table 2 summary)\": \"≈ 6.08 × 10^6 cell/mg\", \"r-CHO, 33 °C (Table 2 summary)\": \"≈ 2.59 × 10^6 cell/mg\", \"r-CHO, 37 °C\": \"1.70 × 10^6 cell/mg\", \"n-CHO, 33 °C, initial substrate 4.8 mg/mL\": \"1.08E+7 cells/mg\", \"n-CHO, 33 °C, initial substrate 3.6 mg/mL\": \"7.25E+6 cells/mg\", \"n-CHO, 33 °C, initial substrate 2.4 mg/mL\": \"3.58E+6 cells/mg\", \"n-CHO, 33 °C, initial substrate 1.2 mg/mL\": \"2.69E+6 cells/mg\", \"r-CHO, 33 °C, initial substrate 4.8 mg/mL\": \"2.79E+6 cells/mg\", \"r-CHO, 33 °C, initial substrate 3.6 mg/mL\": \"3.19E+6 cells/mg\", \"r-CHO, 33 °C, initial substrate 2.4 mg/mL\": \"1.81E+6 cells/mg\", \"r-CHO, 33 °C, initial substrate 1.2 mg/mL\": \"7.18E+5 cells/mg\"}" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/C_S> a mkg:Variable ;
+    rdfs:label "[S] (lopezmeza_2016 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Glucose concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "Experiments were run at different initial substrate concentrations, ranging from 1.2 to 4.8 g/L of glucose (1.2, 2.4, 3.6, and 4.8 g/L)." ;
+    mkg:initialValue "1.2, 2.4, 3.6, and 4.8 g/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Glucose and lactic acid concentrations were measured by HPLC" ;
+    mkg:reason "Glucose concentration is a measured, run-dependent substrate concentration that changes during culture." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "[S]" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/r_s> a mkg:Variable ;
+    rdfs:label "r_{s} (lopezmeza_2016 eq 4)"@en ;
+    mkg:description "Global rate of glucose consumption." ;
+    mkg:dimension "[mass] / [length] ** 3 / [time]" ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:symbol "r_{s}" ;
+    mkg:unit "g / h / l" ;
+    mkg:unitString "g L^-1 h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4/var/r_x> a mkg:Variable ;
+    rdfs:label "r_{x} (lopezmeza_2016 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Rate of cell growth." ;
+    mkg:dimension "[cell] / [length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "$r_x$ is the rate of cell growth" ;
+    mkg:reason "A time-varying cell-growth rate derived from the changing cell concentration." ;
+    mkg:siFactor 2.777778e+02 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{x}" ;
+    mkg:unit "cells / h / ml" ;
+    mkg:unitString "cells mL^-1 h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:correctionQuote "“Polynomial equations were derived to calculate the experimental cell production rate (r_x), where r_x = d[X]/dt, and [X] is cell concentration; and the glucose consumption rate (r_s), where rs = d[S]/dt, and [S] is glucose concentration.”" ;
+    mkg:correctionReason "The paper defines \\(r_s=d[S]/dt\\) and reports a positive yield coefficient, so the growth term needs a minus sign; as printed, it predicts increasing substrate during growth." ;
+    mkg:correctionStatus "accepted" ;
+    mkg:description "The glucose-consumption balance relates the global glucose rate to cell-growth rate through the cell yield coefficient." ;
+    mkg:doi "10.1007/s10616-015-9889-2" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "we assumed that the substrate consumption during the first 7 days of culture was devoted to cell growth; that is, no significant glucose consumption was a result of product assembly." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "For yield estimation in recombinant cultures, substrate consumed during the first seven culture days is attributed to cell growth, with no significant glucose consumption attributed to product assembly." ] ;
+    mkg:page "4" ;
+    mkg:possibleMisprint "The equality r_s = d[S]/dt = r_x/Y_{x/s} has the wrong sign if r_s denotes positive glucose consumption, since consumption decreases [S] while r_x/Y_{x/s} is positive." ;
+    mkg:quote "\\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d t}=\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}}" ;
+    mkg:reviewOutcome "paper misprint" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5> a mkg:Law ;
+    rdfs:label "lopezmeza_2016 eq 5"@en ;
+    mkg:computes <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/C_P> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/par/alpha>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/par/beta> ;
+    mkg:latex "\\mathbf{d}[\\boldsymbol{P}]/\\mathbf{d}\\mathbf{t}=\\mathbf{r}_{\\mathbf{p}}=\\alpha\\mathbf{r}_{\\mathbf{x}}+\\boldsymbol{\\beta}[\\boldsymbol{X}];\\quad\\mathbf{r}_{\\mathbf{x}}=\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}" ;
+    mkg:uses <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/C_X>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/r_p>,
+        <http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/r_x> .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/par/alpha> a mkg:Parameter ;
+    rdfs:label "\\alpha (lopezmeza_2016 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Luedeking–Piret constant." ;
+    mkg:dimension "[mass] / [cell]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The values of α and β were chosen to fit several experimental data sets of cell concentration and mAb production profiles." ;
+    mkg:page "5" ;
+    mkg:quote "$ \\alpha $ and $ \\beta $ are the Luedeking–Piret constants" ;
+    mkg:reason "It is a constant of the Luedeking–Piret product-formation law." ;
+    mkg:siFactor 1e-09 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha" ;
+    mkg:unit "µg / cells" ;
+    mkg:unitString "μg/cell" ;
+    mkg:valuesByCase "{\"n-CHO, 33 °C\": \"0 μg/cell\", \"n-CHO, 37 °C\": \"0 μg/cell\", \"r-CHO, 33 °C\": \"7.65 × 10^-7 μg/cell\", \"r-CHO, 37 °C\": \"7.65 × 10^-7 μg/cell\"}" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/par/beta> a mkg:Parameter ;
+    rdfs:label "\\beta (lopezmeza_2016 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Luedeking–Piret constant." ;
+    mkg:dimension "[mass] / [cell] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The values of α and β were chosen to fit several experimental data sets of cell concentration and mAb production profiles." ;
+    mkg:page "5" ;
+    mkg:quote "$ \\alpha $ and $ \\beta $ are the Luedeking–Piret constants" ;
+    mkg:reason "It is a constant of the Luedeking–Piret product-formation law." ;
+    mkg:siFactor 2.777778e-13 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\beta" ;
+    mkg:unit "µg / cells / h" ;
+    mkg:unitString "μg/cell/h" ;
+    mkg:valuesByCase "{\"n-CHO, 33 °C\": \"0 μg/cell/h\", \"n-CHO, 37 °C\": \"0 μg/cell/h\", \"r-CHO, 33 °C\": \"7.65 × 10^-8 μg/cell/h\", \"r-CHO, 37 °C\": \"1.38–3.38 × 10^-8 μg/cell/h\"}" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/C_P> a mkg:Variable ;
+    rdfs:label "[P] (lopezmeza_2016 eq 5)"@en ;
+    mkg:description "mAb concentration at a given point." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "An enzyme-linked immunosorbent assay (ELISA) was used to quantify the active monoclonal antibody in the collected samples" ;
+    mkg:siFactor 1e-03 ;
+    mkg:symbol "[P]" ;
+    mkg:unit "mg / l" ;
+    mkg:unitString "mg/L" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/C_X> a mkg:Variable ;
+    rdfs:label "[X] (lopezmeza_2016 eq 5)"@en ;
+    mkg:description "Cell concentration." ;
+    mkg:dimension "[cell] / [length] ** 3" ;
+    mkg:initialQuote "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL" ;
+    mkg:initialValue "~2 × 10^5 cells/mL" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Cell density and viability were evaluated via the trypan blue dye exclusion assay using a flow cytometer" ;
+    mkg:siFactor 1e+06 ;
+    mkg:symbol "[X]" ;
+    mkg:unit "cells / ml" ;
+    mkg:unitString "cells/mL" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/r_p> a mkg:Variable ;
+    rdfs:label "r_{p} (lopezmeza_2016 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Rate of accumulation of product in time within the reaction vessel." ;
+    mkg:dimension "[mass] / [length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "rate of accumulation of product in time within the reaction vessel" ;
+    mkg:reason "It is a process quantity—the product accumulation rate—that changes over time." ;
+    mkg:siFactor 2.777778e-07 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{p}" ;
+    mkg:unit "µg / h / ml" ;
+    mkg:unitString "μg mL^-1 h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5/var/r_x> a mkg:Variable ;
+    rdfs:label "r_{x} (lopezmeza_2016 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Rate of cell growth." ;
+    mkg:dimension "[cell] / [length] ** 3 / [time]" ;
+    mkg:page "4" ;
+    mkg:quote "$r_x$ is the rate of cell growth" ;
+    mkg:reason "A time-varying cell-growth rate derived from the changing cell concentration." ;
+    mkg:siFactor 2.777778e+02 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{x}" ;
+    mkg:unit "cells / h / ml" ;
+    mkg:unitString "cells mL^-1 h^-1" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "Antibody accumulation is modeled as the sum of a term proportional to cell growth and a term proportional to viable cell concentration." ;
+    mkg:doi "10.1007/s10616-015-9889-2" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "We also assumed that a Luedeking–Piret model could describe the kinetics of mAb throughout the entire duration of the cell culture." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The Luedeking–Piret law is assumed to describe antibody kinetics throughout the entire cell-culture duration." ] ;
+    mkg:page "4" ;
+    mkg:quote "\\mathbf{d}[\\boldsymbol{P}]/\\mathbf{d}\\mathbf{t}=\\mathbf{r}_{\\mathbf{p}}=\\alpha\\mathbf{r}_{\\mathbf{x}}+\\boldsymbol{\\beta}[\\boldsymbol{X}];\\quad\\mathbf{r}_{\\mathbf{x}}=\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}" ;
+    mkg:status "pending" .
+
+kg:lopezmeza_2016_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model describes growth, glucose use, and infliximab-biosimilar production by native and recombinant CHO-S cells. It combines first-order growth during the exponential phase with a threshold-modified Monod growth relationship, a cell-yield description of glucose consumption, and a Luedeking–Piret description of antibody formation. The authors developed it using batch cultures in shake flasks at different initial glucose concentrations and temperatures, then evaluated its product-formation description in instrumented batch and fed-batch bioreactors. Cell, glucose, lactate, and active antibody concentrations were measured daily. The authors present the simple kinetic models as tools for understanding and characterizing cell-culture processes, and for applications such as monitoring, control, and optimization." ;
+    mkg:doi "10.1007/s10616-015-9889-2" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The majority of the kinetic models in the literature are categorized as unstructured" ;
+            mkg:text "The authors characterize their approach as simple, unstructured kinetic modeling." ;
+            mkg:topic "model type" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All cultures were performed by duplicate with daily sampling. Batch cultures were terminated after 10 days and fed-batch cultures after 20 days." ;
+            mkg:text "Bioreactor batch runs lasted 10 days and fed-batch runs lasted 20 days, with duplicate cultures and daily sampling." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a useful growth model requires the inclusion of a threshold substrate parameter" ;
+            mkg:text "The growth relationship is Monod-type but includes a nonzero glucose threshold below which growth is not observed." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The time evolution of cell, glucose, lactic acid concentration and monoclonal antibody concentrations was monitored on a daily basis" ;
+            mkg:text "The measured time series included viable cell density, glucose, lactic acid, and monoclonal antibody concentrations." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The culture was set to 37 °C for the first 7 days of culture. At day 7, the temperature set point was decreased to 33 °C." ;
+            mkg:text "For fed-batch validation, the paper describes a representative instrumented run with a temperature shift from 37 to 33 °C on day 7." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "A single pair of product-formation coefficients did not describe all the 37 °C batch data sets, and the authors suggest lactate inhibition as a possible model improvement." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "it followed mixed-mode production kinetics, where at any given time the rate of product formation depends on the rate of cell growth and the current viable cell concentration." ;
+            mkg:text "The authors describe production by this recombinant line as mixed-mode, with formation related to both growth rate and viable-cell concentration." ;
+            mkg:topic "product" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Interestingly, the Monod-type kinetic values for recombinant cells do not change significantly as a function of temperature" ;
+            mkg:text "The fitted Monod parameters for recombinant cells were reported to change little with temperature, whereas those for naive cells changed with temperature." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The Luedeking–Piret model previously tested for batch processes (in shake flasks and bioreactors) fit the experimental data" ;
+            mkg:text "The authors also applied the batch-derived kinetic parameter set to fed-batch cultures, where they report that the model fit the measured data." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production" ;
+            mkg:text "The product-formation model is identified as a Luedeking–Piret model, citing Luedeking and Piret 1959." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The material balance for substrate consumption was assumed to be represented by Eq. 4." ;
+            mkg:text "The model relates glucose consumption to cell growth through a cell/substrate yield coefficient." ;
+            mkg:topic "substrate use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "simple models are particularly appreciated; they are easy to use in real process characterization, online monitoring, process control and process optimization scenarios" ;
+            mkg:text "The authors propose simple kinetic models as practical tools for process characterization, online monitoring, process control, and optimization." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Experiments were run at different initial substrate concentrations, ranging from 1.2 to 4.8 g/L of glucose (1.2, 2.4, 3.6, and 4.8 g/L)." ;
+            mkg:text "Shake-flask batch experiments tested initial glucose concentrations of 1.2, 2.4, 3.6, and 4.8 g/L." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the rate of product synthesis can be a function of both cellular density ([X]) and the rate of cell growth" ;
+            mkg:text "Antibody formation is represented with a Luedeking–Piret model, combining growth-associated and viable-cell-associated production." ;
+            mkg:topic "product" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "These α and β values can be used to accurately reproduce data obtained in experiments where the initial substrate concentration ranges from 2.4 to 4.5 g/L" ;
+            mkg:text "The authors report that the product-formation parameters fitted shake-flask data over initial substrate concentrations from 2.4 to 4.5 g/L." ;
+            mkg:topic "fit" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All batch cultures were performed in triplicate with daily sampling. Cultures were terminated at day 7 for the r-CHO cell line and at day 10 for the n-CHO line" ;
+            mkg:text "Shake-flask cultures were run in triplicate with daily sampling and were stopped after 7 days for recombinant cells or 10 days for naive cells." ;
+            mkg:topic "sampling" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Glucose and lactate were measured by HPLC with refractive-index detection using an Aminex HPX 87H column and 5 mM sulfuric acid mobile phase." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL and maintained at 33 °C with an 80-rpm rate of agitation. Cultures were supplied with a gas mixture (2 sL/h) consisting of air, oxygen, nitrogen, and carbon dioxide to maintain a dissolved oxygen saturation of 40 %." ;
+            mkg:text "Bioreactor cultures were agitated at 80 rpm and supplied with 2 standard L/h of gas to maintain dissolved oxygen at 40% saturation." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The cell culture medium consisted of CD Opti CHO (Invitrogen, Carlsbad, CA, USA) supplemented with 8-mM glutamine (Invitrogen, Carlsbad, CA, USA)." ;
+            mkg:text "Cultures used CD Opti CHO medium supplemented with 8 mM glutamine." ;
+            mkg:topic "medium" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The proposed parameter values for the Luedeking–Piret model fit reasonably well with several independent experimental data sets in the range of 31–33 °C." ;
+            mkg:text "The authors state that the proposed product-formation parameters fit experimental data sets in the range of 31–33 °C." ;
+            mkg:topic "scope" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "we used a CHO-S clone engineered in-house (Carrillo-Cocom et al. 2014; González-Leal et al. 2011) to produce a biosimilar of the monoclonal antibody infliximab and its native counterpart" ;
+            mkg:text "The model concerns native CHO-S cells and an in-house engineered recombinant CHO-S clone producing an infliximab biosimilar." ;
+            mkg:topic "cell lines" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Our results suggested that the cell/substrate yield coefficient was not constant, but was a function of the substrate concentration" ;
+            mkg:text "The authors found that the cell/substrate yield coefficient varied with glucose concentration rather than remaining constant." ;
+            mkg:topic "substrate use" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not report a code or data repository." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The viable cell [X] and glucose concentration [S] profiles observed in the exponential phase of batch experiments were fitted to second-order polynomial equations using Excel Software" ;
+            mkg:text "Cell and glucose profiles during exponential growth were fitted with second-order polynomials and differentiated to estimate growth and glucose-consumption rates." ;
+            mkg:topic "data processing" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the viable cell concentration profile [X] was fit to a sixth-order polynomial. The polynomial equation was derived to obtain the experimental cell production rate" ;
+            mkg:text "For antibody-production analysis, viable-cell profiles were fitted with a sixth-order polynomial and differentiated to estimate cell-growth rates." ;
+            mkg:topic "data processing" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Lactate was measured and discussed, but the model laws described in the paper do not include a lactate balance or lactate effect." ;
+            mkg:topic "lactate" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Cultures were seeded at a viable cell density of ~2 × 10⁵ cells/mL and maintained at 33 or 37 °C in an 8 % CO₂ humidified orbital shaking incubator at 125 rpm" ;
+            mkg:text "Shake-flask cultures were inoculated at about 2 × 10⁵ viable cells/mL and incubated at 33 or 37 °C, 125 rpm, and 8% CO₂." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A Lineweaver–Burk linearization was used to obtain values for the kinetic parameters" ;
+            mkg:text "The growth-kinetic parameters were obtained using Lineweaver–Burk linearization, and a linear regression was accepted only when its r² exceeded 0.97." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Batch cultures were performed using naive (n-CHO) or recombinant cells (r-CHO) in 125-mL shake flasks with 30-mL working volume." ;
+            mkg:text "Shake-flask batch cultures used 125-mL flasks with a 30-mL working volume." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The values of α and β were chosen to fit several experimental data sets of cell concentration and mAb production profiles." ;
+            mkg:text "The authors selected the product-formation coefficients by fitting multiple cell-density and antibody-production data sets and numerically integrating the model." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not give a consolidated count of model states, equations, or estimated parameters." ;
+            mkg:topic "model size" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The fed-batch protocol consisted of a temperature reduction (31 °C) on the seventh day and five intermittent feed additions (CD EfficientFeed™ B, Invitrogen, Carlsbad, CA, USA) of 10 % the initial volume starting on day 1." ;
+            mkg:text "The methods describe fed-batch operation with five intermittent additions of feed, each 10% of the initial culture volume, starting on day 1, and a temperature reduction on day 7." ;
+            mkg:topic "feeding" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An enzyme-linked immunosorbent assay (ELISA) was used to quantify the active monoclonal antibody in the collected samples" ;
+            mkg:text "The antibody assay quantified active monoclonal antibody in culture samples by ELISA." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Cell density and viability were measured by trypan-blue exclusion using a Guava easyCyte flow cytometer." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "structured kinetic (Sandadi et al. 2011) and logistic models for r-CHO producing IgG (Goudar et al. 2009); Monte Carlo methodology model for CHO cells producing B1 fusion proteins (Xing et al. 2010); and logistic and regression models for a CHO cell line producing IFN-γ (Farges et al. 2008)." ;
+            mkg:text "The authors contrast their approach with earlier recombinant-cell studies using structured kinetic, logistic, Monte Carlo, and regression models, including Sandadi et al. 2011, Goudar et al. 2009, Xing et al. 2010, and Farges et al. 2008." ;
+            mkg:topic "prior models" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The parameters [S]t and α were kept constant, while μmax, Yx/s, and β were varied iteratively until a good agreement between the [X], [S], and [P] experimental time series and the simulation values was achieved." ;
+            mkg:text "For 37 °C recombinant batch data, the authors iteratively adjusted selected growth, yield, and production parameters while holding the threshold and one production coefficient fixed." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Bioreactor-batch and fed-batch cultures were performed only with the recombinant cell line at basal medium concentration. Experiments were performed in 1.6-L bioreactors (DASGIP, Julich, Germany) with 1.0-L working volume." ;
+            mkg:text "Instrumented bioreactor experiments used 1.6-L vessels with a 1.0-L working volume and were conducted only with recombinant cells." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "We observed that cell growth was a first-order process (Eq. 1) with respect to cell concentration, at least at the beginning of the exponential growth phase" ;
+            mkg:text "The authors treat cell growth as first-order in cell concentration during at least the initial portion of exponential growth." ;
+            mkg:topic "growth" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The product-formation description was tested on recombinant-cell batch cultures in instrumented bioreactors, and the authors report a good fit using the shake-flask parameter set." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper places its growth model alongside Monod-like and logistic hybridoma models, Monod and metabolic-flux models, and dynamic metabolic models for nonproducing CHO cells." ;
+            mkg:topic "prior models" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/K> a mkg:Parameter ;
+    rdfs:label "K (lopezmeza_2016 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Monod half-velocity constant (the K_s parameter)." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The kinetic parameter values for this Monod-type model for both naive and recombinant CHO cells were obtained using a Lineweaver–Burk linearization strategy" ;
+    mkg:page "9" ;
+    mkg:quote "$K_\\text{s}$ is the half-velocity constant" ;
+    mkg:reason "Monod half-velocity constant, a kinetic saturation constant." ;
+    mkg:sameQuantityAs "s" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" ;
+    mkg:unit "mg / ml" ;
+    mkg:unitString "mg/mL" ;
+    mkg:valuesByCase "{\"n-CHO, 33 °C\": \"0.286 mg/mL\", \"n-CHO, 37 °C\": \"1.023 mg/mL\", \"r-CHO, 33 °C\": \"0.664 mg/mL\", \"r-CHO, 37 °C\": \"0.664 mg/mL\"}" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (lopezmeza_2016 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum specific growth rate." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The kinetic parameter values for this Monod-type model for both naive and recombinant CHO cells were obtained using a Lineweaver–Burk linearization strategy" ;
+    mkg:page "9" ;
+    mkg:quote "$\\mu_{\\text{max}}$ is the maximum specific growth rate" ;
+    mkg:reason "Maximum specific growth rate, an estimated constant in the Monod growth law." ;
+    mkg:siFactor 2.777778e-04 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" ;
+    mkg:unit "1 / h" ;
+    mkg:unitString "h^-1" ;
+    mkg:valuesByCase "{\"n-CHO, 33 °C\": \"0.038 h^-1\", \"n-CHO, 37 °C\": \"0.05 h^-1\", \"r-CHO, 33 °C\": \"0.040 h^-1\", \"r-CHO, 37 °C\": \"0.040 h^-1\"}" .
+
+<http://example.org/kg/lopezmeza_2016/law/lopezmeza_2016_eq3/var/C_S> a mkg:Variable ;
+    rdfs:label "[S] (lopezmeza_2016 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Glucose concentration." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "Experiments were run at different initial substrate concentrations, ranging from 1.2 to 4.8 g/L of glucose (1.2, 2.4, 3.6, and 4.8 g/L)." ;
+    mkg:initialValue "1.2, 2.4, 3.6, and 4.8 g/L" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Glucose and lactic acid concentrations were measured by HPLC" ;
+    mkg:reason "Glucose concentration is a measured, run-dependent substrate concentration that changes during culture." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "[S]" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g/L" .
+

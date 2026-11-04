@@ -1,0 +1,108 @@
+{
+ "sup": "osberghaus_2012",
+ "title": "Determination of parameters for the steric mass action model—A comparison between two approaches",
+ "doi": "10.1016/j.chroma.2012.02.004",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "models": [
+  {
+   "name": "Kinetic SMA",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "7",
+    "8"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": []
+  },
+  {
+   "name": "Rapid-equilibrium SMA",
+   "equations": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "7",
+    "8"
+   ],
+   "equations_quote": null,
+   "boundary_basis": "inferred",
+   "complete_model": false,
+   "model_assumptions": [
+    {
+     "text": "Rapid equilibrium is assumed.",
+     "quote": "If the assumption of a rapid equilibrium is valid",
+     "page": 2,
+     "severity": "warning",
+     "reasoned": false,
+     "process_condition": false
+    }
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "eq": "5",
+   "reason": "Parameter-estimation correlation between gradient volume and elution volume, not part of the mechanistic process model."
+  },
+  {
+   "eq": "6",
+   "reason": "Calculates the steric parameter from experimental data for parameter determination, not a process-model equation."
+  },
+  {
+   "eq": "9",
+   "reason": "Least-squares objective function for parameter estimation."
+  },
+  {
+   "eq": "10",
+   "reason": "Calculates a model parameter from experimental moments; it is a parameter-setting procedure, not a process-model law."
+  },
+  {
+   "eq": "11",
+   "reason": "Experimental titration calculation of Λ; the model definition is given by eq 2."
+  },
+  {
+   "eq": "12",
+   "reason": "Adds synthetic measurement noise to data; not part of the process model."
+  },
+  {
+   "eq": "13",
+   "reason": "Adds synthetic time-shift noise to data; not part of the process model."
+  },
+  {
+   "eq": "p3-1",
+   "reason": "Defines an auxiliary quantity for the parameter-determination equation 6."
+  }
+ ],
+ "checks": [
+  "'Kinetic SMA': D_{ax} (used by eq 7) is computed only by eq 10, which the LLM left out (Calculates a model parameter from experimental moments; it is a parame): an input of this model, or should eq 10 be in?",
+  "'Rapid-equilibrium SMA': eq 1 added back by code (computes q_{i}, used by eq 8)",
+  "'Rapid-equilibrium SMA': D_{ax} (used by eq 7) is computed only by eq 10, which the LLM left out (Calculates a model parameter from experimental moments; it is a parame): an input of this model, or should eq 10 be in?"
+ ],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "2": "CONFLICT: computes \\Lambda, like eq 11",
+   "3": "NEEDED: computes \\overline{q_1}, used by the model",
+   "4": "NOT USED BY OTHERS: computes k_{i,eq}; the model output (keep) or not part of the model (leave out)",
+   "5": "NOT USED BY OTHERS: computes V_{R}; the model output (keep) or not part of the model (leave out)",
+   "6": "NEEDED: computes \\sigma, used by the model",
+   "p3-1": "NEEDED: computes \\vartheta, used by the model",
+   "7": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "8": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "9": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "10": "NEEDED: computes D_{ax}, used by the model",
+   "11": "CONFLICT: computes \\Lambda, like eq 2",
+   "12": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "13": "UPDATE of time (applied in printed order on top of the law that computes it): not used by the model laws"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions set to warning (none is a condition a user checks on their process); ones that only name the model or its mechanism removed."
+ ]
+}

@@ -1,0 +1,859 @@
+@prefix kg: <http://example.org/kg/nagy_2008/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:nagy_2008 a mkg:Sup ;
+    rdfs:label "nagy_2008 · Determination of the Kinetic Parameters for the Crystallization of Paracetamol from Water Using Metastable Zone Width Experiments"@en ;
+    mkg:hasMetadata kg:nagy_2008_meta ;
+    mkg:includes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq12>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq13>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq21> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 11.1"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1/var/mu_0> ;
+    mkg:equationNumber "11.1" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1_meta> ;
+    mkg:latex "\\dot{\\mu}_{0} = B" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1/var/B> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 11.1)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1/var/mu_0> a mkg:Variable ;
+    rdfs:label "\\mu_{0} (nagy_2008 eq 11.1)"@en ;
+    mkg:description "Zeroth moment of the crystal size distribution." ;
+    mkg:dimension "1 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{0}" ;
+    mkg:unit "number / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The zeroth-moment balance tracks the accumulation of crystal number through primary nucleation." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "when only one characteristic size is considered" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The moment model considers only one characteristic crystal size." ],
+        [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ],
+        [ mkg:quote "For unseeded systems, the initial condition for eq 11 is given by" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The model is applied to an unseeded system with zero initial moments." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\dot{\\mu}_{0} = B" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 11.2"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/mu_1> ;
+    mkg:equationNumber "11.2" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/par/r_0> ;
+    mkg:latex "\\dot{\\mu}_{1} = G\\mu_{0}+Br_{0}" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/B>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/G>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/mu_0> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/par/r_0> a mkg:Parameter ;
+    rdfs:label "r_{0} (nagy_2008 eq 11.2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Crystal size at nucleation." ;
+    mkg:dimension "[length]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $)." ;
+    mkg:page "3" ;
+    mkg:quote "and $ r_{0} $ is the crystal size at nucleation." ;
+    mkg:reason "A crystal-size-at-nucleation parameter that the model treats as negligible." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{0}" ;
+    mkg:unit "m" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length" ;
+    mkg:value 0 .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 11.2)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/G> a mkg:Variable ;
+    rdfs:label "G (nagy_2008 eq 11.2)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "G" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/mu_0> a mkg:Variable ;
+    rdfs:label "\\mu_{0} (nagy_2008 eq 11.2)"@en ;
+    mkg:description "Zeroth moment of the crystal size distribution." ;
+    mkg:dimension "1 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{0}" ;
+    mkg:unit "number / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2/var/mu_1> a mkg:Variable ;
+    rdfs:label "\\mu_{1} (nagy_2008 eq 11.2)"@en ;
+    mkg:description "First moment of the crystal size distribution." ;
+    mkg:dimension "[length] / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{1}" ;
+    mkg:unit "number * m / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The first crystal-size moment changes through growth of existing crystals and the nucleation source at size r0." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The size of newly formed nuclei is treated as negligible." ],
+        [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ],
+        [ mkg:quote "when only one characteristic size is considered" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The moment model considers only one characteristic crystal size." ],
+        [ mkg:quote "For unseeded systems, the initial condition for eq 11 is given by" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The model is applied to an unseeded system with zero initial moments." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\dot{\\mu}_{1} = G\\mu_{0}+Br_{0}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 11.3"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/mu_2> ;
+    mkg:equationNumber "11.3" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/par/r_0> ;
+    mkg:latex "\\dot{\\mu}_{2} = 2G\\mu_{1}+Br_{0}^{~2}" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/B>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/G>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/mu_1> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/par/r_0> a mkg:Parameter ;
+    rdfs:label "r_{0} (nagy_2008 eq 11.3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Crystal size at nucleation." ;
+    mkg:dimension "[length]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $)." ;
+    mkg:page "3" ;
+    mkg:quote "and $ r_{0} $ is the crystal size at nucleation." ;
+    mkg:reason "A crystal-size-at-nucleation parameter that the model treats as negligible." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{0}" ;
+    mkg:unit "m" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length" ;
+    mkg:value 0 .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 11.3)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/G> a mkg:Variable ;
+    rdfs:label "G (nagy_2008 eq 11.3)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "G" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/mu_1> a mkg:Variable ;
+    rdfs:label "\\mu_{1} (nagy_2008 eq 11.3)"@en ;
+    mkg:description "First moment of the crystal size distribution." ;
+    mkg:dimension "[length] / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{1}" ;
+    mkg:unit "number * m / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3/var/mu_2> a mkg:Variable ;
+    rdfs:label "\\mu_{2} (nagy_2008 eq 11.3)"@en ;
+    mkg:description "Second moment of the crystal size distribution." ;
+    mkg:dimension "[length] ** 2 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length^2 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{2}" ;
+    mkg:unit "number * m ** 2 / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length^2 number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The second crystal-size moment changes through growth of the first moment and the nucleation source at size r0." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "when only one characteristic size is considered" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The moment model considers only one characteristic crystal size." ],
+        [ mkg:quote "For unseeded systems, the initial condition for eq 11 is given by" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The model is applied to an unseeded system with zero initial moments." ],
+        [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The size of newly formed nuclei is treated as negligible." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\dot{\\mu}_{2} = 2G\\mu_{1}+Br_{0}^{~2}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 11.4"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/mu_3> ;
+    mkg:equationNumber "11.4" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/par/r_0> ;
+    mkg:latex "\\dot{\\mu}_{3} = 3G\\mu_{2}+Br_{0}^{~3}" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/B>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/G>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/mu_2> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/par/r_0> a mkg:Parameter ;
+    rdfs:label "r_{0} (nagy_2008 eq 11.4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Crystal size at nucleation." ;
+    mkg:dimension "[length]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $)." ;
+    mkg:page "3" ;
+    mkg:quote "and $ r_{0} $ is the crystal size at nucleation." ;
+    mkg:reason "A crystal-size-at-nucleation parameter that the model treats as negligible." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{0}" ;
+    mkg:unit "m" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length" ;
+    mkg:value 0 .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 11.4)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/G> a mkg:Variable ;
+    rdfs:label "G (nagy_2008 eq 11.4)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "G" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/mu_2> a mkg:Variable ;
+    rdfs:label "\\mu_{2} (nagy_2008 eq 11.4)"@en ;
+    mkg:description "Second moment of the crystal size distribution." ;
+    mkg:dimension "[length] ** 2 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length^2 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{2}" ;
+    mkg:unit "number * m ** 2 / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length^2 number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4/var/mu_3> a mkg:Variable ;
+    rdfs:label "\\mu_{3} (nagy_2008 eq 11.4)"@en ;
+    mkg:description "Third moment of the crystal size distribution." ;
+    mkg:dimension "[length] ** 3 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length^3 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{3}" ;
+    mkg:unit "number * m ** 3 / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length^3 number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.4_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The third crystal-size moment changes through growth of the second moment and the nucleation source at size r0." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The size of newly formed nuclei is treated as negligible." ],
+        [ mkg:quote "For unseeded systems, the initial condition for eq 11 is given by" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The model is applied to an unseeded system with zero initial moments." ],
+        [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ],
+        [ mkg:quote "when only one characteristic size is considered" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The moment model considers only one characteristic crystal size." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\dot{\\mu}_{3} = 3G\\mu_{2}+Br_{0}^{~3}" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 11.5"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/C> ;
+    mkg:equationNumber "11.5" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/k_v>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/r_0>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/rho_c> ;
+    mkg:latex "\\dot{C} = -\\rho_{c}k_{v}(3G\\mu_{2}+Br_{0}^{~3})" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/B>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/G>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/mu_2> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/k_v> a mkg:Parameter ;
+    rdfs:label "k_{v} (nagy_2008 eq 11.5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Volumetric shape factor." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "7" ;
+    mkg:quote "$ k_{v} $ = volumetric shape factor" ;
+    mkg:reason "A volume shape factor is a dimensionless geometric property of the model's crystal representation." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{v}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/r_0> a mkg:Parameter ;
+    rdfs:label "r_{0} (nagy_2008 eq 11.5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Crystal size at nucleation." ;
+    mkg:dimension "[length]" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $)." ;
+    mkg:page "3" ;
+    mkg:quote "and $ r_{0} $ is the crystal size at nucleation." ;
+    mkg:reason "A crystal-size-at-nucleation parameter that the model treats as negligible." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "r_{0}" ;
+    mkg:unit "m" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length" ;
+    mkg:value 0 .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/par/rho_c> a mkg:Parameter ;
+    rdfs:label "\\rho_{c} (nagy_2008 eq 11.5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Density of crystal." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "8" ;
+    mkg:quote "$ \\rho_{c} $ = density of crystal" ;
+    mkg:reason "Crystal density is a physical property of the material." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\rho_{c}" ;
+    mkg:unit "kg / m ** 3" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "mass volume^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 11.5)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/C> a mkg:Variable ;
+    rdfs:label "C (nagy_2008 eq 11.5)"@en ;
+    mkg:description "Solution concentration expressed as mass of crystal per unit mass of solvent." ;
+    mkg:dimension "dimensionless" ;
+    mkg:measured true ;
+    mkg:measuredQuote "The in situ solution concentration was measured using ATR-FTIR spectroscopy as described previously." ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "crystal solvent" ;
+    mkg:unitString "g crystal/g solvent" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/G> a mkg:Variable ;
+    rdfs:label "G (nagy_2008 eq 11.5)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "G" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5/var/mu_2> a mkg:Variable ;
+    rdfs:label "\\mu_{2} (nagy_2008 eq 11.5)"@en ;
+    mkg:description "Second moment of the crystal size distribution." ;
+    mkg:dimension "[length] ** 2 / [mass]" ;
+    mkg:initialQuote "For unseeded systems, the initial condition for eq 11 is given by $\\mu_i(0) = 0$ ($i = 0, 1, 2, 3$), and $C(0) = C_i$." ;
+    mkg:initialValue "0 length^2 number kg solvent^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\mu_{2}" ;
+    mkg:unit "number * m ** 2 / kg" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "length^2 number kg solvent^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq11.5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The solution concentration decreases as crystal volume is generated by growth and nucleation." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "ODE" ;
+    mkg:hasAssumption [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ],
+        [ mkg:quote "For unseeded systems, the initial condition for eq 11 is given by" ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The model is applied to an unseeded system with zero initial moments." ],
+        [ mkg:quote "when only one characteristic size is considered" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The moment model considers only one characteristic crystal size." ],
+        [ mkg:reasoned true ;
+            mkg:severity "warning" ;
+            mkg:text "The size of newly formed nuclei is treated as negligible." ] ;
+    mkg:page "3" ;
+    mkg:quote "\\dot{C} = -\\rho_{c}k_{v}(3G\\mu_{2}+Br_{0}^{~3})" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 12"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/var/G> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/par/g>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/par/k_g> ;
+    mkg:latex "G=k_{g}\\Delta C^{g}" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/var/Delta_C> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12/par/g> a mkg:Parameter ;
+    rdfs:label "g (nagy_2008 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "kinetic parameter (exponent) for growth" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique." ;
+    mkg:page "7" ;
+    mkg:quote "g = kinetic parameter (exponent) for growth" ;
+    mkg:reason "The exponent in the crystal-growth power law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "g" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 1.54e+00 ;
+    mkg:valueUncertainty "± 0.48" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12/var/G> a mkg:Variable ;
+    rdfs:label "G (nagy_2008 eq 12)"@en ;
+    mkg:description "Growth rate." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "G" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The crystal growth rate is given as a power-law function of supersaturation." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/var/Delta_C> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq12/par/k_g> ;
+            mkg:slot "rate constant" ] ;
+    mkg:page "3" ;
+    mkg:quote "G=k_{g}\\Delta C^{g}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 13"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/var/B> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq13_meta> ;
+    mkg:hasParameter <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/par/b>,
+        <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/par/k_b> ;
+    mkg:latex "B=k_{b}\\Delta C^{b}" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/var/Delta_C> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13/par/b> a mkg:Parameter ;
+    rdfs:label "b (nagy_2008 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "kinetic parameter (exponent) for nucleation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique." ;
+    mkg:page "7" ;
+    mkg:quote "b = kinetic parameter (exponent) for nucleation" ;
+    mkg:reason "The exponent in the primary nucleation power law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "b" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 6.23e+00 ;
+    mkg:valueUncertainty "± 0.93" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13/var/B> a mkg:Variable ;
+    rdfs:label "B (nagy_2008 eq 13)"@en ;
+    mkg:description "Primary number nucleation rate." ;
+    mkg:dimension "1 / [mass] / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "B" ;
+    mkg:unit "number / kg / s" ;
+    mkg:unitNote "dimension only, no unit printed solvent" ;
+    mkg:unitString "number kg solvent^-1 time^-1" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The primary number nucleation rate is given as a power-law function of supersaturation." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from t = 0 to a short period after t_ind, where the surface area of the crystals are not large enough for substantial secondary nucleation to occur." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Primary nucleation is treated as dominant from the start of supersaturation until a short period after the induction time." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/var/Delta_C> ;
+            mkg:slot "substrate" ],
+        [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq13/par/k_b> ;
+            mkg:slot "rate constant" ] ;
+    mkg:page "3" ;
+    mkg:possibleMisprint "The listed units for k_b (number volume^-1 time^-1) do not match the units for B (number kg solvent^-1 time^-1), while \\Delta C^b is dimensionless." ;
+    mkg:quote "B=k_{b}\\Delta C^{b}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq21> a mkg:Law ;
+    rdfs:label "nagy_2008 eq 21"@en ;
+    mkg:computes <http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/C_star> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/nagy_2008/law/nagy_2008_eq21_meta> ;
+    mkg:latex "C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066" ;
+    mkg:uses <http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/T> .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq21_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The equilibrium concentration of paracetamol in water is calculated from temperature using a quadratic solubility correlation." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/C_star> ;
+            mkg:slot "equilibrium concentration" ],
+        [ mkg:boundTo <http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/T> ;
+            mkg:slot "temperature" ] ;
+    mkg:page "3" ;
+    mkg:quote "C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066" ;
+    mkg:status "pending" .
+
+kg:nagy_2008_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model describes unseeded batch cooling crystallization of paracetamol from water and predicts solution concentration and crystal-size-distribution moments, which are used to estimate particle size and metastable-zone behavior. It combines a dynamic population balance, represented by four moments, with a solute mass balance and power-law expressions for primary nucleation and crystal growth. The experiments were run in a stirred, 500 mL vessel at slow and fast cooling rates, with concentration measured by ATR-FTIR and particle information measured by FBRM. The four kinetic parameters were estimated from measurements collected shortly after crystals became detectable, and the model was tested against separate fast-cooling experiments. The authors use the model to estimate nucleation and growth kinetics and to assess how simplifying assumptions in earlier metastable-zone methods affect those estimates." ;
+    mkg:doi "10.1021/ie060637c" ;
+    mkg:form "DAE" ;
+    mkg:hasFact [ mkg:basis "stated" ;
+            mkg:quote "The experimental data used includes the measurements from the ATR-FTIR and focused beam reflectance measurement (FBRM) during a short period after $t_{\\text{ind}}$." ;
+            mkg:text "Parameter estimation used concentration and particle-size measurements collected during a short period after the induction time." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In this approach, the CSD is obtained from the CLD by considering spherical crystals." ;
+            mkg:text "The particle-size distribution was inferred from FBRM chord lengths by treating crystals as spheres." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "To estimate the four kinetic parameters $(k_b, b, k_g, g)$" ;
+            mkg:text "The model estimates four kinetic parameters: two for primary nucleation and two for growth." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Microscopic analysis revealed that the crystals at induction time are hexagonal, which were approximated as spheres, within acceptable errors. However, the aspect ratio of the shape of the crystals changes as they grow. Thus, the CSD estimated based on equivalent diameters can be significantly different from the actual CSD." ;
+            mkg:text "Although crystals were approximately hexagonal at induction, their changing aspect ratio during growth can make sphere-based particle-size distributions differ substantially from the actual distribution." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The estimation of the model parameters requires the solution of a nonconvex, nonlinear programming problem, which was solved using a sequential approach." ;
+            mkg:text "The parameter fit was formulated as a nonconvex nonlinear programming problem and solved using a sequential approach." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The consideration of primary nucleation as the dominant form of nucleation is valid from $ t = 0 $ to a short period after $ t_{\\text{ind}} $" ;
+            mkg:text "Primary nucleation is treated as the dominant nucleation mechanism from the start of supersaturation until shortly after the induction time." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "experiment: avg. abs. rel. error | Method 1a: 165.9% | Method 1b: 36.3% | Method 2a: 42.8% | Method 2b: 42.3% | Method 3: 18.8% | Method 3: 16.6%" ;
+            mkg:text "For the F1–F4 tests, the model’s average absolute relative errors were 18.8% for maximum undercooling and 16.6% for particle size at induction." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A computationally efficient method to solve for the PBE is to use the moment transformation, which computes the average and total properties of the solid phase." ;
+            mkg:text "The moment formulation is a computationally efficient reduced representation of the population balance." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not state the sensor sampling interval or measurement frequency." ;
+            mkg:topic "data" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the experiments were conducted in a 500 mL jacketed round-bottom flask. The solution was agitated by a magnetic stirrer." ;
+            mkg:text "Experiments were conducted in a 500 mL jacketed round-bottom flask with magnetic stirring." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In the case of Method 3, $ y = [C, \\mu_1/\\mu_0, \\mu_2/\\mu_0, \\mu_3/\\mu_0] $" ;
+            mkg:text "Model outputs fitted to data were solution concentration and three moment ratios representing particle-size information." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The data from experiments F1–F4 are used to test the models obtained and are excluded from the parameter estimation." ;
+            mkg:text "The F1–F4 fast-cooling experiments were excluded from parameter estimation and used as unforeseen test data." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The difference between the model prediction and the experimental data increases with time, which is partly caused by the error from the estimation of the moments of the CSD from the experimental CLD." ;
+            mkg:text "The discrepancy between model predictions and experimental data increases with time, partly because of errors in estimating distribution moments from the chord-length data." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "All three detection methods indicated very similar metastable zone widths" ;
+            mkg:text "FBRM, ATR-FTIR concentration changes, and naked-eye cloud formation gave very similar metastable-zone widths in the slow-cooling experiments." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The 95% confidence intervals are obtained for $\\alpha = 0.05$." ;
+            mkg:text "Parameter confidence intervals were calculated from sensitivity and covariance information using a t-test, with 95% intervals reported." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The size of the nuclei is considered negligible ( $ r_0 \\simeq 0 $)." ;
+            mkg:text "The model treats nuclei as having negligible size at formation." ;
+            mkg:topic "initialization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the solution, slightly above its saturated temperature $ T_s $, is cooled at a constant rate until crystals are detected." ;
+            mkg:text "The metastable-zone experiments cooled solutions from slightly above saturation at a constant rate until crystals were detected." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique." ;
+            mkg:text "The four kinetic parameters were estimated by nonlinear least squares against the measured concentration and moment-ratio outputs." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The second series of data contains 17 sets of experiments (F1–F17) performed at a constant fast cooling rate of 30 °C/h (0.5 °C/min) using different initial concentrations." ;
+            mkg:text "A second series comprised 17 experiments at a constant cooling rate of 30 °C/h (0.5 °C/min), using different initial concentrations." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the uncertainty in the estimated kinetic parameters in this proposed method is still relatively high." ;
+            mkg:text "The authors characterize the uncertainty in the proposed method’s estimated kinetic parameters as relatively high." ;
+            mkg:topic "uncertainty" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics" ;
+            mkg:text "Primary number nucleation and crystal growth are each represented by empirical power-law kinetics in supersaturation." ;
+            mkg:topic "kinetics" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The crystallization process is described by the population balance equation." ;
+            mkg:text "The paper builds its population-balance moment formulation on the particulate-process framework of Randolph and Larson (1988)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The in situ solution concentration was measured using ATR-FTIR spectroscopy as described previously." ;
+            mkg:text "The in situ solution concentration was measured by ATR-FTIR spectroscopy." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Because growth of nuclei is not taken into account, this method gives the apparent nucleation parameter rather than the true parameter." ;
+            mkg:text "The paper compares the moment-model approach with the classical metastable-zone method of Nyvlt (1968), which neglects growth of newly formed crystals and therefore yields an apparent rather than true nucleation parameter." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The authors propose the estimated parameters as initial values for iterative parameter-estimation procedures and as a complement to batch-model identification." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "For unseeded systems, the initial condition for eq 11 is given by $ \\mu_i(0) = 0 $ ( $ i = 0, 1, 2, 3 $), and $ C(0) = C_i $." ;
+            mkg:text "For the unseeded simulations, the initial crystal moments were zero and the starting solution concentration was set to the initial concentration." ;
+            mkg:topic "initialization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Different nucleation mechanisms (e.g., secondary nucleation) could also come into effect in the experiments, increasing the uncertainty in the identified model." ;
+            mkg:text "Other nucleation mechanisms, including secondary nucleation, may occur in the experiments and add uncertainty to the identified model." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "S1 | $ \\beta $ (°C/h): 3.8 | $ C_i $ (g/g water): 0.030 | $ \\Delta T_{max} $ (°C): 2.3 | $ L_d $ ( $ \\mu $m): 9.5" ;
+            mkg:text "For the slow-cooling runs, measured maximum undercoolings were 2.3–6.6 °C and detectable particle sizes were 9.5–18.4 μm." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "experiment: avg. abs. rel. error | Method 1a: 29.2% | Method 1b: 19.7% | Method 2a: 26.3% | Method 2b: 26.4% | Method 3: 20.0% | Method 3: 13.3%" ;
+            mkg:text "For the five slow-cooling experiments used in fitting, the model’s average absolute relative errors were 20.0% for maximum undercooling and 13.3% for particle size at induction." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The model system studied is the cooling crystallization of paracetamol (PCM) from water." ;
+            mkg:text "The model represents cooling crystallization of paracetamol (4-acetamidophenol) from water." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "FBRM was used both to detect the metastable limit and to measure the solid-phase chord-length distribution." ;
+            mkg:topic "measurements" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The first batch consists of five sets of experimental data (S1–S5) obtained at slow cooling rates in the range 3.22–4.03 °C/h using different initial paracetamol concentrations." ;
+            mkg:text "Five slow-cooling experiments used cooling rates of 3.2–4.0 °C/h and initial paracetamol concentrations of 0.015–0.030 g/g water." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper does not identify a software package or provide a code or data availability statement." ;
+            mkg:topic "availability" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "An approach to determine the kinetic parameters, $ \\varphi_{\\text{het}} $ and f, is proposed by Kim and Mersmann." ;
+            mkg:text "The paper also assesses the Mersmann (1996) nucleation expression and the induction-time parameter-estimation approach of Kim and Mersmann (2001)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "all of the parameter values obtained with this approach are physically realistic. The obtained model is able to estimate reasonably well the metastable zone width and average crystal size at the induction time for most of the experiments" ;
+            mkg:text "The authors report that the fitted parameters were physically realistic and that the model estimated metastable-zone widths and induction-time particle sizes reasonably well for most experiments." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The five dynamic states are the zeroth through third crystal-size-distribution moments and the solution concentration." ;
+            mkg:topic "structure" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The average absolute relative error obtained is more than 165%" ;
+            mkg:text "Using only slow-cooling data, the Nyvlt-based method gave a 165.9% average absolute relative error in predicting the held-out fast-cooling metastable-zone widths." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "considering the first four moment equations and the mass balance equation" ;
+            mkg:text "The dynamic model uses four population-balance moment equations and one solution mass-balance equation." ;
+            mkg:topic "structure" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12/par/k_g> a mkg:Parameter ;
+    rdfs:label "k_{g} (nagy_2008 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "kinetic constant for growth rate" ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique." ;
+    mkg:page "7" ;
+    mkg:quote "$ k_{g} $ = kinetic constant for growth rate" ;
+    mkg:reason "A kinetic constant in the crystal-growth rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{g}" ;
+    mkg:unit "m / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "length time^-1" ;
+    mkg:value 4.11e+00 ;
+    mkg:valueUncertainty "± 1.23" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq12/var/Delta_C> a mkg:Variable ;
+    rdfs:label "\\Delta C (nagy_2008 eq 12)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "supersaturation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "A process supersaturation quantity that varies with solution concentration and equilibrium concentration." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta C" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "PCM water" ;
+    mkg:unitString "g PCM/g water" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13/par/k_b> a mkg:Parameter ;
+    rdfs:label "k_{b} (nagy_2008 eq 13)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "kinetic constant for number nucleation rate" ;
+    mkg:dimension "1 / [length] ** 3 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique." ;
+    mkg:page "7" ;
+    mkg:quote "$ k_{b} $ = kinetic constant for number nucleation rate" ;
+    mkg:reason "A kinetic constant in the primary number nucleation-rate law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{b}" ;
+    mkg:unit "number / m ** 3 / s" ;
+    mkg:unitNote "dimension only, no unit printed" ;
+    mkg:unitString "number volume^-1 time^-1" ;
+    mkg:value 4.581e+01 ;
+    mkg:valueUncertainty "± 4.55" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq13/var/Delta_C> a mkg:Variable ;
+    rdfs:label "\\Delta C (nagy_2008 eq 13)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "supersaturation" ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "A process supersaturation quantity that varies with solution concentration and equilibrium concentration." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\Delta C" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "PCM water" ;
+    mkg:unitString "g PCM/g water" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/C_star> a mkg:Variable ;
+    rdfs:label "C^{*} (nagy_2008 eq 21)"@en ;
+    mkg:description "equilibrium concentration of the solute" ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C^{*}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitNote "PCM water" ;
+    mkg:unitString "g PCM/g water" .
+
+<http://example.org/kg/nagy_2008/law/nagy_2008_eq21/var/T> a mkg:Variable ;
+    rdfs:label "T (nagy_2008 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "temperature" ;
+    mkg:dimension "[temperature]" ;
+    mkg:page "8" ;
+    mkg:quote "T = temperature" ;
+    mkg:reason "Temperature is a process condition that changes during the cooling run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "T" ;
+    mkg:unit "K" ;
+    mkg:unitString "K" .
+

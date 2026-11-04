@@ -1,0 +1,241 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3194,
+  "completion_tokens": 6348,
+  "total_tokens": 9542,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3191,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5115,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): METHODS\n\nText and equations in reading order:\n    ...ensity could be calculated as $ I_{Z_r} $ by plugging the experimental values of Chl-a and biomass concentration into eq 9 and specifying $ l = z_l $ in eq 7. We assumed that $ a $ and $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the $ I_p $ of different light and nitrogen conditions (calibration results shown in Figure S3). Our value of $ a $ is equivalent to $ 4.96\\ m^2\\ g^{-1}\\ Chl $-a, which is close to the value of $ 4.82\\ m^2\\ g^{-1}\\ Chl $-a estimated by Packer et al.¹²\n(9) A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right)    [code: algebraic, computes A, code proposes constitutive]\n    The average light intensity $ I_{\\mathrm{avg}} $ (eq 10) inside the reactor is calculated by averaging the local light intensities $ I_{l} $ over the optical path from l = 0 to l = z_{t}. In addition, the average background light intensity $ I_{\\mathrm{avg\\_R}} $ is expressed in eq 11. The instantaneous light intensity $ I_{\\mathrm{avg}} $ regulates the rates of cellular processes that can be dynamically affected by light variations such as photosynthesis, carbon partitioning, and Chl-a synthesis. In contrast, $ I_{\\mathrm{avg\\_R}} $ does not vary in time. We used $ I_{\\mathrm{avg\\_R}} $ to ad...\n(10) I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l    [code: algebraic, computes I_{avg}, code proposes constitutive]\n(11) I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l    [code: algebraic, computes I_{avg_R}, code proposes constitutive]\n    Photosynthetic Carbon Fixation. The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation,$^{17,18}$ which expresses the typical relationship between photosynthesis rate and light intensity (i.e., $P-I$ relationship) during the stages of light limitation, saturation, and inhibition. However, the $P-I$ relationship varies in terms of the light saturation point and light-saturated photosynthetic rate because algae cells can adapt to light variations by adjusting their cellular pigment contents.$^{19}$ We thus modified the saturated light intensity $I_{...\n(12) P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)    [code: algebraic, computes P, code proposes constitutive]\n(13) I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}}    [code: algebraic, computes I_{sat}, code proposes constitutive]\n(14) Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}})    [code: algebraic, computes Y_{E}^{c}, code proposes constitutive]\n    Functional Biomass (Functional Pool). Functional biomass is the algal biomass excluding carbohydrates and neutral lipids. The partitioning of the fixed carbon between the functional pool and the storage pool is regulated by the nitrogen cell quota $ Q_n $. We modeled the carbon fixation to the functional biomass ( $ R_1 $) in eq (1) based on the Droop model. $ ^{23} $ For simplicity, we modeled the degradation of functional biomass ( $ R_2 $) that contributes to respiration as a first-order relationship. The composition of functional biomass is assumed as $ CH_{1.8}O_{0.5}N_{0.2} $.\n    ...cifically simulated in this work. For example, functional biomass components such as proteins and polar lipids could also contribute to lipid synthesis, and these processes were assumed to be covered by $ R_7 $ as $ R_7 $ is directly related to the carbon partitioning between the functional pool and the storage pool. Additionally, some degraded carbon from carbohydrates may also be reused to accumulate functional biomass, and such a process was assumed to be covered by the Droop model. We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols. $ ^{32} $\n(15) q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3}))    [code: algebraic, computes q_{nl}, code proposes constitutive]\n    Chlorophyll a. The synthesis of Chl-a is dependent on the assimilated nitrogen. Following prior modeling work, $ ^{12,13,27,33} $ we linked the Chl-a synthesis rate to the nitrogen uptake rate via the maximum Chl-a:N ratio $ \\theta $. To account for the light adaptation effect, $ ^{34} $ $ \\theta $ is regulated by $ I_{avg} $ via an exponential function. We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenom...\n(16) m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})    [code: algebraic, computes m_{chl}, code proposes constitutive]\n    Extracellular Nitrate. In prior models, the nitrate uptake rates were related to the external nitrate concentrations following the Michaelis–Menten kinetics $ V = V_{max} [S] / (K_{S,N} + [S]) $. However, Fachet et al. $ ^{33} $ found that the half-saturation coefficient $ K_{S,N} $ was nonidentifiable. Specifically, the value of the profile likelihood (which measures the discrepancy between the model prediction and the experimental result) decreases as $ K_{S,N} $ increases, indicating that the optimal solution may prefer a larger $ K_{S,N} $. If $ K_{S,N} \\gg [S] $, then the Michaelis–Menten...\n\nSymbols:\n  A: Light absorbance per unit length [m^{-1}] (computed)\n  a: Optical cross section of Chl-a [m^2 mol^{-1} X_{chl-C}] (parameter)\n  X_{chl}: Concentration of Chl-a as C [mol X_{chl}-C m^{-3}] (computed)\n  b: Optical cross section of biomass except Chl-a content [m^2 mol^{-1} C] (parameter)\n  X_{C}: Total biomass carbon concentration [mol C m^{-3}] (variable)\n  I_{avg}: Average light intensity inside the reactor, averaged over the optical path [mol photons m^{-2} d^{-1}] (computed)\n  z_{t}: Thickness of the photobioreactor along the optical path [m] (parameter)\n  d: Distance from the light source to the front of the reactor [m] (parameter)\n  I_{avg_R}: Average reference light intensity over the optical path without attenuation by biomass [mol photons m^{-2} d^{-1}] (computed)\n  P: Photosynthesis rate normalized to functional biomass [mol C (mol X_{cd}-C)^{-1} d^{-1}] (computed)\n  X_{cd}: Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C [mol X_{cd}-C m^{-3}] (computed)\n  P_{m}: Maximum rate coefficient in the carbon fixation law [time^{-1}] (parameter)\n  I_{sat}: Light intensity at saturation in the carbon fixation law (computed)\n  Y_{E}^{c}: Carbon yield on light energy adjusted for irradiance [mol C (mol photons)^{-1}] (computed)\n  Y_{E}: Carbon yield on light energy [mol C (mol photons)^{-1}] (parameter)\n  k_{ye}: Coefficient controlling the light-dependent change in carbon yield (parameter)\n  q_{nl}: Rate portion of carbon redirection from carbohydrate to lipid accumulation [unitless] (computed)\n  \\phi: Coefficient setting the carbon-redirection portion in the neutral-lipid law [-] (parameter)\n  k_{N}: Coefficient controlling the nitrate-dependent response in the error-function law [m^{3} (mol N)^{-1}] (parameter)\n  S_{NO3}: Concentration of nitrate as N in the reactor [mol N m^{-3}] (computed)\n  m_{chl}: Chl-a degradation rate [time^-1] (computed)\n  m: Functional biomass degradation rate [time^-1] (parameter)\n  k_{I}: Light-response coefficient in the Chl-a degradation expression (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Optical cross‑section parameters a and b are taken as constant regardless of cultivation conditions.\n  - The composition of functional biomass is fixed to CH1.8O0.5N0.2.\n  - Nitrate uptake is assumed to equal the nitrate removed from the medium.\n\nLaws: 9, 10, 11, 12, 13, 14, 15, 16",
+ "answer": {
+  "laws": [
+   {
+    "eq": "9",
+    "description": "Optical absorbance per unit length from the contributions of chlorophyll and the remaining biomass carbon.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It relates biomass composition and optical cross sections through a replaceable optical-property correlation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "chlorophyll optical cross section",
+      "symbol": "a"
+     },
+     {
+      "role": "chlorophyll concentration",
+      "symbol": "X_{chl}"
+     },
+     {
+      "role": "non-chlorophyll optical cross section",
+      "symbol": "b"
+     },
+     {
+      "role": "total biomass carbon concentration",
+      "symbol": "X_{C}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "10",
+    "description": "Average attenuated light intensity over the reactor’s optical path.",
+    "description_basis": "stated",
+    "quote": "The average light intensity $ I_{\\mathrm{avg}} $ (eq 10) inside the reactor is calculated by averaging the local light intensities $ I_{l} $ over the optical path from l = 0 to l = $ z_{t} $.",
+    "law_type": "constitutive",
+    "law_type_reason": "It uses a spatial light-attenuation expression to calculate the reactor’s mean light intensity.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "absorbance",
+      "symbol": "A"
+     },
+     {
+      "role": "optical path length",
+      "symbol": "z_{t}"
+     },
+     {
+      "role": "distance from light source",
+      "symbol": "d"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "11",
+    "description": "Average reference light intensity over the optical path without biomass attenuation.",
+    "description_basis": "stated",
+    "quote": "In addition, the average background light intensity $ I_{\\mathrm{a v g\\_{R}}} $ is expressed in eq 11.",
+    "law_type": "constitutive",
+    "law_type_reason": "It calculates reference irradiance from the prescribed spatial light-intensity profile.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "optical path length",
+      "symbol": "z_{t}"
+     },
+     {
+      "role": "distance from light source",
+      "symbol": "d"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "Photosynthetic carbon-fixation rate per functional biomass, with a Steele-type response to average light intensity.",
+    "description_basis": "stated",
+    "quote": "The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation, which expresses the typical relationship between photosynthesis rate and light intensity (i.e., $P-I$ relationship) during the stages of light limitation, saturation, and inhibition.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a replaceable photosynthesis kinetics expression relating light and biomass to the fixation rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "biomass",
+      "symbol": "X_{C}"
+     },
+     {
+      "role": "functional biomass",
+      "symbol": "X_{cd}"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "P_{m}"
+     },
+     {
+      "role": "light intensity",
+      "symbol": "I_{avg}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "I_{sat}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "Light saturation intensity in the carbon-fixation law, determined from biomass, photosynthetic capacity, chlorophyll, and adjusted carbon yield on light energy.",
+    "description_basis": "stated",
+    "quote": "We thus modified the saturated light intensity",
+    "law_type": "constitutive",
+    "law_type_reason": "It specifies the adapted saturation intensity through a replaceable relationship among model quantities and parameters.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "P_{m}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "X_{C}"
+     },
+     {
+      "role": "chlorophyll optical cross section",
+      "symbol": "a"
+     },
+     {
+      "role": "carbon yield on light energy",
+      "symbol": "Y_{E}^{c}"
+     },
+     {
+      "role": "chlorophyll concentration",
+      "symbol": "X_{chl}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "14",
+    "description": "Carbon yield on light energy adjusted downward as reference light intensity increases.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It is a replaceable empirical relationship for the light-dependent carbon yield.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "carbon yield on light energy",
+      "symbol": "Y_{E}"
+     },
+     {
+      "role": "light-response coefficient",
+      "symbol": "k_{ye}"
+     },
+     {
+      "role": "reference light intensity",
+      "symbol": "I_{avg_R}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "15",
+    "description": "Nitrate-dependent fraction of carbon redirected from carbohydrate toward neutral-lipid accumulation, increasing as nitrate becomes scarce.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "constitutive",
+    "law_type_reason": "It is a replaceable response law for carbon redirection as a function of nitrate concentration.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum redirection fraction",
+      "symbol": "\\phi"
+     },
+     {
+      "role": "nitrate-response coefficient",
+      "symbol": "k_{N}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_{NO3}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "16",
+    "description": "Chlorophyll-a degradation rate modulated by nitrate availability and reference light intensity, representing degradation under nitrogen starvation and high-light stress.",
+    "description_basis": "stated",
+    "quote": "We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a replaceable empirical expression for the chlorophyll-a degradation rate under stress.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "m"
+     },
+     {
+      "role": "nitrate-response coefficient",
+      "symbol": "k_{N}"
+     },
+     {
+      "role": "inhibitor",
+      "symbol": "S_{NO3}"
+     },
+     {
+      "role": "light-response coefficient",
+      "symbol": "k_{I}"
+     },
+     {
+      "role": "light stressor",
+      "symbol": "I_{avg_R}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1702,
+  "completion_tokens": 3455,
+  "total_tokens": 5157,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1699,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3110,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Combined models of membrane fouling: Development and application to microfiltration and ultrafiltration of biological fluids\n\nAbstract: Membrane capacity during the filtration of biotech process streams is typically limited by fouling, which can occur by pore blocking, pore constriction, caking or a combination of the mechanisms. In this study five new fouling models that accounted for the combined effects of the different individual fouling mechanisms were generated. Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation and volume to time during constant pressure operation. The models used two fitted parameters and reduced to the individual models when one mechanism dominated. The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested. The combined caking and complete blockage model was the most useful, as it was able to provide good fits of both data sets, and provide good fits of each of the other individual model predictions. The cake-complete model will provide good fits of a broad range of curves where the flux declines in a manner between the extremes of cake filtration and complete blocking. The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.\n\nSentences about the process and the data:\n- Explicit equations were derived from Darcy's law that related pressure to time during constant flow operation and volume to time during constant pressure operation.\n- The models used two fitted parameters and reduced to the individual models when one mechanism dominated.\n- The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested.\n- The combined caking and complete blockage model was the most useful, as it was able to provide good fits of both data sets, and provide good fits of each of the other individual model predictions.\n- The combined cake-standard and cake-intermediate models also provided good data fits and may be applicable to systems where these models are consistent with the experimentally observed fouling mechanisms.\n- For operations run at a fixed trans-membrane pressure, capacity is defined as the amount of fluid per membrane area that can be processed until the flux declines to a set fraction of the initial flow.\n- For operations run at a fixed flow rate, capacity is determined when the trans-membrane pressure increases to some set multiple of the initial value.\n- Each of these mechanisms has been used individually or in combinations to explain experimental observations.\n- Hlavacek and Bouchet [5] fit the intermediate, complete and standard models to data for the fouling of microporous\n- Tracey and Davis [6] found that data for the fouling of microporous track-etched membranes by BSA could be fit initially by either the standard or complete model and subsequently by the cake model.\n- The model used three fitted parameters and an approximate solution was provided that allowed calculation of flux as a function of time without integrating.\n- Plots of volume versus time during constant pressure operation or pressure versus time during constant flow operation were obtained by numerical integration of the relevant equations.\n- The values of the fitted parameters were similar to the values obtained by independent experiments.\n- The authors found this model provided good data fits and made accurate membrane sizing estimates for the fouling of microporous track-etched membranes by five proteins.\n- The goal was to develop models that described combined-mechanism fouling with two fitted parameters and with explicit equations for constant flow and constant pressure operation.\n- Explicit equations were derived that related pressure to time during constant flow operation, and volume to time during constant pressure operation.\n- The models all used two fitted parameters and reduced to the individual models in the absence of the second fouling mechanisms.\n- The combined caking and complete blockage model was the most useful, as it was able to provide good fits of both data sets, and provide good fits of each of the other individual model predictions.\n\nModel: Intermediate-standard blocking\nLaws:\n(1) [constitutive] Darcy's law computes the filtration flow rate from trans-membrane pressure, membrane area, resistance, and solution viscosity.\n(2) [constitutive] The standard-blocking model computes filtration resistance as a function of permeate volume processed per membrane area.\n(6) [constitutive] The intermediate-blocking model computes available membrane area as an exponentially declining function of permeate volume.\n(14) [constitutive] The Darcy relation computes normalized flux from the change in filtration resistance and available membrane area under constant pressure.\n(19) [constitutive] The combined intermediate- and standard-blocking model computes processed volume as a function of time.\n(24) [constitutive] At constant flow, pressure relative to its reference value scales with filtration resistance and inversely with available membrane area.\n(32) [constitutive] The combined standard and intermediate-blocking model describes pressure as a function of time.\n\nStates (computed by the ODEs):\n\n\nInputs (variables no law computes):\n- J_{0}: initial flux\n- t: time\n- P_{0}: initial reference pressure\n\nModel-wide assumptions:\n- Intermediate blocking assumes that a portion of the particles seal off pores and the rest accumulate on top of other deposited particles.\n- Standard blocking assumes that particles accumulate inside membranes on the walls of straight cylindrical pores.",
+ "answer": {
+  "system": {
+   "value": "Protein-containing biological fluids, including IgG and BSA, filtered through membranes",
+   "quote": "the sterile filtration of IgG and the viral filtration of BSA"
+  },
+  "unit_operation": {
+   "value": "Membrane microfiltration or ultrafiltration",
+   "quote": "microfiltration and ultrafiltration"
+  },
+  "operating_mode": {
+   "value": [
+    "not stated"
+   ],
+   "quote": null,
+   "note": "The paper specifies constant-pressure or constant-flow operation, not batch or continuous operation."
+  },
+  "fitted_on": {
+   "value": "Sterile filtration of IgG and viral filtration of BSA data",
+   "quote": "The applicability of the models to data for the sterile filtration of IgG and the viral filtration of BSA was tested."
+  },
+  "phenomena": [
+   "Standard blocking (particles accumulate on pore walls, increasing filtration resistance)",
+   "Intermediate blocking (some particles seal pores while others accumulate on deposited particles)"
+  ],
+  "description": "This model describes protein-containing biological fluids filtered through microfiltration or ultrafiltration membranes, and predicts processed volume over time at constant pressure or pressure over time at constant flow. It combines standard and intermediate blocking with Darcy's law, representing fouling through changes in filtration resistance and available membrane area as permeate is processed."
+ }
+}

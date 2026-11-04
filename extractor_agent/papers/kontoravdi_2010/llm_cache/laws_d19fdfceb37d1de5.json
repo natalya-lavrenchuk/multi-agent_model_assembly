@@ -1,0 +1,97 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "low",
+ "usage": {
+  "queue_time": 0.304362609,
+  "prompt_tokens": 1658,
+  "prompt_time": 0.092371877,
+  "completion_tokens": 928,
+  "completion_time": 1.939716293,
+  "total_tokens": 2586,
+  "total_time": 2.03208817,
+  "completion_tokens_details": {
+   "reasoning_tokens": 319
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The intraER MAb balance is\n(25) \\frac{d[H_{2}L_{2}]_{E R}}{d t}=K_{A}[H_{2}L][L]-K_{E R}[H_{2}L_{2}]_{E R}    [code: ODE, computes [H_2L_2]_{ER}, code proposes balance]\n    Similarly, for the Golgi apparatus:\n(26) \\frac{d[H_{2}L_{2}]_{G}}{d t}=\\varepsilon_{1}K_{E R}[H_{2}L_{2}]_{E R}-K_{G}[H_{2}L_{2}]_{G}    [code: ODE, computes [H_2L_2]_{G}, code proposes balance]\n    Finally, the rate of MAb production is\n(27) \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b]    [code: ODE, computes [MAb], code proposes balance]\n(28) Q_{M A b}=\\varepsilon_{2}\\lambda K_{G}[H_{2}L_{2}]_{G}    [code: algebraic, computes Q_{MAb}, code proposes constitutive]\n\nSymbols:\n  [H_2L_2]_{ER}: concentration of fully assembled antibody (H2L2) in the ER (computed)\n  K_{A}: assembly rate constant (cell/molecule/h) [cell/molecule/h] (parameter)\n  [H_2L]: concentration of heavy-chain dimer–light-chain monomer intermediate in the ER (computed)\n  [L]: intra‑ER light‑chain concentration [chain/cell] (computed)\n  K_{ER}: rate constant for ER-to-Golgi transport [h^-1] (parameter)\n  [H_2L_2]_{G}: concentration of fully assembled antibody (H2L2) in the Golgi apparatus (computed)\n  \\varepsilon_{1}: ER glycosylation efficiency factor [-] (parameter)\n  K_{G}: rate constant for Golgi-to-medium antibody transport [h^-1] (parameter)\n  [MAb]: concentration of secreted monoclonal antibody in the culture medium (computed)\n  \\gamma_{2}: constant for antibody production [-] (parameter)\n  \\gamma_{1}: constant for antibody production [h] (parameter)\n  \\mu: Specific viable cell growth rate [h^-1] (computed)\n  Q_{MAb}: MAb production rate per cell (specific productivity) (computed)\n  V: Reactor liquid volume [L] (computed)\n  X_{\\nu}: Viable cell concentration (viable cell density) [cells L^-1] (computed)\n  F_{out}: Outlet volumetric flow rate from the bioreactor [L h^-1] (variable)\n  \\varepsilon_{2}: Golgi apparatus glycosylation efficiency factor [-] (parameter)\n  \\lambda: Proportionality factor linking substrate concentration to MAb production rate (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 25, 26, 27, 28",
+ "answer": {
+  "laws": [
+   {
+    "eq": "25",
+    "description": "Intra‑ER monoclonal antibody balance describing assembly from heavy‑chain dimer–light‑chain intermediate and transport to the Golgi.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It represents accumulation of assembled antibody in the ER as production minus export.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[H_{2}L_{2}]_{E R}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "26",
+    "description": "Golgi apparatus monoclonal antibody balance describing import from the ER and export to the medium.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It accounts for accumulation of antibody in the Golgi as inflow from ER minus outflow.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[H_{2}L_{2}]_{G}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "27",
+    "description": "Secreted monoclonal antibody balance in the culture medium, with production from cells and removal by outlet flow.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "balance",
+    "law_type_reason": "It describes accumulation of MAb in the medium as cellular production minus dilution.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[MAb]"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "28",
+    "description": "Definition of the specific productivity of monoclonal antibody as proportional to Golgi‑located antibody concentration.",
+    "description_basis": "inferred",
+    "quote": null,
+    "law_type": "definition",
+    "law_type_reason": "It defines Q_{MAb} from other model variables and parameters.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[H_{2}L_{2}]_{G}"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "K_{G}"
+     },
+     {
+      "role": "efficiency factor",
+      "symbol": "\\varepsilon_{2}"
+     },
+     {
+      "role": "proportionality factor",
+      "symbol": "\\lambda"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

@@ -1,0 +1,1259 @@
+@prefix kg: <http://example.org/kg/kontoravdi_2010/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:kontoravdi_2010 a mkg:Sup ;
+    rdfs:label "kontoravdi_2010 · Kontoravdi et al. (2010) hybridoma growth and IgG1 model"@en ;
+    mkg:hasMetadata kg:kontoravdi_2010_meta ;
+    mkg:includes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9> .
+
+kg:kontoravdi_2010_meta a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "DAE" ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from gold_laws.json (hand-checked) by extractor/graph.py" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 1"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/V> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1_meta> ;
+    mkg:latex "\\frac{dV}{dt} = F_{in} - F_{out}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_out> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 1)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 1)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 10"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/par/K_dgln> ;
+    mkg:latex "\\frac{d([GLN])}{dt} = -Q_{gln} V X_v - K_{dgln} V[GLN] + F_{in}[GLN]_{in} - F_{out}[GLN]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/Q_gln>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/X_v> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,gln} (h^{-1}) $ | Batch operation value: $ 9.6 \\times 10^{-3} $ | Fed-batch operation value: $ 9.6 \\times 10^{-3} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{dgln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 10)"@en ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/C_GLN_in> a mkg:Variable ;
+    rdfs:label "[GLN]_{in} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "[GLN]_{in}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 10)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 10)"@en ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 10)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 10)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq10_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([GLN])}{dt} = -Q_{gln} V X_v - K_{dgln} V[GLN] + F_{in}[GLN]_{in} - F_{out}[GLN]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 11"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/Q_gln> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/par/Y_x_gln> ;
+    mkg:latex "Q_{gln} = \\frac{\\mu}{Y_{x,gln}} + m_{gln}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/m_gln>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/par/Y_x_gln> a mkg:Parameter ;
+    rdfs:label "Y_{x,gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{x,gln} $ (cell/mmol) | Batch operation value: $ 5.6 \\times 10^{8} $ | Fed-batch operation value: $ 8 \\times 10^{8} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (kontoravdi_2010 eq 11)"@en ;
+    mkg:symbol "m_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 11)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq11_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{gln} = \\frac{\\mu}{Y_{x,gln}} + m_{gln}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 12"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/m_gln> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_2> ;
+    mkg:latex "m_{gln} = \\frac{\\alpha_1[GLN]}{\\alpha_2 + [GLN]}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/C_GLN> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_1> a mkg:Parameter ;
+    rdfs:label "\\alpha_{1} (kontoravdi_2010 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_1 $ (mM L/cell-h) | Batch operation value: $ 3.4 \\times 10^{-13} $ | Fed-batch operation value: $ 3.4 \\times 10^{-13} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{1}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/par/alpha_2> a mkg:Parameter ;
+    rdfs:label "\\alpha_{2} (kontoravdi_2010 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\alpha_2 $ (mM) | Batch operation value: 4 | Fed-batch operation value: 4" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\alpha_{2}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 12)"@en ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12/var/m_gln> a mkg:Variable ;
+    rdfs:label "m_{gln} (kontoravdi_2010 eq 12)"@en ;
+    mkg:symbol "m_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq12_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "m_{gln} = \\frac{\\alpha_1[GLN]}{\\alpha_2 + [GLN]}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 13"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/C_LAC> ;
+    mkg:equationNumber "13" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13_meta> ;
+    mkg:latex "\\frac{d([LAC])}{dt} = Q_{lac} VX_v - F_{out}[LAC]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/Q_lac>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/X_v> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (kontoravdi_2010 eq 13)"@en ;
+    mkg:symbol "[LAC]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 13)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (kontoravdi_2010 eq 13)"@en ;
+    mkg:symbol "Q_{lac}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 13)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 13)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq13_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([LAC])}{dt} = Q_{lac} VX_v - F_{out}[LAC]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 14"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_lac> ;
+    mkg:equationNumber "14" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/par/Y_lac_glc> ;
+    mkg:latex "Q_{lac} = Y_{lac,glc} Q_{glc}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_glc> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/par/Y_lac_glc> a mkg:Parameter ;
+    rdfs:label "Y_{lac,glc} (kontoravdi_2010 eq 14)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{lac,glc} $ (mmol/mmol) | Batch operation value: 1.4 | Fed-batch operation value: 2.0" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{lac,glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 14)"@en ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14/var/Q_lac> a mkg:Variable ;
+    rdfs:label "Q_{lac} (kontoravdi_2010 eq 14)"@en ;
+    mkg:symbol "Q_{lac}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq14_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{lac} = Y_{lac,glc} Q_{glc}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 15"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_AMM> ;
+    mkg:equationNumber "15" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/par/K_dgln> ;
+    mkg:latex "\\frac{d([AMM])}{dt} = Q_{amm} VX_v + K_{dgln} V[GLN] - F_{out}[AMM]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_GLN>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/Q_amm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/X_v> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/par/K_dgln> a mkg:Parameter ;
+    rdfs:label "K_{dgln} (kontoravdi_2010 eq 15)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,gln} (h^{-1}) $ | Batch operation value: $ 9.6 \\times 10^{-3} $ | Fed-batch operation value: $ 9.6 \\times 10^{-3} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{dgln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 15)"@en ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/C_GLN> a mkg:Variable ;
+    rdfs:label "[GLN] (kontoravdi_2010 eq 15)"@en ;
+    mkg:symbol "[GLN]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 15)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (kontoravdi_2010 eq 15)"@en ;
+    mkg:symbol "Q_{amm}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 15)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 15)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq15_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([AMM])}{dt} = Q_{amm} VX_v + K_{dgln} V[GLN] - F_{out}[AMM]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 16"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_amm> ;
+    mkg:equationNumber "16" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/par/Y_amm_gln> ;
+    mkg:latex "Q_{amm} = Y_{amm, gln} Q_{gln}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_gln> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/par/Y_amm_gln> a mkg:Parameter ;
+    rdfs:label "Y_{amm,gln} (kontoravdi_2010 eq 16)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{amm,gln} $ (mmol/mmol) | Batch operation value: $ 4.3 \\times 10^{-1} $ | Fed-batch operation value: $ 4.5 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{amm,gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_amm> a mkg:Variable ;
+    rdfs:label "Q_{amm} (kontoravdi_2010 eq 16)"@en ;
+    mkg:symbol "Q_{amm}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16/var/Q_gln> a mkg:Variable ;
+    rdfs:label "Q_{gln} (kontoravdi_2010 eq 16)"@en ;
+    mkg:symbol "Q_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq16_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{amm} = Y_{amm, gln} Q_{gln}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 17"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/var/m_H> ;
+    mkg:equationNumber "17" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/K>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/N_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/S_H> ;
+    mkg:latex "\\frac{dm_H}{dt} = N_H S_H - Km_H" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/K> a mkg:Parameter ;
+    rdfs:label "K (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K (h^{-1}) $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/N_H> a mkg:Parameter ;
+    rdfs:label "N_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_H $ (gene/cell) | Batch operation value: $ 1.4 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/par/S_H> a mkg:Parameter ;
+    rdfs:label "S_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_H $ (mRNA/gene-h) | Batch operation value: $ 3 \\times 10^{3} $ | Fed-batch operation value: $ 3 \\times 10^{3} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (kontoravdi_2010 eq 17)"@en ;
+    mkg:symbol "m_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq17_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{dm_H}{dt} = N_H S_H - Km_H" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 18"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/var/m_L> ;
+    mkg:equationNumber "18" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/K>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/N_L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/S_L> ;
+    mkg:latex "\\frac{dm_L}{dt} = N_L S_L - Km_L" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/K> a mkg:Parameter ;
+    rdfs:label "K (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K (h^{-1}) $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/N_L> a mkg:Parameter ;
+    rdfs:label "N_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ N_L $ (gene/cell) | Batch operation value: $ 1.2 \\times 10^{2} $ | Fed-batch operation value: $ 1.0 \\times 10^{2} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "N_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/par/S_L> a mkg:Parameter ;
+    rdfs:label "S_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ S_L $ (mRNA/gene-h) | Batch operation value: $ 4.5 \\times 10^{3} $ | Fed-batch operation value: $ 4.5 \\times 10^{3} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (kontoravdi_2010 eq 18)"@en ;
+    mkg:symbol "m_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq18_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{dm_L}{dt} = N_L S_L - Km_L" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 19"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/C_H> ;
+    mkg:equationNumber "19" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/par/T_H> ;
+    mkg:latex "\\frac{d[H]}{dt} = T_H m_H - R_H" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/R_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/m_H> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/par/T_H> a mkg:Parameter ;
+    rdfs:label "T_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_H $ (chain/mRNA-h) | Batch operation value: 17 | Fed-batch operation value: 17" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 19)"@en ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:symbol "R_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19/var/m_H> a mkg:Variable ;
+    rdfs:label "m_{H} (kontoravdi_2010 eq 19)"@en ;
+    mkg:symbol "m_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq19_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H]}{dt} = T_H m_H - R_H" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq1_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{dV}{dt} = F_{in} - F_{out}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 2"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/X_v> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2_meta> ;
+    mkg:latex "\\frac{d(VX_v)}{dt} = \\mu VX_v - \\mu_d VX_v - F_{out}X_v" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu_d> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 2)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 2)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 2)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 2)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (kontoravdi_2010 eq 2)"@en ;
+    mkg:symbol "\\mu_{d}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 20"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/C_L> ;
+    mkg:equationNumber "20" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/par/T_L> ;
+    mkg:latex "\\frac{d[L]}{dt} = T_L m_L - R_L" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/R_L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/m_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/par/T_L> a mkg:Parameter ;
+    rdfs:label "T_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ T_L $ (chain/mRNA-h) | Batch operation value: 11.5 | Fed-batch operation value: 11.5" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "T_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 20)"@en ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:symbol "R_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20/var/m_L> a mkg:Variable ;
+    rdfs:label "m_{L} (kontoravdi_2010 eq 20)"@en ;
+    mkg:symbol "m_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq20_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[L]}{dt} = T_L m_L - R_L" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 21"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/R_H> ;
+    mkg:equationNumber "21" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/par/K_A> ;
+    mkg:latex "R_H = \\frac{2}{3} K_A[H]^2" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/C_H> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 21)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 21)"@en ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21/var/R_H> a mkg:Variable ;
+    rdfs:label "R_{H} (kontoravdi_2010 eq 21)"@en ;
+    mkg:symbol "R_{H}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq21_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "R_H = \\frac{2}{3} K_A[H]^2" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 22"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/R_L> ;
+    mkg:equationNumber "22" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/par/K_A> ;
+    mkg:latex "R_L = 2K_A[H_2][L] + K_A[H_2L][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 22)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 22)"@en ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 22)"@en ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 22)"@en ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22/var/R_L> a mkg:Variable ;
+    rdfs:label "R_{L} (kontoravdi_2010 eq 22)"@en ;
+    mkg:symbol "R_{L}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq22_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "R_L = 2K_A[H_2][L] + K_A[H_2L][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 23"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H_2> ;
+    mkg:equationNumber "23" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/par/K_A> ;
+    mkg:latex "\\frac{d[H_2]}{dt} = \\frac{1}{3}K_A[H]^2 - 2K_A[H_2][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 23)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H> a mkg:Variable ;
+    rdfs:label "[H] (kontoravdi_2010 eq 23)"@en ;
+    mkg:symbol "[H]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 23)"@en ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 23)"@en ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq23_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_2]}{dt} = \\frac{1}{3}K_A[H]^2 - 2K_A[H_2][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 24"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2L> ;
+    mkg:equationNumber "24" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/par/K_A> ;
+    mkg:latex "\\frac{d[H_2L]}{dt} = 2K_A[H_2][L] - K_A[H_2L][L]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 24)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2> a mkg:Variable ;
+    rdfs:label "[H_2] (kontoravdi_2010 eq 24)"@en ;
+    mkg:symbol "[H_2]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 24)"@en ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 24)"@en ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq24_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_2L]}{dt} = 2K_A[H_2][L] - K_A[H_2L][L]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 25"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L_2_ER> ;
+    mkg:equationNumber "25" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_A>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_ER> ;
+    mkg:latex "\\frac{d[H_2L_2]_{ER}}{dt} = K_A[H_2L][L] - K_{ER}[H_2L_2]_{ER}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_L> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (kontoravdi_2010 eq 25)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_A $ (cell/molecule-L) | Batch operation value: $ 10^{-6} $ | Fed-batch operation value: $ 10^{-6} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (kontoravdi_2010 eq 25)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{ER} (h^{-1}) $ | Batch operation value: $ 6.9 \\times 10^{-1} $ | Fed-batch operation value: $ 6.9 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ER}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L> a mkg:Variable ;
+    rdfs:label "[H_2L] (kontoravdi_2010 eq 25)"@en ;
+    mkg:symbol "[H_2L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (kontoravdi_2010 eq 25)"@en ;
+    mkg:symbol "[H_2L_2]_{ER}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25/var/C_L> a mkg:Variable ;
+    rdfs:label "[L] (kontoravdi_2010 eq 25)"@en ;
+    mkg:symbol "[L]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq25_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_2L_2]_{ER}}{dt} = K_A[H_2L][L] - K_{ER}[H_2L_2]_{ER}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 26"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_G> ;
+    mkg:equationNumber "26" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_ER>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_G>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/varepsilon_1> ;
+    mkg:latex "\\frac{d[H_2L_2]_G}{dt} = \\varepsilon_1 K_{ER}[H_2L_2]_{ER} - K_G[H_2L_2]_G" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_ER> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_ER> a mkg:Parameter ;
+    rdfs:label "K_{ER} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{ER} (h^{-1}) $ | Batch operation value: $ 6.9 \\times 10^{-1} $ | Fed-batch operation value: $ 6.9 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{ER}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_G (h^{-1}) $ | Batch operation value: $ 1.4 \\times 10^{-1} $ | Fed-batch operation value: $ 1.4 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{G}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/par/varepsilon_1> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{1} (kontoravdi_2010 eq 26)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_1 $ | Batch operation value: $ 9.9 \\times 10^{-1} $ | Fed-batch operation value: $ 9.95 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{1}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_ER> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{ER} (kontoravdi_2010 eq 26)"@en ;
+    mkg:symbol "[H_2L_2]_{ER}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (kontoravdi_2010 eq 26)"@en ;
+    mkg:symbol "[H_2L_2]_{G}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq26_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d[H_2L_2]_G}{dt} = \\varepsilon_1 K_{ER}[H_2L_2]_{ER} - K_G[H_2L_2]_G" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 27"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/C_MAb> ;
+    mkg:equationNumber "27" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_1>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_2> ;
+    mkg:latex "\\frac{d([MAb])}{dt} = (\\gamma_2 - \\gamma_1 \\mu) Q_{MAb} VX_v - F_{out}[MAb]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/Q_MAb>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/X_v>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_1> a mkg:Parameter ;
+    rdfs:label "\\gamma_{1} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\gamma_1 $ | Batch operation value: $ 10^{-1} $ | Fed-batch operation value: $ 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{1}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/par/gamma_2> a mkg:Parameter ;
+    rdfs:label "\\gamma_{2} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\gamma_2 $ (h) | Batch operation value: 2 | Fed-batch operation value: 2" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\gamma_{2}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/C_MAb> a mkg:Variable ;
+    rdfs:label "[MAb] (kontoravdi_2010 eq 27)"@en ;
+    mkg:symbol "[MAb]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 27)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (kontoravdi_2010 eq 27)"@en ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 27)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 27)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 27)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq27_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d([MAb])}{dt} = (\\gamma_2 - \\gamma_1 \\mu) Q_{MAb} VX_v - F_{out}[MAb]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 28"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/Q_MAb> ;
+    mkg:equationNumber "28" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/K_G>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/varepsilon_2> ;
+    mkg:latex "Q_{MAb} = \\varepsilon_2\\lambda K_G[H_2L_2]_G" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/C_H_2L_2_G>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/lambda> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/K_G> a mkg:Parameter ;
+    rdfs:label "K_{G} (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_G (h^{-1}) $ | Batch operation value: $ 1.4 \\times 10^{-1} $ | Fed-batch operation value: $ 1.4 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{G}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/par/varepsilon_2> a mkg:Parameter ;
+    rdfs:label "\\varepsilon_{2} (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\varepsilon_2 $ | Batch operation value: 1 | Fed-batch operation value: 1" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\varepsilon_{2}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/C_H_2L_2_G> a mkg:Variable ;
+    rdfs:label "[H_2L_2]_{G} (kontoravdi_2010 eq 28)"@en ;
+    mkg:symbol "[H_2L_2]_{G}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/Q_MAb> a mkg:Variable ;
+    rdfs:label "Q_{MAb} (kontoravdi_2010 eq 28)"@en ;
+    mkg:symbol "Q_{MAb}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28/var/lambda> a mkg:Variable ;
+    rdfs:label "\\lambda (kontoravdi_2010 eq 28)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "\\lambda" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq28_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{MAb} = \\varepsilon_2\\lambda K_G[H_2L_2]_G" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq2_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(VX_v)}{dt} = \\mu VX_v - \\mu_d VX_v - F_{out}X_v" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 3"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_t> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3_meta> ;
+    mkg:latex "\\frac{d(VX_t)}{dt} = \\mu VX_v - F_{out}X_t" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_v>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 3)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 3)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_t> a mkg:Variable ;
+    rdfs:label "X_{t} (kontoravdi_2010 eq 3)"@en ;
+    mkg:symbol "X_{t}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 3)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 3)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq3_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(VX_t)}{dt} = \\mu VX_v - F_{out}X_t" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 4"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/mu> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/par/mu_max> ;
+    mkg:latex "\\mu = \\mu_{max} f_{lim} f_{inh}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_inh>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_lim> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/par/mu_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{max} (kontoravdi_2010 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{max} (h^{-1}) $ | Batch operation value: $ 5.8 \\times 10^{-2} $ | Fed-batch operation value: $ 5.8 \\times 10^{-2} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{max}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (kontoravdi_2010 eq 4)"@en ;
+    mkg:symbol "f_{inh}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (kontoravdi_2010 eq 4)"@en ;
+    mkg:symbol "f_{lim}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 4)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq4_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "\\mu = \\mu_{max} f_{lim} f_{inh}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 5"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/f_lim> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_gln> ;
+    mkg:latex "f_{lim} = \\left( \\frac{[GLC]}{K_{glc} + [GLC]} \\right) \\left( \\frac{[GLC]}{K_{gln} + [GLC]} \\right)" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/C_GLC> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_glc> a mkg:Parameter ;
+    rdfs:label "K_{glc} (kontoravdi_2010 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{glc} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-1} $ | Fed-batch operation value: $ 7.5 \\times 10^{-1} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/par/K_gln> a mkg:Parameter ;
+    rdfs:label "K_{gln} (kontoravdi_2010 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{gln} $ (mM) | Batch operation value: $ 7.5 \\times 10^{-2} $ | Fed-batch operation value: $ 7.5 \\times 10^{-2} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{gln}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (kontoravdi_2010 eq 5)"@en ;
+    mkg:symbol "[GLC]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5/var/f_lim> a mkg:Variable ;
+    rdfs:label "f_{lim} (kontoravdi_2010 eq 5)"@en ;
+    mkg:symbol "f_{lim}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq5_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "f_{lim} = \\left( \\frac{[GLC]}{K_{glc} + [GLC]} \\right) \\left( \\frac{[GLC]}{K_{gln} + [GLC]} \\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 6"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/f_inh> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Iamm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Ilac> ;
+    mkg:latex "f_{inh} = \\left( \\frac{K_{Ilac}}{K_{Ilac} + [LAC]} \\right) \\left( \\frac{K_{Iamm}}{K_{Iamm} + [AMM]} \\right)" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_AMM>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_LAC> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Iamm> a mkg:Parameter ;
+    rdfs:label "K_{Iamm} (kontoravdi_2010 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ KI_{amm} $ (mM) | Batch operation value: 28.48 | Fed-batch operation value: 28.48" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: notation)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{Iamm}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/par/K_Ilac> a mkg:Parameter ;
+    rdfs:label "K_{Ilac} (kontoravdi_2010 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ KI_{lac} $ (mM) | Batch operation value: 171.76 | Fed-batch operation value: 171.76" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: notation)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{Ilac}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 6)"@en ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/C_LAC> a mkg:Variable ;
+    rdfs:label "[LAC] (kontoravdi_2010 eq 6)"@en ;
+    mkg:symbol "[LAC]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6/var/f_inh> a mkg:Variable ;
+    rdfs:label "f_{inh} (kontoravdi_2010 eq 6)"@en ;
+    mkg:symbol "f_{inh}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq6_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "f_{inh} = \\left( \\frac{K_{Ilac}}{K_{Ilac} + [LAC]} \\right) \\left( \\frac{K_{Iamm}}{K_{Iamm} + [AMM]} \\right)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 7"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/mu_d> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/K_d_amm>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/mu_d_max>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/n> ;
+    mkg:latex "\\mu_d = \\frac{\\mu_{d,max}}{1 + (K_{d,amm}/[AMM])^n}, \\quad n > 1" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/C_AMM> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/K_d_amm> a mkg:Parameter ;
+    rdfs:label "K_{d,amm} (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ K_{d,amm} $ (mM) | Batch operation value: 1.76 | Fed-batch operation value: 1.76" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{d,amm}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/mu_d_max> a mkg:Parameter ;
+    rdfs:label "\\mu_{d,max} (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ \\mu_{d,max} (h^{-1}) $ | Batch operation value: $ 6 \\times 10^{-2} $ | Fed-batch operation value: $ 6 \\times 10^{-2} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "\\mu_{d,max}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/par/n> a mkg:Parameter ;
+    rdfs:label "n (kontoravdi_2010 eq 7)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: n | Batch operation value: 2 | Fed-batch operation value: 2" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "n" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/C_AMM> a mkg:Variable ;
+    rdfs:label "[AMM] (kontoravdi_2010 eq 7)"@en ;
+    mkg:symbol "[AMM]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7/var/mu_d> a mkg:Variable ;
+    rdfs:label "\\mu_{d} (kontoravdi_2010 eq 7)"@en ;
+    mkg:symbol "\\mu_{d}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq7_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "n > 1" ;
+            mkg:reasoned false ;
+            mkg:text "n > 1" ] ;
+    mkg:page "7" ;
+    mkg:quote "\\mu_d = \\frac{\\mu_{d,max}}{1 + (K_{d,amm}/[AMM])^n}, \\quad n > 1" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 8"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC> ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8_meta> ;
+    mkg:latex "\\frac{d(V[GLC])}{dt} = -Q_{glc}VX_v + F_{in}[GLC]_{in} - F_{out}[GLC]" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_in>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_out>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/Q_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/V>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/X_v> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC> a mkg:Variable ;
+    rdfs:label "[GLC] (kontoravdi_2010 eq 8)"@en ;
+    mkg:symbol "[GLC]" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/C_GLC_in> a mkg:Variable ;
+    rdfs:label "[GLC]_{in} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "[GLC]_{in}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_in> a mkg:Variable ;
+    rdfs:label "F_{in} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{in}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/F_out> a mkg:Variable ;
+    rdfs:label "F_{out} (kontoravdi_2010 eq 8)"@en ;
+    mkg:basis "inferred" ;
+    mkg:reason "code rule: never computed, no table value; kept as Variable" ;
+    mkg:status "pending" ;
+    mkg:symbol "F_{out}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 8)"@en ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/V> a mkg:Variable ;
+    rdfs:label "V (kontoravdi_2010 eq 8)"@en ;
+    mkg:symbol "V" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8/var/X_v> a mkg:Variable ;
+    rdfs:label "X_{v} (kontoravdi_2010 eq 8)"@en ;
+    mkg:symbol "X_{v}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq8_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "ODE" ;
+    mkg:page "7" ;
+    mkg:quote "\\frac{d(V[GLC])}{dt} = -Q_{glc}VX_v + F_{in}[GLC]_{in} - F_{out}[GLC]" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9> a mkg:Law ;
+    rdfs:label "kontoravdi_2010 eq 9"@en ;
+    mkg:computes <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/Q_glc> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9_meta> ;
+    mkg:hasParameter <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/Y_x_glc>,
+        <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/m_glc> ;
+    mkg:latex "Q_{glc} = \\frac{\\mu}{Y_{x,glc}} + m_{glc}" ;
+    mkg:uses <http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/mu> .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/Y_x_glc> a mkg:Parameter ;
+    rdfs:label "Y_{x,glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ Y_{x,glc} $ (cell/mmol) | Batch operation value: $ 1.1 \\times 10^{8} $ | Fed-batch operation value: $ 2.6 \\times 10^{8} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "Y_{x,glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/par/m_glc> a mkg:Parameter ;
+    rdfs:label "m_{glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:quote "p.4: Table 1 Parameter values for batch and fed-batch culture operations: Parameter: $ m_{glc} $ (mmol/cell-h) | Batch operation value: $ 4.9 \\times 10^{-14} $ | Fed-batch operation value: $ 4.9 \\times 10^{-14} $" ;
+    mkg:reason "code rule: never computed, numeric value in a table row (match: exact)" ;
+    mkg:status "accepted" ;
+    mkg:symbol "m_{glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/Q_glc> a mkg:Variable ;
+    rdfs:label "Q_{glc} (kontoravdi_2010 eq 9)"@en ;
+    mkg:symbol "Q_{glc}" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9/var/mu> a mkg:Variable ;
+    rdfs:label "\\mu (kontoravdi_2010 eq 9)"@en ;
+    mkg:symbol "\\mu" .
+
+<http://example.org/kg/kontoravdi_2010/law/kontoravdi_2010_eq9_meta> a mkg:Metadata ;
+    mkg:doi "10.1016/j.compchemeng.2010.03.012" ;
+    mkg:form "algebraic" ;
+    mkg:page "7" ;
+    mkg:quote "Q_{glc} = \\frac{\\mu}{Y_{x,glc}} + m_{glc}" ;
+    mkg:status "pending" .
+

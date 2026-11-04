@@ -1,0 +1,49 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2227,
+  "completion_tokens": 1108,
+  "total_tokens": 3335,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2224,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 796,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Operating envelope of Haber-Bosch process design for power-to-ammonia $ ^{\\dagger} $\n\nAbstract: The power-to-ammonia concept allows for the production of ammonia, one of the most produced inorganic chemicals, from air, water and (renewable) electricity. However, power-to-ammonia requires flexible operation for use with a directly intermittent renewable energy supply. In this paper, we systematically analyse the operating envelope for steady-state operation of the three bed autothermic Haber–Bosch reactor system for power-to-ammonia by pseudo-homogeneous model. Operational flexibilities of process variables, hydrogen intake and ammonia production flexibilities are analysed, along with maximum and minimum possible changes in recycle load and recycle to feed ratio for the following process variables: reactor pressure, inert gas percentage in synthesis loop, NH₃ concentration, H₂-to-N₂ ratio, total flow rate and feed temperature. Among the six process variables, inert gas fraction and H₂-to-N₂ ratio provided very high flexibilities, ca. 255% operational flexibility for Ar, up to 51 to 67% flexibility in hydrogen intake, and up to 73% reduction and 24% enhancement in ammonia production. However, a decrease in ammonia production by H₂-to-N₂ ratio significantly increases recycle load. Besides inert gas fraction and H₂-to-N₂ ratio, the total mass feed flow rate is also significant for minimum hydrogen intake and ammonia production.\n\nSentences about the process and the data:\n- However, power-to-ammonia requires flexible operation for use with a directly intermittent renewable energy supply.\n- In this paper, we systematically analyse the operating envelope for steady-state operation of the three bed autothermic Haber–Bosch reactor system for power-to-ammonia by pseudo-homogeneous model.\n- Operational flexibilities of process variables, hydrogen intake and ammonia production flexibilities are analysed, along with maximum and minimum possible changes in recycle load and recycle to feed ratio for the following process variables\n- Among the six process variables, inert gas fraction and H₂-to-N₂ ratio provided very high flexibilities, ca. 255% operational flexibility for Ar, up to 51 to 67% flexibility in hydrogen intake, and up to 73% reduction and 24% enhancement in\n- They also discussed the potential for dynamic or flexible operation of the developed Haber-Bosch process concept, and as such, its ability to flexibly store excess renewable energy.\n- $ ^{16} $ The first pilot plant has been operational at West Central Research and Outreach Center, Morris, Minnesota, USA since 2013 $ ^{18} $ and the second demonstrator became operational in June 2018 at Science & Technology Facilities Co\n- $ ^{21} $ The operation of power-to-ammonia plant by West Central Research and Outreach Center, Morris, Minnesota, USA has only been studied at steady state, not\n- Additional equations for heat exchanger, catalyst beds and ammonia synthesis loop, along with supporting simulation data are provided.\n- The efficiency of power-to-ammonia is estimated between 50 and 60%, including hydrogen and nitrogen production, $ ^{22} $ which is lower than from the latest classical Haber-Bosch ammonia production plants i.e. between 60 and 64%.\n- On the other hand, Sánchez & Martín carried out complete system simulation and operation optimisation, including a kinetic approach for Haber-Bosch synthesis reactor.\n- Even so, they didn't consider an autothermic ammonia synthesis reactor, which is of high interest for realising stand-alone power-to-ammonia plants.\n- Despite this fact, the reaction may be carried out in an autothermal synthesis reactor system.$^{1}$ So far, the question of how much an autothermal Haber-Bosch reactor system can be operated flexibly outside its standard conditions, is of \n- The uninterrupted supply of the reactants is maintained either by the continuous production of reactants with the help of non-stop supply of electricity or via producing excess amount of reactants which are stored during surplus energy and \n- Therefore, for answering the question raised above, knowledge of the operating envelope is essential, in case the Haber-Bosch process should be used for on-demand, flexible production of ammonia.\n- In this work we present design and off-design analysis of the ammonia synthesis reactor system, and we will consider both, kinetic and autothermic approaches.\n- The Haber–Bosch ammonia synthesis loop for producing NH₃ consists of mixing and compression units, synthesis reactor system, a trail of heat exchangers and coolers, a separator, a recycle loop and a storage unit.\n- The system design of the ammonia synthesis reactor poses a challenge due to the harsh reactor requirements of high inlet temperature to achieve high reaction rate and simultaneously, low outlet temperature to achieve a high equilibrium conv\n- This is accomplished through the use of several catalyst beds in series.²⁹ The usual operational envelope ranges are: pressure of 150 to 300 bar, temperature of\n\nModel: Pseudo-homogeneous Haber–Bosch process\nLaws:\n(2) [constitutive] The exchanger effectiveness relation computes the shell-side outlet temperature from the two inlet temperatures.\n(3) [balance] The material balance computes the change in reactant conversion through a catalyst bed from the ammonia formation rate and inlet reactant flow.\n(4) [balance] The energy balance computes the temperature change through a catalyst bed from reaction heat release, mass flow, and heat capacity.\n(5) [constitutive] The modified Temkin rate expression computes ammonia formation from nitrogen, hydrogen, and ammonia activities, with the equilibrium and reverse-reaction terms setting the net rate.\n(6) [balance] The mixer material balance computes the reactant conversion after quenching from the bed and quench reactant flows.\n(7) [balance] The mixer energy balance computes the post-quench temperature from the bed-out and quench-stream enthalpy contributions.\n\nStates (computed by the ODEs):\n- X_{r,b}: reactant conversion in catalyst bed b\n- T_{b}: temperature of the fine catalyst particles in bed b\n\nInputs (variables no law computes):\n- T_{t_{in}}: tube-side inlet temperature (catalyst bed 3 outlet)\n- T_{s_{in}}: shell-side inlet temperature\n- R_{NH_3,b}: ammonia formation rate in catalyst bed b\n- \\dot{n}_{r,b_{in}}: molar flow rate of reactant entering catalyst bed b\n- \\dot{m}_{b_{in}}: Mass flow rate entering catalyst bed b.\n- a_{N_2}: Nitrogen activity coefficient.\n- a_{H_2}: Hydrogen activity coefficient.\n- a_{NH_3}: Ammonia activity coefficient.\n- X_{r,b_{out}}: Reactant conversion at the bed outlet.\n- \\dot{n}_{r,b_{out}}: Reactant molar flow rate at the bed outlet.\n- \\dot{n}_{r,q_{in}}: Reactant molar flow rate entering the quench.\n- \\dot{m}_{b_{out}}: Mass flow rate leaving the bed.\n- T_{b_{out}}: Temperature of the stream leaving the bed.\n- \\dot{m}_{q_{in}}: Mass flow rate entering the quench.\n- T_{q_{in}}: Temperature of the stream entering the quench.\n\nModel-wide assumptions:\n- The reactor is represented by a pseudo-homogeneous model.\n- Heat losses are ignored.\n- The reactor system is isobaric.\n- The temperature gradient inside catalyst pellets is negligible.\n- Gas mixing in the mixer is ideal and instantaneous.\n- During normal operation, 27.79 mol% of NH₃ is carried along with the recycled unused reactants.",
+ "answer": {
+  "system": {
+   "value": "Ammonia synthesis from hydrogen and nitrogen in a power-to-ammonia Haber–Bosch process",
+   "quote": "The Haber–Bosch ammonia synthesis loop for producing NH₃"
+  },
+  "unit_operation": {
+   "value": "Three-bed autothermic Haber–Bosch synthesis reactor",
+   "quote": "three bed autothermic Haber–Bosch reactor system"
+  },
+  "operating_mode": {
+   "value": [
+    "steady state"
+   ],
+   "quote": "steady-state operation",
+   "note": null
+  },
+  "fitted_on": {
+   "value": null,
+   "quote": null
+  },
+  "phenomena": [
+   "Reversible ammonia synthesis kinetics using a modified Temkin rate expression",
+   "Reaction heat release and temperature change through catalyst beds",
+   "Inter-bed quench mixing and temperature adjustment",
+   "Heat exchange between shell-side and tube-side streams"
+  ],
+  "description": "This pseudo-homogeneous model represents a three-bed autothermic Haber–Bosch reactor system for ammonia synthesis in a power-to-ammonia process. It predicts reactant conversion and catalyst-particle temperature through the beds, supporting analysis of the steady-state operating envelope and resulting ammonia production. The model combines modified Temkin reaction kinetics with bed material and energy balances, heat exchange, and quench mixing."
+ }
+}

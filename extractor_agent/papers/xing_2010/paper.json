@@ -1,0 +1,155 @@
+{
+ "sup": "xing_2010",
+ "title": "Modeling Kinetics of a Large-Scale Fed-Batch CHO Cell Culture by Markov Chain Monte Carlo Method",
+ "doi": "10.1002/btpr.284",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "8",
+  "6.1",
+  "6.2",
+  "6.3",
+  "6.4",
+  "6.5",
+  "6.6",
+  "7.1",
+  "7.2"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "inferred",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "Specific growth rate is zero during the cell death phase.",
+   "quote": "It was assumed that $\\mu = 0$ during the cell death phase.",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "8",
+   "process_condition": false
+  },
+  {
+   "text": "Glucose and glutamine maintenance terms are zero when d ≤ 6.",
+   "quote": "Since $m_{\\mathrm{glc}}$ and $m_{\\mathrm{gln}}$ are negligible during exponential growth,$^{1,2,11}$ it was assumed $m_{\\mathrm{glc}} = 0$ and $m_{\\mathrm{gln}} = 0$ when $d \\leq 6$.",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "8",
+   "process_condition": false
+  },
+  {
+   "text": "Ammonia and lactate are considered in the growth-rate equation only above 90% of their thresholds.",
+   "quote": "Therefore, the ammonia or lactate was considered in Eq. 7 only when the concentration exceeded 90% of their threshold value, or 4.6 and 52 mM for ammonia and lactate, respectively.",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "7.1",
+   "process_condition": false
+  },
+  {
+   "text": "The B1 mass balance is applied only after 144 h.",
+   "quote": "The mass balance for titer, [B1], was applied only after 144 h",
+   "page": 3,
+   "severity": "warning",
+   "reasoned": false,
+   "eq": "6.1",
+   "process_condition": false
+  }
+ ],
+ "model_name": "Fed-batch CHO kinetic model",
+ "excluded": [
+  {
+   "eq": "2",
+   "reason": "Vector defining postfeed values, not a model equation."
+  },
+  {
+   "eq": "3",
+   "reason": "Feed-mixing calculation used to prepare postfeed values, not part of the kinetic model."
+  },
+  {
+   "eq": "4",
+   "reason": "Calculates yield constants from data for use as model inputs."
+  },
+  {
+   "eq": "5",
+   "reason": "Calculates apparent growth from measured data; it is not the model growth law."
+  },
+  {
+   "eq": "9",
+   "reason": "Lists estimated parameters for the MCMC procedure."
+  },
+  {
+   "eq": "10",
+   "reason": "Lists known constants and calculated parameters for the MCMC procedure."
+  },
+  {
+   "eq": "12",
+   "reason": "Likelihood used for parameter estimation, not part of the process model."
+  },
+  {
+   "eq": "13",
+   "reason": "Convergence statistic for parameter estimation."
+  },
+  {
+   "eq": "11.1",
+   "reason": "MCMC acceptance function, not part of the process model."
+  },
+  {
+   "eq": "11.2",
+   "reason": "MCMC parameter-acceptance step, not part of the process model."
+  },
+  {
+   "eq": "14.1",
+   "reason": "Intermediate quantity for the convergence statistic."
+  },
+  {
+   "eq": "14.2",
+   "reason": "Intermediate quantity for the convergence statistic."
+  },
+  {
+   "eq": "14.3",
+   "reason": "Intermediate quantity for the convergence statistic."
+  },
+  {
+   "eq": "p2-1.1",
+   "reason": "Observation vector defining measured prefeed data, not a model equation."
+  },
+  {
+   "eq": "p2-1.2",
+   "reason": "Sampling-day index definition, not a model equation."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "p2-1.1": "NOT USED BY OTHERS: computes X; the model output (keep) or not part of the model (leave out)",
+   "p2-1.2": "NOT USED BY OTHERS: computes d; the model output (keep) or not part of the model (leave out)",
+   "2": "NOT USED BY OTHERS: computes X; the model output (keep) or not part of the model (leave out)",
+   "3": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "4": "NOT USED BY OTHERS: computes Y_{x2_k/x2_j}; the model output (keep) or not part of the model (leave out)",
+   "5": "CONFLICT: computes X_{V}, like eq 6.1",
+   "6.1": "CONFLICT: computes X_{V}, like eq 5",
+   "6.2": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6.3": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6.4": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6.5": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "6.6": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "7.1": "NEEDED: computes \\mu, used by the model",
+   "7.2": "NEEDED: computes \\mu_{d}, used by the model",
+   "8": "NOT USED BY OTHERS: computes m_{gln}; the model output (keep) or not part of the model (leave out)",
+   "9": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "10": "NOT USED BY OTHERS: computes P; the model output (keep) or not part of the model (leave out)",
+   "11.1": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "11.2": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "12": "not an equation",
+   "13": "NOT USED BY OTHERS: computes PSRF_{i}; the model output (keep) or not part of the model (leave out)",
+   "14.1": "NOT USED BY OTHERS: computes \\hat{V}_{i}; the model output (keep) or not part of the model (leave out)",
+   "14.2": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "14.3": "NOT USED BY OTHERS: computes W_{i}; the model output (keep) or not part of the model (leave out)"
+  }
+ },
+ "human_edits": [
+  "2026-10-22: model-level assumptions classified by hand with the laws.py rule (blocking only for a process condition a user can check; modelling choices are warnings; ones naming the model removed)."
+ ]
+}

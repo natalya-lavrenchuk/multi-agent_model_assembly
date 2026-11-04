@@ -1,0 +1,322 @@
+{
+ "model": "gpt-6-luna",
+ "sups": {
+  "wang_2019": {
+   "name": "Dynamic microalgae growth and lipid production model",
+   "equations": [
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "description": "The model represents the growth of Dunaliella viridis and its production of functional biomass, carbohydrates, neutral lipids, and chlorophyll as light and nitrogen conditions change. It predicts how carbon fixation and carbon allocation shift over time, using six dynamic state equations alongside calculations of light attenuation through the reactor. Its main mechanisms include light-limited, saturated, and inhibited photosynthesis; nitrogen-quota effects on carbon allocation; and distinct routes for lipid accumulation when nitrogen is sufficient or depleted. The model was developed and tested using cultures in a bench-scale flat-panel photobioreactor across different light levels and initial nitrate concentrations. The authors calibrated its parameters with experimental measurements, assessed uncertainty and sensitivity, and tested predictions against a separate set of experiments. They use the model to interpret transient algal responses and to inform cultivation strategies for improving biomass and biofuel production.",
+   "facts": [
+    {
+     "topic": "system",
+     "text": "The model describes Dunaliella viridis grown under varying light and nitrogen conditions.",
+     "quote": "describe the culture behaviors of Dunaliella viridis cultivated under different light and nitrogen conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "The model tracks functional biomass, carbohydrates, neutral lipids, chlorophyll a, extracellular nitrate, and intracellular nitrogen.",
+     "quote": "Our model contains six state variables",
+     "basis": "stated"
+    },
+    {
+     "topic": "system",
+     "text": "Carbohydrates are represented as glucose and neutral lipids as triacylglycerols.",
+     "quote": "We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols.",
+     "basis": "stated"
+    },
+    {
+     "topic": "reactor",
+     "text": "The cultures were grown in a bench-scale, 3.2 L flat-panel photobioreactor.",
+     "quote": "The experiments were performed in a bench-scale 3.2 L flat-panel photobioreactor",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The reactor pH and temperature were controlled at 7.6 and 25 °C, respectively.",
+     "quote": "the pH and temperature controlled at 7.6 and 25 °C, respectively.",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The experimental light level was changed by adjusting the distance between the light source and the reactor.",
+     "quote": "The light condition in our experiment was controlled by adjusting the light source position (i.e., the distance d in Figure S1).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The experiments covered four light conditions grouped as low, moderate, or high light and ten initial nitrate concentrations grouped as high or low.",
+     "quote": "We used data from 11 experiments (Table S1) including four light conditions (categorized into low/moderate/high levels) and ten initial nitrate concentrations (categorized into high/low levels).",
+     "basis": "stated"
+    },
+    {
+     "topic": "operation",
+     "text": "The figure caption identifies low-light examples at 100 PPFD, moderate-light examples at 300 or 400 PPFD, and high-light examples at 600 PPFD.",
+     "quote": "low light (100PPFD and 4.95N, 100PPFD and 0.62N), moderate light (400PPFD and 4.89N, 300PPFD and 0.66N), and high light (600PPFD and 4.88N, 600PPFD and 0.71N)",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "Biomass, carbohydrate, neutral lipid, chlorophyll a, and nitrate concentrations were measured daily in triplicate for approximately 10 days.",
+     "quote": "Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days.",
+     "basis": "stated"
+    },
+    {
+     "topic": "data",
+     "text": "A light sensor mounted inside the reactor continuously monitored light intensity at its location during cultivation.",
+     "quote": "the light intensity Ip at location l = zl was continuously monitored by the light sensor during cultivation",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The model is a dynamic kinetic model formulated as six ordinary differential equations for the six culture-state variables.",
+     "quote": "Table 1 summarizes the entire set of ordinary differential equations (ODEs) for the model formulation",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The culture states are modeled as bulk concentrations, while light intensity is also estimated along the reactor optical path.",
+     "quote": "The average light intensity Iavg (eq 10) inside the reactor is calculated by averaging the local light intensities Il over the optical path",
+     "basis": "stated"
+    },
+    {
+     "topic": "model",
+     "text": "The posterior-statistics table reports 16 fitted model parameters, and the optical cross sections were calibrated separately using light-profile measurements.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "light",
+     "text": "Light attenuation is represented using an empirical background-absorption estimate and Beer–Lambert absorbance from chlorophyll and the remaining biomass.",
+     "quote": "The light attenuation due to Chl-a and the remaining biomass (XC - Xchl) is modeled by formulating the light absorbance A (eq 9) based on the Beer–Lambert Law.",
+     "basis": "stated"
+    },
+    {
+     "topic": "light",
+     "text": "The photosynthesis rate uses a modified simplified Steele relationship to represent light limitation, saturation, and inhibition.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "light",
+     "text": "The model represents light adaptation by making the saturated light intensity depend on chlorophyll a content.",
+     "quote": "We thus modified the saturated light intensity Isat as a function of the Chl-a content (eq 13)",
+     "basis": "stated"
+    },
+    {
+     "topic": "light",
+     "text": "The model represents light-inhibition hysteresis by reducing carbon yield on light energy for cells exposed to higher background light.",
+     "quote": "the carbon yield is smaller when cells are initially exposed to high background light intensity.",
+     "basis": "stated"
+    },
+    {
+     "topic": "light",
+     "text": "The model calculates reactor-average instantaneous light for cellular processes and uses a separate background-light average for parameters that vary with cultivation light conditions.",
+     "quote": "We used Iavg_R to adjust the parameter values that only change when the algae are cultivated under different light conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Nitrogen quota regulates how fixed carbon is partitioned between functional biomass and storage molecules through a mechanism based on the Droop model.",
+     "quote": "We modeled the carbon fixation to the functional biomass (R1) in eq (1) based on the Droop model.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Carbon not allocated to functional biomass is initially stored in carbohydrates, which can also supply carbon for respiration and lipid synthesis.",
+     "quote": "The assimilated carbon that has not been used to produce functional biomass is first stored in carbohydrates as shown in R₃ of eq (2).",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Carbohydrate respiration includes a basal component adjusted for background light and a growth-related component coupled to nitrate uptake.",
+     "quote": "The carbohydrate respiration rate includes two components: a basal-level rate (R₄) and a growth-related rate (R₅).",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The model represents chlorophyll a synthesis as linked to nitrogen uptake and adjusted for light, and represents its degradation under stress.",
+     "quote": "The synthesis of Chl-a is dependent on the assimilated nitrogen.",
+     "basis": "stated"
+    },
+    {
+     "topic": "nitrogen",
+     "text": "Nitrate uptake is modeled as proportional to extracellular nitrate relative to its initial concentration, with a maximum uptake-rate parameter.",
+     "quote": "As a result, the nitrate uptake rate vN in eq 17 is linearly related to the extracellular nitrate concentration SNO3 and is divided by the initial concentration SNO3 to offset the effect of initial nitrate level.",
+     "basis": "stated"
+    },
+    {
+     "topic": "nitrogen",
+     "text": "Profile-likelihood analysis found the maximum nitrogen quota parameter nonidentifiable, so the authors removed its quota-regulation term from the nitrate-uptake equation.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Under nitrogen sufficiency, the model represents a light-regulated reuse of carbohydrate carbon for neutral lipid synthesis.",
+     "quote": "R₆ is also coupled with the nitrate uptake rate via the coefficient β to describe that some carbon from carbohydrate metabolism could be reutilized to accumulate neutral lipids during normal algal growth.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "Under nitrogen deficiency, the model redirects previously fixed carbon from carbohydrates to neutral lipids through a nitrate-triggered process.",
+     "quote": "We further formulated R₇ to direct a portion qnl of the previously fixed carbon from carbohydrates to neutral lipids when nitrogen is depleted.",
+     "basis": "stated"
+    },
+    {
+     "topic": "mechanisms",
+     "text": "The model predicts a transition from slow carbohydrate-carbon reuse for lipid synthesis under nitrogen sufficiency to faster carbon redirection as nitrogen is depleted.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "calibration",
+     "text": "The authors split the experimental data into a calibration set of about 65% and a validation set of about 35%.",
+     "quote": "The experimental data was split into two subsets (Table S1): the calibration set (~65% of total data) and the validation set (~35% of total data).",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The authors used profile likelihood for identifiability analysis, MCMC with the DRAM algorithm for parameter uncertainty, and eFAST for global sensitivity analysis.",
+     "quote": "we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm.",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The MCMC chains reached similar steady ranges after 250,000 iterations.",
+     "quote": "We obtained two MCMC sample chains that converged to similar steady ranges after 250 000 iterations",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The authors used 2,000 posterior parameter sets to generate output medians and 95% credible and prediction intervals.",
+     "quote": "We randomly selected 2000 parameter sets from the MCMC posterior samples to generate the output medians, 95% credible intervals, and 95% prediction intervals",
+     "basis": "stated"
+    },
+    {
+     "topic": "calibration",
+     "text": "The optical cross sections were estimated by minimizing the discrepancy between measured and calculated light profiles across different light and nitrogen conditions.",
+     "quote": "We calibrated the values of a (the optical cross section of Chl-a) and b (the optical cross section of non-Chl-a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile Ip and the calculated light profile Izr.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The calibrated model medians agreed well with experimental observations and captured their variations while accounting for measurement errors.",
+     "quote": "Our model predictions were able to capture the variations in the experimental data and account for the measurement errors.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "In validation, the model overestimated neutral lipid production after prolonged nitrogen depletion at 300 PPFD and 0.43 mM nitrate.",
+     "quote": "overestimated the neutral lipid production after prolonged nitrogen depletion for the 300PPFD and 0.43N condition",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "In validation, the model failed to predict a late decrease in neutral lipid concentration during the 300 PPFD and 3.80 mM nitrate experiment.",
+     "quote": "did not predict the decrease in neutral lipid concentration toward the end of the 300PPFD and 3.80N experiment.",
+     "basis": "stated"
+    },
+    {
+     "topic": "validation",
+     "text": "The model does not include neutral-lipid degradation, which the authors suggest may explain the validation discrepancies.",
+     "quote": "our model did not include such a neutral lipid degradation process because the lipid concentration decline was not observed in the calibration experiments.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The photosynthesis formulation modifies the simplified Steele approach described by Steele in 1962.",
+     "quote": "The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The carbon allocation to functional biomass is based on the Droop model, cited as Droop 1970.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "prior models",
+     "text": "The paper notes that Guest et al. 2013 proposed a lumped-pathway metabolic model but says its steady-state assumptions limited its prediction of transient culture behavior.",
+     "quote": "However, the model was still subject to the steady-state and balanced-growth assumption and required two sets of reactions to separately determine the stoichiometric yields for nutrient-available and nutrient-depleted conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "prior models",
+     "text": "The paper cites Packer et al. 2011 as estimating a chlorophyll optical cross section close to the value obtained here.",
+     "quote": null,
+     "basis": "inferred"
+    },
+    {
+     "topic": "scope",
+     "text": "The model was evaluated across low, moderate, and high light and nitrogen-sufficient and nitrogen-limited conditions.",
+     "quote": "The formulated model was calibrated and validated with experimental data of Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR) under various light (low/moderate/high) and nitrogen (sufficient/limited) conditions.",
+     "basis": "stated"
+    },
+    {
+     "topic": "scope",
+     "text": "The authors suggest that the carbon-partitioning strategy may apply to other green algae and mixed-culture systems, but these broader applications were not tested in the reported experiments.",
+     "quote": "the carbon partitioning strategy proposed in our model may also be applicable to other green algae species and mixed-culture systems.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The model is intended to help optimize light intensity, nitrate concentration, and stage duration in two-stage cultivation.",
+     "quote": "Our model could thus be used to optimize important control process parameters such as light intensities, nitrate concentrations and time durations during the two-stage cultivation.",
+     "basis": "stated"
+    },
+    {
+     "topic": "use",
+     "text": "The authors propose increasing photosynthetic carbon fixation before nitrogen depletion and slowing its decline afterward as strategies to improve lipid production.",
+     "quote": "we could first enhance the photosynthetic carbon fixation before nitrogen depletion",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper states that its supporting-information PDF is freely available through the ACS Publications website and contains details on light estimation, calibration, and validation.",
+     "quote": "The Supporting Information is available free of charge on the ACS Publications website at DOI: 10.1021/acs.est.9b02908.",
+     "basis": "stated"
+    },
+    {
+     "topic": "availability",
+     "text": "The paper does not state that model code or a separate experimental-data repository is available.",
+     "quote": null,
+     "basis": "inferred"
+    }
+   ],
+   "states": [
+    "X_{cd}",
+    "X_{carb}",
+    "X_{nl}",
+    "X_{chl}",
+    "S_{NO3}",
+    "X_{N}"
+   ],
+   "inputs": [
+    "X_{C}",
+    "d",
+    "S_{NO3_0}"
+   ],
+   "status": "pending",
+   "review": [
+    "7 of 46 facts inferred (no quote found)"
+   ]
+  }
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "1": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\frac{\\partial C}{\\partial t}+\\frac{1-\\varepsilon_{T}}{\\varepsilon_{T}}\\frac{\\partial q}{\\partial t}+\\frac{u}{\\varepsilon_{T}}\\frac{\\partial C}{\\partial z}=D_{L}\\frac{\\partial^{2}C}{\\partial z^{2}} $$",
+   "corrected_latex": null,
+   "reason": "The equation is valid when u is supplied in cm s^{-1}; the cm h^{-1} listing is a unit-convention mismatch, and the paper does not show that an explicit conversion factor belongs in the equation.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "3": {
+   "action": "keep as printed",
+   "printed_latex": "$$ D_{L}=\\frac{u L}{2N} $$",
+   "corrected_latex": null,
+   "reason": "The relation is valid when u is in cm s^{-1}; the paper lists u in cm h^{-1} elsewhere but does not show that an explicit conversion factor belongs in the equation.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  },
+  "5": {
+   "action": "keep as printed",
+   "printed_latex": "$$ h=A+Bu $$",
+   "corrected_latex": null,
+   "reason": "The expression is valid when u is in cm s^{-1}, consistent with B in s cm^{-1}; the paper does not show that an explicit conversion factor belongs in the equation.",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ }
+}

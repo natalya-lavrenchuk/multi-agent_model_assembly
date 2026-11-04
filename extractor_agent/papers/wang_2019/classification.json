@@ -1,0 +1,376 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": true,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "P_{m}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ P_{{m}} $ | mean: 4.3054 | SD: 0.7197 | optimal values: 4.2599 | optimal values: 3.2084",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Explicitly listed in a table of parameters, indicating it is a constant during a simulation run.",
+   "llm": {
+    "symbol": "P_{m}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 162,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ P_{{m}} $ | mean: 4.3054 | SD: 0.7197 | optimal values: 4.2599 | optimal values: 3.2084",
+    "reason": "Explicitly listed in a table of parameters, indicating it is a constant during a simulation run."
+   }
+  },
+  "Q_{nm}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "We detected one nonidentifiable parameter $Q_{nm}$ as shown in the profile likelihood plots (Figure S4).",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Described in the text as a parameter; used only to regulate nitrate uptake rate and not solved for during integration.",
+   "llm": {
+    "symbol": "Q_{nm}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 146,
+    "quote": "We detected one nonidentifiable parameter $Q_{nm}$ as shown in the profile likelihood plots (Figure S4).",
+    "reason": "Described in the text as a parameter; used only to regulate nitrate uptake rate and not solved for during integration."
+   }
+  },
+  "S_{NO3_0}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears in the denominator of a Monod‑type term for nitrate uptake (eq 17). By modelling convention such terms contain a saturation constant, which is a fixed parameter.",
+   "llm": {
+    "symbol": "S_{NO3_0}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears in the denominator of a Monod‑type term for nitrate uptake (eq 17). By modelling convention such terms contain a saturation constant, which is a fixed parameter."
+   }
+  },
+  "X_{C}": {
+   "class": "variable",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Represents a biomass concentration (total carbon biomass). Concentrations are state variables that evolve during a run and are not predefined constants.",
+   "llm": {
+    "symbol": "X_{C}",
+    "class": "variable",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Represents a biomass concentration (total carbon biomass). Concentrations are state variables that evolve during a run and are not predefined constants."
+   }
+  },
+  "Y_{E}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ Y_{{E}} $ | mean: 0.2784 | SD: 0.0876 | optimal values: 0.3075 | optimal values: 0.1713",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Listed in the parameter table and described as a carbon yield on light energy, a fixed coefficient.",
+   "llm": {
+    "symbol": "Y_{E}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 163,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ Y_{{E}} $ | mean: 0.2784 | SD: 0.0876 | optimal values: 0.3075 | optimal values: 0.1713",
+    "reason": "Listed in the parameter table and described as a carbon yield on light energy, a fixed coefficient."
+   }
+  },
+  "\\beta": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 1. Full Set of ODEs for the Proposed Model Formulation … State Variable: Neutral lipid $ X_{nl} $ … Rate Equation: $ \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Presented in the model equations as a coefficient and listed in the table of model parameters, indicating it is a constant during a simulation.",
+   "llm": {
+    "symbol": "\\beta",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 67,
+    "quote": "Table 1. Full Set of ODEs for the Proposed Model Formulation … State Variable: Neutral lipid $ X_{nl} $ … Rate Equation: $ \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $",
+    "reason": "Presented in the model equations as a coefficient and listed in the table of model parameters, indicating it is a constant during a simulation."
+   }
+  },
+  "\\nu_{nm}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Additionally, the maximum nitrate uptake rate  $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly describes ν_{nm} as the maximum nitrate uptake rate, a constant parameter in the model.",
+   "llm": {
+    "symbol": "ν_{nm}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 126,
+    "quote": "Additionally, the maximum nitrate uptake rate  $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate.",
+    "reason": "The paper explicitly describes ν_{nm} as the maximum nitrate uptake rate, a constant parameter in the model."
+   }
+  },
+  "\\phi": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ \\phi $ | mean: 0.0684 | SD: 0.0199 | optimal values: 0.0584 | optimal values: 0.0748",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Listed in the parameter table, indicating it is a calibrated constant of the model.",
+   "llm": {
+    "symbol": "φ",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 170,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ \\phi $ | mean: 0.0684 | SD: 0.0199 | optimal values: 0.0584 | optimal values: 0.0748",
+    "reason": "Listed in the parameter table, indicating it is a calibrated constant of the model."
+   }
+  },
+  "\\theta": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Described as a maximum Chl‑a:N ratio, a fixed model constant; also appears in the parameter table. [quote not found in the paper]",
+   "llm": {
+    "symbol": "θ",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 114,
+    "quote": "Following prior modeling work, we linked the Chl‑a synthesis rate to the nitrogen uptake rate via the maximum Chl‑a:N ratio  $ \\theta $.",
+    "reason": "Described as a maximum Chl‑a:N ratio, a fixed model constant; also appears in the parameter table."
+   }
+  },
+  "a": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "We calibrated the values of  $ a $ (the optical cross section of Chl‑a) and  $ b $ (the optical cross section of non‑Chl‑a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profile  $ I_{Z_r} $.",
+   "page": 3,
+   "status": "accepted",
+   "reason": "Identified as the optical cross‑section of chlorophyll‑a, a constant property used in the light attenuation equation.",
+   "llm": {
+    "symbol": "a",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 75,
+    "quote": "We calibrated the values of  $ a $ (the optical cross section of Chl‑a) and  $ b $ (the optical cross section of non‑Chl‑a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profile  $ I_{Z_r} $.",
+    "reason": "Identified as the optical cross‑section of chlorophyll‑a, a constant property used in the light attenuation equation."
+   }
+  },
+  "b": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "We calibrated the values of  $ a $ (the optical cross section of Chl‑a) and  $ b $ (the optical cross section of non‑Chl‑a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profile  $ I_{Z_r} $.",
+   "page": 3,
+   "status": "accepted",
+   "reason": "Identified as the optical cross‑section of non‑chlorophyll biomass, a constant property in the model.",
+   "llm": {
+    "symbol": "b",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 75,
+    "quote": "We calibrated the values of  $ a $ (the optical cross section of Chl‑a) and  $ b $ (the optical cross section of non‑Chl‑a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profile  $ I_{Z_r} $.",
+    "reason": "Identified as the optical cross‑section of non‑chlorophyll biomass, a constant property in the model."
+   }
+  },
+  "d": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "$d \\quad \\mathrm{m}$ Distance from the light source to the front of the reactor",
+   "page": 8,
+   "status": "accepted",
+   "reason": "Described as a geometric distance, a fixed physical constant used in the light‑intensity integrals.",
+   "llm": {
+    "symbol": "d",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 325,
+    "quote": "$d \\quad \\mathrm{m}$ Distance from the light source to the front of the reactor",
+    "reason": "Described as a geometric distance, a fixed physical constant used in the light‑intensity integrals."
+   }
+  },
+  "k_{I}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Future models could modify the Chl-a degradation rate (eq 16) as  $ m_{chl} = m \\times \\max\\{(1-\\mathrm{erf}(k_N \\times S_{\\mathrm{NO}_3})), \\ \\mathrm{erf}(k_I \\times I_{\\mathrm{avg\\_R}})\\}$",
+   "page": 7,
+   "status": "accepted",
+   "reason": "The snippet explicitly discusses k_I as a constant used in a model equation, and it appears in the parameter table (Table 2) as a posterior statistic, indicating it is a calibrated model constant.",
+   "llm": {
+    "symbol": "k_{I}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 274,
+    "quote": "Future models could modify the Chl-a degradation rate (eq 16) as  $ m_{chl} = m \\times \\max\\{(1-\\mathrm{erf}(k_N \\times S_{\\mathrm{NO}_3})), \\ \\mathrm{erf}(k_I \\times I_{\\mathrm{avg\\_R}})\\}$",
+    "reason": "The snippet explicitly discusses k_I as a constant used in a model equation, and it appears in the parameter table (Table 2) as a posterior statistic, indicating it is a calibrated model constant."
+   }
+  },
+  "k_{N}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{N}} $ | mean: 3.3370 | SD: 0.8794 | optimal values: 2.7503 | optimal values: 2.7775",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Listed in the parameter table, confirming it is a constant of the model rather than a variable input.",
+   "llm": {
+    "symbol": "k_{N}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 177,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{N}} $ | mean: 3.3370 | SD: 0.8794 | optimal values: 2.7503 | optimal values: 2.7775",
+    "reason": "Listed in the parameter table, confirming it is a constant of the model rather than a variable input."
+   }
+  },
+  "k_{chl}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{chl}} $ | mean: 0.0248 | SD: 0.0021 | optimal values: 0.0246 | optimal values: 0.0190",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Appears in the parameter statistics table, indicating it is a calibrated constant used in the Chl‑a synthesis term.",
+   "llm": {
+    "symbol": "k_{chl}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 175,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{chl}} $ | mean: 0.0248 | SD: 0.0021 | optimal values: 0.0246 | optimal values: 0.0190",
+    "reason": "Appears in the parameter statistics table, indicating it is a calibrated constant used in the Chl‑a synthesis term."
+   }
+  },
+  "k_{mc}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{mc}} $ | mean: 0.0208 | SD: 0.0031 | optimal values: 0.0208 | optimal values: 0.0205",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Listed among model parameters with posterior statistics, so it is a constant.",
+   "llm": {
+    "symbol": "k_{mc}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 173,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{mc}} $ | mean: 0.0208 | SD: 0.0031 | optimal values: 0.0208 | optimal values: 0.0205",
+    "reason": "Listed among model parameters with posterior statistics, so it is a constant."
+   }
+  },
+  "k_{nl}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "(2)  $ R_{6} $-related parameters ( $ k_{nl} $ and  $ \\beta $):",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Identified as a parameter related to the neutral‑lipid formation term and appears in the parameter posterior table, confirming its status as a constant.",
+   "llm": {
+    "symbol": "k_{nl}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 202,
+    "quote": "(2)  $ R_{6} $-related parameters ( $ k_{nl} $ and  $ \\beta $):",
+    "reason": "Identified as a parameter related to the neutral‑lipid formation term and appears in the parameter posterior table, confirming its status as a constant."
+   }
+  },
+  "k_{ye}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{ye}} $ | mean: 0.0290 | SD: 0.0015 | optimal values: 0.0296 | optimal values: 0.0306",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Presented in the parameter table as a calibrated constant for the photosynthesis efficiency term.",
+   "llm": {
+    "symbol": "k_{ye}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 164,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ k_{{ye}} $ | mean: 0.0290 | SD: 0.0015 | optimal values: 0.0296 | optimal values: 0.0306",
+    "reason": "Presented in the parameter table as a calibrated constant for the photosynthesis efficiency term."
+   }
+  },
+  "m": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "A \\mathrm{m}^{-1} Light absorbance per unit length",
+   "page": 8,
+   "status": "accepted",
+   "reason": "The paper explicitly defines m as a light absorbance coefficient, a constant property of the system.",
+   "llm": {
+    "symbol": "m",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 322,
+    "quote": "A \\mathrm{m}^{-1} Light absorbance per unit length",
+    "reason": "The paper explicitly defines m as a light absorbance coefficient, a constant property of the system."
+   }
+  },
+  "m_{cN}": {
+   "class": "parameter",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "m_{cN} appears as a rate constant multiplying ν_N in the ODEs, consistent with a kinetic parameter (respiration‑related) rather than a manipulated variable.",
+   "llm": {
+    "symbol": "m_{cN}",
+    "class": "parameter",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "m_{cN} appears as a rate constant multiplying ν_N in the ODEs, consistent with a kinetic parameter (respiration‑related) rather than a manipulated variable."
+   }
+  },
+  "m_{c}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ m_{c} $",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The symbol is listed in a table of parameters and described as a respiration rate constant.",
+   "llm": {
+    "symbol": "m_{c}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 172,
+    "quote": "Table 2. Parameter Posterior Chain Statistics: parameter: $ m_{c} $",
+    "reason": "The symbol is listed in a table of parameters and described as a respiration rate constant."
+   }
+  },
+  "q_{n}": {
+   "class": "variable",
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "q_{n} is used as a flow term (e.g., q_n/Q_n) representing a nitrogen feed flow rate that can change with operating conditions, typical of a model variable.",
+   "llm": {
+    "symbol": "q_{n}",
+    "class": "variable",
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "q_{n} is used as a flow term (e.g., q_n/Q_n) representing a nitrogen feed flow rate that can change with operating conditions, typical of a model variable."
+   }
+  },
+  "z_{t}": {
+   "class": "parameter",
+   "basis": "stated",
+   "quote": "$z_{t}$ m Thickness of the photobioreactor along the optical path",
+   "page": 8,
+   "status": "accepted",
+   "reason": "The paper defines z_t as the reactor thickness, a fixed geometric property of the system.",
+   "llm": {
+    "symbol": "z_{t}",
+    "class": "parameter",
+    "basis": "stated",
+    "snippet_id": 344,
+    "quote": "$z_{t}$ m Thickness of the photobioreactor along the optical path",
+    "reason": "The paper defines z_t as the reactor thickness, a fixed geometric property of the system."
+   }
+  }
+ }
+}

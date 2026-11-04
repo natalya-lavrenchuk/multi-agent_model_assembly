@@ -1,0 +1,57 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2368,
+  "completion_tokens": 1964,
+  "total_tokens": 4332,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2365,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 1493,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Kontoravdi et al. (2005) CHO growth and mAb model\n\nAbstract: Fed-batch cultures are used in producing monoclonal antibodies industrially. Existing protocols are developed empirically. Model-based tools aiming to improve productivity are useful with model reliability and computational demand being important. Herein, a systematic framework for developing predictive models is presented comprising of model development, global sensitivity analysis, optimal experimental design for parameter estimation, and predictive capability checking. Its efficacy and validity are demonstrated using a fed-batch structured/unstructured model of antibody-secreting hybridoma cultures. Global sensitivity analysis is first used to identify sensitive model parameters (initial values estimated from batch cultures). Information-rich data from an optimally designed fed-batch experiment are then used to estimate these parameters, resulting in good agreement between simulation and experimental results. Finally, the model's predictive capability is confirmed by comparison with an independent set of fed-batch cultures. This approach systematises the process of developing predictive cell culture models at a minimum experimental cost, enabling model-based control and optimisation.\n\nSentences about the process and the data:\n- Mammalian cell culture Mathematical modelling Global sensitivity analysis\n- Fed-batch cultures are used in producing monoclonal antibodies industrially.\n- Herein, a systematic framework for developing predictive models is presented comprising of model development, global sensitivity analysis, optimal experimental design for parameter estimation, and predictive capability checking.\n- Its efficacy and validity are demonstrated using a fed-batch structured/unstructured model of antibody-secreting hybridoma cultures.\n- Global sensitivity analysis is first used to identify sensitive model parameters (initial values estimated from batch cultures).\n- Information-rich data from an optimally designed fed-batch experiment are then used to estimate these parameters, resulting in good agreement between simulation and experimental results.\n- Finally, the model's predictive capability is confirmed by comparison with an independent set of fed-batch cultures.\n- This approach systematises the process of developing predictive cell culture models at a minimum experimental cost, enabling model-based control and optimisation.\n- The development of reliable mathematical models of animal cell cultures is, of course, critical for such applications.\n- Their main advantages are that they involve extracellular culture variables that are typically monitored during a culture, as well as that their simulation and subsequent in silico applications are computationally tractable.\n- One of the major problems associated with unstructured models though is their limited applicability to the process conditions and data range they are derived from.\n- However, it has been put forward that the growth of a cell line follows the same kinetics, irrespective of the cultivation mode (Pörtner & Schäfer, 1996).\n- It is, therefore, possible that an unstructured model developed from batch culture data can also describe fed-batch cultures, which are known to increase levels of protein production and are preferred industrially, as long as it is properly\n- For structurally correct models, validation pertains to successful parameter estimation.\n- In the case of cell culture models, estimation is usually carried out for all model parameters and using already existing (most often, batch) data.\n- It is therefore used to assess which reduced set of parameters needs to be estimated from experimental data.\n- However, unique estimation of the parameter set is only possible if the available data are sufficiently rich (Versyck, Claes, & Van Impe, 1997).\n- The use of optimal experimental design for estimation of the values of'sensitive' parameters can result in significant improvements in parameter confidences (Munack & Posten, 1989;\n\nModel: kontoravdi_2005\nLaws:\n(1) [balance] The bioreactor volume changes according to inlet minus outlet flow.\n(2) [balance] The viable-cell population increases through growth, decreases through cell death, and leaves with the outlet flow.\n(3) [balance] The total-cell population increases through viable-cell growth and leaves with the outlet flow.\n(4) [constitutive] Specific cell growth rate is the maximum growth rate multiplied by substrate-limitation and metabolite-inhibition factors.\n(5) [constitutive] The substrate-limitation factor is the product of two Monod-type concentration terms, printed here with glucose in both numerators.\n(6) [constitutive] The growth-inhibition factor is the product of concentration-dependent inhibition terms for lactate and ammonia.\n(7) [constitutive] Specific cell death rate increases with extracellular ammonia concentration according to a Hill-type expression.\n(8) [balance] The glucose balance accounts for cellular consumption, glucose entering with the feed, and glucose leaving with the outlet.\n(9) [constitutive] Specific glucose uptake is the growth-associated glucose requirement plus glucose maintenance consumption.\n(10) [balance] Glutamine concentration changes through cellular uptake, glutamine degradation, inlet supply, and outlet removal.\n(11) [constitutive] Specific glutamine uptake is the growth-associated glutamine requirement plus glutamine maintenance consumption.\n(12) [constitutive] Glutamine-dependent maintenance uptake increases with glutamine concentration and approaches a limiting value.\n(13) [balance] Lactate concentration accumulates from cell-associated production and decreases through outlet removal.\n(14) [definition] Specific lactate production is calculated from specific glucose consumption using the lactate-on-glucose yield.\n(15) [balance] Ammonia concentration accumulates from cellular production and glutamine degradation, while outlet flow removes ammonia.\n(16) [definition] Specific ammonia production is calculated from specific glutamine consumption using the ammonia-on-glutamine yield.\n(17) [balance] Heavy-chain mRNA balance accounting for transcription and mRNA decay.\n(18) [balance] Light-chain mRNA balance accounting for transcription and mRNA decay.\n(19) [balance] Intra-ER heavy-chain balance accounting for translation and assembly consumption.\n(20) [balance] Intra-ER light-chain balance accounting for translation and assembly consumption.\n(21) [constitutive] Heavy-chain consumption rate in assembly as a function of intra-ER heavy-chain concentration.\n(22) [constitutive] Light-chain consumption rate in assembly as a function of the assembly intermediates and light-chain concentration.\n(23) [balance] Intra-ER heavy-chain dimer balance accounting for formation from heavy chains and consumption in assembly with light chain.\n(24) [balance] Intra-ER heavy-chain dimer–light-chain intermediate balance accounting for formation and subsequent assembly consumption.\n(25) [balance] The intraER assembled MAb balance adds MAb formed from the heavy-chain dimer–light-chain intermediate and light chain, and removes it through ER-to-Golgi transport.\n(26) [balance] The Golgi assembled MAb balance adds the ER-transferred fraction and removes MAb through Golgi-to-medium transport.\n(27) [balance] The culture-medium MAb balance adds the production term and removes MAb through the outlet flow.\n(28) [constitutive] The MAb production quantity is calculated as proportional to assembled Golgi MAb concentration, scaled by glycosylation efficiency and a multiplicative factor.\n\nStates (computed by the ODEs):\n- V: Bioreactor volume.\n- X_{\\nu}: Viable cell density.\n- X_{t}: Total cell density.\n- [GLC]: Glucose concentration\n- [GLN]: Glutamine concentration in the bioreactor.\n- [LAC]: Lactate concentration\n- [AMM]: Ammonia concentration\n- m_{H}: Heavy-chain mRNA amount per cell.\n- m_{L}: Light-chain mRNA amount.\n- [H]: Intra-ER heavy-chain concentration.\n- [L]: Intra-ER light-chain concentration.\n- [H_2]: Intra-ER heavy-chain dimer concentration.\n- [H_2L]: Intra-ER heavy-chain dimer–light-chain assembly intermediate concentration.\n- [H_2L_2]_{ER}: Concentration of assembled MAb in the ER.\n- [H_2L_2]_{G}: Concentration of assembled MAb in the Golgi apparatus.\n- [MAb]: MAb concentration in the culture medium.\n\nInputs (variables no law computes):\n- F_{in}: Inlet flow rate.\n- F_{out}: Outlet flow rate.\n- [GLC]_{in}: Glucose concentration in the bioreactor inlet.\n- [GLN]_{in}: Glutamine concentration in the bioreactor inlet.\n\nModel-wide assumptions:\n- none recorded",
+ "answer": {
+  "system": {
+   "value": "Antibody-secreting hybridoma cultures producing monoclonal antibodies (mAb)",
+   "quote": "fed-batch structured/unstructured model of antibody-secreting hybridoma cultures"
+  },
+  "unit_operation": {
+   "value": "Bioreactor",
+   "quote": "The bioreactor volume changes according to inlet minus outlet flow."
+  },
+  "operating_mode": {
+   "value": [
+    "fed-batch"
+   ],
+   "quote": "fed-batch structured/unstructured model",
+   "note": null
+  },
+  "fitted_on": {
+   "value": "An optimally designed fed-batch experiment; initial parameter values were estimated from batch cultures.",
+   "quote": "Global sensitivity analysis is first used to identify sensitive model parameters (initial values estimated from batch cultures). Information-rich data from an optimally designed fed-batch experiment are then used to estimate these parameters"
+  },
+  "phenomena": [
+   "Dual-substrate Monod limitation of cell growth",
+   "Lactate and ammonia inhibition of cell growth",
+   "Ammonia-dependent cell death",
+   "Growth-associated and maintenance glucose uptake",
+   "Growth-associated glutamine uptake and saturable glutamine maintenance uptake",
+   "Glutamine degradation",
+   "Lactate production linked to glucose uptake",
+   "Ammonia production from glutamine uptake and glutamine degradation",
+   "Heavy- and light-chain mRNA transcription and decay",
+   "Heavy- and light-chain translation and intracellular antibody assembly in the ER",
+   "Antibody transport from the ER to the Golgi and secretion into the medium",
+   "Glycosylation-efficiency-modulated mAb production"
+  ],
+  "description": "This dynamic model describes fed-batch antibody-secreting hybridoma cultures and predicts cell populations, nutrients, metabolites, intracellular antibody intermediates, and secreted mAb. It combines cell growth and death kinetics with nutrient uptake and byproduct formation, then represents antibody-chain expression, assembly in the ER, transport through the Golgi, and secretion alongside bioreactor volume and flow balances."
+ }
+}

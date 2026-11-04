@@ -1,0 +1,136 @@
+{
+ "sup": "anane_demo",
+ "title": "Modelling overflow metabolism in Escherichia coli by acetate cycling",
+ "doi": "10.1016/j.bej.2017.05.013",
+ "status": "approved",
+ "proposed_by": "gpt-6-luna",
+ "equations": [
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24"
+ ],
+ "equations_quote": null,
+ "boundary_basis": "human",
+ "complete_model": true,
+ "model_assumptions": [
+  {
+   "text": "The feed contains no biomass.",
+   "quote": "inlet concentration of biomass is zero (sterile feed)",
+   "page": 4,
+   "process_condition": true,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "12"
+  },
+  {
+   "text": "No acetate is added in the feed.",
+   "quote": "considering no addition of acetate in the feed",
+   "page": 4,
+   "process_condition": true,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "18"
+  },
+  {
+   "text": "The feed solution is fully saturated with dissolved oxygen.",
+   "quote": "the feed solution in the fed-batch phase is fully saturated with dissolved oxygen",
+   "page": 4,
+   "process_condition": true,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "22"
+  },
+  {
+   "text": "The process is operated in fed-batch mode.",
+   "quote": "in the fed-batch case",
+   "page": 4,
+   "process_condition": true,
+   "severity": "blocking",
+   "reasoned": false,
+   "eq": "12"
+  }
+ ],
+ "model_name": "Acetate-cycling fed-batch E. coli",
+ "excluded": [
+  {
+   "eq": "2",
+   "reason": "General state-space form; the process-specific ODEs are given in Eqs. 12, 14, 18, 22 and 24."
+  },
+  {
+   "eq": "3",
+   "reason": "General algebraic model form, not a process-specific equation."
+  },
+  {
+   "eq": "4",
+   "reason": "Generic output-selection relation, not a process-specific model equation."
+  },
+  {
+   "eq": "5",
+   "reason": "Generic output-selection relation, not a process-specific model equation."
+  },
+  {
+   "eq": "6",
+   "reason": "General initial condition."
+  },
+  {
+   "eq": "7",
+   "reason": "Parameter-estimation optimization setup."
+  },
+  {
+   "eq": "8",
+   "reason": "Parameter-estimation objective function."
+  },
+  {
+   "eq": "9",
+   "reason": "Stacks predicted measurements for parameter estimation; not a process-model equation."
+  },
+  {
+   "eq": "10",
+   "reason": "Parameter covariance and uncertainty calculation."
+  },
+  {
+   "eq": "11",
+   "reason": "General balance restated by the process-specific balances in Eqs. 12, 14 and 18."
+  }
+ ],
+ "checks": [],
+ "code_analysis": {
+  "stated": [],
+  "tags": {
+   "1": "NEEDED: computes F, used by the model",
+   "7": "NOT USED BY OTHERS: computes \\hat{\\theta}; the model output (keep) or not part of the model (leave out)",
+   "8": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "9": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "2": "CONFLICT: computes x, like eq 6, 11",
+   "3": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "4": "NOT USED BY OTHERS: computes y_{Of}; the model output (keep) or not part of the model (leave out)",
+   "5": "NOT USED BY OTHERS: computes y_{On}; the model output (keep) or not part of the model (leave out)",
+   "6": "CONFLICT: computes x, like eq 2, 11",
+   "10": "NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)",
+   "11": "CONFLICT: computes x, like eq 2, 6",
+   "12": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "13": "NEEDED: computes \\mu, used by the model",
+   "14": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "15": "NEEDED: computes q_{s}, used by the model",
+   "16": "NEEDED: computes q_{sox}, used by the model",
+   "17": "NEEDED: computes q_{sof}, used by the model",
+   "18": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "19": "NOT USED BY OTHERS: computes q_{A}; the model output (keep) or not part of the model (leave out)",
+   "20": "NOT USED BY OTHERS: computes p_{A}; the model output (keep) or not part of the model (leave out)",
+   "21": "NEEDED: computes q_{sA}, used by the model",
+   "22": "NEEDED: an ODE (the model, or background from earlier work?)",
+   "23": "NEEDED: computes q_{o}, used by the model",
+   "24": "NEEDED: an ODE (the model, or background from earlier work?)"
+  }
+ }
+}

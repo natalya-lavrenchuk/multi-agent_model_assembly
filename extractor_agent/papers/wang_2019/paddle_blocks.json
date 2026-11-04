@@ -1,0 +1,3127 @@
+{
+ "paper": "wang_2019",
+ "reader": "PaddleOCR-VL pipeline",
+ "dpi": 150,
+ "blocks": [
+  {
+   "page": 0,
+   "order": 0,
+   "label": "header_image",
+   "content": "",
+   "bbox": [
+    123.0,
+    81.0,
+    483.0,
+    221.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 1,
+   "label": "header",
+   "content": "Cite This: Environ. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    502.0,
+    159.0,
+    866.0,
+    180.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 2,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1110.0,
+    121.0,
+    1167.0,
+    144.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 3,
+   "label": "header",
+   "content": "pubs.acs.org/est",
+   "bbox": [
+    1059.0,
+    157.0,
+    1179.0,
+    178.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 4,
+   "label": "doc_title",
+   "content": "Dynamic Modeling of Microalgae Growth and Lipid Production under Transient Light and Nitrogen Conditions",
+   "bbox": [
+    120.0,
+    245.0,
+    1118.0,
+    321.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 5,
+   "label": "text",
+   "content": "Diyuan Wang, $ ^{ID} $ Yi-Chun Lai, Amanda L. Karam, Francis L. de los Reyes, III, $ ^{ID} $ and Joel J. Ducoste $ ^{*ID} $",
+   "bbox": [
+    120.0,
+    333.0,
+    1176.0,
+    364.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 6,
+   "label": "text",
+   "content": "Department of Civil, Construction, and Environmental Engineering, North Carolina State University, Raleigh, North Carolina 27695, United States",
+   "bbox": [
+    120.0,
+    380.0,
+    1153.0,
+    427.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 7,
+   "label": "text",
+   "content": "Supporting Information",
+   "bbox": [
+    142.0,
+    440.0,
+    362.0,
+    466.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 8,
+   "label": "abstract",
+   "content": "ABSTRACT: We developed a new dynamic model to characterize how light and nitrogen regulate the cellular processes of photosynthetic microalgae leading to transient changes in the production of neutral lipids, carbohydrates, and biomass. Our model recapitulated the versatile neutral lipid synthesis pathways via (i) carbon reuse from carbohydrate metabolism under nitrogen sufficiency and (ii) fixed carbon redirection under nitrogen depletion. We also characterized the effects of light adaptation, light inhibition hysteresis, and nitrogen limitation on photosynthetic carbon fixation. The formulated model was calibrated and validated with experimental data of Dunaliella viridis cultivated in a lab-scale photobioreactor (PBR) under various light (low/moderate/",
+   "bbox": [
+    139.0,
+    497.0,
+    662.0,
+    794.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 9,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    678.0,
+    494.0,
+    1158.0,
+    771.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 10,
+   "label": "abstract",
+   "content": "high) and nitrogen (sufficient/limited) conditions. We conducted the identifiability, uncertainty, and sensitivity analyses to verify the model reliability using the profile likelihood method, the Markov chain Monte Carlo (MCMC) technique, and the extended Fourier Amplitude Sensitivity Test (eFAST). Our model predictions agreed well with experimental observations and suggested potential model improvement by incorporating a lipid degradation mechanism. The insights from our model-driven analysis helped improve the mechanistic understanding of transient algae growth and bioproducts formation under environmental variations and could be applied to optimize biofuel and biomass production.",
+   "bbox": [
+    138.0,
+    794.0,
+    1165.0,
+    936.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "INTRODUCTION",
+   "bbox": [
+    123.0,
+    980.0,
+    314.0,
+    1004.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 12,
+   "label": "text",
+   "content": "To make microalgae-derived biofuel commercially competitive with fossil fuel, recent research has suggested different strategies such as producing high-profit coproducts from microalgae proteins and nutritional components,$^{1}$ integrating algae production with wastewater treatment and industrial CO$_{2}$ uptake,$^{2}$ or designing algal polycultures for multifunctional and stable cultivation.$^{3}$ However, applying these strategies in large-scale cultivation is difficult, because environmental variations such as light and nutrient affect not only the biomass yield but also the pattern and activity of microalgae metabolic pathways$^{4}$ that lead to dynamic changes in neutral lipids, carbohydrates, and other functional biomass contents. Therefore, the design, control, and optimization of the cultivation process continue to be a fundamental challenge in advancing microalgae-based biofuel technologies.",
+   "bbox": [
+    118.0,
+    1015.0,
+    631.0,
+    1368.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 13,
+   "label": "text",
+   "content": "To better understand, explain, and predict dynamic algal behaviors in response to critical environmental variations, different mathematical models have been developed. With detailed representation of the underlying pathways, metabolic models could reveal the metabolic network for production of targeted compounds in microalgae. However, the obtained metabolic carbon fluxes are constrained to a specific condition due to the steady-state and balanced-growth assumption for solving the stoichiometric reactions. $ ^{5} $ To predict dynamic carbon fluxes during culture condition transitions such as light-dark cycles $ ^{6} $ or switching between nitrogen repletion and depletion, $ ^{7} $ metabolic models require multiple pseudosteady-state time intervals, thus becoming highly complex and computationally expensive to solve. Guest et al. $ ^{8} $ developed a lumped-pathway metabolic model that simplified the dynamic metabolic modeling by integrating metabolic reactions into the kinetic model. However, the model was still subject to the steady-state and balanced-growth assumption and required two sets of reactions to separately determine the stoichiometric yields for nutrient-available and nutrient-depleted conditions. Consequently, the transient culture behaviors under varying light and nitrogen conditions were not predicted accurately.",
+   "bbox": [
+    119.0,
+    1367.0,
+    632.0,
+    1581.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 14,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    668.0,
+    981.0,
+    1180.0,
+    1292.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 15,
+   "label": "text",
+   "content": "Kinetic models allow the incorporation of multiple environmental factors that dynamically modulate algae growth and biofuel production. However, kinetic models based solely on empirical relationships $ ^{9,10} $ are usually black-box representations of the algal system and do not reveal how environmental factors regulate different bioprocesses. Consequently, these models provide limited understanding of the trade-offs",
+   "bbox": [
+    669.0,
+    1292.0,
+    1180.0,
+    1460.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 16,
+   "label": "footnote",
+   "content": "Received: May 15, 2019",
+   "bbox": [
+    671.0,
+    1487.0,
+    874.0,
+    1510.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 17,
+   "label": "footnote",
+   "content": "Revised: July 31, 2019",
+   "bbox": [
+    671.0,
+    1510.0,
+    871.0,
+    1534.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 18,
+   "label": "footer_image",
+   "content": "",
+   "bbox": [
+    125.0,
+    1593.0,
+    165.0,
+    1632.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 19,
+   "label": "footer",
+   "content": "ACS Publications",
+   "bbox": [
+    168.0,
+    1600.0,
+    326.0,
+    1625.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 20,
+   "label": "footnote",
+   "content": "Accepted: August 26, 2019",
+   "bbox": [
+    672.0,
+    1534.0,
+    892.0,
+    1556.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 21,
+   "label": "footer",
+   "content": "© 2019 American Chemical Society",
+   "bbox": [
+    348.0,
+    1602.0,
+    553.0,
+    1621.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 22,
+   "label": "footnote",
+   "content": "Published: August 26, 2019",
+   "bbox": [
+    672.0,
+    1556.0,
+    892.0,
+    1580.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 23,
+   "label": "number",
+   "content": "11560",
+   "bbox": [
+    628.0,
+    1602.0,
+    675.0,
+    1620.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 24,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    935.0,
+    1603.0,
+    1178.0,
+    1635.0
+   ]
+  },
+  {
+   "page": 0,
+   "order": 25,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1229.0,
+    478.0,
+    1250.0,
+    1241.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    122.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1114.0,
+    101.0,
+    1166.0,
+    120.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 2,
+   "label": "text",
+   "content": "between algal growth and lipid production. Some kinetic models $ ^{11-13} $ simulated the carbon fixation and distribution processes to describe storage molecule production. However, these models were only valid for nitrogen-limited conditions or required a new set of parameters to fit the nitrogen-sufficient conditions, indicating that the underlying mechanism of neutral lipid synthesis was not fully characterized. Moreover, these prior works did not clearly study the potential for the regulatory effects of light. For example, most prior models determined the photosynthesis rate based solely on the instantaneous light intensity but ignored the hysteresis effect of the pre-exposure to high or low light intensities. $ ^{14} $ Without comprehensively accounting for the light variation effect on photosynthesis rate, prior photosynthesis models may not be applicable to wide-ranging light conditions and outdoor cultivation systems. $ ^{14} $ In addition, light could also affect the lipid production through influences on the carbon distribution processes. A simple representation of the carbon distribution process may not properly capture the detailed regulatory and combinatorial effects of light and nitrogen on lipid accumulation.",
+   "bbox": [
+    119.0,
+    140.0,
+    631.0,
+    622.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 3,
+   "label": "text",
+   "content": "In this study, we establish a new kinetic model to improve the dynamic modeling of photosynthetic carbon fixation and carbon partitioning processes regulated by both light and nitrogen factors. The proposed carbon partitioning mechanism recapitulates the versatile neutral lipid synthesis pathways. Moreover, the formulated photosynthesis process incorporates not only light adaptation and inhibition effects but also the nitrogen-limited effect on carbon growth. Our model could characterize and forecast transient culture behaviors including the production of neutral lipids, carbohydrates, and functional biomass under a wide range of light and nitrogen conditions. The model reliability is verified via the identifiability, uncertainty, and sensitivity analyses. The proposed modeling framework facilitates rational study of the microalgae dynamic cellular processes in response to environmental variations and provides useful insights on cultivation process control for achieving optimal biomass growth and biofuel production.",
+   "bbox": [
+    119.0,
+    621.0,
+    631.0,
+    1016.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 4,
+   "label": "paragraph_title",
+   "content": "METHODS",
+   "bbox": [
+    123.0,
+    1032.0,
+    262.0,
+    1055.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 5,
+   "label": "text",
+   "content": "We established our model (Figure 1) based on the major cellular processes of most green algae species to describe the culture behaviors of Dunaliella viridis cultivated under different light and nitrogen conditions. The experiments were performed in a bench-scale 3.2 L flat-panel photobioreactor (Figure S1 of the Supporting Information, SI) with a light sensor mounted inside and the pH and temperature controlled at 7.6 and 25 °C, respectively. We used data from 11 experiments (Table S1) including four light conditions (categorized into low/moderate/high levels) and ten initial nitrate concentrations (categorized into high/low levels). Concentrations of the biomass, carbohydrate, neutral lipid, Chlorophyll a (Chl-a), and nitrate were measured daily in triplicate for approximately 10 days. The experiments were fully discussed by Lai et al.¹⁵ Our model contains six state variables, and Table 1 summarizes the entire set of ordinary differential equations (ODEs) for the model formulation (see Nomenclature for detailed parameter definitions).",
+   "bbox": [
+    118.0,
+    1063.0,
+    630.0,
+    1477.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 6,
+   "label": "text",
+   "content": "Light Estimation. The light condition in our experiment was controlled by adjusting the light source position (i.e., the distance d in Figure S1). As source light passes through the photobioreactor, some light attenuation will occur. The level of attenuation is affected by the amount of chlorophyll, biomass,",
+   "bbox": [
+    119.0,
+    1476.0,
+    632.0,
+    1593.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 7,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    675.0,
+    145.0,
+    1172.0,
+    406.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 8,
+   "label": "image",
+   "content": "",
+   "bbox": [
+    675.0,
+    420.0,
+    1175.0,
+    690.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 9,
+   "label": "figure_title",
+   "content": "Figure 1. Diagrammatic representation of carbon flows under (a) nitrogen-sufficient conditions and (b) nitrogen-deficient conditions. Dashed arrows indicate small or decreasing carbon flow rates under corresponding nitrogen conditions. Dark gray arrows denote carbon flows related to photosynthetic carbon fixation rates. Yellow arrows indicate additional carbon flows regulated by light.",
+   "bbox": [
+    670.0,
+    708.0,
+    1179.0,
+    836.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 10,
+   "label": "figure_title",
+   "content": "Table 1. Full Set of ODEs for the Proposed Model Formulation $ ^{a} $",
+   "bbox": [
+    671.0,
+    857.0,
+    1114.0,
+    904.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 11,
+   "label": "table",
+   "content": "<table><tr><td>State Variable</td><td>Rate Equation</td><td>Carbon Flow</td><td>Equation Number</td></tr><tr><td>Functional biomass  $ X_{cd} $</td><td>$ \\frac{dX_{cd}}{dt} = \\left(1 - \\frac{q_n}{Q_n}\\right) \\cdot P \\cdot X_{cd} $\\n $ -m \\cdot X_{cd} $\\nSee P defined in Eqn (12),  $ Q_n $ in Eqn (18)</td><td>$ R_1 $\\n(-) $ R_2 $</td><td>(1)</td></tr><tr><td>Carbohydrate  $ X_{carb} $</td><td>$ \\frac{dX_{carb}}{dt} = \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\n $ -m_c \\cdot \\exp(-k_{mc} \\cdot I_{avg\\_R}) \\cdot X_{carb} $\\n $ -m_{cN} \\cdot \\nu_N \\cdot X_{cd} $\\n $ -\\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $\\n $ -q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $\\nSee  $ I_{avg} $ defined in Eqn (10),  $ I_{avg\\_R} $ in Eqn (11),  $ q_{nl} $ in Eqn (15),  $ \\nu_N $ in Eqn (17)</td><td>$ R_3 $\\n(-) $ R_4 $\\n(-) $ R_5 $\\n(-) $ R_6 $\\n(-) $ R_7 $</td><td>(2)</td></tr><tr><td>Neutral lipid  $ X_{nl} $</td><td>$ \\frac{dX_{nl}}{dt} = \\beta \\cdot \\exp(k_{nl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} $\\n $ +q_{nl} \\cdot \\frac{q_n}{Q_n} \\cdot P \\cdot X_{cd} $</td><td>$ R_6 $\\n $ R_7 $</td><td>(3)</td></tr><tr><td>Chlorophyll a  $ X_{chl} $</td><td colspan=\"2\">$ \\frac{dX_{chl}}{dt} = \\theta \\cdot \\exp(-k_{chl} \\cdot I_{avg}) \\cdot \\nu_N \\cdot X_{cd} - m_{chl} \\cdot X_{chl} $\\nSee  $ m_{chl} $ defined in Eqn (16)</td><td>(4)</td></tr><tr><td>Extracellular nitrogen  $ S_{NO3} $</td><td colspan=\"2\">$ \\frac{dS_{NO3}}{dt} = -\\nu_N \\cdot X_{cd} $</td><td>(5)</td></tr><tr><td>Intracellular nitrogen  $ X_N $</td><td colspan=\"2\">$ \\frac{dX_N}{dt} = \\nu_N \\cdot X_{cd} $</td><td>(6)</td></tr></table>",
+   "bbox": [
+    671.0,
+    916.0,
+    1176.0,
+    1476.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 12,
+   "label": "vision_footnote",
+   "content": " $ ^{a} $Note: (-) denotes the carbon loss. (-)* denotes the carbon conversion from one molecule to another.",
+   "bbox": [
+    670.0,
+    1483.0,
+    1178.0,
+    1527.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 13,
+   "label": "number",
+   "content": "11561",
+   "bbox": [
+    628.0,
+    1609.0,
+    673.0,
+    1628.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 14,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1610.0,
+    1179.0,
+    1642.0
+   ]
+  },
+  {
+   "page": 1,
+   "order": 15,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1229.0,
+    476.0,
+    1249.0,
+    1240.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    121.0,
+    98.0,
+    471.0,
+    122.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1113.0,
+    100.0,
+    1166.0,
+    120.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 2,
+   "label": "text",
+   "content": "and background absorbing material.¹⁶ Equation 7 is formulated to express the local light intensity  $ I_l $ along the optical path  $ l $ inside the reactor. The light attenuation due to background absorbing material is modeled in  $ I_{R,p} $ which is estimated by an empirical equation (eq 8) obtained from experimental measurements (Figure S2). The light attenuation due to Chl-a and the remaining biomass ( $ X_C - X_{chl} $) is modeled by formulating the light absorbance  $ A $ (eq 9) based on the Beer–Lambert Law. We calibrated the values of  $ a $ (the optical cross section of Chl-a) and  $ b $ (the optical cross section of non-Chl-a biomass) in eq 9 by minimizing the discrepancy between the experimentally measured light profile  $ I_p $ and the calculated light profile  $ I_{Z_r} $. Specifically, the light intensity  $ I_p $ at location  $ l = z_l $ was continuously monitored by the light sensor during cultivation, and this intensity could be calculated as  $ I_{Z_r} $ by plugging the experimental values of Chl-a and biomass concentration into eq 9 and specifying  $ l = z_l $ in eq 7. We assumed that  $ a $ and  $ b $ were independent of the cultivation conditions and estimated their values ( $ a = 80.5\\ m^2\\ mol^{-1}\\ X_{chl} $-C and  $ b = 1.4718\\ m^2\\ mol^{-1} $ C) using the  $ I_p $ of different light and nitrogen conditions (calibration results shown in Figure S3). Our value of  $ a $ is equivalent to  $ 4.96\\ m^2\\ g^{-1}\\ Chl $-a, which is close to the value of  $ 4.82\\ m^2\\ g^{-1}\\ Chl $-a estimated by Packer et al.¹²",
+   "bbox": [
+    118.0,
+    139.0,
+    631.0,
+    683.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 3,
+   "label": "display_formula",
+   "content": " $$ I_{l}=I_{R,l}\\times\\exp(-A\\times l) $$ ",
+   "bbox": [
+    145.0,
+    692.0,
+    346.0,
+    721.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 4,
+   "label": "formula_number",
+   "content": "(7)",
+   "bbox": [
+    601.0,
+    698.0,
+    626.0,
+    720.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 5,
+   "label": "display_formula",
+   "content": " $$ I_{R,l}=1.7324(l+d)^{-1.993} $$ ",
+   "bbox": [
+    145.0,
+    738.0,
+    357.0,
+    770.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 6,
+   "label": "display_formula",
+   "content": " $$ A=a\\times X_{chl}+b\\times\\left(X_{C}-X_{chl}\\right) $$ ",
+   "bbox": [
+    145.0,
+    788.0,
+    423.0,
+    816.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 7,
+   "label": "formula_number",
+   "content": "(8)",
+   "bbox": [
+    602.0,
+    748.0,
+    626.0,
+    770.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 8,
+   "label": "formula_number",
+   "content": "(9)",
+   "bbox": [
+    602.0,
+    792.0,
+    626.0,
+    815.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 9,
+   "label": "text",
+   "content": "The average light intensity  $ I_{\\mathrm{avg}} $ (eq 10) inside the reactor is calculated by averaging the local light intensities  $ I_{l} $ over the optical path from l = 0 to l = z_{t}. In addition, the average background light intensity  $ I_{\\mathrm{avg\\_R}} $ is expressed in eq 11. The instantaneous light intensity  $ I_{\\mathrm{avg}} $ regulates the rates of cellular processes that can be dynamically affected by light variations such as photosynthesis, carbon partitioning, and Chl-a synthesis. In contrast,  $ I_{\\mathrm{avg\\_R}} $ does not vary in time. We used  $ I_{\\mathrm{avg\\_R}} $ to adjust the parameter values that only change when the algae are cultivated under different light conditions.",
+   "bbox": [
+    119.0,
+    827.0,
+    630.0,
+    1059.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 10,
+   "label": "display_formula",
+   "content": " $$ I_{\\mathrm{avg}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\times\\exp(-A\\times l)\\mathrm{d}l $$ ",
+   "bbox": [
+    143.0,
+    1068.0,
+    594.0,
+    1120.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 11,
+   "label": "formula_number",
+   "content": "(10)",
+   "bbox": [
+    592.0,
+    1123.0,
+    626.0,
+    1147.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 12,
+   "label": "display_formula",
+   "content": " $$ I_{\\mathrm{a v g\\_{R}}}=\\frac{1}{z_{t}}\\times\\int_{0}^{z_{t}}1.7324(l+d)^{-1.993}\\mathrm{d}l $$ ",
+   "bbox": [
+    144.0,
+    1156.0,
+    482.0,
+    1211.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 13,
+   "label": "formula_number",
+   "content": "(11)",
+   "bbox": [
+    592.0,
+    1188.0,
+    626.0,
+    1210.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 14,
+   "label": "text",
+   "content": "Photosynthetic Carbon Fixation. The photosynthesis rate equation (eq 12) was formulated by modifying the simplified Steele's equation,$^{17,18}$ which expresses the typical relationship between photosynthesis rate and light intensity (i.e., $P-I$ relationship) during the stages of light limitation, saturation, and inhibition. However, the $P-I$ relationship varies in terms of the light saturation point and light-saturated photosynthetic rate because algae cells can adapt to light variations by adjusting their cellular pigment contents.$^{19}$ We thus modified the saturated light intensity $I_{\\mathrm{sat}}$ as a function of the Chl-a content (eq 13) inspired by the Poisson model.$^{20}$ In addition, the simplified Steele's equation overlooks the hysteresis of light inhibition caused by the pre-exposure to high light intensity.$^{14}$ We thus modified the carbon yield on light energy $Y_{\\mathrm{E}}$ as a function of $I_{\\mathrm{avg}, \\mathrm{R}}$ (eq 14). Consequently, the carbon yield is smaller when cells are initially exposed to high background light intensity. This reduced carbon yield is in line with the prior finding that certain intracellular inhibitors could cause a decrease in the light utilization efficiency during photoinhibition.$^{21}$ Moreover, the higher carbon yield at low background light intensity reflects that cells could utilize low-level light more efficiently during low-light adaptation.$^{22}$ The final expression of the photosynthesis rate in eq 12 is normalized by the functional biomass. Accordingly, the product of $P$ and $X_{\\mathrm{cd}}$ gives the carbon fixation rate (i.e., total carbon growth rate). This carbon inflow can then be distributed into the synthesis of functional biomass and storage molecules.",
+   "bbox": [
+    118.0,
+    1222.0,
+    631.0,
+    1594.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 15,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    670.0,
+    140.0,
+    1182.0,
+    418.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 16,
+   "label": "display_formula",
+   "content": " $$ P=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right) $$ ",
+   "bbox": [
+    695.0,
+    427.0,
+    1036.0,
+    491.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 17,
+   "label": "formula_number",
+   "content": "(12)",
+   "bbox": [
+    1142.0,
+    468.0,
+    1176.0,
+    491.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 18,
+   "label": "display_formula",
+   "content": " $$ I_{\\mathrm{s a t}}=\\frac{P_{\\mathrm{m}}\\times X_{\\mathrm{C}}}{a\\times Y_{\\mathrm{E}}^{c}\\times X_{\\mathrm{c h l}}} $$ ",
+   "bbox": [
+    695.0,
+    508.0,
+    874.0,
+    567.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 19,
+   "label": "formula_number",
+   "content": "(13)",
+   "bbox": [
+    1143.0,
+    542.0,
+    1176.0,
+    565.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 20,
+   "label": "display_formula",
+   "content": " $$ Y_{\\mathrm{E}}^{c}=Y_{\\mathrm{E}}\\times\\exp(-k_{y e}\\times I_{\\mathrm{a v g\\_{R}}}) $$ ",
+   "bbox": [
+    695.0,
+    582.0,
+    945.0,
+    614.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 21,
+   "label": "formula_number",
+   "content": "(14)",
+   "bbox": [
+    1142.0,
+    591.0,
+    1176.0,
+    616.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 22,
+   "label": "text",
+   "content": "Functional Biomass (Functional Pool). Functional biomass is the algal biomass excluding carbohydrates and neutral lipids. The partitioning of the fixed carbon between the functional pool and the storage pool is regulated by the nitrogen cell quota  $ Q_n $. We modeled the carbon fixation to the functional biomass ( $ R_1 $) in eq (1) based on the Droop model. $ ^{23} $ For simplicity, we modeled the degradation of functional biomass ( $ R_2 $) that contributes to respiration as a first-order relationship. The composition of functional biomass is assumed as  $ CH_{1.8}O_{0.5}N_{0.2} $.",
+   "bbox": [
+    669.0,
+    626.0,
+    1180.0,
+    858.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 23,
+   "label": "text",
+   "content": "Carbohydrates and Neutral Lipids (Storage Pool). The assimilated carbon that has not been used to produce functional biomass is first stored in carbohydrates as shown in R₃ of eq (2). The degradation of carbohydrates is categorized into three types based on the carbon flow direction: (1) the carbon loss during respiration (R₄, R₅), (2) the carbon reuse for lipid synthesis during nitrogen-available conditions (R₆), and (3) the carbon redirection to lipid synthesis under nitrogen deficiency (R₇). The carbohydrate respiration rate includes two components: a basal-level rate (R₄) and a growth-related rate (R₅). R₄ is based on the first-order relationship with the respiration rate constant  $ m_c $ adjusted by  $ I_{avg\\_R} $ to account for the photoinhibition of respiration. As reported in prior studies, moderate to high light intensities could damage the respiratory system of cells and impact respiration activities.²⁵ Consequently, cells under the light-inhibition condition could maintain a lower respiration rate than cells that have recovered from high-light stress.²⁶ R₅ is coupled with the nitrate uptake rate via coefficient  $ m_{cN} $ to reflect the growth cost²⁷ as the prior observation showed that a faster growth rate required a higher respiration rate for more energy supplies.²⁸ R₆ is also coupled with the nitrate uptake rate via the coefficient  $ \\beta $ to describe that some carbon from carbohydrate metabolism could be reutilized to accumulate neutral lipids during normal algal growth. However, the coefficient  $ \\beta $ is further regulated by  $ I_{avg} $ because neutral lipids production could increase with increasing light intensities as shown in prior studies.²⁹–³¹ We further formulated R₇ to direct a portion  $ q_{nl} $ of the previously fixed carbon from carbohydrates to neutral lipids when nitrogen is depleted.  $ q_{nl} $ is expressed as an error function (eq 15) triggered by deficient nitrogen concentrations. Some detailed carbon partitioning processes between",
+   "bbox": [
+    667.0,
+    860.0,
+    1181.0,
+    1592.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 24,
+   "label": "number",
+   "content": "11562",
+   "bbox": [
+    628.0,
+    1609.0,
+    675.0,
+    1628.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 25,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    935.0,
+    1611.0,
+    1180.0,
+    1642.0
+   ]
+  },
+  {
+   "page": 2,
+   "order": 26,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1230.0,
+    475.0,
+    1249.0,
+    1243.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    121.0,
+    98.0,
+    471.0,
+    122.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1113.0,
+    100.0,
+    1166.0,
+    120.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 2,
+   "label": "text",
+   "content": "functional biomass components and storage molecules were not specifically simulated in this work. For example, functional biomass components such as proteins and polar lipids could also contribute to lipid synthesis, and these processes were assumed to be covered by  $ R_7 $ as  $ R_7 $ is directly related to the carbon partitioning between the functional pool and the storage pool. Additionally, some degraded carbon from carbohydrates may also be reused to accumulate functional biomass, and such a process was assumed to be covered by the Droop model. We modeled carbohydrates in the form of glucose and neutral lipids in the form of triacylglycerols. $ ^{32} $",
+   "bbox": [
+    119.0,
+    141.0,
+    631.0,
+    397.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 3,
+   "label": "display_formula",
+   "content": " $$ q_{n l}=\\phi\\times(1-\\mathrm{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O}3})) $$ ",
+   "bbox": [
+    144.0,
+    403.0,
+    419.0,
+    433.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 4,
+   "label": "formula_number",
+   "content": "(15)",
+   "bbox": [
+    592.0,
+    411.0,
+    626.0,
+    432.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 5,
+   "label": "text",
+   "content": "Chlorophyll a. The synthesis of Chl-a is dependent on the assimilated nitrogen. Following prior modeling work, $ ^{12,13,27,33} $ we linked the Chl-a synthesis rate to the nitrogen uptake rate via the maximum Chl-a:N ratio  $ \\theta $. To account for the light adaptation effect, $ ^{34} $  $ \\theta $ is regulated by  $ I_{avg} $ via an exponential function. We further applied the error function in eq 16 to model the degradation of Chl-a under stress conditions because our experiments showed that the Chl-a concentration decreased under nitrogen starvation and high-light conditions, and such phenomenon was also observed in previous studies. $ ^{29,35} $",
+   "bbox": [
+    119.0,
+    443.0,
+    631.0,
+    696.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 6,
+   "label": "display_formula",
+   "content": " $$ m_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}}) $$ ",
+   "bbox": [
+    143.0,
+    706.0,
+    578.0,
+    735.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 7,
+   "label": "formula_number",
+   "content": "(16)",
+   "bbox": [
+    591.0,
+    737.0,
+    626.0,
+    761.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 8,
+   "label": "text",
+   "content": "Extracellular Nitrate. In prior models, the nitrate uptake rates were related to the external nitrate concentrations following the Michaelis–Menten kinetics  $ V = V_{max} [S] / (K_{S,N} + [S]) $. However, Fachet et al. $ ^{33} $ found that the half-saturation coefficient  $ K_{S,N} $ was nonidentifiable. Specifically, the value of the profile likelihood (which measures the discrepancy between the model prediction and the experimental result) decreases as  $ K_{S,N} $ increases, indicating that the optimal solution may prefer a larger  $ K_{S,N} $. If  $ K_{S,N} \\gg [S] $, then the Michaelis–Menten equation is essentially reduced to  $ V = V_{max} [S] / K_{S,N} $, which becomes a first-order relationship. This linear relationship was also observed in some microalgae species when the nitrate concentrations were above 60  $ \\mu $mol·N L $ ^{-1} $. $ ^{36} $ Moreover, Jiménez and Niell $ ^{37} $ suggested that nitrate uptake rate may be independent of the initial nitrate concentration since they noticed that the initial nitrate concentrations (between 0.5 to 10 mmol·N L $ ^{-1} $) had negligible effect on the specific growth rate of Dunaliella viridis. As a result, the nitrate uptake rate  $ v_{N} $ in eq 17 is linearly related to the extracellular nitrate concentration  $ S_{NO3} $ and is divided by the initial concentration  $ S_{NO3} $ to offset the effect of initial nitrate level. Additionally, the maximum nitrate uptake rate  $ v_{nm} $ is regulated by the nitrogen quota to potentially limit the maximum amount of nitrogen that cells can assimilate. $ ^{12,13,27} $",
+   "bbox": [
+    118.0,
+    764.0,
+    633.0,
+    1320.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 9,
+   "label": "display_formula",
+   "content": " $$ \\nu_{\\mathrm{N}}=\\left(\\frac{Q_{\\mathrm{n m}}-Q_{\\mathrm{n}}}{Q_{\\mathrm{n m}}-q_{\\mathrm{n}}}\\right)\\times\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_{0}}}} $$ ",
+   "bbox": [
+    144.0,
+    1328.0,
+    436.0,
+    1395.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 10,
+   "label": "formula_number",
+   "content": "(17)",
+   "bbox": [
+    592.0,
+    1373.0,
+    626.0,
+    1395.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 11,
+   "label": "text",
+   "content": "Intracellular Nitrogen and Nitrogen Quota. We assumed that algae cells assimilated the nitrate removed from the medium. The resulting rate of intracellular nitrogen accumulation (eq 6) was obtained by negating the sign of the nitrate uptake rate. We assumed the initial concentration of intracellular nitrogen  $ X_{N\\_0} $ to be  $ 0.2X_{cd\\_0} $. In prior models, the nitrogen quota  $ Q_{n} $ was usually defined as the ratio of the cellular nitrogen to either the total cellular carbon (or biomass) $ ^{11,27,33} $ or the functional carbon (or functional biomass). However, based on prior experimental results suggesting that the storage molecule production could be enhanced with elevated carbon fixation via excess  $ CO_{2} $ supply or mixotrophic cultivation, $ ^{38-40} $ it seemed more reasonable to regulate the carbon distribution between the functional pool and the storage pool using the total N:C ratio (eq 18).",
+   "bbox": [
+    118.0,
+    1405.0,
+    632.0,
+    1594.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 12,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    669.0,
+    137.0,
+    1182.0,
+    304.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 13,
+   "label": "display_formula",
+   "content": " $$ Q_{\\mathrm{n}}=\\frac{X_{\\mathrm{N}}}{X_{\\mathrm{C}}} $$ ",
+   "bbox": [
+    694.0,
+    317.0,
+    786.0,
+    371.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 14,
+   "label": "formula_number",
+   "content": "(18)",
+   "bbox": [
+    1142.0,
+    348.0,
+    1177.0,
+    372.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 15,
+   "label": "text",
+   "content": "Model Calibration and Validation. The experimental data was split into two subsets (Table S1): the calibration set (~65% of total data) and the validation set (~35% of total data). The calibration set was expected to cover most conditions in terms of the wide-ranging light intensities and the transition of nitrogen level from sufficiency to deficiency. Our model was systematically calibrated via identifiability analysis, uncertainty quantification, and sensitivity analysis. We chose the profile likelihood method to perform identifiability analysis owing to its ability to detect both structurally and practically nonidentifiable parameters. $ ^{41} $ After balancing the model complexity with the available data, we estimated the parameter posterior distributions and quantified the model output uncertainties using the Markov chain Monte Carlo (MCMC) technique with the Delayed Rejection Adaptive Metropolis (DRAM) algorithm. $ ^{42} $ We further investigated the sensitivity of each parameter to the model responses using a variance-based global sensitivity analysis technique—the extended Fourier Amplitude Sensitivity Test (eFAST)—well known for its flexibility and adaptability in dealing with nonlinear monotonic and nonmonotonic relationships. $ ^{43} $ Details regarding the use of above methods for our model assessment are discussed in the SI. Finally, we compared the light estimation with experimental data and validated the model by predicting new experiments in the validation set.",
+   "bbox": [
+    669.0,
+    389.0,
+    1181.0,
+    968.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 16,
+   "label": "paragraph_title",
+   "content": "RESULTS AND DISCUSSION",
+   "bbox": [
+    673.0,
+    988.0,
+    975.0,
+    1013.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 17,
+   "label": "text",
+   "content": "Model Calibration Evaluation. Identifiability Analysis. We detected one nonidentifiable parameter $Q_{nm}$ as shown in the profile likelihood plots (Figure S4). $Q_{nm}$ was only used in eq 17 to regulate the nitrate uptake rate. As we further increased the value of $Q_{nm}$, the discrepancy between the model prediction and the experimental data decreased. The discrepancy reached the minimum when $\\frac{Q_{nm} - Q_n}{Q_{nm} - q_n}$ was set to one (Figure S5). Therefore, we excluded the term $\\frac{Q_{nm} - Q_n}{Q_{nm} - q_n}$ from the nitrate uptake equation to resolve the nonidentifiability associated with $Q_{nm}$. Consequently, the nitrogen quota had no regulatory effect on the nitrate uptake rate in our model. It is possible that the nitrate supply in our experiments did not satisfy the cells' maximum nitrogen uptake capacity so the cells could still assimilate nitrate for additional growth. As shown in previous studies, the saturated cell density of Dunaliella viridis did not increase after increasing the nitrate concentration from 5 mM to 10 mM.$^{37}$ In contrast, Dunaliella tertiolecta did not further grow after increasing the $NO_3^-$ concentration from 23 mM to 46 mM. The maximum nitrate concentration we provided was around 4.95 mM.$^{44}$ Therefore, additional experiments with higher nitrate concentrations may be necessary to test the regulatory effectiveness of $Q_{nm}$ on nitrate uptake rate.",
+   "bbox": [
+    668.0,
+    1023.0,
+    1182.0,
+    1589.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 18,
+   "label": "number",
+   "content": "11563",
+   "bbox": [
+    627.0,
+    1609.0,
+    675.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 19,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    935.0,
+    1610.0,
+    1180.0,
+    1642.0
+   ]
+  },
+  {
+   "page": 3,
+   "order": 20,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1230.0,
+    477.0,
+    1249.0,
+    1243.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    121.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1114.0,
+    101.0,
+    1165.0,
+    120.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 2,
+   "label": "text",
+   "content": "Uncertainty Quantification. We obtained two MCMC sample chains that converged to similar steady ranges after 250 000 iterations (Figure S6). We chose the one with higher stability over the iterations (Table S5) and used the samples that reached the steady range to generate the parameter posterior distributions and pairwise correlation plots (Figures S7 and S8). Table 2 lists the parameter mean values, standard",
+   "bbox": [
+    120.0,
+    140.0,
+    631.0,
+    303.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 3,
+   "label": "figure_title",
+   "content": "Table 2. Parameter Posterior Chain Statistics",
+   "bbox": [
+    122.0,
+    326.0,
+    515.0,
+    349.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 4,
+   "label": "table",
+   "content": "<table><tr><td rowspan=\"2\">parameter</td><td rowspan=\"2\">mean</td><td rowspan=\"2\">SD</td><td colspan=\"2\">optimal values</td></tr><tr><td>MLF</td><td>Min SSE</td></tr><tr><td>$ P_{{m}} $</td><td>4.3054</td><td>0.7197</td><td>4.2599</td><td>3.2084</td></tr><tr><td>$ Y_{{E}} $</td><td>0.2784</td><td>0.0876</td><td>0.3075</td><td>0.1713</td></tr><tr><td>$ k_{{ye}} $</td><td>0.0290</td><td>0.0015</td><td>0.0296</td><td>0.0306</td></tr><tr><td>$ q_{{n}} $</td><td>0.0175</td><td>0.0035</td><td>0.0170</td><td>0.0213</td></tr><tr><td>$ \\nu_{{nm}} $</td><td>0.1154</td><td>0.0039</td><td>0.1167</td><td>0.1135</td></tr><tr><td>m</td><td>3.1142</td><td>0.8468</td><td>3.2883</td><td>1.9066</td></tr><tr><td>$ \\beta $</td><td>0.1317</td><td>0.0108</td><td>0.1355</td><td>0.1249</td></tr><tr><td>$ k_{{rd}} $</td><td>0.0279</td><td>0.0033</td><td>0.0281</td><td>0.0268</td></tr><tr><td>$ \\phi $</td><td>0.0684</td><td>0.0199</td><td>0.0584</td><td>0.0748</td></tr><tr><td>$ m_{{eN}} $</td><td>2.1824</td><td>0.7697</td><td>2.3150</td><td>1.6029</td></tr><tr><td>$ m_{{c}} $</td><td>2.7548</td><td>0.7898</td><td>2.9097</td><td>2.1583</td></tr><tr><td>$ k_{{mc}} $</td><td>0.0208</td><td>0.0031</td><td>0.0208</td><td>0.0205</td></tr><tr><td>$ \\theta $</td><td>0.2185</td><td>0.0068</td><td>0.2169</td><td>0.2049</td></tr><tr><td>$ k_{{chl}} $</td><td>0.0248</td><td>0.0021</td><td>0.0246</td><td>0.0190</td></tr><tr><td>$ k_{{f}} $</td><td>0.0022</td><td>0.0007</td><td>0.0019</td><td>0.0030</td></tr><tr><td>$ k_{{N}} $</td><td>3.3370</td><td>0.8794</td><td>2.7503</td><td>2.7775</td></tr></table>",
+   "bbox": [
+    146.0,
+    364.0,
+    622.0,
+    785.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 5,
+   "label": "text",
+   "content": "deviations, and two sets of optimal values obtained by ranking the posterior samples based on either the maximum likelihood function (MLF) or the minimum sum squared error (Min SSE).",
+   "bbox": [
+    120.0,
+    804.0,
+    629.0,
+    896.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 6,
+   "label": "text",
+   "content": "To obtain the model output distributions, we randomly selected 2000 parameter sets from the MCMC posterior samples to generate the output medians, 95% credible intervals, and 95% prediction intervals as illustrated in Figure 2. The model output medians, which approximate the predictions of the model best fit (Figure S9), agreed well with the experimental data. The credible intervals reflected the model output distribution due to parameter uncertainties, and the prediction intervals revealed the overall uncertainties of the model outputs resulted from the parameter uncertainties, measurement noises, and prediction inaccuracies inherent to model formulation. $ ^{45} $ Our model predictions were able to capture the variations in the experimental data and account for the measurement errors.",
+   "bbox": [
+    119.0,
+    897.0,
+    631.0,
+    1220.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 7,
+   "label": "text",
+   "content": "Sensitivity Analysis. We evaluated the sensitivity of each parameter on five state variables at three representative time points (day 2, day 4, and day 10) for four conditions (no stress, single high-light stress, single low-N stress, and dual stress). The sensitivity results (Tables S6 and S7, Figure S10 and S11) demonstrated the effectiveness of most parameters. Some parameters were mainly sensitive to certain variables under certain conditions, indicating potential space for model reduction that could be tailored to specific purposes. In addition, the variations of parameter sensitivity under different time points and conditions could reflect the relative activities of the underlying cellular processes, which is also helpful in understanding the mechanism of cellular metabolism. See SI for detailed discussion.",
+   "bbox": [
+    118.0,
+    1221.0,
+    631.0,
+    1543.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 8,
+   "label": "text",
+   "content": "Several parameters maintained high sensitivity universally. The processes regulated by these parameters may play a central role.",
+   "bbox": [
+    120.0,
+    1544.0,
+    631.0,
+    1593.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 9,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    672.0,
+    140.0,
+    1175.0,
+    671.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 10,
+   "label": "figure_title",
+   "content": "Figure 2. Experimental data and calibrated model output with uncertainty quantification. Solid lines correspond to the medians of model responses bounded by 95% credible intervals (dark-color shades) and 95% prediction intervals (light-color shades). Symbols with error bars represent experimental data and measurement noises. Blue and red denote high and low nitrate conditions, respectively. Light levels refer to different light conditions (with corresponding initial nitrate concentration in mM as N): low light (100PPFD and 4.95N, 100PPFD and 0.62N), moderate light (400PPFD and 4.89N, 300PPFD and 0.66N), and high light (600PPFD and 4.88N, 600PPFD and 0.71N). (Note: 1 PPFD = 1 μmol photons m⁻²s⁻¹).",
+   "bbox": [
+    668.0,
+    688.0,
+    1181.0,
+    922.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 11,
+   "label": "text",
+   "content": "role in characterizing the algae culture behaviors and thus need to be carefully incorporated into the model. (1) Parameters related to the photosynthesis ( $ P_{m}, Y_{E}, k_{ye} $), carbon partitioning ( $ q_{n} $), nitrate uptake ( $ v_{nm} $), and functional biomass degradation (m): Photosynthesis, nitrate uptake, maintenance and respiration are fundamental processes that provide the sources of carbon, nitrogen, and energy for cellular metabolism. In addition, the nitrogen-quota-regulated carbon partitioning between the functional biomass and the storage molecules appears to be the basic process for modeling the intracellular carbon partitioning. (2)  $ R_{6} $-related parameters ( $ k_{nl} $ and  $ \\beta $): Carbon reuse from carbohydrate metabolism for neutral lipid synthesis could be a necessary carbon partitioning process due to its high impact on neutral lipids, carbohydrates, and functional biomass especially under high-light conditions.  $ R_{6} $ has not been incorporated in prior kinetic models. (3) Parameters related to the Chl-a synthesis ( $ k_{chl} $ and  $ \\theta $): Chl-a accumulation could affect other variables due to its close correlation with photosynthesis. Such effect has not been studied in prior models.",
+   "bbox": [
+    668.0,
+    971.0,
+    1181.0,
+    1428.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 12,
+   "label": "text",
+   "content": "Light Estimation Performance. The model-predicted  $ I_{avg} $ matched the estimation from experimental data and the model-predicted light profiles  $ I_{zl} $ were in good agreement with both the experimental estimation and the light sensor measurements (Figures S12 and S13). Therefore, our model was able to properly predict the light variations as a function of time and location.",
+   "bbox": [
+    668.0,
+    1429.0,
+    1182.0,
+    1592.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 13,
+   "label": "number",
+   "content": "11564",
+   "bbox": [
+    628.0,
+    1610.0,
+    675.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 14,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1610.0,
+    1179.0,
+    1641.0
+   ]
+  },
+  {
+   "page": 4,
+   "order": 15,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1231.0,
+    476.0,
+    1249.0,
+    1240.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    121.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1113.0,
+    101.0,
+    1166.0,
+    120.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 2,
+   "label": "text",
+   "content": "Lipid Accumulation and Carbohydrate Metabolism.\nNeutral lipid production increases rapidly under nitrogen depletion, which is usually accompanied by a decline in carbohydrate accumulation. $ ^{35,46-49} $ To characterize this transient behavior, we established a hierarchical carbon partitioning mechanism to quantify the dynamic carbon distributions among functional biomass, carbohydrates, and neutral lipids. First, the intracellular nitrogen quota regulates the carbon distribution between the functional pool and the storage pool. As  $ Q_{n} $ decreases, the fixed carbon could be shifted from the synthesis of functional biomass to the production of storage molecules (Figure 3a). Next, the extracellular nitrogen",
+   "bbox": [
+    120.0,
+    139.0,
+    631.0,
+    419.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 3,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    123.0,
+    440.0,
+    389.0,
+    624.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 4,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    386.0,
+    442.0,
+    629.0,
+    624.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 5,
+   "label": "figure_title",
+   "content": "(b)",
+   "bbox": [
+    124.0,
+    624.0,
+    147.0,
+    645.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 6,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    124.0,
+    630.0,
+    389.0,
+    777.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 7,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    384.0,
+    634.0,
+    628.0,
+    777.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 8,
+   "label": "figure_title",
+   "content": "(c)",
+   "bbox": [
+    124.0,
+    779.0,
+    145.0,
+    800.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 9,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    122.0,
+    784.0,
+    398.0,
+    944.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 10,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    401.0,
+    785.0,
+    595.0,
+    943.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 11,
+   "label": "figure_title",
+   "content": "Figure 3. Model-predicted dynamic carbon partitioning and neutral lipid accumulation behaviors. (a) Nitrogen-quota-regulated carbon partitioning between function pool and storage pool. (b) Extracellular-nitrogen-regulated carbon partitioning from carbohydrates to neutral lipids. Parts (a) and (b) illustrate the carbon flow rates for the moderate-light conditions. (c) Neutral lipid accumulation rates under different light and nitrogen conditions.",
+   "bbox": [
+    120.0,
+    957.0,
+    631.0,
+    1107.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 12,
+   "label": "text",
+   "content": "level regulates the carbon partitioning between carbohydrates and neutral lipids inside the storage pool. When nitrogen is sufficient, the stored carbon is first accumulated in carbohydrates, and then a small amount of carbon degraded from carbohydrates could be slowly reused for lipid synthesis via  $ R_6 $. As nitrogen is depleted, the rate of  $ R_6 $ decreases and the process of lipid accumulation shifts to  $ R_7 $, rapidly redirecting the previously stored carbon to neutral lipids (Figure 3b). This shift from  $ R_6 $ to  $ R_7 $ properly captures the transient change of lipid production during the transition from nitrogen sufficiency to depletion.",
+   "bbox": [
+    119.0,
+    1126.0,
+    631.0,
+    1384.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 13,
+   "label": "text",
+   "content": " $ R_6 $ and  $ R_7 $ recapitulate the versatile neutral lipid synthesis pathways for most green algae species $ ^{40} $ and demonstrate the metabolic relationship between carbohydrate metabolism and lipid accumulation. Carbohydrates are the primary storage molecules during nitrogen-sufficient conditions because they are highly efficient in energy and carbon storage. $ ^{4} $ Carbohydrate metabolism is mainly used for respiration to produce energy for cell growth and maintenance ( $ R_5 $ and  $ R_4 $). Lipid accumulation is not favored due to its low energy efficiency (i.e., higher energy consumption for synthesis and slower energy release from degradation).  $ R_6 $ represents the minor carbon contribution to lipid synthesis from acetyl-CoA via the carbohydrate metabolism pathway. $ ^{40} $ When nitrogen becomes deficient, lipid accumulation is more valuable in the long term because the large energy reserve from lipids could help cells survive during nitrogen starvation. $ ^{35} $  $ R_7 $ represents the enhanced neutral lipid production due to the redirection of assimilated carbon through multiple pathways including the starch degradation, the de novo synthesis of acetyl-CoA, and the recycling of carbon from other byproducts of the primary metabolism. $ ^{40,49} $ Therefore, the carbon partitioning strategy proposed in our model may also be applicable to other green algae species and mixed-culture systems. Moreover, the model could also be tailored for mixotrophic conditions by incorporating an additional carbon fixation process from organic carbon sources.",
+   "bbox": [
+    120.0,
+    1382.0,
+    631.0,
+    1593.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 14,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    669.0,
+    139.0,
+    1181.0,
+    531.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 15,
+   "label": "text",
+   "content": "The model-predicted neutral lipid accumulation rates are shown in Figure 3c.  $ R_6 $ and  $ R_7 $ were both regulated by light intensities but led to different effects on lipid accumulation. When nitrogen was sufficient, lipid accumulation could be stimulated by high light intensity, albeit the carbon fixation was inhibited (see the carbon fixation rate in Figure 4b). However, as in line with a prior study, $ ^{35} $ lipid accumulation was not favored by nitrogen-starved cells under high-light conditions. Photoinhibition impaired carbon fixation and thus less carbon could be channeled to neutral lipid after nitrogen depletion. Therefore, introducing the combinatorial stresses of high light and low nitrogen may not enhance lipid production as shown in Figure 2. It is also worth noting that the lipid accumulation rates decreased after prolonged nitrogen depletion due to the decrease in carbon fixation rate (Figure 4b), which could further increase the  $ Q_n $ value (N:C ratio, Figure 3a) and exacerbate the decline of the rate of  $ R_7 $ (Figure 3b). Accordingly, to improve neutral lipid production for photoautotrophic microalgae culture, we could first enhance the photosynthetic carbon fixation before nitrogen depletion, which would help further reduce the  $ Q_n $ value and direct more carbon to neutral lipid after N depletion. Second, we could prevent or slow down the decrease of the photosynthetic carbon fixation rate after nitrogen depletion. Strategies regarding the photosynthetic carbon fixation improvement are discussed in the next section. Moreover, since the maximum neutral lipid accumulation rate occurs after nitrogen depletion, we may improve the lipid production efficiency by manipulating nitrogen availability to reduce the time needed for reaching the maximum lipid accumulation rate. Our model could thus be used to optimize important control process parameters such as light intensities, nitrate concentrations and time durations during the two-stage cultivation. $ ^{50} $ Further, it is worth noting that  $ R_7 $ is triggered by nitrate depletion. Thus, adjusting the N:C ratio by enhancing carbon assimilation without nitrogen deprivation would only increase the rate of  $ R_6 $, which is probably not high enough to mimic lipid overproduction under nitrogen starvation.",
+   "bbox": [
+    668.0,
+    533.0,
+    1180.0,
+    1408.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 16,
+   "label": "text",
+   "content": "Photosynthesis and Chl-a Accumulation. Similar to the carbon fixation process, photosynthesis was formulated to account for both light and nitrogen effects in our model. To illustrate the dynamics of the photosynthesis rate in response to light variations and compare with prior studies, we plotted the photosynthesis rate expressed per Chl-a versus instantaneous light intensity ( $ I_{avg} $) for different light conditions in Figure 4a. When light intensities dropped below 10 mol",
+   "bbox": [
+    669.0,
+    1406.0,
+    1181.0,
+    1594.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 17,
+   "label": "number",
+   "content": "11565",
+   "bbox": [
+    628.0,
+    1610.0,
+    674.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 18,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1611.0,
+    1180.0,
+    1641.0
+   ]
+  },
+  {
+   "page": 5,
+   "order": 19,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1229.0,
+    477.0,
+    1249.0,
+    1240.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    121.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1114.0,
+    101.0,
+    1165.0,
+    120.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 2,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    125.0,
+    142.0,
+    629.0,
+    321.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 3,
+   "label": "chart",
+   "content": "",
+   "bbox": [
+    125.0,
+    326.0,
+    621.0,
+    509.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 4,
+   "label": "figure_title",
+   "content": "Figure 4. Model-predicted dynamic photosynthetic carbon fixation behaviors. (a) Photosynthesis–Light Intensity (P–I) relationship under high-nitrogen conditions demonstrates the light adaptation and inhibition effects. (b) Photosynthetic carbon fixation rates under different light and nitrogen conditions further demonstrate the nitrogen-limited effect on carbon growth.",
+   "bbox": [
+    120.0,
+    522.0,
+    630.0,
+    652.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 5,
+   "label": "text",
+   "content": "photons  $ m^{-2}d^{-1} $, the algae grown under the low-light condition seemed to have a higher photosynthesis rate than the moderate-light condition. However, this enhanced photosynthetic ability to utilize the low-level light did not guarantee a higher total carbon growth rate under the low-light condition as shown in Figure 4b. This result is consistent with the low-light adaptation phenomenon observed in prior work. $ ^{22} $ From the modeling perspective, we consider that although the carbon yield on light energy is higher under the low-light condition, the light energy gained by the cells is still low thus leading to a lower total carbon growth rate. When algae were grown under the high-light condition (Figure 4a), initial exposure to the high background light intensity inhibited the cell photosynthesis rate. The photosynthesis rate recovered as the light intensity was attenuated but was still lower than that of the cells grown under the moderate-light condition, which is in line with the hysteresis feature of light inhibition shown in previous studies. $ ^{51,52} $ As the pre-exposure to high light intensity decreases the carbon yield on light energy, this inhibitory effect could continue to modulate the photosynthesis rate despite the attenuation of the ambient light. Therefore, a potential way to enhance the photosynthetic carbon fixation rate is to cultivate algae first under a low-light condition to obtain an optimal light utilization efficiency and then increase the light intensity to a moderate-light condition to provide an optimal light energy environment.",
+   "bbox": [
+    119.0,
+    670.0,
+    631.0,
+    1272.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 6,
+   "label": "text",
+   "content": "Nitrogen availability could also limit the carbon growth. This nitrogen-regulated effect is modeled in the photosynthesis by incorporating the nitrogen effect on Chl-a synthesis and degradation. As shown in Figure 4b, photosynthetic carbon fixation rates stopped increasing and then declined after nitrogen depletion. Chl-a degradation under nitrogen depletion impaired the photosynthesis. Therefore, finding ways to block the Chl-a degradation pathway may help prevent further decrease of the photosynthetic carbon fixation. In our model, Chl-a degrades at the maximum rate when the highlight and low-nitrogen stresses occur simultaneously. Future models could modify the Chl-a degradation rate (eq 16) as  $ m_{chl} = m \\times \\max\\{(1-\\mathrm{erf}(k_N \\times S_{\\mathrm{NO}_3})) $,  $ \\mathrm{erf}(k_I \\times I_{\\mathrm{avg\\_R}})\\} $ so that Chl-a would degrade at the maximum rate if either the high-light damage or nitrogen starvation occurs. This integrated nitrogen is significant because it partly explains why prior models could not use a single set of parameters to predict both nitrogen-sufficient and nitrogen-limited conditions. $ ^{13} $",
+   "bbox": [
+    119.0,
+    1271.0,
+    630.0,
+    1594.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 7,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    670.0,
+    140.0,
+    1179.0,
+    231.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 8,
+   "label": "text",
+   "content": "Model Validation and Future Work. The proposed model was validated through the predictions of new data (Figures S14–S16). Overall, our model predictions were in good agreement with the experimental data except that the model (1) overestimated the neutral lipid production after prolonged nitrogen depletion for the 300PPFD and 0.43N condition and (2) did not predict the decrease in neutral lipid concentration toward the end of the 300PPFD and 3.80N experiment. It is possible that neutral lipids started to degrade after prolonged nitrogen starvation or under low light intensities as light was attenuated during algae growth. However, our model did not include such a neutral lipid degradation process because the lipid concentration decline was not observed in the calibration experiments. This hypothesis needs further experimental and modeling work to test. Other aspects such as the variations of the initial states may also contribute to the bias in model predictions (see discussion in the SI).",
+   "bbox": [
+    670.0,
+    231.0,
+    1181.0,
+    645.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 9,
+   "label": "text",
+   "content": "Future mechanistic studies also need to investigate how light affects the neutral lipid accumulation during nitrogen-sufficient conditions. As indicated by our lipid accumulation process  $ R_{6} $, the underlying lipid biosynthetic pathway is likely sensitive to light variations. However, light could also affect the lipid degradation pathway if lipid degradation exists. For instance, as light intensity declines, more lipids would degrade and lead to an increase in the net lipid accumulation under higher-light conditions. This warrants further investigation to clarify whether the light intensity regulates the neutral lipid synthesis pathway or the degradation pathway. Such knowledge would benefit future work including the modeling of light-dark cycling conditions. Future models could also extend our current framework to incorporate other important environmental factors such as temperature and other mechanistic insights on how cells regulate the different cellular processes in response to environmental variations. With the ability to characterize transient algae behaviors, these models could help optimize the cultivation process to enhance biofuel and biomass production.",
+   "bbox": [
+    669.0,
+    644.0,
+    1180.0,
+    1107.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 10,
+   "label": "paragraph_title",
+   "content": "ASSOCIATED CONTENT",
+   "bbox": [
+    673.0,
+    1130.0,
+    936.0,
+    1155.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 11,
+   "label": "paragraph_title",
+   "content": "Supporting Information",
+   "bbox": [
+    673.0,
+    1165.0,
+    919.0,
+    1189.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 12,
+   "label": "text",
+   "content": "The Supporting Information is available free of charge on the ACS Publications website at DOI: 10.1021/acs.est.9b02908.",
+   "bbox": [
+    670.0,
+    1192.0,
+    1179.0,
+    1239.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 13,
+   "label": "text",
+   "content": "Detailed information regarding light estimation, model calibration, and validation as noted in the text (PDF)",
+   "bbox": [
+    719.0,
+    1252.0,
+    1180.0,
+    1301.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 14,
+   "label": "paragraph_title",
+   "content": "AUTHOR INFORMATION",
+   "bbox": [
+    674.0,
+    1339.0,
+    943.0,
+    1364.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 15,
+   "label": "paragraph_title",
+   "content": "Corresponding Author",
+   "bbox": [
+    673.0,
+    1375.0,
+    876.0,
+    1399.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 16,
+   "label": "text",
+   "content": " $ ^{*}E $-mail: jducoste@ncsu.edu.",
+   "bbox": [
+    672.0,
+    1402.0,
+    912.0,
+    1425.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 17,
+   "label": "paragraph_title",
+   "content": "ORCID",
+   "bbox": [
+    672.0,
+    1431.0,
+    752.0,
+    1454.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 18,
+   "label": "text",
+   "content": "Diyuan Wang: 0000-0002-9784-1281",
+   "bbox": [
+    671.0,
+    1460.0,
+    964.0,
+    1483.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 19,
+   "label": "text",
+   "content": "Francis L. de los Reyes, III: 0000-0002-3593-0932",
+   "bbox": [
+    671.0,
+    1485.0,
+    1080.0,
+    1509.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 20,
+   "label": "text",
+   "content": "Joel J. Ducoste: 0000-0002-3021-3942",
+   "bbox": [
+    670.0,
+    1511.0,
+    974.0,
+    1534.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 21,
+   "label": "paragraph_title",
+   "content": "Notes",
+   "bbox": [
+    672.0,
+    1542.0,
+    730.0,
+    1563.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 22,
+   "label": "text",
+   "content": "The authors declare no competing financial interest.",
+   "bbox": [
+    671.0,
+    1568.0,
+    1103.0,
+    1592.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 23,
+   "label": "number",
+   "content": "11566",
+   "bbox": [
+    628.0,
+    1610.0,
+    674.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 24,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1611.0,
+    1179.0,
+    1641.0
+   ]
+  },
+  {
+   "page": 6,
+   "order": 25,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1229.0,
+    476.0,
+    1249.0,
+    1240.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    121.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1113.0,
+    101.0,
+    1166.0,
+    120.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 2,
+   "label": "text",
+   "content": "This work was funded by NSF Emerging Frontiers in Research and Innovation Grant No. 1332341. The authors would like to thank Zisu Hao for helpful discussions on model formulation, Samiul Haque for assistance in model calibration, and Dr. Ranji Ranjithan, Dr. James Levis, Dr. Amy Grunden, and Dr. Heike Sederoff for their critical comments.",
+   "bbox": [
+    121.0,
+    172.0,
+    630.0,
+    311.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 3,
+   "label": "paragraph_title",
+   "content": "NOMENCLATURE",
+   "bbox": [
+    123.0,
+    332.0,
+    326.0,
+    356.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 4,
+   "label": "paragraph_title",
+   "content": "Parameter Unit Description",
+   "bbox": [
+    122.0,
+    373.0,
+    367.0,
+    395.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 5,
+   "label": "paragraph_title",
+   "content": "(a) Fitting parameters",
+   "bbox": [
+    124.0,
+    404.0,
+    317.0,
+    426.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 6,
+   "label": "inline_formula",
+   "content": " $$ P_{m} $$ ",
+   "bbox": [
+    125.0,
+    431.0,
+    147.0,
+    449.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 7,
+   "label": "inline_formula",
+   "content": " $$ d^{-1} $$ ",
+   "bbox": [
+    168.0,
+    428.0,
+    198.0,
+    447.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 8,
+   "label": "inline_formula",
+   "content": " $$ Y_{E} $$ ",
+   "bbox": [
+    125.0,
+    453.0,
+    147.0,
+    473.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 9,
+   "label": "inline_formula",
+   "content": " $$  C $$ ",
+   "bbox": [
+    207.0,
+    453.0,
+    226.0,
+    471.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 10,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{photons})^{-1} $$ ",
+   "bbox": [
+    273.0,
+    451.0,
+    364.0,
+    473.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 11,
+   "label": "inline_formula",
+   "content": " $$ k_{\\mathrm{ye}} $$ ",
+   "bbox": [
+    124.0,
+    477.0,
+    149.0,
+    500.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 12,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{m}^{2} $$ ",
+   "bbox": [
+    169.0,
+    474.0,
+    200.0,
+    495.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 13,
+   "label": "inline_formula",
+   "content": " $$ q_{\\mathrm{n}} $$ ",
+   "bbox": [
+    124.0,
+    526.0,
+    146.0,
+    543.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 14,
+   "label": "inline_formula",
+   "content": " $$ C)^{-1} $$ ",
+   "bbox": [
+    275.0,
+    519.0,
+    315.0,
+    541.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 15,
+   "label": "inline_formula",
+   "content": " $$ \\nu_{\\mathrm{n m}} $$ ",
+   "bbox": [
+    123.0,
+    549.0,
+    153.0,
+    567.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 16,
+   "label": "inline_formula",
+   "content": " $$ X_{\\mathrm{cd}}\\mathrm{-C})^{-1}\\mathrm{d}^{-1} $$ ",
+   "bbox": [
+    271.0,
+    540.0,
+    373.0,
+    565.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 17,
+   "label": "inline_formula",
+   "content": " $$ d^{-1} $$ ",
+   "bbox": [
+    168.0,
+    564.0,
+    198.0,
+    585.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 18,
+   "label": "inline_formula",
+   "content": " $$ \\beta $$ ",
+   "bbox": [
+    122.0,
+    588.0,
+    141.0,
+    611.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 19,
+   "label": "inline_formula",
+   "content": " $$ k_{\\mathrm{n l}} $$ ",
+   "bbox": [
+    123.0,
+    633.0,
+    148.0,
+    658.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 20,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{m}^{2} $$ ",
+   "bbox": [
+    168.0,
+    633.0,
+    204.0,
+    655.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 21,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{p h o t o n s})^{-1} $$ ",
+   "bbox": [
+    273.0,
+    633.0,
+    368.0,
+    657.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 22,
+   "label": "inline_formula",
+   "content": " $$ \\phi $$ ",
+   "bbox": [
+    123.0,
+    681.0,
+    142.0,
+    704.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 23,
+   "label": "inline_formula",
+   "content": " $$ m_{\\mathrm{cN}} $$ ",
+   "bbox": [
+    124.0,
+    731.0,
+    157.0,
+    750.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 24,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{N})^{-1} $$ ",
+   "bbox": [
+    270.0,
+    725.0,
+    314.0,
+    746.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 25,
+   "label": "inline_formula",
+   "content": " $$ m_{c} $$ ",
+   "bbox": [
+    124.0,
+    776.0,
+    148.0,
+    793.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 26,
+   "label": "inline_formula",
+   "content": " $$ d^{-1} $$ ",
+   "bbox": [
+    168.0,
+    771.0,
+    197.0,
+    792.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 27,
+   "label": "inline_formula",
+   "content": " $$ k_{\\mathrm{m c}} $$ ",
+   "bbox": [
+    123.0,
+    797.0,
+    154.0,
+    820.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 28,
+   "label": "inline_formula",
+   "content": " $$ \\theta $$ ",
+   "bbox": [
+    123.0,
+    841.0,
+    142.0,
+    861.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 29,
+   "label": "inline_formula",
+   "content": " $$ X_{ch\\Gamma}\\mathsf{C} $$ ",
+   "bbox": [
+    211.0,
+    842.0,
+    264.0,
+    863.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 30,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{N})^{-1} $$ ",
+   "bbox": [
+    323.0,
+    839.0,
+    366.0,
+    862.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 31,
+   "label": "inline_formula",
+   "content": " $$ k_{\\mathrm{ch1}} $$ ",
+   "bbox": [
+    123.0,
+    887.0,
+    153.0,
+    911.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 32,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{m}^{2} $$ ",
+   "bbox": [
+    167.0,
+    886.0,
+    196.0,
+    907.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 33,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{p h o t o n s})^{-1} $$ ",
+   "bbox": [
+    272.0,
+    886.0,
+    365.0,
+    909.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 34,
+   "label": "inline_formula",
+   "content": " $$ k_{I} $$ ",
+   "bbox": [
+    123.0,
+    933.0,
+    143.0,
+    957.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 35,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{m}^{2} $$ ",
+   "bbox": [
+    167.0,
+    932.0,
+    201.0,
+    954.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 36,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{p h o t o n s})^{-1} $$ ",
+   "bbox": [
+    267.0,
+    932.0,
+    358.0,
+    954.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 37,
+   "label": "inline_formula",
+   "content": " $$ k_{N} $$ ",
+   "bbox": [
+    123.0,
+    979.0,
+    148.0,
+    1000.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 38,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{m}^{3} $$ ",
+   "bbox": [
+    167.0,
+    978.0,
+    195.0,
+    1000.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 39,
+   "label": "inline_formula",
+   "content": " $$ \\mathrm{N})^{-1} $$ ",
+   "bbox": [
+    244.0,
+    978.0,
+    288.0,
+    1000.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 40,
+   "label": "inline_formula",
+   "content": " $$ Q_{\\mathrm{n m}} $$ ",
+   "bbox": [
+    125.0,
+    1003.0,
+    159.0,
+    1025.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 41,
+   "label": "inline_formula",
+   "content": " $$ C)^{-1} $$ ",
+   "bbox": [
+    275.0,
+    1000.0,
+    314.0,
+    1023.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 42,
+   "label": "paragraph_title",
+   "content": "(b) State Variables",
+   "bbox": [
+    123.0,
+    1029.0,
+    290.0,
+    1053.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 43,
+   "label": "text",
+   "content": "X_{cd} mol X_{cd}-C m^{-3} Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C\nX_{carb} mol X_{carb}-C m^{-3} Concentration of carbohydrates as C\nX_{nl} mol X_{nl}-C m^{-3} Concentration of neutral lipids as C\nX_{chl} mol X_{chl}-C m^{-3} Concentration of Chl-a as C\nS_{NO3} mol N m^{-3} Concentration of nitrate as N in the reactor\nX_{N} mol N m^{-3} Concentration of cellular nitrogen as N",
+   "bbox": [
+    121.0,
+    1051.0,
+    631.0,
+    1239.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 44,
+   "label": "text",
+   "content": "A $\\mathrm{m}^{-1}$ Light absorbance per unit length\n\n$a \\quad \\mathrm{m}^{2}$ (mol $X_{\\mathrm{chl}-C} \\mathrm{C})^{-1}$ Optical cross section of Chl-a\n\n$b \\quad \\mathrm{m}^{2}$ (mol $\\mathrm{C})^{-1}$ Optical cross section of biomass except Chl-a content\n\n$d \\quad \\mathrm{m}$ Distance from the light source to the front of the reactor\n\n$l \\quad \\mathrm{m}$ Optical path coordinate $l$ inside the reactor\n\n$m_{\\mathrm{chl}} \\quad \\mathrm{d}^{-1}$ Chl-a degradation rate\n\n$I_{\\mathrm{avg}}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Instantaneous light intensity\n\naveraged over the optical path of the reactor\n\n$I_{\\mathrm{avg\\_R}}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Background light intensity\n\naveraged over the optical path of the reactor\n\n$I_{1}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Light intensity at the location $l$ along the optical path inside the reactor\n\n$I_{p}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Light profile monitored by the light sensor at location $l = z l$\n\n$I_{R,l}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Background light intensity at the location $l$ along the optical path inside the reactor\n\n$I_{\\mathrm{sat}}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Saturated light intensity\n\n$I_{z l}$ mol photons $\\mathrm{m}^{-2} \\quad \\mathrm{d}^{-1}$ Estimated light profile at location $l = z l$\n\n$P \\quad \\mathrm{mol} \\quad \\mathrm{C} \\quad (\\mathrm{mol} \\quad X_{\\mathrm{cd}}-C)^{-1} \\quad \\mathrm{d}^{-1}$ Photosynthesis rate normalized to functional biomass\n\n$Q_{\\mathrm{n}} \\quad \\mathrm{mol} \\quad \\mathrm{N} \\quad (\\mathrm{mol} \\quad C)^{-1}$ Time-dependent nitrogen quota\n\n$q_{nl}$ unitless Rate portion of carbon redirection from carbohydrate to lipid accumulation\n\n$\\nu_{\\mathrm{N}} \\quad \\mathrm{mol} \\quad \\mathrm{N} \\quad (\\mathrm{mol} \\quad X_{\\mathrm{cd}}-C)^{-1} \\quad \\mathrm{d}^{-1}$ Nitrogen uptake rate\n\n$X_{\\mathrm{C}} \\quad \\mathrm{mol} \\quad \\mathrm{C} \\quad \\mathrm{m}^{-3}$ Concentration of total fixed organic carbon $\\left(X_{\\mathrm{C}} = X_{\\mathrm{cd}} + X_{\\mathrm{carb}} + X_{\\mathrm{nl}}\\right)$\n\n$Y_{E}^{e} \\quad \\mathrm{mol} \\quad \\mathrm{C} \\quad (\\mathrm{mol} \\quad \\mathrm{photons})^{-1}$ Carbon yield on light energy\n\n$z_{l}$ m Distance from the light sensor to the front of the reactor\n\n$z_{t}$ m Thickness of the photobioreactor along the optical path",
+   "bbox": [
+    119.0,
+    1263.0,
+    632.0,
+    1592.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 45,
+   "label": "text",
+   "content": "",
+   "bbox": [
+    670.0,
+    138.0,
+    1181.0,
+    594.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 46,
+   "label": "paragraph_title",
+   "content": "REFERENCES",
+   "bbox": [
+    674.0,
+    637.0,
+    835.0,
+    662.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 47,
+   "label": "reference_content",
+   "content": "(1) Beal, C. M.; Gerber, L. N.; Sills, D. L.; Huntley, M. E.; Machesky, S. C.; Walsh, M. J.; Tester, J. W.; Archibald, I.; Granados, J.; Greene, C. H. Algal Biofuel Production for Fuels and Feed in a 100-Ha Facility: A Comprehensive Techno-Economic Analysis and Life Cycle Assessment. Algal Res. 2015, 10, 266–279.",
+   "bbox": [
+    672.0,
+    673.0,
+    1179.0,
+    776.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 48,
+   "label": "reference_content",
+   "content": "(2) Razzak, S. A.; Hossain, M. M.; Lucky, R. A.; Bassi, A. S.; de Lasa, H. Integrated CO $ _{2} $ Capture, Wastewater Treatment and Biofuel Production by Microalgae Culturing—A Review. Renewable Sustainable Energy Rev. 2013, 27, 622–653.",
+   "bbox": [
+    673.0,
+    777.0,
+    1178.0,
+    859.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 49,
+   "label": "reference_content",
+   "content": "(3) Godwin, C. M.; Lashaway, A. R.; Hietala, D. C.; Savage, P. E.; Cardinale, B. J. Biodiversity Improves the Ecological Design of Sustainable Biofuel Systems. GCB Bioenergy 2018, 10 (10), 752–765.",
+   "bbox": [
+    673.0,
+    860.0,
+    1180.0,
+    923.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 50,
+   "label": "reference_content",
+   "content": "(4) Hu, Q. Environmental Effects on Cell Composition. In Handbook of Microalgal Culture; John Wiley & Sons, Ltd: Oxford, UK, 2013; pp 114–122.",
+   "bbox": [
+    673.0,
+    924.0,
+    1179.0,
+    984.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 51,
+   "label": "reference_content",
+   "content": "(5) Qian, X.; Kim, M. K.; Kumaraswamy, G. K.; Agarwal, A.; Lun, D. S.; Dismukes, G. C. Flux Balance Analysis of Photoautotrophic Metabolism: Uncovering New Biological Details of Subsystems Involved in Cyanobacterial Photosynthesis. Biochim. Biophys. Acta, Bioenerg. 2017, 1858 (4), 276–287.",
+   "bbox": [
+    672.0,
+    974.0,
+    1182.0,
+    1105.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 52,
+   "label": "reference_content",
+   "content": "(6) Muthuraj, M.; Palabhanvi, B.; Misra, S.; Kumar, V.; Sivalingavasu, K.; Das, D. Flux Balance Analysis of Chlorella Sp. FC2 IITG under Photoautotrophic and Heterotrophic Growth Conditions. Photosynth. Res. 2013, 118 (1–2), 167–179.",
+   "bbox": [
+    672.0,
+    1091.0,
+    1178.0,
+    1173.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 53,
+   "label": "reference_content",
+   "content": "(7) Loira, N.; Mendoza, S.; Paz Cortés, M.; Rojas, N.; Travisany, D.; Genova, A. Di; Gajardo, N.; Ehrenfeld, N.; Maass, A. Reconstruction of the Microalga Nannochloropsis Salina Genome-Scale Metabolic Model with Applications to Lipid Production. BMC Syst. Biol. 2017, 11 (1), 66.",
+   "bbox": [
+    673.0,
+    1175.0,
+    1179.0,
+    1276.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 54,
+   "label": "reference_content",
+   "content": "(8) Guest, J. S.; van Loosdrecht, M. C. M.; Skerlos, S. J.; Love, N. G. Lumped Pathway Metabolic Model of Organic Carbon Accumulation and Mobilization by the Alga Chlamydomonas Reinhardtii. Environ. Sci. Technol. 2013, 47 (7), 3258–3267.",
+   "bbox": [
+    672.0,
+    1277.0,
+    1178.0,
+    1359.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 55,
+   "label": "reference_content",
+   "content": "(9) Yang, J.; Rasa, E.; Tantayotai, P.; Scow, K. M.; Yuan, H.; Hristova, K. R. Mathematical Model of Chlorella Minutissima UTEX2341 Growth and Lipid Production under Photoheterotrophic Fermentation Conditions. Bioresour. Technol. 2011, 102 (3), 3077–3082.",
+   "bbox": [
+    672.0,
+    1361.0,
+    1179.0,
+    1462.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 56,
+   "label": "reference_content",
+   "content": "(10) Bekirogullari, M.; Pittman, J. K.; Theodoropoulos, C. Multi-Factor Kinetic Modelling of Microalgal Biomass Cultivation for Optimised Lipid Production. Bioresour. Technol. 2018, 269 (July), 417–425.",
+   "bbox": [
+    672.0,
+    1465.0,
+    1178.0,
+    1546.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 57,
+   "label": "reference_content",
+   "content": "(11) Mairet, F.; Bernard, O.; Masci, P.; Lacour, T.; Sciandra, A. Modelling Neutral Lipid Production by the Microalga Isochrysis Aff.",
+   "bbox": [
+    673.0,
+    1548.0,
+    1179.0,
+    1591.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 58,
+   "label": "number",
+   "content": "11567",
+   "bbox": [
+    627.0,
+    1610.0,
+    674.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 59,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1611.0,
+    1180.0,
+    1641.0
+   ]
+  },
+  {
+   "page": 7,
+   "order": 60,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1229.0,
+    476.0,
+    1249.0,
+    1242.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 0,
+   "label": "header",
+   "content": "Environmental Science & Technology",
+   "bbox": [
+    122.0,
+    98.0,
+    471.0,
+    121.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 1,
+   "label": "header",
+   "content": "Article",
+   "bbox": [
+    1113.0,
+    101.0,
+    1165.0,
+    120.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 2,
+   "label": "reference_content",
+   "content": "Galbana under Nitrogen Limitation. Bioresour. Technol. 2011, 102(1), 142–149.",
+   "bbox": [
+    122.0,
+    140.0,
+    629.0,
+    181.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 3,
+   "label": "reference_content",
+   "content": "(12) Packer, A.; Li, Y.; Andersen, T.; Hu, Q.; Kuang, Y.; Sommerfeld, M. Growth and Neutral Lipid Synthesis in Green Microalgae: A Mathematical Model. Bioresour. Technol. 2011, 102 (1), 111–117.",
+   "bbox": [
+    123.0,
+    182.0,
+    628.0,
+    265.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 4,
+   "label": "reference_content",
+   "content": "(13) Adesanya, V. O.; Davey, M. P.; Scott, S. A.; Smith, A. G. Kinetic Modelling of Growth and Storage Molecule Production in Microalgae under Mixotrophic and Autotrophic Conditions. Bioresour. Technol. 2014, 157, 293–304.",
+   "bbox": [
+    123.0,
+    268.0,
+    628.0,
+    352.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 5,
+   "label": "reference_content",
+   "content": "(14) Béchet, Q.; Shilton, A.; Guieysse, B. Modeling the Effects of Light and Temperature on Algae Growth: State of the Art and Critical Assessment for Productivity Prediction during Outdoor Cultivation. Biotechnol. Adv. 2013, 31 (8), 1648–1663.",
+   "bbox": [
+    123.0,
+    353.0,
+    629.0,
+    437.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 6,
+   "label": "reference_content",
+   "content": "(15) Lai, Y.-C.; Karam, A. L.; Sederoff, H. W.; Ducoste, J. J.; de los Reyes, III, F. L. Relating Nitrogen Concentrations and Light Intensity to the Growth and Lipid Accumulation of Dunaliella Viridis in a Photobioreactor. (Accepted for publication in J. Appl. Phycol.).",
+   "bbox": [
+    122.0,
+    439.0,
+    629.0,
+    524.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 7,
+   "label": "reference_content",
+   "content": "(16) Bernard, O. Hurdles and Challenges for Modelling and Control of Microalgae for  $ CO_{2} $ Mitigation and Biofuel Production. J. Process Control 2011, 21 (10), 1378–1389.",
+   "bbox": [
+    123.0,
+    524.0,
+    629.0,
+    587.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 8,
+   "label": "reference_content",
+   "content": "(17) Steele, J. H. Environmental Control of Photosynthesis in the Sea. Limnol. Oceanogr. 1962, 7 (2), 137–150.",
+   "bbox": [
+    124.0,
+    588.0,
+    628.0,
+    630.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 9,
+   "label": "reference_content",
+   "content": "(20) Geider, R. J.; MacIntyre, H. L.; Kana, T. M. A Dynamic Model of Photoadaptation in Phytoplankton. Limnol. Oceanogr. 1996, 41 (1), 1–15.",
+   "bbox": [
+    123.0,
+    716.0,
+    628.0,
+    777.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 10,
+   "label": "reference_content",
+   "content": "(18) Crill, P. A. The Photosynthesis-Light Curve: A Simple Analog Model. J. Theor. Biol. 1977, 64 (3), 503–516.",
+   "bbox": [
+    124.0,
+    631.0,
+    628.0,
+    672.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 11,
+   "label": "reference_content",
+   "content": "(19) Nielsen, E. S.; Jorgensen, E. G. The Adaptation of Plankton Algae. I. General Part. Physiol. Plant. 1968, 21 (2), 401–413.",
+   "bbox": [
+    124.0,
+    673.0,
+    628.0,
+    714.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 12,
+   "label": "reference_content",
+   "content": "(21) Beale, S. I.; Appleman, D. Chlorophyll Synthesis in Chlorella: Regulation by Degree of Light Limitation of Growth. Plant Physiol. 1971, 47 (2), 230–235.",
+   "bbox": [
+    124.0,
+    779.0,
+    628.0,
+    842.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 13,
+   "label": "reference_content",
+   "content": "(22) Beardall, J.; Morris, I. The Concept of Light Intensity Adaptation in Marine Phytoplankton: Some Experiments with Phaeodactylum Tricornutum. Mar. Biol. 1976, 37 (4), 377–387.",
+   "bbox": [
+    124.0,
+    843.0,
+    628.0,
+    906.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 14,
+   "label": "reference_content",
+   "content": "(23) Droop, M. R. Vitamin B $ _{12} $ and Marine Ecology. Helgol. Wiss. Meeresunters. 1970, 20 (1–4), 629–636.",
+   "bbox": [
+    124.0,
+    907.0,
+    628.0,
+    948.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 15,
+   "label": "reference_content",
+   "content": "(24) Roels, J. A. Application of Macroscopic Principles to Microbial Metabolism. Biotechnol. Bioeng. 1980, 22 (12), 2457–2514.",
+   "bbox": [
+    124.0,
+    950.0,
+    628.0,
+    992.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 16,
+   "label": "reference_content",
+   "content": "(25) Ninnemann, H. Photoinhibition of Respiration in Bacteria and the Cyanophycea Vitreoscilla Stercoraria. FEBS Lett. 1972, 27 (1), 179–180.",
+   "bbox": [
+    124.0,
+    993.0,
+    628.0,
+    1054.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 17,
+   "label": "reference_content",
+   "content": "(26) Hanelt, D.; Melchersmann, B.; Wiencke, C.; Nultsch, W. Effects of High Light Stress on Photosynthesis of Polar Macroalgae in Relation to Depth Distribution. Mar. Ecol.: Prog. Ser. 1997, 149 (1–3), 255–266.",
+   "bbox": [
+    124.0,
+    1056.0,
+    628.0,
+    1140.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 18,
+   "label": "reference_content",
+   "content": "(27) Geider, R. J.; Maclntyre, H. L.; Kana, T. M. A Dynamic Regulatory Model of Phytoplanktonic Acclimation to Light, Nutrients, and Temperature. Limnol. Oceanogr. 1998, 43 (4), 679–694.",
+   "bbox": [
+    123.0,
+    1142.0,
+    628.0,
+    1224.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 19,
+   "label": "reference_content",
+   "content": "(28) Kliphius, A. M. J.; Janssen, M.; van den End, E. J.; Martens, D. E.; Wijffels, R. H. Light Respiration in Chlorella Sorokiniana. J. Appl. Phycol. 2011, 23 (6), 935–947.",
+   "bbox": [
+    123.0,
+    1227.0,
+    628.0,
+    1290.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 20,
+   "label": "reference_content",
+   "content": "(29) He, Q.; Yang, H.; Wu, L.; Hu, C. Effect of Light Intensity on Physiological Changes, Carbon Allocation and Neutral Lipid Accumulation in Oleaginous Microalgae. Bioresour. Technol. 2015, 191, 219–228.",
+   "bbox": [
+    122.0,
+    1292.0,
+    628.0,
+    1375.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 21,
+   "label": "reference_content",
+   "content": "(30) Liu, J.; Yuan, C.; Hu, G.; Li, F. Effects of Light Intensity on the Growth and Lipid Accumulation of Microalga Scenedesmus Sp. 11–1 Under Nitrogen Limitation. Appl. Biochem. Biotechnol. 2012, 166 (8), 2127–2137.",
+   "bbox": [
+    123.0,
+    1377.0,
+    628.0,
+    1460.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 22,
+   "label": "reference_content",
+   "content": "(31) Gonçalves, A. L.; Pires, J. C. M.; Simões, M. Lipid Production of Chlorella Vulgaris and Pseudokirchneriella Subcapitata. Int. J. Energy Environ. Eng. 2013, 4 (1), 14.",
+   "bbox": [
+    123.0,
+    1463.0,
+    628.0,
+    1525.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 23,
+   "label": "reference_content",
+   "content": "(32) Vitova, M.; Bisova, K.; Kawano, S.; Zachleder, V. Accumulation of Energy Reserves in Algae: From Cell Cycles to Biotechnological Applications. Biotechnol. Adv. 2015, 33 (6), 1204–1218.",
+   "bbox": [
+    122.0,
+    1527.0,
+    629.0,
+    1592.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 24,
+   "label": "reference_content",
+   "content": "(33) Fachet, M.; Flassig, R. J.; Rihko-Struckmann, L.; Sundmacher, K. A Dynamic Growth Model of Dunaliella Salina: Parameter Identification and Profile Likelihood Analysis. Bioresour. Technol. 2014, 173, 21–31.",
+   "bbox": [
+    671.0,
+    140.0,
+    1179.0,
+    222.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 25,
+   "label": "reference_content",
+   "content": "(34) Josrgensen, E. G. The Adaptation of Plankton Algae IV. Light Adaptation in Different Algal Species. Physiol. Plant. 1969, 22 (6), 1307–1315.",
+   "bbox": [
+    672.0,
+    223.0,
+    1177.0,
+    284.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 26,
+   "label": "reference_content",
+   "content": "(35) Li, T.; Gargouri, M.; Feng, J.; Park, J.-J.; Gao, D.; Miao, C.; Dong, T.; Gang, D. R.; Chen, S. Regulation of Starch and Lipid Accumulation in a Microalga Chlorella Sorokiniana. Bioresour. Technol. 2015, 180, 250–257.",
+   "bbox": [
+    672.0,
+    286.0,
+    1178.0,
+    367.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 27,
+   "label": "reference_content",
+   "content": "(36) Lomas, M. W.; Glibert, P. M. Comparisons of Nitrate Uptake, Storage, and Reduction in Marine Diatoms and Flagellates. J. Phycol. 2000, 36 (5), 903–913.",
+   "bbox": [
+    673.0,
+    369.0,
+    1178.0,
+    430.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 28,
+   "label": "reference_content",
+   "content": "(37) Jiménez, C.; Niell, F. X. Growth of Dunaliella Viridis Teodoresco: Effect of Salinity, Temperature and Nitrogen Concentration. J. Appl. Phycol. 1991, 3 (4), 319–327.",
+   "bbox": [
+    673.0,
+    432.0,
+    1178.0,
+    493.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 29,
+   "label": "reference_content",
+   "content": "(38) Li, T.; Zheng, Y.; Yu, L.; Chen, S. Mixotrophic Cultivation of a Chlorella Sorokiniana Strain for Enhanced Biomass and Lipid Production. Biomass Bioenergy 2014, 66, 204–213.",
+   "bbox": [
+    673.0,
+    495.0,
+    1178.0,
+    556.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 30,
+   "label": "reference_content",
+   "content": "(39) Sun, Z.; Chen, Y.; Du, J. Elevated CO $ _{2} $ Improves Lipid Accumulation by Increasing Carbon Metabolism in Chlorella Sorokiniana. Plant Biotechnol. J. 2016, 14 (2), 557–566.",
+   "bbox": [
+    673.0,
+    557.0,
+    1178.0,
+    618.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 31,
+   "label": "reference_content",
+   "content": "(40) Goncalves, E. C.; Wilkie, A. C.; Kirst, M.; Rathinasabapathi, B. Metabolic Regulation of Triacylglycerol Accumulation in the Green Algae: Identification of Potential Targets for Engineering to Improve Oil Yield. Plant Biotechnol. J. 2016, 14 (8), 1649–1660.",
+   "bbox": [
+    673.0,
+    620.0,
+    1178.0,
+    701.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 32,
+   "label": "reference_content",
+   "content": "(41) Raue, A.; Kreutz, C.; Maiwald, T.; Bachmann, J.; Schilling, M.; Klingmüller, U.; Timmer, J. Structural and Practical Identifiability Analysis of Partially Observed Dynamical Models by Exploiting the Profile Likelihood. Bioinformatics 2009, 25 (15), 1923–1929.",
+   "bbox": [
+    672.0,
+    703.0,
+    1178.0,
+    785.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 33,
+   "label": "reference_content",
+   "content": "(42) Haario, H.; Laine, M.; Mira, A.; Saksman, E. DRAM: Efficient Adaptive MCMC. Stat. Comput. 2006, 16 (4), 339–354.",
+   "bbox": [
+    673.0,
+    787.0,
+    1178.0,
+    827.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 34,
+   "label": "reference_content",
+   "content": "(43) Marino, S.; Hogue, I. B.; Ray, C. J.; Kirschner, D. E. A Methodology for Performing Global Uncertainty and Sensitivity Analysis in Systems Biology. J. Theor. Biol. 2008, 254 (1), 178–196.",
+   "bbox": [
+    672.0,
+    829.0,
+    1179.0,
+    890.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 35,
+   "label": "reference_content",
+   "content": "(44) Chen, M.; Tang, H.; Ma, H.; Holland, T. C.; Ng, K. Y. S.; Salley, S. O. Effect of Nutrients on Growth and Lipid Accumulation in the Green Algae Dunaliella Tertiolecta. Bioresour. Technol. 2011, 102(2), 1649–1655.",
+   "bbox": [
+    673.0,
+    891.0,
+    1178.0,
+    971.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 36,
+   "label": "reference_content",
+   "content": "(45) Smith, R. C. Uncertainty Quantification: Theory, Implementation, and Applications; Society for Industrial and Applied Mathematics: Philadelphia, PA, USA, 2013.",
+   "bbox": [
+    672.0,
+    974.0,
+    1177.0,
+    1035.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 37,
+   "label": "reference_content",
+   "content": "(46) Li, Y.; Han, D.; Sommerfeld, M.; Hu, Q. Photosynthetic Carbon Partitioning and Lipid Production in the Oleaginous Microalga Pseudochlorococcum Sp. (Chlorophyceae) under Nitrogen-Limited Conditions. Bioresour. Technol. 2011, 102 (1), 123–129.",
+   "bbox": [
+    671.0,
+    1036.0,
+    1178.0,
+    1118.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 38,
+   "label": "reference_content",
+   "content": "(47) Longworth, J.; Wu, D.; Huete-Ortega, M.; Wright, P. C.; Vaidyanathan, S. Proteome Response of Phaeodactylum Tricornutum, during Lipid Accumulation Induced by Nitrogen Depletion. Algal Res. 2016, 18, 213–224.",
+   "bbox": [
+    671.0,
+    1120.0,
+    1178.0,
+    1201.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 39,
+   "label": "reference_content",
+   "content": "(48) Recht, L.; Zarka, A.; Boussiba, S. Patterns of Carbohydrate and Fatty Acid Changes under Nitrogen Starvation in the Microalgae Haematococcus Pluvialis and Nannochloropsis Sp. Appl. Microbiol. Biotechnol. 2012, 94 (6), 1495–1503.",
+   "bbox": [
+    671.0,
+    1203.0,
+    1178.0,
+    1285.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 40,
+   "label": "reference_content",
+   "content": "(49) Pick, U.; Avidan, O. Triacylglycerol Is Produced from Starch and Polar Lipids in the Green Alga Dunaliella Tertiolecta. J. Exp. Bot. 2017, 68 (17), 4939–4950.",
+   "bbox": [
+    672.0,
+    1286.0,
+    1178.0,
+    1347.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 41,
+   "label": "reference_content",
+   "content": "(50) Rodolfi, L.; Chini Zittelli, G.; Bassi, N.; Padovani, G.; Biondi, N.; Bonini, G.; Tredici, M. R. Microalgae for Oil: Strain Selection, Induction of Lipid Synthesis and Outdoor Mass Cultivation in a Low-Cost Photobioreactor. Biotechnol. Bioeng. 2009, 102 (1), 100–112.",
+   "bbox": [
+    671.0,
+    1349.0,
+    1179.0,
+    1430.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 42,
+   "label": "reference_content",
+   "content": "(51) Falkowski, P. G.; Owens, T. G. Effects of Light Intensity on Photosynthesis and Dark Respiration in Six Species of Marine Phytoplankton. Mar. Biol. 1978, 45 (4), 289–295.",
+   "bbox": [
+    672.0,
+    1432.0,
+    1178.0,
+    1493.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 43,
+   "label": "reference_content",
+   "content": "(52) Megard, R. O.; Tonkyn, D. W.; Senft, W. H. Kinetics of Oxygenic Photosynthesis in Planktonic Algae. J. Plankton Res. 1984, 6(2), 325–337.",
+   "bbox": [
+    672.0,
+    1495.0,
+    1180.0,
+    1556.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 44,
+   "label": "number",
+   "content": "11568",
+   "bbox": [
+    628.0,
+    1609.0,
+    675.0,
+    1627.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 45,
+   "label": "footer",
+   "content": "DOI: 10.1021/acs.est.9b02908\nEnviron. Sci. Technol. 2019, 53, 11560–11568",
+   "bbox": [
+    936.0,
+    1611.0,
+    1179.0,
+    1641.0
+   ]
+  },
+  {
+   "page": 8,
+   "order": 46,
+   "label": "aside_text",
+   "content": "Downloaded from pubs.acs.org/esthag/article-pdf/53/19/11560/14433783/es9b02908.pdf by UNIV OF PADOVA user on 02 October 2026",
+   "bbox": [
+    1231.0,
+    476.0,
+    1249.0,
+    1244.0
+   ]
+  }
+ ]
+}

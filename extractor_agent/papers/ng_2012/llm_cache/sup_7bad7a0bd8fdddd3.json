@@ -1,0 +1,113 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 6271,
+  "completion_tokens": 3238,
+  "total_tokens": 9509,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6268,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 2514,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: Design of high productivity antibody capture by protein A chromatography using an integrated experimental and modeling approach\n\nAbstract: An integrated experimental and modeling approach for the design of high productivity protein A chromatography is presented to maximize productivity in bioproduct manufacture. The approach consists of four steps: (1) small-scale experimentation, (2) model parameter estimation, (3) productivity optimization and (4) model validation with process verification. The integrated use of process experimentation and modeling enables fewer experiments to be performed, and thus minimizes the time and materials required in order to gain process understanding, which is of key importance during process development. The application of the approach is demonstrated for the capture of antibody by a novel silica-based high performance protein A adsorbent named AbSolute. In the example, a series of pulse injections and breakthrough experiments were performed to develop a lumped parameter model, which was then used to find the best design that optimizes the productivity of a batch protein A chromatographic p\n\nEquations (number, code tag, page, text just before, LaTeX):\n(1) [NEEDED: an ODE (the model, or background from earlier work?)] p.2  ...16]. The model comprises a mass balance for the mobile phase (Eq. (1)) and a kinetic equation for the stationary phase adsorption (Eq. (2)):\n    \\frac{\\partial C}{\\partial t}+\\frac{1-\\varepsilon_{T}}{\\varepsilon_{T}}\\frac{\\partial q}{\\partial t}+\\frac{u}{\\varepsilon_{T}}\\frac{\\partial C}{\\partial z}=D_{L}\\frac{\\partial^{2}C}{\\partial z^{2}}\n(2) [CONFLICT: computes q, like eq 8] p.2  ...16]. The model comprises a mass balance for the mobile phase (Eq. (1)) and a kinetic equation for the stationary phase adsorption (Eq. (2)):\n    \\frac{\\partial q}{\\partial t}=k_{m}(q^{*}-q)\n(3) [NEEDED: computes D_{L}, used by the model] p.2  ...The apparent axial dispersion coefficient,  $ D_{L} $, is in this work defined by an empirical correlation [16]:\n    D_{L}=\\frac{u L}{2N}\n(4) [NOT USED BY OTHERS: computes h; the model output (keep) or not part of the model (leave out)] p.2  ...the theoretical plate number as correlated to the linear velocity, u, by Eq. (4)[16] and the modified van Deemter expression in Eq. (5)[17]:\n    h=\\frac{L}{N d_{p}}\n(5) [NOT USED BY OTHERS: computes h; the model output (keep) or not part of the model (leave out)] p.2  ...the theoretical plate number as correlated to the linear velocity, u, by Eq. (4)[16] and the modified van Deemter expression in Eq. (5)[17]:\n    h=A+Bu\n(6) [NEEDED: computes k_{m}, used by the model] p.2  ...$ k_{m} $, in the transport-dispersive model (Eq. (2)) was assumed to be a variable following the empirical correlation proposed in Eq. (6):\n    k_{m}=k_{\\max}\\left[S_{1}+\\left(1-S_{1}\\right)\\left(1-\\frac{q_{R}}{q_{\\max,R}}\\right)^{S_{2}}\\right],\\quad\\mathrm{w h e r e}0\\leq S_{1}\\leq1\\mathrm{a n d}S_{2}>0\n(7) [CONFLICT: computes C, like eq 9] p.2  ...t is assumed that there is no axial concentration change. These initial and Danckwert's boundary conditions are given in Eqs. (7)–(10) [18]:\n    C(t=0,z)=0\n(8) [CONFLICT: computes q, like eq 2] p.2  ...t is assumed that there is no axial concentration change. These initial and Danckwert's boundary conditions are given in Eqs. (7)–(10) [18]:\n    q(t=0,z)=0\n(9) [CONFLICT: computes C, like eq 7] p.3  ...Fig. 2. Modeling strategy indicating experiments required for modified transport-dispersive model development.\n    \\left.\\frac{\\partial C}{\\partial z}\\right|_{z=0}=\\frac{u}{\\varepsilon_{T}D_{L}}(C(t,z=0)-C_{f}),\\quad\\mathrm{w h e r e}\\;C_{f}\\neq0\\mathrm{f o r}0<t<t_{L}\n(10) [NEEDED: computes L, used by the model] p.3  ...Fig. 2. Modeling strategy indicating experiments required for modified transport-dispersive model development.\n    \\left.\\frac{\\partial C}{\\partial z}\\right|_{z=L}=0\n(11) [NOT USED BY OTHERS: computes q_{IgG}^{*}; the model output (keep) or not part of the model (leave out)] p.3  ...sidering pH as a modifier [19] (Eq. (11)) was selected. The impurities were assumed to follow a linear adsorption isotherm (Eq. (12)) [16]).\n    q_{\\mathrm{IgG}}^{*}=\\frac{q_{\\mathrm{max}}K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}{1+K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}\n(12) [NOT USED BY OTHERS: computes q_{imp}^{*}; the model output (keep) or not part of the model (leave out)] p.3  ...sidering pH as a modifier [19] (Eq. (11)) was selected. The impurities were assumed to follow a linear adsorption isotherm (Eq. (12)) [16]).\n    q_{i m p}^{*}=H C_{i m p}\n(13) [not an equation] p.4  ...jective function considered in this work is to maximize the productivity, PR, (Eq. (13)) subject to the constraints given by Eqs. (14)–(16):\n    \\max_{R}\\tilde{u}\n(14) [not an equation] p.4  ...jective function considered in this work is to maximize the productivity, PR, (Eq. (13)) subject to the constraints given by Eqs. (14)–(16):\n    Y_{\\min}\\leq Y\\leq1\n(15) [not an equation] p.4  ...jective function considered in this work is to maximize the productivity, PR, (Eq. (13)) subject to the constraints given by Eqs. (14)–(16):\n    P u r_{\\min}\\leq P u r\\leq1\n(16) [not an equation] p.4  ...jective function considered in this work is to maximize the productivity, PR, (Eq. (13)) subject to the constraints given by Eqs. (14)–(16):\n    0\\leq\\Delta P\\leq\\Delta P_{\\max}\n(17) [NOT USED BY OTHERS: computes PR; the model output (keep) or not part of the model (leave out)] p.4  ...Productivity, yield, purity and column pressure drop are defined as follows:\n    PR=\\frac{C_{L}V_{L}Y}{t_{cyc}V_{col}}\n(18) [NOT USED BY OTHERS: computes Y; the model output (keep) or not part of the model (leave out)] p.4  ...Productivity, yield, purity and column pressure drop are defined as follows:\n    Y=\\frac{C_{E}V_{E}}{C_{L}V_{L}}\n(19) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...Productivity, yield, purity and column pressure drop are defined as follows:\n    P u r=\\frac{C_{E}}{C_{T}}\n(20) [NOT USED BY OTHERS: computes ?; the model output (keep) or not part of the model (leave out)] p.4  ...Productivity, yield, purity and column pressure drop are defined as follows:\n    \\frac{\\Delta P}{L}=\\gamma u\n(21) [NEEDED: computes \\varepsilon_{T}, used by the model] p.5  ...The total porosity,  $ \\varepsilon_{T} $, was estimated from the pulse injection experiments using Eq. (21) [16]:\n    \\varepsilon_{T}=\\frac{t_{0}u}{L}\n(22) [NEEDED: computes N, used by the model] p.5  ...ained from the pulse injection experiments with the column were used to calculate the reduced plate height, h, using Eqs. (4) and (22) [15]:\n    N=5.54\\left(\\frac{t_{R}}{\\omega_{1/2}}\\right)^{2}\n\nSentences in which the paper lists equations:\n- \"The model, consisting of Eqs. (1)–(6) and Eqs. (11) and (12) with initial and boundary conditions given by Eqs. (7)–(10), was discretized by orthogonal collocation\"  -> eqs 1, 2, 3, 4, 5, 6, 11, 12, 7, 8, 9, 10\n- \"In this work, the optimization problem consisting of Eqs. (13)–(20), and based on the selected transport-dispersive model described earlier, was solved in Delphi 7 using constrained optimization by linear approximation [23], which is a sequential trusted-region algorithm that maintains a regular-sha\"  -> eqs 13, 14, 15, 16, 17, 18, 19, 20, 7\n- \"The kinetic parameters $(k_{\\mathrm{max}}, S_1$ and $S_2$ in Eq. (6)) were estimated simultaneously from the second set of the breakthrough experiments (Table 2) by fitting the breakthrough curves at various linear velocities, $u$, to the whole model with the other parameters fitted so far using con\"  -> eqs 6, 2, 5\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The approach consists of four steps:\n- (p.1) Instead analytical solutions, as used in [7,8,11], and empirical relationships, e.g. logarithmic [5] and hyperbolic [6] models, together with suitable pressure drop constraints modeled by e.g. the Blake-Kozeny equation [\n- (p.1) This is only possible if a detailed chromatography model is applied for elution as well as loading, as for instance in the process development of ion exchange and mixed-mode chromatography [12–14].\n- (p.2) For a given process model and optimization strategy, the main steps of the approach (Fig. 1) consist of:\n- (p.2) Furthermore, model validation and experimental verification of the optimized process are incorporated into the approach to ensure that the model is accurate and the optimized process performance is achievable in practice\n- (p.2) The transport-dispersive model is a lumped parameter model that considers diffusion, which is often the rate-limiting step in protein separation [9,12].\n- (p.2) The transport-dispersive model describes the mass transfer inside the column, assuming isothermal adsorption, radial homogeneity and lumped coefficients for axial dispersion and mass transfer resistances [16].\n- (p.2) The model comprises a mass balance for the mobile phase (Eq. (1)) and a kinetic equation for the stationary phase adsorption (Eq. (2)):\n- (p.2) The driving force in Eq. (2) [16] distinguishes the transport-dispersive model from the equilibrium-dispersive model, which assumes instantaneous equilibrium between the mobile and stationary phases (i.e. $ q = q^{*} $).\n- (p.2) where N is the theoretical plate number as correlated to the linear velocity, u, by Eq. (4)[16] and the modified van Deemter expression in Eq. (5)[17]:\n- (p.2) The two terms in Eq. (5) were assumed to be additive despite their different dependencies on the linear velocity.\n- (p.2) Longitudinal diffusion was assumed to be negligible.\n- (p.2) The lumped mass transfer coefficient,  $ k_{m} $, in the transport-dispersive model (Eq. (2)) was assumed to be a variable following the empirical correlation proposed in Eq. (6):\n- (p.2) The column is assumed to be initially empty of solutes in both the mobile and stationary phases.\n- (p.2) At the column outlet, it is assumed that there is no axial concentration change.\n- (p.2) These initial and Danckwert's boundary conditions are given in Eqs. (7)–(10) [18]:\n- (p.3) For the process example considered in this work of IgG capture by protein A chromatography, the components involved were assumed to behave as two pseudo-components:\n- (p.3) For IgG, a Langmuir adsorption isotherm considering pH as a modifier [19] (Eq. (11)) was selected.\n- (p.3) The impurities were assumed to follow a linear adsorption isotherm (Eq. (12)) [16]).\n- (p.3) $ \\varepsilon_{T} $ in Eq. (1), A and B in Eq. (5),  $ k_{max} $,  $ S_{1} $ and  $ S_{2} $ in Eq. (6),  $ q_{max} $,  $ K_{A} $ and n in Eq. (11), and H in Eq. (12).\n- (p.4) on finite elements [20,21] and solved in C++ using the implicit differential-algebraic (IDA) solver in the suite of nonlinear and differential/algebraic equation solvers (SUNDIALS) [22].\n- (p.4) The objective function considered in this work is to maximize the productivity, PR, (Eq. (13)) subject to the constraints given by Eqs. (14)–(16):\n- (p.4) Productivity, PR, (defined in Eq. (17)) was used as the objective function for optimization as it provides a reasonable indication of process economics and detailed cost data is often not available.\n- (p.4) Yield, Y, (Eq. (18)) is important because protein A chromatography capture is normally the first purification step and therefore influences the overall product recovery in bioproduct manufacture.\n- (p.4) Purity, Pur, (Eq. (19)) is concerned with product quality and also affects the subsequent manufacturing steps.\n- (p.4) Column pressure drop,  $ \\Delta P $, (Eq. (20)) is an operational constraint for practical process applications and cannot exceed a maximum value for safety reasons.\n- (p.4) Pressure-flow and pulse injection experiments were performed to determine the hydrodynamics of AbSolute (total porosity,  $ \\varepsilon_{T} $, in Eq. (1), van Deemter coefficients, A and B, in Eq. (5), and apparent frict\n- (p.4) Pulses of acetone (10 μl) were injected into the system with and without the column at linear velocities, u, of 100, 150, 300, 600 and 1500 cm h⁻¹ with water as the mobile phase to determine the total porosity (εT in Eq.\n- (p.4) A pressure-flow curve of AbSolute was obtained from the manufacturer to determine the apparent friction factor ( $ \\gamma $ in Eq. (20)).\n- (p.5) of AbSolute $(k_{\\text{max}}, S_1$ and $S_2$ in Eq. (6), $q_{\\text{max}}$, $K_A$ and $n$ in Eq. (11), and $H$ in Eq. (12)).\n- (p.5) Protein A HPLC was used to determine the experimental performance (yield, Y, in Eq. (18) and purity, Pur, in Eq. (19)) of the optimized batch by measuring IgG concentrations in the feed and the various pools (flowthrough\n- (p.5) The total porosity,  $ \\varepsilon_{T} $, was estimated from the pulse injection experiments using Eq. (21) [16]:\n- (p.5) The peaks that were obtained from the pulse injection experiments with the column were used to calculate the reduced plate height, h, using Eqs. (4) and (22) [15]:\n- (p.5) The van Deemter coefficients ( $ A $ and  $ B $) were then estimated by linearly fitting the reduced plate height,  $ h $, versus the linear velocity of the mobile phase,  $ u $, using Eq. (5), as shown in Fig. 4A.\n- (p.5) The value of the apparent friction factor,  $ \\gamma $, was estimated from the pressure-flow experiments by linearly fitting the normalized column pressure drop,  $ \\Delta P/L $, against the linear velocity of the mobile\n\nTables about fitted models:\n- (p.6) Table 3 Estimated model parameters from experimental data for AbSolute\n    Parameter: Total porosity | Symbol: $ \\varepsilon_T $ | Experiment: Pulse injection | Eq.: (1) | Units:  | Value $ ^{a} $: $ 0.8 \\pm 0.1 $\n    Parameter: van Deemter eddy diffusion coefficient | Symbol: A | Experiment: Pulse injection | Eq.: (5) | Units:  | Value $ ^{a} $: $ 4.8 \\pm 0.1 $\n    Parameter: van Deemter mass transfer resistances coefficient | Symbol: B | Experiment: Pulse injection | Eq.: (5) | Units: $ s cm^{-1} $ | Value $ ^{a\n    Parameter: Apparent friction factor | Symbol: $ \\gamma $ | Experiment: Pressure-flow | Eq.: (20) | Units: $ bar h cm^{-2} $ | Value $ ^{a} $: $ ( $ 1.\n    Parameter: Maximum binding capacity | Symbol: $ q_{max} $ | Experiment: Breakthrough $ ^{b} $ | Eq.: (11) | Units: $ g L^{-1} $ | Value $ ^{a} $: $ 73\n    Parameter: Association equilibrium constant | Symbol: $ K_A $ | Experiment: Breakthrough $ ^{b} $ | Eq.: (11) | Units: $ L g^{-1} $ | Value $ ^{a} $: \n    Parameter: Linear isotherm constant | Symbol: H | Experiment: Breakthrough $ ^{b} $ | Eq.: (12) | Units:  | Value $ ^{a} $: $ 1.6 \\pm 0.0 $\n    Parameter: Maximum lumped mass transfer coefficient | Symbol: $ k_{max} $ | Experiment: Breakthrough $ ^{c} $ | Eq.: (6) | Units: $ s^{-1} $ | Value $\n    Parameter: Saturation dependent kinetic constant | Symbol: $ S_1 $ | Experiment: Breakthrough $ ^{c} $ | Eq.: (6) | Units:  | Value $ ^{a} $: 0.26\n    Parameter: Saturation dependent kinetic order | Symbol: $ S_2 $ | Experiment: Breakthrough $ ^{c} $ | Eq.: (6) | Units:  | Value $ ^{a} $: 4.0\n    Parameter: pH dependent equilibrium order | Symbol: n | Experiment: Breakthrough $ ^{d} $ | Eq.: (11) | Units:  | Value $ ^{a} $: 16.6\n- (p.9) Table 4 Batch process operating conditions for IgG capture by AbSolute based on a feed containing 1 g L $ ^{-1} $ IgG for an optimized productivity of 2.9 kg L \n    Operating parameter: Column length | Symbol: L | Units: mm | Value: $ 85^{a} $\n    Operating parameter: Column diameter | Symbol: D | Units: mm | Value: $ 5^{b} $\n    Operating parameter: Linear velocity | Symbol: u | Units: cm  $ h^{-1} $ | Value: $ 2000^{a} $\n    Operating parameter: Load volume | Symbol: V_L | Units: CV | Value: $ 15.3^{a} $\n    Operating parameter: Wash volume | Symbol: V_W | Units: CV | Value: $ 2.8^{a} $\n    Operating parameter: Elution volume | Symbol: V_E | Units: CV | Value: $ 3.3^{a} $\n    Operating parameter: Regeneration volume | Symbol: V_R | Units: CV | Value: $ 4.0^{b} $\n    Operating parameter: Equilibration volume | Symbol: V_Q | Units: CV | Value: $ 4.0^{b} $",
+ "answer": {
+  "models": [
+   {
+    "name": "Transport-dispersive IgG capture model",
+    "equations": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "11",
+     "12",
+     "7",
+     "8",
+     "9",
+     "10"
+    ],
+    "boundary_quote": "The model, consisting of Eqs. (1)–(6) and Eqs. (11) and (12) with initial and boundary conditions given by Eqs. (7)–(10), was discretized by orthogonal collocation",
+    "assumptions": [
+     {
+      "text": "Isothermal adsorption, radial homogeneity, and lumped coefficients for axial dispersion and mass transfer resistances.",
+      "quote": "The transport-dispersive model describes the mass transfer inside the column, assuming isothermal adsorption, radial homogeneity and lumped coefficients for axial dispersion and mass transfer resistances [16]."
+     },
+     {
+      "text": "The two terms in Eq. (5) are additive.",
+      "quote": "The two terms in Eq. (5) were assumed to be additive despite their different dependencies on the linear velocity."
+     },
+     {
+      "text": "Longitudinal diffusion is negligible.",
+      "quote": "Longitudinal diffusion was assumed to be negligible."
+     },
+     {
+      "text": "The components behave as two pseudo-components.",
+      "quote": "For the process example considered in this work of IgG capture by protein A chromatography, the components involved were assumed to behave as two pseudo-components:"
+     },
+     {
+      "text": "The column is initially empty of solutes in both phases.",
+      "quote": "The column is assumed to be initially empty of solutes in both the mobile and stationary phases."
+     },
+     {
+      "text": "There is no axial concentration change at the column outlet.",
+      "quote": "At the column outlet, it is assumed that there is no axial concentration change."
+     }
+    ],
+    "complete_model": true
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "13",
+    "reason": "Optimization objective, not a process-model equation."
+   },
+   {
+    "eq": "14",
+    "reason": "Optimization constraint."
+   },
+   {
+    "eq": "15",
+    "reason": "Optimization constraint."
+   },
+   {
+    "eq": "16",
+    "reason": "Optimization constraint."
+   },
+   {
+    "eq": "17",
+    "reason": "Productivity objective definition, not a process-model equation."
+   },
+   {
+    "eq": "18",
+    "reason": "Yield performance metric."
+   },
+   {
+    "eq": "19",
+    "reason": "Purity performance metric."
+   },
+   {
+    "eq": "20",
+    "reason": "Pressure-drop relationship used as an optimization constraint."
+   },
+   {
+    "eq": "21",
+    "reason": "Experimental parameter-estimation relation for total porosity."
+   },
+   {
+    "eq": "22",
+    "reason": "Experimental parameter-estimation relation for theoretical plate number."
+   }
+  ],
+  "free_laws": []
+ }
+}

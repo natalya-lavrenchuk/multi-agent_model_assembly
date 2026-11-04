@@ -1,0 +1,41 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: cached
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 444
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 117
+  eq 5: cached
+  modeler agent (zentou_2019_andrews eq 5): cached
+  round 1: [40] fitting (limit 300 s)...
+  round 1: [40] zentou_2019_andrews eq 5: chi2 117
+  statistical agent: 1592 in, 305 out (effort high, answer limit 32000)
+  statistical agent: accept C9  C9 fits within the noise and all four parameters are estimated precisely. It has the highest Akaike weight (0.731), so it is preferred over C40. C40 g
+  hypothesis agent (confirmation): 4318 in, 1347 out (effort high, answer limit 32000)
+  eq 8: cached
+  modeler agent (muloiwa_2020_free_laws eq 8): cached
+  round 2: [29] fitting (limit 300 s)...
+  round 2: [29] muloiwa_2020_free_laws eq 8: chi2 117
+  eq 7: cached
+  modeler agent (muloiwa_2020_free_laws eq 7): cached
+  round 2: [28] fitting (limit 300 s)...
+  round 2: [28] muloiwa_2020_free_laws eq 7: chi2 308
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 117
+  statistical agent (confirmation): 2508 in, 1039 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C9  (rule: indistinguishable -> C9)  Run replicated cultures at controlled glucose feed levels spanning well below and above the fitted half-saturation range (about 0.28 g/L), for example
+decision: {"decision": "accept", "chosen": "C9", "feedback": "C9 fits within the noise and all four parameters are estimated precisely. It has the highest Akaike weight (0.731), so it is preferred over C40. C40 gives essentially the same fit, but its Ki runs to infinity, reducing the Andrews law to a simpler form; this does not justify preferring the more complex candidate.", "reasoning": "C9 meets the acceptance criteria: chi2 116.9 is below the 95% limit of 148.8, and every parameter has t > 1. C40 also fits, but has a lower Akaike weight and an unbounded Ki estimate. C8 is rejected for substantial lack of fit."}
+confirmation: indistinguishable -> C9 | adequate: C9 asprey_2000_monod_kinetics eq 17 (weight 0.70), C29 muloiwa_2020_free_laws eq 8 (weight 0.30) | agent agrees with the rule: True
+experiment to separate them: Run replicated cultures at controlled glucose feed levels spanning well below and above the fitted half-saturation range (about 0.28 g/L), for example 0.01–2 g/L on a log-spaced grid. Measure residual glucose and biomass frequently enough to estimate specific growth rate at each level. The broad low-to-intermediate glucose range should be most informative about whether the response follows the linear low-glucose dependence of C9 or the freely fitted power dependence of C29.
+final: {'model': 'C9', 'status': 'indistinguishable', 'marginal': False}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_monod_seed2_confirm.json
+LLM: 3 calls (8418 in, 2691 out tokens), 16 answers from the cache

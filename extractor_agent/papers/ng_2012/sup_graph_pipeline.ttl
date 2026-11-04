@@ -1,0 +1,1079 @@
+@prefix kg: <http://example.org/kg/ng_2012/> .
+@prefix mkg: <http://example.org/mkg#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kg:ng_2012 a mkg:Sup ;
+    rdfs:label "ng_2012 · Design of high productivity antibody capture by protein A chromatography using an integrated experimental and modeling approach"@en ;
+    mkg:hasMetadata kg:ng_2012_meta ;
+    mkg:includes <http://example.org/kg/ng_2012/law/ng_2012_eq1>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq10>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq12>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq2>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq3>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq4>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq5>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq6>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq7>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq8>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq9> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1> a mkg:Law ;
+    rdfs:label "ng_2012 eq 1"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq1/var/C> ;
+    mkg:equationNumber "1" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq1_meta> ;
+    mkg:latex "\\frac{\\partial C}{\\partial t}+\\frac{1-\\varepsilon_{T}}{\\varepsilon_{T}}\\frac{\\partial q}{\\partial t}+\\frac{u}{\\varepsilon_{T}}\\frac{\\partial C}{\\partial z}=D_{L}\\frac{\\partial^{2}C}{\\partial z^{2}}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq1/var/D_L>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq1/var/q>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq1/var/u>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq1/var/varepsilon_T> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1/var/C> a mkg:Variable ;
+    rdfs:label "C (ng_2012 eq 1)"@en ;
+    mkg:description "Solute concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1/var/D_L> a mkg:Variable ;
+    rdfs:label "D_{L} (ng_2012 eq 1)"@en ;
+    mkg:description "Apparent axial dispersion coefficient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:siFactor 1e-04 ;
+    mkg:symbol "D_{L}" ;
+    mkg:unit "cm ** 2 / s" ;
+    mkg:unitString "cm^2 s^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1/var/q> a mkg:Variable ;
+    rdfs:label "q (ng_2012 eq 1)"@en ;
+    mkg:description "Solute concentration in the stationary phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1/var/u> a mkg:Variable ;
+    rdfs:label "u (ng_2012 eq 1)"@en ;
+    mkg:description "Superficial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:initialQuote "Operating parameter: Linear velocity | Symbol: u | Units: cm $ h^{-1} $ | Value: $ 2000^{a} $" ;
+    mkg:initialValue "2000 cm h^-1" ;
+    mkg:siFactor 2.777778e-06 ;
+    mkg:symbol "u" ;
+    mkg:unit "cm / h" ;
+    mkg:unitString "cm h^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1/var/varepsilon_T> a mkg:Variable ;
+    rdfs:label "\\varepsilon_{T} (ng_2012 eq 1)"@en ;
+    mkg:description "Total porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\varepsilon_{T}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq10> a mkg:Law ;
+    rdfs:label "ng_2012 eq 10"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq10/var/L> ;
+    mkg:equationNumber "10" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq10_meta> ;
+    mkg:latex "\\left.\\frac{\\partial C}{\\partial z}\\right|_{z=L}=0" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq10/var/C> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq10/var/C> a mkg:Variable ;
+    rdfs:label "C (ng_2012 eq 10)"@en ;
+    mkg:description "Solute concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq10/var/L> a mkg:Variable ;
+    rdfs:label "L (ng_2012 eq 10)"@en ;
+    mkg:description "Column length." ;
+    mkg:dimension "[length]" ;
+    mkg:initialQuote "Operating parameter: Column length | Symbol: L | Units: mm | Value: $ 85^{a} $" ;
+    mkg:initialValue "85 mm" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "L" ;
+    mkg:unit "cm" ;
+    mkg:unitString "cm" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq10_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The outlet boundary condition sets the axial concentration gradient of the mobile-phase solute to zero." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:page "3" ;
+    mkg:quote "\\left.\\frac{\\partial C}{\\partial z}\\right|_{z=L}=0" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11> a mkg:Law ;
+    rdfs:label "ng_2012 eq 11"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq11/var/q_IgG_star> ;
+    mkg:equationNumber "11" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq11_meta> ;
+    mkg:hasParameter <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/H>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/H_ref>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/K_A>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/n>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/q_max> ;
+    mkg:latex "q_{\\mathrm{IgG}}^{*}=\\frac{q_{\\mathrm{max}}K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}{1+K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq11/var/C_IgG>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq11/var/p> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/par/H> a mkg:Parameter ;
+    rdfs:label "H (ng_2012 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Linear isotherm constant." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 3 Estimated model parameters from experimental data for AbSolute." ;
+    mkg:page "10" ;
+    mkg:quote "H linear isotherm constant" ;
+    mkg:reason "The linear isotherm constant is a constant of the adsorption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "H" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 1.6e+00 ;
+    mkg:valueUncertainty "± 0.0" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/var/q_IgG_star> a mkg:Variable ;
+    rdfs:label "q_{IgG}^{*} (ng_2012 eq 11)"@en ;
+    mkg:description "IgG concentration in the stationary phase at equilibrium" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+    mkg:initialValue "0 gL⁻¹" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q_{IgG}^{*}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "gL⁻¹" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The IgG equilibrium adsorption isotherm computes stationary-phase concentration from mobile-phase IgG concentration, with pH modifying the adsorption." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "For the process example considered in this work of IgG capture by protein A chromatography, the components involved were assumed to behave as two pseudo-components:" ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The components behave as two pseudo-components." ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/H_ref> ;
+            mkg:slot "reference ph" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/n> ;
+            mkg:slot "ph dependence order" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/q_max> ;
+            mkg:slot "maximum binding capacity" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/par/K_A> ;
+            mkg:slot "association equilibrium constant" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/var/p> ;
+            mkg:slot "ph modifier" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq11/var/C_IgG> ;
+            mkg:slot "solute concentration" ] ;
+    mkg:page "3" ;
+    mkg:quote "q_{\\mathrm{IgG}}^{*}=\\frac{q_{\\mathrm{max}}K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}{1+K_{A}(\\mathrm{pH}/\\mathrm{pH}_{ref})^{n}C_{\\mathrm{IgG}}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq12> a mkg:Law ;
+    rdfs:label "ng_2012 eq 12"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq12/var/q_imp_star> ;
+    mkg:equationNumber "12" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq12_meta> ;
+    mkg:hasParameter <http://example.org/kg/ng_2012/law/ng_2012_eq12/par/H> ;
+    mkg:latex "q_{i m p}^{*}=H C_{i m p}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq12/var/C_imp> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq12/var/q_imp_star> a mkg:Variable ;
+    rdfs:label "q_{imp}^{*} (ng_2012 eq 12)"@en ;
+    mkg:description "Impurity concentration in the stationary phase at equilibrium." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+    mkg:initialValue "0 g L^-1" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q_{imp}^{*}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq12_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The impurity equilibrium concentration in the stationary phase is proportional to its mobile-phase concentration." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq12/par/H> ;
+            mkg:slot "linear isotherm constant" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq12/var/C_imp> ;
+            mkg:slot "solute concentration" ] ;
+    mkg:page "3" ;
+    mkg:quote "q_{i m p}^{*}=H C_{i m p}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq1_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The mobile-phase solute balance accounts for accumulation, transfer to the stationary phase, axial convection, and dispersion." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "PDE" ;
+    mkg:hasAssumption [ mkg:quote "The transport-dispersive model describes the mass transfer inside the column, assuming isothermal adsorption, radial homogeneity and lumped coefficients for axial dispersion and mass transfer resistances [16]." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "Isothermal adsorption, radial homogeneity, and lumped coefficients for axial dispersion and mass transfer resistances." ] ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "The velocity term uses u, listed in cm h⁻¹, while the time derivatives and D_L use seconds; u must be converted to cm s⁻¹ or the time units reconciled." ;
+    mkg:quote "\\frac{\\partial C}{\\partial t}+\\frac{1-\\varepsilon_{T}}{\\varepsilon_{T}}\\frac{\\partial q}{\\partial t}+\\frac{u}{\\varepsilon_{T}}\\frac{\\partial C}{\\partial z}=D_{L}\\frac{\\partial^{2}C}{\\partial z^{2}}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq2> a mkg:Law ;
+    rdfs:label "ng_2012 eq 2"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq2/var/q> ;
+    mkg:equationNumber "2" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq2_meta> ;
+    mkg:latex "\\frac{\\partial q}{\\partial t}=k_{m}(q^{*}-q)" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq2/var/k_m>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq2/var/q_star> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq2/var/k_m> a mkg:Variable ;
+    rdfs:label "k_{m} (ng_2012 eq 2)"@en ;
+    mkg:description "Lumped mass transfer coefficient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "k_{m}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq2/var/q> a mkg:Variable ;
+    rdfs:label "q (ng_2012 eq 2)"@en ;
+    mkg:description "Solute concentration in the stationary phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq2/var/q_star> a mkg:Variable ;
+    rdfs:label "q^{*} (ng_2012 eq 2)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Solute concentration in the stationary phase at equilibrium." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:page "10" ;
+    mkg:quote "$ q^{*} $ solute concentration in the stationary phase at equilibrium ( $ gL^{-1} $)" ;
+    mkg:reason "An equilibrium concentration used as a process quantity, rather than a constant of a law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q^{*}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq2_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The stationary-phase solute concentration changes through mass transfer toward its equilibrium concentration." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "PDE" ;
+    mkg:page "2" ;
+    mkg:quote "\\frac{\\partial q}{\\partial t}=k_{m}(q^{*}-q)" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3> a mkg:Law ;
+    rdfs:label "ng_2012 eq 3"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq3/var/D_L> ;
+    mkg:equationNumber "3" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq3_meta> ;
+    mkg:latex "D_{L}=\\frac{u L}{2N}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq3/var/L>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq3/var/N>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq3/var/u> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3/var/D_L> a mkg:Variable ;
+    rdfs:label "D_{L} (ng_2012 eq 3)"@en ;
+    mkg:description "Apparent axial dispersion coefficient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:siFactor 1e-04 ;
+    mkg:symbol "D_{L}" ;
+    mkg:unit "cm ** 2 / s" ;
+    mkg:unitString "cm^2 s^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3/var/L> a mkg:Variable ;
+    rdfs:label "L (ng_2012 eq 3)"@en ;
+    mkg:description "Column length." ;
+    mkg:dimension "[length]" ;
+    mkg:initialQuote "Operating parameter: Column length | Symbol: L | Units: mm | Value: $ 85^{a} $" ;
+    mkg:initialValue "85 mm" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "L" ;
+    mkg:unit "cm" ;
+    mkg:unitString "cm" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3/var/N> a mkg:Variable ;
+    rdfs:label "N (ng_2012 eq 3)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Theoretical plate number." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "10" ;
+    mkg:quote "N theoretical plate number" ;
+    mkg:reason "Theoretical plate number varies with linear velocity as a process quantity, rather than being a constant of a law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "N" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3/var/u> a mkg:Variable ;
+    rdfs:label "u (ng_2012 eq 3)"@en ;
+    mkg:description "Superficial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:initialQuote "Operating parameter: Linear velocity | Symbol: u | Units: cm $ h^{-1} $ | Value: $ 2000^{a} $" ;
+    mkg:initialValue "2000 cm h^-1" ;
+    mkg:siFactor 2.777778e-06 ;
+    mkg:symbol "u" ;
+    mkg:unit "cm / h" ;
+    mkg:unitString "cm h^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq3_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The apparent axial dispersion coefficient is calculated from velocity, column length, and theoretical plate number." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "With u listed in cm h⁻¹, the right-hand side has units of cm² h⁻¹ rather than the listed cm² s⁻¹ for D_L, unless u is converted to cm s⁻¹." ;
+    mkg:quote "D_{L}=\\frac{u L}{2N}" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4> a mkg:Law ;
+    rdfs:label "ng_2012 eq 4"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq4/var/h> ;
+    mkg:equationNumber "4" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq4_meta> ;
+    mkg:hasParameter <http://example.org/kg/ng_2012/law/ng_2012_eq4/par/d_p> ;
+    mkg:latex "h=\\frac{L}{N d_{p}}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq4/var/L>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq4/var/N> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4/par/d_p> a mkg:Parameter ;
+    rdfs:label "d_{p} (ng_2012 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "particle diameter" ;
+    mkg:dimension "[length]" ;
+    mkg:page "2" ;
+    mkg:quote "$ d_{p} $ is the particle diameter" ;
+    mkg:reason "It is a reported physical property of the AbSolute adsorbent (particle diameter), not an operating condition." ;
+    mkg:siFactor 1e-06 ;
+    mkg:status "accepted" ;
+    mkg:symbol "d_{p}" ;
+    mkg:unit "µm" ;
+    mkg:unitString "μm" ;
+    mkg:value 44 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4/var/L> a mkg:Variable ;
+    rdfs:label "L (ng_2012 eq 4)"@en ;
+    mkg:description "Column length." ;
+    mkg:dimension "[length]" ;
+    mkg:initialQuote "Operating parameter: Column length | Symbol: L | Units: mm | Value: $ 85^{a} $" ;
+    mkg:initialValue "85 mm" ;
+    mkg:siFactor 1e-02 ;
+    mkg:symbol "L" ;
+    mkg:unit "cm" ;
+    mkg:unitString "cm" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4/var/N> a mkg:Variable ;
+    rdfs:label "N (ng_2012 eq 4)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Theoretical plate number." ;
+    mkg:dimension "dimensionless" ;
+    mkg:page "10" ;
+    mkg:quote "N theoretical plate number" ;
+    mkg:reason "Theoretical plate number varies with linear velocity as a process quantity, rather than being a constant of a law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "N" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4/var/h> a mkg:Variable ;
+    rdfs:label "h (ng_2012 eq 4)"@en ;
+    mkg:description "Reduced plate height." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "h" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq4_meta> a mkg:Metadata ;
+    mkg:basis "inferred" ;
+    mkg:description "Reduced plate height is calculated from column length, theoretical plate number, and particle diameter." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "h=\\frac{L}{N d_{p}}" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5> a mkg:Law ;
+    rdfs:label "ng_2012 eq 5"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq5/var/h> ;
+    mkg:equationNumber "5" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq5_meta> ;
+    mkg:hasParameter <http://example.org/kg/ng_2012/law/ng_2012_eq5/par/A>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq5/par/B> ;
+    mkg:latex "h=A+Bu" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq5/var/u> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5/var/h> a mkg:Variable ;
+    rdfs:label "h (ng_2012 eq 5)"@en ;
+    mkg:description "Reduced plate height." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "h" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The reduced plate height is expressed as a baseline contribution plus a term proportional to linear velocity." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq5/par/B> ;
+            mkg:slot "velocity dependent coefficient" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq5/var/u> ;
+            mkg:slot "linear velocity" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq5/par/A> ;
+            mkg:slot "eddy diffusion contribution" ] ;
+    mkg:page "2" ;
+    mkg:possibleMisprint "The product Bu is not dimensionless with the listed units B in s cm⁻¹ and u in cm h⁻¹; u must be converted to cm s⁻¹ or the units reconciled." ;
+    mkg:quote "h=A+Bu" ;
+    mkg:reviewOutcome "false alarm" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6> a mkg:Law ;
+    rdfs:label "ng_2012 eq 6"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq6/var/k_m> ;
+    mkg:equationNumber "6" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq6_meta> ;
+    mkg:hasParameter <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_1>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_2>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/k_max>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/q_max_R> ;
+    mkg:latex "k_{m}=k_{\\max}\\left[S_{1}+\\left(1-S_{1}\\right)\\left(1-\\frac{q_{R}}{q_{\\max,R}}\\right)^{S_{2}}\\right],\\quad\\mathrm{w h e r e}0\\leq S_{1}\\leq1\\mathrm{a n d}S_{2}>0" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq6/var/q_R> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/var/k_m> a mkg:Variable ;
+    rdfs:label "k_{m} (ng_2012 eq 6)"@en ;
+    mkg:description "Lumped mass transfer coefficient." ;
+    mkg:dimension "1 / [time]" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "k_{m}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The lumped mass transfer coefficient varies empirically with the fraction of free binding capacity, following a power law." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Adsorption kinetics was assumed to be the same for both IgG and the impurities as the impurities consist of a range of solutes that include non-retainable IgG." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Adsorption kinetics is taken to be the same for IgG and impurities." ],
+        [ mkg:quote "w h e r e 0\\leq S_{1}\\leq1 a n d S_{2}>0" ;
+            mkg:reasoned false ;
+            mkg:text "w h e r e 0\\leq S_{1}\\leq1 a n d S_{2}>0" ] ;
+    mkg:hasRole [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/q_max_R> ;
+            mkg:slot "maximum retained solute capacity" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_1> ;
+            mkg:slot "saturation dependent kinetic constant" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq6/var/q_R> ;
+            mkg:slot "retained solute concentration" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/k_max> ;
+            mkg:slot "rate constant" ],
+        [ mkg:boundTo <http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_2> ;
+            mkg:slot "saturation dependent kinetic order" ] ;
+    mkg:page "2" ;
+    mkg:quote "k_{m}=k_{\\max}\\left[S_{1}+\\left(1-S_{1}\\right)\\left(1-\\frac{q_{R}}{q_{\\max,R}}\\right)^{S_{2}}\\right],\\quad\\mathrm{w h e r e}0\\leq S_{1}\\leq1\\mathrm{a n d}S_{2}>0" ;
+    mkg:status "pending" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq7> a mkg:Law ;
+    rdfs:label "ng_2012 eq 7"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq7/var/C> ;
+    mkg:equationNumber "7" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq7_meta> ;
+    mkg:latex "C(t=0,z)=0" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq7/var/C> a mkg:Variable ;
+    rdfs:label "C (ng_2012 eq 7)"@en ;
+    mkg:description "Solute concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq7_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The initial mobile-phase solute concentration is zero throughout the column." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:hasAssumption [ mkg:quote "At the column outlet, it is assumed that there is no axial concentration change." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "There is no axial concentration change at the column outlet." ],
+        [ mkg:quote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+            mkg:reasoned false ;
+            mkg:severity "blocking" ;
+            mkg:text "The column is initially empty of solutes in both phases." ] ;
+    mkg:page "2" ;
+    mkg:quote "C(t=0,z)=0" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq8> a mkg:Law ;
+    rdfs:label "ng_2012 eq 8"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq8/var/q> ;
+    mkg:equationNumber "8" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq8_meta> ;
+    mkg:latex "q(t=0,z)=0" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq8/var/q> a mkg:Variable ;
+    rdfs:label "q (ng_2012 eq 8)"@en ;
+    mkg:description "Solute concentration in the stationary phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "q" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq8_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The initial stationary-phase solute concentration is zero throughout the column." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "algebraic" ;
+    mkg:page "2" ;
+    mkg:quote "q(t=0,z)=0" ;
+    mkg:status "flagged" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9> a mkg:Law ;
+    rdfs:label "ng_2012 eq 9"@en ;
+    mkg:computes <http://example.org/kg/ng_2012/law/ng_2012_eq9/var/C> ;
+    mkg:equationNumber "9" ;
+    mkg:hasMetadata <http://example.org/kg/ng_2012/law/ng_2012_eq9_meta> ;
+    mkg:latex "\\left.\\frac{\\partial C}{\\partial z}\\right|_{z=0}=\\frac{u}{\\varepsilon_{T}D_{L}}(C(t,z=0)-C_{f}),\\quad\\mathrm{w h e r e}\\;C_{f}\\neq0\\mathrm{f o r}0<t<t_{L}" ;
+    mkg:uses <http://example.org/kg/ng_2012/law/ng_2012_eq9/var/C_f>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq9/var/D_L>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq9/var/u>,
+        <http://example.org/kg/ng_2012/law/ng_2012_eq9/var/varepsilon_T> .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9/var/C> a mkg:Variable ;
+    rdfs:label "C (ng_2012 eq 9)"@en ;
+    mkg:description "Solute concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "C" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9/var/C_f> a mkg:Variable ;
+    rdfs:label "C_{f} (ng_2012 eq 9)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "feed concentration" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "based on a feed containing 1 g L $ ^{-1} $ IgG" ;
+    mkg:initialValue "1 g L⁻¹" ;
+    mkg:measured true ;
+    mkg:measuredQuote "measuring IgG concentrations in the feed and the various pools (flowthrough, wash, eluate, regenerate and equilibration)." ;
+    mkg:page "10" ;
+    mkg:quote "feed concentration" ;
+    mkg:reason "It is the feed concentration supplied at the column inlet, an operating input set for a run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{f}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "gL⁻¹" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9/var/D_L> a mkg:Variable ;
+    rdfs:label "D_{L} (ng_2012 eq 9)"@en ;
+    mkg:description "Apparent axial dispersion coefficient." ;
+    mkg:dimension "[length] ** 2 / [time]" ;
+    mkg:siFactor 1e-04 ;
+    mkg:symbol "D_{L}" ;
+    mkg:unit "cm ** 2 / s" ;
+    mkg:unitString "cm^2 s^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9/var/u> a mkg:Variable ;
+    rdfs:label "u (ng_2012 eq 9)"@en ;
+    mkg:description "Superficial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:initialQuote "Operating parameter: Linear velocity | Symbol: u | Units: cm $ h^{-1} $ | Value: $ 2000^{a} $" ;
+    mkg:initialValue "2000 cm h^-1" ;
+    mkg:siFactor 2.777778e-06 ;
+    mkg:symbol "u" ;
+    mkg:unit "cm / h" ;
+    mkg:unitString "cm h^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9/var/varepsilon_T> a mkg:Variable ;
+    rdfs:label "\\varepsilon_{T} (ng_2012 eq 9)"@en ;
+    mkg:description "Total porosity." ;
+    mkg:dimension "dimensionless" ;
+    mkg:siFactor 1e+00 ;
+    mkg:symbol "\\varepsilon_{T}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq9_meta> a mkg:Metadata ;
+    mkg:basis "stated" ;
+    mkg:description "The inlet concentration gradient is set by the difference between the feed and column-inlet concentrations while feed is present during loading." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "PDE" ;
+    mkg:hasAssumption [ mkg:quote "w h e r e \\;C_{f}\\neq0 f o r 0<t<t_{L}" ;
+            mkg:reasoned false ;
+            mkg:text "w h e r e \\;C_{f}\\neq0 f o r 0<t<t_{L}" ] ;
+    mkg:page "3" ;
+    mkg:quote "\\left.\\frac{\\partial C}{\\partial z}\\right|_{z=0}=\\frac{u}{\\varepsilon_{T}D_{L}}(C(t,z=0)-C_{f}),\\quad\\mathrm{w h e r e}\\;C_{f}\\neq0\\mathrm{f o r}0<t<t_{L}" ;
+    mkg:status "pending" .
+
+kg:ng_2012_meta a mkg:Metadata ;
+    mkg:completeModel true ;
+    mkg:description "The model describes human IgG capture from a feed by protein A chromatography using AbSolute, a silica-based adsorbent. It predicts time-dependent movement and adsorption of IgG and impurities through a packed column, including breakthrough and elution behavior. The model combines axial transport and dispersion, finite-rate mass transfer, and adsorption equilibrium, with a saturation-dependent empirical mass-transfer correlation. The authors used small-column pulse, pressure-flow, and breakthrough experiments to estimate parameters, then optimized batch operating conditions for productivity subject to yield, purity, and pressure constraints. They tested the optimized process experimentally with human polyclonal IgG and with an IgG–bovine serum model feed. The authors use the integrated approach to design a high-productivity capture process with fewer experiments, and report a verified productivity of 2.9 kg L⁻¹ day⁻¹." ;
+    mkg:doi "10.1016/j.jchromb.2012.05.010" ;
+    mkg:form "PDE/algebraic" ;
+    mkg:hasAssumption [ mkg:quote "Longitudinal diffusion was assumed to be negligible." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "Longitudinal diffusion is negligible." ],
+        [ mkg:quote "The two terms in Eq. (5) were assumed to be additive despite their different dependencies on the linear velocity." ;
+            mkg:reasoned false ;
+            mkg:severity "warning" ;
+            mkg:text "The two terms in Eq. (5) are additive." ] ;
+    mkg:hasFact [ mkg:basis "inferred" ;
+            mkg:text "IgG adsorption is represented by a Langmuir isotherm modified by pH, while impurity adsorption is represented by a linear isotherm." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "in a column of 5 mm diameter and 8.5 cm length" ;
+            mkg:text "The optimized process was verified in a column 5 mm in diameter and 8.5 cm long." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Pulses of acetone (10 μl) were injected into the system with and without the column at linear velocities, u, of 100, 150, 300, 600 and 1500 cm h⁻¹ with water as the mobile phase" ;
+            mkg:text "Pulse tests injected 10 μl acetone at linear velocities from 100 to 1500 cm h⁻¹, with water as the mobile phase, and measured outlet absorbance at 280 nm." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Each analysis took 4.5 min using a Poros A 20 pre-packed protein A analytical column of 4.6 mm diameter and 5 cm length with 20 μm particles." ;
+            mkg:text "The optimized batch yield and purity were measured by protein A HPLC using a 4.6 mm diameter, 5 cm long analytical column with 20 μm particles." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the components involved were assumed to behave as two pseudo-components: IgG and impurities." ;
+            mkg:text "The process example used human IgG as product and treated non-retained materials, including impurities, as a second pseudo-component." ;
+            mkg:topic "system" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "assuming 24 h operation. The regeneration and equilibration volumes (V_R and V_Q) were kept constant at 4 CV" ;
+            mkg:text "The productivity optimization assumed 24-hour operation and held regeneration and equilibration volumes fixed at 4 column volumes each." ;
+            mkg:topic "optimization" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "AbSolute had an average particle diameter of 44 μm, a pore diameter of 1000 Å, and a specific surface area of 65 m² g⁻¹." ;
+            mkg:topic "adsorbent" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The apparent axial dispersion coefficient,  D_L, is in this work defined by an empirical correlation" ;
+            mkg:text "The model represents axial dispersion using an empirical correlation based on the modified van Deemter relationship." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm" ;
+            mkg:text "Outlet solute concentrations were measured by absorbance at 280 nm, or at 300 nm when the 280 nm signal saturated." ;
+            mkg:topic "measurement" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Three sets of breakthrough experiments were performed in small-scale Tricorn columns of 5 mm diameter and 5 cm length" ;
+            mkg:text "Breakthrough experiments used Tricorn columns 5 mm in diameter and 5 cm long." ;
+            mkg:topic "equipment" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The yield and purity obtained for the experimental run with human polyclonal IgG were 99.4% and 99.6%, respectively, whereas those for the experimental run with the model feed were 97.7% and 98.1%, respectively." ;
+            mkg:text "At the optimized conditions, the human polyclonal IgG run achieved 99.4% yield and 99.6% purity, while the IgG–bovine serum feed run achieved 97.7% yield and 98.1% purity." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "the capture of antibody by AbSolute in a batch column to be optimized in 75 person-hours." ;
+            mkg:text "The integrated experimental, estimation, optimization, and verification approach took 75 person-hours, or approximately two weeks, for the AbSolute example." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Only the unsaturated experimental signal, i.e. within 2 AU at 280 nm, was considered for parameter fitting due to the unreliability of the saturated signal." ;
+            mkg:text "The pH-dependent equilibrium parameter was fitted to partial-breakthrough and elution data, using only the unsaturated experimental signal within 2 AU at 280 nm." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Area integration of the breakthrough curves was approximated by the trapezium rule." ;
+            mkg:text "Equilibrium binding capacities were estimated by integrating breakthrough curves using the trapezium rule rather than reading capacity at 50% breakthrough." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model uses a variable lumped mass-transfer coefficient that changes empirically with the fraction of unoccupied binding sites." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The maximum predicted throughput was 5.2 g day⁻¹ for a 5 mm diameter, 10 cm long column operated at 2.5 bar." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The main drawback of such an approach is the lack of flexibility to predict and consider process yield and purity as direct constraints in the optimization problem." ;
+            mkg:text "The model was used to optimize batch-process productivity while enforcing yield, purity, and pressure-drop constraints." ;
+            mkg:topic "use" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Column pressure drops (the differences between the system pressures with and without the column) were measured for a column of 5 mm diameter and 20 cm length, L, using phosphate buffered saline (PBS), pH 7.4, at linear velocities, u, of 60, 120, 150, 240, 300, 450, 600, 750 and 900 cm h⁻¹." ;
+            mkg:text "Pressure-flow measurements used a 5 mm diameter, 20 cm column with PBS at pH 7.4 and velocities from 60 to 900 cm h⁻¹." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Errors in the estimated model parameters were determined statistically and are only available for the parameters estimated by a least squares' method." ;
+            mkg:text "Reported parameter errors are one standard deviation where available, and statistical errors were only available for parameters estimated by least squares." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Adsorption kinetics was assumed to be the same for both IgG and the impurities" ;
+            mkg:text "The model assumes the same adsorption kinetics for IgG and impurities." ;
+            mkg:topic "mechanisms" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Breakthrough experiments varied IgG feed concentration from 1 to 10 g L⁻¹ and linear velocity from 100 to 1500 cm h⁻¹ across three experimental sets." ;
+            mkg:topic "experiments" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "A constant superficial velocity for all the zones (i.e. loading, wash, elution, regeneration and equilibration) was calculated" ;
+            mkg:text "The optimization used a constant superficial velocity across loading, washing, elution, regeneration, and equilibration." ;
+            mkg:topic "optimization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "PBS, pH 7.4, was used for equilibration and wash. 0.1 M glycine–HCl, pH 3, and HCl, pH 1.5, were used for elution and regeneration, respectively." ;
+            mkg:text "Equilibration and washing used phosphate-buffered saline at pH 7.4, elution used 0.1 M glycine–HCl at pH 3, and regeneration used HCl at pH 1.5." ;
+            mkg:topic "operation" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The fitted kinetic parameters were reported to be inappropriate for predicting breakthrough below 300 cm h⁻¹, and the model fitted behavior above 60% breakthrough poorly." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model predicted a maximum productivity of 2.9 kg L⁻¹ day⁻¹ for column lengths between 5 and 8.5 cm, independent of whether the maximum pressure drop was 1.0 or 2.5 bar." ;
+            mkg:topic "performance" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "In total, there were ten parameters in the selected transport-dispersive model" ;
+            mkg:text "The selected chromatography model has ten estimated parameters, and the process optimization adds the experimentally fitted apparent friction factor, giving eleven parameters overall." ;
+            mkg:topic "model" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model was discretized by orthogonal collocation on finite elements and solved in C++ with the IDA solver from SUNDIALS." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The transport-dispersive model is a lumped parameter model" ;
+            mkg:text "The authors describe the chromatography model as a lumped-parameter transport-dispersive model." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "This may be related to the large specific surface area of AbSolute particles (65 m² g⁻¹) for ligand coupling." ;
+            mkg:text "The estimated maximum IgG binding capacity exceeded the previously reported 37–69 g L⁻¹ range cited from McCue et al. (2003), Hahn et al. (2003), Hahn et al. (2005), and Perez-Almodovar and Carta (2009)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The saturation-dependent kinetic parameters were fitted simultaneously to breakthrough curves at different velocities using constrained optimization by linear approximation." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "By selecting a lumped parameter model, as opposed to a general rate model, the number of key model parameters to be estimated, and thus the experimentation effort for parameter estimation, can be drastically reduced whilst still ensuring sufficient model accuracy" ;
+            mkg:text "The authors chose a lumped-parameter model over a general-rate model to reduce the number of parameters and experiments while retaining sufficient accuracy, following the rationale of Chan et al. (2008)." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The optimized process was verified at an experimental column pressure drop of approximately 2.5 bar, and the authors concluded that the predicted productivity was feasible in practice." ;
+            mkg:topic "validation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Higher yields were obtained in the experimental batch run than in the simulation. This can be explained by the overestimated IgG breakthrough, i.e. overestimated product loss during loading" ;
+            mkg:text "At optimized high velocity, the simulation overestimated IgG breakthrough and product loss during loading, so simulated yield was lower than experimental yield." ;
+            mkg:topic "limitations" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The model represents changing concentrations along the column and over time, with a mobile-phase mass balance and a stationary-phase adsorption kinetic equation." ;
+            mkg:topic "model" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "a novel silica-based high performance protein A adsorbent called AbSolute" ;
+            mkg:text "The model was developed for antibody capture using AbSolute, a novel silica-based high-performance protein A adsorbent." ;
+            mkg:topic "system" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The paper reports that the AbSolute friction factor was of the same order of magnitude as the value reported for Prosep-vA Ultra by McCue et al. (2003), accounting for the adsorbents' different particle sizes." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The determination of these kinetic parameters required a total of 42 min CPU time on two Intel Xeon E5520 processors of 2.26 GHz with 24.0 Gb memory." ;
+            mkg:text "Fitting the kinetic parameters took 42 minutes of CPU time on two Intel Xeon E5520 processors at 2.26 GHz with 24 GB memory." ;
+            mkg:topic "estimation" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "The use of Eq. (6) enables more accurate breakthrough predictions in the absence of a complex model (such as the surface layer model with pore diffusion [6] and the heterogeneous binding model [10])." ;
+            mkg:text "The paper contrasts its model with the surface-layer model with pore diffusion of McCue et al. (2003) and the heterogeneous binding model of Perez-Almodovar and Carta (2009), which it describes as more complex alternatives." ;
+            mkg:topic "comparisons" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "Optimization targeted productivity subject to minimum yield of 95%, minimum purity of 98%, and a maximum column pressure drop of either 1.0 or 2.5 bar." ;
+            mkg:topic "optimization" ],
+        [ mkg:basis "stated" ;
+            mkg:quote "Expensive and labor-intensive experimentation, and thus time and costs, required for process optimization were drastically reduced by an estimate of two to five folds." ;
+            mkg:text "The authors estimate that the integrated approach reduced the expensive, labor-intensive experimentation required for process optimization by two- to five-fold." ;
+            mkg:topic "use" ],
+        [ mkg:basis "inferred" ;
+            mkg:text "The selected optimum used a 5 mm diameter, 8.5 cm long column at 2000 cm h⁻¹, with 15.3 CV load, 2.8 CV wash, and 3.3 CV elution volumes." ;
+            mkg:topic "optimization" ] ;
+    mkg:status "pending" ;
+    rdfs:comment "v0 distinct nodes; built from paddle.json (PaddleOCR-VL pipeline) by extractor/graph.py" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/par/H_ref> a mkg:Parameter ;
+    rdfs:label "H_{ref} (ng_2012 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Reference pH, taken as the pH of the loading zone." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "set" ;
+    mkg:estimationQuote "pH_{\\mathrm{ref}} is the reference pH (in this work, of the loading zone)" ;
+    mkg:page "3" ;
+    mkg:quote "pH_{\\mathrm{ref}} is the reference pH (in this work, of the loading zone)" ;
+    mkg:reason "The reference pH is a fixed reference quantity in the adsorption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "H_{ref}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 7.4e+00 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/par/K_A> a mkg:Parameter ;
+    rdfs:label "K_{A} (ng_2012 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Association equilibrium constant." ;
+    mkg:dimension "[length] ** 3 / [mass]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 3 Estimated model parameters from experimental data for AbSolute." ;
+    mkg:page "3" ;
+    mkg:quote "K_{A} is the association equilibrium constant" ;
+    mkg:reason "The association equilibrium constant is a constant of the adsorption isotherm." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "K_{A}" ;
+    mkg:unit "l / g" ;
+    mkg:unitString "L g^-1" ;
+    mkg:value 6.1e+00 ;
+    mkg:valueUncertainty "± 2.9" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/par/n> a mkg:Parameter ;
+    rdfs:label "n (ng_2012 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "pH-dependent equilibrium order." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 3 Estimated model parameters from experimental data for AbSolute." ;
+    mkg:page "10" ;
+    mkg:quote "n pH dependent equilibrium order" ;
+    mkg:reason "The pH-dependent equilibrium order is an exponent in the adsorption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "n" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 1.66e+01 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/par/q_max> a mkg:Parameter ;
+    rdfs:label "q_{max} (ng_2012 eq 11)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Maximum binding capacity." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 3 Estimated model parameters from experimental data for AbSolute." ;
+    mkg:page "3" ;
+    mkg:quote "q_{\\mathrm{max}} is the maximum binding capacity" ;
+    mkg:reason "The maximum binding capacity is a constant of the adsorption isotherm." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{max}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" ;
+    mkg:value 73 ;
+    mkg:valueUncertainty "± 3" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/var/C_IgG> a mkg:Variable ;
+    rdfs:label "C_{IgG} (ng_2012 eq 11)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "IgG concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+    mkg:initialValue "0 g L^-1" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm, for which linear IgG calibration curves were observed (data not shown)." ;
+    mkg:page "3" ;
+    mkg:quote "C_{\\mathrm{lgG}} is the IgG concentration in the mobile phase" ;
+    mkg:reason "The IgG mobile-phase concentration is a process concentration that varies during the run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{IgG}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq11/var/p> a mkg:Variable ;
+    rdfs:label "p (ng_2012 eq 11)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "pH used as the modifier in the IgG adsorption isotherm." ;
+    mkg:dimension "dimensionless" ;
+    mkg:reason "The pH is an operating condition supplied to the isotherm, rather than a fitted law constant." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "p" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq12/par/H> a mkg:Parameter ;
+    rdfs:label "H (ng_2012 eq 12)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "Linear isotherm constant." ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "Table 3 Estimated model parameters from experimental data for AbSolute." ;
+    mkg:page "10" ;
+    mkg:quote "H linear isotherm constant" ;
+    mkg:reason "The linear isotherm constant is a constant of the adsorption law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "H" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 1.6e+00 ;
+    mkg:valueUncertainty "± 0.0" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq12/var/C_imp> a mkg:Variable ;
+    rdfs:label "C_{imp} (ng_2012 eq 12)"@en ;
+    mkg:basis "inferred" ;
+    mkg:description "Impurity concentration in the mobile phase." ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+    mkg:initialValue "0 g L^-1" ;
+    mkg:measured true ;
+    mkg:measuredQuote "Solute concentrations were measured at the column outlet by absorbance at 280 nm, or 300 nm in the case of signal saturation at 280 nm, for which linear IgG calibration curves were observed (data not shown)." ;
+    mkg:page "3" ;
+    mkg:quote "C_{\\mathrm{imp}} is the impurity concentration in the mobile phase" ;
+    mkg:reason "The impurity mobile-phase concentration is a process concentration that varies during the run." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "C_{imp}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "g L^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5/par/A> a mkg:Parameter ;
+    rdfs:label "A (ng_2012 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "van Deemter eddy diffusion coefficient" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The van Deemter coefficients ( $ A $ and  $ B $) were then estimated by linearly fitting the reduced plate height,  $ h $, versus the linear velocity of the mobile phase,  $ u $, using Eq. (5), as shown in Fig. 4A." ;
+    mkg:page "2" ;
+    mkg:quote "A and B are the van Deemter coefficients for the eddy diffusion and the mass transfer resistances, respectively." ;
+    mkg:reason "It is a fitted van Deemter coefficient for eddy diffusion, a constant of the model law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "A" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 4.8e+00 ;
+    mkg:valueUncertainty "± 0.1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5/par/B> a mkg:Parameter ;
+    rdfs:label "B (ng_2012 eq 5)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "van Deemter mass transfer resistance coefficient" ;
+    mkg:dimension "[time] / [length]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "The van Deemter coefficients ( $ A $ and  $ B $) were then estimated by linearly fitting the reduced plate height,  $ h $, versus the linear velocity of the mobile phase,  $ u $, using Eq. (5), as shown in Fig. 4A." ;
+    mkg:page "2" ;
+    mkg:quote "A and B are the van Deemter coefficients for the eddy diffusion and the mass transfer resistances, respectively." ;
+    mkg:reason "It is a fitted van Deemter coefficient for mass transfer resistance, a constant of the model law." ;
+    mkg:siFactor 1e+02 ;
+    mkg:status "accepted" ;
+    mkg:symbol "B" ;
+    mkg:unit "s / cm" ;
+    mkg:unitString "s cm⁻¹" ;
+    mkg:value 17 ;
+    mkg:valueUncertainty "± 1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq5/var/u> a mkg:Variable ;
+    rdfs:label "u (ng_2012 eq 5)"@en ;
+    mkg:description "Superficial velocity." ;
+    mkg:dimension "[length] / [time]" ;
+    mkg:initialQuote "Operating parameter: Linear velocity | Symbol: u | Units: cm $ h^{-1} $ | Value: $ 2000^{a} $" ;
+    mkg:initialValue "2000 cm h^-1" ;
+    mkg:siFactor 2.777778e-06 ;
+    mkg:symbol "u" ;
+    mkg:unit "cm / h" ;
+    mkg:unitString "cm h^-1" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_1> a mkg:Parameter ;
+    rdfs:label "S_{1} (ng_2012 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "saturation dependent kinetic constant" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "For AbSolute, the maximum lumped mass transfer coefficient,  $ k_{max} $, saturation dependent kinetic constant,  $ S_1 $, and order,  $ S_2 $, were estimated to be  $ 1.6\\,s^{-1} $, 0.26 and 4.0, respectively." ;
+    mkg:page "10" ;
+    mkg:quote "$ S_{1} $ saturation dependent kinetic constant" ;
+    mkg:reason "It is an estimated saturation-dependent kinetic constant in Eq. (6)." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{1}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 2.6e-01 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/par/S_2> a mkg:Parameter ;
+    rdfs:label "S_{2} (ng_2012 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "saturation dependent kinetic order" ;
+    mkg:dimension "dimensionless" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "For AbSolute, the maximum lumped mass transfer coefficient,  $ k_{max} $, saturation dependent kinetic constant,  $ S_1 $, and order,  $ S_2 $, were estimated to be  $ 1.6\\,s^{-1} $, 0.26 and 4.0, respectively." ;
+    mkg:page "10" ;
+    mkg:quote "$ S_{2} $ saturation dependent kinetic order" ;
+    mkg:reason "It is an estimated saturation-dependent kinetic order in Eq. (6), a constant of the law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "S_{2}" ;
+    mkg:unit "dimensionless" ;
+    mkg:unitString "-" ;
+    mkg:value 4e+00 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/par/k_max> a mkg:Parameter ;
+    rdfs:label "k_{\\max} (ng_2012 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "maximum lumped mass transfer coefficient" ;
+    mkg:dimension "1 / [time]" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "For AbSolute, the maximum lumped mass transfer coefficient,  $ k_{max} $, saturation dependent kinetic constant,  $ S_1 $, and order,  $ S_2 $, were estimated to be  $ 1.6\\,s^{-1} $, 0.26 and 4.0, respectively." ;
+    mkg:page "2" ;
+    mkg:quote "$ k_{max} $ is the maximum lumped mass transfer coefficient" ;
+    mkg:reason "It is an estimated maximum lumped mass transfer coefficient, a constant in the kinetic law." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "k_{\\max}" ;
+    mkg:unit "1 / s" ;
+    mkg:unitString "s⁻¹" ;
+    mkg:value 1.6e+00 .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/par/q_max_R> a mkg:Parameter ;
+    rdfs:label "q_{\\max,R} (ng_2012 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "maximum binding capacity of all the retained solutes" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:estimation "estimated" ;
+    mkg:estimationQuote "A maximum binding capacity,  $ q_{max} $, of 73 ± 3 g L⁻¹ and an association equilibrium constant,  $ K_A $, of 6.1 ± 2.9 L g⁻¹ were obtained for IgG adsorption up to 9 g L⁻¹ by AbSolute." ;
+    mkg:page "10" ;
+    mkg:quote "maximum binding capacity of all the retained solutes" ;
+    mkg:reason "It is a maximum binding-capacity constant for the retained solutes, a property of the adsorption isotherm." ;
+    mkg:sameQuantityAs "q_{max}" ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{\\max,R}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "gL⁻¹" ;
+    mkg:value 73 ;
+    mkg:valueUncertainty "± 3" .
+
+<http://example.org/kg/ng_2012/law/ng_2012_eq6/var/q_R> a mkg:Variable ;
+    rdfs:label "q_{R} (ng_2012 eq 6)"@en ;
+    mkg:basis "stated" ;
+    mkg:description "sum of all the retained solute concentrations in the stationary phase" ;
+    mkg:dimension "[mass] / [length] ** 3" ;
+    mkg:initialQuote "The column is assumed to be initially empty of solutes in both the mobile and stationary phases." ;
+    mkg:initialValue "0 gL⁻¹" ;
+    mkg:page "10" ;
+    mkg:quote "sum of all the retained solute concentrations in the stationary phase" ;
+    mkg:reason "It is a stationary-phase retained-solute concentration that changes as adsorption proceeds." ;
+    mkg:siFactor 1e+00 ;
+    mkg:status "accepted" ;
+    mkg:symbol "q_{R}" ;
+    mkg:unit "g / l" ;
+    mkg:unitString "gL⁻¹" .
+

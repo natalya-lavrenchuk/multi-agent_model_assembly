@@ -1,0 +1,88 @@
+{
+ "model": "gpt-6-luna",
+ "fixes": {
+  "5": {
+   "action": "correct",
+   "printed_latex": "$$ f_{l i m}=\\left(\\frac{[G L C]}{K_{g l c}+[G L C]}\\right)\\left(\\frac{[G L C]}{K_{g l n}+[G L C]}\\right), $$",
+   "corrected_latex": "$$ f_{lim}=\\left(\\frac{[GLC]}{K_{glc}+[GLC]}\\right)\\left(\\frac{[GLN]}{K_{gln}+[GLN]}\\right), $$",
+   "reason": "The second Monod term is for glutamine, so its concentration should be [GLN] in both numerator and denominator.",
+   "quote": "The specific cell growth rate is determined by the concentrations of the glucose, glutamine, lactate and ammonia, following Monod kinetics:",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "7": {
+   "action": "keep as printed",
+   "printed_latex": "$$ \\mu_{d}=\\frac{\\mu_{d,m a x}}{1+(K_{d,a m m}/[A M M])^{n}},\\quad n>1. $$",
+   "corrected_latex": null,
+   "reason": "The mismatch is in the nomenclature definition of μ_d,max, not Eq. 7, which describes the ammonia-dependent cell-death rate.",
+   "quote": "Based on the assumption that cell death only depends on the concentration of ammonia in the extracellular medium, the rate of cell death is determined by",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "10": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N], $$",
+   "corrected_latex": "$$ \\frac{d(V[GLN])}{dt}=-Q_{gln}V X_{\\nu}-K_{dgln}V[GLN]+F_{in}[GLN]_{in}-F_{out}[GLN], $$",
+   "reason": "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[GLN].",
+   "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "13": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C], $$",
+   "corrected_latex": "$$ \\frac{d(V[LAC])}{dt}=Q_{lac}V X_{\\nu}-F_{out}[LAC], $$",
+   "reason": "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[LAC].",
+   "quote": "The mass balances for lactate and ammonia are",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "15": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}], $$",
+   "corrected_latex": "$$ \\frac{d(V[AMM])}{dt}=Q_{amm}V X_{\\nu}+K_{dgln}V[GLN]-F_{out}[AMM], $$",
+   "reason": "The right-hand side is an amount rate, so the mass-balance left-hand side should differentiate the amount V[AMM].",
+   "quote": "The mass balances for lactate and ammonia are",
+   "basis": "stated",
+   "checks": [],
+   "status": "proposed"
+  },
+  "27": {
+   "action": "correct",
+   "printed_latex": "$$ \\frac{d([{M A}b])}{d t}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{{M A}b}V X_{\\nu}-F_{{o u t}}[{M A}b], $$",
+   "corrected_latex": "$$ \\frac{d(V[MAb])}{dt}=(\\gamma_{2}-\\gamma_{1}\\mu)Q_{MAb}V X_{\\nu}-F_{out}[MAb], $$",
+   "reason": "The production and outlet terms are amount rates, so the balance left-hand side should differentiate the amount V[MAb].",
+   "quote": null,
+   "basis": "inferred",
+   "checks": [],
+   "status": "proposed"
+  }
+ },
+ "misreads": {
+  "6": {
+   "printed_latex": "$$ f_{i n h}=\\left(\\frac{K I_{l a c}}{K I_{l a c}+[L A C]}\\right)\\left(\\frac{K I_{a m m}}{K I_{a m m}+[A M M]}\\right). $$",
+   "corrected_latex": "$$ f_{i n h}=\\left(\\frac{K_{I l a c}}{K_{I l a c}+[L A C]}\\right)\\left(\\frac{K_{I a m m}}{K_{I a m m}+[A M M]}\\right). $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 6: KI_lac read as K times I_lac (table 1 prints KI_{lac}); written K_{Ilac} as in gold_laws.json; eq 6: KI_amm read as K times I_amm; written K_{Iamm}",
+   "basis": "human",
+   "note": "The OCR read KI_lac and KI_amm (one constant each) as K times I_lac and K times I_amm."
+  },
+  "8": {
+   "printed_latex": "$$ \\frac{(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C], $$",
+   "corrected_latex": "$$ \\frac{d(V[G L C])}{d t}=-Q_{g l c}V X_{\\nu}+F_{i n}[G L C]_{i n}-F_{o u t}[G L C], $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 8: the d of d(V[GLC])/dt was not read",
+   "basis": "human",
+   "note": "The OCR dropped the d in d(V[GLC])/dt."
+  },
+  "24": {
+   "printed_latex": "$$ \\frac{d[|H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]. $$",
+   "corrected_latex": "$$ \\frac{d[H_{2}L]}{d t}=2K_{A}[H_{2}][L]-K_{A}[H_{2}L][L]. $$",
+   "reason": "The OCR misread this equation; the corrected reading was checked against the PDF. eq 24: stray | in [H_2L]",
+   "basis": "human",
+   "note": "The OCR added a stray | inside [H_2L]."
+  }
+ }
+}

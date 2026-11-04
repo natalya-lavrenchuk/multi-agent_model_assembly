@@ -1,0 +1,656 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": false,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "F_{in}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "In mass balance equations it appears as an inlet flow rate, which is a manipulated or set‑point quantity supplied from outside the model.",
+   "llm": {
+    "symbol": "F_{in}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "In mass balance equations it appears as an inlet flow rate, which is a manipulated or set‑point quantity supplied from outside the model."
+   }
+  },
+  "F_{out}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears as the outlet flow rate in the balances; flow rates are external control variables, not model parameters.",
+   "llm": {
+    "symbol": "F_{out}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears as the outlet flow rate in the balances; flow rates are external control variables, not model parameters."
+   }
+  },
+  "I_{amm}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Used in a denominator of a Monod‑type inhibition term; such inhibition constants are normally estimated from experimental data.",
+   "llm": {
+    "symbol": "I_{amm}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Used in a denominator of a Monod‑type inhibition term; such inhibition constants are normally estimated from experimental data."
+   }
+  },
+  "I_{lac}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Appears in a denominator of a Monod‑type inhibition term; conventionally a fitted saturation/inhibition constant.",
+   "llm": {
+    "symbol": "I_{lac}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Appears in a denominator of a Monod‑type inhibition term; conventionally a fitted saturation/inhibition constant."
+   }
+  },
+  "K": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The paper explicitly defines K as the mRNA decay rate, a kinetic parameter that is typically estimated from data.",
+   "llm": {
+    "symbol": "K",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 49,
+    "quote": "K heavy- and light-chain mRNA decay rate (h $ ^{-1} $)",
+    "reason": "The paper explicitly defines K as the mRNA decay rate, a kinetic parameter that is typically estimated from data."
+   }
+  },
+  "K_{A}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "K $ _{A} $ assembly rate constant (cell/molecule/h)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The paper states K_A as an assembly rate constant; such kinetic constants are generally estimated during model fitting.",
+   "llm": {
+    "symbol": "K_{A}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 50,
+    "quote": "K $ _{A} $ assembly rate constant (cell/molecule/h)",
+    "reason": "The paper states K_A as an assembly rate constant; such kinetic constants are generally estimated during model fitting."
+   }
+  },
+  "K_{ER}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Rate constant for ER-to-Golgi transport; kinetic constants are typically estimated by fitting model to experimental data.",
+   "llm": {
+    "symbol": "K_{ER}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Rate constant for ER-to-Golgi transport; kinetic constants are typically estimated by fitting model to experimental data."
+   }
+  },
+  "K_{G}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Rate constant for Golgi-to-medium antibody transport; such kinetic parameters are usually obtained by parameter estimation.",
+   "llm": {
+    "symbol": "K_{G}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Rate constant for Golgi-to-medium antibody transport; such kinetic parameters are usually obtained by parameter estimation."
+   }
+  },
+  "K_{d,amm}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Ammonia constant for cell death; death‑rate constants are generally fitted to growth/death data.",
+   "llm": {
+    "symbol": "K_{d,amm}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Ammonia constant for cell death; death‑rate constants are generally fitted to growth/death data."
+   }
+  },
+  "K_{dgln}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Constant for glutamine degradation; degradation rate constants are normally estimated during model calibration.",
+   "llm": {
+    "symbol": "K_{dgln}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Constant for glutamine degradation; degradation rate constants are normally estimated during model calibration."
+   }
+  },
+  "K_{glc}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Monod constant for glucose; saturation constants are conventionally treated as estimable kinetic parameters.",
+   "llm": {
+    "symbol": "K_{glc}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Monod constant for glucose; saturation constants are conventionally treated as estimable kinetic parameters."
+   }
+  },
+  "K_{gln}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Monod constant for glutamine; like other saturation constants, it is typically estimated from experimental data.",
+   "llm": {
+    "symbol": "K_{gln}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Monod constant for glutamine; like other saturation constants, it is typically estimated from experimental data."
+   }
+  },
+  "N_{H}": {
+   "class": "parameter",
+   "fixed": true,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Gene copy number is a design property of the cell line, known a priori and not fitted during model calibration; conventionally treated as a fixed parameter.",
+   "llm": {
+    "symbol": "N_{H}",
+    "class": "parameter",
+    "fixed": true,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Gene copy number is a design property of the cell line, known a priori and not fitted during model calibration; conventionally treated as a fixed parameter."
+   }
+  },
+  "N_{L}": {
+   "class": "parameter",
+   "fixed": true,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Gene copy number is a design property of the cell line, known a priori and not fitted during model calibration; conventionally treated as a fixed parameter.",
+   "llm": {
+    "symbol": "N_{L}",
+    "class": "parameter",
+    "fixed": true,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Gene copy number is a design property of the cell line, known a priori and not fitted during model calibration; conventionally treated as a fixed parameter."
+   }
+  },
+  "S_{H}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Specific transcription rate is a kinetic parameter that is typically estimated by fitting model to expression data; conventionally an estimable parameter.",
+   "llm": {
+    "symbol": "S_{H}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Specific transcription rate is a kinetic parameter that is typically estimated by fitting model to expression data; conventionally an estimable parameter."
+   }
+  },
+  "S_{L}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Specific transcription rate is a kinetic parameter that is typically estimated by fitting model to expression data; conventionally an estimable parameter.",
+   "llm": {
+    "symbol": "S_{L}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Specific transcription rate is a kinetic parameter that is typically estimated by fitting model to expression data; conventionally an estimable parameter."
+   }
+  },
+  "T_{H}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Specific translation rate is a kinetic parameter that is usually obtained by fitting to protein production data; conventionally an estimable parameter.",
+   "llm": {
+    "symbol": "T_{H}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Specific translation rate is a kinetic parameter that is usually obtained by fitting to protein production data; conventionally an estimable parameter."
+   }
+  },
+  "T_{L}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Specific translation rate is a kinetic parameter that is usually obtained by fitting to protein production data; conventionally an estimable parameter.",
+   "llm": {
+    "symbol": "T_{L}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Specific translation rate is a kinetic parameter that is usually obtained by fitting to protein production data; conventionally an estimable parameter."
+   }
+  },
+  "Y_{amm,gln}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The paper explicitly states this yield is an estimated parameter, indicating it is fitted to data. [quote not found in the cited snippet]",
+   "llm": {
+    "symbol": "Y_{amm,gln}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 189,
+    "quote": "The confidence intervals of the estimated parameters are satisfactory, with the 95% confidence intervals falling within  ±10% of the final value for all parameters except  Y_{amm,gln} ( ±17% ).",
+    "reason": "The paper explicitly states this yield is an estimated parameter, indicating it is fitted to data."
+   }
+  },
+  "Y_{lac,glc}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Y _{lac,glc} yield of lactate from glucose (mmol/mmol)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Listed among yields that were found/estimated; yields are model parameters that are typically estimated from experimental data.",
+   "llm": {
+    "symbol": "Y_{lac,glc}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 65,
+    "quote": "Y _{lac,glc} yield of lactate from glucose (mmol/mmol)",
+    "reason": "Listed among yields that were found/estimated; yields are model parameters that are typically estimated from experimental data."
+   }
+  },
+  "Y_{x,glc}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Y _{x,glc} yield of cells on glucose (cell/mmol)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Identified as a yield parameter; such yields are normally estimated during model calibration.",
+   "llm": {
+    "symbol": "Y_{x,glc}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 66,
+    "quote": "Y _{x,glc} yield of cells on glucose (cell/mmol)",
+    "reason": "Identified as a yield parameter; such yields are normally estimated during model calibration."
+   }
+  },
+  "Y_{x,gln}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Y _{x,gln} yield of cells on glutamine (cell/mmol)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Identified as a yield parameter; these are estimated parameters in the kinetic model.",
+   "llm": {
+    "symbol": "Y_{x,gln}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 67,
+    "quote": "Y _{x,gln} yield of cells on glutamine (cell/mmol)",
+    "reason": "Identified as a yield parameter; these are estimated parameters in the kinetic model."
+   }
+  },
+  "[GLC]_{in}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Inlet glucose concentration is a feed condition supplied to the bioreactor; such feed concentrations are controlled inputs that may vary between runs, thus classified as a variable.",
+   "llm": {
+    "symbol": "[GLC]_{in}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Inlet glucose concentration is a feed condition supplied to the bioreactor; such feed concentrations are controlled inputs that may vary between runs, thus classified as a variable."
+   }
+  },
+  "[GLN]_{in}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Inlet glutamine concentration is a feed condition supplied to the system; it is a controllable input and therefore a variable.",
+   "llm": {
+    "symbol": "[GLN]_{in}",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Inlet glutamine concentration is a feed condition supplied to the system; it is a controllable input and therefore a variable."
+   }
+  },
+  "[H_2L]": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Concentration of an intermediate complex appears as a state variable in differential equations; such species are model variables that evolve over time and are not supplied externally.",
+   "llm": {
+    "symbol": "[H_2L]",
+    "class": "variable",
+    "fixed": null,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Concentration of an intermediate complex appears as a state variable in differential equations; such species are model variables that evolve over time and are not supplied externally."
+   }
+  },
+  "\\alpha_{1}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "α_{1}, α_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The paper explicitly calls α_{1} a constant of the glutamine maintenance coefficient; constants that are not universal physical constants are treated as estimable model parameters.",
+   "llm": {
+    "symbol": "α_{1}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 69,
+    "quote": "α_{1}, α_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "reason": "The paper explicitly calls α_{1} a constant of the glutamine maintenance coefficient; constants that are not universal physical constants are treated as estimable model parameters."
+   }
+  },
+  "\\alpha_{2}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "α_{1}, α_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Same reasoning as α_{1}; α_{2} is a constant specific to the kinetic expression and is therefore an estimable parameter.",
+   "llm": {
+    "symbol": "α_{2}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 69,
+    "quote": "α_{1}, α_{2} constants of glutamine maintenance coefficient (mM L/cell/h and mM, respectively)",
+    "reason": "Same reasoning as α_{1}; α_{2} is a constant specific to the kinetic expression and is therefore an estimable parameter."
+   }
+  },
+  "\\gamma_{1}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "γ_{1} constant for antibody production (h)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Described as a constant related to antibody production; such kinetic constants are typically estimated from experimental data.",
+   "llm": {
+    "symbol": "γ_{1}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 70,
+    "quote": "γ_{1} constant for antibody production (h)",
+    "reason": "Described as a constant related to antibody production; such kinetic constants are typically estimated from experimental data."
+   }
+  },
+  "\\gamma_{2}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "γ_{2} constant for antibody production (dimensionless)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Identified as a constant for antibody production; like γ_{1}, it is a model parameter that is usually estimated.",
+   "llm": {
+    "symbol": "γ_{2}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 71,
+    "quote": "γ_{2} constant for antibody production (dimensionless)",
+    "reason": "Identified as a constant for antibody production; like γ_{1}, it is a model parameter that is usually estimated."
+   }
+  },
+  "\\lambda": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "λ appears multiplicatively in a rate expression (Q_{MAb}=ε_{2} λ K_{G}[H_{2}L_{2}]_{G}); such scaling factors are model parameters and, lacking explicit literature values, are treated as estimable.",
+   "llm": {
+    "symbol": "λ",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "λ appears multiplicatively in a rate expression (Q_{MAb}=ε_{2} λ K_{G}[H_{2}L_{2}]_{G}); such scaling factors are model parameters and, lacking explicit literature values, are treated as estimable."
+   }
+  },
+  "\\mu_{d,max}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "maximum specific growth rate (h ^{-1})",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The paper explicitly describes mu_d,max as the maximum specific growth rate, which is a kinetic parameter typically estimated by fitting to experimental data.",
+   "llm": {
+    "symbol": "mu_d,max",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 74,
+    "quote": "maximum specific growth rate (h ^{-1})",
+    "reason": "The paper explicitly describes mu_d,max as the maximum specific growth rate, which is a kinetic parameter typically estimated by fitting to experimental data."
+   }
+  },
+  "\\mu_{max}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "maximum specific growth rate (h ^{-1})",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The paper explicitly defines mu_max as the maximum specific growth rate, a kinetic parameter that is normally obtained by fitting model predictions to observed growth data.",
+   "llm": {
+    "symbol": "mu_max",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 75,
+    "quote": "maximum specific growth rate (h ^{-1})",
+    "reason": "The paper explicitly defines mu_max as the maximum specific growth rate, a kinetic parameter that is normally obtained by fitting model predictions to observed growth data."
+   }
+  },
+  "\\varepsilon_{1}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "ER glycosylation efficiency factor (dimensionless)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Epsilon_1 is described as an efficiency factor; such factors are model constants that are usually estimated from experimental calibration rather than known a priori.",
+   "llm": {
+    "symbol": "epsilon_1",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 72,
+    "quote": "ER glycosylation efficiency factor (dimensionless)",
+    "reason": "Epsilon_1 is described as an efficiency factor; such factors are model constants that are usually estimated from experimental calibration rather than known a priori."
+   }
+  },
+  "\\varepsilon_{2}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Golgi apparatus glycosylation efficiency factor (dimensionless)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "Epsilon_2 is an efficiency factor for the Golgi apparatus; like other efficiency factors, its value is typically obtained by fitting the model to data.",
+   "llm": {
+    "symbol": "epsilon_2",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 73,
+    "quote": "Golgi apparatus glycosylation efficiency factor (dimensionless)",
+    "reason": "Epsilon_2 is an efficiency factor for the Golgi apparatus; like other efficiency factors, its value is typically obtained by fitting the model to data."
+   }
+  },
+  "m_{glc}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "maintenance coefficient of glucose (mmol/cell/h)",
+   "page": 2,
+   "status": "accepted",
+   "reason": "The maintenance coefficient is a kinetic parameter that is normally estimated from experimental measurements of substrate consumption and growth.",
+   "llm": {
+    "symbol": "m_glc",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 59,
+    "quote": "maintenance coefficient of glucose (mmol/cell/h)",
+    "reason": "The maintenance coefficient is a kinetic parameter that is normally estimated from experimental measurements of substrate consumption and growth."
+   }
+  },
+  "n": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "n appears as an exponent in a Hill-type inhibition term; such exponents are conventionally treated as fitted (estimable) parameters in mechanistic growth models.",
+   "llm": {
+    "symbol": "n",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "n appears as an exponent in a Hill-type inhibition term; such exponents are conventionally treated as fitted (estimable) parameters in mechanistic growth models."
+   }
+  }
+ }
+}

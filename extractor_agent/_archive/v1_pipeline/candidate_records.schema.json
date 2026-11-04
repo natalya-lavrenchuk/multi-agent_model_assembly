@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Extractor candidate records",
+  "description": "Paper-local candidates emitted by the extractor. NOT graph nodes. The assembler resolves these against the existing graph and produces Turtle. Symbols stay in the paper's own notation.",
+
+  "$defs": {
+
+    "span": {
+      "type": "object",
+      "description": "Where in the paper this came from. Required on every extracted value.",
+      "properties": {
+        "text":    { "type": "string", "description": "Verbatim sentence, copied not paraphrased." },
+        "locator": { "type": "string", "description": "Section or page as printed in the paper." }
+      },
+      "required": ["text", "locator"],
+      "additionalProperties": false
+    },
+
+    "justification": {
+      "type": "object",
+      "description": "Extracted means a sentence says it. Inferred means the model reasoned it. Different gates apply.",
+      "oneOf": [
+        {
+          "properties": {
+            "kind": { "const": "extracted" },
+            "span": { "$ref": "#/$defs/span" }
+          },
+          "required": ["kind", "span"],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "kind":        { "const": "inferred" },
+            "rationale":   { "type": "string" },
+            "grounded_in": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "local_ids of other candidates this was reasoned from. EMPTY ARRAY = auto-flag."
+            }
+          },
+          "required": ["kind", "rationale", "grounded_in"],
+          "additionalProperties": false
+        }
+      ]
+    },
+
+    "quantity_candidate": {
+      "type": "object",
+      "description": "PASS 1. One per symbol in the paper's nomenclature.",
+      "properties": {
+        "local_id":      { "type": "string", "description": "Unique within this paper only." },
+        "symbol":        { "type": "string", "description": "As printed. Do not normalise." },
+        "description":   { "type": "string", "description": "What the paper says it is, in the paper's words." },
+        "unit_string":   { "type": ["string", "null"], "description": "As printed, e.g. 'g L-1 h-1'. null if the paper gives none." },
+        "quantity_class": {
+          "enum": ["StateQuantity", "RateQuantity", "Parameter", "Constant", "ControlQuantity"],
+          "description": "How the number is obtained. StateQuantity is integrated; RateQuantity is computed by a law; Parameter is fitted to data; Constant is looked up; ControlQuantity is set by the operator."
+        },
+        "index_over":    {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Index set names if the symbol is subscripted over a set, e.g. ['species']. Empty if scalar."
+        },
+        "justification": { "$ref": "#/$defs/justification" }
+      },
+      "required": ["local_id", "symbol", "description", "unit_string", "quantity_class", "index_over", "justification"],
+      "additionalProperties": false
+    },
+
+    "law_candidate": {
+      "type": "object",
+      "description": "PASS 2. One per governing equation.",
+      "properties": {
+        "local_id":     { "type": "string" },
+        "formula":      { "type": "string", "description": "SymPy-parseable infix string. Use the paper's symbols. No LaTeX, no MathML." },
+        "law_class":    { "enum": ["RateLaw", "BalanceLaw"] },
+        "computes":     { "type": "string", "description": "local_id of the quantity on the left-hand side." },
+        "uses":         { "type": "array", "items": { "type": "string" }, "description": "local_ids of every quantity appearing on the right-hand side." },
+        "phenomenon":   { "type": "string", "description": "What the equation explains, in the paper's terms." },
+        "name_in_paper":{ "type": ["string", "null"], "description": "e.g. 'Monod equation'. null if unnamed." },
+        "justification":{ "$ref": "#/$defs/justification" }
+      },
+      "required": ["local_id", "formula", "law_class", "computes", "uses", "phenomenon", "name_in_paper", "justification"],
+      "additionalProperties": false
+    },
+
+    "role_binding_candidate": {
+      "type": "object",
+      "description": "PASS 3. Which symbol in a formula plays which semantic part.",
+      "properties": {
+        "law":           { "type": "string", "description": "local_id of the law." },
+        "symbol":        { "type": "string", "description": "The subscript or index in the formula, e.g. 'S' in C_S." },
+        "role":          { "type": "string", "description": "Role name. Must bind to an existing role or be marked as a proposal." },
+        "is_new_role":   { "type": "boolean", "description": "True if no existing role fits. ALWAYS reviewed by a human." },
+        "justification": { "$ref": "#/$defs/justification" }
+      },
+      "required": ["law", "symbol", "role", "is_new_role", "justification"],
+      "additionalProperties": false
+    },
+
+    "scope_condition_candidate": {
+      "type": "object",
+      "description": "PASS 4. ONE atomic condition. Never fuse several into one record.",
+      "properties": {
+        "law":            { "type": "string", "description": "local_id of the law this constrains." },
+        "condition_type": { "enum": ["descriptor", "role_required"] },
+        "target":         { "type": "string", "description": "Descriptor name, or role name if condition_type is role_required." },
+        "is_new_target":  { "type": "boolean", "description": "True if no existing descriptor or role fits. ALWAYS reviewed by a human." },
+        "operator":       { "enum": ["=", "!=", "<", "<=", ">", ">=", null] },
+        "value":          { "type": ["string", "null"], "description": "null for role_required." },
+        "severity": {
+          "enum": ["blocking", "warning"],
+          "description": "blocking: if this cannot be evaluated the law is UNDETERMINED, not admissible. warning: the law still applies but less well."
+        },
+        "justification":  { "$ref": "#/$defs/justification" }
+      },
+      "required": ["law", "condition_type", "target", "is_new_target", "operator", "value", "severity", "justification"],
+      "additionalProperties": false
+    }
+  },
+
+  "type": "object",
+  "properties": {
+    "paper_id":   { "type": "string", "description": "DOI." },
+    "pass":       { "enum": [1, 2, 3, 4] },
+    "produced_by": {
+      "type": "object",
+      "description": "Recorded per run, not per record. A degraded decoding tier must never be silent.",
+      "properties": {
+        "model":         { "type": "string" },
+        "decoding_tier": { "type": "string", "description": "The tier that actually served this call, e.g. json_schema:strict | json_object | free_text." },
+        "prompt_version":{ "type": "string" }
+      },
+      "required": ["model", "decoding_tier", "prompt_version"],
+      "additionalProperties": false
+    },
+    "quantities":       { "type": "array", "items": { "$ref": "#/$defs/quantity_candidate" } },
+    "laws":             { "type": "array", "items": { "$ref": "#/$defs/law_candidate" } },
+    "role_bindings":    { "type": "array", "items": { "$ref": "#/$defs/role_binding_candidate" } },
+    "scope_conditions": { "type": "array", "items": { "$ref": "#/$defs/scope_condition_candidate" } }
+  },
+  "required": ["paper_id", "pass", "produced_by"],
+  "additionalProperties": false
+}

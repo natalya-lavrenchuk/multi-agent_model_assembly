@@ -1,0 +1,422 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "tables_shown": true,
+ "duplicate_answers": [],
+ "extra_answers": [],
+ "symbols": {
+  "DOT^{*}": {
+   "class": "parameter",
+   "fixed": true,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Saturation dissolved oxygen is a physical property set by operating conditions and not fitted; treated as a fixed parameter.",
+   "llm": {
+    "symbol": "DOT^{*}",
+    "class": "parameter",
+    "fixed": true,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Saturation dissolved oxygen is a physical property set by operating conditions and not fitted; treated as a fixed parameter."
+   }
+  },
+  "F": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "stated",
+   "quote": "the feed F (which can be constant or a function of time)",
+   "page": 4,
+   "status": "accepted",
+   "reason": "Feed flow rate is supplied or manipulated during the run.",
+   "llm": {
+    "symbol": "F",
+    "class": "variable",
+    "fixed": null,
+    "basis": "stated",
+    "snippet_id": 150,
+    "quote": "the feed F (which can be constant or a function of time)",
+    "reason": "Feed flow rate is supplied or manipulated during the run."
+   }
+  },
+  "H": {
+   "class": "parameter",
+   "fixed": true,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Henry equilibrium constant is a physical constant, not estimated from data.",
+   "llm": {
+    "symbol": "H",
+    "class": "parameter",
+    "fixed": true,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Henry equilibrium constant is a physical constant, not estimated from data."
+   }
+  },
+  "K_{La}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "Volumetric mass transfer coefficient is typically obtained by fitting to oxygen transfer data.",
+   "llm": {
+    "symbol": "K_{La}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "Volumetric mass transfer coefficient is typically obtained by fitting to oxygen transfer data."
+   }
+  },
+  "K_{ap}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Estimate: 0.5052",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The paper provides an estimated value, indicating it is an estimable kinetic parameter.",
+   "llm": {
+    "symbol": "K_{ap}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 193,
+    "quote": "Estimate: 0.5052",
+    "reason": "The paper provides an estimated value, indicating it is an estimable kinetic parameter."
+   }
+  },
+  "K_{ia}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Estimate: 1.2399",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The paper provides an estimated value, indicating it is an estimable kinetic parameter.",
+   "llm": {
+    "symbol": "K_{ia}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 197,
+    "quote": "Estimate: 1.2399",
+    "reason": "The paper provides an estimated value, indicating it is an estimable kinetic parameter."
+   }
+  },
+  "K_{is}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "were qAmax, Kis, and Ksa are constant parameters representing the maximum acetate uptake rate, the acetate uptake inhibition, and acetate affinity constant.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The paper explicitly calls K_{is} a constant parameter and provides an estimated value, indicating it is estimated from data.",
+   "llm": {
+    "symbol": "K_{is}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 171,
+    "quote": "were qAmax, Kis, and Ksa are constant parameters representing the maximum acetate uptake rate, the acetate uptake inhibition, and acetate affinity constant.",
+    "reason": "The paper explicitly calls K_{is} a constant parameter and provides an estimated value, indicating it is estimated from data."
+   }
+  },
+  "K_{o}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ K_{{o}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 10.0 | Estimate: 0.0001",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The table lists an estimate for K_{o}, showing it is a fitted (estimable) parameter.",
+   "llm": {
+    "symbol": "K_{o}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 195,
+    "quote": "Parameter  $ ^{{a}} $: $ K_{{o}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 10.0 | Estimate: 0.0001",
+    "reason": "The table lists an estimate for K_{o}, showing it is a fitted (estimable) parameter."
+   }
+  },
+  "K_{p}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "were  $ K_p = \\frac{1}{\\tau} $ is the static gain of the sensor given as the inverse of the probe response time, t.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "K_{p} is defined from a sensor characteristic and is treated as a constant parameter; its value is derived from equipment response time, not fitted, but because it is obtained from calibration it is considered estimable rather than universally fixed.",
+   "llm": {
+    "symbol": "K_{p}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 179,
+    "quote": "were  $ K_p = \\frac{1}{\\tau} $ is the static gain of the sensor given as the inverse of the probe response time, t.",
+    "reason": "K_{p} is defined from a sensor characteristic and is treated as a constant parameter; its value is derived from equipment response time, not fitted, but because it is obtained from calibration it is considered estimable rather than universally fixed."
+   }
+  },
+  "K_{sa}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ K_{{sa}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0134",
+   "page": 5,
+   "status": "accepted",
+   "reason": "The table provides an estimated value for K_{sa}, indicating it is an estimable kinetic parameter.",
+   "llm": {
+    "symbol": "K_{sa}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 194,
+    "quote": "Parameter  $ ^{{a}} $: $ K_{{sa}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0134",
+    "reason": "The table provides an estimated value for K_{sa}, indicating it is an estimable kinetic parameter."
+   }
+  },
+  "K_{s}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ K_{{s}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0370",
+   "page": 5,
+   "status": "accepted",
+   "reason": "K_{s} is listed with an estimate, showing it is a fitted (estimable) parameter.",
+   "llm": {
+    "symbol": "K_{s}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 196,
+    "quote": "Parameter  $ ^{{a}} $: $ K_{{s}} $ | Units: gL $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.05 | Estimate: 0.0370",
+    "reason": "K_{s} is listed with an estimate, showing it is a fitted (estimable) parameter."
+   }
+  },
+  "P_{Amax}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "where  $ K_{0} $ is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation, P $ _{Amax} $ and  $ K_{ap} $ are the maximum acetate production and the production affinity constants.",
+   "page": 4,
+   "status": "accepted",
+   "reason": "The text describes P_{Amax} as a maximum acetate production constant, a kinetic parameter that is estimated during model calibration.",
+   "llm": {
+    "symbol": "P_{Amax}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 166,
+    "quote": "where  $ K_{0} $ is a dimensionless constant set to 0.1 to increase the stability of the numeric simulation, P $ _{Amax} $ and  $ K_{ap} $ are the maximum acetate production and the production affinity constants.",
+    "reason": "The text describes P_{Amax} as a maximum acetate production constant, a kinetic parameter that is estimated during model calibration."
+   }
+  },
+  "S_{i}": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "stated",
+   "quote": "where  $ S_i $ represents the glucose concentration in the feed solution (300 g/L)",
+   "page": 3,
+   "status": "accepted",
+   "reason": "S_i is described as the glucose concentration in the feed, i.e., an inlet concentration supplied from outside the model.",
+   "llm": {
+    "symbol": "S_i",
+    "class": "variable",
+    "fixed": null,
+    "basis": "stated",
+    "snippet_id": 108,
+    "quote": "where  $ S_i $ represents the glucose concentration in the feed solution (300 g/L)",
+    "reason": "S_i is described as the glucose concentration in the feed, i.e., an inlet concentration supplied from outside the model."
+   }
+  },
+  "V": {
+   "class": "variable",
+   "fixed": null,
+   "basis": "stated",
+   "quote": "Using the biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as",
+   "page": 3,
+   "status": "accepted",
+   "reason": "V is the reactor broth volume, which changes during a run and is supplied/updated externally.",
+   "llm": {
+    "symbol": "V",
+    "class": "variable",
+    "fixed": null,
+    "basis": "stated",
+    "snippet_id": 107,
+    "quote": "Using the biomass concentration (X, g/L) and broth volume (V, L) at the end of the batch phase, the exponential feed rate (F, L/h) was calculated as",
+    "reason": "V is the reactor broth volume, which changes during a run and is supplied/updated externally."
+   }
+  },
+  "Y_{as}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ Y_{{as}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.80 | Estimate: 0.9097",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Y_as appears in a parameter table with an initial guess and an estimated value, indicating it is an estimable kinetic yield coefficient.",
+   "llm": {
+    "symbol": "Y_{as}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 203,
+    "quote": "Parameter  $ ^{{a}} $: $ Y_{{as}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.80 | Estimate: 0.9097",
+    "reason": "Y_as appears in a parameter table with an initial guess and an estimated value, indicating it is an estimable kinetic yield coefficient."
+   }
+  },
+  "Y_{em}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ Y_{{em}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.50 | Estimate: 0.5333",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Y_em is listed in the parameter table with an estimate, so it is an estimable parameter.",
+   "llm": {
+    "symbol": "Y_{em}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 206,
+    "quote": "Parameter  $ ^{{a}} $: $ Y_{{em}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 0.50 | Estimate: 0.5333",
+    "reason": "Y_em is listed in the parameter table with an estimate, so it is an estimable parameter."
+   }
+  },
+  "Y_{oa}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ Y_{{oa}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 0.5440",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Y_oa appears in the parameter table with an estimated value, making it an estimable parameter.",
+   "llm": {
+    "symbol": "Y_{oa}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 204,
+    "quote": "Parameter  $ ^{{a}} $: $ Y_{{oa}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 0.5440",
+    "reason": "Y_oa appears in the parameter table with an estimated value, making it an estimable parameter."
+   }
+  },
+  "Y_{os}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "stated",
+   "quote": "Parameter  $ ^{{a}} $: $ Y_{{os}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 1.5620",
+   "page": 5,
+   "status": "accepted",
+   "reason": "Y_os is provided in the parameter table with an estimate, indicating it is an estimable parameter.",
+   "llm": {
+    "symbol": "Y_{os}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 207,
+    "quote": "Parameter  $ ^{{a}} $: $ Y_{{os}} $ | Units: gg $ ^{-1} $ | Initial guess (literature) $ ^{{b}} $: 1.06 | Estimate: 1.5620",
+    "reason": "Y_os is provided in the parameter table with an estimate, indicating it is an estimable parameter."
+   }
+  },
+  "Y_{xa}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The table explicitly lists Y_{xa} as a parameter with an estimated value, indicating it is fitted to data. [quote not found in the paper]",
+   "llm": {
+    "symbol": "Y_{xa}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 205,
+    "quote": "Parameter ... Y_{xa} ... Estimate: 0.5718",
+    "reason": "The table explicitly lists Y_{xa} as a parameter with an estimated value, indicating it is fitted to data."
+   }
+  },
+  "Y_{xsof}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The table identifies Y_{xsof} as a parameter and provides an estimate, showing it is an estimable kinetic yield. [quote not found in the paper]",
+   "llm": {
+    "symbol": "Y_{xsof}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 208,
+    "quote": "Parameter ... Y_{xsof} ... Estimate: 0.2268",
+    "reason": "The table identifies Y_{xsof} as a parameter and provides an estimate, showing it is an estimable kinetic yield."
+   }
+  },
+  "q_{Amax}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The table lists q_{Amax} as a parameter with an estimated value, meaning it is obtained by fitting. [quote not found in the paper]",
+   "llm": {
+    "symbol": "q_{Amax}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 200,
+    "quote": "Parameter ... q_{Amax} ... Estimate: 0.1148",
+    "reason": "The table lists q_{Amax} as a parameter with an estimated value, meaning it is obtained by fitting."
+   }
+  },
+  "q_{m}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "The table presents q_{m} as a parameter with an estimate, indicating it is an estimable maintenance coefficient. [quote not found in the paper]",
+   "llm": {
+    "symbol": "q_{m}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "stated",
+    "snippet_id": 201,
+    "quote": "Parameter ... q_{m} ... Estimate: 0.0129",
+    "reason": "The table presents q_{m} as a parameter with an estimate, indicating it is an estimable maintenance coefficient."
+   }
+  },
+  "q_{smax}": {
+   "class": "parameter",
+   "fixed": false,
+   "basis": "inferred",
+   "quote": null,
+   "page": null,
+   "status": "pending",
+   "reason": "q_{smax} appears as the maximum substrate uptake rate in a Monod-type expression; such saturation constants are conventionally fitted to experimental data, so it is treated as an estimable parameter.",
+   "llm": {
+    "symbol": "q_{smax}",
+    "class": "parameter",
+    "fixed": false,
+    "basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "reason": "q_{smax} appears as the maximum substrate uptake rate in a Monod-type expression; such saturation constants are conventionally fitted to experimental data, so it is treated as an estimable parameter."
+   }
+  }
+ }
+}

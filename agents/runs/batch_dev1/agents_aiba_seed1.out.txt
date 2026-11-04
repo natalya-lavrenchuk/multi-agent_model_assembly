@@ -1,0 +1,56 @@
+/Users/natalya/Documents/Data_Science_Masters/Thesis/.venv/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  hypothesis agent: 4251 in, 1109 out (effort high, answer limit 32000)
+  eq 18: cached
+  modeler agent (asprey_2000_contois_kinetics eq 18): cached
+  round 1: [8] fitting (limit 300 s)...
+  round 1: [8] asprey_2000_contois_kinetics eq 18: chi2 751
+  eq 17: cached
+  modeler agent (asprey_2000_monod_kinetics eq 17): cached
+  round 1: [9] fitting (limit 300 s)...
+  round 1: [9] asprey_2000_monod_kinetics eq 17: chi2 650
+  eq 6: cached
+  modeler agent (muloiwa_2020_free_laws eq 6): cached
+  round 1: [27] fitting (limit 300 s)...
+  round 1: [27] muloiwa_2020_free_laws eq 6: chi2 111
+  statistical agent: 1407 in, 1286 out (effort high, answer limit 32000)
+  statistical agent: search_again   C27 fits the data, but Ki and Ks are strongly anticorrelated (-0.953), so their effects are not separable; only 2 of 4 starts reached this fit. Search
+  hypothesis agent: 4499 in, 2747 out (effort high, answer limit 32000)
+  eq 11: cached
+  modeler agent (muloiwa_2020_free_laws eq 11): cached
+  round 2: [17] fitting (limit 300 s)...
+  round 2: [17] muloiwa_2020_free_laws eq 11: chi2 107
+  eq 16: cached
+  modeler agent (muloiwa_2020_free_laws eq 16): cached
+  round 2: [22] fitting (limit 300 s)...
+  round 2: [22] muloiwa_2020_free_laws eq 16: chi2 12346951
+  eq 8: cached
+  modeler agent (muloiwa_2020_free_laws eq 8): cached
+  round 2: [29] fitting (limit 300 s)...
+  round 2: [29] muloiwa_2020_free_laws eq 8: chi2 375
+  statistical agent: 2552 in, 297 out (effort high, answer limit 32000)
+  statistical agent: accept C17  Accept C17. Its rate law fits within the noise, and all parameters are estimated precisely (t-values above 1) with no reported strongly correlated pai
+  hypothesis agent (confirmation): 4415 in, 2195 out (effort high, answer limit 32000)
+  eq 12: cached
+  modeler agent (muloiwa_2020_free_laws eq 12): 446 in, 194 out (effort high, answer limit 32000)
+  round 3: [18] fitting (limit 300 s)...
+  round 3: [18] muloiwa_2020_free_laws eq 12: chi2 106
+  eq 13: cached
+  modeler agent (muloiwa_2020_free_laws eq 13): cached
+  round 3: [19] fitting (limit 300 s)...
+  round 3: [19] muloiwa_2020_free_laws eq 13: chi2 12442333
+  eq 15: cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  modeler agent (muloiwa_2020_free_laws eq 15): cached
+  round 3: [21] muloiwa_2020_free_laws eq 15: not built: x2 can go below zero: with x2 = 0 its rate of change is still negative (dx2/dt = -0.0146 at Xm=23.8, mumax=0.158, theta3=0.00151, u1=4.44, u2=0.0394, x1=0.00182; 30% of the points checked). The rate law does not vanish when x2 runs out (limiting behaviour)
+  statistical agent (confirmation): 3824 in, 2523 out (effort high, answer limit 32000)
+  confirmation: indistinguishable -> C17  (rule: indistinguishable -> C17)  Run a low-dilution fed-batch experiment using the glucose feed input u2 to span and sustain broth glucose concentrations across roughly 2–10 g/L, with
+decision: {"decision": "accept", "chosen": "C17", "feedback": "Accept C17. Its rate law fits within the noise, and all parameters are estimated precisely (t-values above 1) with no reported strongly correlated pairs. C27 also fits, but Ki and Ks are strongly correlated and therefore not separately identified. C17 has the higher Akaike weight among the candidates that qualify.", "reasoning": "C17 has chi2 106.8 below the 95% limit of 147.7 and t-values from 8.56 to 25.82. Although only 1 of 4 starting points reached this fit, the reported solution meets the acceptance criteria and has Akaike weight 0.897. The failed starts are a convergence caveat, not evidence of lack of fit or imprecise parameters."}
+confirmation: indistinguishable -> C17 | adequate: C17 muloiwa_2020_free_laws eq 11 (weight 0.61), C18 muloiwa_2020_free_laws eq 12 (weight 0.32), C27 muloiwa_2020_free_laws eq 6 (weight 0.07) | agent agrees with the rule: True
+experiment to separate them: Run a low-dilution fed-batch experiment using the glucose feed input u2 to span and sustain broth glucose concentrations across roughly 2–10 g/L, with denser sampling in the 3–8 g/L range. Measure biomass x1 and glucose x2 frequently, and infer specific growth rate from the biomass trajectory corrected for dilution. The rate laws predict different inhibition profiles over this range; in particular, C27 declines less sharply at high glucose, while C17 and C18 differ in their intermediate-to-high glucose response.
+final: {'model': 'C17', 'status': 'indistinguishable'}
+wrote /Users/natalya/Documents/Data_Science_Masters/Thesis/agents/runs/agents_aiba_seed1_confirm.json
+LLM: 7 calls (21394 in, 10351 out tokens), 21 answers from the cache

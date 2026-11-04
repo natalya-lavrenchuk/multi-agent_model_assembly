@@ -1,0 +1,162 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 3537,
+  "completion_tokens": 4173,
+  "total_tokens": 7710,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 3534,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3287,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: Dynamic crystallization moment model\n\nEquations:\n(12) G=k_{g}\\Delta C^{g}      <- \"nt, and $ r_{0} $ is the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\"\n(13) B=k_{b}\\Delta C^{b}      <- \"nt, and $ r_{0} $ is the crystal size at nucleation. B and G are the primary nucleation and growth rates respectively, which are described by power-law kinetics\"\n(21) C^{*}(T)=1.5846\\times10^{-5}T^{2}-9.0567\\times10^{-3}T+1.3066      <- \"ystallization of paracetamol (PCM) from water. The solubility of paracetamol in water (g PCM/g water) as a function of temperature (in K) is given by, $ ^{28} $\"\n\nSymbols:\n\nk_{g}   [NOT COMPUTED]\n  [281] (line, p.7) $ k_{g} $ = kinetic constant for growth rate\n  [94] (sentence, p.3) To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique.\n  [182] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1a (based on experiments S1–S5) | b: $ 1.29 \\pm 2.73 $ | $ \\ln(k_b) $: $ 6.49 \\pm 16.90 $ | g: - | $ -\\ln(k_g) $: -\n  [183] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1b (based on all experiments except F1–F4) | b: $ 2.71 \\pm 1.74 $ | $ \\ln(k_b) $: $ 2.81 \\pm 2.80 $ | g: - | $ -\\ln(k_g) $: -\n  [184] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 2a (estimating 2 param. based on S1–S5) | b: $ f=0.0070 \\pm 0.0350 $ | $ \\ln(k_b) $: $ \\ln[(b+1)\\varphi_{het}] = -16.03 \\pm 208.9 $ | g: - | $ -\\ln(k_g) $: -\n\n\\Delta C   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\ng   [NOT COMPUTED]\n  [259] (sentence, p.7) where  $ q = 1/(b + 1) - 3/(g + b + 2) + 3/(2g + b + 3) - 1/(3g + b + 4) $.\n  [276] (line, p.7) g = kinetic parameter (exponent) for growth\n  [94] (sentence, p.3) To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique.\n  [134] (table_row, p.4) Table 1. Experimental Conditions and Measured Data: exp.: S1 | $ \\beta $ (°C/h): 3.8 | $ C_i $ (g/g water): 0.030 | $ \\Delta T_{max} $ (°C): 2.3 | $ L_d $ ( $ \\mu $m): 9.5\n  [135] (table_row, p.4) Table 1. Experimental Conditions and Measured Data: exp.: S2 | $ \\beta $ (°C/h): 3.4 | $ C_i $ (g/g water): 0.015 | $ \\Delta T_{max} $ (°C): 5.3 | $ L_d $ ( $ \\mu $m): 18.4\n\nk_{b}   [NOT COMPUTED]\n  [55] (sentence, p.2) where  $ k_{b} $ and b are the kinetic parameters, whereas the primary mass nucleation rate ( $ B_{m} $) used in Nyvlts's approach can be expressed as,\n  [279] (line, p.7) $ k_{b} $ = kinetic constant for number nucleation rate\n  [94] (sentence, p.3) To estimate the four kinetic parameters $(k_b, b, k_g, g)$, the experimental data are fitted to the output of the model (concentration $C$ and moment ratios $\\mu_1/\\mu_0$, $\\mu_2/\\mu_0$, and $\\mu_3/\\mu_0$) by the nonlinear least-squares technique.\n  [182] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1a (based on experiments S1–S5) | b: $ 1.29 \\pm 2.73 $ | $ \\ln(k_b) $: $ 6.49 \\pm 16.90 $ | g: - | $ -\\ln(k_g) $: -\n  [183] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1b (based on all experiments except F1–F4) | b: $ 2.71 \\pm 1.74 $ | $ \\ln(k_b) $: $ 2.81 \\pm 2.80 $ | g: - | $ -\\ln(k_g) $: -\n\nb   [NOT COMPUTED]\n  [56] (sentence, p.2) where  $ k'_{b} $ is the kinetic parameter with respect to the mass nucleation rate,  $ k_{v} $ is the volume shape factor,  $ L_{d} $ is the size of the detectable nucleus, and  $ \\rho_{c} $ is the mass density of the crystal.\n  [259] (sentence, p.7) where  $ q = 1/(b + 1) - 3/(g + b + 2) + 3/(2g + b + 3) - 1/(3g + b + 4) $.\n  [266] (line, p.7) b = kinetic parameter (exponent) for nucleation\n  [182] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1a (based on experiments S1–S5) | b: $ 1.29 \\pm 2.73 $ | $ \\ln(k_b) $: $ 6.49 \\pm 16.90 $ | g: - | $ -\\ln(k_g) $: -\n  [183] (table_row, p.4) Table 2. Results of the Parameter Estimation Using Different Approaches (95% Confidence Le...: method: Method 1b (based on all experiments except F1–F4) | b: $ 2.71 \\pm 1.74 $ | $ \\ln(k_b) $: $ 2.81 \\pm 2.80 $ | g: - | $ -\\ln(k_g) $: -\n\nC^{*}   [COMPUTED by eq 21]\n  [58] (sentence, p.2) where  $ C^{*}(T) $ is the equilibrium concentration of the solute.\n  [69] (sentence, p.2) where  $ \\varphi_{\\mathrm{het}} $ is the heterogeneity factor,  $ D_{\\mathrm{AB}} $ is the diffusion coefficient,  $ C_{c} $ is the molar density of the crystal,  $ N_{A} $ is the Avogadro number, f is the reduction factor, and  $ S = C/C^{*} $ is the supersat\n  [77] (sentence, p.2) By combining eqs 6–9 at maximum supersaturation where  $ C^* = C_{\\text{met}}^* $ ( $ C^*_{\\text{met}} $ is the equilibrium concentration at the metastable limit), it is possible to estimate  $ \\varphi_{\\text{het}} $, b and f.\n  [134] (table_row, p.4) Table 1. Experimental Conditions and Measured Data: exp.: S1 | $ \\beta $ (°C/h): 3.8 | $ C_i $ (g/g water): 0.030 | $ \\Delta T_{max} $ (°C): 2.3 | $ L_d $ ( $ \\mu $m): 9.5\n  [135] (table_row, p.4) Table 1. Experimental Conditions and Measured Data: exp.: S2 | $ \\beta $ (°C/h): 3.4 | $ C_i $ (g/g water): 0.015 | $ \\Delta T_{max} $ (°C): 5.3 | $ L_d $ ( $ \\mu $m): 18.4\n\nT   [NOT COMPUTED]\n  [58] (sentence, p.2) where  $ C^{*}(T) $ is the equilibrium concentration of the solute.\n  [301] (line, p.8) T = temperature",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "k_{g}",
+    "description": "Kinetic constant for growth rate.",
+    "description_basis": "stated",
+    "snippet_id": 281,
+    "quote": "kinetic constant for growth rate",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A fitted kinetic constant in the growth-rate law, not an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\Delta C",
+    "description": "Concentration difference driving the nucleation and growth rates.",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "g PCM/g water",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A concentration driving force that varies with process concentration and is used in the rate laws.",
+    "class": "variable",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "g",
+    "description": "Kinetic parameter (exponent) for growth.",
+    "description_basis": "stated",
+    "snippet_id": 276,
+    "quote": "g = kinetic parameter (exponent) for growth",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "A fitted exponent in the growth-rate power law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "k_{b}",
+    "description": "Kinetic constant for number nucleation rate.",
+    "description_basis": "stated",
+    "snippet_id": 279,
+    "quote": "$ k_{b} $ = kinetic constant for number nucleation rate",
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "Method 1a (experiments S1–S5)",
+      "value": "$ \\ln(k_b) = 6.49 \\pm 16.90 $"
+     },
+     {
+      "case": "Method 1b (all experiments except F1–F4)",
+      "value": "$ \\ln(k_b) = 2.81 \\pm 2.80 $"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A fitted kinetic constant in the number-nucleation-rate law, not an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "b",
+    "description": "Kinetic parameter (exponent) for nucleation.",
+    "description_basis": "stated",
+    "snippet_id": 266,
+    "quote": "b = kinetic parameter (exponent) for nucleation",
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [
+     {
+      "case": "Method 1a (experiments S1–S5)",
+      "value": "$ 1.29 \\pm 2.73 $"
+     },
+     {
+      "case": "Method 1b (all experiments except F1–F4)",
+      "value": "$ 2.71 \\pm 1.74 $"
+     }
+    ],
+    "values_by_model": [],
+    "class_reason": "A fitted exponent in the nucleation-rate power law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "C^{*}",
+    "description": "Equilibrium concentration of the solute.",
+    "description_basis": "stated",
+    "snippet_id": 58,
+    "quote": "is the equilibrium concentration of the solute",
+    "unit": "g PCM/g water",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "T",
+    "description": "Temperature.",
+    "description_basis": "stated",
+    "snippet_id": 301,
+    "quote": "T = temperature",
+    "unit": "K",
+    "unit_basis": "stated",
+    "value": null,
+    "value_number": null,
+    "value_set": null,
+    "values_by_case": [],
+    "values_by_model": [],
+    "class_reason": "Temperature is an operating condition supplied to the solubility relation, rather than a quantity computed by the model.",
+    "class": "variable",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

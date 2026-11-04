@@ -1,0 +1,151 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2251,
+  "completion_tokens": 4091,
+  "total_tokens": 6342,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2248,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 3204,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Model: birol_2002\n\nEquations:\n(17) \\begin{aligned}\\frac{\\mathrm{d}T}{\\mathrm{d}t}=&\\frac{F}{s_{\\mathrm{f}}}(T_{\\mathrm{f}}-T)+\\frac{1}{V\\rho c_{\\mathrm{p}}}\\\\&\\times\\left[Q_{\\mathrm{rxn}}-\\frac{a F_{\\mathrm{c}}^{b+1}}{F_{\\mathrm{c}}+(a F_{\\mathrm{c}}^{b}/2\\rho_{\\mathrm{c}}c_{\\mathrm{pc}})}\\right]\\end{aligned}      <- \"nd tabulated in Table 2. The energy balance is written based on a coiled type heat exchanger which is suitable for a laboratory scale fermentor (Nielsen, 1997):\"\n(18) \\frac{\\mathrm{d}\\mathrm{CO}_{2}}{\\mathrm{~d}t}=\\alpha_{1}\\frac{\\mathrm{d}X}{\\mathrm{d}t}+\\alpha_{2}X+\\alpha_{3}      <- \" to growth, penicillin biosynthesis and maintenance requirements as suggested by Montague, Morris, Wright, Aynsley and Ward (1986). The $ CO_{2} $ evolution is:\"\n\nSymbols:\n\na   [NOT COMPUTED]\n  [154] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Heat transfer coefficient of cooling/heating liquid:  $ a $ (cal/h °C) | operation: 1000\n  [192] (sentence, p.5) (a)\n  [195] (sentence, p.5) (a) pH Profile of culture brothe under controlled conditions (pH set point is 5.0), In all cases, acid controller PID settings are  $ K_c = 1 \\times 10^{-4} $,  $ \\tau_1 = 8.4 $ h and  $ \\tau_d = 0.125 $ h.\n\nF_{c}   [NOT COMPUTED]\n  [155] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Cooling water flow rate:  $ F_c $ (l/h) | operation:\n\nb   [NOT COMPUTED]\n  [156] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant:  $ b $ | operation: 0.60\n  [348] (sentence, p.11) (b)\n  [354] (sentence, p.11) (b) SPE charts for a non-reference batch under normal operation;\n\n\\rho_{c}   [NOT COMPUTED]\n  [151] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Density  $ \\times $ heat capacity of cooling liquid:  $ \\rho_c $ ( $ C_{pc} $) (per °C) | operation: 1/2000\n\nc_{pc}   [NOT COMPUTED]\n  (no snippet mentions this symbol)\n\nCO_{2}   [COMPUTED by eq 18]\n  [74] (table_row, p.2) Table 1 Functional relationship among the process variables: Model structure: $ CO_{2}=f(X, H, T) $\n  [118] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Carbon dioxide concentration:  $ CO_2 $ (mmol/l) | operation: 0.5\n  [134] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant relating  $ CO_2 $ to growth:  $ \\alpha_1 $ (mmol  $ CO_2/g $ biomass) | operation: 0.143\n\n\\alpha_{1}   [NOT COMPUTED]\n  [134] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant relating  $ CO_2 $ to growth:  $ \\alpha_1 $ (mmol  $ CO_2/g $ biomass) | operation: 0.143\n  [257] (sentence, p.7) Here, the values of  $ \\alpha_1 $,  $ \\alpha_2 $ and  $ \\alpha_3 $ are chosen to give  $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986).\n\n\\alpha_{2}   [NOT COMPUTED]\n  [135] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant relating  $ CO_2 $ to maintenance energy:  $ \\alpha_2 $ (mmol  $ CO_2/g $ biomass h) | operation: $ 4 \\times 10^{-7} $\n  [257] (sentence, p.7) Here, the values of  $ \\alpha_1 $,  $ \\alpha_2 $ and  $ \\alpha_3 $ are chosen to give  $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986).\n\n\\alpha_{3}   [NOT COMPUTED]\n  [136] (table_row, p.4) Table 2 Initial conditions, kinetic and controller parameters for nominal operation: operation: Constant relating  $ CO_2 $ to penicillin production  $ \\alpha_3 $ (mmol  $ CO_2/l $ h) | operation: $ 10^{-4} $\n  [257] (sentence, p.7) Here, the values of  $ \\alpha_1 $,  $ \\alpha_2 $ and  $ \\alpha_3 $ are chosen to give  $ \\text{CO}_2 $ profiles similar to the predictions of Montague et al. (1986).",
+ "answer": {
+  "symbols": [
+   {
+    "symbol": "a",
+    "description": "Heat transfer coefficient of cooling/heating liquid",
+    "description_basis": "stated",
+    "snippet_id": 154,
+    "quote": "Heat transfer coefficient of cooling/heating liquid",
+    "unit": "cal/h °C",
+    "unit_basis": "stated",
+    "value": "1000 cal/h °C",
+    "value_set": "this model",
+    "class_reason": "A heat-transfer coefficient of the system, treated as a constant rather than an operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "F_{c}",
+    "description": "Cooling water flow rate",
+    "description_basis": "stated",
+    "snippet_id": 155,
+    "quote": "Cooling water flow rate",
+    "unit": "l/h",
+    "unit_basis": "stated",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A cooling-water flow rate, which is an operating condition set for the run.",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "b",
+    "description": "Constant exponent in the cooling-water heat-transfer expression",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": "-",
+    "unit_basis": "inferred",
+    "value": "0.60",
+    "value_set": "this model",
+    "class_reason": "An exponent in the heat-transfer expression, which is a constant of the model law.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "\\rho_{c}",
+    "description": "Density × heat capacity of cooling liquid",
+    "description_basis": "stated",
+    "snippet_id": 151,
+    "quote": "Density × heat capacity of cooling liquid",
+    "unit": "per °C",
+    "unit_basis": "stated",
+    "value": "1/2000 per °C",
+    "value_set": "this model",
+    "class_reason": "A cooling-liquid density/heat-capacity property of the system, not a run-specific operating condition.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "c_{pc}",
+    "description": "Specific heat capacity of the cooling liquid",
+    "description_basis": "inferred",
+    "snippet_id": null,
+    "quote": null,
+    "unit": null,
+    "unit_basis": "unknown",
+    "value": null,
+    "value_set": null,
+    "class_reason": "A specific heat capacity, which is a physical property of the cooling liquid.",
+    "class": "parameter",
+    "class_basis": "inferred"
+   },
+   {
+    "symbol": "CO_{2}",
+    "description": "Carbon dioxide concentration",
+    "description_basis": "stated",
+    "snippet_id": 118,
+    "quote": "Carbon dioxide concentration",
+    "unit": "mmol/l",
+    "unit_basis": "stated",
+    "value": "0.5 mmol/l",
+    "value_set": "this model",
+    "class_reason": "computed by a law",
+    "class": "variable",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha_{1}",
+    "description": "Constant relating CO₂ to growth",
+    "description_basis": "stated",
+    "snippet_id": 134,
+    "quote": "Constant relating CO_2 to growth",
+    "unit": "mmol CO₂/g biomass",
+    "unit_basis": "stated",
+    "value": "0.143 mmol CO₂/g biomass",
+    "value_set": "this model",
+    "class_reason": "A constant relating CO₂ evolution to growth, which is a coefficient of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha_{2}",
+    "description": "Constant relating CO₂ to maintenance energy",
+    "description_basis": "stated",
+    "snippet_id": 135,
+    "quote": "Constant relating CO_2 to maintenance energy",
+    "unit": "mmol CO₂/g biomass h",
+    "unit_basis": "stated",
+    "value": "4 × 10⁻⁷ mmol CO₂/g biomass h",
+    "value_set": "this model",
+    "class_reason": "A constant relating CO₂ evolution to maintenance energy, which is a coefficient of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   },
+   {
+    "symbol": "\\alpha_{3}",
+    "description": "Constant relating CO₂ to penicillin production",
+    "description_basis": "stated",
+    "snippet_id": 136,
+    "quote": "Constant relating CO_2 to penicillin production",
+    "unit": "mmol CO₂/l h",
+    "unit_basis": "stated",
+    "value": "10⁻⁴ mmol CO₂/l h",
+    "value_set": "this model",
+    "class_reason": "A constant relating CO₂ evolution to penicillin production, which is a coefficient of the model law.",
+    "class": "parameter",
+    "class_basis": "stated"
+   }
+  ]
+ }
+}

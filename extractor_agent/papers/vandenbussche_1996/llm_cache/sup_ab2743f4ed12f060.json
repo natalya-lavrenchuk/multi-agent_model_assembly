@@ -1,0 +1,132 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 6724,
+  "completion_tokens": 6491,
+  "total_tokens": 13215,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 6721,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5539,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Title: A Steady-State Kinetic Model for Methanol Synthesis and the Water Gas Shift Reaction on a Commercial Cu/ZnO/ $ Al_{2}O_{3} $ Catalyst\n\nAbstract: A detailed reaction network, derived from literature data and our own experimental work, is used as a basis for the development of a steady-state kinetic model for methanol synthesis and the water gas shift reaction on a commercial Cu/ZnO/Al₂O₃ catalyst. Experimental data, obtained in a bench scale setup, operating between 180 and 280°C and at pressures up to 51 bar, are subsequently used for the estimation of the parameters in the proposed model. The result is a mechanically sound kinetic model, comprising a set of statistically significant and physically meaningful parameter groups. It accurately predicts the experimentally obtained conversions, even upon extrapolation outside the originally applied experimental window. Using this model, the influence of inlet temperature, pressure, and the ratio of  $ p_{CO} $ and  $ p_{CO_2} $ are briefly illustrated. © 1996 Academic Press, Inc.\n\nEquations (number, code tag, page, text just before, LaTeX):\n(p1-1) [not an equation] p.1  ...Generally speaking, the mechanism can be based on three overall reactions: the hydrogenations of  $ CO_{2} $ and CO.\n    CO_{2}+3H_{2}\\rightleftharpoons CH_{3}OH+H_{2}O\n(p1-2) [not an equation] p.1  ...Generally speaking, the mechanism can be based on three overall reactions: the hydrogenations of  $ CO_{2} $ and CO.\n    CO+2H_{2}\\rightleftharpoons CH_{3}OH\n(p1-3) [not an equation] p.1  ...with equilibrium constants  $ K_{1}^{*} $ and  $ K_{2}^{*} $, and the water gas shift reaction,\n    CO+H_{2}O\\rightleftharpoons H_{2}+CO_{2}\n(p1-4) [CONFLICT: computes r_{CH_3OH}, like eq p1-5, p1-6, p2-1, p2-2, p2-5.1] p.1  ...letely been abandoned in favor of the low pressure technology. A classic example from this early work is the equation proposed by Natta (1),\n    r_{\\mathrm{CH_{3}OH}}=\\frac{f_{\\mathrm{CO}}f_{\\mathrm{H_{2}}}^{2}-f_{\\mathrm{CH_{3}OH}}/K_{2}^{*}}{(A+B f_{\\mathrm{CO}}+C f_{\\mathrm{H_{2}}}+D f_{\\mathrm{CH_{3}OH}})^{3}}\n(p1-5) [CONFLICT: computes r_{CH_3OH}, like eq p1-4, p1-6, p2-1, p2-2, p2-5.1] p.1  ...in the equation in the shape of a Langmuir type isotherm. Assuming the methanol desorption to be rate determining, the authors ended up with\n    r_{\\mathrm{C H_{3}O H}}=\\frac{A e^{-E/R T}\\left[p_{\\mathrm{C O}}^{m}p_{\\mathrm{H_{2}}}^{n}\\left(1-\\left(p_{\\mathrm{C H_{3}O H}}/p_{\\mathrm{C O}}p_{\\mathrm{H_{2}}}^{2}K_{2}^{*}\\right)\\right)\\right]}{1+D e^{-F/R T}p_{\\mathrm{C O_{2}}}/p_{\\mat\n(p1-6) [CONFLICT: computes r_{CH_3OH}, like eq p1-4, p1-5, p2-1, p2-2, p2-5.1] p.1  ...} catalyst. Their model again assumed CO to be the source of carbon in methanol and did not account for the influence of CO_{2} in the feed:\n    r_{\\mathrm{C H_{3}O H}}=k\\left(\\frac{p_{\\mathrm{C O}}^{0.5}p_{\\mathrm{H_{2}}}}{p_{\\mathrm{C H_{3}O H}}^{0.66}}-\\frac{p_{\\mathrm{C H_{3}O H}}^{0.34}}{p_{\\mathrm{C O}}^{0.5}p_{\\mathrm{H_{2}}}K_{2}^{*}}\\right)\n(p2-1) [CONFLICT: computes r_{CH_3OH}, like eq p1-4, p1-5, p1-6, p2-2, p2-5.1] p.2  ...tion of CO $ _2 $ and CO or H $ _2 $, and accounted for the direct hydrogenation of CO $ _2 $ by an empirical term. This led to the equation\n    \\begin{aligned}r_{\\mathrm{CH}_{3}\\mathrm{OH}}=&\\mathrm{const}\\frac{K_{\\mathrm{redox}}^{3}(p_{\\mathrm{CO}_{2}}/p_{\\mathrm{CO}})^{3}\\left(p_{\\mathrm{CO}}p_{\\mathrm{H}_{2}}^{2}-p_{\\mathrm{CH}_{3}\\mathrm{OH}}/K_{2}^{*}\\right)}{[1+K_{\\mathrm{red\n(p2-2) [CONFLICT: computes r_{CH_3OH}, like eq p1-4, p1-5, p1-6, p2-1, p2-5.1] p.2  ...reaction. Assuming thereby again that the hydrogenation of CO is the only route to methanol, this resulted in the following set of equations\n    r_{\\mathrm{CH_{3}OH}}=\\frac{f_{\\mathrm{CO}}f_{\\mathrm{H_{2}^{2}}}-f_{\\mathrm{CH_{3}OH}}/K_{2}^{*}}{(A+Bf_{\\mathrm{CO}}+Cf_{\\mathrm{H_{2}}}+Gf_{\\mathrm{CO_{2}}})^{3}}\n(p2-3) [CONFLICT: computes r_{RWGS}, like eq p2-5.2, p5-2, 3.2] p.2  ...reaction. Assuming thereby again that the hydrogenation of CO is the only route to methanol, this resulted in the following set of equations\n    r_{\\mathrm{R W G S}}=\\frac{f_{\\mathrm{C O_{2}}}f_{\\mathrm{H_{2}}}-f_{\\mathrm{C O}}f_{\\mathrm{H_{2}O}}K_{3}^{*}}{M^{2}}\n(p2-4) [NEEDED: a model law] p.2  ...ining, the authors ended up with 48 possible models. Statistical discrimination allowed them to select the following final set of equations:\n    \\begin{aligned}&r_{\\mathrm{CH}_{3}\\mathrm{OH},1}\\\\ &=\\frac{k_{\\mathrm{ps,1c}}^{\\prime}K_{\\mathrm{CO}_{2}}\\left[f_{\\mathrm{CO}_{2}}f_{\\mathrm{H}_{2}}^{3/2}-f_{\\mathrm{CH}_{3}\\mathrm{OH}}f_{\\mathrm{H}_{2}\\mathrm{O}}/\\left(f_{\\mathrm{H}_{2}}^{\n(p2-5.1) [CONFLICT: computes r_{CH_3OH}, like eq p1-4, p1-5, p1-6, p2-1, p2-2] p.2  ...umber of these models using own experimental data and selected the following set of equations, originally presented by Mochalin et al. (12):\n    r_{\\mathrm{CH_{3}OH}} =\\frac{k_{1}p_{\\mathrm{CO_{2}}}p_{\\mathrm{H_{2}}}\\left(1-p_{\\mathrm{CH_{3}OH}}p_{\\mathrm{H_{2}O}}/\\left(K_{1}^{*}p_{\\mathrm{CO_{2}}}p_{\\mathrm{H_{2}}}^{3}\\right)\\right)}{p_{\\mathrm{CO_{2}}}+K_{\\mathrm{H_{2}O}}p_{\\mathr\n(p2-5.2) [CONFLICT: computes r_{RWGS}, like eq p2-3, p5-2, 3.2] p.2  ...umber of these models using own experimental data and selected the following set of equations, originally presented by Mochalin et al. (12):\n    r_{\\mathrm{RWGS}} =\\frac{k_{2}p_{\\mathrm{H_{2}}}p_{\\mathrm{CO_{2}}}\\left(1-p_{\\mathrm{CO}}p_{\\mathrm{H_{2}O}}K_{3}^{*}/\\left(p_{\\mathrm{CO_{2}}}p_{\\mathrm{H_{2}}}\\right)\\right)}{p_{\\mathrm{CO_{2}}}+K_{\\mathrm{H_{2}O}}p_{\\mathrm{H_{2}O}}p_{\\\n(p3-1) [not an equation] p.3  ...nol. A thorough description of this reaction system should also account for the water gas shift, proceeding along a redox mechanism (16–20):\n    \\mathrm{CO}+\\mathrm{H}_{2}\\mathrm{O}\\rightleftharpoons\\mathrm{CO}_{2}+\\mathrm{H}_{2}\\underset{+2\\mathrm{H}_{2}}{\\rightleftharpoons}\\mathrm{CH}_{3}\\mathrm{OH}+\\mathrm{H}_{2}\\mathrm{O}\n(p4-1) [NEEDED: a model law] p.4  ...r of sites,  $ c_t $, from which the concentrations of the surface intermediates have been eliminated. This balance for  $ c_t $ is given by\n    1=\\frac{c_{\\mathrm{s}}}{c_{\\mathrm{t}}}+\\frac{c_{\\mathrm{O\\cdot s}}}{c_{\\mathrm{t}}}+\\frac{c_{\\mathrm{H}_{2}\\mathrm{O\\cdot s}}}{c_{\\mathrm{t}}}+\\frac{c_{\\mathrm{HCO}_{2}\\cdot2\\mathrm{s}}}{c_{\\mathrm{t}}}+\\frac{c_{\\mathrm{CO}_{3}\\cdot2\\mathr\n(p4-2) [NEEDED: a model law] p.4  ...hat complicated by the bridging adsorption of  $ CO_2 $. Indeed, upon elimination of the surface species concentrations, the balance becomes\n    1=b\\cdot\\frac{c_{\\mathrm{s}}}{c_{\\mathrm{t}}}+a\\cdot\\left(\\frac{c_{\\mathrm{s}}}{c_{\\mathrm{t}}}\\right)^{2}\n(p4-3.1) [NEEDED: a model law] p.4  ...in which\n    \\boldsymbol{a} =K_{2}^{\\prime}K_{3}K_{4}\\sqrt{K_{\\mathrm{H}_{2}}}\\boldsymbol{p}_{\\mathrm{CO}_{2}}\\sqrt{p_{\\mathrm{H}_{2}}}+\\frac{K_{2}^{\\prime}K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{H}_{2}}K_{8}K_{9}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}\\bol\n(p4-3.2) [NEEDED: a model law] p.4  ...in which\n    b =1+\\frac{K_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{8}K_{9}K_{\\mathrm{H}_{2}}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}}{p_{\\mathrm{H}_{2}}}+\\sqrt{K_{\\mathrm{H}_{2}}\\boldsymbol{p}_{\\mathrm{H}_{2}}}+K_{\\mathrm{H}_{2}\\mathrm{O}}\\boldsymbol{p}_{\\mathrm{H}_{2\n(p4-4) [NEEDED: a model law] p.4  ...and\n    K_{2}^{\\prime}=K_{2}\\cdot c_{\\mathrm{t}}\n(2) [NEEDED: a model law] p.4  ... $c_{s}/c_{t}$. Only the positive root has to be considered. Simple analysis reveals that the normalized concentration of free active sites,\n    \\beta=\\frac{c_{\\mathrm{s}}}{c_{\\mathrm{t}}}=\\frac{-b+\\sqrt{b^{2}+4a}}{2a}\n(p5-1) [CONFLICT: computes r_{MeOH}, like eq 3.1] p.5  ...ates, the following expressions are obtained for the rate of methanol synthesis and the reverse water gas shift reaction\n    r_{\\mathrm{M e O H}}=k_{5\\mathrm{a}}^{\\prime}K_{2}^{\\prime}K_{3}K_{4}K_{\\mathrm{H}_{2}}p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}\\left(1-\\frac{1}{K_{1}^{*}}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C H}_{3}\\mathrm{O H}}}{p_{\\mathrm{H}_{2}}^{\n(p5-2) [CONFLICT: computes r_{RWGS}, like eq p2-3, p2-5.2, 3.2] p.5  ...ates, the following expressions are obtained for the rate of methanol synthesis and the reverse water gas shift reaction\n    r_{\\mathrm{R W G S}}=k_{1}^{\\prime}p_{\\mathrm{C O}_{2}}\\bigg(1-K_{3}^{*}\\frac{p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{C O}}}{p_{\\mathrm{C O}_{2}}p_{\\mathrm{H}_{2}}}\\bigg)\\beta\n(p5-3) [NEEDED: a model law] p.5  ...in which\n    k_{5a}^{\\prime}=k_{5a}\\cdot c_{t}^{2}\n(p5-4) [NEEDED: a model law] p.5  ...in which\n    k_{1}^{\\prime}=k_{1}\\cdot c_{\\mathrm{t}}\n(p5-5) [NEEDED: a model law] p.5  ...he equilibrium constants  $ K_{1}^{*} $ and  $ K_{3}^{*} $ are thermodynamically determined. The values were taken from Graaf et al. (1986):\n    \\log_{10}k_{1}^{*}=\\frac{3066}{T}-10.592\n(p5-6) [NEEDED: a model law] p.5  ...he equilibrium constants  $ K_{1}^{*} $ and  $ K_{3}^{*} $ are thermodynamically determined. The values were taken from Graaf et al. (1986):\n    \\log_{10}1/K_{3}^{*}=\\frac{-2073}{T}+2.029\n(p5-7) [not an equation] p.5  ...The parameter estimation was based on minimization of\n    \\sum_{i=1}^{2}w_{i}\\sum_{j=1}^{n}(y_{ij,obs}-y_{ij,calc})^{2}\n(p5-8) [NEEDED: a model law] p.5  ...values eventually obtained are given in Table 1. Since a reparametrisation was applied in the estimation, the numbers pertain to the formula\n    \\kappa(i)=A^{*}(i)\\mathrm{e x p}\\biggl(-\\frac{B(i)}{R}\\biggl(\\frac{1}{T_{\\mathrm{a v}}}-\\frac{1}{T}\\biggr)\\biggr)\n(3.1) [CONFLICT: computes r_{MeOH}, like eq p5-1] p.6  ...which are introduced in\n    r_{\\mathrm{MeOH}}= \\frac{k^{\\prime}_{\\mathrm{5a}}K^{\\prime}_{2}K_{3}K_{4}K_{\\mathrm{H}_{2}}p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}}\\left[1-(1/K^{*})\\left(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CH}_{3}\\mathrm{OH}}/p_{\\mathrm{H}_{2}}^{3}p_{\\math\n(3.2) [CONFLICT: computes r_{RWGS}, like eq p2-3, p2-5.2, p5-2] p.6  ...which are introduced in\n    r_{\\mathrm{RWGS}}= \\frac{k^{\\prime}_{1}p_{\\mathrm{CO}_{2}}\\left[1-K^{*}_{3}(p_{\\mathrm{H}_{2}\\mathrm{O}}p_{\\mathrm{CO}}/p_{\\mathrm{CO}_{2}}p_{\\mathrm{H}_{2}})\\right]}{(1+(K_{\\mathrm{H}_{2}\\mathrm{O}}/K_{8}K_{9}K_{\\mathrm{H}_{2}})(p_{\\mathrm\n(p7-1) [not an equation] p.7  .../R} $. This  $ (-\\Delta S^{\\circ}) $ has to remain positive and should not exceed the entropy of the gas  $ S^{\\circ} $ at this temperature:\n    0\\leq-\\Delta S_{\\mathrm{a d s}}^{\\circ}\\leq S^{\\circ}\n\nSentences in which the paper lists equations:\n(none)\n\nOther sentences about the equations, the model and its assumptions:\n- (p.1) The main lines in the mechanism of the conversion of a  $ CO/CO_{2}/H_{2} $ feed into methanol over a  $ Cu/ZnO/Al_{2}O_{3} $ catalyst are now well established, and a large number of kinetic equations have been proposed.\n- (p.1) A classic example from this early work is the equation proposed by Natta (1),\n- (p.1) Apparently, Natta assumed that only the hydrogenation of CO occurs, in which he proposed the trimolecular reaction of CO and molecular hydrogen to be rate determining.\n- (p.1) For this reason, a  $ \\mathrm{CO}_{2} $ dependency was introduced in the equation in the shape of a Langmuir type isotherm.\n- (p.1) Assuming the methanol desorption to be rate determining, the authors ended up with\n- (p.1) Their model again assumed CO to be the source of carbon in methanol and did not account for the influence of CO_{2} in the feed:\n- (p.1) Andrew (4) used a power law type of equation, with an extra  $ \\Phi_{CO_2} $ function to account for the occurrence of a maximum in the carbon conversion to methanol when adding  $ CO_2 $ to the  $ CO/H_2 $ feed.\n- (p.2) They further assumed competitive adsorption of CO $ _2 $ and CO or H $ _2 $, and accounted for the direct hydrogenation of CO $ _2 $ by an empirical term.\n- (p.2) This led to the equation\n- (p.2) These equations later served as a base for the work of McNeil et al. (6), who expanded on the mechanism of the direct hydrogenation of  $ CO_{2} $ and the possible role of ZnO as a hydrogen reservoir.\n- (p.2) Assuming thereby again that the hydrogenation of CO is the only route to methanol, this resulted in the following set of equations\n- (p.2) Assuming the ad- and desorptions to be in equilibrium and taking every elementary step in each of the three overall reactions in its turn as rate determining, the authors ended up with 48 possible models.\n- (p.2) Statistical discrimination allowed them to select the following final set of equations:\n- (p.2) Malinovskaya et al. (11) compared a number of these models using own experimental data and selected the following set of equations, originally presented by Mochalin et al. (12):\n- (p.3) REACTION MECHANISM AND DERIVATION OF THE KINETIC EQUATIONS\n- (p.3) Based on the results of Chinchen et al. (14) and Rozovskii (15), we assume that  $ CO_{2} $ is the main source of carbon in methanol.\n- (p.4) Derivation of the corresponding set of kinetic equations is performed under the hypothesis of pseudo-steady-state of the concentration of the different surface intermediates (13).\n- (p.4) This balance is not linear in $c_{s}$ and has to be solved as a quadratic equation in $c_{s}/c_{t}$.\n- (p.5) The use of fugacities, rather than partial pressures, was considered, applying the Soave–Redlich–Kwong equation of state (36).\n- (p.5) As mentioned under Experimental, the kinetic data were obtained in an integral reactor, and, therefore, require integration of the conservation equations over the reactor.\n- (p.5) In view of the fact that the (isothermal) temperature profile was determined experimentally, integration of the energy equation was not necessary, while the pressure drop was also negligible.\n- (p.5) Under steady-state conditions, two independent responses completely describe the system, so that only two continuity equations (e.g., for CO and  $ CO_{2} $) had to be considered.\n- (p.5) The integration of the two equations, containing the proposed kinetic expressions, was performed applying fourth-and fifth-order Runge-Kutta methods.\n- (p.5) By leaving out these bridging compounds, however, the a term in equation [1] becomes identical to 0 and the normalized concentration of free active sites  $ \\beta $ is reduced to\n- (p.7) model is not linear in the parameters.\n- (p.7) Upon recalculation of the frequency factors to the original Arrhenius of Van't Hoff equations, all parameters stay significantly different from 0 with a 95% probability, except for the frequency factor of the water adsor\n- (p.7) Due to correlation between the heat of adsorption and the frequency factor, the probability of the latter fulfilling a significant role in the model is reduced to 90%.\n- (p.10) Furthermore, the kinetic equations describe the influence of inlet temperature, pressure, and feed composition in a physically acceptable way.",
+ "answer": {
+  "models": [
+   {
+    "name": "Cu/ZnO/Al₂O₃ methanol synthesis and RWGS model",
+    "equations": [
+     "p4-2",
+     "p4-3.1",
+     "p4-3.2",
+     "p4-4",
+     "p5-1",
+     "p5-2",
+     "p5-3",
+     "p5-4",
+     "p5-5",
+     "p5-6",
+     "p5-8"
+    ],
+    "boundary_quote": null,
+    "assumptions": [
+     {
+      "text": "CO₂ is the main source of carbon in methanol.",
+      "quote": "Based on the results of Chinchen et al. (14) and Rozovskii (15), we assume that  $ CO_{2} $ is the main source of carbon in methanol."
+     },
+     {
+      "text": "The concentrations of the different surface intermediates are in pseudo-steady state.",
+      "quote": "Derivation of the corresponding set of kinetic equations is performed under the hypothesis of pseudo-steady-state of the concentration of the different surface intermediates (13)."
+     }
+    ],
+    "complete_model": false
+   }
+  ],
+  "excluded": [
+   {
+    "eq": "p1-1",
+    "reason": "Overall reaction presented as background, not a model equation."
+   },
+   {
+    "eq": "p1-2",
+    "reason": "Background overall reaction; the proposed model uses CO₂ as the methanol carbon source."
+   },
+   {
+    "eq": "p1-3",
+    "reason": "Overall reaction presented as background, not a model equation."
+   },
+   {
+    "eq": "p1-4",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p1-5",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p1-6",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p2-1",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p2-2",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p2-3",
+    "reason": "Earlier literature rate law, not part of the proposed model."
+   },
+   {
+    "eq": "p2-4",
+    "reason": "A previously published model discussed as background."
+   },
+   {
+    "eq": "p2-5.1",
+    "reason": "Previously published methanol rate law discussed as background."
+   },
+   {
+    "eq": "p2-5.2",
+    "reason": "Previously published RWGS rate law discussed as background."
+   },
+   {
+    "eq": "p3-1",
+    "reason": "Reaction scheme presented as background, not a model equation."
+   },
+   {
+    "eq": "p4-1",
+    "reason": "Pre-elimination site-balance derivation; the reduced balance is given in eq p4-2."
+   },
+   {
+    "eq": "2",
+    "reason": "Explicit solution of the balance in eq p4-2; the balance itself is retained."
+   },
+   {
+    "eq": "p5-7",
+    "reason": "Parameter-estimation objective function."
+   },
+   {
+    "eq": "3.1",
+    "reason": "Restates eq p5-1 with the site-coverage expression substituted."
+   },
+   {
+    "eq": "3.2",
+    "reason": "Restates eq p5-2 with the site-coverage expression substituted."
+   },
+   {
+    "eq": "p7-1",
+    "reason": "Parameter-estimation constraint."
+   }
+  ],
+  "free_laws": []
+ }
+}

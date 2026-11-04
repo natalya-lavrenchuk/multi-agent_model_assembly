@@ -1,0 +1,197 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1953,
+  "completion_tokens": 6964,
+  "total_tokens": 8917,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1950,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 5483,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Appendix A. List of model equations (Kontoravdi et al., 2005)\n\nText and equations in reading order:\n    The mass balances on glucose and glutamine around the bioreactor are:\n(9) Q_{g l c}=\\frac{\\mu}{Y_{x,g l c}}+m_{g l c}    [code: algebraic, computes Q_{glc}, code proposes constitutive]\n(10) \\frac{d([G L N])}{d t}=-Q_{g l n}V X_{\\nu}-K_{d g l n}V[G L N]+F_{i n}[G L N]_{i n}-F_{o u t}[G L N]    [code: ODE, computes [GLN], code proposes balance]\n(11) Q_{g l n}=\\frac{\\mu}{Y_{x,g l n}}+m_{g l n}    [code: algebraic, computes Q_{gln}, code proposes constitutive]\n(12) m_{g l n}=\\frac{\\alpha_{1}[G L N]}{\\alpha_{2}+[G L N]}    [code: algebraic, computes m_{gln}, code proposes constitutive]\n    The mass balances for lactate and ammonia are\n(13) \\frac{d([L A C])}{d t}=Q_{l a c}V X_{\\nu}-F_{o u t}[L A C]    [code: ODE, computes [LAC], code proposes balance]\n(14) Q_{l a c}=Y_{l a c,g l c}Q_{g l c}    [code: algebraic, computes Q_{lac}, code proposes constitutive]\n(15) \\frac{d([{A M M}])}{d t}=Q_{{a m m}}V X_{\\nu}+K_{{d g l n}}V[{G L N}]-F_{{o u t}}[{A M M}]    [code: ODE, computes [AMM], code proposes balance]\n(16) Q_{a m m}=Y_{a m m,g l n}Q_{g l n}    [code: algebraic, computes Q_{amm}, code proposes constitutive]\n    The heavy- and light-chain mRNA balances are\n\nSymbols:\n  Q_{glc}: Specific glucose consumption rate. [mmol cell^-1 h^-1] (computed)\n  \\mu: Specific cell growth rate. [h^-1] (computed)\n  Y_{x,glc}: Yield of cells on glucose. [cell/mmol] (parameter)\n  m_{glc}: Maintenance coefficient of glucose. [mmol/cell-h] (parameter)\n  [GLN]: Glutamine concentration in the bioreactor. (computed)\n  Q_{gln}: Specific glutamine consumption rate. [mmol cell^-1 h^-1] (computed)\n  V: Bioreactor volume. (computed)\n  X_{\\nu}: Viable cell density. (computed)\n  K_{dgln}: Constant for glutamine degradation. [h^-1] (parameter)\n  F_{in}: Inlet flow rate. (variable)\n  [GLN]_{in}: Glutamine concentration in the bioreactor inlet. (variable)\n  F_{out}: Outlet flow rate. (variable)\n  Y_{x,gln}: Yield of cells on glutamine. [cell/mmol] (parameter)\n  m_{gln}: Specific glutamine consumption rate due to maintenance, given by the glutamine concentration-dependent law. [mmol cell^-1 h^-1] (computed)\n  \\alpha_{1}: Constant of the glutamine maintenance coefficient. [mM L/cell/h] (parameter)\n  \\alpha_{2}: Constant of the glutamine maintenance coefficient. [mM] (parameter)\n  [LAC]: Lactate concentration [mM] (computed)\n  Q_{lac}: Specific lactate production rate. [mM L/cell/h] (computed)\n  Y_{lac,glc}: Yield of lactate on glucose. [mmol/mmol] (parameter)\n  [AMM]: Ammonia concentration [mM] (computed)\n  Q_{amm}: Specific ammonia production rate. [mM L/cell/h] (computed)\n  Y_{amm,gln}: Yield of ammonia on glutamine. [mmol/mmol] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 9, 10, 11, 12, 13, 14, 15, 16",
+ "answer": {
+  "laws": [
+   {
+    "eq": "9",
+    "description": "Specific glucose uptake is the growth-associated glucose requirement plus glucose maintenance consumption.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a glucose uptake-rate relationship combining growth-associated demand and maintenance.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "yield",
+      "symbol": "Y_{x,glc}"
+     },
+     {
+      "role": "growth rate",
+      "symbol": "\\mu"
+     },
+     {
+      "role": "maintenance coefficient",
+      "symbol": "m_{glc}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "10",
+    "description": "Glutamine concentration changes through cellular uptake, glutamine degradation, inlet supply, and outlet removal.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "balance",
+    "law_type_reason": "It accounts for glutamine accumulation from cellular uptake, degradation, and flow in and out.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "feed concentration",
+      "symbol": "[GLN]_{in}"
+     }
+    ],
+    "issue": "The RHS terms have units of amount/time, while d([GLN])/dt has units of concentration/time; the balance needs division by V or an amount-accumulation LHS."
+   },
+   {
+    "eq": "11",
+    "description": "Specific glutamine uptake is the growth-associated glutamine requirement plus glutamine maintenance consumption.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a glutamine uptake-rate relationship combining growth-associated demand and maintenance.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "yield",
+      "symbol": "Y_{x,gln}"
+     },
+     {
+      "role": "growth rate",
+      "symbol": "\\mu"
+     },
+     {
+      "role": "maintenance coefficient",
+      "symbol": "m_{gln}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "12",
+    "description": "Glutamine-dependent maintenance uptake increases with glutamine concentration and approaches a limiting value.",
+    "description_basis": "stated",
+    "quote": "The mass balances on glucose and glutamine around the bioreactor are:",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a concentration-dependent kinetic expression for glutamine maintenance uptake.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[GLN]"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "\\alpha_{1}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "\\alpha_{2}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "13",
+    "description": "Lactate concentration accumulates from cell-associated production and decreases through outlet removal.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "balance",
+    "law_type_reason": "It accounts for lactate accumulation from production and its removal in the outlet flow.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[LAC]"
+     }
+    ],
+    "issue": "The RHS terms have units of amount/time, while d([LAC])/dt has units of concentration/time; the balance needs division by V or an amount-accumulation LHS."
+   },
+   {
+    "eq": "14",
+    "description": "Specific lactate production is calculated from specific glucose consumption using the lactate-on-glucose yield.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "definition",
+    "law_type_reason": "It defines the lactate production rate as a yield-scaled glucose consumption rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "Q_{glc}"
+     },
+     {
+      "role": "product",
+      "symbol": "Q_{lac}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{lac,glc}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "15",
+    "description": "Ammonia concentration accumulates from cellular production and glutamine degradation, while outlet flow removes ammonia.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "balance",
+    "law_type_reason": "It accounts for ammonia accumulation from production and glutamine degradation, with outlet removal.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[AMM]"
+     }
+    ],
+    "issue": "The RHS terms have units of amount/time, while d([AMM])/dt has units of concentration/time; the balance needs division by V or an amount-accumulation LHS."
+   },
+   {
+    "eq": "16",
+    "description": "Specific ammonia production is calculated from specific glutamine consumption using the ammonia-on-glutamine yield.",
+    "description_basis": "stated",
+    "quote": "The mass balances for lactate and ammonia are",
+    "law_type": "definition",
+    "law_type_reason": "It defines the ammonia production rate as a yield-scaled glutamine consumption rate.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "Q_{gln}"
+     },
+     {
+      "role": "product",
+      "symbol": "Q_{amm}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{amm,gln}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

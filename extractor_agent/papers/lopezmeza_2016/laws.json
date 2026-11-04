@@ -1,0 +1,185 @@
+{
+ "model": "gpt-6-luna",
+ "laws": {
+  "1": {
+   "form": "ODE",
+   "computes": "[X]",
+   "condition": "[ X ]=[ X ]_{ o }\\circledast t = t _{ o }=0.0",
+   "value": null,
+   "section": "Kinetics analysis",
+   "description": "Cell growth during the initial exponential phase is modeled as an increase proportional to biomass concentration.",
+   "description_basis": "stated",
+   "quote": "a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration",
+   "assumptions": [
+    {
+     "text": "The law is applied during the initial exponential-growth stage at each initial substrate concentration.",
+     "quote": "during the initial stage of exponential growth at each initial substrate concentration",
+     "severity": "blocking",
+     "process_condition": true,
+     "reasoned": false
+    },
+    {
+     "text": "The specific growth rate is treated as constant during at least the initial portion of the exponential phase.",
+     "quote": "μ is the specific growth rate with a constant value at least during the initial portion of the exponential phase.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "pending",
+   "review": [
+    "blocking assumption: The law is applied during the initial exponential-growth stage at each initial substrate concentration."
+   ],
+   "llm": {
+    "eq": "1",
+    "description": "Cell growth during the initial exponential phase is modeled as an increase proportional to biomass concentration.",
+    "description_basis": "stated",
+    "quote": "a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration",
+    "assumptions": [
+     {
+      "text": "The law is applied during the initial exponential-growth stage at each initial substrate concentration.",
+      "quote": "during the initial stage of exponential growth at each initial substrate concentration",
+      "process_condition": true
+     },
+     {
+      "text": "The specific growth rate is treated as constant during at least the initial portion of the exponential phase.",
+      "quote": "μ is the specific growth rate with a constant value at least during the initial portion of the exponential phase.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  },
+  "3": {
+   "form": "algebraic",
+   "computes": "\\mu",
+   "condition": "[ S ]*=[ S ]_ o -[ S ]_ t",
+   "value": null,
+   "section": "Kinetics analysis",
+   "description": "A Monod-type law computes specific growth rate from glucose concentration above the growth threshold.",
+   "description_basis": "stated",
+   "quote": "A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate",
+   "assumptions": [],
+   "roles": [
+    {
+     "role": "substrate",
+     "symbol": "[S]"
+    },
+    {
+     "role": "maximum rate",
+     "symbol": "\\mu_{max}"
+    },
+    {
+     "role": "saturation constant",
+     "symbol": "K"
+    }
+   ],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "3",
+    "description": "A Monod-type law computes specific growth rate from glucose concentration above the growth threshold.",
+    "description_basis": "stated",
+    "quote": "A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "substrate",
+      "symbol": "[S]"
+     },
+     {
+      "role": "maximum rate",
+      "symbol": "μ_{max}"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K"
+     }
+    ],
+    "issue": null
+   }
+  },
+  "4": {
+   "form": "ODE",
+   "computes": "r_{s}",
+   "condition": null,
+   "value": null,
+   "section": "Kinetics analysis",
+   "description": "The glucose-consumption balance relates the global glucose rate to cell-growth rate through the cell yield coefficient.",
+   "description_basis": "stated",
+   "quote": "The material balance for substrate consumption was assumed to be represented by Eq. 4.",
+   "assumptions": [
+    {
+     "text": "For yield estimation in recombinant cultures, substrate consumed during the first seven culture days is attributed to cell growth, with no significant glucose consumption attributed to product assembly.",
+     "quote": "we assumed that the substrate consumption during the first 7 days of culture was devoted to cell growth; that is, no significant glucose consumption was a result of product assembly.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": "The equality r_s = d[S]/dt = r_x/Y_{x/s} has the wrong sign if r_s denotes positive glucose consumption, since consumption decreases [S] while r_x/Y_{x/s} is positive.",
+   "status": "pending",
+   "review": [
+    "possible misprint: The equality r_s = d[S]/dt = r_x/Y_{x/s} has the wrong sign if r_s denotes positive glucose consumption, since consumption decreases [S] while r_x/Y_{x/s} is positive."
+   ],
+   "llm": {
+    "eq": "4",
+    "description": "The glucose-consumption balance relates the global glucose rate to cell-growth rate through the cell yield coefficient.",
+    "description_basis": "stated",
+    "quote": "The material balance for substrate consumption was assumed to be represented by Eq. 4.",
+    "assumptions": [
+     {
+      "text": "For yield estimation in recombinant cultures, substrate consumed during the first seven culture days is attributed to cell growth, with no significant glucose consumption attributed to product assembly.",
+      "quote": "we assumed that the substrate consumption during the first 7 days of culture was devoted to cell growth; that is, no significant glucose consumption was a result of product assembly.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": "The equality r_s = d[S]/dt = r_x/Y_{x/s} has the wrong sign if r_s denotes positive glucose consumption, since consumption decreases [S] while r_x/Y_{x/s} is positive."
+   }
+  },
+  "5": {
+   "form": "ODE",
+   "computes": "[P]",
+   "condition": null,
+   "value": null,
+   "section": "Kinetics analysis",
+   "description": "Antibody accumulation is modeled as the sum of a term proportional to cell growth and a term proportional to viable cell concentration.",
+   "description_basis": "stated",
+   "quote": "This model is based on the premise that the rate of product synthesis can be a function of both cellular density ([X]) and the rate of cell growth",
+   "assumptions": [
+    {
+     "text": "The Luedeking–Piret law is assumed to describe antibody kinetics throughout the entire cell-culture duration.",
+     "quote": "We also assumed that a Luedeking–Piret model could describe the kinetics of mAb throughout the entire duration of the cell culture.",
+     "severity": "warning",
+     "process_condition": false,
+     "reasoned": false
+    }
+   ],
+   "roles": [],
+   "issue": null,
+   "status": "accepted",
+   "review": [],
+   "llm": {
+    "eq": "5",
+    "description": "Antibody accumulation is modeled as the sum of a term proportional to cell growth and a term proportional to viable cell concentration.",
+    "description_basis": "stated",
+    "quote": "This model is based on the premise that the rate of product synthesis can be a function of both cellular density ([X]) and the rate of cell growth",
+    "assumptions": [
+     {
+      "text": "The Luedeking–Piret law is assumed to describe antibody kinetics throughout the entire cell-culture duration.",
+      "quote": "We also assumed that a Luedeking–Piret model could describe the kinetics of mAb throughout the entire duration of the cell culture.",
+      "process_condition": false
+     }
+    ],
+    "roles": [],
+    "issue": null
+   }
+  }
+ }
+}

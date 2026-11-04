@@ -1,0 +1,136 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2254,
+  "completion_tokens": 5529,
+  "total_tokens": 7783,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2251,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 4837,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Section(s): Kinetics analysis\n\nText and equations in reading order:\n    In addition, the values of the specific growth rate at different initial substrate concentrations were generated for each cell line using conventional approaches. Briefly, a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration (Eq. 1).\n(1) \\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}=\\mu[\\boldsymbol{X}];\\mathrm{~w i t h~}[\\boldsymbol{X}]=[\\boldsymbol{X}]_{\\mathrm{o}}\\circledast\\mathbf{t}=\\mathbf{t}_{\\mathrm{o}}=0.0    [code: ODE, computes [X], code proposes balance]\n    In Eq. 1, [X] is the biomass concentration at a given time, [X]₀ is the cell concentration at an initial condition, t is the time, t₀ is the initial time (corresponding to the beginning of the exponential growth phase), and μ is the specific growth rate with a constant value at least during the initial portion of the exponential phase. The integrated version of Eq. 1 renders Eq. 2, a straight-line model.\n    Therefore, the value of the specific growth rate ($\\mu$) was calculated from the slope of the plots of $\\ln[X]$ versus $t$ at each initial substrate concentration value $[S]_{t}$. A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate ($\\mu$) at different initial substrate concentrations.\n(3) \\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}\\mathbf{s}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}    [code: algebraic, computes \\mu, code proposes constitutive]\n    A Lineweaver–Burk linearization was used to obtain values for the kinetic parameters: $\\mu_{\\mathrm{max}}$ (the maximum specific growth rate), $K_{\\mathrm{s}}$ (the concentration of substrate at which half the value of $\\mu_{\\mathrm{max}}$ was observed), and the $[S]_{\\mathrm{t}}$ (the minimum substrate concentration at which cell growth was observed). We only considered a particular linear regressions as valid if $r^{2}$ was higher than 0.97.\n    The material balance for substrate consumption was assumed to be represented by Eq. 4.\n(4) \\mathbf{r}_{\\mathrm{s}}=\\mathrm{d}[S]/\\mathrm{d t}=\\mathbf{r}_{\\mathrm{x}}/\\mathbf{Y}_{\\mathrm{x}/\\mathrm{s}}    [code: ODE, computes r_{s}, code proposes balance]\n    In this equation, $ r_s $ is the global rate of glucose consumption, $ r_x $ is the rate of cell growth, t is time, and $ Y_{x/s} $ is a cell yield coefficient. In agreement with Eq. 4, the yield coefficient was calculated from the slopes of $ r_x $ versus $ r_s $ plots at different $ [S]_o $ values.\n    For the kinetic analysis of mAb production in shake flasks and bioreactors, the viable cell concentration profile [X] was fit to a sixth-order polynomial. The polynomial equation was derived to obtain the experimental cell production rate ( $ r_x $) at each time. A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production (Eq. 5).\n(5) \\mathbf{d}[\\boldsymbol{P}]/\\mathbf{d}\\mathbf{t}=\\mathbf{r}_{\\mathbf{p}}=\\alpha\\mathbf{r}_{\\mathbf{x}}+\\boldsymbol{\\beta}[\\boldsymbol{X}];\\quad\\mathbf{r}_{\\mathbf{x}}=\\mathbf{d}[\\boldsymbol{X}]/\\mathbf{d}\\mathbf{t}    [code: ODE, computes [P], code proposes balance]\n    Here, [P] is the mAb concentration at a given point, t is time, $ r_p $ is the rate of accumulation of product in time within the reaction vessel, [X] is the cell concentration at that given time, $ r_x $ is the rate of cell growth, and $ \\alpha $ and $ \\beta $ are the Luedeking–Piret constraints.\n\nSymbols:\n  [X]: Cell concentration at a given time [cell/mL] (computed)\n  \\mu: Specific growth rate of the cells [h^-1] (computed)\n  \\mu_{max}: Maximum specific growth rate [h^-1] (parameter)\n  [S]: Substrate concentration in the culture used in the Monod growth law [mg/mL] (variable)\n  K: Monod saturation constant for substrate (the K in K_s) [g/L] (parameter)\n  s: Subscript denoting substrate in the saturation constant K_s [-] (parameter)\n  r_{s}: Global rate of glucose consumption [mg mL^-1 h^-1] (computed)\n  r_{x}: Rate of cell growth [cell mL^-1 h^-1] (variable)\n  Y_{x/s}: Cell yield coefficient [cell/mg] (parameter)\n  [P]: mAb concentration at a given point [μg/mL] (computed)\n  r_{p}: Rate of accumulation of product in time within the reaction vessel [concentration/time] (variable)\n  \\alpha: Luedeking–Piret constant [µg/cell] (parameter)\n  \\beta: Luedeking–Piret constant [µg/cell/h] (parameter)\n\nModel-wide assumptions (already recorded, do not repeat):\n  (none recorded)\n\nLaws: 1, 3, 4, 5",
+ "answer": {
+  "laws": [
+   {
+    "eq": "1",
+    "description": "Biomass grows at a first-order rate during the initial exponential-growth stage.",
+    "description_basis": "stated",
+    "quote": "a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration",
+    "law_type": "balance",
+    "law_type_reason": "It describes biomass accumulation through a growth-generation term.",
+    "assumptions": [
+     {
+      "text": "First-order growth is assumed during the initial exponential-growth stage at each initial substrate concentration.",
+      "quote": "a first-order growth was assumed to occur during the initial stage of exponential growth at each initial substrate concentration",
+      "stated_as_assumption": true,
+      "process_condition": true
+     }
+    ],
+    "roles": [
+     {
+      "role": "biomass",
+      "symbol": "[X]"
+     },
+     {
+      "role": "rate constant",
+      "symbol": "\\mu"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "3",
+    "description": "A Monod-type specific growth rate depends on substrate concentration adjusted by the minimum concentration at which growth was observed.",
+    "description_basis": "stated",
+    "quote": "A Monod-type equation (Eq. 3) was used to fit the values of the specific growth rate ($\\mu$) at different initial substrate concentrations.",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a kinetic expression relating specific growth rate to substrate concentration.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "maximum rate",
+      "symbol": "\\mu_{max}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "[S]"
+     },
+     {
+      "role": "saturation constant",
+      "symbol": "K"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "4",
+    "description": "The substrate-consumption balance relates glucose consumption to cell growth through the cell yield coefficient.",
+    "description_basis": "stated",
+    "quote": "The material balance for substrate consumption was assumed to be represented by Eq. 4.",
+    "law_type": "balance",
+    "law_type_reason": "It relates substrate accumulation to consumption associated with cell growth.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "balanced quantity",
+      "symbol": "[S]"
+     },
+     {
+      "role": "biomass",
+      "symbol": "r_{x}"
+     },
+     {
+      "role": "yield",
+      "symbol": "Y_{x/s}"
+     }
+    ],
+    "issue": "The substrate-rate term is printed as d[S]/dt, but the text defines r_s as a positive rate of glucose consumption, which would require a negative sign before d[S]/dt."
+   },
+   {
+    "eq": "5",
+    "description": "The mAb production rate combines growth-associated production with production proportional to viable cell concentration.",
+    "description_basis": "stated",
+    "quote": "A Luedeking–Piret-type model (Luedeking and Piret 1959) was proposed for the modeling of antibody production.",
+    "law_type": "balance",
+    "law_type_reason": "It expresses product accumulation as generation within the reaction vessel.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "product",
+      "symbol": "[P]"
+     },
+     {
+      "role": "product formation rate",
+      "symbol": "r_{p}"
+     },
+     {
+      "role": "biomass",
+      "symbol": "[X]"
+     },
+     {
+      "role": "biomass growth rate",
+      "symbol": "r_{x}"
+     },
+     {
+      "role": "growth-associated coefficient",
+      "symbol": "\\alpha"
+     },
+     {
+      "role": "non-growth-associated coefficient",
+      "symbol": "\\beta"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}

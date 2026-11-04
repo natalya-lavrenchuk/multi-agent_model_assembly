@@ -1,0 +1,129 @@
+{
+ "model": "openai/gpt-oss-120b",
+ "effort": "high",
+ "usage": {
+  "queue_time": 0.877082898,
+  "prompt_tokens": 1849,
+  "prompt_time": 0.239427286,
+  "completion_tokens": 8295,
+  "completion_time": 18.891651411,
+  "total_tokens": 10144,
+  "total_time": 19.131078697,
+  "completion_tokens_details": {
+   "reasoning_tokens": 7726
+  }
+ },
+ "user": "Section(s): References\n\nText and equations in reading order:\n    Skrzypek et al., (1994). Since both publications are not available online, we want to supplement the expressions here for the convenience of the reader\n(C-3) \\begin{aligned}\\lg(K_{P3})&=1.2777-2167/T+0.5194\\cdot\\lg(T)\\\\&\\quad-1.037\\times10^{-3}T+2.331\\times10^{-7}T^{2}\\end{aligned}    [code: algebraic, computes K_{P3}, code proposes constitutive]\n    Moreover, there were typographic errors in Eqs. (5), (6) and Eqs. (31), (32). The correct equations are:\n(C-5) r_{\\mathrm{{C O}_{2}}}=k_{2}\\left(p_{\\mathrm{{C O}_{2}}}p_{\\mathrm{{H}_{2}}}-\\frac{p_{\\mathrm{{C H}_{3}O H}}p_{\\mathrm{{H}_{2}O}}}{K_{\\mathrm{{P}2}}p_{\\mathrm{{H}_{2}}}^{2}}\\right)\\Theta^{*^{2}}\\Theta^{\\otimes}    [code: algebraic, computes r_{CO_2}, code proposes constitutive]\n(C-6) r_{\\mathrm{R W G S}}=k_{3}\\left(p_{\\mathrm{C O}_{2}}-\\frac{p_{\\mathrm{C O}}p_{\\mathrm{H}_{2}\\mathrm{O}}}{K_{\\mathrm{P}3}p_{\\mathrm{H}_{2}}}\\right)\\Theta^{\\odot}\\Theta^{*}    [code: algebraic, computes r_{RWGS}, code proposes constitutive]\n\nSymbols:\n  K_{P3}: pressure equilibrium constant for the reverse water-gas shift reaction [-] (computed)\n  T: process temperature [K] (variable)\n  r_{CO_2}: reaction rate of CO2 (computed)\n  k_{2}: kinetic rate constant for reaction 2 (parameter)\n  p_{CO_2}: partial pressure of CO2 in the gas phase (variable)\n  p_{H_2}: partial pressure of hydrogen (variable)\n  p_{CH_3OH}: partial pressure of methanol (variable)\n  p_{H_2O}: partial pressure of water vapor [bar] (variable)\n  K_{P2}: equilibrium constant for reaction P2 [-] (computed)\n  \\Theta^{*}: fraction of reduced surface centers that are free (unoccupied) relative to total reduced surface centers [-] (computed)\n  \\Theta^{\\otimes}: fraction of surface sites of type \\otimes (surface coverage) [-] (computed)\n  r_{RWGS}: reaction rate of reverse water-gas shift (RWGS) (computed)\n  k_{3}: kinetic rate constant for the reverse water-gas shift reaction (parameter)\n  p_{CO}: partial pressure of CO (variable)\n  \\Theta^{\\odot}: fraction of vacant catalytic sites (surface coverage) for the ⊙ site [-] (computed)\n\nModel-wide assumptions (already recorded, do not repeat):\n  - Catalyst deactivation neglected; only reactions (1)-(3) considered.\n  - Langmuir‑Hinshelwood mechanism with adsorption, surface reaction, desorption.\n  - Oxidized centers (⊙) are active for CO hydrogenation.\n  - Reduced centers (∗) are active for CO₂ hydrogenation.\n  - Total numbers of oxidized, reduced and hydrogen centers are constant.\n  - Fast steps are at quasi‑equilibrium.\n  - Quasi‑equilibrium assumption for fast adsorption/desorption steps.\n  - Lumped kinetics for reactions (1)-(3).\n  - Two alternatives for φ: quasistatic (Eq.22) or dynamic (Eq.28).\n\nLaws: C-3, C-5, C-6",
+ "answer": {
+  "laws": [
+   {
+    "eq": "C-3",
+    "description": "The equation provides a temperature-dependent correlation for the equilibrium constant K_{P3} of the reverse water‑gas shift reaction.",
+    "description_basis": "stated",
+    "quote": "computes K_{P3}",
+    "law_type": "constitutive",
+    "law_type_reason": "It gives a temperature correlation for an equilibrium constant, a constitutive property relation.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "temperature",
+      "symbol": "T"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-5",
+    "description": "The equation calculates the net rate of CO₂ hydrogenation to methanol using a Langmuir‑Hinshelwood kinetic expression that includes forward and reverse terms, the equilibrium constant K_{P2}, kinetic constant k₂ and surface coverages.",
+    "description_basis": "stated",
+    "quote": "computes r_{CO_2}",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a kinetic rate law for the CO₂ hydrogenation reaction.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "k_{2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CH_3OH}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P2}"
+     },
+     {
+      "role": "surface coverage",
+      "symbol": "\\Theta^{*}"
+     },
+     {
+      "role": "surface coverage",
+      "symbol": "\\Theta^{\\otimes}"
+     }
+    ],
+    "issue": null
+   },
+   {
+    "eq": "C-6",
+    "description": "The equation gives the net rate of the reverse water‑gas shift (RWGS) reaction as a function of CO₂ and H₂ partial pressures, the equilibrium constant K_{P3}, kinetic constant k₃ and surface coverages of oxidized and reduced sites.",
+    "description_basis": "stated",
+    "quote": "computes r_{RWGS}",
+    "law_type": "constitutive",
+    "law_type_reason": "It is a kinetic rate law for the reverse water‑gas shift reaction.",
+    "assumptions": [],
+    "roles": [
+     {
+      "role": "rate constant",
+      "symbol": "k_{3}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{CO_2}"
+     },
+     {
+      "role": "substrate",
+      "symbol": "p_{H_2}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{CO}"
+     },
+     {
+      "role": "product",
+      "symbol": "p_{H_2O}"
+     },
+     {
+      "role": "equilibrium constant",
+      "symbol": "K_{P3}"
+     },
+     {
+      "role": "surface coverage",
+      "symbol": "\\Theta^{\\odot}"
+     },
+     {
+      "role": "surface coverage",
+      "symbol": "\\Theta^{*}"
+     }
+    ],
+    "issue": null
+   }
+  ]
+ }
+}
