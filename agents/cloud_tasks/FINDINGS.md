@@ -14,6 +14,8 @@
    result before that was andrews seed 103, at about 20:16. Restarted at 21:03 UTC with
    `cloud_tasks/run_all.sh` (the runs are resumable, so finished seeds are skipped). About 45 minutes of run
    time were lost.
+   It restarted again at about 23:28 UTC, in the middle of contois (6/30 done), and the jobs were restarted
+   from where they stopped. Every results line written before each restart parses.
 
 ## Code
 
@@ -35,3 +37,4 @@
 - 2026-11-04T22:43:49Z stats: andrews=30 aiba=30 monod=5 contois=0; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
 - 2026-11-04T23:03:57Z stats: andrews=30 aiba=30 monod=20 contois=0; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
 - 2026-11-04T23:23:48Z stats: andrews=30 aiba=30 monod=30 contois=3; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
+- 2026-11-04T23:29:14Z stats: andrews=30 aiba=30 monod=30 contois=6; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z. RUNNER RESTARTED.
