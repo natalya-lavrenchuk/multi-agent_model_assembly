@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 493,
+  "completion_tokens": 90,
+  "total_tokens": 583,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 38,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 7.2:\n\\mu_{d}=k_{d} \\cdot\\frac{[LAC]}{KD_{\\mathrm{lac}}+[LAC]}\\cdot\\frac{[AMM]}{KD_{\\mathrm{amm}}+[AMM]}\n\nSymbols (as printed -> plain name to use):\n  \\mu_{d}  ->  mud   (Specific cell death rate)\n  [AMM]  ->  AMM   (ammonia concentration)\n  [LAC]  ->  LAC   (lactate concentration)\n  KD_{amm}  ->  KDamm   (Half-maximum-rate concentration of ammonia for cell death rate)\n  KD_{lac}  ->  KDlac   (Half-maximum-rate concentration of lactate for cell death rate)\n  k_{d}  ->  kd   (Maximum cell death rate)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mud",
+  "rhs": "kd * LAC / (KDlac + LAC) * AMM / (KDamm + AMM)",
+  "note": ""
+ }
+}

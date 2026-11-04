@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 629,
+  "completion_tokens": 137,
+  "total_tokens": 766,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 58,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 7.1:\n\\mu=\\mu_{\\max} \\frac{[GLC]}{K_{\\mathrm{glc}}+[GLC]}\\cdot\\frac{[GLN]}{K_{\\mathrm{g}\\ln}+[GLN]}\\cdot\\frac{\\mathrm{KI}_{\\mathrm{lac}}}{KI_{\\mathrm{lac}}+[LAC]} \\cdot\\frac{\\mathrm{KI}_{\\mathrm{amm}}}{KI_{\\mathrm{amm}}+[AMM]}\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (Specific cell growth rate)\n  [AMM]  ->  AMM   (ammonia concentration)\n  [GLC]  ->  GLC   (Glucose concentration)\n  [GLN]  ->  GLN   (Glutamine concentration)\n  [LAC]  ->  LAC   (lactate concentration)\n  KI_{amm}  ->  KIamm   (Half-maximum-rate concentration of ammonia for cell growth rate)\n  KI_{lac}  ->  KIlac   (Half-maximum-rate concentration of lactate for cell growth rate)\n  K_{glc}  ->  Kglc   (half-maximum-rate concentration of glucose for cell growth rate)\n  K_{gln}  ->  Kgln   (half-maximum-rate concentration of glutamine for cell growth rate)\n  \\mu_{\\max}  ->  mumax   (maximum specific cell growth rate)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "mumax * GLC / (Kglc + GLC) * GLN / (Kgln + GLN) * KIlac / (KIlac + LAC) * KIamm / (KIamm + AMM)",
+  "note": ""
+ }
+}

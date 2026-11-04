@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 424,
+  "completion_tokens": 81,
+  "total_tokens": 505,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 39,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 7:\n\\mu=\\mu_{max}\\bigg(1-e^{-\\frac{S}{\\kappa_{T}}}\\bigg)\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (Specific bacteria growth rate)\n  S  ->  S_   (Substrate concentration)\n  \\kappa_{T}  ->  kappaT   (Teissier model constant scaling substrate concentration in the exponential term)\n  \\mu_{max}  ->  mumax   (Maximum specific growth rate)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "mumax*(1-exp(-S_/kappaT))",
+  "note": ""
+ }
+}

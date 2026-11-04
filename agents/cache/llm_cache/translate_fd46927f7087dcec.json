@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 518,
+  "completion_tokens": 463,
+  "total_tokens": 981,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 398,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 16:\nm_{\\mathrm{c h l}}=m\\times(1-\\operatorname{e r f}(k_{\\mathrm{N}}\\times S_{\\mathrm{N O3}}))\\times\\operatorname{e r f}(k_{I}\\times I_{\\mathrm{a v g\\_{R}}})\n\nSymbols (as printed -> plain name to use):\n  m_{chl}  ->  mchl   (Chl-a degradation rate)\n  I_{avg_R}  ->  IavgR   (Average background light intensity over the reactor optical path)\n  S_{NO3}  ->  SNO3   (Concentration of nitrate as N in the reactor)\n  k_{I}  ->  kI   (Coefficient scaling background light intensity in the Chl-a degradation law.)\n  k_{N}  ->  kN   (Nitrogen-response coefficient in the error-function terms)\n  m  ->  m   (First-order degradation rate constant for functional biomass.)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mchl",
+  "rhs": "m*(1-erf(kN*SNO3))*erf(kI*IavgR)",
+  "note": "The printed equation uses erf, which is not among the listed permitted functions."
+ }
+}

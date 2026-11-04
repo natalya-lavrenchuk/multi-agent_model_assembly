@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 532,
+  "completion_tokens": 83,
+  "total_tokens": 615,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 31,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 12:\nP=\\left(\\frac{X_{\\mathrm{C}}}{X_{c d}}\\right)\\times P_{\\mathrm{m}}\\times\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\times\\exp\\left(1-\\frac{I_{\\mathrm{a v g}}}{I_{\\mathrm{s a t}}}\\right)\n\nSymbols (as printed -> plain name to use):\n  P  ->  P   (Photosynthesis rate normalized to functional biomass)\n  I_{avg}  ->  Iavg   (Instantaneous light intensity averaged over the optical path of the reactor)\n  I_{sat}  ->  Isat   (Saturated light intensity in the photosynthesis equation)\n  X_{C}  ->  XC   (Total fixed organic carbon concentration)\n  X_{cd}  ->  Xcd   (Concentration of functional biomass (algal biomass excluding carbohydrates and neutral lipids) as C)\n  P_{m}  ->  Pm   (Maximum-rate coefficient in the photosynthesis equation)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "P",
+  "rhs": "(XC/Xcd)*Pm*(Iavg/Isat)*exp(1-Iavg/Isat)",
+  "note": ""
+ }
+}

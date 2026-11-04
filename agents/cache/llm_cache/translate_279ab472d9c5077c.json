@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 561,
+  "completion_tokens": 126,
+  "total_tokens": 687,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 64,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 10:\n\\mu_{\\mathrm{pp}}=\\mu_{\\mathrm{p}}\\frac{S}{(K_{\\mathrm{p}}+S+S^{2}/K_{\\mathrm{I}})}\\frac{C^{\\mathrm{p}}_{\\mathrm{L}}}{(K_{\\mathrm{op}}X+C^{\\mathrm{p}}_{\\mathrm{L}})}\n\nSymbols (as printed -> plain name to use):\n  \\mu_{pp}  ->  mupp   (specific penicillin production rate)\n  C_{L}  ->  CL   (dissolved oxygen concentration)\n  S  ->  S_   (substrate concentration)\n  X  ->  X   (biomass concentration)\n  K_{I}  ->  KI   (Substrate inhibition constant in the penicillin production law)\n  K_{op}  ->  Kop   (Oxygen limitation constant)\n  K_{p}  ->  Kp   (Inhibition constant in the penicillin production law)\n  \\mu_{p}  ->  mup   (Specific rate of penicillin production)\n  p  ->  p   (Exponent on dissolved oxygen concentration in the oxygen-limitation term)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mupp",
+  "rhs": "mup*S_/(Kp+S_+S_**2/KI)*CL**p/(Kop*X+CL**p)",
+  "note": ""
+ }
+}

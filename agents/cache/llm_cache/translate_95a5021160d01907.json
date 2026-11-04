@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 756,
+  "completion_tokens": 487,
+  "total_tokens": 1243,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 402,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 3:\n\\begin{aligned}\\mu&=\\left[\\frac{\\mu_{\\mathrm{x}}}{1+{[K_{1}/[\\mathrm{H}^{+}]]}+[[[\\mathrm{H}^{+}]]/K_{2}]}\\right]\\frac{S}{K_{\\mathrm{x}}X+S}\\\\&\\quad\\times\\frac{C_{\\mathrm{L}}}{K_{\\mathrm{ox}}X+C_{\\mathrm{L}}}\\\\&\\left[k_{\\mathrm{g}}\\exp\\left(-\\frac{E_{\\mathrm{g}}}{\\mathrm{RT}}\\right)\\right]-\\left[k_{\\mathrm{d}}\\exp\\left(-\\frac{E_{\\mathrm{d}}}{\\mathrm{RT}}\\right)\\right].\\end{aligned}\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (specific growth rate)\n  [H^+]  ->  H   (hydrogen ion concentration)\n  C_{L}  ->  CL   (dissolved oxygen concentration)\n  S  ->  S_   (substrate concentration)\n  T  ->  T   (temperature)\n  X  ->  X   (biomass concentration)\n  E_{d}  ->  Ed   (activation energy for cell death)\n  E_{g}  ->  Eg   (activation energy for growth)\n  K_{1}  ->  K1   (hydrogen-ion inhibition constant in the pH effect on growth)\n  K_{2}  ->  K2   (hydrogen-ion inhibition constant in the pH effect on growth)\n  K_{ox}  ->  Kox   (oxygen limitation constant)\n  K_{x}  ->  Kx   (Contois saturation constant)\n  R  ->  R   (universal gas constant in the Arrhenius terms)\n  k_{d}  ->  kd   (Arrhenius constant for cell death)\n  k_{g}  ->  kg   (Arrhenius constant for growth)\n  \\mu_{x}  ->  mux   (maximum specific growth rate)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "(mux/(1 + K1/H + H/K2))*(S_/(Kx*X + S_))*(CL/(Kox*X + CL))*(kg*exp(-Eg/(R*T))) - kd*exp(-Ed/(R*T))",
+  "note": ""
+ }
+}

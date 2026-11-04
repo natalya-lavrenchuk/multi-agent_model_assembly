@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 524,
+  "completion_tokens": 127,
+  "total_tokens": 651,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 86,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 17:\n\\nu_{\\mathrm{N}}=\\frac{\\nu_{\\mathrm{n m}}\\times S_{\\mathrm{N O3}}}{S_{\\mathrm{N O3\\_0}}}\n\nSymbols (as printed -> plain name to use):\n  \\nu_{N}  ->  nuN   (Nitrate uptake rate.)\n  Q_{n}  ->  Qn   (Total nitrogen-to-carbon quota, calculated as cellular nitrogen divided by total fixed organic carbon.)\n  S_{NO3}  ->  SNO3   (Concentration of nitrate as N in the reactor)\n  S_{NO3_0}  ->  SNO30   (Initial extracellular nitrate concentration used to normalize nitrate uptake.)\n  Q_{nm}  ->  Qnm   (Quota parameter regulating the nitrate uptake rate.)\n  \\nu_{nm}  ->  nunm   (Maximum nitrate uptake rate.)\n  q_{n}  ->  qn   (Quota parameter in the nitrogen-quota-regulated partitioning of fixed carbon.)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "nuN",
+  "rhs": "nunm * SNO3 / SNO30",
+  "note": ""
+ }
+}

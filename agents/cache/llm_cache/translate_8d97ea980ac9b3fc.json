@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 465,
+  "completion_tokens": 847,
+  "total_tokens": 1312,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 762,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 3:\n\\mathbf{\\upmu}=\\mathbf{\\upmu}_\\mathrm{max}[\\mathbf{\\upS}]*/(\\mathbf{K}+[\\mathbf{\\upS}]*);\\mathrm{~with~}[\\mathbf{\\upS}]*=[\\mathbf{\\upS}]_\\mathrm{o}-[\\mathbf{\\upS}]_\\mathrm{t}\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (Specific growth rate of the cells.)\n  [S]  ->  S_   (Glucose concentration.)\n  K  ->  K   (Monod half-velocity constant (the K_s parameter).)\n  \\mu_{max}  ->  mumax   (Maximum specific growth rate.)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "mumax*S_/(K+S_)",
+  "note": "The printed equation also defines [S]* = [S]_o - [S]_t; those starred, o, and t forms have no supplied plain names, so S_ is used for [S]*."
+ }
+}

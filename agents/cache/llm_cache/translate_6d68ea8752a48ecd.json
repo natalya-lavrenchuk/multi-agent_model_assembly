@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 467,
+  "completion_tokens": 75,
+  "total_tokens": 542,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 30,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 23:\nq_{o}=\\left(q_{s o x}-q_{m}\\right)Y_{o s}+q_{s A}Y_{o a}\n\nSymbols (as printed -> plain name to use):\n  q_{o}  ->  qo   (Oxygen uptake rate.)\n  q_{sA}  ->  qsA   (Acetate consumption rate)\n  q_{sox}  ->  qsox   (Substrate uptake rate for oxidation)\n  Y_{oa}  ->  Yoa   (Yield coefficient for acetate to oxygen consumption.)\n  Y_{os}  ->  Yos   (Yield coefficient for substrate to oxygen consumption.)\n  q_{m}  ->  qm   (Specific maintenance coefficient)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "qo",
+  "rhs": "(qsox - qm)*Yos + qsA*Yoa",
+  "note": ""
+ }
+}

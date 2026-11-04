@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1568,
+  "completion_tokens": 235,
+  "total_tokens": 1803,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1565,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 60,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Process: Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.\n\nFitted candidates (all on the same data, 126 readings):\n\nCandidate C9 (asprey_2000_monod_kinetics eq 17, rate law r = theta1*x2/(theta2 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17: chi2 2249.9 vs limit 148.8 (p = 0.000) (LACK OF FIT); AIC 2257.9; probability 0.000\n   theta1   0.3278  95% CI [0.322, 0.3335]  t 56.87\n   theta2   0.05805  95% CI [0.05368, 0.06242]  t 13.28\n   theta3   0.5499  95% CI [0.5388, 0.561]  t 49.57\n   theta4   0.08444  95% CI [0.07977, 0.08911]  t 18.09\n   misfit mostly in: E3:x2 (chi2 1260 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 389 over 21 readings, model under-predicts on average, worst at t=7 h); E3:x1 (chi2 166 over 21 readings, model under-predicts on average, worst at t=20 h)\n\nCandidate C8 (asprey_2000_contois_kinetics eq 18, rate law r = theta1*x2/(theta2*x1 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18: chi2 2344.6 vs limit 148.8 (p = 0.000) (LACK OF FIT); AIC 2352.6; probability 0.000\n   theta1   0.3443  95% CI [0.3373, 0.3514]  t 48.61\n   theta2   0.01183  95% CI [0.01102, 0.01264]  t 14.65\n   theta3   0.6012  95% CI [0.5872, 0.6153]  t 42.78\n   theta4   0.0942  95% CI [0.08874, 0.09966]  t 17.25\n   misfit mostly in: E3:x2 (chi2 1328 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 456 over 21 readings, model under-predicts on average, worst at t=17 h); E1:x2 (chi2 274 over 21 readings, model over-predicts on average, worst at t=4 h)\n\nCandidate C40 (zentou_2019_andrews eq 5, rate law r = mumax*x2/(KS + x2 + x2**2/Ki)):\nasprey_2000_monod_kinetics + zentou_2019_andrews eq 5: chi2 103.4 vs limit 147.7 (p = 0.875) (fits within the noise); AIC 113.4; probability 1.000\n   KS       0.2943  95% CI [0.2592, 0.3295]  t 8.38\n   Ki       3.085  95% CI [2.626, 3.543]  t 6.73\n   mumax    0.4979  95% CI [0.4706, 0.5252]  t 18.27\n   theta3   0.5601  95% CI [0.5391, 0.581]  t 26.75\n   theta4   0.0555  95% CI [0.04784, 0.06316]  t 7.25\n   ! only 2 of 4 starting points reached this fit: other starts stopped at worse local optima\n\nRound 1 of 3. Decide. If you accept, 'chosen' is the candidate label, e.g. C9.",
+ "answer": {
+  "decision": "accept",
+  "chosen": "C40",
+  "feedback": "Accept C40, the Andrews substrate-inhibition rate law. It fits within the noise (chi2 103.4, below the 95% limit of 147.7), all parameter t-values exceed 1, and it has Akaike weight 1.000. C9 and C8 show severe lack of fit, especially under-prediction of substrate in E3. Note that only 2 of 4 starting points reached this fit; checking optimization robustness would be prudent.",
+  "reasoning": "C40 satisfies the acceptance criteria: adequate fit and every parameter is estimated precisely. It is decisively preferred among the fitted candidates by Akaike weight. The unsuccessful starts are an optimization caveat, not evidence against the reported fit."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1311,
+  "completion_tokens": 164,
+  "total_tokens": 1475,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1308,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 57,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Process: Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.\n\nFitted candidates (all on the same data, 126 readings):\n\nCandidate C9 (asprey_2000_monod_kinetics eq 17, rate law r = theta1*x2/(theta2 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17: chi2 108.1 vs limit 148.8 (fits within the noise); AIC 116.1; probability 0.731\n   theta1   0.3233  95% CI [0.3165, 0.33]  t 47.89\n   theta2   0.2631  95% CI [0.2476, 0.2786]  t 16.99\n   theta3   0.5546  95% CI [0.5394, 0.5698]  t 36.47\n   theta4   0.05411  95% CI [0.04846, 0.05976]  t 9.58\n\nCandidate C8 (asprey_2000_contois_kinetics eq 18, rate law r = theta1*x2/(theta2*x1 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18: chi2 411.3 vs limit 148.8 (LACK OF FIT); AIC 419.3; probability 0.000\n   theta1   0.3538  95% CI [0.3441, 0.3634]  t 36.67\n   theta2   0.0429  95% CI [0.04045, 0.04535]  t 17.50\n   theta3   0.6489  95% CI [0.6272, 0.6706]  t 29.90\n   theta4   0.07988  95% CI [0.0721, 0.08766]  t 10.27\n   misfit mostly in: E2:x2 (chi2 175 over 21 readings, model under-predicts on average, worst at t=6 h); E3:x2 (chi2 96 over 21 readings, model over-predicts on average, worst at t=17 h); E1:x2 (chi2 56 over 21 readings, model over-predicts on average, worst at t=3 h)\n\nCandidate C40 (zentou_2019_andrews eq 5, rate law r = mumax*x2/(KS + x2 + x2**2/Ki)):\nasprey_2000_monod_kinetics + zentou_2019_andrews eq 5: chi2 108.2 vs limit 147.7 (fits within the noise); AIC 118.2; probability 0.269  [parmest not used (Cannot load a SolverResults object with bad status: error); SciPy least-squares result used]\n   KS       0.2632  95% CI [0.2477, 0.2786]  t 17.01\n   Ki       inf  95% CI [inf, inf]  t inf\n   mumax    0.3231  95% CI [0.3165, 0.3298]  t 48.62\n   theta3   0.5543  95% CI [0.5393, 0.5693]  t 36.89\n   theta4   0.05398  95% CI [0.04839, 0.05957]  t 9.66\n   ! Ki ran to inf: the law reduced to a simpler form; this fit may be stuck, not the law wrong\n\nRound 1 of 3. Decide. If you accept, 'chosen' is the candidate label, e.g. C9.",
+ "answer": {
+  "decision": "accept",
+  "chosen": "C9",
+  "feedback": "No further search needed.",
+  "reasoning": "C9 fits within the noise (chi2 108.1 < 148.8), and all four parameters are precisely estimated (each t-value exceeds 1). It also has the highest Akaike weight (0.731). C40 fits similarly but has lower weight and Ki is unidentifiable at infinity; C8 shows clear lack of fit."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 500,
+  "completion_tokens": 138,
+  "total_tokens": 638,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 83,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 13:\n\\mu=\\mu_{max}\\Bigg[1-\\Bigg(\\frac{S}{S_{m}}\\Bigg)\\Bigg]^{n}\\left[\\frac{S}{S+K_{s}\\Big(1-\\frac{S}{S_{m}}\\Big)^{m}}\\right]\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (Specific bacteria growth rate)\n  S  ->  S_   (Substrate concentration)\n  K_{s}  ->  Ks   (Half saturation constant)\n  S_{m}  ->  Sm   (Critical inhibitor concentration.)\n  m  ->  m   (Cell-maintenance parameter in the Powell law; exponent in the Han-Levenspiel law.)\n  \\mu_{max}  ->  mumax   (Maximum specific growth rate)\n  n  ->  n   (Growth-law exponent parameter)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "mumax*(1-S_/Sm)**n*(S_/(S_+Ks*(1-S_/Sm)**m))",
+  "note": ""
+ }
+}

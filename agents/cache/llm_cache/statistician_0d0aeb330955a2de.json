@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 1818,
+  "completion_tokens": 172,
+  "total_tokens": 1990,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1815,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 56,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Process: Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.\n\nFitted candidates (all on the same data, 126 readings):\n\nCandidate C9 (asprey_2000_monod_kinetics eq 17, rate law r = theta1*x2/(theta2 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17: chi2 1110.1 vs limit 148.8 (LACK OF FIT); AIC 1118.1; probability 0.000  [parmest failed (ValueError); SciPy least-squares result used]\n   theta1   0.3326  95% CI [0.3249, 0.3403]  t 43.46\n   theta2   0.08096  95% CI [0.07472, 0.08721]  t 12.96\n   theta3   0.5392  95% CI [0.5252, 0.5532]  t 38.42\n   theta4   0.07302  95% CI [0.06713, 0.0789]  t 12.41\n   misfit mostly in: E3:x2 (chi2 503 over 21 readings, model under-predicts on average, worst at t=20 h); E3:x1 (chi2 215 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 153 over 21 readings, model under-predicts on average, worst at t=7 h)\n\nCandidate C8 (asprey_2000_contois_kinetics eq 18, rate law r = theta1*x2/(theta2*x1 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18: chi2 1308.6 vs limit 148.8 (LACK OF FIT); AIC 1316.6; probability 0.000  [parmest failed (ValueError); SciPy least-squares result used]\n   theta1   0.351  95% CI [0.3497, 0.3523]  t 274.43\n   theta2   0.01383  95% CI [0.0128, 0.01485]  t 13.52\n   theta3   0.5934  95% CI [0.5874, 0.5994]  t 98.82\n   theta4   0.08892  95% CI [0.08611, 0.09172]  t 31.68\n   misfit mostly in: E3:x2 (chi2 488 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 325 over 21 readings, model under-predicts on average, worst at t=4 h); E3:x1 (chi2 249 over 21 readings, model under-predicts on average, worst at t=20 h)\n\nCandidate C40 (zentou_2019_andrews eq 5, rate law r = mumax*x2/(KS + x2 + x2**2/Ki)):\nasprey_2000_monod_kinetics + zentou_2019_andrews eq 5: chi2 1110.1 vs limit 147.7 (LACK OF FIT); AIC 1120.1; probability 0.000  [parmest failed (RuntimeError); SciPy least-squares result used]\n   KS       0.08089  95% CI [0.07461, 0.08718]  t 12.87\n   Ki       3.426e+61  95% CI [3.426e+61, 3.426e+61]  t inf\n   mumax    0.3332  95% CI [0.3252, 0.3412]  t 41.50\n   theta3   0.5404  95% CI [0.5259, 0.5549]  t 37.24\n   theta4   0.07351  95% CI [0.06744, 0.07958]  t 12.10\n   misfit mostly in: E3:x2 (chi2 503 over 21 readings, model under-predicts on average, worst at t=20 h); E3:x1 (chi2 216 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 153 over 21 readings, model under-predicts on average, worst at t=7 h)\n\nCandidate C17 (muloiwa_2020_free_laws eq 11, rate law r = mumax*x2*exp(-x2/KI)/(Ks + x2)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 11: chi2 110.2 vs limit 147.7 (fits within the noise); AIC 120.2; probability 1.000  [parmest failed (ValueError); SciPy least-squares result used]\n   KI       5.453  95% CI [4.886, 6.02]  t 9.61\n   Ks       0.2505  95% CI [0.2242, 0.2768]  t 9.52\n   mumax    0.4702  95% CI [0.4503, 0.4902]  t 23.57\n   theta3   0.5649  95% CI [0.5449, 0.585]  t 28.18\n   theta4   0.05803  95% CI [0.05059, 0.06547]  t 7.80\n\nCandidates that could not be built:\n  [25] muloiwa_2020_free_laws eq 4: no unit for Ks makes the equation balance\n\nRound 2 of 3. Decide. If you accept, 'chosen' is the candidate label, e.g. C9.",
+ "answer": {
+  "decision": "accept",
+  "chosen": "C17",
+  "feedback": "Accept C17 (Muloiwa 2020 free-laws eq. 11).",
+  "reasoning": "C17 fits within the noise (chi2 110.2, below the 95% limit of 147.7), and all five parameters are estimated precisely (each t-value is well above 1). It also has Akaike weight 1.000 among the candidates. The other fitted candidates show substantial lack of fit."
+ }
+}

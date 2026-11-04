@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 527,
+  "completion_tokens": 95,
+  "total_tokens": 622,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 45,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 6:\nk_{m}=k_{\\max}\\left[S_{1}+\\left(1-S_{1}\\right)\\left(1-\\frac{q_{R}}{q_{\\max,R}}\\right)^{S_{2}}\\right],\\quad\\mathrm{w h e r e}0\\leq S_{1}\\leq1\\mathrm{a n d}S_{2}>0\n\nSymbols (as printed -> plain name to use):\n  k_{m}  ->  km   (Lumped mass transfer coefficient.)\n  q_{R}  ->  qR   (sum of all the retained solute concentrations in the stationary phase)\n  S_{1}  ->  S1   (saturation dependent kinetic constant)\n  S_{2}  ->  S2   (saturation dependent kinetic order)\n  k_{\\max}  ->  kmax   (maximum lumped mass transfer coefficient)\n  q_{\\max,R}  ->  qmaxR   (maximum binding capacity of all the retained solutes)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "km",
+  "rhs": "kmax*(S1+(1-S1)*(1-qR/qmaxR)**S2)",
+  "note": ""
+ }
+}

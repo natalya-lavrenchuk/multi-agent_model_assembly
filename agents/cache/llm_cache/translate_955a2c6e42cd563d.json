@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 758,
+  "completion_tokens": 232,
+  "total_tokens": 990,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 117,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 18:\n\\begin{aligned}\\mu=&\\left(\\mu_{m}+\\mu_{m}^{A}\\frac{A}{A+\\delta_{A}}+\\mu_{m}^{P}\\frac{P}{P+\\delta_{P}}\\right)\\\\&\\left(\\frac{G}{G+K_{G}}\\frac{K_{IG}}{G+K_{IG}}+\\frac{F}{F+K_{F}}\\frac{K_{IF}}{F+K_{IF}}\\right)\\left(\\frac{N}{N+K_{N}}\\frac{K_{IN}}{N+K_{IN}}\\right)\\end{aligned}\n\nSymbols (as printed -> plain name to use):\n  \\mu  ->  mu   (Specific growth rate (biomass formation) of active dry mass.)\n  A  ->  A   (Ammonium concentration)\n  F  ->  F   (Fructose concentration)\n  G  ->  G   (Glucose concentration)\n  N  ->  N_   (Nitrate concentration)\n  P  ->  P   (Phosphate concentration)\n  K_{F}  ->  KF   (Fructose saturation constant)\n  K_{G}  ->  KG   (Glucose saturation constant)\n  K_{IF}  ->  KIF   (Fructose inhibition constant)\n  K_{IG}  ->  KIG   (Glucose inhibition constant)\n  K_{IN}  ->  KIN   (Nitrate inhibition constant)\n  K_{N}  ->  KN   (Nitrate saturation constant)\n  \\delta_{A}  ->  deltaA   (Minimum ammonium concentration in the medium at which cell growth occurs)\n  \\delta_{P}  ->  deltaP   (Minimum phosphate concentration in the medium at which cell growth occurs)\n  \\mu_{m}  ->  mum   (Maximum specific growth rate)\n  \\mu_{m}^{A}  ->  mumA   (Maximum specific growth rate for ammonium)\n  \\mu_{m}^{P}  ->  mumP   (Maximum specific growth rate for phosphate)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "mu",
+  "rhs": "(mum + mumA * A / (A + deltaA) + mumP * P / (P + deltaP)) * (G / (G + KG) * KIG / (G + KIG) + F / (F + KF) * KIF / (F + KIF)) * (N_ / (N_ + KN) * KIN / (N_ + KIN))",
+  "note": ""
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 413,
+  "completion_tokens": 139,
+  "total_tokens": 552,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 59,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Law (muloiwa_2020_free_laws eq 7):\n  \\mu=\\mu_{max}\\bigg(1-e^{-\\frac{S}{\\kappa_{T}}}\\bigg)\n  as transcribed: mu = mumax*(1-exp(-S_/kappaT))\nLaw variables to map:\n  S_: Substrate concentration [?]\n  mu: Specific bacteria growth rate [1 / s]   <- the quantity the law computes\nLaw parameters (not mapped): kappaT, mumax\n\nModel symbols (the rate symbol is r):\n  r: specific rate in the biomass and substrate balance equations [1 / h]\n  u1: dilution factor [1 / h]\n  u2: substrate concentration in the feed [g / l]\n  x1: measured concentration [g / l]\n  x2: substrate concentration [g / l]",
+ "answer": {
+  "mapping": [
+   {
+    "law_symbol": "S_",
+    "model_symbol": "x2"
+   },
+   {
+    "law_symbol": "mu",
+    "model_symbol": "r"
+   }
+  ],
+  "note": "S_ and x2 are both substrate concentrations. mu and r are both specific rates; their units differ (1/s versus 1/h), so a unit conversion may be needed."
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 453,
+  "completion_tokens": 214,
+  "total_tokens": 667,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 160,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Equation 21:\nq_{sA}=\\frac{q_{Amax}}{1+\\frac{S}{K_{is}}}\\cdot\\frac{A}{A+K_{sa}}\n\nSymbols (as printed -> plain name to use):\n  q_{sA}  ->  qsA   (Acetate consumption rate)\n  A  ->  A   (Extracellular acetate concentration.)\n  K_{is}  ->  Kis   (Inhibition constant for inhibition of acetate uptake by glucose.)\n  K_{sa}  ->  Ksa   (Affinity constant for acetate consumption.)\n  q_{Amax}  ->  qAmax   (Maximum acetate uptake rate.)",
+ "answer": {
+  "kind": "algebraic",
+  "target": "qsA",
+  "rhs": "qAmax/(1+S/Kis)*A/(A+Ksa)",
+  "note": "S has no provided plain name."
+ }
+}

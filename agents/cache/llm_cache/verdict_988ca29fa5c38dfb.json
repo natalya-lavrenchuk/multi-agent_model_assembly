@@ -1,0 +1,31 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2305,
+  "completion_tokens": 1178,
+  "total_tokens": 3483,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2302,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 988,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Process: Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.\n\nAccepted before confirmation: C40\n\nAdequate candidates (code):\n  C40 (zentou_2019_andrews eq 5): chi2 113.6, 5 parameters, AIC 123.6, Akaike weight among adequate 0.998\n  C17 (muloiwa_2020_free_laws eq 11): chi2 126.1, 5 parameters, AIC 136.1, Akaike weight among adequate 0.002\n\nAll fitted candidates:\n\nCandidate C8 (asprey_2000_contois_kinetics eq 18, rate law r = theta1*x2/(theta2*x1 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18: chi2 2407.3 vs limit 148.8 (p = 0.000) (LACK OF FIT); AIC 2415.3; probability 0.000\n   theta1   0.3448  95% CI [0.3375, 0.3521]  t 47.10\n   theta2   0.01276  95% CI [0.01191, 0.01362]  t 14.93\n   theta3   0.5975  95% CI [0.5831, 0.6119]  t 41.55\n   theta4   0.09292  95% CI [0.0873, 0.09855]  t 16.53\n   misfit mostly in: E3:x2 (chi2 1349 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 470 over 21 readings, model under-predicts on average, worst at t=19 h); E1:x2 (chi2 254 over 21 readings, model over-predicts on average, worst at t=6 h)\n\nCandidate C9 (asprey_2000_monod_kinetics eq 17, rate law r = theta1*x2/(theta2 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17: chi2 2305.3 vs limit 148.8 (p = 0.000) (LACK OF FIT); AIC 2313.3; probability 0.000\n   theta1   0.3278  95% CI [0.322, 0.3337]  t 56.07\n   theta2   0.06092  95% CI [0.05641, 0.06543]  t 13.50\n   theta3   0.5487  95% CI [0.5374, 0.5599]  t 48.78\n   theta4   0.08355  95% CI [0.07882, 0.08828]  t 17.67\n   misfit mostly in: E3:x2 (chi2 1275 over 21 readings, model under-predicts on average, worst at t=20 h); E2:x2 (chi2 400 over 21 readings, model under-predicts on average, worst at t=7 h); E2:x1 (chi2 217 over 21 readings, model under-predicts on average, worst at t=14 h)\n\nCandidate C40 (zentou_2019_andrews eq 5, rate law r = mumax*x2/(KS + x2 + x2**2/Ki)):\nasprey_2000_monod_kinetics + zentou_2019_andrews eq 5: chi2 113.6 vs limit 147.7 (p = 0.671) (fits within the noise); AIC 123.6; probability 0.733\n   KS       0.3302  95% CI [0.2888, 0.3716]  t 7.97\n   Ki       2.764  95% CI [2.335, 3.193]  t 6.44\n   mumax    0.5154  95% CI [0.4846, 0.5462]  t 16.73\n   theta3   0.5504  95% CI [0.5293, 0.5714]  t 26.16\n   theta4   0.05203  95% CI [0.04432, 0.05974]  t 6.75\n   ! only 2 of 4 starting points reached this fit: other starts stopped at worse local optima\n\nCandidate C17 (muloiwa_2020_free_laws eq 11, rate law r = mumax*x2*exp(-x2/KI)/(Ks + x2)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 11: chi2 126.1 vs limit 147.7 (p = 0.358) (fits within the noise); AIC 136.1; probability 0.001\n   KI       5.059  95% CI [4.581, 5.537]  t 10.58\n   Ks       0.2783  95% CI [0.2493, 0.3073]  t 9.59\n   mumax    0.4825  95% CI [0.459, 0.506]  t 20.53\n   theta3   0.5571  95% CI [0.5366, 0.5777]  t 27.09\n   theta4   0.05455  95% CI [0.04707, 0.06204]  t 7.29\n   ! only 2 of 4 starting points reached this fit: other starts stopped at worse local optima\n\nCandidate C18 (muloiwa_2020_free_laws eq 12, rate law r = mumax*x2/(Ks + x2 + x2**3/K2**2 + x2**2/K1)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 12: chi2 113.6 vs limit 146.6 (p = 0.647) (fits within the noise); AIC 125.6; probability 0.266  [parmest not used (Solver failed to return an optimal solution. Solution status); SciPy least-squares result used]\n   K1       2.775  95% CI [2.351, 3.199]  t 6.54\n   K2       8.649e+29  95% CI [8.649e+29, 8.649e+29]  t 24050598316193897327382078444832429984186368.00\n   Ks       0.3291  95% CI [0.2883, 0.3699]  t 8.07\n   mumax    0.5144  95% CI [0.4845, 0.5443]  t 17.20\n   theta3   0.5501  95% CI [0.5291, 0.5711]  t 26.20\n   theta4   0.05199  95% CI [0.04428, 0.0597]  t 6.74\n   ! K2 and Ks correlated (-2.551): this data separates them only poorly (a caveat; their t-values above say whether each is still estimated precisely)\n   ! K2 and mumax correlated (-2.181): this data separates them only poorly (a caveat; their t-values above say whether each is still estimated precisely)\n   ! K2 and theta4 correlated (1.266): this data separates them only poorly (a caveat; their t-values above say whether each is still estimated precisely)\n   ! K2 ran to 8.65e+29: the law reduced to a simpler form; this fit may be stuck, not the law wrong\n   ! only 3 of 4 starting points reached this fit: other starts stopped at worse local optima",
+ "answer": {
+  "verdict": "confirmed",
+  "final": "C40",
+  "adequate": [
+   "C40",
+   "C17"
+  ],
+  "reasoning": "C40 fits within the noise (χ² = 113.6, p = 0.671) and has Akaike weight 0.998 among the adequate candidates, exceeding the 0.9 threshold. C17 is also adequate but has weight 0.002, so the accepted candidate is strongly preferred.",
+  "next_experiment": "No additional experiment is needed for this decision. For optional validation, compare the laws at elevated glucose concentrations, roughly 2–8 g/L: hold dilution and other conditions fixed, measure biomass and glucose over time, and estimate specific growth after accounting for dilution. The Andrews law (C40) and the exponential-inhibition law (C17) predict different high-glucose inhibition profiles."
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "usage": {
+  "prompt_tokens": 2303,
+  "completion_tokens": 201,
+  "total_tokens": 2504,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 2300,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 102,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ },
+ "user": "Process: Baker's yeast (Saccharomyces cerevisiae) grown in a fed-batch bioreactor. Biomass concentration x1 and substrate (glucose) concentration x2 are measured every hour, in g/L. The operator sets the dilution rate u1 (1/h) and the substrate concentration in the feed u2 (g/L), both held constant between switches. Three experiments of 20 h with different starting biomass and input profiles. Measurement error is about 5% of the reading plus 0.01 g/L. The growth kinetics are unknown: find the rate law that explains the data.\n\nAccepted before confirmation: C8\n\nAdequate candidates (code):\n  C8 (asprey_2000_contois_kinetics eq 18): chi2 114.8, 4 parameters, AIC 122.8, Akaike weight among adequate 1.000\n\nAll fitted candidates:\n\nCandidate C9 (asprey_2000_monod_kinetics eq 17, rate law r = theta1*x2/(theta2 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_monod_kinetics eq 17: chi2 261.0 vs limit 148.8 (p = 0.000) (LACK OF FIT); AIC 269.0; probability 0.000\n   theta1   0.2855  95% CI [0.2788, 0.2922]  t 42.45\n   theta2   0.06653  95% CI [0.06238, 0.07068]  t 16.03\n   theta3   0.4917  95% CI [0.4785, 0.505]  t 37.07\n   theta4   0.03556  95% CI [0.03052, 0.0406]  t 7.06\n   misfit mostly in: E2:x2 (chi2 81 over 21 readings, model over-predicts on average, worst at t=4 h); E1:x2 (chi2 47 over 21 readings, model under-predicts on average, worst at t=5 h); E3:x2 (chi2 44 over 21 readings, model under-predicts on average, worst at t=8 h)\n\nCandidate C8 (asprey_2000_contois_kinetics eq 18, rate law r = theta1*x2/(theta2*x1 + x2)):\nasprey_2000_monod_kinetics + asprey_2000_contois_kinetics eq 18: chi2 114.8 vs limit 148.8 (p = 0.665) (fits within the noise); AIC 122.8; probability 1.000\n   theta1   0.3041  95% CI [0.296, 0.3123]  t 37.32\n   theta2   0.01165  95% CI [0.01094, 0.01235]  t 16.57\n   theta3   0.5468  95% CI [0.5298, 0.5638]  t 32.17\n   theta4   0.04841  95% CI [0.04224, 0.05458]  t 7.84\n   ! theta1 and theta3 correlated (0.954): this data separates them only poorly (a caveat; their t-values above say whether each is still estimated precisely)\n   ! theta1 and theta4 correlated (0.951): this data separates them only poorly (a caveat; their t-values above say whether each is still estimated precisely)\n\nCandidate C27 (muloiwa_2020_free_laws eq 6, rate law r = mumax*x2/(Ks + x2 + x2**2/Ki)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 6: chi2 253.9 vs limit 147.7 (p = 0.000) (LACK OF FIT); AIC 263.9; probability 0.000\n   Ki       93.33  95% CI [15.02, 171.6]  t 1.19\n   Ks       0.0736  95% CI [0.06619, 0.08102]  t 9.93\n   mumax    0.2876  95% CI [0.2805, 0.2948]  t 39.99\n   theta3   0.4878  95% CI [0.4736, 0.502]  t 34.30\n   theta4   0.03234  95% CI [0.0265, 0.03819]  t 5.53\n   ! only 3 of 4 starting points reached this fit: other starts stopped at worse local optima\n   misfit mostly in: E2:x2 (chi2 83 over 21 readings, model over-predicts on average, worst at t=4 h); E1:x2 (chi2 51 over 21 readings, model under-predicts on average, worst at t=5 h); E3:x2 (chi2 37 over 21 readings, model under-predicts on average, worst at t=8 h)\n\nCandidate C20 (muloiwa_2020_free_laws eq 14, rate law r = -m + x2*(m + mumax)/(Ks + x2)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 14: chi2 261.2 vs limit 147.7 (p = 0.000) (LACK OF FIT); AIC 271.2; probability 0.000  [parmest not used (model contains a trivially infeasible variable 'theta[m]' (f); SciPy least-squares result used]\n   Ks       0.06658  95% CI [0.06242, 0.07074]  t 15.99\n   m        2.704e-106  95% CI [2.704e-106, 2.704e-106]  t inf\n   mumax    0.2856  95% CI [0.2791, 0.2921]  t 43.78\n   theta3   0.4918  95% CI [0.4788, 0.5047]  t 37.94\n   theta4   0.03559  95% CI [0.03067, 0.0405]  t 7.24\n   misfit mostly in: E2:x2 (chi2 81 over 21 readings, model over-predicts on average, worst at t=4 h); E1:x2 (chi2 47 over 21 readings, model under-predicts on average, worst at t=5 h); E3:x2 (chi2 44 over 21 readings, model under-predicts on average, worst at t=8 h)\n\nCandidate C17 (muloiwa_2020_free_laws eq 11, rate law r = mumax*x2*exp(-x2/KI)/(Ks + x2)):\nasprey_2000_monod_kinetics + muloiwa_2020_free_laws eq 11: chi2 253.8 vs limit 147.7 (p = 0.000) (LACK OF FIT); AIC 263.8; probability 0.000\n   KI       94.09  95% CI [17.52, 170.7]  t 1.23\n   Ks       0.07371  95% CI [0.06629, 0.08113]  t 9.93\n   mumax    0.2879  95% CI [0.2806, 0.2951]  t 39.80\n   theta3   0.4878  95% CI [0.4736, 0.502]  t 34.31\n   theta4   0.03231  95% CI [0.02647, 0.03815]  t 5.53\n   ! only 1 of 4 starting points reached this fit: other starts stopped at worse local optima\n   misfit mostly in: E2:x2 (chi2 83 over 21 readings, model over-predicts on average, worst at t=4 h); E1:x2 (chi2 51 over 21 readings, model under-predicts on average, worst at t=5 h); E3:x2 (chi2 37 over 21 readings, model under-predicts on average, worst at t=8 h)",
+ "answer": {
+  "verdict": "confirmed",
+  "final": "C8",
+  "adequate": [
+   "C8"
+  ],
+  "reasoning": "C8 is the only adequate candidate: it fits within the noise and has Akaike weight 1.000 among adequate candidates. The fitted rivals all show lack of fit, so the accepted candidate is confirmed.",
+  "next_experiment": "No discriminating experiment is required for this decision; C8 is the only adequate candidate."
+ }
+}
