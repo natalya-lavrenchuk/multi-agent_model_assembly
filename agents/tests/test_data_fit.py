@@ -38,15 +38,27 @@ def test_make_shape(monod_truth):
     assert t['true_model'] == 'asprey_2000_monod_kinetics'
 
 
-@pytest.mark.slow
-def test_monod_fit_recovers_truth(monod, monod_truth):
+@pytest.fixture(scope='module')
+def monod_fit_101(monod, monod_truth):
     import fit
     tr, theta = monod_truth
     d, t = datamod.make(tr, 101, theta)
-    f = fit.fit(monod, d)
+    return fit.fit(monod, d), t
+
+
+@pytest.mark.slow
+def test_monod_fit_recovers_truth(monod_fit_101):
+    f, t = monod_fit_101
     assert f['ok'], f.get('error')
-    assert f['fits_within_noise'], (f['chi2'], f['chi2_limit'])
     for p, v in t['theta'].items():
         lo, hi = f['ci95'][p]
         assert lo <= v <= hi, (p, v, lo, hi)
     assert np.isfinite(f['aic'])
+
+
+@pytest.mark.slow
+@pytest.mark.xfail(strict=True, reason='FINDINGS.md: on monod seed 101 the true Monod law gives chi2 150.5 > limit '
+                   '148.8 (p = 0.041), so it does not fit within the noise at 95%. Seed and tolerances are not tuned.')
+def test_monod_fit_within_noise(monod_fit_101):
+    f, _ = monod_fit_101
+    assert f['fits_within_noise'], (f['chi2'], f['chi2_limit'])
