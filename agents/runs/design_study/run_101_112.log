@@ -840,3 +840,97 @@ andrews  seed 106: before none, designed none, random none  412 s
   eq 5: cached
   eq 11: cached
 rivals: andrews, aiba
+  fitted to the data as it is:
+    andrews    chi2   113.9 / limit 147.7  p 0.663 (within the noise)  Akaike weight 0.129
+    aiba       chi2   110.1 / limit 147.7  p 0.752 (within the noise)  Akaike weight 0.871
+
+  best experiments of 320 (D = expected chi-square separating the rivals, counting noise and parameter uncertainty; >> 1 separates; D_HR counts noise only):
+    D109  D   1384.4  (D_HR  10857.5)   start biomass 3 g/L, dilution u1 0.1 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+    D110  D   1126.7  (D_HR   8785.2)   start biomass 3 g/L, dilution u1 0.1 1/h, feed u2 35 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    D189  D    812.1  (D_HR   2124.7)   start biomass 3 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+    D190  D    808.1  (D_HR   2021.7)   start biomass 3 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    D191  D    796.5  (D_HR   1857.5)   start biomass 3 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 20 g/L at 10 h, 20 h hourly
+    best by noise only (D_HR): D283 D_HR 14584 but D 228.5; D016 D_HR 11375 but D 196.4; D109 D_HR 10857 but D 1384.4
+    (median design D 0.8; the existing three experiments: 0.2, 0.3, 2.0)
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 11: cached
+
+  after adding the designed experiment D109 (D 1384.4): start biomass 3 g/L, dilution u1 0.1 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+  refitted on 4 experiments:
+    andrews    chi2   275.3 / limit 193.8  p 0.000 (lack of fit)  Akaike weight 0.000
+    aiba       chi2   143.8 / limit 193.8  p 0.859 (within the noise)  Akaike weight 1.000
+
+  after adding the random (control) experiment D279 (D 64.4): start biomass 5 g/L, dilution u1 0.2 1/h, feed u2 10 g/L, switched to 20 g/L at 10 h, 20 h hourly
+  refitted on 4 experiments:
+    andrews    chi2   162.3 / limit 193.8  p 0.502 (within the noise)  Akaike weight 0.000
+    aiba       chi2   144.1 / limit 193.8  p 0.854 (within the noise)  Akaike weight 1.000
+
+  hidden truth: aiba
+wrote /home/user/multi-agent_model_assembly/agents/runs/design_aiba_seed106.json
+aiba     seed 106: before none, designed none, random none  363 s 
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 18: cached
+rivals: monod, contois
+  fitted to the data as it is:
+    monod      chi2   112.5 / limit 148.8  p 0.719 (within the noise)  Akaike weight 1.000
+    contois    chi2   436.3 / limit 148.8  p 0.000 (lack of fit)  Akaike weight 0.000
+
+  best experiments of 320 (D = expected chi-square separating the rivals, counting noise and parameter uncertainty; >> 1 separates; D_HR counts noise only):
+    D162  D   4062.4  (D_HR   4519.9)   start biomass 1 g/L, dilution u1 0.15 1/h, feed u2 5 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    D161  D   3980.0  (D_HR   4278.3)   start biomass 1 g/L, dilution u1 0.15 1/h, feed u2 5 g/L, 20 h hourly
+    D241  D   3542.2  (D_HR   4125.3)   start biomass 1 g/L, dilution u1 0.2 1/h, feed u2 5 g/L, 20 h hourly
+    D240  D   3395.1  (D_HR   3835.7)   start biomass 10 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, 20 h hourly
+    D320  D   3367.3  (D_HR   4418.2)   start biomass 10 g/L, dilution u1 0.2 1/h, feed u2 35 g/L, 20 h hourly
+    best by noise only (D_HR): D162 D_HR 4520 but D 4062.4; D320 D_HR 4418 but D 3367.3; D161 D_HR 4278 but D 3980.0
+    (median design D 281.4; the existing three experiments: 73.0, 154.2, 60.5)
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+
+  after adding the designed experiment D162 (D 4062.4): start biomass 1 g/L, dilution u1 0.15 1/h, feed u2 5 g/L, switched to 10 g/L at 10 h, 20 h hourly
+  refitted on 4 experiments:
+    monod      chi2   144.7 / limit 194.9  p 0.858 (within the noise)  Akaike weight 1.000
+    contois    chi2  3725.1 / limit 194.9  p 0.000 (lack of fit)  Akaike weight 0.000
+
+  after adding the random (control) experiment D262 (D 627.1): start biomass 3 g/L, dilution u1 0.2 1/h, feed u2 10 g/L, 20 h hourly
+  refitted on 4 experiments:
+    monod      chi2   144.3 / limit 194.9  p 0.864 (within the noise)  Akaike weight 1.000
+    contois    chi2   780.0 / limit 194.9  p 0.000 (lack of fit)  Akaike weight 0.000
+
+  hidden truth: monod
+wrote /home/user/multi-agent_model_assembly/agents/runs/design_monod_seed106.json
+monod    seed 106: before none, designed none, random none  259 s 
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 18: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 18: cached
+rivals: monod, contois
+  fitted to the data as it is:
+    monod      chi2   250.6 / limit 148.8  p 0.000 (lack of fit)  Akaike weight 0.000
+    contois    chi2   113.5 / limit 148.8  p 0.698 (within the noise)  Akaike weight 1.000
+
+  best experiments of 320 (D = expected chi-square separating the rivals, counting noise and parameter uncertainty; >> 1 separates; D_HR counts noise only):
+    D320  D   1793.4  (D_HR   2825.3)   start biomass 10 g/L, dilution u1 0.2 1/h, feed u2 35 g/L, 20 h hourly
+    D162  D   1665.5  (D_HR   2098.4)   start biomass 1 g/L, dilution u1 0.15 1/h, feed u2 5 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    D240  D   1504.4  (D_HR   1730.6)   start biomass 10 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, 20 h hourly
+    D161  D   1454.3  (D_HR   1567.4)   start biomass 1 g/L, dilution u1 0.15 1/h, feed u2 5 g/L, 20 h hourly
+    D224  D   1438.7  (D_HR   1711.3)   start biomass 8 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, 20 h hourly
+    best by noise only (D_HR): D320 D_HR 2825 but D 1793.4; D241 D_HR 2707 but D 1359.3; D162 D_HR 2098 but D 1665.5
+    (median design D 59.4; the existing three experiments: 29.6, 66.6, 13.0)
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 18: cached
