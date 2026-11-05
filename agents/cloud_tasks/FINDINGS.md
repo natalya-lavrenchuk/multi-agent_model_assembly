@@ -46,6 +46,10 @@
    design_study's `--hr` pass cannot run: the error comes before the HR design. Also, every case is already in
    summary.jsonl, so the pass skips them all. `design_rescore.py run --hr` runs the D_HR-best design through
    design.main and scores it the same way.
+   Result of design_study.py over seeds 101-112 (48 cases): 11 cases ended with `KeyError: 'p'`. The other 37
+   finished without an error but have outcome 'none' for before, designed and random alike, which is the silent
+   form of the same bug. Re-scored by design_rescore.py: 48 cases, 0 errors (table in REPORT.md). Time per case
+   (design_study.py): mean 355 s, from 247 s to 716 s (4.7 h in total).
 
 ## Status log
 - 2026-11-04T21:03:50Z stats: andrews=3 aiba=0 monod=0 contois=0; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
