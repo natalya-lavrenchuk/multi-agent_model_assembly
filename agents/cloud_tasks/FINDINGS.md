@@ -28,6 +28,25 @@
    Reproduce: `pytest tests/test_data_fit.py -m slow`. The test `test_monod_fit_within_noise` is marked xfail (strict)
    with this reason. Nothing was changed.
 
+4. **Design study: every case ends with `KeyError: 'p'`** (a code bug, not fixed). `design.fit_all`
+   (`agents/design.py:185-186`) returns each fit with only the keys ok, chi2, chi2_limit, p_value, fit_class, theta,
+   t_values, aic, akaike_weight, error, warnings. It drops `p` and `fits_within_noise`. `agents._adequate`
+   (`agents/agents.py:333`) reads `f.get('fits_within_noise')`, which is now always None, so no fit counts as
+   within the noise. It then falls back to the marginal fits, and for a marginal fit it reads `f['p']`
+   (`agents/agents.py:337`), which raises KeyError. When no fit is marginal there is no error, but the outcome is
+   'none' even if a rival fits within the noise. So `cloud_tasks/design_study.py`'s `outcome()` cannot score
+   design.py's fits. Reproduce: `python cloud_tasks/design_study.py run --seeds 101-101 --truths andrews` gives
+   `{"error": "KeyError: 'p'"}` in runs/design_study/summary.jsonl.
+   The same thing would happen in agents.py if it ever passes design.fit_all output to adequacy(); not checked.
+   Each case takes 393 s (andrews seed 101: 3 fits of 2 rivals plus the D ranking of the designs).
+   What was done: design.main writes every fit set to `runs/design_<truth>_seed<n>.json` before the error, so Task 2
+   still runs as written, and `cloud_tasks/design_rescore.py` (new file) scores those saved outputs. It puts back
+   `p = len(theta)` and `fits_within_noise = chi2 <= chi2_limit`, which are fit.py's own definitions (fit.py lines
+   410 and 480), and applies the unchanged rule (design_study.outcome). No fit is redone and no system code is changed.
+   design_study's `--hr` pass cannot run: the error comes before the HR design. Also, every case is already in
+   summary.jsonl, so the pass skips them all. `design_rescore.py run --hr` runs the D_HR-best design through
+   design.main and scores it the same way.
+
 ## Status log
 - 2026-11-04T21:03:50Z stats: andrews=3 aiba=0 monod=0 contois=0; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
 - 2026-11-04T21:23:58Z stats: andrews=15 aiba=0 monod=0 contois=0; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T21:02:23Z.
@@ -41,3 +60,4 @@
 - 2026-11-04T23:49:13Z stats: andrews=30 aiba=30 monod=30 contois=14; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T23:29:14Z.
 - 2026-11-05T00:09:10Z stats: andrews=30 aiba=30 monod=30 contois=22; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T23:29:14Z.
 - 2026-11-05T00:29:11Z stats: andrews=30 aiba=30 monod=30 contois=29; design: 0 files, 0 summary lines; stage: stats 101-130 start 2026-11-04T23:29:14Z.
+- 2026-11-05T00:37:34Z stats: andrews=30 aiba=30 monod=30 contois=30; design: 4 files, 1 summary lines; stage: design 101-112 start 2026-11-05T00:29:22Z.

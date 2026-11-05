@@ -1,0 +1,55 @@
+/opt/ipopt/lib/python3.9/site-packages/langgraph/cache/base/__init__.py:8: LangChainPendingDeprecationWarning: The default value of `allowed_objects` will change in a future version. Pass an explicit value (e.g., allowed_objects='messages' or allowed_objects='core') to suppress this warning.
+  from langgraph.checkpoint.serde.jsonplus import JsonPlusSerializer
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 5: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 5: cached
+  eq 11: cached
+rivals: andrews, aiba
+  fitted to the data as it is:
+    andrews    chi2   149.4 / limit 147.7  p 0.041 (marginal)  Akaike weight 0.995
+    aiba       chi2   160.1 / limit 147.7  p 0.010 (lack of fit)  Akaike weight 0.005
+
+  best experiments of 320 (D = expected chi-square separating the rivals, counting noise and parameter uncertainty; >> 1 separates; D_HR counts noise only):
+    D205  D    646.9  (D_HR   1540.4)   start biomass 5 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+    D206  D    642.5  (D_HR   1470.6)   start biomass 5 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    D189  D    634.2  (D_HR   1110.8)   start biomass 3 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+    D207  D    628.4  (D_HR   1350.6)   start biomass 5 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 20 g/L at 10 h, 20 h hourly
+    D190  D    628.4  (D_HR   1069.5)   start biomass 3 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 10 g/L at 10 h, 20 h hourly
+    best by noise only (D_HR): D014 D_HR 4197 but D 117.7; D013 D_HR 3794 but D 71.5; D109 D_HR 1892 but D 492.8
+    (median design D 1.4; the existing three experiments: 1.0, 1.2, 5.0)
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 5: cached
+
+  after adding the designed experiment D205 (D 646.9): start biomass 5 g/L, dilution u1 0.15 1/h, feed u2 35 g/L, switched to 5 g/L at 10 h, 20 h hourly
+  refitted on 4 experiments:
+    andrews    chi2   190.9 / limit 193.8  p 0.067 (within the noise)  Akaike weight 1.000
+    aiba       chi2   386.6 / limit 193.8  p 0.000 (lack of fit)  Akaike weight 0.000
+
+  after adding the random (control) experiment D200 (D 134.4): start biomass 5 g/L, dilution u1 0.15 1/h, feed u2 10 g/L, switched to 35 g/L at 10 h, 20 h hourly
+  refitted on 4 experiments:
+    andrews    chi2   190.6 / limit 193.8  p 0.068 (within the noise)  Akaike weight 1.000
+    aiba       chi2   323.0 / limit 193.8  p 0.000 (lack of fit)  Akaike weight 0.000
+
+  hidden truth: andrews
+wrote /home/user/multi-agent_model_assembly/agents/runs/design_andrews_seed101.json
+andrews  seed 101: before None, designed None, random None  393 s KeyError: 'p'
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 11: cached
+  eq 16.1: cached
+  eq 16.2: cached
+  eq 17: cached
+  eq 5: cached
+  eq 11: cached
+rivals: andrews, aiba
+  fitted to the data as it is:
+    andrews    chi2   154.5 / limit 147.7  p 0.022 (marginal)  Akaike weight 0.112
+    aiba       chi2   150.3 / limit 147.7  p 0.036 (marginal)  Akaike weight 0.888
